@@ -11,47 +11,206 @@ next:
   description: ''
 ---
 Below you will find details for our various response codes.
-[block:parameters]
-{
-  "data": {
-    "h-0": "Code",
-    "h-1": "Description",
-    "0-0": "**invalid-credentials** ",
-    "0-1": "**Invalid Attribute **\nCannot login to target institution using supplied credentials. Please check credentials and try again.",
-    "1-1": "**Invalid Attribute **\nRequested resource is not found. Check details message.",
-    "1-0": "**resource-not-found** ",
-    "2-1": "**Invalid Attribute **\nResource already exists. Check details message.",
-    "2-0": "**resource-already-exists** ",
-    "3-0": "**unsupported-content-type** ",
-    "3-1": "**Invalid Attribute **\nRequested content type is not supported.",
-    "4-0": "**unsupported-accept** ",
-    "4-1": "**Invalid Attribute **\nAccept type is not supported.",
-    "5-0": "**invalid-content** ",
-    "5-1": "**Invalid Attribute **\nInvalid request content. Check details message.",
-    "6-0": "**parameter-not-supplied** ",
-    "6-1": "**Missing Attribute **\nRequired parameter not supplied. Check details and source message.",
-    "7-0": "**parameter-not-valid** ",
-    "7-1": "**Invalid Attribute **\nParameter value is not valid. Check details and source message.",
-    "8-0": "**internal-server-error** ",
-    "8-1": "**Server Error **\nInternal server error. Please contact support.",
-    "9-0": "**service-unavailable** ",
-    "9-1": "**Service Unavailable **\nService is currently unavailable. Please try again later.",
-    "10-1": "**Service Unavailable **\nRequest rate limit per connection reached. Follow detail message for futher instructions.",
-    "10-0": "**too-many-requests** ",
-    "11-0": "**method-not-allowed** ",
-    "11-1": "**Not Allowed **\nRequested method is not allowed.",
-    "12-0": "**unauthorized-access** ",
-    "12-1": "**Unauthorized **\nUnauthorized access.",
-    "13-0": "**invalid-authorization-token** ",
-    "13-1": "**Unauthorized **\nInvalid authorization token. Check details message.",
-    "14-0": "**invalid-authorization-request** ",
-    "14-1": "**Unauthorized **\nInvalid authorization request. Check details message.",
-    "15-0": "**no-production-access** ",
-    "15-1": "**Unauthorized **\nPartner has permission to access Sandbox data only. For accessing live Institution data, please contact us via Intercom or email.",
-    "16-0": "**account-not-accessible-requires-user-action** ",
-    "16-1": "**Invalid Attribute **\nA manual action is required from end-user by the Institution itself, before data can be acquired."
-  },
-  "cols": 2,
-  "rows": 17
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Code
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **invalid-credentials** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Cannot login to target institution using supplied credentials. Please check credentials and try again.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **resource-not-found** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Requested resource is not found. Check details message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **resource-already-exists** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Resource already exists. Check details message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **unsupported-content-type** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Requested content type is not supported.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **unsupported-accept** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Accept type is not supported.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **invalid-content** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Invalid request content. Check details message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **parameter-not-supplied** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Missing Attribute**\
+        Required parameter not supplied. Check details and source message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **parameter-not-valid** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        Parameter value is not valid. Check details and source message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **internal-server-error** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Server Error**\
+        Internal server error. Please contact support.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **service-unavailable** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Service Unavailable**\
+        Service is currently unavailable. Please try again later.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **too-many-requests** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Service Unavailable**\
+        Request rate limit per connection reached. Follow detail message for futher instructions.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **method-not-allowed** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Not Allowed**\
+        Requested method is not allowed.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **unauthorized-access** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Unauthorized**\
+        Unauthorized access.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **invalid-authorization-token** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Unauthorized**\
+        Invalid authorization token. Check details message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **invalid-authorization-request** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Unauthorized**\
+        Invalid authorization request. Check details message.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **no-production-access** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Unauthorized**\
+        Partner has permission to access Sandbox data only. For accessing live Institution data, please contact us via Intercom or email.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **account-not-accessible-requires-user-action** 
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Invalid Attribute**\
+        A manual action is required from end-user by the Institution itself, before data can be acquired.
+      </td>
+    </tr>
+  </tbody>
+</Table>
