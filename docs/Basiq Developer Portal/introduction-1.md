@@ -20,45 +20,17 @@ Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches
 
 Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking and more.
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bb68dee-DevHub_01.png",
-        "DevHub_01.png",
-        1400,
-        378,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![1400](https://files.readme.io/bb68dee-DevHub_01.png "DevHub_01.png")
 
 Basiq’s Products allow you to:
 
 * Access *user consented*, account and transaction data in real-time
 
-*  Enhance transactions with merchant data
+* Enhance transactions with merchant data
 
 * Gain deeper insights of your customer's finances
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/43206b9-DevHub_02.png",
-        "DevHub_02.png",
-        1400,
-        778,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+
+![1400](https://files.readme.io/43206b9-DevHub_02.png "DevHub_02.png")
 
 Our partner ecosystem branches far and wide, but our most common use cases are: 
 
@@ -70,16 +42,45 @@ Our partner ecosystem branches far and wide, but our most common use cases are:
 
 Check out how some of our customers are using us. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in the wild.
 
+> 🚧 Basiq APIs are currently only available in Australia and New Zealand. We are working to make them available in other countries - so check back soon. Use this link to see a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions).
 
-[block:callout]
-{
-  "type": "warning",
-  "body": "Basiq APIs are currently only available in Australia and New Zealand. We are working to make them available in other countries - so check back soon. Use this link to see a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions)."
-}
-[/block]
+<HTMLBlock>{`
+<button class="btn">
+  <span class="background">
+    Hello World
+  </span>
+</button>
 
-[block:html]
-{
-  "html": "<button class=\"btn\">\n  <span class=\"background\">\n    Hello World\n  </span>\n</button>\n\n<style>\n  .background {\n    will-change: transform;\n    transition: transform 450ms;\n  }\n  \n  .btn:hover .background {\n    transition: transform 150ms;\n    transform: translateY(-10px);\n  }\n  \n.btn {\n  width: 100px;\n  height: 100px;\n  border: none;\n  background: transparent;\n  padding: 0px;\n}\n\n.background {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n  background: slateblue;\n  color: white;\n  font-size: 20px;\n  font-weight: 500;\n  line-height: 1;\n}\n</style>\n"
+<style>
+  .background {
+    will-change: transform;
+    transition: transform 450ms;
+  }
+  
+  .btn:hover .background {
+    transition: transform 150ms;
+    transform: translateY(-10px);
+  }
+  
+.btn {
+  width: 100px;
+  height: 100px;
+  border: none;
+  background: transparent;
+  padding: 0px;
 }
-[/block]
+
+.background {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: slateblue;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+}
+</style>
+`}</HTMLBlock>
