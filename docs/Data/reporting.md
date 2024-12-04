@@ -16,32 +16,32 @@ The Reporting API for Consumer Affordability is a powerful tool designed to prov
 
 ### Access to Data Sources:
 
-- Future-proof your solution by accessing data from Consumer Data Rights (CDR), Web connectors, and Statement uploads.
-- Seamlessly transition from screen scraping to Open Banking as banks adopt newer data access methods.
+* Future-proof your solution by accessing data from Consumer Data Rights (CDR), Web connectors, and Statement uploads.
+* Seamlessly transition from screen scraping to Open Banking as banks adopt newer data access methods.
 
 ### Extensive Data Library:
 
-- Access thousands of data points, over 60 groups, 50+ metrics, and more than 500 merchant categories for comprehensive reporting.
+* Access thousands of data points, over 60 groups, 50+ metrics, and more than 500 merchant categories for comprehensive reporting.
 
 ### Comprehensive Transaction Data Access:
 
-- Gain access to over 12 months of transaction data from multiple financial institutions, offering a detailed view of a customer’s financial health.
+* Gain access to over 12 months of transaction data from multiple financial institutions, offering a detailed view of a customer’s financial health.
 
 ### Advanced Data Categorisation:
 
-- Enriched transaction details including merchant, location, and category, with expenses categorised into more than 500 categories based on ANZSIC classifications for detailed spend behavior analysis.
+* Enriched transaction details including merchant, location, and category, with expenses categorised into more than 500 categories based on ANZSIC classifications for detailed spend behavior analysis.
 
 ### Customisable Reporting:
 
-- Generate custom reports tailored to meet unique decisioning criteria using a growing library of data points and metrics.
+* Generate custom reports tailored to meet unique decisioning criteria using a growing library of data points and metrics.
 
 ### Enhanced Decisioning Tools:
 
-- Utilise an expanding set of groups and metrics to refine decision-making processes.
+* Utilise an expanding set of groups and metrics to refine decision-making processes.
 
 ### Consolidated Multi-Account Reporting:
 
-- Enable consolidated reporting across multiple bank accounts with integrated consent UI, allowing for individual or combined reports for multiple applicants.
+* Enable consolidated reporting across multiple bank accounts with integrated consent UI, allowing for individual or combined reports for multiple applicants.
 
 ### Predefined Risk Flags:
 
@@ -53,17 +53,14 @@ Utilise machine learning for transaction cleansing and categorisation, enhancing
 
 ### Allow Multiple Users in Reports:
 
-- **Modification of API**: The API will now accommodate requests for reports involving up to **five users**. Incorporate logic to manage requests with multiple users, ensuring avoidance of duplicate accounts.
-- **Error Handling**: Proper error messages will be returned if duplicate accounts are detected or if a user/account is entered more than once.
+* **Modification of API**: The API will now accommodate requests for reports involving up to **five users**. Incorporate logic to manage requests with multiple users, ensuring avoidance of duplicate accounts.
+* **Error Handling**: Proper error messages will be returned if duplicate accounts are detected or if a user/account is entered more than once.
 
 ### BASIQ Dashboard Demo to Support Multiple Users:
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(50.10741138560687% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/WKGWSWQpYiCeNANWPuIj?embed\" title=\"Basiq - Support Multiple Users in Reports\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(50.10741138560687% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/WKGWSWQpYiCeNANWPuIj?embed" title="Basiq - Support Multiple Users in Reports" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
 
 ### Export Options:
 
@@ -71,12 +68,9 @@ You can export reports in PDF or CSV formats for record-keeping and detailed tra
 
 When you click on the Print option in the Insights reports, you can choose the "Save as PDF" option.
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/dDGbKIIfrIypiqWanzA6?embed\" title=\"Basiq - Dashboard Print / Export to PDF\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/dDGbKIIfrIypiqWanzA6?embed" title="Basiq - Dashboard Print / Export to PDF" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
 
 ### Bank Statement Export Capability:
 
@@ -88,52 +82,19 @@ Easily export [bank statements](https://api.basiq.io/docs/bank-statements) to su
 
 This video demonstrates how to generate a Consumer Affordability Insights report via the dashboard, providing a preview of the final PDF report.
 
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FAM_0rBRC8O8%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DAM_0rBRC8O8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FAM_0rBRC8O8%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=AM_0rBRC8O8",
-  "title": "Generating a consumer affordability insights report",
-  "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/AM_0rBRC8O8/hqdefault.jpg",
-  "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=AM_0rBRC8O8",
-  "typeOfEmbed": "youtube"
-}
-[/block]
-
+<Embed url="https://www.youtube.com/watch?v=AM_0rBRC8O8" title="Generating a consumer affordability insights report" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/AM_0rBRC8O8/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=AM_0rBRC8O8" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FAM_0rBRC8O8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DAM_0rBRC8O8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FAM_0rBRC8O8%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ### Video: How Basiq's Reporting API Works:
 
 An animated video showcasing how the reporting API cleans, normalizes, and enriches large datasets when integrated with customer applications.
 
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Ftwqmjz0Aoo8%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dtwqmjz0Aoo8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Ftwqmjz0Aoo8%2Fhqdefault.jpg&key=7788cb384c9f4d5dbbdbeffd9fe4b92f&type=text%2Fhtml&schema=youtube\" width=\"640\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=twqmjz0Aoo8",
-  "title": "How Basiq's Reporting API works",
-  "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/twqmjz0Aoo8/hqdefault.jpg",
-  "provider": "https://www.youtube.com/",
-  "href": "https://www.youtube.com/watch?v=twqmjz0Aoo8",
-  "typeOfEmbed": "youtube"
-}
-[/block]
-
+<Embed url="https://www.youtube.com/watch?v=twqmjz0Aoo8" title="How Basiq's Reporting API works" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/twqmjz0Aoo8/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=twqmjz0Aoo8" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252Ftwqmjz0Aoo8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253Dtwqmjz0Aoo8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252Ftwqmjz0Aoo8%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22640%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ### Reports: Implementation Guide:
 
 Detailed guide covering all steps required for successful implementation of the Basiq Affordability solution, including project steps and customer considerations.
 
-[block:embed]
-{
-  "html": "<iframe src=\"https://drive.google.com/viewerng/viewer?url=https%3A//basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%2520-%2520Platform%2520Implementation_guide.pdf&embedded=true\" width=\"600\" height=\"780\" style=\"border: none;\"></iframe>",
-  "url": "https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf",
-  "provider": "https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com",
-  "href": "https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf",
-  "typeOfEmbed": "pdf"
-}
-[/block]
-
+<Embed url="https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf" provider="basiq-hosted-files.s3.ap-southeast-2.amazonaws.com" href="https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf" typeOfEmbed="pdf" title="undefined" html="%3Ciframe%20src%3D%22https%3A%2F%2Fdrive.google.com%2Fviewerng%2Fviewer%3Furl%3Dhttps%253A%2F%2Fbasiq-hosted-files.s3.ap-southeast-2.amazonaws.com%2Fdocs-resources%2FBasiq%252520-%252520Platform%252520Implementation_guide.pdf%26embedded%3Dtrue%22%20width%3D%22600%22%20height%3D%22780%22%20style%3D%22border%3A%20none%3B%22%3E%3C%2Fiframe%3E" />
 
 You can also follow up our API reference [here](https://api.basiq.io/reference/createreport). 
 
@@ -269,6 +230,6 @@ Customer-facing document displaying groups and metrics with definitions for the 
 The Report Consumer Affordability feature within Basiq Insights empowers lenders with robust tools and resources to assess consumer affordability accurately and efficiently. By leveraging a combination of advanced data analytics, comprehensive reporting, and user-friendly interfaces, Basiq Insights revolutionises lending practices, setting new standards for data-driven decision-making in the financial industry.
 
 > 👍 Quick Links
-> 
-> - [The Evolution of Lending - Basiq Blog Post ](https://basiq.io/blog/the-evolution-of-lending-introducing-basiq-insights/)
-> - [Get Started?](https://api.basiq.io/reference/createreport)
+>
+> * [The Evolution of Lending - Basiq Blog Post ](https://basiq.io/blog/the-evolution-of-lending-introducing-basiq-insights/)
+> * [Get Started?](https://api.basiq.io/reference/createreport)
