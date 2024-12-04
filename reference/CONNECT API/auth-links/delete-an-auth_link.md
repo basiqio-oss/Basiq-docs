@@ -10,69 +10,60 @@ metadata:
 next:
   description: ''
 ---
-Permanently deletes an auth_link resource. Once deleted the URL associated with the deleted object will no longer be valid.  
-[block:parameters]
-{
-  "data": {
-    "h-0": "Arguments",
-    "0-0": "*no arguments required*",
-    "0-1": ""
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
+Permanently deletes an auth\_link resource. Once deleted the URL associated with the deleted object will no longer be valid.  
 
-[block:callout]
-{
-  "type": "danger",
-  "body": "Note that this action cannot be undone."
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
 
-[block:callout]
-{
-  "type": "info",
-  "body": "The auth_link is a URL that directs a User to Basiq's hosted consent workflow to link banks and securely share data. When the user selects 'I have disclosed all my accounts' the auth_link is automatically deleted."
-}
-[/block]
-**Returns**
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        *no arguments required*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> ❗️ Note that this action cannot be undone.
+
+> 📘 The auth\_link is a URL that directs a User to Basiq's hosted consent workflow to link banks and securely share data. When the user selects 'I have disclosed all my accounts' the auth\_link is automatically deleted.
+
+**Returns**\
 Returns an empty body if the delete succeeded. Otherwise, this call returns an error in the event of a failure.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "DELETE /users/ea3a81/auth_link",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "DELETE /users/ea3a81/auth_link HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+DELETE /users/ea3a81/auth_link
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "HTTP/1.1 204 No Content",
-      "language": "json",
-      "name": "Example Response"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Example Request
+DELETE /users/ea3a81/auth_link HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+```json Example Response
+HTTP/1.1 204 No Content
+```
