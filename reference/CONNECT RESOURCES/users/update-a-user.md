@@ -11,56 +11,74 @@ next:
   description: ''
 ---
 Updates the specified user by setting the values of the parameters passed. Any parameters not provided will be left unchanged.
-[block:parameters]
-{
-  "data": {
-    "0-0": "**email**\n*optional*",
-    "1-0": "**mobile**\n*optional*",
-    "h-0": "Arguments",
-    "0-1": "The end-users email address.",
-    "1-1": "The end-users mobile number."
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
-**Returns**
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **email**
+        *optional*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The end-users email address.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **mobile**\
+        *optional*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The end-users mobile number.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+**Returns**\
 Returns the user object if the update succeeded. Returns an [error](https://basiq.readme.io/v1.0/reference#errors) if update parameters are invalid (e.g. specifying an email address).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "POST /users/{user.id}",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "POST /users/ea3a81 HTTP/1.1\nContent-Type: application/json\nAuthorization: Bearer YOUR_ACCESS_TOKEN\n\n{\n  \"email\": \"gavin@hooli.xyz\"\n}",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+POST /users/{user.id}
+```
 
-[block:code]
+```json Example Request
+POST /users/ea3a81 HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
 {
-  "codes": [
-    {
-      "code": "HTTP/1.1 200 OK\nContent-Type: application/json\n\n{\n  \"type\": \"user\",\n  \"id\": \"ea3a81\",\n  \"email\": \"gavin@hooli.xyz\",\n  \"mobile\": \"+61410888666\",\n  \"links\": {\n    \"self\": \"https://au-api.basiq.io/users/ea3a81\",\n    \"connections\": \"https://au-api.basiq.io/users/ea3a81/connections\"\n  }\n}",
-      "language": "json",
-      "name": "Example Response"
-    }
-  ],
-  "sidebar": true
+  "email": "gavin@hooli.xyz"
 }
-[/block]
+```
+
+```json Example Response
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "type": "user",
+  "id": "ea3a81",
+  "email": "gavin@hooli.xyz",
+  "mobile": "+61410888666",
+  "links": {
+    "self": "https://au-api.basiq.io/users/ea3a81",
+    "connections": "https://au-api.basiq.io/users/ea3a81/connections"
+  }
+}
+```
