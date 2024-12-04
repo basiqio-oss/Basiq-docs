@@ -10,22 +10,9 @@ metadata:
 next:
   description: ''
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1daec9fc906bc8b1f6b83221ef0436c6e37d5124c93d713406e68a369574a6db-Apple_Macbook_Pro.png",
-        "",
-        "Income Verification StarterKit"
-      ],
-      "align": "center",
-      "caption": "Income Verification StarterKit"
-    }
-  ]
-}
-[/block]
-
+<Image alt="Income Verification StarterKit" align="center" src="https://files.readme.io/1daec9fc906bc8b1f6b83221ef0436c6e37d5124c93d713406e68a369574a6db-Apple_Macbook_Pro.png">
+  Income Verification StarterKit
+</Image>
 
 # Overview: What is Income Verification?
 
@@ -43,9 +30,9 @@ POST https://au-api.basiq.io/reports
 
 When making the request, ensure you include the following headers:
 
-- `Accept`: Specify the response format you expect, typically application/json.
-- `Authorization`: Include your `Bearer token` for authentication.
-- `Content-Type`: Indicate that you're sending JSON data with application/json.
+* `Accept`: Specify the response format you expect, typically application/json.
+* `Authorization`: Include your `Bearer token` for authentication.
+* `Content-Type`: Indicate that you're sending JSON data with application/json.
 
 #### Example Request Headers:
 
@@ -63,9 +50,9 @@ When constructing your request, you'll need to prepare a JSON payload that speci
 
 The payload should include:
 
-- `reportType`: The type of report you are generating. For income verification, use `"CON_AFFOR_01"`.
-- `title`: A descriptive title for the report.
-- `filters`: An array of filter objects that specify the parameters for your report.
+* `reportType`: The type of report you are generating. For income verification, use `"CON_AFFOR_01"`.
+* `title`: A descriptive title for the report.
+* `filters`: An array of filter objects that specify the parameters for your report.
 
 ### Example Payload:
 
@@ -142,63 +129,46 @@ A lender needs to verify a user’s income before approving a loan. The user, Jo
 
 John is seeking a loan due to financial pressures. He has four distinct sources of income:
 
-- **Salary:** 
-  - Paid monthly.
-  - Received $6,000 from January 2023 to May 2023.
-  - Promoted in June 2023, increasing salary to $8,000 per month (ongoing).
-- **Rental Income:**
-  - Receives $1,500 fortnightly from a tenant.
-  - Rental income started in mid-June 2023 due to rising interest rates.
-- **Child Support:**
-  - Previously received monthly child support.
-  - Payments stopped after October 2023.
-- **Interest Income:**
-  - Receives monthly interest from a savings account.
+* **Salary:** 
+  * Paid monthly.
+  * Received $6,000 from January 2023 to May 2023.
+  * Promoted in June 2023, increasing salary to $8,000 per month (ongoing).
+* **Rental Income:**
+  * Receives $1,500 fortnightly from a tenant.
+  * Rental income started in mid-June 2023 due to rising interest rates.
+* **Child Support:**
+  * Previously received monthly child support.
+  * Payments stopped after October 2023.
+* **Interest Income:**
+  * Receives monthly interest from a savings account.
 
 ### User-Level Analysis:
 
-- **Average Monthly Income**: John’s average monthly income is $10,061.78.
-- **Income Stability (Past 12 Months)**: John’s income has been secure, received generally on time, with minimal fluctuations.
-- **Income Stability (Past 7 Months)**: Income has remained stable, with consistent payments and minor variability.
-- **Current Salary Stability**: His salary has been stable for the past 7 months, with no recent changes.
-- **Projected Income**: Based on historical income, three stable income streams are expected to continue, with John projected to earn $11,145 next month.
+* **Average Monthly Income**: John’s average monthly income is $10,061.78.
+* **Income Stability (Past 12 Months)**: John’s income has been secure, received generally on time, with minimal fluctuations.
+* **Income Stability (Past 7 Months)**: Income has remained stable, with consistent payments and minor variability.
+* **Current Salary Stability**: His salary has been stable for the past 7 months, with no recent changes.
+* **Projected Income**: Based on historical income, three stable income streams are expected to continue, with John projected to earn $11,145 next month.
 
 ### Metrics:
 
 Below the analysis, display key metric data points like:
 
-- Total monthly income.
-- Source-specific income history.
-- Projections for next month's income.
+* Total monthly income.
+* Source-specific income history.
+* Projections for next month's income.
 
 This can be seen in this example below: 
 
-[block:html]
-{
-  "html": "<!--ARCADE EMBED START--><div style=\"position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/575cLC6XcgySwdSrgYx7?embed&embed_mobile=tab&embed_desktop=inline\" title=\"BASIQ Income Verification\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;\" ></iframe></div><!--ARCADE EMBED END-->"
-}
-[/block]
-
+<HTMLBlock>{`
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/575cLC6XcgySwdSrgYx7?embed&embed_mobile=tab&embed_desktop=inline" title="BASIQ Income Verification" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+`}</HTMLBlock>
 
 ### Group-Level Analysis:
 
 For each income source (salary, rent, child support, interest), list detailed group results in a drill-down format. Each section should be expandable for further exploration of the data, allowing the developer to access more granular insights on each income stream.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/ea5952eb9c8bec04097926480a1f10dde7b2de07468aa9d0cddceddc78692766-groups.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/ea5952eb9c8bec04097926480a1f10dde7b2de07468aa9d0cddceddc78692766-groups.png" />
 
 ## Income Verification Starter Kit
 
@@ -206,16 +176,16 @@ The **[Income Verification Starter Kit](https://iv-demo.basiq.io/)** automates t
 
 ### Process Flow:
 
-- **User Bank Account Connection**: Users securely connect their bank accounts.
-- **Generate Income Report**: After connection, the [Reports API](https://api.basiq.io/reference/createreport) will be used to generate a detailed report of the user's income.
-- **Analysis Metrics**: 
-  - The generated report will automatically perform the **user-level analysis**:
-    - **Average Monthly Income** calculation.
-    - **Income Stability** for the past 12 months and 7 months.
-    - **Current Salary Stability** and projected future income.
-  - The report will also generate **group-level analysis**:
-    - Income breakdown by source (salary, rental, child support, interest).
-    - Drill-down functionality for each income source, allowing further exploration.
+* **User Bank Account Connection**: Users securely connect their bank accounts.
+* **Generate Income Report**: After connection, the [Reports API](https://api.basiq.io/reference/createreport) will be used to generate a detailed report of the user's income.
+* **Analysis Metrics**: 
+  * The generated report will automatically perform the **user-level analysis**:
+    * **Average Monthly Income** calculation.
+    * **Income Stability** for the past 12 months and 7 months.
+    * **Current Salary Stability** and projected future income.
+  * The report will also generate **group-level analysis**:
+    * Income breakdown by source (salary, rental, child support, interest).
+    * Drill-down functionality for each income source, allowing further exploration.
 
 ### Try It Out:
 
@@ -223,34 +193,20 @@ Visit our [demo](https://iv-demo.basiq.io/) to connect a sample bank account and
 
 ## Demo Application Performance
 
-Our **[Income Verification Demo\*\*](https://iv-demo.basiq.io/) is optimised to ensure a high-quality user experience. Below are the results from a **Lighthouse audit\*\* conducted on Google Chrome, reflecting top-tier performance in several key areas:
+Our **[Income Verification Demo\*\*](https://iv-demo.basiq.io/) is optimised to ensure a high-quality user experience. Below are the results from a** Lighthouse audit\*\* conducted on Google Chrome, reflecting top-tier performance in several key areas:
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/01e43f0a88f01bc4d3a3ae99f797dca52656e1457f913e92bba55b3c24bbf733-Screenshot_2024-09-19_at_11.16.42_AM.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Image align="center" src="https://files.readme.io/01e43f0a88f01bc4d3a3ae99f797dca52656e1457f913e92bba55b3c24bbf733-Screenshot_2024-09-19_at_11.16.42_AM.png" />
 
-
-- Performance: 100
-- Accessibility: 95
-- Best Practices: 100
-- SEO: 100
+* Performance: 100
+* Accessibility: 95
+* Best Practices: 100
+* SEO: 100
 
 These scores demonstrate the application’s focus on speed, accessibility, and adherence to web standards, ensuring a seamless experience across devices.
 
 > 👍 Quick Links
-> 
-> - [Report API](https://api.basiq.io/reference/createreport)
-> - Income Verification Starter Kit [Demo](https://iv-demo.basiq.io/) 
+>
+> * [Report API](https://api.basiq.io/reference/createreport)
+> * Income Verification Starter Kit [Demo](https://iv-demo.basiq.io/)
 
 If you have any questions or need assistance, feel free to reach out to our support team.
