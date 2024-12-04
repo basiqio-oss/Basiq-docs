@@ -11,61 +11,58 @@ next:
   description: ''
 ---
 Permanently deletes a statement. 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Arguments",
-    "0-0": "**id**\n*string, required*",
-    "0-1": "The identifier of the statement to be deleted."
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
 
-[block:callout]
-{
-  "type": "danger",
-  "body": "Note that this action cannot be undone."
-}
-[/block]
-**Returns**
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **id**
+        *string, required*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The identifier of the statement to be deleted.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> ❗️ Note that this action cannot be undone.
+
+**Returns**\
 Returns an empty body if the delete succeeded. Otherwise, this call returns an error in the event of a failure.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "DELETE /users/ea3a81/statement/{statement.id}",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "DELETE /users/ea3a81/statements/1a73e HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+DELETE /users/ea3a81/statement/{statement.id}
+```
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "HTTP/1.1 204 No Content",
-      "language": "json",
-      "name": "Example Response"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Example Request
+DELETE /users/ea3a81/statements/1a73e HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+```json Example Response
+HTTP/1.1 204 No Content
+```
