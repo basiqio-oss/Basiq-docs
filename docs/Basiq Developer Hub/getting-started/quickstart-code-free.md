@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-<img align="left" src="https://files.readme.io/1a04ca3-Group_1496.svg" />
+<Image align="left" src="https://files.readme.io/c77a7fc26cf886ab082bdf9d08e341c079ba854d991ed7304655738c14b91d4f-1a04ca3-Group_1496.svg" />
 
 <br />
 
