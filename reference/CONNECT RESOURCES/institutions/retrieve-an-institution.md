@@ -11,55 +11,70 @@ next:
   description: ''
 ---
 Retrieves the details of an existing institution. You need only supply the institutions unique identifier.
-[block:parameters]
-{
-  "data": {
-    "0-0": "**id**\n*string, required*",
-    "0-1": "The identifier of the institution to be retrieved.",
-    "h-0": "Arguments"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **id**
+        *string, required*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The identifier of the institution to be retrieved.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 **Returns**
 
 Returns an institution if a valid ID was provided. Returns an [error](https://basiq.readme.io/v0.9/reference#errors) otherwise.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /institutions/{institution.id}",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /institutions/AU00000 HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+GET /institutions/{institution.id}
+```
 
-[block:code]
+```json Example Request
+GET /institutions/AU00000 HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+```json Example Response
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
-  "codes": [
-    {
-      "code": "HTTP/1.1 200 OK\nContent-Type: application/json\n\n{\n  \"type\": \"institution\",\n  \"id\": \"AU00000\",\n  \"name\": \"Basiq Test Bank\",\n  \"shortName\": \"Basiq Test Bank\",\n  \"institutionType\": \"Test Bank\",\n  \"country\": \"Australia\",\n  \"serviceName\": \"Personal Online Banking\",\n  \"serviceType\": \"Test\",\n  \"loginIdCaption\": \"Login\",\n  \"passwordCaption\": \"Password\",\n  \"logo\": {\n    \"type\": \"image\",\n    \"links\": {\n      \"self\": \"https://s3-ap-southeast-2.amazonaws.com/basiq-institutions/AU00000.png\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://au-api.basiq.io/institutions/AU00000\"\n  }\n}",
-      "language": "json",
-      "name": "Example Response"
+  "type": "institution",
+  "id": "AU00000",
+  "name": "Basiq Test Bank",
+  "shortName": "Basiq Test Bank",
+  "institutionType": "Test Bank",
+  "country": "Australia",
+  "serviceName": "Personal Online Banking",
+  "serviceType": "Test",
+  "loginIdCaption": "Login",
+  "passwordCaption": "Password",
+  "logo": {
+    "type": "image",
+    "links": {
+      "self": "https://s3-ap-southeast-2.amazonaws.com/basiq-institutions/AU00000.png"
     }
-  ],
-  "sidebar": true
+  },
+  "links": {
+    "self": "https://au-api.basiq.io/institutions/AU00000"
+  }
 }
-[/block]
+```
