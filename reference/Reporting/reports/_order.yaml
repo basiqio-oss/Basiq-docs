@@ -3,3 +3,4 @@
 - get_reports-id
 - delete_reports-id
 - retrieve-report-transactions
+- get_reports-types
