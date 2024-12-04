@@ -10,56 +10,28 @@ metadata:
 next:
   description: ''
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7f8dc12-Group_5_1.svg",
-        "Group 5 (1).svg",
-        1037
-      ],
-      "align": "center",
-      "sizing": "60% ",
-      "caption": "Quickstart"
-    }
-  ]
-}
-[/block]
-
+<Image title="Group 5 (1).svg" alt={1037} align="center" width="60% " src="https://files.readme.io/7f8dc12-Group_5_1.svg">
+  Quickstart
+</Image>
 
  
 
 ## STEP 1: Register
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/1433553-263205a-Group_7_1.svg",
-        "",
-        ""
-      ],
-      "align": "left"
-    }
-  ]
-}
-[/block]
-
+<Image align="left" src="https://files.readme.io/1433553-263205a-Group_7_1.svg" />
 
 <br/><br/>
 
 To begin, register your application via our [dashboard](https://dashboard.basiq.io/) and configure it accordingly. Before proceeding to create a new API key, ensure your application settings are in order.
 
 > 📘 API Keys
-> 
+>
 > You can create as many API keys as you want, which allows you to use keys across different applications and environments. It’s a good idea to give each API key a meaningful name in order to differentiate between them.
 
 > 🚧 Keep your key secret
-> 
+>
 > Make sure you copy and save the key we give you straight away, as it will only be exposed it in full once. Your API keys carry many privileges, so be sure to keep them secret! 
-> 
+>
 > Do not share your API keys in publicly accessible areas such GitHub, client-side code, etc
 
 ## STEP 2: Authenticate
@@ -67,7 +39,7 @@ To begin, register your application via our [dashboard](https://dashboard.basiq.
 Exchange your newly acquired API key for an access token. This token enables secure interactions with the Basiq API and expires every 60 minutes. We recommend storing it globally and refreshing it 2-3 times per hour.
 
 > 📘 Scope
-> 
+>
 > The scope you supply will depend on the action you are performing, see the [authentication section](https://api.basiq.io/reference/authentication) for further detail. For this quick start we will be using `SERVER_ACCESS`.
 
 ```javascript STEP 2: Authenticate
@@ -145,7 +117,7 @@ curl --location --request POST 'https://au-api.basiq.io/users' \
   }'
 ```
 
-#### **Congratulations! ** You have registered your application, and made your first, authenticated call to Basiq to create a user!
+#### **Congratulations!** You have registered your application, and made your first, authenticated call to Basiq to create a user!
 
 ## STEP 4: Consent & Connect via the Consent UI
 
@@ -250,7 +222,7 @@ curl --location --request GET 'https://au-api.basiq.io/users/a920c00f-df79-4a12-
 
 The response will contain an array of Account objects, containing specific account details such as the account number, balance and available funds.
 
-#### **Congratulations! ** You have now created a user consent, connected a financial institution, and retrieved their financial data.
+#### **Congratulations!** You have now created a user consent, connected a financial institution, and retrieved their financial data.
 
  
 
