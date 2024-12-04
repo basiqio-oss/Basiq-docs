@@ -16,9 +16,9 @@ next:
 
 We are introducing new events and webhooks that will allow better usage of the Basiq platform these are:
 
-- Transactions updated: This event will be triggered whenever there are transaction changes for a user connection. 
-- Account updated: This event will be triggered whenever there are changes on the account fields excluding balance changes (there will be future events addressing balance changes)
-- Connection invalidated: This event will be triggered whenever a connection has been invalidated due to a reason that the user can action. (e.g. password changed, MFA...etc)
+* Transactions updated: This event will be triggered whenever there are transaction changes for a user connection. 
+* Account updated: This event will be triggered whenever there are changes on the account fields excluding balance changes (there will be future events addressing balance changes)
+* Connection invalidated: This event will be triggered whenever a connection has been invalidated due to a reason that the user can action. (e.g. password changed, MFA...etc)
 
 ## Transactions updated event
 
