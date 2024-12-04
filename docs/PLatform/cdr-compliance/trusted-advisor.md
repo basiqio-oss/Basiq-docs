@@ -26,28 +26,28 @@ For existing consents, Trusted Advisor details are read from the Consent object.
 
 Integration with the API for Organisation level TA access works in the same way as a standard integration. However, the Consent UI will render the organisation being named as a Trusted Advisor. The Trusted Advisor information is obtained from the provided token.
 
-Token Specification for Organisation TA Access  
+Token Specification for Organisation TA Access\
 The Trusted Advisor (TA) is passed to the consent UI on launch via the Client Token. The following claims should be added to the token based on the JWT Specs:
 
-- **orgName**: The name of the Trusted Advisor organisation (e.g., Accountants XYZ Pty Ltd).
-- **orgRefID**: The reference ID of the organisation (e.g., 0123456789).
-- **orgRefType**: The type of reference ID (no specific validation; can be ABN, ACN, or any identifier)
-- **orgType**: The type of the Trusted Advisor organisation (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
-- **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
+* **orgName**: The name of the Trusted Advisor organisation (e.g., Accountants XYZ Pty Ltd).
+* **orgRefID**: The reference ID of the organisation (e.g., 0123456789).
+* **orgRefType**: The type of reference ID (no specific validation; can be ABN, ACN, or any identifier)
+* **orgType**: The type of the Trusted Advisor organisation (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
+* **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
 
 ## Individual TA Access
 
 Suited to organisations that fit the definition of a Trusted Advisor, but their business model does not allow organisation-level access (e.g., mortgage aggregator firms). The consent process is identical for both the individual Trusted Advisor access model and the Organization TA access model. However, in the individual access model, the Trusted Advisor details pertain to an individual, such as: 
 
-- **orgName**: The name of the Trusted Advisor (e.g., John Doe).
-- **orgRefID**: The reference ID of the Trusted advisor (e.g., 0123456789).
-- **orgRefType**: The type of reference ID (no specific validation; can be ABN, ACN, or any identifier)
-- **orgType**: The type of the Trusted Advisor Individual (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
-- **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
+* **orgName**: The name of the Trusted Advisor (e.g., John Doe).
+* **orgRefID**: The reference ID of the Trusted advisor (e.g., 0123456789).
+* **orgRefType**: The type of reference ID (no specific validation; can be ABN, ACN, or any identifier)
+* **orgType**: The type of the Trusted Advisor Individual (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
+* **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
 
 # Token Endpoint Extension
 
-In order to support the Trusted Advisor model for partners, Basiq has extended the POST /token endpoint for requests with the scope "CLIENT_ACCESS." The new organisation fields should be included in the request body as follows:
+In order to support the Trusted Advisor model for partners, Basiq has extended the POST /token endpoint for requests with the scope "CLIENT\_ACCESS." The new organisation fields should be included in the request body as follows:
 
 ```yaml body
 {
@@ -61,7 +61,7 @@ In order to support the Trusted Advisor model for partners, Basiq has extended t
 }
 ```
 
-> **Note: ** `orgRefType` can accept any string without specific validation. **abnAcn** is optional but must be a valid ABN/ACN if included.
+> **Note:** `orgRefType` can accept any string without specific validation. **abnAcn** is optional but must be a valid ABN/ACN if included.
 
 The supported values for the orgType field are `Accountant`, `Financial Broker`, `Financial Advisor`, `Legal Professional`, `Tax Agent`, and `Financial Counselling Agency`.
 
@@ -69,13 +69,11 @@ You can use this token to initiate your consent UI and resume the operation. If 
 
 ## ConsentUI - Trusted Adviser
 
-- Updated the appearance of the TA banner and popup.
-- Added a TA disclaimer message above the consent confirmation button.
+* Updated the appearance of the TA banner and popup.
+* Added a TA disclaimer message above the consent confirmation button.
 
 ### Demo
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/5FZJ6bqKc5r5aqotc60W?embed\" title=\"Trusted Advisor Model Demo\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/5FZJ6bqKc5r5aqotc60W?embed" title="Trusted Advisor Model Demo" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
