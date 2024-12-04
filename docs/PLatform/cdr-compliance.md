@@ -14,26 +14,9 @@ next:
 
 Australia has commenced a new program called **Consumer Data Right (CDR)** that provides a framework for the sharing of data held with specific institutions. The CDR program is an industry wide initiative which will be rolled out to Banking, Utilities, Telecommunication and other industries over time. The first industry that CDR is being rolled out-to is the Banking sector, with an initiative called Open Banking. Open Banking provides a series of API services that **Accredited Data Recipients (ADR)** i.e. Fintechs can consumer from **Data Holders (DH)** i.e. banks.
 
-  
+<Image align="center" width="smart" src="https://files.readme.io/bbddefc-Group_2590_1.svg" />
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bbddefc-Group_2590_1.svg",
-        "Group 2590 (1).svg",
-        510
-      ],
-      "align": "center",
-      "sizing": "smart"
-    }
-  ]
-}
-[/block]
-
-
-   
+ \
 The CDR framework ultimately is a set of rules and regulations that outline the controls and requirements around consent management and the handling of data. CDR at present only deals with the reading of data, and has no support for write access i.e. the ability for actions to be executed with these institutions.  
 
 For more information regarding the latest CDR rules see [here](https://www.legislation.gov.au/Series/F2020L00094).
@@ -56,7 +39,7 @@ For a list of exemptions from CDR rules for Data Holders, please refer to the AC
 
 ## Enabling your application for Open Banking
 
-_Being enabled for Open Banking is optional and is not required in order to use API v3.0, however partners must be using v3.0 in order to be enabled for Open Banking._
+*Being enabled for Open Banking is optional and is not required in order to use API v3.0, however partners must be using v3.0 in order to be enabled for Open Banking.*
 
 Enablement for Open Banking will be done at an application level. Partners wishing to enable themselves for Open Banking will need to reach out to the customer success who will assist them in registering the following CDR details:
 
@@ -76,6 +59,6 @@ Due to the strictly regulated nature of the CDR, Basiq is responsible for ensuri
 
 Read more about the sponsorship models [here](https://api.basiq.io/docs/supported-access-models).
 
-> 📘 Note 
-> 
+> 📘 Note
+>
 > Be aware that some brands, account types, or specific data fields may be exempt from the CDR requirements. For detailed information on these exemptions, refer to the [ACCC Consumer Data Right Exemptions Register](https://www.accc.gov.au/public-registers/consumer-data-right-exemptions-register).
