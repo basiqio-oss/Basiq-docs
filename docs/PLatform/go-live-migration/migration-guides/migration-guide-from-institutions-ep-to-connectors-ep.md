@@ -20,12 +20,12 @@ First, let's understand the key differences in the schema of both endpoints:
 
 ### Institutions EP Schema (version 2.x):
 
-Primarily focused on financial institutions like banks and credit unions.  
+Primarily focused on financial institutions like banks and credit unions.\
 Attributes include `type`, `id`, `name`, `type`, `country`, `authorization`, and several others.
 
 ### Connectors EP Schema (versions 2.x and 3.x):
 
-More comprehensive and detailed, offering extended functionality.  
+More comprehensive and detailed, offering extended functionality.\
 Includes attributes like `authorization`, `id`, `institution`, `links`, `method`, `scopes`, `stage`, `stats`, `status`, and `type`.
 
 ## Updated Usage of the institution Field
@@ -54,43 +54,43 @@ The `institution` field in the `/accounts`, `/transactions`, and `/connections` 
 
 ### Mapping Institution Attributes to Connector Attributes:
 
-- **type, id, name, country:** These attributes remain largely the same. Ensure they are mapped directly.
-- **authorization:** This has become more detailed in Connectors EP. You'll need to align your current authorization mechanism with the new format.
-- **logo, links, stats: **These attributes have similar functionalities but with extended capabilities in Connectors EP. Pay special attention to their new structures.
-- For `/accounts`, `/transactions`, and `/connections` EPs: Update the institution field links to point to the Connectors EP. Ensure that these links accurately reflect the corresponding method in the Connectors EP.
+* **type, id, name, country:** These attributes remain largely the same. Ensure they are mapped directly.
+* **authorization:** This has become more detailed in Connectors EP. You'll need to align your current authorization mechanism with the new format.
+* **logo, links, stats:** These attributes have similar functionalities but with extended capabilities in Connectors EP. Pay special attention to their new structures.
+* For `/accounts`, `/transactions`, and `/connections` EPs: Update the institution field links to point to the Connectors EP. Ensure that these links accurately reflect the corresponding method in the Connectors EP.
 
 ### Updating Authorization Mechanisms:
 
-- If you are using `user`, `user-token`, `user-mfa`, or `user-mfa-intermittent` in `Institutions` EP, review the new authorization object structure in Connectors EP. Adjust your code to accommodate the changes.
+* If you are using `user`, `user-token`, `user-mfa`, or `user-mfa-intermittent` in `Institutions` EP, review the new authorization object structure in Connectors EP. Adjust your code to accommodate the changes.
 
 ### Handling New and Modified Fields:
 
-- Fields like `method`, `scopes`, `stage`, and `status` are new in Connectors EP. Understand their purpose and integrate them into your system as needed.
-- Pay attention to `stats` and `institution` objects, as they have undergone significant changes.
+* Fields like `method`, `scopes`, `stage`, and `status` are new in Connectors EP. Understand their purpose and integrate them into your system as needed.
+* Pay attention to `stats` and `institution` objects, as they have undergone significant changes.
 
 ### Adapting to Enhanced Security Features:
 
-- Connectors EP may have enhanced security features (like MFA challenges). Ensure your application can handle these.
+* Connectors EP may have enhanced security features (like MFA challenges). Ensure your application can handle these.
 
 ### Testing Your Implementation:
 
-- Thoroughly test your updated application against the Connectors EP.
-- Verify that all data is correctly mapped and all functionalities are working as expected.
+* Thoroughly test your updated application against the Connectors EP.
+* Verify that all data is correctly mapped and all functionalities are working as expected.
 
 ### Migration of Existing Data:
 
-- Migrate your existing data to align with the Connectors EP schema.
-- This may involve transforming data formats and values.
+* Migrate your existing data to align with the Connectors EP schema.
+* This may involve transforming data formats and values.
 
 ### Final Validation and Go-Live:
 
-After successful testing, validate the entire process with a subset of real users if possible.  
+After successful testing, validate the entire process with a subset of real users if possible.\
 Once validated, you can fully transition to using Connectors EP.
 
 ### Breaking Changes and Special Attention
 
-- **Breaking Change in Authorization:** The new `authorization` structure in Connectors EP is a significant change. Ensure your system's authentication and authorization mechanisms are compatible with this new structure.
-- **Attention to New Fields:** Fields like `method` and `scopes` are new in Connectors EP. Understand their implications for your application and integrate them accordingly.
+* **Breaking Change in Authorization:** The new `authorization` structure in Connectors EP is a significant change. Ensure your system's authentication and authorization mechanisms are compatible with this new structure.
+* **Attention to New Fields:** Fields like `method` and `scopes` are new in Connectors EP. Understand their implications for your application and integrate them accordingly.
 
 # Conclusion
 
