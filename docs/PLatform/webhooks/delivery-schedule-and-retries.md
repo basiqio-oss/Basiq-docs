@@ -45,13 +45,11 @@ Each webhook message follows a specific delivery schedule, which includes multip
 # Navigating Webhook Failures in the Endgame and Beyond:
 
 After all retry attempts have been exhausted, the webhook endpoint will be subject to removal or disabling, depending on the specific circumstances. This ensures that continuous unsuccessful delivery attempts do not persist indefinitely.
-[block:callout]
-{
-  "type": "info",
-  "body": "**Note:** Once an endpoint is removed or its delivery is disabled, further delivery attempts to that endpoint will be automatically disabled as well. This ensures that no additional delivery attempts will be made after the endpoint has been intentionally removed or disabled.",
-  "title": ""
-}
-[/block]
+
+> 📘
+>
+> **Note:** Once an endpoint is removed or its delivery is disabled, further delivery attempts to that endpoint will be automatically disabled as well. This ensures that no additional delivery attempts will be made after the endpoint has been intentionally removed or disabled.
+
 # Conclusion:
 
 Basiq's webhook delivery system employs a reliable retry schedule with exponential backoff to maximize the chances of successful message delivery. By following this schedule, we aim to provide a robust integration experience and minimize any potential disruptions in the flow of data between Basiq and your applications.
