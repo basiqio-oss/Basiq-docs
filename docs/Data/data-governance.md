@@ -32,8 +32,8 @@ Basiq will monitor for triggered actions in these consent policies. Partners wil
 
 One of the primary requirements concerning the management of consent is the handling and management of data. Users have the ability to define for how long data can be accessed, retained and what happens to the data once the consent is no longer valid. To ensure that these rules are implemented according to the consent requirements, the Basiq platform supports the following capability:
 
-- Auto expiry of consent. Upon the expiry or revocation of user consent, Basiq ensures the swift and secure deletion of all data associated with the user's account.
+* Auto expiry of consent. Upon the expiry or revocation of user consent, Basiq ensures the swift and secure deletion of all data associated with the user's account.
 
-- Deleting Data. This is the process of deleting data that has been collected from the financial institutions (external sources).
+* Deleting Data. This is the process of deleting data that has been collected from the financial institutions (external sources).
 
 > 📘 The above events may trigger actions in multiple places. E.g. By Basiq and partner application.
