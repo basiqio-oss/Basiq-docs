@@ -13,33 +13,50 @@ next:
 Use this to create a new MFA challenge response to job step: `mfa-challenge`
 
 > 🚧 Authorization
-> 
+>
 > Ensure that you generate an authentication token with 
-> 
-> - `scope= CLIENT_ACCESS` and 
-> - `basiq-version = 2.1` 
-> 
+>
+> * `scope= CLIENT_ACCESS` and 
+> * `basiq-version = 2.1` 
+>
 > to create this resource
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Arguments",
-    "h-1": "",
-    "0-0": "**mfa-response**  \n_array of strings_",
-    "0-1": "One time password or answer to a security question/s e.g.  [\"1234\"]",
-    "1-0": "",
-    "1-1": ""
-  },
-  "cols": 2,
-  "rows": 2,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
 
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **mfa-response**
+        *array of strings*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        One time password or answer to a security question/s e.g.  ["1234"]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ```json Definition
 POST /jobs/{job.id}/mfa
