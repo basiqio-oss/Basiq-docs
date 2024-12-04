@@ -11,57 +11,237 @@ next:
   description: ''
 ---
 The institution object represents a financial institution (such as a bank, credit union etc). You can use this object to obtain a list of supported institutions or to get general information about each institution.
-[block:parameters]
-{
-  "data": {
-    "h-0": "Attributes",
-    "0-0": "**type**\n*string, readonly*",
-    "0-1": "Value is \"institution\".",
-    "1-0": "**id**\n*string, readonly*",
-    "1-1": "A string that uniquely identifies the institution.",
-    "2-0": "**name**\n*string, readonly*",
-    "2-1": "The full name of the institution.",
-    "3-0": "**shortName**\n*string, readonly*",
-    "3-1": "Short name of institution.",
-    "4-0": "**institutionType**\n*enum, readonly*",
-    "4-1": "An enum identifying the institution type. Possible values include:\n- Bank\n- Bank (Foreign)\n- Test Bank\n- Credit Union\n- Financial Services",
-    "5-0": "**country**\n*string, readonly*",
-    "5-1": "Country in which this institution operates. English short name used by [ISO 3166/MA](https://www.iso.org/iso-3166-country-codes.html).",
-    "6-0": "**serviceName**\n*string, readonly*",
-    "6-1": "Name of the supported service (as defined by the institution).",
-    "7-0": "**serviceType**\n*enum, readonly*",
-    "7-1": "An enum identifying the service type. Possible values include:\n- Personal Banking\n- Business Banking\n- Card Access\n- Test",
-    "8-0": "**loginIdCaption**\n*string, readonly*",
-    "8-1": "Caption used by institution to request login id.",
-    "9-0": "**secondaryLoginIdCaption**\n*string, readonly*",
-    "9-1": "Caption used by institution to request secondary login id.",
-    "10-0": "**passwordCaption**\n*string, readonly*",
-    "10-1": "Caption used by institution to request password.",
-    "11-0": "**securityCodeCaption**\n*string, readonly*",
-    "11-1": "Caption used by institution to request security code.",
-    "12-0": "**colors**\n*object, readonly*",
-    "12-1": "Object that contains institution colors (e.g. primary).",
-    "13-0": "**tier**\n*string, readonly*",
-    "13-1": "Institution's tier - a representation of it's business and market share in the relevant country/region. Values range from 1 to 4. Tier 1 are Institutions with the highest impact on the market. For example, CBA is a Tier 1 Bank, Suncorp is a Tier 2 Bank, etc.",
-    "14-0": "**logo**\n*object, readonly*",
-    "14-1": "Object that contains main colors, and URLs of square and full institution logo image, returned in SVG format.",
-    "15-0": "**links**\n*object, read-only*",
-    "15-1": "A links object containing the following members:\n- `self` link to the requested institution"
-  },
-  "cols": 2,
-  "rows": 16
-}
-[/block]
 
-[block:code]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Attributes
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **type**
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Value is "institution".
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **id**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        A string that uniquely identifies the institution.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **name**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The full name of the institution.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **shortName**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Short name of institution.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **institutionType**\
+        *enum, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        An enum identifying the institution type. Possible values include:
+
+        * Bank
+        * Bank (Foreign)
+        * Test Bank
+        * Credit Union
+        * Financial Services
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **country**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Country in which this institution operates. English short name used by [ISO 3166/MA](https://www.iso.org/iso-3166-country-codes.html).
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **serviceName**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Name of the supported service (as defined by the institution).
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **serviceType**\
+        *enum, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        An enum identifying the service type. Possible values include:
+
+        * Personal Banking
+        * Business Banking
+        * Card Access
+        * Test
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **loginIdCaption**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Caption used by institution to request login id.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **secondaryLoginIdCaption**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Caption used by institution to request secondary login id.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **passwordCaption**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Caption used by institution to request password.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **securityCodeCaption**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Caption used by institution to request security code.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **colors**\
+        *object, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Object that contains institution colors (e.g. primary).
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **tier**\
+        *string, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Institution's tier - a representation of it's business and market share in the relevant country/region. Values range from 1 to 4. Tier 1 are Institutions with the highest impact on the market. For example, CBA is a Tier 1 Bank, Suncorp is a Tier 2 Bank, etc.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **logo**\
+        *object, readonly*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Object that contains main colors, and URLs of square and full institution logo image, returned in SVG format.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **links**\
+        *object, read-only*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        A links object containing the following members:
+
+        * `self` link to the requested institution
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+```json Example Institution Object
 {
-  "codes": [
-    {
-      "code": "{\n    \"type\": \"institution\",\n    \"id\": \"AU00000\",\n    \"name\": \"Hooli Bank\",\n    \"shortName\": \"Hooli\",\n    \"institutionType\": \"Test Bank\",\n    \"country\": \"Australia\",\n    \"serviceName\": \"Personal Online Banking\",\n    \"serviceType\": \"Test\",\n    \"loginIdCaption\": \"Login\",\n    \"passwordCaption\": \"Password\",\n    \"tier\": \"4\",\n    \"logo\": {\n        \"type\": \"image\",\n        \"colors\": {\n            \"primary\": \"#000000\"\n        },\n        \"links\": {\n            \"square\": \"https://s3-ap-southeast-2.amazonaws.com/basiq-institutions/AU00000.svg\",\n            \"full\": \"https://s3-ap-southeast-2.amazonaws.com/basiq-institutions/AU00000-full.svg\"\n        }\n    },\n    \"links\": {\n        \"self\": \"https://au-api.basiq.io/institutions/AU00000\"\n    }\n}",
-      "language": "json",
-      "name": "Example Institution Object"
+    "type": "institution",
+    "id": "AU00000",
+    "name": "Hooli Bank",
+    "shortName": "Hooli",
+    "institutionType": "Test Bank",
+    "country": "Australia",
+    "serviceName": "Personal Online Banking",
+    "serviceType": "Test",
+    "loginIdCaption": "Login",
+    "passwordCaption": "Password",
+    "tier": "4",
+    "logo": {
+        "type": "image",
+        "colors": {
+            "primary": "#000000"
+        },
+        "links": {
+            "square": "https://s3-ap-southeast-2.amazonaws.com/basiq-institutions/AU00000.svg",
+            "full": "https://s3-ap-southeast-2.amazonaws.com/basiq-institutions/AU00000-full.svg"
+        }
+    },
+    "links": {
+        "self": "https://au-api.basiq.io/institutions/AU00000"
     }
-  ],
-  "sidebar": true
 }
-[/block]
+```
