@@ -13,61 +13,113 @@ next:
 Use this to retrieve details of a specific connection. This request will return back a connection object with most of the fields that were submitted when the connection was first created. The connection object will also return a list of URLs to the associated account, transaction and institution objects.
 
 The status property of the connection object identifies the state of the connection. Use this to work out if the connection is still valid, or whether to take further action (e.g. if the connection credentials are no longer valid you may ask the user to re-submit their details).
-[block:parameters]
-{
-  "data": {
-    "0-0": "**id**\n*required*",
-    "0-1": "The identifier of the connection to be retrieved.",
-    "h-0": "Arguments"
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
 
-[block:callout]
-{
-  "type": "info",
-  "body": "Note that due to security the loginId, password, securityCode are never returned."
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **id**
+        *required*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The identifier of the connection to be retrieved.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> 📘 Note that due to security the loginId, password, securityCode are never returned.
+
 **Returns**
 
 Returns a [connection](https://basiq.readme.io/v0.9/reference#connections) if a valid connection ID was provided. Returns an [error](https://basiq.readme.io/v0.9/reference#errors) otherwise.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /connections/{connection.id}",
-      "language": "json"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /connections/1 HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json
+GET /connections/{connection.id}
+```
 
-[block:code]
+```json Example Request
+GET /connections/1 HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+```json Example Response
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
-  "codes": [
-    {
-      "code": "HTTP/1.1 200 OK\nContent-Type: application/json\n\n{\n  \"type\": \"connection\",\n  \"id\": \"1\",\n  \"externalUserId\": \"721832\",\n  \"status\": \"active\",\n  \"lastUsed\": \"2017-09-28T11:15:09.756Z\",\n  \"institution\": {\n    \"type\": \"institution\",\n    \"id\": \"AU00000\",\n    \"links\": {\n      \"self\": \"https://au-api.basiq.io/institutions/AU00000\"\n    }\n  },\n  \"accounts\": {\n    \"type\": \"list\",\n    \"data\": [\n      {\n        \"type\": \"account\",\n        \"id\": \"1\",\n        \"accountNo\": \"105148119695\",\n        \"name\": \"Business account\",\n        \"currency\": \"AUD\",\n        \"balance\": \"10.00\",\n        \"availableFunds\": \"0.00\",\n        \"lastUpdated\": \"2017-09-28T11:15:09.756Z\",\n        \"class\": {\n            \"type\": \"savings\",\n            \"product\": \"Saver\"\n        },\n        \"status\": \"available\",\n        \"links\": {\n          \"self\": \"https://au-api.basiq.io/connections/1/accounts/1\",\n          \"transactions\": \"https://au-api.basiq.io/connections/1/transactions?filter[account.id]=1\"\n        }\n      },\n      {\n        \"type\": \"account\",\n        \"id\": \"2\",\n        \"accountNo\": \"533705985043\",\n        \"name\": \"Choice Account\",\n        \"currency\": \"AUD\",\n        \"balance\": \"-10.09\",\n        \"availableFunds\": \"0.00\",\n        \"lastUpdated\": \"2017-09-28T11:15:09.756Z\",\n        \"class\": {\n            \"type\": \"savings\",\n            \"product\": \"Saver\"\n        },\n        \"status\": \"available\",\n        \"links\": {\n          \"self\": \"https://au-api.basiq.io/connections/1/accounts/2\",\n          \"transactions\": \"https://au-api.basiq.io/connections/1/transactions?filter[account.id]=2\"\n        }\n      }\n    ]\n  },\n  \"links\": {\n    \"self\": \"https://au-api.basiq.io/connections/1\",\n    \"accounts\": \"https://au-api.basiq.io/connections/1/accounts\",\n    \"transactions\": \"https://au-api.basiq.io/connections/1/transactions\"\n  }\n}",
-      "language": "json",
-      "name": "Example Response"
+  "type": "connection",
+  "id": "1",
+  "externalUserId": "721832",
+  "status": "active",
+  "lastUsed": "2017-09-28T11:15:09.756Z",
+  "institution": {
+    "type": "institution",
+    "id": "AU00000",
+    "links": {
+      "self": "https://au-api.basiq.io/institutions/AU00000"
     }
-  ],
-  "sidebar": true
+  },
+  "accounts": {
+    "type": "list",
+    "data": [
+      {
+        "type": "account",
+        "id": "1",
+        "accountNo": "105148119695",
+        "name": "Business account",
+        "currency": "AUD",
+        "balance": "10.00",
+        "availableFunds": "0.00",
+        "lastUpdated": "2017-09-28T11:15:09.756Z",
+        "class": {
+            "type": "savings",
+            "product": "Saver"
+        },
+        "status": "available",
+        "links": {
+          "self": "https://au-api.basiq.io/connections/1/accounts/1",
+          "transactions": "https://au-api.basiq.io/connections/1/transactions?filter[account.id]=1"
+        }
+      },
+      {
+        "type": "account",
+        "id": "2",
+        "accountNo": "533705985043",
+        "name": "Choice Account",
+        "currency": "AUD",
+        "balance": "-10.09",
+        "availableFunds": "0.00",
+        "lastUpdated": "2017-09-28T11:15:09.756Z",
+        "class": {
+            "type": "savings",
+            "product": "Saver"
+        },
+        "status": "available",
+        "links": {
+          "self": "https://au-api.basiq.io/connections/1/accounts/2",
+          "transactions": "https://au-api.basiq.io/connections/1/transactions?filter[account.id]=2"
+        }
+      }
+    ]
+  },
+  "links": {
+    "self": "https://au-api.basiq.io/connections/1",
+    "accounts": "https://au-api.basiq.io/connections/1/accounts",
+    "transactions": "https://au-api.basiq.io/connections/1/transactions"
+  }
 }
-[/block]
+```
