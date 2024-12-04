@@ -21,8 +21,8 @@ next:
 
 Prior to authenticating your application you will need to complete the following steps:
 
-1. [Sign-up](https://dashboard.basiq.io/) to the Basiq API service
-2. Grab an API key for your application (via the [Developer Dashboard](https://dashboard.basiq.io/))
+1. [Sign-up](https://dashboard.basiq.io/) to the Basiq API service.
+2. Grab an API key for your application (via the [Developer Dashboard](https://dashboard.basiq.io/)).
 
 ## Steps to authenticate
 
@@ -30,7 +30,7 @@ Pass the API key in the Authorization header and Basiq API version you intend to
 
 > 👍 Token scopes
 >
-> The scope of a `CLIENT_ACCESS` token is restricted and should be used when making any calls directly from the client side. 
+> The scope of a `CLIENT_ACCESS` token is restricted and should be used when making any calls directly from the client side.
 >
 > A `SERVER_ACCESS` token can be used for all endpoints and has full access to create resources and retrieve data. **Never** expose a server access token on your client side!
 
