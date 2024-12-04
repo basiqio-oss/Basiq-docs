@@ -13,6 +13,6 @@ metadata:
 next:
   description: ''
 ---
-> 📘 Legacy Version 
-> 
+> 📘 Legacy Version
+>
 > Please Use [Reporting (Insights)](https://api.basiq.io/reference/createreport)
