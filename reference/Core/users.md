@@ -59,7 +59,7 @@ To [retrieve the details of an existing user](https://api.basiq.io/reference/get
 GET https://au-api.basiq.io/users/{userId}
 ```
 
-Replace {userId} with the unique identifier of the user returned upon creation.
+Replace \{userId} with the unique identifier of the user returned upon creation.
 
 ## Updating a User
 
@@ -69,7 +69,7 @@ To [update a user's details](https://api.basiq.io/reference/updateuser), make a 
 POST https://au-api.basiq.io/users/{userId}
 ```
 
-Replace {userId} with the unique identifier of the user. Provide the parameters you wish to update in the request body. Any parameters not provided will remain unchanged.
+Replace \{userId} with the unique identifier of the user. Provide the parameters you wish to update in the request body. Any parameters not provided will remain unchanged.
 
 ## Deleting a User
 
@@ -79,6 +79,6 @@ To [permanently delete a user](https://api.basiq.io/reference/deleteuser) and al
 DELETE https://au-api.basiq.io/users/{userId}
 ```
 
-Replace {userId} with the unique identifier of the user.
+Replace \{userId} with the unique identifier of the user.
 
 > 🚧 Deleting a user cannot be undone and will permanently remove all associated data.
