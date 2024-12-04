@@ -13,22 +13,11 @@ next:
 # BASIQ PFM Demo Application
 
 Welcome to Basiq's Personal Finance Management (PFM) demo application! :rocket: 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/8b7aa57-PFM_DevHubStarterKit_1080x800.png",
-        "8b7aa57-PFM_DevHubStarterKit_1080x800.png",
-        1080,
-        700,
-        "#000000"
-      ],
-      "caption": "PFM demo application"
-    }
-  ]
-}
-[/block]
+
+<Image title="8b7aa57-PFM_DevHubStarterKit_1080x800.png" alt={1080} src="https://files.readme.io/8b7aa57-PFM_DevHubStarterKit_1080x800.png">
+  PFM demo application
+</Image>
+
 Our PFM demo application was designed to help accelerate your time to market by providing a personal finance management (PFM) application that incorporates best practices, follows our API integration, user flow guidelines, and can be easily tailored to align with your brand guidelines and product offerings.
 
 # Starter Kits and Demo Apps that work together
@@ -41,38 +30,34 @@ Unlike our account verification starter kit which is a fully functioning applica
 
 Integrating with the Basiq API means that account aggregation and analysis becomes a seamless process that provides more secure data from the bank. Additionally, our PFM Demo application offers the following benefits:
 
-  * Streamlined customer onboarding and a faster, more effective account aggregation process.
-  * Ability to instantly retrieve and analyse account information from multiple financial institutions, including bank balances, transaction histories, and spending patterns.
-  * Customisable dashboard that displays key financial metrics and allows users to track their spending and savings goals.
-  * Easily configurable to fit your brand guidelines by updating the tailwind.config.js file with your brand colors and typeface.
-  * Customisable logos and product-specific copy to align with your application's value proposition and messaging.
-  
+* Streamlined customer onboarding and a faster, more effective account aggregation process.
+* Ability to instantly retrieve and analyse account information from multiple financial institutions, including bank balances, transaction histories, and spending patterns.
+* Customisable dashboard that displays key financial metrics and allows users to track their spending and savings goals.
+* Easily configurable to fit your brand guidelines by updating the tailwind.config.js file with your brand colors and typeface.
+* Customisable logos and product-specific copy to align with your application's value proposition and messaging.
+
 # Gold Standard
 
 Our PFM Demo application is built on a modern tech stack using React, Next.js, and Tailwind, and adheres to Basiq's best practices around areas such as:
-  * Token management
-  * Job handling, including both happy and unhappy paths
-  * Strong pre-consent flow (when using our account verification starter kit) with a clearly defined value proposition to build trust with users
-  * And more...
+
+* Token management
+* Job handling, including both happy and unhappy paths
+* Strong pre-consent flow (when using our account verification starter kit) with a clearly defined value proposition to build trust with users
+* And more...
 
 # Check out the PFM demo application in action!
-[block:embed]
-{
-  "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FaPqLyO4LNVU%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DaPqLyO4LNVU&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FaPqLyO4LNVU%2Fhqdefault.jpg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-  "url": "https://www.youtube.com/watch?v=aPqLyO4LNVU",
-  "title": "PFM & Account Verifications Kits",
-  "favicon": "https://www.google.com/favicon.ico",
-  "image": "https://i.ytimg.com/vi/aPqLyO4LNVU/hqdefault.jpg"
-}
-[/block]
+
+<Embed url="https://www.youtube.com/watch?v=aPqLyO4LNVU" title="PFM & Account Verifications Kits" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/aPqLyO4LNVU/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=aPqLyO4LNVU" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FaPqLyO4LNVU%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DaPqLyO4LNVU%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FaPqLyO4LNVU%252Fhqdefault.jpg%26key%3Df2aa6fc3595946d0afc3d76cbbd25dc3%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+
 Our PFM demo application is hosted on [pfm-demo.basiq.io](https://pfm-demo.basiq.io), and provides a real-life example of how the application looks and feels. Please note that this demo app is for testing purposes and connects to test bank and sandbox accounts. 
 
 You can use our sandbox credentials to login and test the app. We recommend using Hooli Bank for testing and the Wentworth Smith ID logins, as it provides the best dummy data to explore the application with.
 
 You will need to follow the following steps to gain access and be able to click around:
-  * Click on the "Get Started" button and enter your email address, press "continue", to get started.
-  * Search for Hooli bank and use the Wentworth-Smith credentials found [here](https://api.basiq.io/reference/testing).
-  * Once your account is linked, you will be able to view your account balance, transaction history, and categorise your expenses. You can also view your income and savings to get a complete picture of your financial health.
+
+* Click on the "Get Started" button and enter your email address, press "continue", to get started.
+* Search for Hooli bank and use the Wentworth-Smith credentials found [here](https://api.basiq.io/reference/testing).
+* Once your account is linked, you will be able to view your account balance, transaction history, and categorise your expenses. You can also view your income and savings to get a complete picture of your financial health.
 
 **NOTE:** It is important to note that the demo application uses dummy data, so you can try out all of the features without actually linking your real bank account. However, if you want to use the app with your actual bank account, you will need to sign up for a Basiq account and go through a verification process.
 
@@ -93,10 +78,9 @@ If you encounter any issues or have any queries with the codebase when using and
 # Need a custom Saas solution?
 
 [Flying Donkey](https://flyingdonkey.com.au/) creates custom Saas solutions. Having built Basiq's PFM developer demo application, they know the Basiq API like the back of their hand. Accelerate your Basiq integration from weeks to days with a custom solution.
-[block:callout]
-{
-  "type": "success",
-  "title": "Quick Links",
-  "body": "  * [Live Application](https://pfm-demo.basiq.io/) to test out\n  * [Public Git Repo](https://github.com/flyingdonkey-it/PFM-starterkit) for your use\n  * [Test Credentials](https://api.basiq.io/reference/testing) for our Sandbox users "
-}
-[/block]
+
+> 👍 Quick Links
+>
+> * [Live Application](https://pfm-demo.basiq.io/) to test out
+> * [Public Git Repo](https://github.com/flyingdonkey-it/PFM-starterkit) for your use
+> * [Test Credentials](https://api.basiq.io/reference/testing) for our Sandbox users 
