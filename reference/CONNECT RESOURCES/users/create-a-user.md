@@ -11,56 +11,74 @@ next:
   description: ''
 ---
 Use this to create a new user object. 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Arguments",
-    "0-0": "**email**\n*conditional*",
-    "1-0": "**mobile**\n*conditional*",
-    "0-1": "The end-users email address. **Mandatory if mobile is not supplied.**",
-    "1-1": "The end-users mobile number, supplied in international format `+[country-code][mobileno] e.g. +61410888999` . **Mandatory if email is not supplied**"
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
-**Returns**
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **email**
+        *conditional*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The end-users email address. **Mandatory if mobile is not supplied.**
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **mobile**\
+        *conditional*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The end-users mobile number, supplied in international format `+[country-code][mobileno] e.g. +61410888999` . **Mandatory if email is not supplied**
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+**Returns**\
 Returns the user object if the update succeeded. Returns an [error](https://basiq.readme.io/v1.0/reference#errors) if update parameters are invalid (e.g. supplying an empty email address).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "POST /users",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "POST /users HTTP/1.1\nContent-Type: application/json\nAuthorization: Bearer YOUR_ACCESS_TOKEN\n\n{\n  \"email\": \"gavin@hooli.com\",\n  \"mobile\": \"+61410888666\"\n}",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+POST /users
+```
 
-[block:code]
+```json Example Request
+POST /users HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
 {
-  "codes": [
-    {
-      "code": "HTTP/1.1 201 Created\nContent-Type: application/json\n\n{\n  \"type\": \"user\",\n  \"id\": \"ea3a81\",\n  \"email\": \"gavin@hooli.com\",\n  \"mobile\": \"+61410888666\",\n  \"links\": {\n    \"self\": \"https://au-api.basiq.io/users/ea3a81\"\n  }\n}",
-      "language": "json",
-      "name": "Example Response"
-    }
-  ],
-  "sidebar": true
+  "email": "gavin@hooli.com",
+  "mobile": "+61410888666"
 }
-[/block]
+```
+
+```json Example Response
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{
+  "type": "user",
+  "id": "ea3a81",
+  "email": "gavin@hooli.com",
+  "mobile": "+61410888666",
+  "links": {
+    "self": "https://au-api.basiq.io/users/ea3a81"
+  }
+}
+```
