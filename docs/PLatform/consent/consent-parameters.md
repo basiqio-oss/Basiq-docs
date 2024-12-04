@@ -68,7 +68,7 @@ https://consent.basiq.io/home?token=${token}&connectionId=${connectionId}
 
 #### For Open Banking Connections
 
-**New Behavior: **The `connectionId` parameter now also supports OB connections.
+**New Behavior:** The `connectionId` parameter now also supports OB connections.
 
 **Reauthorisation Support:** For OB connections, if a partner includes a `connectionId` in the URL, it'll kick-start the reauthorisation process. This includes handling via API calls or by using the `action=reauthorise`
 
