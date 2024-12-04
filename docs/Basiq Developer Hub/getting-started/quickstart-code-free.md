@@ -10,7 +10,9 @@ metadata:
 next:
   description: ''
 ---
-<img src="https://files.readme.io/1a04ca3-Group\_1496.svg" />
+<Image align="left" src="https://files.readme.io/b7047cff27f0ab4fa4471ae43382d4aa2bd46e432c365c9b704f3e6ff8f7b6ac-1a04ca3-Group_1496.png" />
+
+<br />
 
 The following guide will help you to get up and running with the Basiq API without writing any application code. It uses [Postman](https://www.postman.com) and is suitable for both technical and non-technical audiences.
 
