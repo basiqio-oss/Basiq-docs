@@ -2,3 +2,4 @@
 - get_reports
 - get_reports-id
 - delete_reports-id
+- get_reports-types
