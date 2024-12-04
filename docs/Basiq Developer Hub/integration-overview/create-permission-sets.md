@@ -30,18 +30,15 @@ In this step, you select the specific API endpoints that the permission set will
 
 Once you have configured your permission sets, save your changes to activate them. These sets become effective immediately, enforcing the defined access controls without delay.
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/MEJ9MaJ3rrO40syZmn4Z?embed\" title=\"Basiq - Permissions Sets\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/MEJ9MaJ3rrO40syZmn4Z?embed" title="Basiq - Permissions Sets" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
 
 ## Best Practices
 
-- **Adhere to Least Privilege**: Ensure that each role or API key is granted only the permissions necessary for its function.
-- **Conduct Regular Audits**: Regularly review your permission sets to ensure they align with evolving roles and responsibilities.
-- **Use Clear Naming Conventions**: Choose descriptive names for your permission sets to facilitate easy identification and management.
-- **Role Specificity**: Design permission sets that are specific to the roles in your organization. Avoid one-size-fits-all approaches, as they can lead to over-privileging or under-privileging.
-- **Segregate Duties**: Where possible, distribute permissions among roles to prevent any single role from having excessive access, reducing risks of misuse.
-- **Update with Organizational Changes**: Modify permission sets in tandem with any changes in organizational structure or roles to maintain appropriate access levels.
+* **Adhere to Least Privilege**: Ensure that each role or API key is granted only the permissions necessary for its function.
+* **Conduct Regular Audits**: Regularly review your permission sets to ensure they align with evolving roles and responsibilities.
+* **Use Clear Naming Conventions**: Choose descriptive names for your permission sets to facilitate easy identification and management.
+* **Role Specificity**: Design permission sets that are specific to the roles in your organization. Avoid one-size-fits-all approaches, as they can lead to over-privileging or under-privileging.
+* **Segregate Duties**: Where possible, distribute permissions among roles to prevent any single role from having excessive access, reducing risks of misuse.
+* **Update with Organizational Changes**: Modify permission sets in tandem with any changes in organizational structure or roles to maintain appropriate access levels.
