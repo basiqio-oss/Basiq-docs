@@ -10,7 +10,6 @@ metadata:
 next:
   description: ''
 ---
-```mdx
 <img align="left" src="https://files.readme.io/1a04ca3-Group_1496.svg" />
 
 <br />
@@ -102,4 +101,3 @@ Basiq's full suite of products are available when you use the Postman collection
 In order to connect to Basiq's test banks, you will need to use the sandbox user logins. You can find the credentials for all scenarios [here](https://api.basiq.io/reference/testing).
 
 **Note:** You are free to make as many request as you like, however we cap the connections for sandbox users at 500 per account. If you would like to increase this quote, please email us at [support@basiq.io](mailto:support@basiq.io).
-```
