@@ -20,26 +20,23 @@ The Trusted Advisor access model allows organisations or individuals to access c
 
 A Trusted Advisor is a professional or organization that qualifies under CDR rules to access and use consumer financial data. Trusted Advisors include:
 
-- Accountants
-- Financial Brokers
-- Financial Advisors
-- Legal Professionals
-- Tax Agents
-- Financial Counselling Agencies
+* Accountants
+* Financial Brokers
+* Financial Advisors
+* Legal Professionals
+* Tax Agents
+* Financial Counselling Agencies
 
 ## Key Features of Trusted Advisor Access
 
 ### **Direct Data Access from Basiq**:
 
-Trusted Advisor details (e.g., name, reference ID, and type) must be submitted directly within the application details.  
+Trusted Advisor details (e.g., name, reference ID, and type) must be submitted directly within the application details.\
 The TA details cannot be modified or passed dynamically via an API token. This ensures that all data comes directly from Basiq's secure platform, maintaining compliance with CDR rules and safeguarding user privacy.
 
-[block:html]
-{
-  "html": "<!--ARCADE EMBED START--><div style=\"position: relative; padding-bottom: calc(50.18807092960774% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/8J9a5bQBnoBgV6arTjFo?embed&embed_mobile=tab&embed_desktop=inline\" title=\"Basiq - Trusted Advisor Direct\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;\" ></iframe></div><!--ARCADE EMBED END-->"
-}
-[/block]
-
+<HTMLBlock>{`
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.18807092960774% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/8J9a5bQBnoBgV6arTjFo?embed&embed_mobile=tab&embed_desktop=inline" title="Basiq - Trusted Advisor Direct" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+`}</HTMLBlock>
 
 #### **Consent Customizer Limitations**:
 
@@ -48,12 +45,9 @@ The Consent Customizer, which manages the user-facing consent flow, does not all
 1. Header image, disclosure of supporting parties, brand name, and title/subtitle text cannot be changed.
 2. The consent screen will use Basiq branding throughout to ensure consistency.
 
-[block:html]
-{
-  "html": "<!--ARCADE EMBED START--><div style=\"position: relative; padding-bottom: calc(50.18807092960774% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/9ccPc0f4U2DNFqX1sF7q?embed&embed_mobile=tab&embed_desktop=inline\" title=\"verified - TA Direct \" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;\" ></iframe></div><!--ARCADE EMBED END-->"
-}
-[/block]
-
+<HTMLBlock>{`
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.18807092960774% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/9ccPc0f4U2DNFqX1sF7q?embed&embed_mobile=tab&embed_desktop=inline" title="verified - TA Direct " frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+`}</HTMLBlock>
 
 #### **Pre-Consent User Experience**:
 
@@ -80,7 +74,7 @@ All submitted Trusted Advisor information must be reviewed and verified by Basiq
 
 ## Token Endpoint Extension
 
-In order to support the Trusted Advisor model for partners, Basiq has extended the POST `/token` endpoint for requests with the scope "CLIENT_ACCESS." The new organisation fields should be included in the request body as follows:
+In order to support the Trusted Advisor model for partners, Basiq has extended the POST `/token` endpoint for requests with the scope "CLIENT\_ACCESS." The new organisation fields should be included in the request body as follows:
 
 ```json body
 {
