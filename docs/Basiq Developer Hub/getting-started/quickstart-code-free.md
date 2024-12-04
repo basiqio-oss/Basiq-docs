@@ -72,7 +72,7 @@ All consent management and connection creation is done via the Basiq Consent UI.
 
 > 📘 Consent UI URL
 >
-> The token must not be enclosed in parenthesis `{` `{`  '}}'
+> The token must not be enclosed in parenthesis `{{}}`
 
 to start aggregating data. You can use our sandbox environment to replicate real life data. Find the credentials [here](https://api.basiq.io/reference/testing).
 
