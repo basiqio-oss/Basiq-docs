@@ -22,8 +22,12 @@ metadata:
 next:
   description: ''
 ---
-[block:html]
-{
-  "html": "<script src=\"https://code.jquery.com/jquery-3.5.0.js\"></script>\n<script>\n  setTimeout(() => {    \n    const toolTip =  \"<p class='toolTip'>&#8505;&#65039; &nbsp; Populate your request using the input fields provided</p>\";\n    $(toolTip).insertAfter($('.rm-PlaygroundRequest'));\n\t}, 100)\n</script>"
-}
-[/block]
+<HTMLBlock>{`
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+  setTimeout(() => {    
+    const toolTip =  "<p class='toolTip'>&#8505;&#65039; &nbsp; Populate your request using the input fields provided</p>";
+    $(toolTip).insertAfter($('.rm-PlaygroundRequest'));
+	}, 100)
+</script>
+`}</HTMLBlock>
