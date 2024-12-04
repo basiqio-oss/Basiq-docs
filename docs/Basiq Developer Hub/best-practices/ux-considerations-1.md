@@ -16,13 +16,13 @@ User experience is one of the most important processes to get right when scaling
 
 Poor onboarding experiences mean you and your team have to work harder to convert the same amount of customers. Marketing teams need to attract more visitors and Support teams spend time guiding confused users and troubleshooting issues that could have been self-resolved. To help you reduce churn and increase customer happiness, we’ve provided some quick tips.
 
- ## Build trust to securely share data
+## Build trust to securely share data
 
-When you build trust with your customers early you ensure a seamless flow whether they are linking one or many banks.
+When you build trust with your customers early you ensure a seamless flow whether they are linking one or many banks.\
 There are a variety of ways you can build trust with your customer base when they are sharing data, such as:
 
-- a good, clear exchange, and
-- well planned UX through the whole journey. 
+* a good, clear exchange, and
+* well planned UX through the whole journey. 
 
 We often hear from our partners that not having the right value exchange is the biggest blocker in customers sharing their data. In terms of the incentive for the end customer, it is all about getting the best outcome faster, so it helps for them to understand that sharing their data this way allows that.
 
