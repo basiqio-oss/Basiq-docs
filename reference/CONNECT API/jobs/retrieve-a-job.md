@@ -11,55 +11,80 @@ next:
   description: ''
 ---
 Retrieves the details of an existing job. You need only supply the unique job identifier that was returned upon job creation.
-[block:parameters]
-{
-  "data": {
-    "0-0": "**id**\n*string, required*",
-    "h-0": "Arguments",
-    "0-1": "The identifier of the job to be retrieved."
-  },
-  "cols": 2,
-  "rows": 1
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **id**
+        *string, required*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        The identifier of the job to be retrieved.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 **Returns**
 
 Returns a job if a valid job ID was provided. Returns an[ error](https://api.basiq.io/docs/errors-1) otherwise.
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /jobs/{job.id}",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /jobs/61723 HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN",
-      "language": "json",
-      "name": "Example Request"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+GET /jobs/{job.id}
+```
 
-[block:code]
+```json Example Request
+GET /jobs/61723 HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+```json Example Response
+HTTP/1.1 200 OK
+Content-Type: application/json
+
 {
-  "codes": [
+  "type": "job",
+  "id": "61723",
+  "created": "2016-06-08T09:10:32.000Z",
+  "updated": "2016-06-08T09:14:28.000Z",
+  "steps": [
     {
-      "code": "HTTP/1.1 200 OK\nContent-Type: application/json\n\n{\n  \"type\": \"job\",\n  \"id\": \"61723\",\n  \"created\": \"2016-06-08T09:10:32.000Z\",\n  \"updated\": \"2016-06-08T09:14:28.000Z\",\n  \"steps\": [\n    {\n      \"title\": \"verify-credentials\",\n      \"status\": \"success\",\n      \"result\":\n        {\n          \"type\": \"link\",\n          \"url\": \"/users/ea3a81/connections/8fce3b\"\n        }\n    },\n    {\n      \"title\": \"retrieve-accounts\",\n      \"status\": \"in-progress\",\n      \"result\": null\n    },\n    {\n      \"title\": \"retrieve-transactions\",\n      \"status\": \"pending\",\n      \"result\": null\n    }\n  ],\n  \"links\": {\n    \"self\": \"/jobs/61723\",\n    \"source\": \"/users/ea3a81/connections/8fce3b\"\n  }\n}",
-      "language": "json",
-      "name": "Example Response"
+      "title": "verify-credentials",
+      "status": "success",
+      "result":
+        {
+          "type": "link",
+          "url": "/users/ea3a81/connections/8fce3b"
+        }
+    },
+    {
+      "title": "retrieve-accounts",
+      "status": "in-progress",
+      "result": null
+    },
+    {
+      "title": "retrieve-transactions",
+      "status": "pending",
+      "result": null
     }
   ],
-  "sidebar": true
+  "links": {
+    "self": "/jobs/61723",
+    "source": "/users/ea3a81/connections/8fce3b"
+  }
 }
-[/block]
+```
