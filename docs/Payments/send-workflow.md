@@ -16,7 +16,7 @@ next:
 
  
 
-#### To _Send_ is to pay out funds from your float account to one of your users or your own account held at a bank.
+#### To *Send* is to pay out funds from your float account to one of your users or your own account held at a bank.
 
 **Example:** Piper Pay, an investment app, has been holding investment funds for one of its users, Adam. Adam has made a profit on his investment and instructs Piper Pay to pay out the profits to his account. Upon receiving the instruction to pay out the profits, Piper Pay would call the Basiq Send (payouts) API to send the funds from their float account to Adam's account at ANZ.
 
@@ -24,16 +24,16 @@ next:
 
 When performing a `payout` instruction, partners have the ability to indicate the payment method as `fast`, `batch`, or `fast/batch`. The details of each one are as follows:
 
-- `fast` means the payout will be transmitted over fast/real-time payments networks (e.g. NPP / OSKO in Australia) provided the recipient bank and account can accept fast payments. In this case funds should land in the recipient bank account within a minute in most cases.
-- `batch` means the payout will be transmitted over batch payments networks (e.g. BECS/DE in Australia). In this case funds should land in the recipient bank account within 2 business days
-- `fast/batch` means the payout will first be attempted to be sent over the fast/real-time network and if a failure occurs (e.g. the recipient bank and/or account is not enabled for fast/real-time) then the payout will be sent as a batch payment.
+* `fast` means the payout will be transmitted over fast/real-time payments networks (e.g. NPP / OSKO in Australia) provided the recipient bank and account can accept fast payments. In this case funds should land in the recipient bank account within a minute in most cases.
+* `batch` means the payout will be transmitted over batch payments networks (e.g. BECS/DE in Australia). In this case funds should land in the recipient bank account within 2 business days
+* `fast/batch` means the payout will first be attempted to be sent over the fast/real-time network and if a failure occurs (e.g. the recipient bank and/or account is not enabled for fast/real-time) then the payout will be sent as a batch payment.
 
 ### **Prerequisites for using Send**
 
-- The payee user must be set up as active in the partner application, and therefore have a `userId` to associate the payment with. Read more about creating a user [here](ref:createuser)
-- The payee user must have a valid user name and email address. This includes having a first name with a minimum of 2 characters and a last name with a minimum of 2 characters and the email address exist and be a valid email address.
-- The application must be enabled for payments by Basiq, with the appropriate environment setup. You can enable the application for payments in Sandbox or request production access through the Basiq dashboard. 
-- You should have enough funds in the float account in order to perform payouts. All payouts are sent out using funds you have in the float account held by Basiq and/or its 3rd party partners/providers. Please refer to [Managing float accounts](doc:managing-float-accounts) 
+* The payee user must be set up as active in the partner application, and therefore have a `userId` to associate the payment with. Read more about creating a user [here](ref:createuser)
+* The payee user must have a valid user name and email address. This includes having a first name with a minimum of 2 characters and a last name with a minimum of 2 characters and the email address exist and be a valid email address.
+* The application must be enabled for payments by Basiq, with the appropriate environment setup. You can enable the application for payments in Sandbox or request production access through the Basiq dashboard. 
+* You should have enough funds in the float account in order to perform payouts. All payouts are sent out using funds you have in the float account held by Basiq and/or its 3rd party partners/providers. Please refer to [Managing float accounts](doc:managing-float-accounts) 
 
 ![](https://files.readme.io/76f2ded-e94f8ba-image_2.png "e94f8ba-image_2.png")
 
@@ -51,29 +51,14 @@ As a prerequisite you will require to trigger payments flow from your redirect U
 
 2. After the user selects the accounts they wish to share, they will be presented with the payments page where they specify which account to use for payments.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/c0650d5-cac6b5b-paymentspage2_1.png",
-        "cac6b5b-paymentspage2 (1).png",
-        582
-      ],
-      "align": "center",
-      "sizing": "smart"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" width="smart" src="https://files.readme.io/c0650d5-cac6b5b-paymentspage2_1.png" />
 
 3. Once they have selected the payments account you can submit a payout instruction [Submit payouts](ref:submitpayouts), including in the instruction:
-   - `requestId`: A unique ID generated by the partner application
-   - `amount`: The amount of the payment you are paying out
-   - `description`: The description to be included on the payment
-   - `payeeUserId`: Basiq’s unique identifier given when they are created with Basiq
-   - `method`: Indicating if it is a `fast`, `batch`, or `fast/batch` as detailed above 
+   * `requestId`: A unique ID generated by the partner application
+   * `amount`: The amount of the payment you are paying out
+   * `description`: The description to be included on the payment
+   * `payeeUserId`: Basiq’s unique identifier given when they are created with Basiq
+   * `method`: Indicating if it is a `fast`, `batch`, or `fast/batch` as detailed above 
 
 ```json Submit payout
 POST /payments/payouts HTTP/1.1
@@ -186,13 +171,13 @@ Note: The `jobId` returned can also be used to retrieve the `payout` directly vi
 ## Send to payees without consented payment accounts
 
 1. One you have a user setup as per the prerequisites above you can submit a payout instruction [Submit payouts](ref:submitpayouts), including in the instruction:
-   - `requestId`: A unique ID generated by the partner application
-   - `amount`: The amount of the payment you are paying out
-   - `description`: The description to be included on the payment
-   - `payeeUserId`: Basiq’s unique identifier given when they are created with Basiq
-   - `payeeBankBranchCode`: The code of their bank and branch (BSB for Australia)
-   - `payeeAccountNumber`: The account number
-   - `method`: Indicating if it is a `fast`, `batch`, or `fast/batch` as detailed above 
+   * `requestId`: A unique ID generated by the partner application
+   * `amount`: The amount of the payment you are paying out
+   * `description`: The description to be included on the payment
+   * `payeeUserId`: Basiq’s unique identifier given when they are created with Basiq
+   * `payeeBankBranchCode`: The code of their bank and branch (BSB for Australia)
+   * `payeeAccountNumber`: The account number
+   * `method`: Indicating if it is a `fast`, `batch`, or `fast/batch` as detailed above 
 
  
 
