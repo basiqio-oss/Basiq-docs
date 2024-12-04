@@ -12,6 +12,8 @@ next:
 ---
 <Image align="left" src="https://files.readme.io/c77a7fc26cf886ab082bdf9d08e341c079ba854d991ed7304655738c14b91d4f-1a04ca3-Group_1496.svg" />
 
+&#x20; &#x20;
+
 <br />
 
 The following guide will help you to get up and running with the Basiq API without writing any application code. It uses [Postman](https://www.postman.com) and is suitable for both technical and non-technical audiences.
