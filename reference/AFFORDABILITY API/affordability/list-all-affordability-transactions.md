@@ -12,89 +12,264 @@ next:
 ---
 Use this collection to retrieve a paginated list of [transactions](https://basiq.readme.io/v2.1/reference/transactions). The transactions are returned sorted by account and then posted date descending order - with pending transactions appearing first. Transactions are paginated in chunks of 500. Absence of `next` link means that there are no more pages to retrieve.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Arguments",
-    "h-1": "",
-    "0-0": "**limit**  \n_string, optional_",
-    "0-1": "This represents the maximum number of items that may be included in the response (maximum of 500). Note that by default 500 items are returned if this value is not specified.",
-    "1-0": "",
-    "1-1": "",
-    "2-0": "**[filter](https://api.basiq.io/docs/collections-filters)**  \n_string, optional_",
-    "2-1": "This list can be [filtered](https://api.basiq.io/docs/collections-filters) by the following properties:  \n  \n- `transaction.class`  \n  \n   \n  \n   \n**Note**: this filter applies only to JSON structure, due to the difference in CSV formatting\\*",
-    "3-0": "",
-    "3-1": ""
-  },
-  "cols": 2,
-  "rows": 4,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
 
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **limit**
+        *string, optional*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        This represents the maximum number of items that may be included in the response (maximum of 500). Note that by default 500 items are returned if this value is not specified.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **[filter](https://api.basiq.io/docs/collections-filters)**\
+        *string, optional*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        This list can be [filtered](https://api.basiq.io/docs/collections-filters) by the following properties:  
+
+        * `transaction.class`  
+
+             
+
+         \
+        **Note**: this filter applies only to JSON structure, due to the difference in CSV formatting\*
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 **Returns**
 
 Returns a paginated list with a data property that contains an array of transactions from the affordability snapshot. Each entry in the array is a separate object. If no data is returned, the resulting array will be empty. Otherwise, this call returns an [error](https://api.basiq.io/docs/errors-1) in the event of a failure.
 
 > 📘 Affordability Transactions
-> 
+>
 > The array of transactions used to generate Affordability insights is the full snapshot of transactions as per the [transactions](https://basiq.readme.io/v2.1/reference/transactions) resource where the following attributes are specific to Affordability:
-> 
-> - there is no link to self
-> - `class`: enums specific to affordability provide more granularity around transfer transactions - detailed in the table 
-> - `subClass`: attribute returns HEC class for payments by default or alternatively the custom class configured for a partner account
+>
+> * there is no link to self
+> * `class`: enums specific to affordability provide more granularity around transfer transactions - detailed in the table 
+> * `subClass`: attribute returns HEC class for payments by default or alternatively the custom class configured for a partner account
 
 Each affordability transaction contains the same attributes however the data extends the  [transactions](https://basiq.readme.io/v2.1/reference/transactions) resource as follows:
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Attributes",
-    "h-1": "",
-    "0-0": "`class`",
-    "0-1": "Describes the class(type) of transaction. Possible values depend on the `direction` field, and include:",
-    "1-0": "",
-    "1-1": "",
-    "2-0": "",
-    "2-1": "**Debit Classes:**",
-    "3-0": "",
-    "3-1": "",
-    "4-0": "",
-    "4-1": "- `bank-fee` - a fee incurred by the user from their bank e.g. ATM withdrawal fee.  \n  \n- `payment` - payment made to a merchant.  \n  \n- `cash-withdrawal` - funds withdrawn via atm facility.  \n  \n- `internal-transfer` - funds transferred between shared accounts. **[affordability only]**  \n  \n- `external-transfer` - funds transferred to an external account (not included in accounts shared) **[affordability only]**  \n  \n- `loan-interest` - interest charged on a loan account.",
-    "5-0": "",
-    "5-1": "",
-    "6-0": "",
-    "6-1": "**Credit Classes:**",
-    "7-0": "",
-    "7-1": "",
-    "8-0": "",
-    "8-1": "- `refund` - funds returned due to refund.  \n  \n- `direct-credit` - funds deposited into an account.  \n  \n- `interest` - interest earned.  \n  \n- `internal-transfer` - funds transferred between shared accounts. **[affordability only]**  \n  \n- `external-transfer` - funds transferred from an external account (not included in accounts shared) **[affordability only]**  \n  \n- `loan-repayment` - loan repayment credited to a loan account.",
-    "9-0": "",
-    "9-1": "",
-    "10-0": "`subClass`",
-    "10-1": "Attribute includes a `code` and `title` property. The `subClass` attribute will only return values for payment transactions (i.e. will be empty for all others) ( **[affordability only]** - HEC classification class is returned by default **or** custom class is returned if configured - ask us about custom category mapping)",
-    "11-0": "",
-    "11-1": "",
-    "12-0": "`links`",
-    "12-1": "A links object containing the following members:",
-    "13-0": "",
-    "13-1": "",
-    "14-0": "",
-    "14-1": "-  `account` link to the account  \n  \n-  `institution` link to institution  \n  \n(note: no link to self)"
-  },
-  "cols": 2,
-  "rows": 15,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Attributes
+      </th>
 
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `class`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Describes the class(type) of transaction. Possible values depend on the `direction` field, and include:
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Debit Classes:**
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * `bank-fee` - a fee incurred by the user from their bank e.g. ATM withdrawal fee.  
+        * `payment` - payment made to a merchant.  
+        * `cash-withdrawal` - funds withdrawn via atm facility.  
+        * `internal-transfer` - funds transferred between shared accounts. **[affordability only]**  
+        * `external-transfer` - funds transferred to an external account (not included in accounts shared) **[affordability only]**  
+        * `loan-interest` - interest charged on a loan account.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        **Credit Classes:**
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * `refund` - funds returned due to refund.  
+        * `direct-credit` - funds deposited into an account.  
+        * `interest` - interest earned.  
+        * `internal-transfer` - funds transferred between shared accounts. **[affordability only]**  
+        * `external-transfer` - funds transferred from an external account (not included in accounts shared) **[affordability only]**  
+        * `loan-repayment` - loan repayment credited to a loan account.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `subClass`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Attribute includes a `code` and `title` property. The `subClass` attribute will only return values for payment transactions (i.e. will be empty for all others) ( **[affordability only]** - HEC classification class is returned by default **or** custom class is returned if configured - ask us about custom category mapping)
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `links`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        A links object containing the following members:
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * `account` link to the account  
+
+        * `institution` link to institution  
+
+        (note: no link to self)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ```json Definition
 GET /users/{user.id}/affordability/{affordability.id}/transactions
