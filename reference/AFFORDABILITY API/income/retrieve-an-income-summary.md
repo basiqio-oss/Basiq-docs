@@ -11,65 +11,167 @@ next:
   description: ''
 ---
 Retrieves the details of an income summary. You need only supply the unique transaction identifier.
-[block:parameters]
-{
-  "data": {
-    "h-0": "Arguments",
-    "0-0": "**id**\n*required*",
-    "0-1": "A string that uniquely identifies the income summary as a resource",
-    "3-0": "`totalLiabilities`",
-    "3-1": "Total account based liabilities identified as credits, overdrafts or loans for a single customer",
-    "5-0": "",
-    "5-1": ""
-  },
-  "cols": 2,
-  "rows": 2
-}
-[/block]
 
-[block:callout]
-{
-  "type": "warning",
-  "body": "You will need an income id from an object you have created to retrieve an income object."
-}
-[/block]
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Arguments
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        **id**
+        *required*
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        A string that uniquely identifies the income summary as a resource
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+> 🚧 You will need an income id from an object you have created to retrieve an income object.
+
 **Returns**
 
 Returns a created income resource, if the operation succeeded. Returns an [error](https://api.basiq.io/docs/errors-1) if the post failed (e.g. not supplying required properties).
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /users/{user.id}/income/{income.id} HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN\nContent-Type: application/json\n\n\n",
-      "language": "json",
-      "name": "Definition"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "GET /users/25c8d1ed77/income/s55bf4 HTTP/1.1\nAuthorization: Bearer YOUR_ACCESS_TOKEN\nContent-Type: application/json",
-      "language": "json"
-    }
-  ],
-  "sidebar": true
-}
-[/block]
+```json Definition
+GET /users/{user.id}/income/{income.id} HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
+```
 
-[block:code]
+```json
+GET /users/25c8d1ed77/income/s55bf4 HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Content-Type: application/json
+```
+
+```json Example Reponse
+HTTP/1.11.1 200 OK
+Content-Type: application/json
+
 {
-  "codes": [
+  "type": "income",
+  "id": "s55bf4",
+  "fromMonth": "2018-11",
+  "toMonth": "2019-11",
+  "coverageDays": 394,
+  "generatedDate": "2019-12-10T05:49:15",
+  "summary": {
+    "regularIncomeAvg": "18098.00",
+    "regularIncomeYTD": "90490.00",
+    "regularIncomeYear": "217176.00",
+    "irregularIncomeAvg": "55.00"
+  },
+  "regular": [
     {
-      "code": "HTTP/1.11.1 200 OK\nContent-Type: application/json\n\n{\n  \"type\": \"income\",\n  \"id\": \"s55bf4\",\n  \"fromMonth\": \"2018-11\",\n  \"toMonth\": \"2019-11\",\n  \"coverageDays\": 394,\n  \"generatedDate\": \"2019-12-10T05:49:15\",\n  \"summary\": {\n    \"regularIncomeAvg\": \"18098.00\",\n    \"regularIncomeYTD\": \"90490.00\",\n    \"regularIncomeYear\": \"217176.00\",\n    \"irregularIncomeAvg\": \"55.00\"\n  },\n  \"regular\": [\n    {\n      \"source\": \"payroll wfrms 15439393\",\n      \"frequency\": \"monthly\",\n      \"ageDays\": 334,\n      \"irregularity\": {\n        \"stability\": \"1.00\",\n        \"gaps\": []\n      },\n      \"previous3Months\": {\n        \"amountAvg\": \"18098.00\",\n        \"amountAvgMonthly\": \"18098.00\",\n        \"variance\": \"0.00\"\n      },\n      \"current\": {\n        \"date\": \"2018-11-30T09:23:37\",\n        \"amount\": \"18098.00\",\n        \"nextDate\": \"2018-12-30T18:30:49\"\n      },\n      \"changeHistory\": [\n        {\n          \"source\": \"Payroll WFRMS 15439393\",\n          \"date\": \"2018-11-30T09:23:37\",\n          \"amount\": \"18098.00\"\n        },\n        {\n          ...\n        }\n      ]\n    }\n  ],\n  \"irregular\": [\n    {\n      \"source\": \"ctrlink carers 998r6789201610974v\",\n      \"frequency\": \"irregular\",\n      \"ageDays\": 253,\n      \"amountAvg\": \"55.00\",\n      \"noOccurrences\": 5,\n      \"avgMonthlyOccurence\": \"1\",\n      \"current\": {\n        \"date\": \"2018-10-13T20:03:37\",\n        \"amount\": \"62.00\"\n      },\n      \"changeHistory\": [\n        {\n          \"source\": \"CTRLINK CARERS Ref: 998R6789201610974V\",\n          \"date\": \"2018-10-13T20:03:37\",\n          \"amount\": \"62.00\"\n        },\n        {\n          ...\n        }\n      ]\n    }\n  ],\n  \"otherCredit\": [\n    {\n      \"source\": \"savings interest cr bal - Account 1\",\n      \"frequency\": \"monthly\",\n      \"ageDay\": 335,\n      \"amountAvg\": \"110.85\",\n      \"noOccurrences\": 12,\n      \"avgMonthlyOccurence\": \"1\",\n      \"current\": {\n        \"date\": \"2019-10-29T00:00:00\",\n        \"amount\": \"92.99\",\n        \"otherCreditLabel\": \"regular income small amount\"\n      },\n      \"changeHistory\": [\n        {\n          \"source\": \"savings interest cr bal - Account 1\",\n          \"date\": \"2018-10-13T20:03:37\",\n          \"amount\": \"62.00\"\n        },\n        {\n          ...\n        }\n      ]\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://au-api.basiq.io/users/25c8d1ed77/income/s55bf4\",\n    \"accounts\": [\n         \"https://au-api.basiq.io/users/25c8d1ed77/accounts/20024b08\",\n         \"https://au-api.basiq.io/users/25c8d1ed77/accounts/64880430\",\n         \"https://au-api.basiq.io/users/25c8d1ed77/accounts/55bf3089\",\n         \"https://au-api.basiq.io/users/25c8d1ed77/accounts/6jk43056\"\n     ]\n  }\n}\n    ",
-      "language": "json",
-      "name": "Example Reponse"
+      "source": "payroll wfrms 15439393",
+      "frequency": "monthly",
+      "ageDays": 334,
+      "irregularity": {
+        "stability": "1.00",
+        "gaps": []
+      },
+      "previous3Months": {
+        "amountAvg": "18098.00",
+        "amountAvgMonthly": "18098.00",
+        "variance": "0.00"
+      },
+      "current": {
+        "date": "2018-11-30T09:23:37",
+        "amount": "18098.00",
+        "nextDate": "2018-12-30T18:30:49"
+      },
+      "changeHistory": [
+        {
+          "source": "Payroll WFRMS 15439393",
+          "date": "2018-11-30T09:23:37",
+          "amount": "18098.00"
+        },
+        {
+          ...
+        }
+      ]
     }
   ],
-  "sidebar": true
+  "irregular": [
+    {
+      "source": "ctrlink carers 998r6789201610974v",
+      "frequency": "irregular",
+      "ageDays": 253,
+      "amountAvg": "55.00",
+      "noOccurrences": 5,
+      "avgMonthlyOccurence": "1",
+      "current": {
+        "date": "2018-10-13T20:03:37",
+        "amount": "62.00"
+      },
+      "changeHistory": [
+        {
+          "source": "CTRLINK CARERS Ref: 998R6789201610974V",
+          "date": "2018-10-13T20:03:37",
+          "amount": "62.00"
+        },
+        {
+          ...
+        }
+      ]
+    }
+  ],
+  "otherCredit": [
+    {
+      "source": "savings interest cr bal - Account 1",
+      "frequency": "monthly",
+      "ageDay": 335,
+      "amountAvg": "110.85",
+      "noOccurrences": 12,
+      "avgMonthlyOccurence": "1",
+      "current": {
+        "date": "2019-10-29T00:00:00",
+        "amount": "92.99",
+        "otherCreditLabel": "regular income small amount"
+      },
+      "changeHistory": [
+        {
+          "source": "savings interest cr bal - Account 1",
+          "date": "2018-10-13T20:03:37",
+          "amount": "62.00"
+        },
+        {
+          ...
+        }
+      ]
+    }
+  ],
+  "links": {
+    "self": "https://au-api.basiq.io/users/25c8d1ed77/income/s55bf4",
+    "accounts": [
+         "https://au-api.basiq.io/users/25c8d1ed77/accounts/20024b08",
+         "https://au-api.basiq.io/users/25c8d1ed77/accounts/64880430",
+         "https://au-api.basiq.io/users/25c8d1ed77/accounts/55bf3089",
+         "https://au-api.basiq.io/users/25c8d1ed77/accounts/6jk43056"
+     ]
+  }
 }
-[/block]
+```
