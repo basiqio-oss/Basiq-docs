@@ -26,11 +26,9 @@ Once users are set up and their financial data is retrieved successfully, you ca
 
 Basiq's Identity APIs allow you to retrieve identity information associated with a specific user. The following endpoints can be used for accessing identity data:
 
-**List User Identities:** The details of this API endpoint can be found at [Retrieve identities](ref:getuseridentities-1). The result of this API is a list of all the user's identities across all the financial institutions they have consented your application to access
+**List User Identities:** The details of this API endpoint can be found at [Retrieve identities](ref:getuseridentities-1). The result of this API is a list of all the user's identities across all the financial institutions they have consented your application to access.
 
 **Get User Identity:** The details of this API endpoint can be found at [Retrieve an identity](ref:getuseridentity-1). The result of this API is the user's identity details for a specific identity object tied to a single financial institution.
-
-<br>
 
 ### Conclusion
 
