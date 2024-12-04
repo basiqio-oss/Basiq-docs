@@ -46,17 +46,18 @@ To help keep you and your users informed we provide both the job status and erro
 
 To do this, you can use the `/job` endpoint, checking on the status of recent jobs to see if there were any failures.
 
-### *Check the users jobs regularly. *
+### *Check the users jobs regularly.*
 
 A common cadence is once a day and then every time they login, giving you the opportunity to handle any unresolved errors that have occurred. See our resources on how to effectively handle jobs. 
 
-For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T&Cs, etc.
+For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T\&Cs, etc.
 
 There is more to read on our job processes and how to handle it, including why and where jobs may fail and how to test your applications handling of these scenarios [here](#handling-failed-jobs). 
 
 # Error resolution
 
-## Using the `/institutions` endpoint 
+## Using the `/institutions` endpoint
+
 You can use the institutions endpoint to fetch the current status and stage of each institution we offer. This is especially useful if you encounter any issues when refreshing connections because you can then dynamically determine if there are any issues currently, and proceed accordingly. E.g. if a refresh fails, and you can see using the `/institutions` endpoint that bank is currently down, you now know the issue is on their end and to try connect when they are operational again. This can all be done without having to log any issues with Basiq's support team, meaning the whole process can be automated. 
 
 ## *Error logging*
