@@ -11,7 +11,7 @@ next:
   description: ''
 ---
 > 📘 API Key Rotation
-> 
+>
 > Rotating API keys regularly is a recommended practice to minimise the risk of key exposure and misuse. It is advised that API keys are rotated every 90 days to ensure that the keys remain secure. Below is a step-by-step guide on how to rotate API keys.
 
 # Step-by-Step Guide for API Key Rotation
@@ -32,7 +32,7 @@ To rotate an API key, you must first generate a new key:
 
 Once a new API key is generated, update your applications or integrations with the new key:
 
-- Replace the old API key with the new key in all your applications.
+* Replace the old API key with the new key in all your applications.
 
 ## Step 4: Verify the Integration
 
@@ -50,7 +50,7 @@ Once the new API key is confirmed to be working correctly:
 3. Confirm the revocation to remove the old key from the system.
 
 > 👍 Recommendations for Maintaining Security
-> 
+>
 > 1. **Limit API Key Access**: Only provide access to API keys to team members who absolutely need it.
 > 2. **Assign Appropriate Permissions**: When creating API keys, assign appropriate permissions to them based on the needs of the respective teams.
 > 3. **Use Environment Variables**: Store API keys in environment variables instead of hard coding them in your applications.
