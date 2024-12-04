@@ -17,12 +17,9 @@ next:
 
 In the 'Applications' section, you can manage your integrated applications, oversee their performance, and set up different environments tailored for various stages of development and deployment. This area is crucial for configuring your applications to align with specific project needs and operational stages.
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/zMaHRaQNiMNRa94QpO0y?embed\" title=\"Basiq - Application Section\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/zMaHRaQNiMNRa94QpO0y?embed" title="Basiq - Application Section" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
 
 ## User Management
 
@@ -52,15 +49,12 @@ The 'Help' section provides access to a range of support options and resources, 
 
 The 'Settings' section is where you configure company-wide settings, including enforcing Single Sign-On (SSO) and managing permission sets. This section also allows for the invitation and management of team members, granting them access to the dashboard with appropriate permissions.
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/0AIUrzyTIvrRiRGvsHdn?embed\" title=\"Basiq - Single Sign-On\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/0AIUrzyTIvrRiRGvsHdn?embed" title="Basiq - Single Sign-On" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
 
 ## Account Settings
 
 In the 'Account Settings' section, manage your personal dashboard account settings. This includes updating passwords, activating two-factor authentication, and other personal account management functionalities.
 
-> 📘 _The Basiq Dashboard is designed to be dynamic, regularly evolving with new features and updates to enhance your financial data management experience. Familiarise yourself with these sections to maximise the benefits of the Basiq platform._
+> 📘 *The Basiq Dashboard is designed to be dynamic, regularly evolving with new features and updates to enhance your financial data management experience. Familiarise yourself with these sections to maximise the benefits of the Basiq platform.*
