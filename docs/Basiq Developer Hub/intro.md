@@ -18,21 +18,7 @@ Basiq is a cutting-edge platform designed to revolutionise the way businesses an
 
 Our mission is to empower developers and businesses by providing a seamless and secure gateway to financial data. We strive to bridge the gap between financial institutions and fintech innovators, ensuring that accessing and utilising financial data is as effortless as possible, while maintaining the highest standards of security and compliance.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/d5d0e45-bb68dee-DevHub_01.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/d5d0e45-bb68dee-DevHub_01.png" />
 
 ### Core Features of Basiq
 
@@ -46,31 +32,17 @@ Our mission is to empower developers and businesses by providing a seamless and 
 
 **5. Webhooks and Real-time Notifications:** Stay updated with real-time notifications. Basiq’s webhook services provide immediate alerts for account events, facilitating prompt responses to important changes.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7d874db-43206b9-DevHub_02.png",
-        "",
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/7d874db-43206b9-DevHub_02.png" />
 
 ### Why Choose Basiq?
 
-- **Ease of Integration:** Basiq is designed to be developer-friendly, with comprehensive documentation, SDKs, and APIs that make integration a breeze.
+* **Ease of Integration:** Basiq is designed to be developer-friendly, with comprehensive documentation, SDKs, and APIs that make integration a breeze.
 
-- **Compliance and Security:** We prioritise data security and compliance with financial regulations, including adherence to the <<glossary:CDR>> standards.
+* **Compliance and Security:** We prioritise data security and compliance with financial regulations, including adherence to the <Glossary>CDR</Glossary> standards.
 
-- **Innovative Solutions:** Basiq is at the forefront of fintech innovation, constantly evolving to include the latest in financial technology.
+* **Innovative Solutions:** Basiq is at the forefront of fintech innovation, constantly evolving to include the latest in financial technology.
 
-- **Support and Community:** We offer robust support and have an active community of developers. Whether you’re a startup or an established enterprise, our team and community are here to assist.
+* **Support and Community:** We offer robust support and have an active community of developers. Whether you’re a startup or an established enterprise, our team and community are here to assist.
 
 ### Getting Started with Basiq
 
