@@ -16,15 +16,15 @@ Connection objects are created when a user connects their financial institution 
 
 ## Connection Status:
 
-### **Active (Web & <<glossary:OB>>)**:
+### **Active (Web &<Glossary>OB</Glossary>)**:
 
 The connection is fully functional and has completed all necessary job steps.
 
-### **Deleted (Web & <<glossary:OB>>)**:
+### **Deleted (Web &<Glossary>OB</Glossary>)**:
 
 Indicates the connection has been terminated by the partner.
 
-### **Invalid (Web & <<glossary:OB>>)**:
+### **Invalid (Web &<Glossary>OB</Glossary>)**:
 
 The connection is not operational due to issues in one or more of the job steps. It can be refreshed manually, and a successful refresh will restore it to "Active."
 
@@ -32,11 +32,11 @@ The connection is not operational due to issues in one or more of the job steps.
 
 The connection is new and waiting to determine if it will become active or remain invalid. This status signifies the start of the process.
 
-### **Init (<<glossary:OB>>)**:
+### **Init (<Glossary>OB</Glossary>)**:
 
 The connection has successfully passed the open banking authorization and is temporarily in this state.
 
-### **Pre-init (<<glossary:OB>>)**:
+### **Pre-init (<Glossary>OB</Glossary>)**:
 
 Similar to the Pending status, this is assigned at the creation of an open banking connection and marks the beginning of the job. Connections stuck in pre-init state are usually a result of user leaving the authorisation flow before finishing it. The first step in resolving this is appointing the user to go through the whole flow again. There’s no need to delete a pre-init connection beforehand.
 
@@ -68,16 +68,16 @@ When a connection is deleted, the existing data for accounts and transactions re
 
 ### Purge Existing Data
 
-- **Data Clean-Up**: Before you can fully remove an institution's data, use the '[Purge Connection Data](https://api.basiq.io/reference/purgeconnectiondata)' endpoint to delete all existing user data for that specific institution. This is crucial for ensuring a clean transition.
+* **Data Clean-Up**: Before you can fully remove an institution's data, use the '[Purge Connection Data](https://api.basiq.io/reference/purgeconnectiondata)' endpoint to delete all existing user data for that specific institution. This is crucial for ensuring a clean transition.
 
 > 📘 Note:
-> 
+>
 > The purge function must be executed while the connection is still active, as it does not work on deleted connections.
 
 ### Delete Existing Web Connection
 
-- **Remove Current Connection**: It is necessary to delete the existing connection if transitioning to an <<glossary:OB>> connection. This prevents conflicts since a user cannot have both Web and OB connections active at the same time for the same institution.
+* **Remove Current Connection**: It is necessary to delete the existing connection if transitioning to an <Glossary>OB</Glossary> connection. This prevents conflicts since a user cannot have both Web and OB connections active at the same time for the same institution.
 
 ### Establish New OB Connection
 
-- **Create the <<glossary:OB>> Connection**: After the connection is deleted and the data is purged, you can establish a new <<glossary:OB>> or web connection for the user. This ensures continuity and compliance with updated connection protocols.
+* **Create the<Glossary>OB</Glossary> Connection**: After the connection is deleted and the data is purged, you can establish a new <Glossary>OB</Glossary> or web connection for the user. This ensures continuity and compliance with updated connection protocols.
