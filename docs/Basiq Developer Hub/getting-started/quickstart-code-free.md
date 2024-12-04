@@ -12,6 +12,8 @@ next:
 ---
 <img align="left" src="https://files.readme.io/1a04ca3-Group_1496.svg" />
 
+<br />
+
 The following guide will help you to get up and running with the Basiq API without writing any application code. It uses [Postman](https://www.postman.com) and is suitable for both technical and non-technical audiences.
 
 If you would prefer to integrate your application with the API directly, and aren't afraid to get your hands dirty writing some code, you might be more interested in our [Quickstart](ref:quickstart-part-1). <br />
