@@ -24,39 +24,25 @@ Accelerate new features based on powerful spending insights with real-time enric
 
 Get a better understanding of your customer's financials by identifying income sources, expenses, assets and liabilities
 
-## Insight-driven automation [coming soon]
+## Insight-driven automation \[coming soon]
 
  Automate workflows to enable personalised, autonomous finance offerings with event-driven data.
 
 > 📘 Connect
-> 
-> Base URL is → <https://au-api.basiq.io> - you can use our sandbox environment for free right now - just grab an API key!
+>
+> Base URL is → [https://au-api.basiq.io](https://au-api.basiq.io) - you can use our sandbox environment for free right now - just grab an API key!
 
 > 📘 Enrich
-> 
-> Enrich URL is → <https://au-api.basiq.io/enrich> - you can use our sandbox environment for free - contact us to have your API key activated.
+>
+> Enrich URL is → [https://au-api.basiq.io/enrich](https://au-api.basiq.io/enrich) - you can use our sandbox environment for free - contact us to have your API key activated.
 
 > 📘 REPORTING (INSIGHTS)
-> 
-> The Reports URL is → <https://au-api.basiq.io/reports> - you can use our sandbox environment for free - contact us to have your API key activated.
+>
+> The Reports URL is → [https://au-api.basiq.io/reports](https://au-api.basiq.io/reports) - you can use our sandbox environment for free - contact us to have your API key activated.
 
 ## How does the API work?
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/4f374b2-introduction.png",
-        null,
-        "Basiq C"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
-
+<Image align="center" src="https://files.readme.io/4f374b2-introduction.png" />
 
 # API Enablement
 
