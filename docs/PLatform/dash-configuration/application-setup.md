@@ -24,12 +24,9 @@ Start by accessing the Basiq Dashboard at [dashboard.basiq.io](https://dashboard
 
 Once logged in, your next action is to create a new application. This can be done by locating and clicking on the “Create New Application” button in the Dashboard. When naming your application, choose a name that reflects its purpose or the environment it's aligned with. For example, an application intended for a production environment could be named “Home Loans - Production”.
 
-[block:html]
-{
-  "html": "<div style=\"position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;\"><iframe src=\"https://demo.arcade.software/AGG7XHMA0HuOs9fywvw1?embed\" title=\"Dashboard | Creating a New Application\" frameborder=\"0\" loading=\"lazy\" webkitallowfullscreen mozallowfullscreen allowfullscreen allow=\"clipboard-write\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;\"></iframe></div>"
-}
-[/block]
-
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/AGG7XHMA0HuOs9fywvw1?embed" title="Dashboard | Creating a New Application" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+`}</HTMLBlock>
 
 ### Step 3: Configuring Application Settings
 
@@ -39,6 +36,6 @@ After creating your application, you need to configure its settings. This involv
 
 When setting up applications in the Basiq Dashboard, it's vital to adopt strategies that align with your organisational structure and operational needs. Here are some best practices and additional points to consider:
 
-- **Reflect Development Environments**: Create separate applications for different stages of your development lifecycle - Development, Staging, and Production. This approach helps in isolating data and functionalities based on the application's current stage and usage.
+* **Reflect Development Environments**: Create separate applications for different stages of your development lifecycle - Development, Staging, and Production. This approach helps in isolating data and functionalities based on the application's current stage and usage.
 
-- **Align with Business Functions**: For organisations with multiple departments or varied use cases, consider creating applications specific to each function. This segregation ensures that the data and functionalities of each department do not overlap, maintaining data integrity and focus.
+* **Align with Business Functions**: For organisations with multiple departments or varied use cases, consider creating applications specific to each function. This segregation ensures that the data and functionalities of each department do not overlap, maintaining data integrity and focus.
