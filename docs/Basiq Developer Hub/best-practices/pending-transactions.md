@@ -17,38 +17,28 @@ A pending transaction is an approved debit or credit transaction that has not be
 A posted transaction is a debit or credit that has been fully processed. Once a transaction is posted the account balance on the account is also updated.
 
 ## To give you a better understanding of the process, here is how a typical payment is handled:
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/60680a7-payment-flowchart.png",
-        "payment-flowchart.png",
-        999,
-        744,
-        "#519ebb"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
+
+<Image width="80%" src="https://files.readme.io/60680a7-payment-flowchart.png" />
+
 ### Note that in some instances the description that appears for a pending transaction may change once it is posted.
-&nbsp;
+
+ 
 
 # How Basiq deals with pending transactions
-&nbsp;
-- Each transaction has a status of "pending" or "posted". This helps you differentiate between the two.
-- Every time a connection is refreshed (i.e. users latest financial data is retrieved) the pending transactions are deleted and new ones are imported. This is the opposite to posted transactions - that are never deleted.
+
+ 
+
+* Each transaction has a status of "pending" or "posted". This helps you differentiate between the two.
+* Every time a connection is refreshed (i.e. users latest financial data is retrieved) the pending transactions are deleted and new ones are imported. This is the opposite to posted transactions - that are never deleted.
 
 # Recommendation on how to deal with pending transactions
-&nbsp;
-- It is strongly recommended that you **always separate the pending transactions from the posted ones** in your database and that you treat them as temporary records. 
-- It's rare that an application would need to list pending transactions, so we recommend that our customers ignore these. In the case that it is absolutely necessary, highlight *pending* transactions within your app, so that the user knows that these may change.
-[block:callout]
-{
-  "type": "info",
-  "body": "Because we have no way of knowing with confidence that the transaction that we retrieved today is the same as the pending one we retrieved yesterday, dispose of all pending transactions each time we refresh.\n**This means the `transaction.id` for a pending transaction will change every time a connection is refreshed.**",
-  "title": "Pending transaction ID's"
-}
-[/block]
+
+ 
+
+* It is strongly recommended that you **always separate the pending transactions from the posted ones** in your database and that you treat them as temporary records. 
+* It's rare that an application would need to list pending transactions, so we recommend that our customers ignore these. In the case that it is absolutely necessary, highlight *pending* transactions within your app, so that the user knows that these may change.
+
+> 📘 Pending transaction ID's
+>
+> Because we have no way of knowing with confidence that the transaction that we retrieved today is the same as the pending one we retrieved yesterday, dispose of all pending transactions each time we refresh.\
+> **This means the`transaction.id` for a pending transaction will change every time a connection is refreshed.**
