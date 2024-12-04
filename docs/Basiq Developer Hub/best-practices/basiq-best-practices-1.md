@@ -28,15 +28,15 @@ You should always use a `CLIENT_ACCESS` scope token for this request, regardle
 
 ### *If you’re using the Basiq Simple UI Component for connections*
 
-- If you are using the BasiqConnect UI Component, it will make the request on your behalf so the scope is handled for you.
+* If you are using the BasiqConnect UI Component, it will make the request on your behalf so the scope is handled for you.
 
-- As you are not making the connection request, you won't get the response with the job details, and instead you will need to listen for the jobCreated event which will pass you the jobId. When you have this jobId you will be able poll the job endpoint to check the progress of syncing the user's data. See how to handle jobs. 
+* As you are not making the connection request, you won't get the response with the job details, and instead you will need to listen for the jobCreated event which will pass you the jobId. When you have this jobId you will be able poll the job endpoint to check the progress of syncing the user's data. See how to handle jobs. 
 
 ### *If you’re building your own bank picker*
 
-- If you are building your own UI, under no circumstance should you store your customers credentials anywhere in your application. Instead post them directly to the Basiq API.  
+* If you are building your own UI, under no circumstance should you store your customers credentials anywhere in your application. Instead post them directly to the Basiq API.  
 
-- As you are making the connection request directly, you will get an asynchronous job resource in the response: you should poll this job to check the progress of syncing the user's data. See how to handle jobs.
+* As you are making the connection request directly, you will get an asynchronous job resource in the response: you should poll this job to check the progress of syncing the user's data. See how to handle jobs.
 
 ## **When refreshing a Connection:**
 
@@ -52,11 +52,11 @@ You should always use a `CLIENT_ACCESS` scope token for this request, regardle
 
 **For ongoing daily refreshed data,** ask the Basiq team to enable your application for background refreshes (the "smart cache" feature). This is a much more efficient way to refresh data than initiating a Refresh Connection request yourself each day. 
 
-### *Check the users jobs regularly. *
+### *Check the users jobs regularly.*
 
 A common cadence is once a day and then every time they login, giving you the opportunity to handle any unresolved errors that have occurred. See our resources on how to effectively handle jobs. 
 
-For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T&Cs, etc.
+For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T\&Cs, etc.
 
 ## **Handling jobs**
 
@@ -68,8 +68,8 @@ Providing your users with a simple, intuitive and informed experience is key to 
 
 To do this, you can poll the `/job` endpoint, checking on the status of each step until the job has either
 
-- successfully completed the relevant step/s;
-- failed at any of the steps.
+* successfully completed the relevant step/s;
+* failed at any of the steps.
 
 If you are building your own UI, you should keep your user engaged until the first (`verify-credentials`) step is complete: it's not a good experience to let the user go and then have to drag them back if the credentials didn't work.
 
@@ -79,7 +79,8 @@ There is more to read on our job processes and how to handle it, including why a
 
 # Error resolution
 
-## Using the `/institutions` endpoint 
+## Using the `/institutions` endpoint
+
 You can use the institutions endpoint to fetch the current status and stage of each institution we offer. This is especially useful if you encounter any issues when connecting/refreshing connections because you can then dynamically determine if there are any issues currently, and proceed accordingly. E.g. if a connection fails, and you can see using the `/institutions` endpoint that bank is currently down, you now know the issue is on their end and to try connect when they are operational again. This can all be done without having to log any issues with Basiq's support team, meaning the whole process can be automated. 
 
 ## *Error logging*
