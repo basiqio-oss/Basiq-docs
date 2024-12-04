@@ -20,7 +20,7 @@ The token you receive will expire after one hour (3600 seconds). You should cach
 
 **Ensure you have carefully considered your consent policy:** any changes to your consent policy, such as additional data scope, will only be applied to new user consents. Users under the previous consent policy will either be restricted to the original policy, or need to re-consent. 
 
-**Be specific and demonstrate value in your applications purpose:** it is crucial to outline _why_ you are requesting your users consent. The **purpose** you define in your consent policy will be displayed to users before they give consent so it is important they understand the value your application will provide to them.
+**Be specific and demonstrate value in your applications purpose:** it is crucial to outline *why* you are requesting your users consent. The **purpose** you define in your consent policy will be displayed to users before they give consent so it is important they understand the value your application will provide to them.
 
 ## **When refreshing a Connection:**
 
@@ -32,15 +32,15 @@ The token you receive will expire after one hour (3600 seconds). You should cach
 
 **Before refreshing, check when the connection was last refreshed:** Check the user's jobs for a complete view of when the connection was last refreshed and the result, or for a more lightweight option, check the `connection.lastUsed` attribute to see when the connection was last refreshed. It's essential to ensure that the connection is active before attempting a refresh, as refreshing will not work for inactive connections.
 
-### _Use the smart cache instead_
+### *Use the smart cache instead*
 
 **For ongoing daily refreshed data,** ask the Basiq team to enable your application for background refreshes (the "smart cache" feature). This is a much more efficient way to refresh data than initiating a Refresh Connection request yourself each day. 
 
-**Note: **OpenBanking connections are limited to 20 connection refreshes per day.
+**Note:** OpenBanking connections are limited to 20 connection refreshes per day.
 
 ## **Handling jobs: for ongoing access to data**
 
-### _Handling jobs correctly is essential to your applications UX_
+### *Handling jobs correctly is essential to your applications UX*
 
 Providing your users with a simple, intuitive and informed experience is key to good UX, and handling jobs correctly is a key to achieving this. 
 
@@ -48,11 +48,11 @@ To help keep you and your users informed we provide both the job status and erro
 
 To do this, you can use the `/job` endpoint, checking on the status of recent jobs to see if there were any failures.
 
-### _Check the users jobs regularly. _
+### *Check the users jobs regularly.*
 
 A common cadence is once a day and then every time they login, giving you the opportunity to handle any unresolved errors that have occurred. See our resources on how to effectively handle jobs. 
 
-For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T&Cs, etc.
+For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T\&Cs, etc.
 
 There is more to read on our job processes and how to handle it, including why and where jobs may fail and how to test your applications handling of these scenarios [here](doc:handling-jobs). 
 
@@ -88,6 +88,6 @@ This endpoint requires the user's identifier `userId` and the connection's ident
 
 You can use the connectors endpoint to fetch the current status and stage of each connector we offer. This is especially useful if you encounter any issues when refreshing connections because you can then dynamically determine if there are any issues currently, and proceed accordingly. E.g. if a refresh fails, and you can see using the /connectors endpoint that a specific connector is currently down, you now know the issue is on their end and to try connecting again when they are operational. This can all be done without having to log any issues with Basiq's support team, meaning the whole process can be automated.
 
-## _Error logging_
+## *Error logging*
 
 When logging any errors you encounter in production, it is important that you include the `userId`, `connectionId`, and `jobId`. Having a record of these when you reach out to our support team means that we are able to better investigate and help you debug.
