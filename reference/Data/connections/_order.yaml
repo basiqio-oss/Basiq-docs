@@ -3,3 +3,4 @@
 - getconnection
 - deleteconnection
 - refreshconnection
+- purgeconnectiondata
