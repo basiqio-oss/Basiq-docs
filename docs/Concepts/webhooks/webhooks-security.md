@@ -34,28 +34,16 @@ Each webhook call contains three headers that provide additional information for
 
 **webhook-signature:** This header contains a [Base64](https://en.wikipedia.org/wiki/Base64) encoded list of signatures, separated by spaces.
 
-
 ## Constructing the signed content
 
 The content to sign is composed by concatenating the `id`, `timestamp` and `payload`, separated by the full-stop character (.). In code, it will look something like:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "signedContent = `${webhook_id}.${webhook_timestamp}.${payload}`",
-      "language": "javascript",
-      "name": "signedContent"
-    }
-  ]
-}
-[/block]
 
-[block:callout]
-{
-  "type": "danger",
-  "body": "Where body is the raw body of the request. The signature is sensitive to any changes, so even a small change in the body will cause the signature to be completely different. This means that you should not change the body in any way before verifying."
-}
-[/block]
+```javascript signedContent
+signedContent = `${webhook_id}.${webhook_timestamp}.${payload}`
+```
+
+> ❗️ Where body is the raw body of the request. The signature is sensitive to any changes, so even a small change in the body will cause the signature to be completely different. This means that you should not change the body in any way before verifying.
+
 ## Determining the expected signature
 
 BASIQ uses [HMAC](https://en.wikipedia.org/wiki/HMAC) with [SHA-256](https://en.wikipedia.org/wiki/SHA-2) to sign its webhooks.
@@ -65,37 +53,39 @@ To calculate the expected signature, you need to HMAC the signedContent from abo
 **For example**, if your secret is `whsec_MA4V6bD7rB0Hcm2aw8ghgDeQ5UAak24DwnX0rX6`, you should use `MA4V6bD7rB0Hcm2aw8ghgDeQ5UAak24DwnX0rX6` as the key.
 
 Here's an example of how you can calculate the signature in Node.js:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "const crypto = require('crypto');\n\nsignedContent = `${webhook_id}.${webhook_timestamp}.${payload}`\nconst secret = \"whsec_MA4V6bD7rB0Hcm2aw8ghgDeQ5UAak24DwnX0rX6\";\n\n// Need to base64 decode the secret\nconst secretBytes = new Buffer(secret.split('_')[1], \"base64\");\nconst signature = crypto\n  .createHmac('sha256', secretBytes)\n  .update(signedContent)\n  .digest('base64');\nconsole.log(signature);\n\nif (signature !== webhook_signature) {\n// don't proceed further\n}",
-      "language": "javascript",
-      "name": "Code"
-    }
-  ]
+
+```javascript Code
+const crypto = require('crypto');
+
+signedContent = `${webhook_id}.${webhook_timestamp}.${payload}`
+const secret = "whsec_MA4V6bD7rB0Hcm2aw8ghgDeQ5UAak24DwnX0rX6";
+
+// Need to base64 decode the secret
+const secretBytes = new Buffer(secret.split('_')[1], "base64");
+const signature = crypto
+  .createHmac('sha256', secretBytes)
+  .update(signedContent)
+  .digest('base64');
+console.log(signature);
+
+if (signature !== webhook_signature) {
+// don't proceed further
 }
-[/block]
+```
+
 The generated signature should match one of the signatures sent in the `webhook-signature` header.
 
 The `webhook-signature` header is composed of a list of space delimited signatures and their corresponding version identifiers. The signature list is most commonly of length one. Though there could be any number of signatures. **For example:** 
-[block:code]
-{
-  "codes": [
-    {
-      "code": "v1,AvFmwEcSZu/WBDciXDcwDaSdA61PJNI2uup6nihXJfE=",
-      "language": "json",
-      "name": "webhook-signature header"
-    }
-  ]
-}
-[/block]
+
+```json webhook-signature header
+v1,AvFmwEcSZu/WBDciXDcwDaSdA61PJNI2uup6nihXJfE=
+```
+
 Make sure to remove the version prefix and delimiter (e.g. v1,) before verifying the signature.
 
 ## Verify timestamp
 
 As mentioned above, BASIQ also sends the timestamp of the attempt in the `webhook-timestamp` header. You should compare this timestamp against your system timestamp and make sure it's within your tolerance in order to prevent timestamp and replay attacks.
-
 
 # Firewalls (Source IP Addresses)
 
@@ -104,22 +94,22 @@ Many larger organisations implement stringent firewall rules to control the IPs 
 In case your webhook receiving endpoint is behind a firewall or NAT, you may need to allow traffic from BASIQ's IP addresses.
 
 Here is the complete list of IP addresses of the sender from which webhooks may originate:
-[block:code]
-{
-  "codes": [
-    {
-      "code": "44.228.126.217\n50.112.21.217\n52.24.126.164\n54.148.139.208\n52.215.16.239\n54.216.8.72\n63.33.109.123\n13.126.41.108\n15.207.218.84\n65.2.133.31",
-      "language": "text",
-      "name": "Source IP addresses"
-    }
-  ]
-}
-[/block]
 
-[block:callout]
-{
-  "type": "success",
-  "title": "Quick Links",
-  "body": "  * [Create a Webhook](https://api.basiq.io/reference/addwebhook) \n  * [Retrieve a Webhook](https://api.basiq.io/reference/getwebhook)\n  * [Send a test message](https://api.basiq.io/reference/testmessage) "
-}
-[/block]
+```text Source IP addresses
+44.228.126.217
+50.112.21.217
+52.24.126.164
+54.148.139.208
+52.215.16.239
+54.216.8.72
+63.33.109.123
+13.126.41.108
+15.207.218.84
+65.2.133.31
+```
+
+> 👍 Quick Links
+>
+> * [Create a Webhook](https://api.basiq.io/reference/addwebhook) 
+> * [Retrieve a Webhook](https://api.basiq.io/reference/getwebhook)
+> * [Send a test message](https://api.basiq.io/reference/testmessage) 
