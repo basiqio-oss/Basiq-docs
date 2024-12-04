@@ -10,24 +10,10 @@ metadata:
 next:
   description: ''
 ---
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/120db64-Typography.jpg",
-        "120db64-Typography.jpg",
-        2058,
-        1478,
-        "#000000",
-        null,
-        "649d1f4df9aab7000bc6c359"
-      ],
-      "caption": "Basiq Customise UI"
-    }
-  ]
-}
-[/block]
+<Image title="120db64-Typography.jpg" alt={2058} src="https://files.readme.io/120db64-Typography.jpg">
+  Basiq Customise UI
+</Image>
+
 ## Introduction:
 
 Partners utilising the ConsentUI have the ability to customize various aspects of the interface through the Layout tab. This tab enables partners to adjust fonts, colors, text size, and the appearance of different elements within the ConsentUI.
@@ -40,7 +26,7 @@ Please be aware that the **AuthUI** project screens **(found at connect.basiq.io
 
 Partners can conveniently preview the live changes they make to the ConsentUI by utilising the Dashboard's editing feature. This allows partners to visualize the modifications and ensure they meet their desired design requirements.
 
-## Failures: 
+## Failures:
 
 In the event of an error, such as the failure to load configuration values, the ConsentUI will gracefully fallback to default values. This ensures that the interface remains functional and consistent even if there are issues with the customisation settings.
 
@@ -55,24 +41,11 @@ Input fields within the ConsentUI inherit the 'accent' and 'inactive' color valu
 ## Glimpse
 
 This is how the customiser UI looks like, loaded with an editor on the right hand side. The details are below: 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/32a604c-Screenshot_2023-06-29_at_4.16.03_pm.png",
-        "32a604c-Screenshot_2023-06-29_at_4.16.03_pm.png",
-        2766,
-        1526,
-        "#000000",
-        null,
-        "649d21bbef5f4f0060f7dd62"
-      ],
-      "caption": "Customise UI"
-    }
-  ]
-}
-[/block]
+
+<Image title="32a604c-Screenshot_2023-06-29_at_4.16.03_pm.png" alt={2766} src="https://files.readme.io/32a604c-Screenshot_2023-06-29_at_4.16.03_pm.png">
+  Customise UI
+</Image>
+
 **Analytics (GTM)**
 
 In order to configure Google Tag Manager (GTM), the process begins with the utilisation of the Customiser feature. Through Customiser UI, partners are able to incorporate their own custom tags into the Analytics field of Google Tag Manager (GTM). This allows for a personalised and tailored tracking system.
@@ -90,7 +63,7 @@ The header image, which includes the logo displayed at the top of the ConsentUI 
 **Font Family**
 
 Partners have the flexibility to choose from a variety of open-source Google Fonts. By selecting a font family, partners can apply a consistent font style to all elements throughout the ConsentUI. Additionally, the text is set to either bold or regular by default, depending on whether the selected font supports it.
-  
+
 **Font Size**
 
 The ConsentUI allows partners to configure the sizes of both headings and paragraphs. Heading size affects the titles displayed on most screens, such as the "Select institution" title. On the other hand, paragraph size applies to all other text elements, including buttons, subtext, popups, and more.
@@ -120,24 +93,9 @@ The ConsentUI supports customisation of buttons, including their background colo
 Partners have the ability to set the background color of the entire ConsentUI page container. This customisation option allows for the selection of a specific color that aligns with the partner's branding and overall design aesthetic.
 
 **Accreditation (only for Open Banking enabled applications)**
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/20d19f5-Screenshot_2023-06-29_at_4.16.13_pm.png",
-        "20d19f5-Screenshot_2023-06-29_at_4.16.13_pm.png",
-        2766,
-        1526,
-        "#000000",
-        null,
-        "649d21c5b961ce0029f7c835"
-      ],
-      "caption": ""
-    }
-  ]
-}
-[/block]
+
+![2766](https://files.readme.io/20d19f5-Screenshot_2023-06-29_at_4.16.13_pm.png "20d19f5-Screenshot_2023-06-29_at_4.16.13_pm.png")
+
 For Open Banking enabled applications, partners can modify the background and text colors of the Consumer Data Right (CDR) accreditation badge. This customisation feature ensures that the badge seamlessly integrates with the partner's chosen color scheme.
 
 **Consent Policy - Data We Will Collect**
