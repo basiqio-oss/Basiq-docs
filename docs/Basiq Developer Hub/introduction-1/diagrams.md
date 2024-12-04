@@ -10,20 +10,6 @@ metadata:
 next:
   description: ''
 ---
-# How does the API work? 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/66d4577-Group_2020_1.svg",
-        "Group 2020 (1).svg",
-        2204,
-        1920,
-        "#0075dc"
-      ],
-      "sizing": "full"
-    }
-  ]
-}
-[/block]
+# How does the API work?
+
+<Image width="100%" src="https://files.readme.io/66d4577-Group_2020_1.svg" />
