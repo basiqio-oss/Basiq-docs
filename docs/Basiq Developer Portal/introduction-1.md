@@ -20,45 +20,17 @@ Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches
 
 Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking and more.
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/bb68dee-DevHub_01.png",
-        "DevHub_01.png",
-        1400,
-        378,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+![1400](https://files.readme.io/bb68dee-DevHub_01.png "DevHub_01.png")
 
 Basiq’s Products allow you to:
 
 * Access *user consented*, account and transaction data in real-time
 
-*  Enhance transactions with merchant data
+* Enhance transactions with merchant data
 
 * Gain deeper insights of your customer's finances
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/43206b9-DevHub_02.png",
-        "DevHub_02.png",
-        1400,
-        778,
-        "#000000"
-      ]
-    }
-  ]
-}
-[/block]
+
+![1400](https://files.readme.io/43206b9-DevHub_02.png "DevHub_02.png")
 
 Our partner ecosystem branches far and wide, but our most common use cases are: 
 
@@ -70,10 +42,4 @@ Our partner ecosystem branches far and wide, but our most common use cases are:
 
 Check out how some of our customers are using us. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in the wild.
 
-
-[block:callout]
-{
-  "type": "warning",
-  "body": "Basiq APIs are currently only available in Australia and New Zealand. We are working to make them available in other countries - so check back soon. Use this link to see a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions)."
-}
-[/block]
+> 🚧 Basiq APIs are currently only available in Australia and New Zealand. We are working to make them available in other countries - so check back soon. Use this link to see a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions).
