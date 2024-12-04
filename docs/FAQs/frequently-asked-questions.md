@@ -84,3 +84,25 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
   <p>Further details are available in the <a href="https://api.basiq.io/docs/error-codes#incomplete-job" target="_blank">error code documentation</a>.</p>
 </Accordion>
+
+<Accordion title="What should I do if my request returns an error?" icon="fa-info-circle">
+  <p>If your request returns an error, review the error code and the accompanying message carefully to understand the issue. Our <a href="https://api.basiq.io/docs/error-codes" target="_blank">error code documentation</a> provides detailed explanations for each error code and how you should handle them. Common issues include authentication errors, incorrect request formats, or temporary issues with the bank’s API.</p>
+  <p>Ensure your implementation follows Basiq's guidelines for error handling and data retrieval to improve user experience and service reliability.</p>
+</Accordion>
+
+<Accordion title="How do I test my integration with Basiq?" icon="fa-info-circle">
+  <p>To test your integration with Basiq, use our sandbox environment. The sandbox allows you to simulate user interactions and API calls to test your implementation without impacting real user data. Detailed documentation on how to access and use the sandbox is available on our <a href="https://api.basiq.io/docs/sandbox" target="_blank">sandbox page</a>.</p>
+  <p>Use the sandbox to verify data flows, simulate various scenarios, and ensure your application responds appropriately to different API responses.</p>
+</Accordion>
+
+<Accordion title="What data does Basiq retrieve from users' bank accounts?" icon="fa-info-circle">
+  <p>Basiq can retrieve various types of financial data from users' bank accounts, including:</p>
+
+  <ul>
+    <li>Account information such as account type, number, and balance</li>
+    <li>Transaction history with details such as date, description, and amount</li>
+    <li>Pending and posted transactions</li>
+  </ul>
+
+  <p>All data retrieval is done securely and with the explicit consent of the user, following the CDR standards and data privacy regulations. For a full breakdown of the data Basiq retrieves, refer to our <a href="https://api.basiq.io/docs/data-structure" target="_blank">data structure documentation</a>.</p>
+</Accordion>
