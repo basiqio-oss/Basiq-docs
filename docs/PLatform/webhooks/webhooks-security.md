@@ -42,8 +42,8 @@ The content to sign is composed by concatenating the `id`, `timestamp` and `payl
 signedContent = `${webhook_id}.${webhook_timestamp}.${payload}`
 ```
 
-> ❗️ 
-> 
+> ❗️
+>
 > Where body is the raw body of the request. The signature is sensitive to any changes, so even a small change in the body will cause the signature to be completely different. This means that you should not change the body in any way before verifying.
 
 ## Determining the expected signature
@@ -104,7 +104,7 @@ Here is the complete list of IP addresses of the sender from which webhooks may 
 ```
 
 > 👍 Quick Links
-> 
-> - [Create a Webhook](https://api.basiq.io/reference/addwebhook) 
-> - [Retrieve a Webhook](https://api.basiq.io/reference/getwebhook)
-> - [Send a test message](https://api.basiq.io/reference/testmessage)
+>
+> * [Create a Webhook](https://api.basiq.io/reference/addwebhook) 
+> * [Retrieve a Webhook](https://api.basiq.io/reference/getwebhook)
+> * [Send a test message](https://api.basiq.io/reference/testmessage)
