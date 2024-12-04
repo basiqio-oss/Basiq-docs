@@ -10,9 +10,7 @@ metadata:
 next:
   description: ''
 ---
-\<img src="https\://files.readme.io/1a04ca3-Group\_1496.svg" style=\{\{
-&#x20; 	width: 100%;
-&#x20; }} />
+<img src="https://files.readme.io/1a04ca3-Group\_1496.svg" />
 
 The following guide will help you to get up and running with the Basiq API without writing any application code. It uses [Postman](https://www.postman.com) and is suitable for both technical and non-technical audiences.
 
