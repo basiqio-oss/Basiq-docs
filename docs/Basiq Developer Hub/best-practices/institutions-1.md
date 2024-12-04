@@ -16,7 +16,7 @@ Many partners are keen to get more information on institutions at a more granula
 
 Use attributes `stage`,  `status` and `stats` to determine the **maturity, availability and performance** respectively for each institution connector. Scroll down for more detailed information on both these attributes.
 
-### Stats 
+### Stats
 
 The **Stats** of institution connectors are evaluated every 24 hours using jobs occurring in the previous 7 days to provide an indication of average performance.
 
@@ -29,12 +29,13 @@ Institution connectors with `status` = "**under-maintenance**" - can and should 
 When we release a new connector it is initially released as **alpha** or **beta** version.  The more data we see the more mature the connector becomes until it is upgraded to **live**.  Below are some high level guidelines to indicate what you can expect during each stage.
 
 **Beta:** This is a very new connector. We leave the connector in this Stage until we have enough variety and coverage of data to upgrade the connector. This is an iterative process and we love partnering with Fintechs to improve our connectors. For a beta connector you can expect the following:
-- verification of credentials for login
-- account class and type (limited support for product name to account type mappings)
-- account and transaction data for savings and transaction accounts to start
-- account status, account number, account balance, available funds for above account types
-- transaction status, amount, balance, description, postdate
-- monitoring of test accounts
+
+* verification of credentials for login
+* account class and type (limited support for product name to account type mappings)
+* account and transaction data for savings and transaction accounts to start
+* account status, account number, account balance, available funds for above account types
+* transaction status, amount, balance, description, postdate
+* monitoring of test accounts
 
 **Alpha:** this is a partially complete connector.  Use the features attributes to determine what is supported with these connectors.  Partners keen to help move these **alpha** connectors to **beta** stage can use these connectors as the more data the platform retrieves the quicker the connector can mature.
 
@@ -54,13 +55,14 @@ When we release a new connector it is initially released as **alpha** or **beta*
 ## Using the institutions endpoint to build your own bank picker
 
 Many of the attributes on the institutions endpoint relate to institution connectors and enable you to build your own user experience for your customer, such as:
-- `loginIdCaption`
-- `secondaryLoginIdCaption`
-- `passwordCaption`
-- `securityCodeCaption`
-- `forgottenPasswordUrl`
-- `colors`
-- `logo`
+
+* `loginIdCaption`
+* `secondaryLoginIdCaption`
+* `passwordCaption`
+* `securityCodeCaption`
+* `forgottenPasswordUrl`
+* `colors`
+* `logo`
 
 You can check out our guide on how to build your own UI connector [here](https://api.basiq.io/docs/build-your-own-1). 
 
@@ -68,30 +70,128 @@ You can check out our guide on how to build your own UI connector [here](https:/
 
 Use these attributes to determine which **features** are supported for each institution and data source: 
 
-- **web** -  denotes all data shared via institution connectors
-- **pdf** - denotes data uploaded via official pdf bank statements
-- **csv** - denotes data uploaded via csv statements
+* **web** -  denotes all data shared via institution connectors
+* **pdf** - denotes data uploaded via official pdf bank statements
+* **csv** - denotes data uploaded via csv statements
 
 Example 1:   `"accountNo": ["web", "pdf", "csv"]`  indicates that the  **Accounts.accountNo** attribute is available for this institution -  for data sourced from **web, pdf and csv** 
 
 Example 2: `"accountNo": ["pdf"]` indicates that the  **accountNo** attribute is available for this institution - only for data sourced from **pdf** statements
-[block:parameters]
-{
-  "data": {
-    "h-0": "Features",
-    "0-0": "`login`",
-    "0-1": "Bank authentication or verify credentials step is supported for this institution connector",
-    "2-1": "- `accountNo`\n\n- `name`\n\n- `currency`\n\n- `balance`\n\n- `availableFunds`\n\n- `lastUpdated`\n\n- `accountHolder`\n\n- `meta` - mortgage meta data",
-    "3-0": "`transactions`",
-    "4-1": "- `description`\n      \n- `date`\n\n- `amount`\n      \n- `balance`\n\n- `class`",
-    "3-1": "Describes the support of [Transactions](ref:transactions) attributes by institution for each data source",
-    "5-0": "`profile`",
-    "6-1": "- `firstName`\n\n- `lastName`\n\n- `middleName`\n\n- `emailAddresses`\n\n- `physicalAddresses`",
-    "5-1": "Describes the support of [Connection with profile data](ref:retrieve-a-connection)  attributes by institution for each data source",
-    "1-0": "`accounts`",
-    "1-1": "Describes the support of [Accounts](ref:accounts)  attributes by institution for each data source"
-  },
-  "cols": 2,
-  "rows": 7
-}
-[/block]
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Features
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `login`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Bank authentication or verify credentials step is supported for this institution connector
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `accounts`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Describes the support of [Accounts](ref:accounts)  attributes by institution for each data source
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * `accountNo`
+
+        * `name`
+
+        * `currency`
+
+        * `balance`
+
+        * `availableFunds`
+
+        * `lastUpdated`
+
+        * `accountHolder`
+
+        * `meta` - mortgage meta data
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `transactions`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Describes the support of [Transactions](ref:transactions) attributes by institution for each data source
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * `description`\
+              
+
+        * `date`
+
+        * `amount`\
+              
+
+        * `balance`
+
+        * `class`
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        `profile`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Describes the support of [Connection with profile data](ref:retrieve-a-connection)  attributes by institution for each data source
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * `firstName`
+
+        * `lastName`
+
+        * `middleName`
+
+        * `emailAddresses`
+
+        * `physicalAddresses`
+      </td>
+    </tr>
+  </tbody>
+</Table>
