@@ -14,5 +14,5 @@ next:
   description: ''
 ---
 > 📘 Legacy Version
-> 
+>
 > Please Use [Reporting (Insights)](https://api.basiq.io/reference/createreport)
