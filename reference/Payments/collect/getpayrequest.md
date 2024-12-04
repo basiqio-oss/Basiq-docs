@@ -13,22 +13,37 @@ metadata:
 next:
   description: ''
 ---
-[block:callout]
-{
-  "type": "info",
-  "body": "The `jobId` returned can also be used to retrieve the `payrequest` directly via the API",
-  "title": "Note"
-}
-[/block]
+> 📘 Note
+>
+> The `jobId` returned can also be used to retrieve the `payrequest` directly via the API
+
 You can use Use the returned `job.Id` you receive to enquire about the payment requests progress.
-[block:code]
+
+```json Retrieve Payrequest Response
+GET /payments/payrequests HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic $YOUR_ACCESS_TOKEN
+
 {
-  "codes": [
-    {
-      "code": "GET /payments/payrequests HTTP/1.1\nAccept: application/json\nContent-Type: application/json\nAuthorization: Basic $YOUR_ACCESS_TOKEN\n\n{\n  \"type\": \"payrequest\",\n  \"id\": \"f7824ad0-73f1-0138-3700-0a58a9feac0f\",\n  \"requestId\": \"01824ad0-73f1-0138-3700-0a58a9feac09\",\n  \"created\": \"2022-03-21T20:28:22.378Z\",\n  \"updated\": \"2022-03-21T20:28:22.378Z\",\n  \"method\": \"batch\",\n  \"status\": \"in-progress\",\n  \"payer\": {\n    \"payerUserId\": \"21824ad0-73f1-0138-3700-0a58a9feac09\",\n    \"payerBankBranchCode\": \"730002\",\n    \"payerAccountNumber\": \"123456789\"\n  },\n  \"description\": \"Spaceship Investment\",\n  \"amount\": 173.45,\n  \"currency\": \"AUD\",\n  \"links\": {\n    \"self\": \"/payments/payrequests/f7824ad0-73f1-0138-3700-0a58a9feac0f\",\n    \"job\": \"/jobs/f7824ad0-73f1-0138-3700-0a58a9feac0f\"\n  }\n}",
-      "language": "json",
-      "name": "Retrieve Payrequest Response"
-    }
-  ]
+  "type": "payrequest",
+  "id": "f7824ad0-73f1-0138-3700-0a58a9feac0f",
+  "requestId": "01824ad0-73f1-0138-3700-0a58a9feac09",
+  "created": "2022-03-21T20:28:22.378Z",
+  "updated": "2022-03-21T20:28:22.378Z",
+  "method": "batch",
+  "status": "in-progress",
+  "payer": {
+    "payerUserId": "21824ad0-73f1-0138-3700-0a58a9feac09",
+    "payerBankBranchCode": "730002",
+    "payerAccountNumber": "123456789"
+  },
+  "description": "Spaceship Investment",
+  "amount": 173.45,
+  "currency": "AUD",
+  "links": {
+    "self": "/payments/payrequests/f7824ad0-73f1-0138-3700-0a58a9feac0f",
+    "job": "/jobs/f7824ad0-73f1-0138-3700-0a58a9feac0f"
+  }
 }
-[/block]
+```
