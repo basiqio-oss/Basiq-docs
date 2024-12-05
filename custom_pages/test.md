@@ -6,13 +6,10 @@ metadata:
   title: ''
   description: ''
 ---
-import License from './license.md' // Assumes an integration is used to compile markdown -> JS.
-import Contributing from './docs/contributing.mdx'
+# Hello, world!
 
-# Hello world
+Below is an example of markdown in JSX.
 
-<License />
-
-***
-
-<Contributing />
+<div style={{backgroundColor: 'violet', padding: '1rem'}}>
+  Try and change the background color to `tomato`.
+</div>
