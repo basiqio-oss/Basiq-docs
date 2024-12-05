@@ -1,7 +1,7 @@
 ---
 title: Test Page on the Go
 fullscreen: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
