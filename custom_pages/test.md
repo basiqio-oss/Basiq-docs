@@ -20,15 +20,6 @@ Below is an example of markdown in JSX.
   </blockquote>
 </>
 
-// @filename: types.d.ts
-import type {} from 'mdx'
-// @filename: example.jsx
-/// <reference lib="dom" />
-/\* @jsxImportSource react \*/
-import Example from './example.mdx'
-// ---cut---
-console.log(
-
 <Example
   components={{
       // Map `h1` (`# heading`) to use `h2`s.
