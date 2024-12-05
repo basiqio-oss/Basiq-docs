@@ -8,18 +8,6 @@ metadata:
 ---
 # Hello, world!
 
-Below is an example of markdown in JS.
-
-<br />
-
-<br />
-
-# Hello, world!
-
-Below is an example of markdown in JSX.
-
-# Hello, world!
-
 Below is an example of markdown in JSX.
 
 <div style={{ backgroundColor: 'violet', padding: '1rem' }}>
