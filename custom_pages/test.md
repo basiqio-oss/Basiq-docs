@@ -10,39 +10,8 @@ metadata:
 
 Below is an example of markdown in JSX.
 
-<div style={{backgroundColor: 'violet', padding: '1rem'}}>
-  Try and change the background color to `tomato`.
+<div style="display: flex; justify-content: space-between;">
+  <div style="flex: 1; padding: 10px; background-color: lightgray;">Item 1</div>
+  <div style="flex: 1; padding: 10px; background-color: lightblue;">Item 2</div>
+  <div style="flex: 1; padding: 10px; background-color: lightgreen;">Item 3</div>
 </div>
-
-<>
-  <blockquote>
-    <p>A greater than…</p>
-  </blockquote>
-</>
-
-<Example
-  components={{
-      // Map `h1` (`# heading`) to use `h2`s.
-      h1: 'h2',
-      // Rewrite `em`s (`*like so*`) to `i` with a goldenrod foreground color.
-      em(props) {
-        return <i style={{color: 'goldenrod'}} {...props} />
-      },
-      // Pass a layout (using the special `'wrapper'` key).
-      wrapper({components, ...rest}) {
-        return <main {...rest} />
-      },
-      // Pass a component.
-      Planet() {
-        return 'Neptune'
-      },
-      // This nested component can be used as `<theme.text>hi</theme.text>`
-      theme: {
-        text(props) {
-          return <span style={{color: 'grey'}} {...props} />
-        }
-      }
-    }}
-/>
-
-)
