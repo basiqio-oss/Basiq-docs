@@ -25,7 +25,7 @@ Start by accessing the Basiq Dashboard at [dashboard.basiq.io](https://dashboard
 Once logged in, your next action is to create a new application. This can be done by locating and clicking on the “Create New Application” button in the Dashboard. When naming your application, choose a name that reflects its purpose or the environment it's aligned with. For example, an application intended for a production environment could be named “Home Loans - Production”. You will then choose between two types: the Default Application, suitable for Sandbox or Production environments, and the Business Application, which supports collecting data from businesses under the CDR Business Consumer Consent.
 
 <HTMLBlock>{`
-<div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/zMaHRaQNiMNRa94QpO0y?embed" title="Basiq - Create a New Application" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.215053763440864% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/ER6rQXg5PzsABkg7QOha?embed&embed_mobile=tab&embed_desktop=inline" title="Basiq - Create a New Regular Application" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
 `}</HTMLBlock>
 
 ### Step 3: Configuring Application Settings
