@@ -114,6 +114,8 @@ View connection states in the **Connections** section of the dashboard.
       </Card>
     </Cards>
 
+    <br />
+
     Actions available in the connection profile:
 
     * **Refresh Connection**
