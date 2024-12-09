@@ -26,103 +26,20 @@ Connections are a core feature that securely link your users’ financial instit
 
 ## Connection States
 
-<Cards columns={4} style={{ display: 'grid', gap: '20px' }}>
-  <Card
-    title="Pre-init"
-    icon="fa-hourglass"
-    style={{
-      border: '1px solid #ccc',
-      padding: '15px',
-      borderRadius: '8px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      backgroundColor: '#f9f9f9',
-      textAlign: 'center',
-      transition: 'all 0.3s ease',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'scale(1.05)';
-      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'scale(1)';
-      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    }}
-  >
+<Cards columns={4}>
+  <Card title="Pre-init" icon="fa-hourglass">
     The connection is initialized but not yet active.
   </Card>
 
-  <Card
-    title="Active"
-    icon="fa-check-circle"
-    style={{
-      border: '1px solid #2ecc71',
-      padding: '15px',
-      borderRadius: '8px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      backgroundColor: '#dff0d8',
-      color: '#2c3e50',
-      textAlign: 'center',
-      transition: 'all 0.3s ease',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'scale(1.05)';
-      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'scale(1)';
-      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    }}
-  >
+  <Card title="Active" icon="fa-check-circle">
     The connection is successfully established and operational.
   </Card>
 
-  <Card
-    title="Invalid"
-    icon="fa-exclamation-triangle"
-    style={{
-      border: '1px solid #e74c3c',
-      padding: '15px',
-      borderRadius: '8px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      backgroundColor: '#f2dede',
-      color: '#a94442',
-      textAlign: 'center',
-      transition: 'all 0.3s ease',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'scale(1.05)';
-      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'scale(1)';
-      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    }}
-  >
+  <Card title="Invalid" icon="fa-exclamation-triangle">
     The connection is no longer valid and may require user re-authentication.
   </Card>
 
-  <Card
-    title="Failed"
-    icon="fa-times-circle"
-    style={{
-      border: '1px solid #e74c3c',
-      padding: '15px',
-      borderRadius: '8px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      backgroundColor: '#f2dede',
-      color: '#a94442',
-      textAlign: 'center',
-      transition: 'all 0.3s ease',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = 'scale(1.05)';
-      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = 'scale(1)';
-      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    }}
-  >
+  <Card title="Failed" icon="fa-times-circle">
     An error occurred during the connection process.
   </Card>
 </Cards>
