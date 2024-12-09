@@ -168,30 +168,27 @@ View connection states in the **Connections** section of the dashboard.
 ## API Endpoints for Managing Connections
 
 \<Accordion title="Purge Connection" icon="fa-trash-alt">
-&#x20; \<p>
-&#x20;   Use this endpoint to remove all data related to a specific user connection. Purging is \<strong>only applicable\</strong> for active connections and is essential for ensuring enriched insights reflect the latest data.
-&#x20; \</p>
+&#x20; Use this endpoint to remove all data related to a specific user connection. Purging is \*\*only applicable\*\* for active connections and is essential for ensuring enriched insights reflect the latest data.
 
-&#x20; \<h4>Endpoint:\</h4>
-&#x20; \<pre>
-&#x20; POST /connections/:connection\_id/purge
-&#x20; \</pre>
+&#x20; \*\*Endpoint:\*\*
 
-&#x20; \<h4>Description:\</h4>
-&#x20; \<ul>
-&#x20;   \<li>Deletes all user data associated with the connection.\</li>
-&#x20;   \<li>Use before refreshing connections to update Enrich results.\</li>
-&#x20; \</ul>
+&#x9;POST /connections/:connection\\\_id/purge
 
-&#x20; \<h4>Example Response:\</h4>
-&#x20; \<pre>
-&#x20; \{
-&#x20;   "status": "success",
-&#x20;   "message": "Connection data purged."
-&#x20; }
-&#x20; \</pre>
+&#x20; \*\*Description:\*\*
+&#x20; \- Deletes all user data associated with the connection.
+&#x20; \- Use before refreshing connections to update Enrich results.
 
-&#x20; \<p>
-&#x20;   \<strong>Note:\</strong> After purging, make sure to refresh the connection for the latest data.
-&#x20; \</p>
-\</Accordion>
+&#x20; \*\*Example Response:\*\*
+&#x9;\{ \`status\`: \`success\`, \`message\`: \`Connection data purged.\` }
+
+
+&#x20; \*\*Note:\*\* After purging, make sure to refresh the connection for the latest data.
+&#x20;\</Accordion>
+
+
+<br />
+
+<br />
+
+markdown\
+Copy code
