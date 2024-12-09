@@ -37,6 +37,15 @@ Connections are a core feature that securely link your users’ financial instit
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
       backgroundColor: '#f9f9f9',
       textAlign: 'center',
+      transition: 'all 0.3s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.05)';
+      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
     }}
   >
     The connection is initialized but not yet active.
@@ -53,6 +62,15 @@ Connections are a core feature that securely link your users’ financial instit
       backgroundColor: '#dff0d8',
       color: '#2c3e50',
       textAlign: 'center',
+      transition: 'all 0.3s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.05)';
+      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
     }}
   >
     The connection is successfully established and operational.
@@ -69,6 +87,15 @@ Connections are a core feature that securely link your users’ financial instit
       backgroundColor: '#f2dede',
       color: '#a94442',
       textAlign: 'center',
+      transition: 'all 0.3s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.05)';
+      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
     }}
   >
     The connection is no longer valid and may require user re-authentication.
@@ -85,6 +112,15 @@ Connections are a core feature that securely link your users’ financial instit
       backgroundColor: '#f2dede',
       color: '#a94442',
       textAlign: 'center',
+      transition: 'all 0.3s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.05)';
+      e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.2)';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
     }}
   >
     An error occurred during the connection process.
