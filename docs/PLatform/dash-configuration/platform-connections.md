@@ -132,35 +132,38 @@ View connection states in the **Connections** section of the dashboard.
 
 ## Example Workflows
 
-<Tabs>
-  <Tab title="Refresh Only">
-    Refreshing a connection keeps your app in sync with the latest account and transaction data.
+\<Tabs>
+&#x20; \<Tab title="Refresh Only">
+&#x20;   Refreshing a connection keeps your app in sync with the latest account and transaction data.
 
-    **Steps:**
+&#x20;   \*\*Steps:\*\*
 
-    1. Select the connection.
-    2. Click **Refresh** to fetch the latest data.
-    3. Monitor progress in the **Job History** section.
-  </Tab>
+&#x20;   1\. Select the connection.
+&#x20;   2\. Click \*\*Refresh\*\* to fetch the latest data.
+&#x20;   3\. Monitor progress in the \*\*Job History\*\* section.
+&#x20; &#x20;
+&#x20;   \<!--ARCADE EMBED START-->\<div style="position: relative; padding-bottom: calc(50.215053763440864% + 41px); height: 0; width: 100%;">\<iframe src="https\://demo.arcade.software/KLIzfjHMU4LekeSym8Af?embed\&embed\_mobile=tab\&embed\_desktop=inline\&show\_copy\_link=true" title="Dashboard Refresh Connection" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" >\</iframe>\</div>\<!--ARCADE EMBED END-->
+&#x20;  &#x20;
+&#x20; \</Tab>
 
-  <Tab title="Purge and Refresh">
-    Always purge and refresh the connection to ensure accurate Enrich insights.
+&#x20; \<Tab title="Purge and Refresh">
+&#x20;   Always purge and refresh the connection to ensure accurate Enrich insights.
 
-    **Steps:**
+&#x20;   \*\*Steps:\*\*
 
-    1. Select the connection.
-    2. Click **Purge** to remove outdated data.
-    3. Click **Refresh** to fetch new data.
-    4. Monitor progress in the **Job History** section.
-  </Tab>
+&#x20;   1\. Select the connection.
+&#x20;   2\. Click \*\*Purge\*\* to remove outdated data.
+&#x20;   3\. Click \*\*Refresh\*\* to fetch new data.
+&#x20;   4\. Monitor progress in the \*\*Job History\*\* section.
+&#x20; \</Tab>
 
-  <Tab title="Revoke Connection">
-    Revoke a connection to permanently disconnect a financial institution.
+&#x20; \<Tab title="Revoke Connection">
+&#x20;   Revoke a connection to permanently disconnect a financial institution.
 
-    **Steps:**
+&#x20;   \*\*Steps:\*\*
 
-    1. Select the connection.
-    2. Click **Revoke** to unlink the institution.
-    3. Note: Data will remain unless purged beforehand.
-  </Tab>
-</Tabs>
+&#x20;   1\. Select the connection.
+&#x20;   2\. Click \*\*Revoke\*\* to unlink the institution.
+&#x20;   3\. Note: Data will remain unless purged beforehand.
+&#x20; \</Tab>
+\</Tabs>
