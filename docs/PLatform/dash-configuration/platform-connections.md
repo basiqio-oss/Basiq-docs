@@ -172,7 +172,7 @@ View connection states in the **Connections** section of the dashboard.
   Use this endpoint to remove all data related to a specific user connection. Purging is **only applicable** for active connections and is essential for ensuring enriched insights reflect the latest data.
 
   **Endpoint:**
-  POST /connections/:connection\_id/purge
+  `POST /connections/:connection\_id/purge`
 
   **Description:**
 
