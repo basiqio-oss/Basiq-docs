@@ -167,10 +167,10 @@ View connection states in the **Connections** section of the dashboard.
 
 ## API Endpoints for Managing Connections
 
-<Accordion title="My Accordion Title" icon="fa-info-circle">
-  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
-  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
-  occaecat cupidatat non proident!
+<Accordion title="Purge Connection" icon="fa-trash-alt">
+  Use this endpoint to remove all data related to a specific user connection. Purging is **only applicable** for active connections and is essential for ensuring enriched insights reflect the latest data.
+
+  **Endpoint:**
 </Accordion>
 
 \<Accordion title="Purge Connection" icon="fa-trash-alt">\
