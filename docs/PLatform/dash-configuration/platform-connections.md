@@ -171,24 +171,15 @@ View connection states in the **Connections** section of the dashboard.
   Use this endpoint to remove all data related to a specific user connection. Purging is **only applicable** for active connections and is essential for ensuring enriched insights reflect the latest data.
 
   **Endpoint:**
+  POST /connections/:connection\_id/purge
+
+  **Description:**
+
+  * Deletes all user data associated with the connection.
+  * Must be done before refreshing connections to update Enrich results.
+
+    **Note:** After purging, make sure to refresh the connection to keep your data current.
 </Accordion>
-
-\<Accordion title="Purge Connection" icon="fa-trash-alt">\
-Use this endpoint to remove all data related to a specific user connection. Purging is \*\*only applicable\*\* for active connections and is essential for ensuring enriched insights reflect the latest data.
-
-\*\*Endpoint:\*\*
-
-&#x9;POST /connections/:connection\\\_id/purge
-
-\*\*Description:\*\*\
-\- Deletes all user data associated with the connection.
-\- Use before refreshing connections to update Enrich results.
-
-\*\*Example Response:\*\*\
-&#x9;\{ \`status\`: \`success\`, \`message\`: \`Connection data purged.\` }
-
-\*\*Note:\*\* After purging, make sure to refresh the connection for the latest data.\
-\</Accordion>
 
 <br />
 
