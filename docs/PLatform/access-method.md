@@ -12,9 +12,7 @@ next:
 ---
 # Overview:
 
-<Accordion title="Overview" icon="fa-info-circle">
-  BASIQ offers partners a comprehensive suite of access methods designed to facilitate the aggregation of financial data. These methods empower partners to efficiently retrieve and utilise data from various sources, enabling them to develop innovative financial solutions tailored to their clients' needs.
-</Accordion>
+BASIQ offers partners a comprehensive suite of access methods designed to facilitate the aggregation of financial data. These methods empower partners to efficiently retrieve and utilise data from various sources, enabling them to develop innovative financial solutions tailored to their clients' needs.
 
 <Cards columns={3}>
   <Card title="Web Connector" icon="fa-link" href="#web-connector">
