@@ -167,15 +167,9 @@ View connection states in the **Connections** section of the dashboard.
 
 ## API Endpoints for Managing Connections
 
-\<Accordion title="Refresh Connection" icon="fa-sync">
-&#x20; \*\*Endpoint:\*\* \`POST /connections/:connection\_id/refresh\`
+\<Accordion title="Purge Connection" icon="fa-trash-alt">
+&#x20; Use this endpoint to remove all data related to a specific user connection. Purging is \*\*only applicable\*\* for active connections and is essential for ensuring enriched insights reflect the latest data.
 
-&#x20; \- Triggers a \`job resource\` to refresh the connection asynchronously.
-&#x20; \- Returns a \`job\_id\` for tracking progress.
-
-&#x20; \*\*Example Response:\*\*
-&#x20; \`\`\`json
-&#x20; \{
-&#x20;   "job\_id": "baba4b82-b1e7-42f1-a9f7-577de7a6ff4f",
-&#x20;   "status": "pending"
-&#x20; }
+&#x20; \*\*Endpoint:\*\*
+&#x20; \`\`\`http
+&#x20; POST /connections/:connection\_id/purge
