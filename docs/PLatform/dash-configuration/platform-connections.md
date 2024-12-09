@@ -17,7 +17,8 @@ Connections are a core feature that securely link your users’ financial instit
 <Accordion title="What is a Connection?" icon="fa-info-circle">
   A **Connection** is created whenever a user links their financial institution with your app. It acts as a secure conduit to fetch and store account holder data (e.g., accounts, transactions, and enrich insights). Connections are tied to the **User Object**.
 
-  > 📘 **Pro Tip:** Interact with accounts and transactions through the **User Object**, not the connection itself, to ensure data integrity.
+  > 📘 **Pro Tip:**
+  > Interact with accounts and transactions through the **User Object**, not the connection itself, to ensure data integrity.
 </Accordion>
 
 ***
