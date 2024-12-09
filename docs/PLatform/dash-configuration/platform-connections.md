@@ -26,20 +26,67 @@ Connections are a core feature that securely link your users’ financial instit
 
 ## Connection States
 
-<Cards columns={4}>
-  <Card title="Pre-init" icon="fa-hourglass">
+<Cards columns={4} style={{ display: 'grid', gap: '20px' }}>
+  <Card
+    title="Pre-init"
+    icon="fa-hourglass"
+    style={{
+      border: '1px solid #ccc',
+      padding: '15px',
+      borderRadius: '8px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#f9f9f9',
+      textAlign: 'center',
+    }}
+  >
     The connection is initialized but not yet active.
   </Card>
 
-  <Card title="Active" icon="fa-check-circle">
+  <Card
+    title="Active"
+    icon="fa-check-circle"
+    style={{
+      border: '1px solid #2ecc71',
+      padding: '15px',
+      borderRadius: '8px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#dff0d8',
+      color: '#2c3e50',
+      textAlign: 'center',
+    }}
+  >
     The connection is successfully established and operational.
   </Card>
 
-  <Card title="Invalid" icon="fa-exclamation-triangle">
+  <Card
+    title="Invalid"
+    icon="fa-exclamation-triangle"
+    style={{
+      border: '1px solid #e74c3c',
+      padding: '15px',
+      borderRadius: '8px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#f2dede',
+      color: '#a94442',
+      textAlign: 'center',
+    }}
+  >
     The connection is no longer valid and may require user re-authentication.
   </Card>
 
-  <Card title="Failed" icon="fa-times-circle">
+  <Card
+    title="Failed"
+    icon="fa-times-circle"
+    style={{
+      border: '1px solid #e74c3c',
+      padding: '15px',
+      borderRadius: '8px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#f2dede',
+      color: '#a94442',
+      textAlign: 'center',
+    }}
+  >
     An error occurred during the connection process.
   </Card>
 </Cards>
