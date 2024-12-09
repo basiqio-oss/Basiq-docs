@@ -142,6 +142,8 @@ View connection states in the **Connections** section of the dashboard.
     2. Click **Refresh** to fetch the latest data.
     3. Monitor progress in the **Job History** section.
 
+    **Demo:**
+
     <div style={{ position: 'relative', paddingBottom: 'calc(50.215053763440864% + 41px)', height: '0', width: '100%' }}>
       <iframe src="https://demo.arcade.software/KLIzfjHMU4LekeSym8Af?embed&embed_mobile=tab&embed_desktop=inline" title="Dashboard Refresh Connection" frameBorder="0" loading="lazy" style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', colorScheme: 'light' }} allowFullScreen allow="clipboard-write" />
     </div>
