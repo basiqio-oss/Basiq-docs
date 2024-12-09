@@ -116,12 +116,12 @@ View connection states in the **Connections** section of the dashboard.
     Actions available in the connection profile:
 
     * **Refresh Connection**
+
     * **Purge Connection**
+
     * **Revoke Connection**
 
-    :::info
-    Data fetched from financial institutions includes PII (Personally Identifiable Information), which is partially masked in the dashboard for security.
-    :::
+    > 🚧 Data fetched from financial institutions includes PII (Personally Identifiable Information), which is partially masked in the dashboard for security.
   </Column>
 </Columns>
 
@@ -179,10 +179,3 @@ View connection states in the **Connections** section of the dashboard.
 
     **Note:** After purging, make sure to refresh the connection to keep your data current.
 </Accordion>
-
-<br />
-
-<br />
-
-markdown\
-Copy code
