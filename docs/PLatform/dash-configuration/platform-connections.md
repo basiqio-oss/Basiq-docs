@@ -76,7 +76,8 @@ View connection states in the **Connections** section of the dashboard.
       * Before refreshing enriched data to ensure insights are accurate.
       * To securely delete sensitive user data.
 
-      > info
+        > ❗️ Note
+
       > Always **purge and refresh connections** to ensure enriched insights reflect the latest data.
     </Accordion>
 
