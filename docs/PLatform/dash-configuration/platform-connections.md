@@ -17,9 +17,7 @@ Connections are a core feature that securely link your users’ financial instit
 <Accordion title="What is a Connection?" icon="fa-info-circle">
   A **Connection** is created whenever a user links their financial institution with your app. It acts as a secure conduit to fetch and store account holder data (e.g., accounts, transactions, and enrich insights). Connections are tied to the **User Object**.
 
-  :::info
-  **Pro Tip:** Interact with accounts and transactions through the **User Object**, not the connection itself, to ensure data integrity.
-  :::
+  > 📘 **Pro Tip:** Interact with accounts and transactions through the **User Object**, not the connection itself, to ensure data integrity.
 </Accordion>
 
 ***
@@ -121,7 +119,7 @@ View connection states in the **Connections** section of the dashboard.
 
     * **Revoke Connection**
 
-    > 🚧 Data fetched from financial institutions includes PII (Personally Identifiable Information), which is partially masked in the dashboard for security.
+    > 📘 Data fetched from financial institutions includes PII (Personally Identifiable Information), which is partially masked in the dashboard for security.
   </Column>
 </Columns>
 
@@ -177,5 +175,5 @@ View connection states in the **Connections** section of the dashboard.
   * Deletes all user data associated with the connection.
   * Must be done before refreshing connections to update Enrich results.
 
-    **Note:** After purging, make sure to refresh the connection to keep your data current.
+    > 📘 **Note:** After purging, make sure to refresh the connection to keep your data current.
 </Accordion>
