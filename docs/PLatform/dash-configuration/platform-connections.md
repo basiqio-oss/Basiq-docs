@@ -63,9 +63,9 @@ View connection states in the **Connections** section of the dashboard.
       * Click **Refresh** to sync data.
       * Track the progress in the **Job History** section.
 
-      :::tip
-      Regularly refresh connections to keep your data up-to-date.
-      :::
+      > 📘 **Pro Tip:**
+      >
+      > Regularly refresh connections to keep your data up-to-date.
     </Accordion>
 
     <Accordion title="Purge Connection" icon="fa-trash-alt">
@@ -121,7 +121,9 @@ View connection states in the **Connections** section of the dashboard.
 
     * **Revoke Connection**
 
-    > 📘 Data fetched from financial institutions includes PII (Personally Identifiable Information), which is partially masked in the dashboard for security.
+    > 📘 Note:
+    >
+    > Data fetched from financial institutions includes PII (Personally Identifiable Information), which is partially masked in the dashboard for security.
   </Column>
 </Columns>
 
@@ -177,13 +179,7 @@ View connection states in the **Connections** section of the dashboard.
   * Deletes all user data associated with the connection.
   * Must be done before refreshing connections to update Enrich results.
 
-    > 📘 **Note:** After purging, make sure to refresh the connection to keep your data current.
+    > 📘 **Note:**
+    >
+    > After purging, make sure to refresh the connection to keep your data current.
 </Accordion>
-
-<br />
-
-> 📘 ss
->
-> sss
->
-> sss
