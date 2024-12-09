@@ -167,24 +167,28 @@ View connection states in the **Connections** section of the dashboard.
 
 ## API Endpoints for Managing Connections
 
-\<Accordion title="Purge Connection" icon="fa-trash-alt">
-&#x20; Use this endpoint to remove all data related to a specific user connection. Purging is \*\*only applicable\*\* for active connections and is essential for ensuring enriched insights reflect the latest data.
+<Accordion title="My Accordion Title" icon="fa-info-circle">
+  Lorem ipsum dolor sit amet, **consectetur adipiscing elit.** Ut enim
+  ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint
+  occaecat cupidatat non proident!
+</Accordion>
 
-&#x20; \*\*Endpoint:\*\*
+\<Accordion title="Purge Connection" icon="fa-trash-alt">\
+Use this endpoint to remove all data related to a specific user connection. Purging is \*\*only applicable\*\* for active connections and is essential for ensuring enriched insights reflect the latest data.
+
+\*\*Endpoint:\*\*
 
 &#x9;POST /connections/:connection\\\_id/purge
 
-&#x20; \*\*Description:\*\*
-&#x20; \- Deletes all user data associated with the connection.
-&#x20; \- Use before refreshing connections to update Enrich results.
+\*\*Description:\*\*\
+\- Deletes all user data associated with the connection.
+\- Use before refreshing connections to update Enrich results.
 
-&#x20; \*\*Example Response:\*\*
+\*\*Example Response:\*\*\
 &#x9;\{ \`status\`: \`success\`, \`message\`: \`Connection data purged.\` }
 
-
-&#x20; \*\*Note:\*\* After purging, make sure to refresh the connection for the latest data.
-&#x20;\</Accordion>
-
+\*\*Note:\*\* After purging, make sure to refresh the connection for the latest data.\
+\</Accordion>
 
 <br />
 
