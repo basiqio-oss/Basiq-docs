@@ -92,11 +92,13 @@ In order to connect to Basiq's test banks, you will need to use the sandbox user
 
 <Image align="left" src="https://files.readme.io/b7047cff27f0ab4fa4471ae43382d4aa2bd46e432c365c9b704f3e6ff8f7b6ac-1a04ca3-Group_1496.png" />
 
+<Image align="left" src="https://files.readme.io/b7047cff27f0ab4fa4471ae43382d4aa2bd46e432c365c9b704f3e6ff8f7b6ac-1a04ca3-Group_1496.png" />
+
 <Accordion title="Introduction" icon="fa-info-circle">
   Learn how to get started with the Basiq API using Postman. This guide is designed for both technical and non-technical users.
 </Accordion>
 
-<Cards columns={3}>
+<Cards columns={2}>
   <Card title="Overview" icon="fa-book">
     This guide will walk you through the steps needed to integrate with the Basiq API using Postman.
   </Card>
@@ -104,11 +106,11 @@ In order to connect to Basiq's test banks, you will need to use the sandbox user
   <Card title="Requirements" icon="fa-cogs">
     > 🚧 Ensure you have Postman installed to proceed. You can [download it here](https://www.getpostman.com/downloads).
   </Card>
-
-  <Card title="Quick Integration" icon="fa-play-circle">
-    Prefer coding directly? Check out our [Quickstart](ref:quickstart-part-1) for a more hands-on approach.
-  </Card>
 </Cards>
+
+<Card title="Quick Integration" icon="fa-play-circle">
+  Prefer coding directly? Check out our [Quickstart](ref:quickstart-part-1) for a more hands-on approach.
+</Card>
 
 <Columns layout="auto">
   <Column>
@@ -158,7 +160,9 @@ In order to connect to Basiq's test banks, you will need to use the sandbox user
       Remember, your access token expires every 60 minutes. Refresh it as needed to maintain seamless API interaction.
     </Accordion>
   </Tab>
+</Tabs>
 
+<Tabs orientation="vertical">
   <Tab title="STEP 4: Create a User">
     <p>Create a user to establish a space for storing your financial data. After successful creation, save the `userId` for the next steps. This step requires a `SERVER_ACCESS` scoped token.</p>
   </Tab>
