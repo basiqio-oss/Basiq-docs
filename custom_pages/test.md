@@ -14,6 +14,8 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
 <Image align="center" src="https://files.readme.io/362f2dea8e56f277d4835d66c648bc935cabe66c1d029d4a8ca6597e08f38020-cc54ca2-DevHub_01.png" />
 
+Basiq’s Products allow you to:
+
 <Cards columns={3}>
   <Card title="Connect" icon="fa-link">
     Access account and transaction data in real-time.
