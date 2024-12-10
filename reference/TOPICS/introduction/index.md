@@ -63,7 +63,7 @@ Our partner ecosystem branches far and wide, but our most common use cases are:
 
   <Tab title="Supported Regions">
     > 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**\
-    > We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions).
+    > We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](https://dashboard.basiq.io/status).
   </Tab>
 </Tabs>
 
