@@ -27,16 +27,28 @@ Connections are a core feature that securely link your users’ financial instit
 ## Connection States
 
 <Cards columns={3}>
-  <Card title="Pre-init" icon="fa-hourglass">
-    The connection is initialized but not yet active.
+  <Card title="Active" icon="fa-check-circle">
+    The connection is currently operational. This status indicates that the connection has successfully completed all job steps.
   </Card>
 
-  <Card title="Active" icon="fa-check-circle">
-    The connection is successfully established and operational.
+  <Card title="Deleted" icon="fa-trash">
+    The connection has been removed by the partner.
   </Card>
 
   <Card title="Invalid" icon="fa-exclamation-triangle">
-    The connection is no longer valid and may require user re-authentication.
+    The connection is currently non-functional. This status occurs when a failure in one of the job steps invalidates the connection. Invalid connections can be manually refreshed, and upon successful completion of the job, the status updates to "Active".
+  </Card>
+
+  <Card title="Pending" icon="fa-hourglass-half">
+    The connection is awaiting activation or validation. This status is assigned when a connection is created, indicating that the job initiation is in progress.
+  </Card>
+
+  <Card title="Init" icon="fa-clock">
+    The connection has completed the Open Banking authorization process. This is a brief status that follows "Pre-init" and indicates successful completion of Open Banking connection authorization (PAR and post-redirect).
+  </Card>
+
+  <Card title="Pre-init" icon="fa-hourglass">
+    The connection has just been created, similar to "Pending". This status is assigned when an Open Banking connection is initialized, indicating that the job is in the initiation phase.
   </Card>
 </Cards>
 
