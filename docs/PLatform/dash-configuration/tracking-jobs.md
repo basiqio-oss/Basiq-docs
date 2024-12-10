@@ -10,63 +10,146 @@ metadata:
 next:
   description: ''
 ---
-The **Job History** section provides a record of all operations performed on a connection, including their outcomes. Each job has a unique `job_id`, a timestamp, and a status (e.g., **Success**, **Failed**). This helps developers monitor the progress of asynchronous tasks such as refreshing or purging data.
+# Job History
 
-<Accordion title="What is a Job?" icon="fa-info-circle">
-  A **Job** represents a background task initiated by an action on a connection (e.g., refreshing, purging).
+<br />
 
-  * Each job logs its ID, status, and the timestamp of the operation.
-  * Use the `job_id` to track the task's progress programmatically.
-</Accordion>
+The **Job History** section logs activities performed on a connection, helping developers monitor the outcomes of operations like refreshing or purging data. Each job is uniquely identified and displays its status, date, and outcome.
 
-## Job Details in the Dashboard
+\<Accordion title="What is a Job?" icon="fa-info-circle">
+&#x20; A \*\*Job\*\* represents a background task initiated for a connection, such as refreshing data or revoking access. &#x20;
+&#x9;
+&#x9;\- \*\*Job ID\*\*: A unique identifier for each job.
+&#x20; \- \*\*Status\*\*: Indicates success, failure, or ongoing progress.
+&#x20; \- \*\*Date\*\*: The time the job was executed.
+&#x9;
+This feature allows developers to track and debug connection-related operations efficiently.
+&#x20;&#x20;
+\\\</Accordion>
 
-<Columns layout="2-1">
+* **Job ID**: A unique identifier for each job.
+  * **Status**: Indicates success, failure, or ongoing progress.
+    * **Date**: The time the job was executed.
+      <br />
+      This feature allows developers to track and debug connection-related operations efficiently.
+      <br />
+
+## Job Overview
+
+<br />
+
+<Columns layout="auto">
   <Column>
-    ### Key Fields
+    ### Key Features
 
-    * **Job ID:** Unique identifier for each job.
-    * **Date:** The timestamp of when the job was triggered.
-    * **Status:** Indicates whether the job was successful, failed, or still processing.
+    * **Trackable:** Each job is uniquely identifiable by a `job_id`.
+    * **Status Indicator:** Quickly identify the outcome of operations (e.g., **Success**, **Failed**).
+    * **Historical Logs:** Easily review past actions on a connection for debugging or auditing.
   </Column>
 
   <Column>
-    <Cards columns={2}>
-      <Card title="Success" icon="fa-check-circle">
-        The operation was completed successfully. No further action is required.
-      </Card>
+    ### Benefits
 
-      <Card title="Failed" icon="fa-times-circle">
-        The operation encountered an issue. Investigate the logs or retry the action.
-      </Card>
-    </Cards>
+    * Ensure reliability by tracking failed operations.
+    * Gain insights into task execution times.
+    * Use programmatic access for advanced monitoring and integrations.
   </Column>
 </Columns>
 
 ***
 
-## Example Job History from the Dashboard
+## Examples from Job History
+
+<br />
 
 <Tabs>
-  <Tab title="Success Job">
-    **Job ID:** `10105886-f806-43c5-9a56-7b672ad24c1d`\
-    **Date:** 10 Dec 2024, 04:33\
-    **Status:** ✅ Success
+  <Tab title="Successful Job">
+    <Cards columns={2}>
+      <Card title="Job ID" icon="fa-tag">
+        `10105886-f806-43c5-9a56-7b672ad24c1d`
+      </Card>
 
-    <Accordion title="More Details" icon="fa-info-circle">
-      This job successfully refreshed the connection and synchronized the latest data from the financial institution. No further action is needed.
-    </Accordion>
+      <Card title="Date" icon="fa-calendar">
+        10 Dec 2024, 04:33
+      </Card>
+
+      <Card title="Status" icon="fa-check-circle">
+        **Success**
+      </Card>
+    </Cards>
+
+    > **Description:**\
+    > This job successfully refreshed the connection data from the financial institution. All data is synchronized and available for use.
   </Tab>
 
   <Tab title="Failed Job">
-    **Job ID:** `6c869859-8635-4fad-b809-2fe9ef7a0ee7`\
-    **Date:** 10 Dec 2024, 00:46\
-    **Status:** ❌ Failed
+    <Cards columns={2}>
+      <Card title="Job ID" icon="fa-tag">
+        `6c869859-8635-4fad-b809-2fe9ef7a0ee7`
+      </Card>
 
-    <Accordion title="Troubleshooting Steps" icon="fa-tools">
-      1. Check if the user credentials are valid and up to date.
-      2. Review the error logs associated with this `job_id` for additional details.
-      3. Retry the operation after resolving any issues.
-    </Accordion>
+      <Card title="Date" icon="fa-calendar">
+        10 Dec 2024, 00:46
+      </Card>
+
+      <Card title="Status" icon="fa-times-circle">
+        **Failed**
+      </Card>
+    </Cards>
+
+    > **Description:**\
+    > This job failed due to an issue during the connection refresh.\
+    > **Recommended Actions:**
+
+    1. Check if the user's credentials are still valid.
+    2. Verify the network or API endpoint availability.
+    3. Use the `job_id` to fetch logs for more details.
   </Tab>
 </Tabs>
+
+***
+
+## Quick Reference to Job Statuses
+
+<br />
+
+<Cards columns={3}>
+  <Card title="Pending" icon="fa-clock">
+    The job is still processing. Wait for the operation to complete.
+  </Card>
+
+  <Card title="Success" icon="fa-check-circle">
+    The job completed successfully. Data has been updated.
+  </Card>
+
+  <Card title="Failed" icon="fa-times-circle">
+    The job failed. Review the logs for troubleshooting steps.
+  </Card>
+</Cards>
+
+***
+
+## Programmatic Access
+
+<br />
+
+Use the Basiq API to retrieve and manage job history programmatically. This is especially useful for building custom monitoring tools or integrating job tracking into your workflows.
+
+\<Accordion title="API Example: Fetching Job History" icon="fa-code">
+&#x20; \*\*Endpoint:\*\* &#x20;
+&#x20; \`GET /connections/:connection\_id/jobs\` &#x20;
+
+&#x20; \*\*Sample Response:\*\*
+&#x20; \`\`\`json
+&#x20; \[
+&#x20;   \{
+&#x20;     "job\_id": "10105886-f806-43c5-9a56-7b672ad24c1d",
+&#x20;     "status": "success",
+&#x20;     "date": "2024-12-10T04:33:00Z"
+&#x20;   },
+&#x20;   \{
+&#x20;     "job\_id": "6c869859-8635-4fad-b809-2fe9ef7a0ee7",
+&#x20;     "status": "failed",
+&#x20;     "date": "2024-12-10T00:46:00Z"
+&#x20;   }
+&#x20; ]
