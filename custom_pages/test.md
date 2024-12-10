@@ -6,11 +6,19 @@ metadata:
   title: ''
   description: ''
 ---
-<Accordion title="What is Basiq?" icon="fa-info-circle">
-  Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform providing the building blocks of financial services.
+<Section>
+  <Header>
+    <h1>What is Basiq?</h1>
+  </Header>
 
-  Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking, and more.
-</Accordion>
+  <p>
+    Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform providing the building blocks of financial services.
+  </p>
+
+  <p>
+    Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking, and more.
+  </p>
+</Section>
 
 <Cards columns={3}>
   <Card title="Connect" icon="fa-link">
@@ -26,7 +34,7 @@ metadata:
   </Card>
 </Cards>
 
-<Columns layout="auto">
+<Columns layout="2">
   <Column>
     ![DevHub Screenshot 1](https://files.readme.io/cc54ca2-DevHub_01.png "DevHub_01.png")
   </Column>
