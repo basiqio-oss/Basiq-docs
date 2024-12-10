@@ -26,7 +26,7 @@ Connections are a core feature that securely link your users’ financial instit
 
 ## Connection States
 
-<Cards columns={4}>
+<Cards columns={3}>
   <Card title="Pre-init" icon="fa-hourglass">
     The connection is initialized but not yet active.
   </Card>
@@ -37,10 +37,6 @@ Connections are a core feature that securely link your users’ financial instit
 
   <Card title="Invalid" icon="fa-exclamation-triangle">
     The connection is no longer valid and may require user re-authentication.
-  </Card>
-
-  <Card title="Failed" icon="fa-times-circle">
-    An error occurred during the connection process.
   </Card>
 </Cards>
 
