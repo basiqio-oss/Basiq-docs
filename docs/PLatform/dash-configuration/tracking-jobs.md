@@ -125,21 +125,3 @@ The **Job History** section logs activities performed on a connection, helping d
 
 Use the Basiq API to retrieve and manage job history programmatically. This is especially useful for building custom monitoring tools or integrating job tracking into your workflows.
 
-\<Accordion title="API Example: Fetching Job History" icon="fa-code">
-&#x20; \*\*Endpoint:\*\* &#x20;
-&#x20; \`GET /connections/:connection\_id/jobs\` &#x20;
-
-&#x20; \*\*Sample Response:\*\*
-&#x20; \`\`\`json
-&#x20; \[
-&#x20;   \{
-&#x20;     "job\_id": "10105886-f806-43c5-9a56-7b672ad24c1d",
-&#x20;     "status": "success",
-&#x20;     "date": "2024-12-10T04:33:00Z"
-&#x20;   },
-&#x20;   \{
-&#x20;     "job\_id": "6c869859-8635-4fad-b809-2fe9ef7a0ee7",
-&#x20;     "status": "failed",
-&#x20;     "date": "2024-12-10T00:46:00Z"
-&#x20;   }
-&#x20; ]
