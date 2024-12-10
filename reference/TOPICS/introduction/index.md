@@ -34,8 +34,6 @@ Basiq’s Products allow you to:
 
 <Image align="center" src="https://files.readme.io/362f2dea8e56f277d4835d66c648bc935cabe66c1d029d4a8ca6597e08f38020-cc54ca2-DevHub_01.png" />
 
-<br />
-
 Our partner ecosystem branches far and wide, but our most common use cases are:
 
 <Tabs>
