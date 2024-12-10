@@ -16,16 +16,6 @@ next:
 
 The **Job History** section logs activities performed on a connection, helping developers monitor the outcomes of operations like refreshing or purging data. Each job is uniquely identified and displays its status, date, and outcome.
 
-\<Accordion title="What is a Job?" icon="fa-info-circle">
-&#x20; A \*\*Job\*\* represents a background task initiated for a connection, such as refreshing data or revoking access. &#x20;
-&#x9;
-&#x9;\- \*\*Job ID\*\*: A unique identifier for each job.
-&#x20; \- \*\*Status\*\*: Indicates success, failure, or ongoing progress.
-&#x20; \- \*\*Date\*\*: The time the job was executed.
-&#x9;
-This feature allows developers to track and debug connection-related operations efficiently.
-&#x20;&#x20;
-\\\</Accordion>
 
 * **Job ID**: A unique identifier for each job.
   * **Status**: Indicates success, failure, or ongoing progress.
