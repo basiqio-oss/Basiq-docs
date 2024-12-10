@@ -61,8 +61,10 @@ Our partner ecosystem branches far and wide, but our most common use cases are:
   </Tab>
 </Tabs>
 
+<Image align="center" src="https://files.readme.io/3ffe08e2896c59f766cdfecefee879f7c2bf4b25b2d83da3efb4cf56a7c277a1-c999063-DevHub_02.png" />
+
+<br />
+
 <Accordion title="Partner Showcase" icon="fa-users">
   Check out how some of our customers are using Basiq. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in action.
 </Accordion>
-
-<Image align="center" src="https://files.readme.io/3ffe08e2896c59f766cdfecefee879f7c2bf4b25b2d83da3efb4cf56a7c277a1-c999063-DevHub_02.png" />
