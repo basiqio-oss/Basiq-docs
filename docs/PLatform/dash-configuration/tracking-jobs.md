@@ -70,27 +70,3 @@ The **Job History** section provides a record of all operations performed on a c
     </Accordion>
   </Tab>
 </Tabs>
-
-***
-
-## Managing Job History Programmatically
-
-You can programmatically query job history using the Basiq API. Use the connection's `connection_id` to fetch the associated jobs and track their progress.
-
-\<Accordion title="API Example: Fetch Job History" icon="fa-code">
-&#x20; \*\*Endpoint:\*\* \`GET /connections/:connection\_id/jobs\` &#x20;
-&#x20; \*\*Response:\*\*
-&#x20; \`\`\`json
-&#x20; \[
-&#x20;   \{
-&#x20;     "job\_id": "10105886-f806-43c5-9a56-7b672ad24c1d",
-&#x20;     "status": "success",
-&#x20;     "date": "2024-12-10T04:33:00Z"
-&#x20;   },
-&#x20;   \{
-&#x20;     "job\_id": "6c869859-8635-4fad-b809-2fe9ef7a0ee7",
-&#x20;     "status": "failed",
-&#x20;     "date": "2024-12-10T00:46:00Z"
-&#x20;   }
-&#x20; ]
-\</Accordion>
