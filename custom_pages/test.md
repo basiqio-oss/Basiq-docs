@@ -30,6 +30,8 @@ Basiq’s Products allow you to:
   </Card>
 </Cards>
 
+Our partner ecosystem branches far and wide, but our most common use cases are:
+
 <Tabs>
   <Tab title="Use Cases">
     <Cards columns={2}>
