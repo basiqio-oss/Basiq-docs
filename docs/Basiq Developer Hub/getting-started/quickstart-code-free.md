@@ -122,69 +122,63 @@ In order to connect to Basiq's test banks, you will need to use the sandbox user
   </Column>
 </Columns>
 
-<Cards columns={2}>
-  <Card title="STEP 1: Register" icon="fa-user">
-    <p>
-      To start, register your application on our <a href="https://dashboard.basiq.io/">dashboard</a> and create a *new* application (avoid using the default demo app). When you're done, generate an API key under the Developers tab.
-    </p>
+<Card title="STEP 1: Register" icon="fa-user">
+  <p>
+    To start, register your application on our <a href="https://dashboard.basiq.io/">dashboard</a> and create a *new* application (avoid using the default demo app). When you're done, generate an API key under the Developers tab.
+  </p>
 
-    <Accordion title="API Key Details" icon="fa-key">
-      You can create as many API keys as needed. Name them in a way that makes them easy to manage. Be sure to copy your key immediately as it will only be exposed once.
-    </Accordion>
-  </Card>
+  <Accordion title="API Key Details" icon="fa-key">
+    You can create as many API keys as needed. Name them in a way that makes them easy to manage. Be sure to copy your key immediately as it will only be exposed once.
+  </Accordion>
+</Card>
 
-  <Card title="STEP 2: Grab Sample Code" icon="fa-code">
-    <p>
-      Go to <a href="https://documenter.getpostman.com/view/16249946/UVktosia?version=latest">our sample code</a> and click *Run in Postman*.
-    </p>
+<Card title="STEP 2: Grab Sample Code" icon="fa-code">
+  <p>
+    Go to <a href="https://documenter.getpostman.com/view/16249946/UVktosia?version=latest">our sample code</a> and click *Run in Postman*.
+  </p>
 
-    <Image align="center" src="https://files.readme.io/c20e2e5-Group_2710.png" width="80%" />
+  <Image align="center" src="https://files.readme.io/c20e2e5-Group_2710.png" width="80%" />
 
-    <p>Make sure to select the installed Postman app that corresponds to your operating system (e.g., Mac/Windows).</p>
+  <p>Make sure to select the installed Postman app that corresponds to your operating system (e.g., Mac/Windows).</p>
 
-    <Image align="center" src="https://files.readme.io/4f282a8-postmanStep8" width="80%" />
-  </Card>
-</Cards>
+  <Image align="center" src="https://files.readme.io/4f282a8-postmanStep8" width="80%" />
+</Card>
 
-<Cards columns={2}>
-  <Card title="STEP 3: Authenticate" icon="fa-lock">
-    <p>Follow these steps in Postman:</p>
+<Card title="STEP 3: Authenticate" icon="fa-lock">
+  <p>Follow these steps in Postman:</p>
 
-    <ol>
-      <li>Navigate through the necessary menu options.</li>
-      <li>Replace `XXXXXX` with your API key from Step 1.</li>
-      <li>Click *Save* and then *Send*.</li>
-    </ol>
+  <ol>
+    <li>Navigate through the necessary menu options.</li>
+    <li>Replace `XXXXXX` with your API key from Step 1.</li>
+    <li>Click *Save* and then *Send*.</li>
+  </ol>
 
-    <Image align="center" src="https://files.readme.io/07eec60-postmanstep9.png" width="80%" />
+  <Image align="center" src="https://files.readme.io/07eec60-postmanstep9.png" width="80%" />
 
-    <Accordion title="Token Expiry Info" icon="fa-clock">
-      Remember, your access token expires every 60 minutes. Refresh it as needed to maintain seamless API interaction.
-    </Accordion>
-  </Card>
+  <Accordion title="Token Expiry Info" icon="fa-clock">
+    Remember, your access token expires every 60 minutes. Refresh it as needed to maintain seamless API interaction.
+  </Accordion>
+</Card>
 
-  <Card title="STEP 4: Create a User" icon="fa-user-plus">
-    <p>Create a user to establish a space for storing your financial data. After successful creation, save the `userId` for the next steps. This step requires a `SERVER_ACCESS` scoped token.</p>
-  </Card>
-</Cards>
+<Card title="STEP 4: Create a User" icon="fa-user-plus">
+  <p>Create a user to establish a space for storing your financial data. After successful creation, save the `userId` for the next steps. This step requires a `SERVER_ACCESS` scoped token.</p>
+</Card>
 
-<Cards columns={2}>
-  <Card title="STEP 5: User Consent and Connection" icon="fa-check-circle">
-    <p>Use the following URL to access the Consent UI:</p>
-    <p><code>[https://consent.basiq.io/home?token=\{\{client\_token\_bound\_to\_userId}}](https://consent.basiq.io/home?token=\{\{client_token_bound_to_userId}})</code></p>
+<Card title="STEP 5: User Consent and Connection" icon="fa-check-circle">
+  <p>Use the following URL to access the Consent UI:</p>
+  <p><code>[https://consent.basiq.io/home?token=\{\{client\_token\_bound\_to\_userId}}](https://consent.basiq.io/home?token=\{\{client_token_bound_to_userId}})</code></p>
 
-    <Accordion title="Important Note" icon="fa-exclamation-triangle">
-      The token should not be enclosed in curly braces `{{}}`. Ensure it's bound to a specific user by attaching the `userId` and `CLIENT_ACCESS` scope.
-    </Accordion>
+  <Accordion title="Important Note" icon="fa-exclamation-triangle">
+    The token should not be enclosed in curly braces `{{}}`. Ensure it's bound to a specific user by attaching the `userId` and `CLIENT_ACCESS` scope.
+  </Accordion>
 
-    <p>For testing purposes, you can use our sandbox environment. Find testing credentials <a href="https://api.basiq.io/reference/testing">here</a>.</p>
-  </Card>
+  <p>For testing purposes, you can use our sandbox environment. Find testing credentials <a href="https://api.basiq.io/reference/testing">here</a>.</p>
+</Card>
 
-  <Card title="STEP 6: Make Your Requests" icon="fa-paper-plane">
-    <p>Start making API requests using the Postman collection. Connect with Basiq's test banks using the sandbox user logins.</p>
+<Card title="STEP 6: Make Your Requests" icon="fa-paper-plane">
+  <p>Start making API requests using the Postman collection. Connect with Basiq's test banks using the sandbox user logins.</p>
 
-    <Accordion title="Sandbox Limits" icon="fa-limit">
-      The sandbox user connections are capped at 500 per account. To increase this limit, contact <a href="mailto:support@basiq.io">[support@basiq.io](mailto:support@basiq.io)</a>.
-    </Accordion>
-  </Card>
-</Cards>
+  <Accordion title="Sandbox Limits" icon="fa-limit">
+    The sandbox user connections are capped at 500 per account. To increase this limit, contact <a href="mailto:support@basiq.io">[support@basiq.io](mailto:support@basiq.io)</a>.
+  </Accordion>
+</Card>
