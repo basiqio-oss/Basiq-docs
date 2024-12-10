@@ -87,3 +87,95 @@ Basiq's full suite of products are available when you use the Postman collection
 In order to connect to Basiq's test banks, you will need to use the sandbox user logins. You can find the credentials for all scenarios [here](https://api.basiq.io/reference/testing).
 
 **Note:** You are free to make as many request as you like, however we cap the connections for sandbox users at 500 per account. If you would like to increase this quote, please email us at [support@basiq.io](mailto:support@basiq.io).
+
+<br />
+
+<br />
+
+<Image align="left" src="https://files.readme.io/b7047cff27f0ab4fa4471ae43382d4aa2bd46e432c365c9b704f3e6ff8f7b6ac-1a04ca3-Group_1496.png" />
+
+<Accordion title="Introduction" icon="fa-info-circle">
+  Learn how to get started with the Basiq API using Postman. This guide is designed for both technical and non-technical users.
+</Accordion>
+
+<Cards columns={3}>
+  <Card title="Overview" icon="fa-book">
+    This guide will walk you through the steps needed to integrate with the Basiq API using Postman.
+  </Card>
+
+  <Card title="Requirements" icon="fa-cogs">
+    > 🚧 Ensure you have Postman installed to proceed. You can [download it here](https://www.getpostman.com/downloads).
+  </Card>
+
+  <Card title="Quick Integration" icon="fa-play-circle">
+    Prefer coding directly? Check out our [Quickstart](ref:quickstart-part-1) for a more hands-on approach.
+  </Card>
+</Cards>
+
+<Columns layout="auto">
+  <Column>
+    <strong>Note:</strong> This guide emphasizes ease of use with Postman for streamlined API interactions.
+  </Column>
+
+  <Column>
+    Postman is an essential tool that allows you to test and interact with APIs effectively.
+  </Column>
+</Columns>
+
+<Tabs>
+  <Tab title="STEP 1: Register">
+    To start, register your application on our [dashboard](https://dashboard.basiq.io/) and create a *new* application (avoid using the default demo app). When you're done, generate an API key under the Developers tab.
+
+    <Accordion title="API Key Details" icon="fa-key">
+      You can create as many API keys as needed. Name them in a way that makes them easy to manage. Be sure to copy your key immediately as it will only be exposed once.
+    </Accordion>
+  </Tab>
+
+  <Tab title="STEP 2: Grab Sample Code">
+    Go to [our sample code](https://documenter.getpostman.com/view/16249946/UVktosia?version=latest) and click *Run in Postman*.
+
+    <Image align="center" src="https://files.readme.io/c20e2e5-Group_2710.png" width="80%" />
+
+    Make sure to select the installed Postman app that corresponds to your operating system (e.g., Mac/Windows).
+
+    <Image align="center" src="https://files.readme.io/4f282a8-postmanStep8" width="80%" />
+  </Tab>
+
+  <Tab title="STEP 3: Authenticate">
+    Follow these steps in Postman:
+
+    1. Navigate through the necessary menu options.
+    2. Replace `XXXXXX` with your API key from Step 1.
+    3. Click *Save* and then *Send*.
+
+    <Image align="center" src="https://files.readme.io/07eec60-postmanstep9.png" width="80%" />
+
+    <Accordion title="Token Expiry Info" icon="fa-clock">
+      Remember, your access token expires every 60 minutes. Refresh it as needed to maintain seamless API interaction.
+    </Accordion>
+  </Tab>
+
+  <Tab title="STEP 4: Create a User">
+    Create a user to establish a space for storing your financial data. After successful creation, save the `userId` for the next steps. This step requires a `SERVER_ACCESS` scoped token.
+  </Tab>
+
+  <Tab title="STEP 5: User Consent and Connection">
+    Use the following URL to access the Consent UI:
+
+    `https://consent.basiq.io/home?token={{client_token_bound_to_userId}}`
+
+    <Accordion title="Important Note" icon="fa-exclamation-triangle">
+      The token should not be enclosed in curly braces `{{}}`. Ensure it's bound to a specific user by attaching the `userId` and `CLIENT_ACCESS` scope.
+    </Accordion>
+
+    For testing purposes, you can use our sandbox environment. Find testing credentials [here](https://api.basiq.io/reference/testing).
+  </Tab>
+
+  <Tab title="STEP 6: Make Your Requests">
+    Start making API requests using the Postman collection. Connect with Basiq's test banks using the sandbox user logins.
+
+    <Accordion title="Sandbox Limits" icon="fa-limit">
+      The sandbox user connections are capped at 500 per account. To increase this limit, contact [support@basiq.io](mailto:support@basiq.io).
+    </Accordion>
+  </Tab>
+</Tabs>
