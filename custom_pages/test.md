@@ -6,43 +6,35 @@ metadata:
   title: ''
   description: ''
 ---
-<Section>
-  <Header>
-    <h1>What is Basiq?</h1>
-  </Header>
-
+<div>
+  <h1>What is Basiq?</h1>
   <p>
     Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform providing the building blocks of financial services.
   </p>
-
   <p>
     Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking, and more.
   </p>
-</Section>
+</div>
 
 <Cards columns={3}>
   <Card title="Connect" icon="fa-link">
     Access account and transaction data in real-time.
   </Card>
-
   <Card title="Enrich" icon="fa-chart-line">
     Enhance transactions with merchant data.
   </Card>
-
   <Card title="Discover" icon="fa-search">
     Gain deeper insights into your customer's finances.
   </Card>
 </Cards>
 
-<Columns layout="2">
-  <Column>
-    ![DevHub Screenshot 1](https://files.readme.io/cc54ca2-DevHub_01.png "DevHub_01.png")
-  </Column>
+<Section>
+  ![DevHub Screenshot 1](https://files.readme.io/cc54ca2-DevHub_01.png "DevHub_01.png")
+</Section>
 
-  <Column>
-    ![DevHub Screenshot 2](https://files.readme.io/c999063-DevHub_02.png "DevHub_02.png")
-  </Column>
-</Columns>
+<Section>
+  ![DevHub Screenshot 2](https://files.readme.io/c999063-DevHub_02.png "DevHub_02.png")
+</Section>
 
 <Tabs>
   <Tab title="Use Cases">
@@ -50,7 +42,6 @@ metadata:
       <Card title="Account Aggregation" icon="fa-database">
         Access and aggregate all your customers' financial data in one place. Build or add Personal Financial Management (PFM) functionality and provide tailored product offerings and recommendations.
       </Card>
-
       <Card title="Account Verification" icon="fa-check-circle">
         Instantly verify account ownership and balances in real time. Automate responsible lending, reduce dishonor fees for payments, and improve collections.
       </Card>
@@ -60,7 +51,6 @@ metadata:
       <Card title="Data Enrichment" icon="fa-layer-group">
         Gain insights into customer transactions with powerful overlay services: expense classification, merchant identification, income detection, and behavioral spend analytics.
       </Card>
-
       <Card title="Wealth Management" icon="fa-chart-pie">
         Use enriched data for next-generation financial planning and wealth management solutions.
       </Card>
@@ -68,8 +58,8 @@ metadata:
   </Tab>
 
   <Tab title="Supported Regions">
-    > 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**\
-    > We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions).
+    > 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**  
+    We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions).
   </Tab>
 </Tabs>
 
