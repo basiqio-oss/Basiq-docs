@@ -56,17 +56,25 @@ Basiq is a cutting-edge platform designed to revolutionize the way businesses an
 
 ***
 
-<Accordion title="Why Choose Basiq?" icon="fa-info-circle">
-  <Column>
-    **Ease of Integration**: Developer-friendly tools, including comprehensive documentation, SDKs, and APIs.
+## Why Choose Basiq?
 
-    **Compliance and Security**: Adherence to financial regulations and <Glossary>CDR</Glossary> standards, prioritizing data security.
+<Cards columns={2}>
+  <Card title="Ease of Integration" icon="fa-code">
+    Basiq is designed to be developer-friendly, with comprehensive documentation, SDKs, and APIs that make integration effortless.
+  </Card>
 
-    **Innovative Solutions**: Always evolving to include the latest in financial technology.
+  <Card title="Compliance and Security" icon="fa-shield-alt">
+    Adherence to financial regulations and <Glossary>CDR</Glossary> standards ensures top-tier security and compliance.
+  </Card>
 
-    **Support and Community**: Active community of developers and robust support for startups and enterprises alike.
-  </Column>
-</Accordion>
+  <Card title="Innovative Solutions" icon="fa-lightbulb">
+    Stay at the forefront of fintech innovation with Basiq’s constantly evolving platform and advanced capabilities.
+  </Card>
+
+  <Card title="Support and Community" icon="fa-users">
+    Access robust support and an active community of developers. Whether you’re a startup or enterprise, we’re here to assist.
+  </Card>
+</Cards>
 
 ***
 
