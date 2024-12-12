@@ -8,9 +8,7 @@ metadata:
 ---
 import { useState, useEffect } from 'react';
 
-<div style={{ margin: '20px 0' }}>
-  <ModalDemo />
-</div>
+<div style={{ margin: '20px 0' }} />
 
 export const ModalDemo = () => {
   const [isOpen, setIsOpen] = useState(false);
