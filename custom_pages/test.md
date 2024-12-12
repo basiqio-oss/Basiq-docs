@@ -6,52 +6,97 @@ metadata:
   title: ''
   description: ''
 ---
-import React from 'react';
+import React, \{ useState } from 'react';
+\<ModalDemo />
 
-<AlertBox type="success">
-  This is a success message! Everything is working perfectly.
-</AlertBox>
+export const ModalDemo = () => \{
+&#x20; const \[isOpen, setIsOpen] = useState(false);
 
-<AlertBox type="warning">
-  Be cautious! This is a warning message.
-</AlertBox>
+&#x20; const toggleModal = () => setIsOpen(!isOpen);
 
-<AlertBox type="error">
-  Something went wrong! This is an error message.
-</AlertBox>
+&#x20; return (
+&#x20;   \<div>
+&#x20;     \<button
+&#x20;       onClick=\{toggleModal}
+&#x20;       style=\{\{
+&#x20;         padding: '10px 15px',
+&#x20;         fontSize: '16px',
+&#x20;         backgroundColor: '#007BFF',
+&#x20;         color: '#fff',
+&#x20;         border: 'none',
+&#x20;         borderRadius: '5px',
+&#x20;         cursor: 'pointer',
+&#x20;       }}
+&#x20;     \>
+&#x20;       Open Modal
+&#x20;     \</button>
 
-export const AlertBox = ({ type, children }) => {
-  const styles = {
-    base: {
-      padding: '15px',
-      borderRadius: '5px',
-      margin: '10px 0',
-      color: '#333',
-      fontSize: '16px',
-    },
-    success: {
-      backgroundColor: '#d4edda',
-      border: '1px solid #c3e6cb',
-      color: '#155724',
-    },
-    warning: {
-      backgroundColor: '#fff3cd',
-      border: '1px solid #ffeeba',
-      color: '#856404',
-    },
-    error: {
-      backgroundColor: '#f8d7da',
-      border: '1px solid #f5c6cb',
-      color: '#721c24',
-    },
-  };
+&#x20;     \{isOpen && (
+&#x20;       \<div
+&#x20;         style=\{\{
+&#x20;           position: 'fixed',
+&#x20;           top: '0',
+&#x20;           left: '0',
+&#x20;           width: '100vw',
+&#x20;           height: '100vh',
+&#x20;           backgroundColor: 'rgba(0, 0, 0, 0.5)',
+&#x20;           display: 'flex',
+&#x20;           alignItems: 'center',
+&#x20;           justifyContent: 'center',
+&#x20;           animation: 'fadeIn 0.3s',
+&#x20;           zIndex: '1000',
+&#x20;         }}
+&#x20;         onClick=\{toggleModal}
+&#x20;       \>
+&#x20;         \<div
+&#x20;           style=\{\{
+&#x20;             backgroundColor: '#fff',
+&#x20;             padding: '20px',
+&#x20;             borderRadius: '10px',
+&#x20;             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+&#x20;             minWidth: '300px',
+&#x20;             textAlign: 'center',
+&#x20;             animation: 'slideIn 0.4s',
+&#x20;           }}
+&#x20;           onClick=\{(e) => e.stopPropagation()}
+&#x20;         \>
+&#x20;           \<h2>Modal Title\</h2>
+&#x20;           \<p>This is a modal with animations. Click outside to close it.\</p>
+&#x20;           \<button
+&#x20;             onClick=\{toggleModal}
+&#x20;             style=\{\{
+&#x20;               padding: '10px 15px',
+&#x20;               fontSize: '14px',
+&#x20;               backgroundColor: '#dc3545',
+&#x20;               color: '#fff',
+&#x20;               border: 'none',
+&#x20;               borderRadius: '5px',
+&#x20;               cursor: 'pointer',
+&#x20;               marginTop: '10px',
+&#x20;             }}
+&#x20;           \>
+&#x20;             Close
+&#x20;           \</button>
+&#x20;         \</div>
+&#x20;       \</div>
+&#x20;     )}
 
-  return (
-    <div style={{ ...styles.base, ...styles[type] }}>
-      {children}
-    </div>
-  );
+&#x20;     \<style>
+&#x20;       \{\`
+&#x20;         @keyframes fadeIn \{
+&#x20;           from \{ opacity: 0; }
+&#x20;           to \{ opacity: 1; }
+&#x20;         }
+&#x20;         @keyframes slideIn \{
+&#x20;           from \{ transform: translateY(-50px); }
+&#x20;           to \{ transform: translateY(0); }
+&#x20;         }
+&#x20;       \`}
+&#x20;     \</style>
+&#x20;   \</div>
+&#x20; );
 };
+
 
 <br />
 
