@@ -125,3 +125,5 @@ export const PaginatedList = () => {
     </div>
   );
 };
+
+Page now resolved.
