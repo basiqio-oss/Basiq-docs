@@ -123,7 +123,7 @@ export const ModalDemo = () => {
               &times;
             </button>
 
-            <h2 style={{ marginBottom: '20px' }}>Raintank Dashboard Snapshot</h2>
+            <h2 style={{ marginBottom: '20px' }}>Product Dashboard</h2>
             <p style={{ fontSize: '14px', marginBottom: '20px' }}>
               This is a modal with an embedded Raintank Dashboard snapshot. You can close it by clicking outside or using the cross button.
             </p>
