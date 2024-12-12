@@ -6,189 +6,184 @@ metadata:
   title: ''
   description: ''
 ---
-import \{ useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-\<div style=\{\{ margin: '20px 0' }}>
-&#x20; \<ModalDemo />
-\</div>
+export const ModalDemo = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-import \{ useState, useEffect } from 'react';
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+    setIsLoading(true); // Reset loading state whenever the modal opens
+    console.log('Modal toggled. isLoading set to true'); // Debugging
+  };
 
-export const ModalDemo = () => \{
-&#x20; const \[isOpen, setIsOpen] = useState(false);
-&#x20; const \[isLoading, setIsLoading] = useState(true);
+  const handleIframeLoad = () => {
+    setIsLoading(false); // Stop showing spinner when iframe loads
+    console.log('Iframe loaded. isLoading set to false'); // Debugging
+  };
 
-&#x20; const toggleModal = () => \{
-&#x20;   setIsOpen(!isOpen);
-&#x20;   setIsLoading(true); // Reset loading state whenever the modal opens
-&#x20;   console.log('Modal toggled. isLoading set to true'); // Debugging
-&#x20; };
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
 
-&#x20; const handleIframeLoad = () => \{
-&#x20;   setIsLoading(false); // Stop showing spinner when iframe loads
-&#x20;   console.log('Iframe loaded. isLoading set to false'); // Debugging
-&#x20; };
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
 
-&#x20; useEffect(() => \{
-&#x20;   const handleEscape = (event) => \{
-&#x20;     if (event.key === 'Escape') \{
-&#x20;       setIsOpen(false);
-&#x20;     }
-&#x20;   };
-&#x20;   window\.addEventListener('keydown', handleEscape);
+  return (
+    <div>
+      <button
+        onClick={toggleModal}
+        style={{
+          padding: '12px 20px',
+          fontSize: '16px',
+          backgroundColor: '#007BFF',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          marginTop: '20px',
+          transition: 'background-color 0.3s',
+        }}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
+        onMouseLeave={(e) => e.target.style.backgroundColor = '#007BFF'}
+      >
+        Open Modal
+      </button>
 
-&#x20;   return () => window\.removeEventListener('keydown', handleEscape);
-&#x20; }, \[]);
+      {isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            animation: 'fadeIn 0.3s',
+            zIndex: '1000',
+          }}
+          onClick={toggleModal}
+        >
+          <div
+            style={{
+              backgroundColor: '#fff',
+              padding: '30px',
+              borderRadius: '12px',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+              minWidth: '600px',
+              minHeight: '400px',
+              textAlign: 'center',
+              animation: 'slideIn 0.4s',
+              overflow: 'hidden',
+              position: 'relative',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={toggleModal}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                fontSize: '24px',
+                color: '#333',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                transition: 'color 0.3s',
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#dc3545'}
+              onMouseLeave={(e) => e.target.style.color = '#333'}
+            >
+              &times;
+            </button>
 
-&#x20; return (
-&#x20;   \<div>
-&#x20;     \<button
-&#x20;       onClick=\{toggleModal}
-&#x20;       style=\{\{
-&#x20;         padding: '12px 20px',
-&#x20;         fontSize: '16px',
-&#x20;         backgroundColor: '#007BFF',
-&#x20;         color: '#fff',
-&#x20;         border: 'none',
-&#x20;         borderRadius: '8px',
-&#x20;         cursor: 'pointer',
-&#x20;         marginTop: '20px',
-&#x20;         transition: 'background-color 0.3s',
-&#x20;       }}
-&#x20;       onMouseEnter=\{(e) => e.target.style.backgroundColor = '#0056b3'}
-&#x20;       onMouseLeave=\{(e) => e.target.style.backgroundColor = '#007BFF'}
-&#x20;     \>
-&#x20;       Open Modal
-&#x20;     \</button>
+            <h2 style={{ marginBottom: '20px' }}>Modal with Iframe</h2>
+            <p style={{ fontSize: '14px', marginBottom: '20px' }}>
+              This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
+            </p>
 
-&#x20;     \{isOpen && (
-&#x20;       \<div
-&#x20;         style=\{\{
-&#x20;           position: 'fixed',
-&#x20;           top: '0',
-&#x20;           left: '0',
-&#x20;           width: '100vw',
-&#x20;           height: '100vh',
-&#x20;           backgroundColor: 'rgba(0, 0, 0, 0.7)',
-&#x20;           display: 'flex',
-&#x20;           alignItems: 'center',
-&#x20;           justifyContent: 'center',
-&#x20;           animation: 'fadeIn 0.3s',
-&#x20;           zIndex: '1000',
-&#x20;         }}
-&#x20;         onClick=\{toggleModal}
-&#x20;       \>
-&#x20;         \<div
-&#x20;           style=\{\{
-&#x20;             backgroundColor: '#fff',
-&#x20;             padding: '30px',
-&#x20;             borderRadius: '12px',
-&#x20;             boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-&#x20;             minWidth: '600px',
-&#x20;             minHeight: '400px',
-&#x20;             textAlign: 'center',
-&#x20;             animation: 'slideIn 0.4s',
-&#x20;             overflow: 'hidden',
-&#x20;             position: 'relative',
-&#x20;           }}
-&#x20;           onClick=\{(e) => e.stopPropagation()}
-&#x20;         \>
-&#x20;           \<button
-&#x20;             onClick=\{toggleModal}
-&#x20;             style=\{\{
-&#x20;               position: 'absolute',
-&#x20;               top: '10px',
-&#x20;               right: '10px',
-&#x20;               backgroundColor: 'transparent',
-&#x20;               border: 'none',
-&#x20;               fontSize: '24px',
-&#x20;               color: '#333',
-&#x20;               cursor: 'pointer',
-&#x20;               fontWeight: 'bold',
-&#x20;               transition: 'color 0.3s',
-&#x20;             }}
-&#x20;             onMouseEnter=\{(e) => e.target.style.color = '#dc3545'}
-&#x20;             onMouseLeave=\{(e) => e.target.style.color = '#333'}
-&#x20;           \>
-&#x20;             \&times;
-&#x20;           \</button>
+            {isLoading && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  border: '4px solid #f3f3f3',
+                  borderTop: '4px solid #007BFF',
+                  borderRadius: '50%',
+                  width: '40px',
+                  height: '40px',
+                  animation: 'spin 1s linear infinite',
+                }}
+              ></div>
+            )}
 
-&#x20;           \<h2 style=\{\{ marginBottom: '20px' }}>Modal with Iframe\</h2>
-&#x20;           \<p style=\{\{ fontSize: '14px', marginBottom: '20px' }}>
-&#x20;             This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
-&#x20;           \</p>
+            <div
+              style={{
+                position: 'relative',
+                paddingBottom: 'calc(54.55861070911722% + 41px)',
+                height: '0',
+                width: '100%',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              <iframe
+                src="https://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
+                title="Basiq Dashboard | Activate your Account"
+                frameBorder="0"
+                loading="lazy"
+                webkitAllowFullScreen
+                mozAllowFullScreen
+                allowFullScreen
+                allow="clipboard-write"
+                onLoad={handleIframeLoad}
+                style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  width: '100%',
+                  height: '100%',
+                  colorScheme: 'light',
+                  borderRadius: '8px',
+                }}
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
 
-&#x20;           \{isLoading && (
-&#x20;             \<div
-&#x20;               style=\{\{
-&#x20;                 position: 'absolute',
-&#x20;                 top: '50%',
-&#x20;                 left: '50%',
-&#x20;                 transform: 'translate(-50%, -50%)',
-&#x20;                 border: '4px solid #f3f3f3',
-&#x20;                 borderTop: '4px solid #007BFF',
-&#x20;                 borderRadius: '50%',
-&#x20;                 width: '40px',
-&#x20;                 height: '40px',
-&#x20;                 animation: 'spin 1s linear infinite',
-&#x20;               }}
-&#x20;             \>\</div>
-&#x20;           )}
-
-&#x20;           \<div
-&#x20;             style=\{\{
-&#x20;               position: 'relative',
-&#x20;               paddingBottom: 'calc(54.55861070911722% + 41px)',
-&#x20;               height: '0',
-&#x20;               width: '100%',
-&#x20;               borderRadius: '8px',
-&#x20;               overflow: 'hidden',
-&#x20;             }}
-&#x20;           \>
-&#x20;             \<iframe
-&#x20;               src="https\://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
-&#x20;               title="Basiq Dashboard | Activate your Account"
-&#x20;               frameBorder="0"
-&#x20;               loading="lazy"
-&#x20;               webkitAllowFullScreen
-&#x20;               mozAllowFullScreen
-&#x20;               allowFullScreen
-&#x20;               allow="clipboard-write"
-&#x20;               onLoad=\{handleIframeLoad}
-&#x20;               style=\{\{
-&#x20;                 position: 'absolute',
-&#x20;                 top: '0',
-&#x20;                 left: '0',
-&#x20;                 width: '100%',
-&#x20;                 height: '100%',
-&#x20;                 colorScheme: 'light',
-&#x20;                 borderRadius: '8px',
-&#x20;               }}
-&#x20;             \>\</iframe>
-&#x20;           \</div>
-&#x20;         \</div>
-&#x20;       \</div>
-&#x20;     )}
-
-&#x20;     \<style>
-&#x20;       \{\`
-&#x20;         @keyframes fadeIn \{
-&#x20;           from \{ opacity: 0; }
-&#x20;           to \{ opacity: 1; }
-&#x20;         }
-&#x20;         @keyframes slideIn \{
-&#x20;           from \{ transform: translateY(-50px); }
-&#x20;           to \{ transform: translateY(0); }
-&#x20;         }
-&#x20;         @keyframes spin \{
-&#x20;           from \{ transform: rotate(0deg); }
-&#x20;           to \{ transform: rotate(360deg); }
-&#x20;         }
-&#x20;       \`}
-&#x20;     \</style>
-&#x20;   \</div>
-&#x20; );
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+          }
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}
+      </style>
+    </div>
+  );
 };
+
 
 # Welcome to Basiq
 
