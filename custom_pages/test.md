@@ -74,14 +74,31 @@ export const ModalDemo = () => {
               padding: '20px',
               borderRadius: '10px',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              minWidth: '300px',
+              minWidth: '600px',
+              minHeight: '400px',
               textAlign: 'center',
               animation: 'slideIn 0.4s',
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2>Modal Title</h2>
-            <p>This is a modal with animations. Click outside to close it.</p>
+            <h2>Modal with Iframe</h2>
+            <p>This is a modal with an embedded iframe.</p>
+
+            {/* Iframe Embedding */}
+            <div style={{ position: 'relative', paddingBottom: 'calc(54.55861070911722% + 41px)', height: '0', width: '100%' }}>
+              <iframe
+                src="https://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
+                title="Basiq Dashboard | Activate your Account"
+                frameBorder="0"
+                loading="lazy"
+                webkitAllowFullScreen
+                mozAllowFullScreen
+                allowFullScreen
+                allow="clipboard-write"
+                style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', colorScheme: 'light' }}
+              ></iframe>
+            </div>
+
             <button
               onClick={toggleModal}
               style={{
