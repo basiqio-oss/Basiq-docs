@@ -6,9 +6,15 @@ metadata:
   title: ''
   description: ''
 ---
-# {frontmatter.title}
+# Regular Markdown Heading
+
+<MyComponent>
+  This is inside a component
+</MyComponent>
 
 The current date is {new Date().toDateString()}
+
+Back to regular Markdown
 
 <br />
 
