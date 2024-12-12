@@ -1,5 +1,5 @@
 ---
-title: Basiq Introduction
+title: Modal Opener
 fullscreen: false
 hidden: true
 metadata:
