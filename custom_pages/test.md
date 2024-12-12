@@ -112,19 +112,20 @@ Basiq is a cutting-edge platform designed to revolutionize the way businesses an
       </Card>
     </Cards>
 
-    <Columns layout="auto">
-      <Column>
-        <strong>Features of the Sandbox:</strong>
+    <p>
+      <strong>Features of the Sandbox:</strong>
 
-        * Preconfigured test users
-        * Simulated account and transaction data
-        * Full access to API functionalities
-      </Column>
+      <ul>
+        <li>Preconfigured test users</li>
+        <li>Simulated account and transaction data</li>
+        <li>Full access to API functionalities</li>
+      </ul>
+    </p>
 
-      <Column>
-        <strong>Pro Tip:</strong> Once testing is complete, switching to production is seamless. Simply update your API keys to live credentials in the dashboard.
-      </Column>
-    </Columns>
+    <p>
+      <strong>Pro Tip:</strong> Once testing is complete, switching to production is seamless.
+      Simply update your API keys to live credentials in the dashboard.
+    </p>
   </Tab>
 
   <Tab title="Moving to Production">
