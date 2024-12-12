@@ -10,11 +10,7 @@ metadata:
 
 Basiq is a cutting-edge platform designed to revolutionize the way businesses and developers interact with financial data. At its core, Basiq provides a robust, secure, and efficient means to access and process financial information. Our platform simplifies financial data integration, offering tools and services to enable businesses to make informed decisions, enhance customer experiences, and innovate in the financial technology space.
 
-:::info\
-Basiq is a [Consumer Data Right accredited](https://www.basiq.io/blog/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform that provides the building blocks of financial services.
-:::
-
-***
+> 🚧 Basiq is a [Consumer Data Right accredited](https://www.basiq.io/blog/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform that provides the building blocks of financial services.
 
 <Columns layout="auto">
   <Column>
@@ -95,43 +91,4 @@ Basiq is a [Consumer Data Right accredited](https://www.basiq.io/blog/basiq-laun
 
 ***
 
-:::info\
-We’re thrilled to have you onboard and look forward to helping you leverage financial data to its fullest potential!
-:::
-
-<Tabs>
-  <Tab title="Use Cases">
-    <Cards columns={2}>
-      <Card title="Account Aggregation" icon="fa-database">
-        Access and aggregate all your customers' financial data in one place. Build or add Personal Financial Management (PFM) functionality and provide tailored product offerings and recommendations.
-      </Card>
-
-      <Card title="Account Verification" icon="fa-check-circle">
-        Instantly verify account ownership and balances in real time. Automate responsible lending, reduce dishonor fees for payments, and improve collections.
-      </Card>
-    </Cards>
-
-    <Cards columns={2}>
-      <Card title="Data Enrichment" icon="fa-layer-group">
-        Gain insights into customer transactions with powerful overlay services: expense classification, merchant identification, income detection, and behavioral spend analytics.
-      </Card>
-
-      <Card title="Wealth Management" icon="fa-chart-pie">
-        Use enriched data for next-generation financial planning and wealth management solutions.
-      </Card>
-    </Cards>
-  </Tab>
-
-  <Tab title="Supported Regions">
-    > 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**\
-    > We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](http://docs.basiq.io/the-basiq-platform/supported-financial-institutions).
-  </Tab>
-</Tabs>
-
-<Image align="center" src="https://files.readme.io/3ffe08e2896c59f766cdfecefee879f7c2bf4b25b2d83da3efb4cf56a7c277a1-c999063-DevHub_02.png" />
-
-<br />
-
-<Accordion title="Partner Showcase" icon="fa-users">
-  Check out how some of our customers are using Basiq. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in action.
-</Accordion>
+> 📘 We’re thrilled to have you onboard and look forward to helping you leverage financial data to its fullest potential!
