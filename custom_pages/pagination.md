@@ -136,6 +136,7 @@ export const ModalDemo = () => {
                   height: '100%',
                   colorScheme: 'light',
                   borderRadius: '8px',
+                    overflow: 'hidden', // Ensure no scrollbars appear
                 }}
               ></iframe>
             </div>
