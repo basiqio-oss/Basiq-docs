@@ -14,97 +14,33 @@ Here’s a simple modal with animations. Click the button to see it in action!
 
 Click the button to see the modal in action!
 
-<ModalDemo />
+\<button
+&#x20; onclick="openModal()"
+&#x20; style="padding: 10px 15px; font-size: 16px; background-color: #007BFF; color: #fff; border: none; border-radius: 5px; cursor: pointer;"
+\>
+&#x20; Open Modal
+\</button>
 
-***
+\<div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;">
+&#x20; \<div style="background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 300px; text-align: center;">
+&#x20;   \<h2>Modal Title\</h2>
+&#x20;   \<p>This is a modal with simple interactivity. Click outside or on the close button to close it.\</p>
+&#x20;   \<button onclick="closeModal()" style="padding: 10px 15px; font-size: 14px; background-color: #dc3545; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+&#x20;     Close
+&#x20;   \</button>
+&#x20; \</div>
+\</div>
 
-export const ModalDemo = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+\<script>
+&#x20; function openModal() \{
+&#x20;   document.getElementById('modal').style.display = 'flex';
+&#x20; }
 
-  const toggleModal = () => setIsOpen(!isOpen);
+&#x20; function closeModal() \{
+&#x20;   document.getElementById('modal').style.display = 'none';
+&#x20; }
+\</script>
 
-  return (
-    <div>
-      <button
-        onClick={toggleModal}
-        style={{
-          padding: '10px 15px',
-          fontSize: '16px',
-          backgroundColor: '#007BFF',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
-      >
-        Open Modal
-      </button>
-
-      {isOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '0',
-            left: '0',
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            animation: 'fadeIn 0.3s',
-            zIndex: '1000',
-          }}
-          onClick={toggleModal}
-        >
-          <div
-            style={{
-              backgroundColor: '#fff',
-              padding: '20px',
-              borderRadius: '10px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-              minWidth: '300px',
-              textAlign: 'center',
-              animation: 'slideIn 0.4s',
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2>Modal Title</h2>
-            <p>This is a modal with animations. Click outside to close it.</p>
-            <button
-              onClick={toggleModal}
-              style={{
-                padding: '10px 15px',
-                fontSize: '14px',
-                backgroundColor: '#dc3545',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                marginTop: '10px',
-              }}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
-      <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes slideIn {
-            from { transform: translateY(-50px); }
-            to { transform: translateY(0); }
-          }
-        `}
-      </style>
-    </div>
-  );
-};
 
 # Welcome to Basiq
 
