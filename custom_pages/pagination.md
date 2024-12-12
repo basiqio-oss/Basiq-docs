@@ -1,5 +1,5 @@
 ---
-title: Pagination
+title: Embedded Grafana Graphs
 fullscreen: false
 hidden: true
 ---
