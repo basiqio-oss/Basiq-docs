@@ -6,9 +6,219 @@ metadata:
   title: ''
   description: ''
 ---
+import { useState, useEffect } from 'react';
 
+<div style={{ margin: '20px 0' }}>
+  <ModalDemo />
+</div>
 
-<br />
+export const ModalDemo = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Open the modal automatically when the page loads
+  useEffect(() => {
+    setIsOpen(true);  // Modal opens on page load
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  const toggleModal = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      <button
+        onClick={toggleModal}
+        style={{
+          padding: '12px 20px',
+          fontSize: '16px',
+          backgroundColor: '#007BFF',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          marginTop: '20px',
+          transition: 'background-color 0.3s',
+        }}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
+        onMouseLeave={(e) => e.target.style.backgroundColor = '#007BFF'}
+      >
+        Open Modal
+      </button>
+
+      {isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            animation: 'fadeIn 0.3s',
+            zIndex: '1000',
+          }}
+          onClick={toggleModal}
+        >
+          <div
+            style={{
+              backgroundColor: '#fff',
+              padding: '30px',
+              borderRadius: '12px',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+              minWidth: '600px',
+              minHeight: '400px',
+              textAlign: 'center',
+              animation: 'slideIn 0.4s',
+              overflow: 'hidden',
+              position: 'relative',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Cross Button in the Top Right Corner */}
+            <button
+              onClick={toggleModal}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                fontSize: '24px',
+                color: '#333',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                transition: 'color 0.3s',
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#dc3545'}
+              onMouseLeave={(e) => e.target.style.color = '#333'}
+            >
+              &times;
+            </button>
+
+            <h2 style={{ marginBottom: '20px' }}>Modal with Cards and Iframe</h2>
+            <p style={{ fontSize: '14px', marginBottom: '20px' }}>
+              This is a modal with cards and an embedded iframe. You can close it by clicking outside or using the cross button.
+            </p>
+
+            {/* Cards Section */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '20px' }}>
+              <Card title="Financial Data Services" icon="fa-database">
+                Access detailed financial data from a range of institutions. Retrieve account balances, transaction details, and more for a comprehensive financial view.
+              </Card>
+              <Card title="Payment Services" icon="fa-credit-card">
+                Facilitate various payment services, including the ability to collect, send, and receive payments. Simplify payment processing for smoother transactions.
+              </Card>
+              <Card title="Data Enrichment Services" icon="fa-chart-bar">
+                Enhance your financial data with enrichment services. Gain insights into spending behavior and categorize transaction data effectively.
+              </Card>
+              <Card title="Reporting Services" icon="fa-file-alt">
+                Generate insightful reports and analytics from financial data. Analyze trends and gain deeper insights into customer behavior with powerful tools.
+              </Card>
+              <Card title="Webhooks & Real-time Notifications" icon="fa-bell">
+                Stay updated with real-time notifications. Use Basiq’s webhook services to receive immediate alerts for account events.
+              </Card>
+            </div>
+
+            {/* Iframe Embedding */}
+            <div
+              style={{
+                position: 'relative',
+                paddingBottom: 'calc(54.55861070911722% + 41px)',
+                height: '0',
+                width: '100%',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              <iframe
+                src="https://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
+                title="Basiq Dashboard | Activate your Account"
+                frameBorder="0"
+                loading="lazy"
+                webkitAllowFullScreen
+                mozAllowFullScreen
+                allowFullScreen
+                allow="clipboard-write"
+                style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  width: '100%',
+                  height: '100%',
+                  colorScheme: 'light',
+                  borderRadius: '8px',
+                }}
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+          }
+          .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+          }
+          .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+          }
+          .card-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #007BFF;
+          }
+          .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .card-content {
+            font-size: 14px;
+            color: #555;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+
+// Card Component
+const Card = ({ title, icon, children }) => {
+  return (
+    <div className="card">
+      <div className="card-icon">
+        <i className={`fa ${icon}`}></i>
+      </div>
+      <div className="card-title">{title}</div>
+      <div className="card-content">{children}</div>
+    </div>
+  );
+};
+
 
 # Welcome to Basiq
 
