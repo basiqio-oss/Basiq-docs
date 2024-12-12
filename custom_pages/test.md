@@ -6,9 +6,99 @@ metadata:
   title: ''
   description: ''
 ---
+# Interactive Documentation
 
+Here’s a simple modal with animations. Click the button to see it in action!
 
-<br />
+<ModalDemo />
+
+export const ModalDemo = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggleModal = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      <button
+        onClick={toggleModal}
+        style={{
+          padding: '10px 15px',
+          fontSize: '16px',
+          backgroundColor: '#007BFF',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+        }}
+      >
+        Open Modal
+      </button>
+
+      {isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            animation: 'fadeIn 0.3s',
+            zIndex: '1000',
+          }}
+          onClick={toggleModal}
+        >
+          <div
+            style={{
+              backgroundColor: '#fff',
+              padding: '20px',
+              borderRadius: '10px',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              minWidth: '300px',
+              textAlign: 'center',
+              animation: 'slideIn 0.4s',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2>Modal Title</h2>
+            <p>This is a modal with animations. Click outside to close it.</p>
+            <button
+              onClick={toggleModal}
+              style={{
+                padding: '10px 15px',
+                fontSize: '14px',
+                backgroundColor: '#dc3545',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                marginTop: '10px',
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style>
+        {`
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes slideIn {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+          }
+        `}
+      </style>
+    </div>
+  );
+};
 
 # Welcome to Basiq
 
