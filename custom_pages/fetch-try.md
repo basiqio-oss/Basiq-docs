@@ -1,5 +1,5 @@
 ---
-title: Fetch Try
+title: Animated
 fullscreen: false
 hidden: true
 ---
