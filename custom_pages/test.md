@@ -6,30 +6,25 @@ metadata:
   title: ''
   description: ''
 ---
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 <div style={{ margin: '20px 0' }}>
-  <Counter />
-
   <ModalDemo />
 </div>
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <p>Current count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)} style={{ marginLeft: '10px' }}>
-        Decrement
-      </button>
-    </div>
-  );
-};
-
 export const ModalDemo = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close the modal when pressing the Escape key
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
 
   const toggleModal = () => setIsOpen(!isOpen);
 
@@ -38,15 +33,18 @@ export const ModalDemo = () => {
       <button
         onClick={toggleModal}
         style={{
-          padding: '10px 15px',
+          padding: '12px 20px',
           fontSize: '16px',
           backgroundColor: '#007BFF',
           color: '#fff',
           border: 'none',
-          borderRadius: '5px',
+          borderRadius: '8px',
           cursor: 'pointer',
           marginTop: '20px',
+          transition: 'background-color 0.3s',
         }}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
+        onMouseLeave={(e) => e.target.style.backgroundColor = '#007BFF'}
       >
         Open Modal
       </button>
@@ -59,7 +57,7 @@ export const ModalDemo = () => {
             left: '0',
             width: '100vw',
             height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -71,21 +69,33 @@ export const ModalDemo = () => {
           <div
             style={{
               backgroundColor: '#fff',
-              padding: '20px',
-              borderRadius: '10px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              padding: '30px',
+              borderRadius: '12px',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
               minWidth: '600px',
               minHeight: '400px',
               textAlign: 'center',
               animation: 'slideIn 0.4s',
+              overflow: 'hidden',
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2>Modal with Iframe</h2>
-            <p>This is a modal with an embedded iframe.</p>
+            <h2 style={{ marginBottom: '20px' }}>Modal with Iframe</h2>
+            <p style={{ fontSize: '14px', marginBottom: '20px' }}>
+              This is a modal with an embedded iframe. You can close it by clicking outside or using the "Close" button.
+            </p>
 
             {/* Iframe Embedding */}
-            <div style={{ position: 'relative', paddingBottom: 'calc(54.55861070911722% + 41px)', height: '0', width: '100%' }}>
+            <div
+              style={{
+                position: 'relative',
+                paddingBottom: 'calc(54.55861070911722% + 41px)',
+                height: '0',
+                width: '100%',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
               <iframe
                 src="https://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
                 title="Basiq Dashboard | Activate your Account"
@@ -95,22 +105,33 @@ export const ModalDemo = () => {
                 mozAllowFullScreen
                 allowFullScreen
                 allow="clipboard-write"
-                style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', colorScheme: 'light' }}
+                style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  width: '100%',
+                  height: '100%',
+                  colorScheme: 'light',
+                  borderRadius: '8px',
+                }}
               ></iframe>
             </div>
 
             <button
               onClick={toggleModal}
               style={{
-                padding: '10px 15px',
+                padding: '12px 20px',
                 fontSize: '14px',
                 backgroundColor: '#dc3545',
                 color: '#fff',
                 border: 'none',
-                borderRadius: '5px',
+                borderRadius: '8px',
                 cursor: 'pointer',
-                marginTop: '10px',
+                marginTop: '20px',
+                transition: 'background-color 0.3s',
               }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#c82333'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#dc3545'}
             >
               Close
             </button>
