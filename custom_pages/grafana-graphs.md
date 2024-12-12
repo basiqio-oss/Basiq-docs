@@ -132,11 +132,11 @@ export const ModalDemo = () => {
             <div
               style={{
                 position: 'relative',
-                paddingBottom: 'calc(54.55861070911722% + 41px)',
+                paddingBottom: 'calc(54.55861070911722% + 41px)', // Aspect ratio (height / width)
                 height: '0',
                 width: '100%',
                 borderRadius: '8px',
-                overflow: 'hidden',
+                overflow: 'hidden', // Prevent scrolling within the container
               }}
             >
               <iframe
@@ -148,6 +148,7 @@ export const ModalDemo = () => {
                 mozAllowFullScreen
                 allowFullScreen
                 allow="clipboard-write"
+                scrolling="no"  // Disable scrolling inside the iframe
                 style={{
                   position: 'absolute',
                   top: '0',
@@ -156,7 +157,7 @@ export const ModalDemo = () => {
                   height: '100%',
                   colorScheme: 'light',
                   borderRadius: '8px',
-                    overflow: 'hidden', // Ensure no scrollbars appear
+                  overflow: 'hidden', // Prevent internal scrollbars
                 }}
               ></iframe>
             </div>
