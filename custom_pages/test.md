@@ -10,9 +10,13 @@ metadata:
 
 Here’s a simple modal with animations. Click the button to see it in action!
 
-import React, { useState } from 'react';
+# Interactive Documentation
+
+Click the button to see the modal in action!
 
 <ModalDemo />
+
+***
 
 export const ModalDemo = () => {
   const [isOpen, setIsOpen] = React.useState(false);
