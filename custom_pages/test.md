@@ -6,22 +6,55 @@ metadata:
   title: ''
   description: ''
 ---
-import { useState } from 'react';
+import React from 'react';
 
-<div style={{ margin: '20px 0' }}>
-  <Counter />
-</div>
+# Documentation Page
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
+Here’s an example of a nice alert box to enhance your documentation:
+
+<AlertBox type="success">
+  This is a success message! Everything is working perfectly.
+</AlertBox>
+
+<AlertBox type="warning">
+  Be cautious! This is a warning message.
+</AlertBox>
+
+<AlertBox type="error">
+  Something went wrong! This is an error message.
+</AlertBox>
+
+***
+
+export const AlertBox = ({ type, children }) => {
+  const styles = {
+    base: {
+      padding: '15px',
+      borderRadius: '5px',
+      margin: '10px 0',
+      color: '#333',
+      fontSize: '16px',
+    },
+    success: {
+      backgroundColor: '#d4edda',
+      border: '1px solid #c3e6cb',
+      color: '#155724',
+    },
+    warning: {
+      backgroundColor: '#fff3cd',
+      border: '1px solid #ffeeba',
+      color: '#856404',
+    },
+    error: {
+      backgroundColor: '#f8d7da',
+      border: '1px solid #f5c6cb',
+      color: '#721c24',
+    },
+  };
 
   return (
-    <div>
-      <p>Current count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)} style={{ marginLeft: '10px' }}>
-        Decrement
-      </button>
+    <div style={{ ...styles.base, ...styles[type] }}>
+      {children}
     </div>
   );
 };
