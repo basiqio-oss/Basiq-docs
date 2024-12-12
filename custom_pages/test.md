@@ -20,6 +20,8 @@ Basiq is a cutting-edge platform designed to revolutionize the way businesses an
   </Column>
 
   <Column>
+    <p />
+
     <Image align="center" src="https://files.readme.io/d5d0e45-bb68dee-DevHub_01.png" />
   </Column>
 </Columns>
