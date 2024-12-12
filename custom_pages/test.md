@@ -6,15 +6,25 @@ metadata:
   title: ''
   description: ''
 ---
-# Regular Markdown Heading
+import { useState } from 'react';
 
-<MyComponent>
-  This is inside a component
-</MyComponent>
+<div style={{ margin: '20px 0' }}>
+  <Counter />
+</div>
 
-The current date is {new Date().toDateString()}
+export const Counter = () => {
+  const [count, setCount] = useState(0);
 
-Back to regular Markdown
+  return (
+    <div>
+      <p>Current count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)} style={{ marginLeft: '10px' }}>
+        Decrement
+      </button>
+    </div>
+  );
+};
 
 <br />
 
