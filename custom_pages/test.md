@@ -8,17 +8,20 @@ metadata:
 ---
 import { useState, useEffect } from 'react';
 
-<div style={{ margin: '20px 0' }}>
-  <ModalDemo />
-</div>
-
 export const ModalDemo = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Open the modal automatically when the page loads
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+    setIsLoading(true); // Reset loading state whenever the modal opens
+  };
+
+  const handleIframeLoad = () => {
+    setIsLoading(false); // Stop showing spinner when iframe loads
+  };
+
   useEffect(() => {
-    setIsOpen(true);  // Modal opens on page load
-
     const handleEscape = (event) => {
       if (event.key === 'Escape') {
         setIsOpen(false);
@@ -26,11 +29,8 @@ export const ModalDemo = () => {
     };
     window.addEventListener('keydown', handleEscape);
 
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener('keydown', handleEscape);
-  }, []); // Empty dependency array ensures this runs only once on mount
-
-  const toggleModal = () => setIsOpen(!isOpen);
+  }, []);
 
   return (
     <div>
@@ -81,11 +81,10 @@ export const ModalDemo = () => {
               textAlign: 'center',
               animation: 'slideIn 0.4s',
               overflow: 'hidden',
-              position: 'relative', // Positioning context for the close button
+              position: 'relative',
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Cross Button in the Top Right Corner */}
             <button
               onClick={toggleModal}
               style={{
@@ -111,7 +110,23 @@ export const ModalDemo = () => {
               This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
             </p>
 
-            {/* Iframe Embedding */}
+            {isLoading && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  border: '4px solid #f3f3f3',
+                  borderTop: '4px solid #007BFF',
+                  borderRadius: '50%',
+                  width: '40px',
+                  height: '40px',
+                  animation: 'spin 1s linear infinite',
+                }}
+              ></div>
+            )}
+
             <div
               style={{
                 position: 'relative',
@@ -131,6 +146,7 @@ export const ModalDemo = () => {
                 mozAllowFullScreen
                 allowFullScreen
                 allow="clipboard-write"
+                onLoad={handleIframeLoad}
                 style={{
                   position: 'absolute',
                   top: '0',
@@ -155,6 +171,10 @@ export const ModalDemo = () => {
           @keyframes slideIn {
             from { transform: translateY(-50px); }
             to { transform: translateY(0); }
+          }
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
         `}
       </style>
