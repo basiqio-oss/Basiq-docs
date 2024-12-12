@@ -6,161 +6,219 @@ metadata:
   title: ''
   description: ''
 ---
-import { useState, useEffect } from 'react';
+import \{ useState, useEffect } from 'react';
 
-<div style={{ margin: '20px 0' }}>
-  <ModalDemo />
-</div>
+\<div style=\{\{ margin: '20px 0' }}>
+&#x20; \<ModalDemo />
+\</div>
 
-export const ModalDemo = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const ModalDemo = () => \{
+&#x20; const \[isOpen, setIsOpen] = useState(false);
 
-  // Open the modal automatically when the page loads
-  useEffect(() => {
-    setIsOpen(true);  // Modal opens on page load
+&#x20; // Open the modal automatically when the page loads
+&#x20; useEffect(() => \{
+&#x20;   setIsOpen(true);  // Modal opens on page load
 
-    const handleEscape = (event) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleEscape);
+&#x20;   const handleEscape = (event) => \{
+&#x20;     if (event.key === 'Escape') \{
+&#x20;       setIsOpen(false);
+&#x20;     }
+&#x20;   };
+&#x20;   window\.addEventListener('keydown', handleEscape);
 
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener('keydown', handleEscape);
-  }, []); // Empty dependency array ensures this runs only once on mount
+&#x20;   // Cleanup event listener on component unmount
+&#x20;   return () => window\.removeEventListener('keydown', handleEscape);
+&#x20; }, \[]); // Empty dependency array ensures this runs only once on mount
 
-  const toggleModal = () => setIsOpen(!isOpen);
+&#x20; const toggleModal = () => setIsOpen(!isOpen);
 
-  return (
-    <div>
-      <button
-        onClick={toggleModal}
-        style={{
-          padding: '12px 20px',
-          fontSize: '16px',
-          backgroundColor: '#007BFF',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          marginTop: '20px',
-          transition: 'background-color 0.3s',
-        }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = '#007BFF'}
-      >
-        Open Modal
-      </button>
+&#x20; return (
+&#x20;   \<div>
+&#x20;     \<button
+&#x20;       onClick=\{toggleModal}
+&#x20;       style=\{\{
+&#x20;         padding: '12px 20px',
+&#x20;         fontSize: '16px',
+&#x20;         backgroundColor: '#007BFF',
+&#x20;         color: '#fff',
+&#x20;         border: 'none',
+&#x20;         borderRadius: '8px',
+&#x20;         cursor: 'pointer',
+&#x20;         marginTop: '20px',
+&#x20;         transition: 'background-color 0.3s',
+&#x20;       }}
+&#x20;       onMouseEnter=\{(e) => e.target.style.backgroundColor = '#0056b3'}
+&#x20;       onMouseLeave=\{(e) => e.target.style.backgroundColor = '#007BFF'}
+&#x20;     \>
+&#x20;       Open Modal
+&#x20;     \</button>
 
-      {isOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '0',
-            left: '0',
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            animation: 'fadeIn 0.3s',
-            zIndex: '1000',
-          }}
-          onClick={toggleModal}
-        >
-          <div
-            style={{
-              backgroundColor: '#fff',
-              padding: '30px',
-              borderRadius: '12px',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-              minWidth: '600px',
-              minHeight: '400px',
-              textAlign: 'center',
-              animation: 'slideIn 0.4s',
-              overflow: 'hidden',
-              position: 'relative', // Positioning context for the close button
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Cross Button in the Top Right Corner */}
-            <button
-              onClick={toggleModal}
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                backgroundColor: 'transparent',
-                border: 'none',
-                fontSize: '24px',
-                color: '#333',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-                transition: 'color 0.3s',
-              }}
-              onMouseEnter={(e) => e.target.style.color = '#dc3545'}
-              onMouseLeave={(e) => e.target.style.color = '#333'}
-            >
-              &times;
-            </button>
+&#x20;     \{isOpen && (
+&#x20;       \<div
+&#x20;         style=\{\{
+&#x20;           position: 'fixed',
+&#x20;           top: '0',
+&#x20;           left: '0',
+&#x20;           width: '100vw',
+&#x20;           height: '100vh',
+&#x20;           backgroundColor: 'rgba(0, 0, 0, 0.7)',
+&#x20;           display: 'flex',
+&#x20;           alignItems: 'center',
+&#x20;           justifyContent: 'center',
+&#x20;           animation: 'fadeIn 0.3s',
+&#x20;           zIndex: '1000',
+&#x20;         }}
+&#x20;         onClick=\{toggleModal}
+&#x20;       \>
+&#x20;         \<div
+&#x20;           style=\{\{
+&#x20;             backgroundColor: '#fff',
+&#x20;             padding: '30px',
+&#x20;             borderRadius: '12px',
+&#x20;             boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+&#x20;             minWidth: '600px',
+&#x20;             minHeight: '400px',
+&#x20;             textAlign: 'center',
+&#x20;             animation: 'slideIn 0.4s',
+&#x20;             overflow: 'hidden',
+&#x20;             position: 'relative',
+&#x20;           }}
+&#x20;           onClick=\{(e) => e.stopPropagation()}
+&#x20;         \>
+&#x20;           \{/\* Cross Button in the Top Right Corner \*/}
+&#x20;           \<button
+&#x20;             onClick=\{toggleModal}
+&#x20;             style=\{\{
+&#x20;               position: 'absolute',
+&#x20;               top: '10px',
+&#x20;               right: '10px',
+&#x20;               backgroundColor: 'transparent',
+&#x20;               border: 'none',
+&#x20;               fontSize: '24px',
+&#x20;               color: '#333',
+&#x20;               cursor: 'pointer',
+&#x20;               fontWeight: 'bold',
+&#x20;               transition: 'color 0.3s',
+&#x20;             }}
+&#x20;             onMouseEnter=\{(e) => e.target.style.color = '#dc3545'}
+&#x20;             onMouseLeave=\{(e) => e.target.style.color = '#333'}
+&#x20;           \>
+&#x20;             \&times;
+&#x20;           \</button>
 
-            <h2 style={{ marginBottom: '20px' }}>Modal with Iframe</h2>
-            <p style={{ fontSize: '14px', marginBottom: '20px' }}>
-              This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
-            </p>
+&#x20;           \<h2 style=\{\{ marginBottom: '20px' }}>Modal with Cards and Iframe\</h2>
+&#x20;           \<p style=\{\{ fontSize: '14px', marginBottom: '20px' }}>
+&#x20;             This is a modal with cards and an embedded iframe. You can close it by clicking outside or using the cross button.
+&#x20;           \</p>
 
-            {/* Iframe Embedding */}
-            <div
-              style={{
-                position: 'relative',
-                paddingBottom: 'calc(54.55861070911722% + 41px)',
-                height: '0',
-                width: '100%',
-                borderRadius: '8px',
-                overflow: 'hidden',
-              }}
-            >
-              <iframe
-                src="https://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
-                title="Basiq Dashboard | Activate your Account"
-                frameBorder="0"
-                loading="lazy"
-                webkitAllowFullScreen
-                mozAllowFullScreen
-                allowFullScreen
-                allow="clipboard-write"
-                style={{
-                  position: 'absolute',
-                  top: '0',
-                  left: '0',
-                  width: '100%',
-                  height: '100%',
-                  colorScheme: 'light',
-                  borderRadius: '8px',
-                }}
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      )}
+&#x20;           \{/\* Cards Section \*/}
+&#x20;           \<div style=\{\{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '20px' }}>
+&#x20;             \<Card title="Financial Data Services" icon="fa-database">
+&#x20;               Access detailed financial data from a range of institutions. Retrieve account balances, transaction details, and more for a comprehensive financial view.
+&#x20;             \</Card>
+&#x20;             \<Card title="Payment Services" icon="fa-credit-card">
+&#x20;               Facilitate various payment services, including the ability to collect, send, and receive payments. Simplify payment processing for smoother transactions.
+&#x20;             \</Card>
+&#x20;             \<Card title="Data Enrichment Services" icon="fa-chart-bar">
+&#x20;               Enhance your financial data with enrichment services. Gain insights into spending behavior and categorize transaction data effectively.
+&#x20;             \</Card>
+&#x20;             \<Card title="Reporting Services" icon="fa-file-alt">
+&#x20;               Generate insightful reports and analytics from financial data. Analyze trends and gain deeper insights into customer behavior with powerful tools.
+&#x20;             \</Card>
+&#x20;             \<Card title="Webhooks & Real-time Notifications" icon="fa-bell">
+&#x20;               Stay updated with real-time notifications. Use Basiq’s webhook services to receive immediate alerts for account events.
+&#x20;             \</Card>
+&#x20;           \</div>
 
-      <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes slideIn {
-            from { transform: translateY(-50px); }
-            to { transform: translateY(0); }
-          }
-        `}
-      </style>
-    </div>
-  );
+&#x20;           \{/\* Iframe Embedding \*/}
+&#x20;           \<div
+&#x20;             style=\{\{
+&#x20;               position: 'relative',
+&#x20;               paddingBottom: 'calc(54.55861070911722% + 41px)',
+&#x20;               height: '0',
+&#x20;               width: '100%',
+&#x20;               borderRadius: '8px',
+&#x20;               overflow: 'hidden',
+&#x20;             }}
+&#x20;           \>
+&#x20;             \<iframe
+&#x20;               src="https\://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed"
+&#x20;               title="Basiq Dashboard | Activate your Account"
+&#x20;               frameBorder="0"
+&#x20;               loading="lazy"
+&#x20;               webkitAllowFullScreen
+&#x20;               mozAllowFullScreen
+&#x20;               allowFullScreen
+&#x20;               allow="clipboard-write"
+&#x20;               style=\{\{
+&#x20;                 position: 'absolute',
+&#x20;                 top: '0',
+&#x20;                 left: '0',
+&#x20;                 width: '100%',
+&#x20;                 height: '100%',
+&#x20;                 colorScheme: 'light',
+&#x20;                 borderRadius: '8px',
+&#x20;               }}
+&#x20;             \>\</iframe>
+&#x20;           \</div>
+&#x20;         \</div>
+&#x20;       \</div>
+&#x20;     )}
+
+&#x20;     \<style>
+&#x20;       \{\`
+&#x20;         @keyframes fadeIn \{
+&#x20;           from \{ opacity: 0; }
+&#x20;           to \{ opacity: 1; }
+&#x20;         }
+&#x20;         @keyframes slideIn \{
+&#x20;           from \{ transform: translateY(-50px); }
+&#x20;           to \{ transform: translateY(0); }
+&#x20;         }
+&#x20;         .card \{
+&#x20;           border: 1px solid #ddd;
+&#x20;           border-radius: 8px;
+&#x20;           padding: 20px;
+&#x20;           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+&#x20;           transition: transform 0.3s, box-shadow 0.3s;
+&#x20;         }
+&#x20;         .card:hover \{
+&#x20;           transform: translateY(-5px);
+&#x20;           box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+&#x20;         }
+&#x20;         .card-icon \{
+&#x20;           font-size: 36px;
+&#x20;           margin-bottom: 10px;
+&#x20;           color: #007BFF;
+&#x20;         }
+&#x20;         .card-title \{
+&#x20;           font-size: 18px;
+&#x20;           font-weight: bold;
+&#x20;           margin-bottom: 10px;
+&#x20;         }
+&#x20;         .card-content \{
+&#x20;           font-size: 14px;
+&#x20;           color: #555;
+&#x20;         }
+&#x20;       \`}
+&#x20;     \</style>
+&#x20;   \</div>
+&#x20; );
 };
+
+// Card Component
+const Card = (\{ title, icon, children }) => \{
+&#x20; return (
+&#x20;   \<div className="card">
+&#x20;     \<div className="card-icon">
+&#x20;       \<i className=\{\`fa $\{icon}\`}>\</i>
+&#x20;     \</div>
+&#x20;     \<div className="card-title">\{title}\</div>
+&#x20;     \<div className="card-content">\{children}\</div>
+&#x20;   \</div>
+&#x20; );
+};
+
 
 # Welcome to Basiq
 
