@@ -10,7 +10,9 @@ metadata:
 
 Basiq is a cutting-edge platform designed to revolutionize the way businesses and developers interact with financial data. At its core, Basiq provides a robust, secure, and efficient means to access and process financial information. Our platform simplifies financial data integration, offering tools and services to enable businesses to make informed decisions, enhance customer experiences, and innovate in the financial technology space.
 
-> 📘 Basiq is a [Consumer Data Right accredited](https://www.basiq.io/blog/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform that provides the building blocks of financial services.
+> 📘 Info:
+>
+> \_Basiq is a [Consumer Data Right accredited](https://www.basiq.io/blog/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform that provides the building blocks of financial services.
 
 <Columns layout="auto">
   <Column>
