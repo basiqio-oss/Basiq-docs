@@ -81,7 +81,7 @@ export const ModalDemo = () => {
               textAlign: 'center',
               animation: 'slideIn 0.4s',
               overflow: 'hidden',
-              position: 'relative',
+              position: 'relative', // Positioning context for the close button
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -106,29 +106,10 @@ export const ModalDemo = () => {
               &times;
             </button>
 
-            <h2 style={{ marginBottom: '20px' }}>Modal with Cards and Iframe</h2>
+            <h2 style={{ marginBottom: '20px' }}>Modal with Iframe</h2>
             <p style={{ fontSize: '14px', marginBottom: '20px' }}>
-              This is a modal with cards and an embedded iframe. You can close it by clicking outside or using the cross button.
+              This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
             </p>
-
-            {/* Cards Section */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '20px' }}>
-              <Card title="Financial Data Services" icon="fa-database">
-                Access detailed financial data from a range of institutions. Retrieve account balances, transaction details, and more for a comprehensive financial view.
-              </Card>
-              <Card title="Payment Services" icon="fa-credit-card">
-                Facilitate various payment services, including the ability to collect, send, and receive payments. Simplify payment processing for smoother transactions.
-              </Card>
-              <Card title="Data Enrichment Services" icon="fa-chart-bar">
-                Enhance your financial data with enrichment services. Gain insights into spending behavior and categorize transaction data effectively.
-              </Card>
-              <Card title="Reporting Services" icon="fa-file-alt">
-                Generate insightful reports and analytics from financial data. Analyze trends and gain deeper insights into customer behavior with powerful tools.
-              </Card>
-              <Card title="Webhooks & Real-time Notifications" icon="fa-bell">
-                Stay updated with real-time notifications. Use Basiq’s webhook services to receive immediate alerts for account events.
-              </Card>
-            </div>
 
             {/* Iframe Embedding */}
             <div
@@ -175,49 +156,12 @@ export const ModalDemo = () => {
             from { transform: translateY(-50px); }
             to { transform: translateY(0); }
           }
-          .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-          }
-          .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-          }
-          .card-icon {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: #007BFF;
-          }
-          .card-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
-          .card-content {
-            font-size: 14px;
-            color: #555;
-          }
         `}
       </style>
     </div>
   );
 };
 
-// Card Component
-const Card = ({ title, icon, children }) => {
-  return (
-    <div className="card">
-      <div className="card-icon">
-        <i className={`fa ${icon}`}></i>
-      </div>
-      <div className="card-title">{title}</div>
-      <div className="card-content">{children}</div>
-    </div>
-  );
-};
 
 
 # Welcome to Basiq
