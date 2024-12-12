@@ -6,41 +6,25 @@ metadata:
   title: ''
   description: ''
 ---
-# Interactive Documentation
+import { useState } from 'react';
 
-Here’s a simple modal with animations. Click the button to see it in action!
+<div style={{ margin: '20px 0' }}>
+  <Counter />
+</div>
 
-# Interactive Documentation
+export const Counter = () => {
+  const [count, setCount] = useState(0);
 
-Click the button to see the modal in action!
-
-\<button
-&#x20; onclick="openModal()"
-&#x20; style="padding: 10px 15px; font-size: 16px; background-color: #007BFF; color: #fff; border: none; border-radius: 5px; cursor: pointer;"
-\>
-&#x20; Open Modal
-\</button>
-
-\<div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;">
-&#x20; \<div style="background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); min-width: 300px; text-align: center;">
-&#x20;   \<h2>Modal Title\</h2>
-&#x20;   \<p>This is a modal with simple interactivity. Click outside or on the close button to close it.\</p>
-&#x20;   \<button onclick="closeModal()" style="padding: 10px 15px; font-size: 14px; background-color: #dc3545; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
-&#x20;     Close
-&#x20;   \</button>
-&#x20; \</div>
-\</div>
-
-\<script>
-&#x20; function openModal() \{
-&#x20;   document.getElementById('modal').style.display = 'flex';
-&#x20; }
-
-&#x20; function closeModal() \{
-&#x20;   document.getElementById('modal').style.display = 'none';
-&#x20; }
-\</script>
-
+  return (
+    <div>
+      <p>Current count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)} style={{ marginLeft: '10px' }}>
+        Decrement
+      </button>
+    </div>
+  );
+};
 
 # Welcome to Basiq
 
