@@ -110,6 +110,27 @@ export const ModalDemo = () => {
             <p style={{ fontSize: '14px', marginBottom: '20px' }}>
               This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
             </p>
+						<Cards columns={3}>
+              <Card title="Financial Data Services" icon="fa-database">
+                Access detailed financial data from a range of institutions. Retrieve account balances, transaction details, and more for a comprehensive financial view.
+              </Card>
+
+              <Card title="Payment Services" icon="fa-credit-card">
+                Facilitate various payment services, including the ability to collect, send, and receive payments. Simplify payment processing for smoother transactions.
+              </Card>
+
+              <Card title="Data Enrichment Services" icon="fa-chart-bar">
+                Enhance your financial data with enrichment services. Gain insights into spending behavior and categorize transaction data effectively.
+              </Card>
+
+              <Card title="Reporting Services" icon="fa-file-alt">
+                Generate insightful reports and analytics from financial data. Analyze trends and gain deeper insights into customer behavior with powerful tools.
+              </Card>
+
+              <Card title="Webhooks & Real-time Notifications" icon="fa-bell">
+                Stay updated with real-time notifications. Use Basiq’s webhook services to receive immediate alerts for account events.
+              </Card>
+            </Cards>
 
             {/* Iframe Embedding */}
             <div
