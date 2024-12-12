@@ -1,0 +1,51 @@
+---
+title: Grafana Graphs
+fullscreen: false
+hidden: false
+---
+import React from 'react';
+
+export const PageWithIframe = () => {
+  return (
+    <div style={{ margin: '20px 0' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Raintank Dashboard Snapshot</h2>
+      
+      <p style={{ textAlign: 'center', fontSize: '14px', marginBottom: '20px' }}>
+        Below is an embedded Raintank Dashboard snapshot.
+      </p>
+
+      {/* Iframe Embedding */}
+      <div
+        style={{
+          position: 'relative',
+          paddingBottom: '56.25%',  // Aspect ratio of 16:9
+          height: '0',
+          width: '100%',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          margin: '0 auto', // Center the iframe horizontally
+        }}
+      >
+        <iframe
+          src="https://snapshots.raintank.io/dashboard/snapshot/TWq2oCPxUcZfrldh6dnVHJQoZJWh5lX2"
+          title="Raintank Dashboard Snapshot"
+          frameBorder="0"
+          loading="lazy"
+          webkitAllowFullScreen
+          mozAllowFullScreen
+          allowFullScreen
+          allow="clipboard-write"
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            colorScheme: 'light',
+            borderRadius: '8px',
+          }}
+        ></iframe>
+      </div>
+    </div>
+  );
+};
