@@ -31,15 +31,3 @@ function HelloCodeTitle(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 ```
-
-<br />
-
-import {themes as prismThemes} from 'prism-react-renderer';
-
-export default {
-  themeConfig: {
-    prism: {
-      theme: prismThemes.dracula,
-    },
-  },
-};
