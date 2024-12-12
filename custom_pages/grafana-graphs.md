@@ -141,7 +141,7 @@ export const ModalDemo = () => {
             >
               <iframe
                 src="https://snapshots.raintank.io/dashboard/snapshot/TWq2oCPxUcZfrldh6dnVHJQoZJWh5lX2"
-                title="Raintank Dashboard Snapshot"
+                title="Dashboard In Docs"
                 frameBorder="0"
                 loading="lazy"
                 webkitAllowFullScreen
