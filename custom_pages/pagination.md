@@ -1,6 +1,6 @@
 ---
 title: Pagination
-fullscreen: false
+fullscreen: true
 hidden: true
 ---
 <Columns layout="auto">
