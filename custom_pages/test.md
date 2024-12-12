@@ -6,8 +6,6 @@ metadata:
   title: ''
   description: ''
 ---
-import { useState, useEffect } from 'react';
-
 <div style={{ margin: '20px 0' }}>
   <ModalDemo />
 </div>
