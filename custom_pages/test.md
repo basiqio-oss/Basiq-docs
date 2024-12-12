@@ -6,6 +6,12 @@ metadata:
   title: ''
   description: ''
 ---
+# {frontmatter.title}
+
+The current date is {new Date().toDateString()}
+
+<br />
+
 # Welcome to Basiq
 
 Basiq is a cutting-edge platform designed to revolutionize the way businesses and developers interact with financial data. At its core, Basiq provides a robust, secure, and efficient means to access and process financial information. Our platform simplifies financial data integration, offering tools and services to enable businesses to make informed decisions, enhance customer experiences, and innovate in the financial technology space.
