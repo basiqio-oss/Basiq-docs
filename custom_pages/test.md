@@ -15,16 +15,20 @@ import { useState, useEffect } from 'react';
 export const ModalDemo = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close the modal when pressing the Escape key
+  // Open the modal automatically when the page loads
   useEffect(() => {
+    setIsOpen(true);  // Modal opens on page load
+
     const handleEscape = (event) => {
       if (event.key === 'Escape') {
         setIsOpen(false);
       }
     };
     window.addEventListener('keydown', handleEscape);
+
+    // Cleanup event listener on component unmount
     return () => window.removeEventListener('keydown', handleEscape);
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   const toggleModal = () => setIsOpen(!isOpen);
 
