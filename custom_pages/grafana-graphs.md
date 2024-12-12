@@ -1,7 +1,7 @@
 ---
 title: Grafana Graphs
 fullscreen: false
-hidden: false
+hidden: true
 ---
 <Cards columns={4}>
   <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
