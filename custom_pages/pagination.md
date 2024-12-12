@@ -1,7 +1,7 @@
 ---
 title: Pagination
 fullscreen: false
-hidden: false
+hidden: true
 ---
 <Columns layout="auto">
   <Column>
