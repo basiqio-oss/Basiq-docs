@@ -77,12 +77,34 @@ export const ModalDemo = () => {
               textAlign: 'center',
               animation: 'slideIn 0.4s',
               overflow: 'hidden',
+              position: 'relative', // Positioning context for the close button
             }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Cross Button in the Top Right Corner */}
+            <button
+              onClick={toggleModal}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                fontSize: '24px',
+                color: '#333',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                transition: 'color 0.3s',
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#dc3545'}
+              onMouseLeave={(e) => e.target.style.color = '#333'}
+            >
+              &times;
+            </button>
+
             <h2 style={{ marginBottom: '20px' }}>Modal with Iframe</h2>
             <p style={{ fontSize: '14px', marginBottom: '20px' }}>
-              This is a modal with an embedded iframe. You can close it by clicking outside or using the "Close" button.
+              This is a modal with an embedded iframe. You can close it by clicking outside or using the cross button.
             </p>
 
             {/* Iframe Embedding */}
@@ -116,25 +138,6 @@ export const ModalDemo = () => {
                 }}
               ></iframe>
             </div>
-
-            <button
-              onClick={toggleModal}
-              style={{
-                padding: '12px 20px',
-                fontSize: '14px',
-                backgroundColor: '#dc3545',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                marginTop: '20px',
-                transition: 'background-color 0.3s',
-              }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#c82333'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#dc3545'}
-            >
-              Close
-            </button>
           </div>
         </div>
       )}
