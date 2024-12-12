@@ -10,6 +10,8 @@ metadata:
 
 Here’s a simple modal with animations. Click the button to see it in action!
 
+import React, { useState } from 'react';
+
 <ModalDemo />
 
 export const ModalDemo = () => {
