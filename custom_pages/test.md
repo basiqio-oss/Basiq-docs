@@ -80,22 +80,65 @@ Basiq is a cutting-edge platform designed to revolutionize the way businesses an
 
 ## Getting Started with Basiq
 
+## Getting Started with Basiq
+
 <Tabs>
-  <Tab title="Sign Up">
-    **Step 1**: [Register](https://dashboard.basiq.io/) for a Basiq account to access our dashboard and APIs.\
-    This will be your entry point to manage services and integrations.
+  <Tab title="Overview">
+    Welcome to Basiq! Follow these steps to seamlessly integrate with our platform and unlock the power of financial data. Whether you're testing in our sandbox environment or going live, we've got you covered with tools, support, and comprehensive documentation.
+
+    <Cards columns={3}>
+      <Card title="Step 1: Sign Up" icon="fa-user-plus" href="https://dashboard.basiq.io/" target="_blank">
+        Create a free account on the Basiq Dashboard to start exploring the platform. This will act as your central hub for managing APIs and integrations.
+      </Card>
+
+      <Card title="Step 2: Explore the Dashboard" icon="fa-chart-line">
+        Familiarize yourself with the Basiq Dashboard. Track your usage, monitor data, and manage integrations all in one place.
+      </Card>
+
+      <Card title="Step 3: Access Documentation" icon="fa-book-open" href="https://api.basiq.io/reference/" target="_blank">
+        Dive into our comprehensive API documentation. Learn how to fetch data, set up webhooks, and more!
+      </Card>
+    </Cards>
   </Tab>
 
-  <Tab title="Explore the Dashboard">
-    **Step 2**: Familiarize yourself with the **Basiq Dashboard**, a central hub for managing integrations, tracking activities, and monitoring your financial data pipelines.
+  <Tab title="Sandbox Environment">
+    <Cards columns={2}>
+      <Card title="What is the Sandbox?" icon="fa-flask">
+        The Sandbox is a safe testing environment to simulate real-world scenarios with dummy data. Perfect for building and experimenting with integrations.
+      </Card>
+
+      <Card title="How to Use It?" icon="fa-tools">
+        Use the Sandbox to test API endpoints, fetch mock transaction data, and ensure your app is fully functional before going live.
+      </Card>
+    </Cards>
+
+    <Columns layout="auto">
+      <Column>
+        <strong>Features of the Sandbox:</strong>
+
+        * Preconfigured test users
+        * Simulated account and transaction data
+        * Full access to API functionalities
+      </Column>
+
+      <Column>
+        <strong>Pro Tip:</strong> Once testing is complete, switching to production is seamless. Simply update your API keys to live credentials in the dashboard.
+      </Column>
+    </Columns>
   </Tab>
 
-  <Tab title="Read the Documentation">
-    **Step 3**: Dive into our [comprehensive API guides and documentation](https://api.basiq.io/reference). Whether you're fetching data or setting up webhooks, we have you covered.
-  </Tab>
+  <Tab title="Moving to Production">
+    <Cards columns={2}>
+      <Card title="Step 1: Upgrade Your Account" icon="fa-rocket">
+        To move to production, you'll need to verify your organization and upgrade your account. This ensures secure access to live data.
+      </Card>
 
-  <Tab title="Experiment in Sandbox">
-    **Step 4**: Safely test and develop your applications in our **sandbox environment**. Get hands-on experience with our APIs before moving to production. Learn more about [testing here](https://api.basiq.io/reference/testing).
+      <Card title="Step 2: Monitor and Scale" icon="fa-server">
+        Once live, use the Basiq Dashboard to monitor API usage, scale your integration, and gain real-time insights into your application's performance.
+      </Card>
+    </Cards>
+
+    <Image align="center" src="https://files.readme.io/7d874db-43206b9-DevHub_02.png" />
   </Tab>
 </Tabs>
 
