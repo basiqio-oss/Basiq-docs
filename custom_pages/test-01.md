@@ -41,9 +41,8 @@ export const NotificationDemo = () => {
         <div
           style={{
             position: 'fixed',
-            top: '20px',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            bottom: '20px', // Position from the bottom
+            right: '20px',  // Position from the right
             backgroundColor: '#007BFF',
             color: '#fff',
             padding: '15px 30px',
@@ -54,7 +53,6 @@ export const NotificationDemo = () => {
             alignItems: 'center',
             animation: 'fadeIn 0.3s',
             justifyContent: 'space-between',
-            width: '80%',
             minWidth: '250px',
           }}
           onClick={closeNotification}
