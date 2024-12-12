@@ -8,10 +8,6 @@ metadata:
 ---
 import React from 'react';
 
-# Documentation Page
-
-Here’s an example of a nice alert box to enhance your documentation:
-
 <AlertBox type="success">
   This is a success message! Everything is working perfectly.
 </AlertBox>
@@ -23,8 +19,6 @@ Here’s an example of a nice alert box to enhance your documentation:
 <AlertBox type="error">
   Something went wrong! This is an error message.
 </AlertBox>
-
-***
 
 export const AlertBox = ({ type, children }) => {
   const styles = {
