@@ -111,23 +111,22 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 If you have any queries, reach out.
 
-<a
-  href="#"
+<button
   onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
   style={{
-    display: 'inline-block',
-    padding: '10px 20px',
+    padding: '12px 24px',
     backgroundColor: '#007bff',
     color: 'white',
-    textAlign: 'center',
-    textDecoration: 'none',
+    border: 'none',
     borderRadius: '5px',
+    fontSize: '16px',
     fontWeight: 'bold',
     cursor: 'pointer',
+    textAlign: 'center',
     transition: 'background-color 0.3s ease',
   }}
   onMouseOver={(e) => (e.target.style.backgroundColor = '#0056b3')}
   onMouseOut={(e) => (e.target.style.backgroundColor = '#007bff')}
 >
   Please reach out to our support team.
-</a>
+</button>
