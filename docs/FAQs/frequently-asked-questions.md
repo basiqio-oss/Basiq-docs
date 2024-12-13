@@ -109,7 +109,7 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <br />
 
-\<p> please reach out to our
+please reach out to our\
 \<a href="#" onClick=\{() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
-&#x20;  Support
+Support
 \</a> team for any queries.
