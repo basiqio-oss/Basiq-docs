@@ -14,7 +14,7 @@ There’s nothing worse than developing against an API with crappy test data. We
 
 The test data that we provide (below) has been designed to mimic a real life user. This means that just a like a real user would spend and receive funds throughout the day - our test accounts have been designed to do the same thing. Therefore you should expect to see new transaction records being created throughout the day, and the account balances adjusted accordingly.
 
-The transaction data is completely random to best replicate the type of data that you should expect to see for your own customers. 
+The transaction data is completely random to best replicate the type of data that you should expect to see for your own customers.
 
 > 🚧 Sandbox environment
 >
@@ -24,28 +24,28 @@ The transaction data is completely random to best replicate the type of data tha
 
 > 📘 🆕 Initial Testing and Billing Policy
 >
-> For initial testing, BASIQ services are available at no cost. This free access allows you to extensively test our platform's capabilities using our sandbox environment. However, once you transition from testing to becoming a paying customer, charges will apply for any users on your platform. This billing policy ensures that you have the opportunity to fully explore and understand the value of BASIQ services before any financial commitment is required. 
+> For initial testing, BASIQ services are available at no cost. This free access allows you to extensively test our platform's capabilities using our sandbox environment. However, once you transition from testing to becoming a paying customer, charges will apply for any users on your platform. This billing policy ensures that you have the opportunity to fully explore and understand the value of BASIQ services before any financial commitment is required.
 >
 > If you have questions about transitioning to a paying customer or about our billing structure, please contact our support team at [support@basiq.io](mailto:support@basiq.io).
 
 <br />
 
-<Table>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
-      <th>
+      <th style={{ textAlign: "left" }}>
         loginId
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         password
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         persona
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         suitable use case
       </th>
     </tr>
@@ -53,23 +53,23 @@ The transaction data is completely random to best replicate the type of data tha
 
   <tbody>
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Wentworth-Smith
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         whislter
       </td>
 
-      <td>
-        This is a joint account.  
+      <td style={{ textAlign: "left" }}>
+        This is a joint account.
 
-        * \*income (transaction account)\*\*: 2 sources of salary, monthly stable salary & fortnightly stable salary.  
-        * \*liabilities\*\*: mortgage (mortgage account) and car loan (payments in the transaction account)  
-        * \*expenses\*\*: has predictable expenses (credit-card account)
+        * **income (transaction account)**: 2 sources of salary, monthly stable salary & fortnightly stable salary.
+        * **liabilities**: mortgage (mortgage account) and car loan (payments in the transaction account)
+        * **expenses**: has predictable expenses (credit-card account)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Review expenses
         * Affordability assessment
@@ -83,22 +83,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Whistler
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         ShowBox
       </td>
 
-      <td>
-        * \*income (transaction account)\*\*: 1 source of salary, fortnightly salary  
-        * \*liabilities\*\*: has BNPL (transaction account), no mortgage / personal loan  
-        * \*expenses\*\*: no daily expenses  
-        * \*risk flags\*\*: large amount of external transfer (debit to Jared)
+      <td style={{ textAlign: "left" }}>
+        * **income (transaction account)**: 1 source of salary, fortnightly salary
+        * **liabilities**: has BNPL (transaction account), no mortgage / personal loan
+        * **expenses**: no daily expenses
+        * **risk flags**: large amount of external transfer (debit to Jared)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Assess liabilities
         * Access transaction data
@@ -108,22 +108,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Gilfoyle
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         PiedPiper
       </td>
 
-      <td>
-        * \*income\*\* (transaction account): stop fortnightly salary, unemployment benefits  
-        * \*liabilities\*\*: increase in BNPL (transaction account)  
-        * \*expenses\*\*: has predictable expenses (credit-card account)  
+      <td style={{ textAlign: "left" }}>
+        * \*income\*\* (transaction account): stop fortnightly salary, unemployment benefits
+        * \*liabilities\*\*: increase in BNPL (transaction account)
+        * \*expenses\*\*: has predictable expenses (credit-card account)
         * \*risk flags\*\*: late fee (credit-card account)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -138,22 +138,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         gavinBelson
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         hooli2016
       </td>
 
-      <td>
-        * \*income\*\* (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)  
-        * \*liabilities\*\*: personal loan (loan account)  
-        * \*expenses\*\*: predictable expenses (credit-card account)  
+      <td style={{ textAlign: "left" }}>
+        * \*income\*\* (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)
+        * \*liabilities\*\*: personal loan (loan account)
+        * \*expenses\*\*: predictable expenses (credit-card account)
         * HooliGov Bank (AU00004)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -168,22 +168,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         jared
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         django
       </td>
 
-      <td>
-        * \*income\*\* (transaction account): weekly volatile income from uber + credit transfers from Whistler  
-        * \*liabilities\*\*: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)  
-        * \*expenses\*\*: predictable expenses (credit-card account)  
+      <td style={{ textAlign: "left" }}>
+        * \*income\*\* (transaction account): weekly volatile income from uber + credit transfers from Whistler
+        * \*liabilities\*\*: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)
+        * \*expenses\*\*: predictable expenses (credit-card account)
         * \*assets\*\*: term deposit
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -198,21 +198,21 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         richard
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         tabsnotspaces
       </td>
 
-      <td>
-        * \*income\*\* (transaction account): high stable fortnightly income, 2 rental incomes  
-        * \*liabilities\*\*: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)  
+      <td style={{ textAlign: "left" }}>
+        * \*income\*\* (transaction account): high stable fortnightly income, 2 rental incomes
+        * \*liabilities\*\*: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)
         * \*expenses\*\*: predictable expenses (credit-card account)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -227,40 +227,40 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         laurieBream
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         business2024
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Happy path persona with business fields and business consumer consent
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Business Consumer Consent
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         ashMann
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         hooli2024
       </td>
 
-      <td>
-        * \*income\*\* (transaction account): 1 salary monthly income, rental income  
-        * \*liabilities\*\*: unshared credit card transactions (payments in the transaction account)  
-        * \*expenses\*\*: predictable expenses (credit-card account), rental expense  
-        * \*risk flags\*\*: gambling behaviours, cash withdrawal, crypto exchange
+      <td style={{ textAlign: "left" }}>
+        * **income** (transaction account): 1 salary monthly income, rental income
+        * **liabilities**: unshared credit card transactions (payments in the transaction account)
+        * **expenses**: predictable expenses (credit-card account), rental expense
+        * **risk flags**: gambling behaviours, cash withdrawal, crypto exchange
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -310,8 +310,8 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*Error:\*\* `invalid-credentials`  
-        * \*Detail:\*\* "Account is locked"
+        * **Error:** `invalid-credentials`
+        * **Detail:** "Account is locked"
       </td>
     </tr>
 
@@ -339,8 +339,8 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*Error:\*\* `account-not-accessible-requires-user-action`  
-        * \*Detail:\*\* "An action is required from end-user before account details can be returned."
+        * **Error:** `account-not-accessible-requires-user-action`
+        * **Detail:** "An action is required from end-user before account details can be returned."
       </td>
     </tr>
 
@@ -368,8 +368,8 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*Error:\*\* `service-unavailable`  
-        * \*Detail:\*\* "Service is currently unavailable. Please try again later."
+        * **Error:** `service-unavailable`
+        * **Detail:** "Service is currently unavailable. Please try again later."
       </td>
     </tr>
   </tbody>
@@ -377,16 +377,16 @@ The transaction data is completely random to best replicate the type of data tha
 
 # MFA users
 
-We have two test banks to test MFA challenges 
+We have two test banks to test MFA challenges
 
 * Pied Piper Bank  (`mfa-challenge` *always*)
 * Nucleus Bank (`mfa-challenge` *intermittent - 50/50*)
 
-| loginId         | password      | mfaChallengeMethod | mfaChallengeInput                                                        | mfaChallengeSolution |
-| :-------------- | :------------ | :----------------- | :----------------------------------------------------------------------- | :------------------- |
-| jared           | django        | token              | ["OTP Password"]                                                         | \["1234"]            |
-| richard         | tabsnotspaces | token              | ["OTP Password"]                                                         | \["1234"]            |
-| gavinBelson     | hooli2016     | security-questions | ["What's your first company?"]                                           | ["Hooli"]            |
-| Gilfoyle        | PiedPiper     | security-questions | ["What's your first company?"]                                           | ["Hooli"]            |
-| Whistler        | ShowBox       | security-questions | ["What's your favourite company?", "What's the ID of this institution?"] | ["Basiq", "AU00000"] |
-| Wentworth-Smith | whislter      | security-questions | ["What's your favourite company?", "What's the ID of this institution?"] | ["Basiq", "AU00000"] |
+| loginId         | password      | mfaChallengeMethod | mfaChallengeInput                                                         | mfaChallengeSolution  |
+| :-------------- | :------------ | :----------------- | :------------------------------------------------------------------------ | :-------------------- |
+| jared           | django        | token              | \["OTP Password"]                                                         | \["1234"]             |
+| richard         | tabsnotspaces | token              | \["OTP Password"]                                                         | \["1234"]             |
+| gavinBelson     | hooli2016     | security-questions | \["What's your first company?"]                                           | \["Hooli"]            |
+| Gilfoyle        | PiedPiper     | security-questions | \["What's your first company?"]                                           | \["Hooli"]            |
+| Whistler        | ShowBox       | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
+| Wentworth-Smith | whislter      | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
