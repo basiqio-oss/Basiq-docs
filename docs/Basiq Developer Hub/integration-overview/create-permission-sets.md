@@ -43,8 +43,6 @@ Once you have configured your permission sets, save your changes to activate the
 * **Segregate Duties**: Where possible, distribute permissions among roles to prevent any single role from having excessive access, reducing risks of misuse.
 * **Update with Organizational Changes**: Modify permission sets in tandem with any changes in organizational structure or roles to maintain appropriate access levels.
 
-<br />
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
