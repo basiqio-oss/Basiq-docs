@@ -109,8 +109,6 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <br />
 
-### If you have any queries, reach out.
-
 <div style={{ display: 'flex', alignItems: 'center' }}>
   <span
     style={{
