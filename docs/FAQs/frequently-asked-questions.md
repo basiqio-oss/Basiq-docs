@@ -126,6 +126,20 @@ If you have any queries, reach out.
     boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
     transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
     outline: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '50px', // Set the height to control vertical centering
+  }}
+  onMouseOver={(e) => {
+    e.target.style.backgroundColor = '#0056b3';
+    e.target.style.transform = 'scale(1.05)';
+    e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.3)';
+  }}
+  onMouseOut={(e) => {
+    e.target.style.backgroundColor = '#007bff';
+    e.target.style.transform = 'scale(1)';
+    e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
   }}
 >
   Please reach out to our support team
