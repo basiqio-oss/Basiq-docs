@@ -127,7 +127,6 @@ If you have any queries, reach out.
     transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
     outline: 'none',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
     height: '45px', // Set the height to control vertical centering
   }}
