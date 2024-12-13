@@ -111,23 +111,23 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <div
   style={{
-    border: "2px solid #81c784", // Lighter green border for a fresher look
+    border: "2px solid #fbc02d", // Warm yellow border
     borderRadius: "8px",
-    backgroundColor: "#c8e6c9", // Softer, pastel green background
+    backgroundColor: "#fff9c4", // Soft, pastel yellow background
     padding: "16px",
     margin: "16px 0",
     fontFamily: "Arial, sans-serif",
-    color: "#333", // Darker text color for readability
+    color: "#333", // Dark text color for readability
   }}
 >
-  <strong style={{ color: "#388e3c" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+  <strong style={{ color: "#f57f17" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
         padding: '12px 30px',
-        backgroundColor: '#0288d1', // Vibrant blue button color
+        backgroundColor: '#ffb300', // Bold yellow-orange button color
         color: '#ffffff',
         border: 'none',
         borderRadius: '50px',
@@ -135,7 +135,7 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
         fontWeight: '600',
         textTransform: 'uppercase',
         cursor: 'pointer',
-        boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
+        boxShadow: '0 4px 10px rgba(255, 179, 0, 0.2)', // Soft yellow shadow
         transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
         outline: 'none',
         display: 'flex',
@@ -148,13 +148,13 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
       }}
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.1)';
-        e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
-        e.target.style.backgroundColor = '#0277bd'; // Darker blue on hover
+        e.target.style.boxShadow = '0 6px 15px rgba(255, 179, 0, 0.4)'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#f57c00'; // Darker orange on hover
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
-        e.target.style.backgroundColor = '#0288d1'; // Original blue
+        e.target.style.boxShadow = '0 4px 10px rgba(255, 179, 0, 0.2)';
+        e.target.style.backgroundColor = '#ffb300'; // Original yellow-orange
       }}
     >
       Support team
