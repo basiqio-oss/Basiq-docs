@@ -40,8 +40,6 @@ When setting up applications in the Basiq Dashboard, it's vital to adopt strateg
 
 * **Align with Business Functions**: For organisations with multiple departments or varied use cases, consider creating applications specific to each function. This segregation ensures that the data and functionalities of each department do not overlap, maintaining data integrity and focus.
 
-<br />
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
