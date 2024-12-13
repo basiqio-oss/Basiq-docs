@@ -114,19 +114,29 @@ If you have any queries, reach out.
 <button
   onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
   style={{
-    padding: '12px 24px',
+    padding: '12px 30px',
     backgroundColor: '#007bff',
-    color: 'white',
+    color: '#ffffff',
     border: 'none',
-    borderRadius: '5px',
+    borderRadius: '50px',
     fontSize: '16px',
-    fontWeight: 'bold',
+    fontWeight: '600',
+    textTransform: 'uppercase',
     cursor: 'pointer',
-    textAlign: 'center',
-    transition: 'background-color 0.3s ease',
+    boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
+    transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+    outline: 'none',
   }}
-  onMouseOver={(e) => (e.target.style.backgroundColor = '#0056b3')}
-  onMouseOut={(e) => (e.target.style.backgroundColor = '#007bff')}
+  onMouseOver={(e) => {
+    e.target.style.backgroundColor = '#0056b3';
+    e.target.style.transform = 'scale(1.05)';
+    e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.3)';
+  }}
+  onMouseOut={(e) => {
+    e.target.style.backgroundColor = '#007bff';
+    e.target.style.transform = 'scale(1)';
+    e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
+  }}
 >
-  Please reach out to our support team.
+  Please reach out to our support team
 </button>
