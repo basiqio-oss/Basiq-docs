@@ -109,6 +109,6 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <br />
 
-<a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
+<a href="#" onClick={() => Intercom('startTour', 'Feedback on the new reports feature:')}>
   Reach out to Support.
 </a>
