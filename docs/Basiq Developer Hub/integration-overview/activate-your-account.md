@@ -70,8 +70,6 @@ After setting up your account, you’ll want to keep it safe. Here are some reco
 
 * **Enable Two-Factor Verification**: This additional security layer requires a unique code from your mobile device, received via text message, to complete the login process. This means even if your username and password are compromised, unauthorised login is still prevented. To enable this, navigate to your user settings on the Basiq dashboard.
 
-<br />
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
