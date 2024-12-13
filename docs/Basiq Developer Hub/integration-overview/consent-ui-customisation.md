@@ -51,250 +51,38 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
 #### Consent Tab Settings
 
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Section
-      </th>
-
-      <th>
-        Feature
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Title and Subtitle
-      </td>
-
-      <td>
-        Brand name
-      </td>
-
-      <td>
-        Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Title
-      </td>
-
-      <td>
-        Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Subtitle
-      </td>
-
-      <td>
-        Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Purposes
-      </td>
-
-      <td>
-        [Your Purpose]
-      </td>
-
-      <td>
-        Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        [Permissions](doc:consent-scopes)
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-        Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Name and occupation
-      </td>
-
-      <td>
-        [Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Name, occupation, contact details
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Organisation profile
-      </td>
-
-      <td>
-        [Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Organisation profile and contact details
-      </td>
-
-      <td>
-        [Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Account name, type and balance
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Account balance and details
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Transaction details
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Data
-      </td>
-
-      <td>
-        Duration (days)
-      </td>
-
-      <td>
-        Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Data retrieval span (days)
-      </td>
-
-      <td>
-        Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Retain data by default
-      </td>
-
-      <td>
-        When enabled, the system will automatically retain the retrieved financial data for the set duration. This setting is essential for maintaining continuous data access for analysis without prompting users for re-consent.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Section                           | Feature                                  | Description                                                                                                                                                                                                                      |
+| :-------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title and Subtitle                | Brand name                               | Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.                                        |
+|                                   | Title                                    | Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.                                                            |
+|                                   | Subtitle                                 | Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.                                                             |
+| Purposes                          | \[Your Purpose]                          | Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.                                                        |
+| [Permissions](doc:consent-scopes) |                                          | Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose. |
+|                                   | Name and occupation                      | \[Checkbox - unchecked]                                                                                                                                                                                                          |
+|                                   | Name, occupation, contact details        | \[Checkbox - checked]                                                                                                                                                                                                            |
+|                                   | Organisation profile                     | \[Checkbox - unchecked]                                                                                                                                                                                                          |
+|                                   | Organisation profile and contact details | \[Checkbox - unchecked]                                                                                                                                                                                                          |
+|                                   | Account name, type and balance           | \[Checkbox - checked]                                                                                                                                                                                                            |
+|                                   | Account balance and details              | \[Checkbox - checked]                                                                                                                                                                                                            |
+|                                   | Transaction details                      | \[Checkbox - checked]                                                                                                                                                                                                            |
+| Data                              | Duration (days)                          | Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.                                         |
+|                                   | Data retrieval span (days)               | Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.           |
+|                                   | Retain data by default                   | When enabled, the system will automatically retain the retrieved financial data for the set duration. This setting is essential for maintaining continuous data access for analysis without prompting users for re-consent.      |
 
 #### Appearance Tab Settings
 
-<Table>
+<Table align={["left","left","left"]}>
   <thead>
     <tr>
-      <th>
+      <th style={{ textAlign: "left" }}>
         Section
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         Feature
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         Description
       </th>
     </tr>
@@ -302,16 +90,16 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
   <tbody>
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Header Image
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Image selection
       </td>
 
-      <td>
-        Manage the upload and display of a custom header image for brand visibility. The recommended size for header image is 
+      <td style={{ textAlign: "left" }}>
+        Manage the upload and display of a custom header image for brand visibility. The recommended size for header image is
 
         **1372x256**
 
@@ -320,267 +108,267 @@ The Consent UI is composed of several key screens, each designed to facilitate a
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Always display header image
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Check this option to always display headers on all screens.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Font
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Font
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Select the font style that will be used throughout the UI, aiding in brand consistency. If you have a custom font, please contact Basiq to discuss its integration.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Primary color
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Use this to change primary color. E.g # 130F26
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Secondary color
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Use this to change secondary color. E.g # 130F26
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Inactive color
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Use this to change inactive color. E.g # 7F888C
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Heading size (px)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Adjust the size of heading texts in pixels.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Paragraph size (px)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Adjust the size of paragraph texts in pixels.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Line height (px)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Adjust the height of lines in pixels for readability.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Buttons
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Primary button
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Customise text and background color, along with border radius for primary buttons.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Secondary button
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Customise text and background color, along with border radius for secondary buttons.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Border radius (px)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Customise the border radius of your buttons.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Colors
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Control the UI's overall appearance, including background color and the colors used for messages indicating success, failure, or warnings.
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Success
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         \# 4FC35A
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Warning
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         \# FABE34
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Failure
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         \# FE493F
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Background
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         \# FFFFFF
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Links
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         \# 0459A8
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Accreditation
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         \# 2784DA
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Wrapper
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Desktop width (px)
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Define the width of the desktop UI wrapper in pixels to ensure proper layout fitting.
       </td>
     </tr>
@@ -666,7 +454,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td style={{ textAlign: "left" }}>
-        When a user attempts to cancel out of our consent UI, a confirmation pop-up appears to ensure the user intends to leave the consent process. This pop-up provides a message indicating the action the system will take if the user confirms the cancelation. For example: If the partner name is "ExamplePartner", the confirmation pop-up will now display:  
+        When a user attempts to cancel out of our consent UI, a confirmation pop-up appears to ensure the user intends to leave the consent process. This pop-up provides a message indicating the action the system will take if the user confirms the cancelation. For example: If the partner name is "ExamplePartner", the confirmation pop-up will now display:
 
         "Are you sure you want to leave? You will be taken back to ExamplePartner."
       </td>
@@ -717,3 +505,56 @@ To integrate the Consent UI, follow these steps to implement the full redirect:
 3. **Complete the Consent**: Once the user completes the consent process, they will be redirected back to your application with the job id's.
 
 This approach ensures compliance with bank security requirements and maintains the integrity of the user's financial data.
+
+<div
+  style={{
+    border: "2px solid #4e9ccf", // Classic blue border
+    borderRadius: "8px",
+    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Dark text for readability
+  }}
+>
+  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1e88e5', // Classic blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px';
+        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
