@@ -111,6 +111,4 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <br />
 
-<a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
-  your feedback on the reports feature
-</a>
+If you have any questions or feedback about the new reports feature, please feel free to <a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>share your feedback on the reports feature</a>. Our support team is available to assist you with any queries you may have.
