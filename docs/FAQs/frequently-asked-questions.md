@@ -111,35 +111,41 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 ### If you have any queries, reach out.
 
-<button
-  onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
-  style={{
-    padding: '12px 30px',
-    backgroundColor: '#007bff',
-    color: '#ffffff',
-    border: 'none',
-    borderRadius: '50px',
-    fontSize: '16px',
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    cursor: 'pointer',
-    boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
-    transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-    outline: 'none',
-    display: 'flex',
-    justifyContent: 'center',
-    height: '45px', // Set the height to control vertical centering
-    position: 'relative',
-    overflow: 'hidden', // To avoid any content overflow during the animation
-  }}
-  onMouseEnter={(e) => {
-    e.target.style.transform = 'scale(1.1)';
-    e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
-  }}
-  onMouseLeave={(e) => {
-    e.target.style.transform = 'scale(1)';
-    e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
-  }}
->
-  Support team
-</button>
+<div style={{ display: 'flex', alignItems: 'center' }}>
+  <button
+    onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+    style={{
+      padding: '12px 30px',
+      backgroundColor: '#007bff',
+      color: '#ffffff',
+      border: 'none',
+      borderRadius: '50px',
+      fontSize: '16px',
+      fontWeight: '600',
+      textTransform: 'uppercase',
+      cursor: 'pointer',
+      boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
+      transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+      outline: 'none',
+      display: 'flex',
+      justifyContent: 'center',
+      height: '45px',
+      position: 'relative',
+      overflow: 'hidden',
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.transform = 'scale(1.1)';
+      e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.transform = 'scale(1)';
+      e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
+    }}
+  >
+    Support team
+  </button>
+
+  <span style={{ marginLeft: '10px', fontSize: '16px' }}>
+    If you have any queries, reach out
+  </span>
+</div>
