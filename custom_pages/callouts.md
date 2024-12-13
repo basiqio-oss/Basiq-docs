@@ -16,14 +16,57 @@ hidden: true
 }}
 >
   <strong>📢 Attention!</strong> This is a callout box made directly in MDX using inline HTML and CSS.
-<a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
-  your feedback on the reports feature
-</a>
-  <ul>
-    <li>Simple to create.</li>
-    <li>No extra libraries required.</li>
-    <li>Fully customizable with CSS.</li>
-  </ul>
+
+  <a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
+    your feedback on the reports feature
+  </a>
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <span
+      style={{
+      marginLeft: '10px',
+      fontSize: '18px', // Increase text size
+      whiteSpace: 'nowrap', // Ensure text stays in one line
+    }}
+    >
+      If you have any queries, reach out
+    </span>
+
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+      padding: '12px 30px',
+      backgroundColor: '#007bff',
+      color: '#ffffff',
+      border: 'none',
+      borderRadius: '50px',
+      fontSize: '16px',
+      fontWeight: '600',
+      textTransform: 'uppercase',
+      cursor: 'pointer',
+      boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
+      transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+      outline: 'none',
+      display: 'flex',
+      justifyContent: 'center',
+      height: '45px',
+      position: 'relative',
+      overflow: 'hidden',
+      marginLeft: '10px', // Add space between text and button
+      minWidth: '150px', // Ensure the button has enough width for the text
+    }}
+      onMouseEnter={(e) => {
+      e.target.style.transform = 'scale(1.1)';
+      e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
+    }}
+      onMouseLeave={(e) => {
+      e.target.style.transform = 'scale(1)';
+      e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
+    }}
+    >
+      Support team
+    </button>
+  </div>
 </div>
 
 Here is the rest of your MDX content!
