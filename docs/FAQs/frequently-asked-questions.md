@@ -109,9 +109,8 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <br />
 
-\<p>
-&#x20; If you have any questions, please reach out to our\{" "}
-&#x20; \<a href="#" onClick=\{() => Intercom('showNewMessage', 'Feedback on the new feature:')}>
-&#x20;   support team
-&#x20; \</a>.
-\</p>
+If you have any questions, please reach out to our{' '}
+
+\<a href="#" onClick=\{() => Intercom('showNewMessage', 'Feedback on the new feature:')}>
+&#x20; support team
+\</a>.
