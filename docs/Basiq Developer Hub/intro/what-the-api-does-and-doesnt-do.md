@@ -20,7 +20,7 @@ Instantly verify account ownership and balances in real time to improve the user
 
 ## ✅  Data aggregation for single view of customer finances
 
-Access and aggregate all your customers financial data in one place to get a single view of customer finances. Use this to build or add PFM (Personal Financial Management) functionality and provide more tailored product offerings and recommendations. 
+Access and aggregate all your customers financial data in one place to get a single view of customer finances. Use this to build or add PFM (Personal Financial Management) functionality and provide more tailored product offerings and recommendations.
 
 ## ✅  Provide ongoing access to customer data
 
@@ -44,12 +44,65 @@ We offer Webhook support for event notifications. You can [subscribe](https://ap
 
 ## ❌  We don't provide write access
 
-Basiq has read only access only, meaning we can not update or create any data when a customer provides their credentials. 
+Basiq has read only access only, meaning we can not update or create any data when a customer provides their credentials.
 
 ## ❌  We don't expose customer credit card numbers
 
-Credit card numbers are always masked to maintain PCI compliance. 
+Credit card numbers are always masked to maintain PCI compliance.
 
 ## ❌  We don't share your data
 
 We take data privacy very seriously and we do not hold onto or share any of your data without your consent.
+
+<div
+  style={{
+    border: "2px solid #4e9ccf", // Classic blue border
+    borderRadius: "8px",
+    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Dark text for readability
+  }}
+>
+  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1e88e5', // Classic blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px';
+        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
