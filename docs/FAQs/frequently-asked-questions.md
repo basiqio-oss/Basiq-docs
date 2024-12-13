@@ -106,3 +106,9 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
   <p>All data retrieval is done securely and with the explicit consent of the user, following the CDR standards and data privacy regulations. For a full breakdown of the data Basiq retrieves, refer to our <a href="https://api.basiq.io/docs/data-structure" target="_blank">data structure documentation</a>.</p>
 </Accordion>
+
+<br />
+
+<a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
+  Reach out to Support.
+</a>
