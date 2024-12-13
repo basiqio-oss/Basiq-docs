@@ -111,48 +111,51 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <div
   style={{
-  border: "2px solid #4caf50", 
-  borderRadius: "8px", 
-  backgroundColor: "#e8f5e9", 
-  padding: "16px", 
-  margin: "16px 0", 
-  fontFamily: "Arial, sans-serif"
-}}
+    border: "2px solid #81c784", // Lighter green border for a fresher look
+    borderRadius: "8px",
+    backgroundColor: "#c8e6c9", // Softer, pastel green background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Darker text color for readability
+  }}
 >
-  <strong>📢 Attention!</strong> If you have any issues, please reach out to amazing support Tean.
+  <strong style={{ color: "#388e3c" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
-      padding: '12px 30px',
-      backgroundColor: '#007bff',
-      color: '#ffffff',
-      border: 'none',
-      borderRadius: '50px',
-      fontSize: '16px',
-      fontWeight: '600',
-      textTransform: 'uppercase',
-      cursor: 'pointer',
-      boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
-      transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-      outline: 'none',
-      display: 'flex',
-      justifyContent: 'center',
-      height: '45px',
-      position: 'relative',
-      overflow: 'hidden',
-      marginLeft: '10px', // Add space between text and button
-      minWidth: '150px', // Ensure the button has enough width for the text
-    }}
+        padding: '12px 30px',
+        backgroundColor: '#0288d1', // Vibrant blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(0, 123, 255, 0.2)',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
       onMouseEnter={(e) => {
-      e.target.style.transform = 'scale(1.1)';
-      e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
-    }}
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
+        e.target.style.backgroundColor = '#0277bd'; // Darker blue on hover
+      }}
       onMouseLeave={(e) => {
-      e.target.style.transform = 'scale(1)';
-      e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
-    }}
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
+        e.target.style.backgroundColor = '#0288d1'; // Original blue
+      }}
     >
       Support team
     </button>
