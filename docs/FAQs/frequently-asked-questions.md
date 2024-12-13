@@ -119,19 +119,9 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
   fontFamily: "Arial, sans-serif"
 }}
 >
-  <strong>📢 Attention!</strong> IF you have any issues, please reach out to support.
+  <strong>📢 Attention!</strong> If you have any issues, please reach out to amazing support Tean.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
-    <span
-      style={{
-      marginLeft: '10px',
-      fontSize: '18px', // Increase text size
-      whiteSpace: 'nowrap', // Ensure text stays in one line
-    }}
-    >
-      If you have any queries, reach out
-    </span>
-
     <button
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
