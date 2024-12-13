@@ -59,8 +59,6 @@ In the 'Account Settings' section, manage your personal dashboard account settin
 
 > 📘 *The Basiq Dashboard is designed to be dynamic, regularly evolving with new features and updates to enhance your financial data management experience. Familiarise yourself with these sections to maximise the benefits of the Basiq platform.*
 
-<br />
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
