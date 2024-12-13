@@ -10,9 +10,7 @@ metadata:
 next:
   description: ''
 ---
-<Image title="Group 5 (1).svg" alt={1037} align="center" width="60% " src="https://files.readme.io/7f8dc12-Group_5_1.svg">
-  Quickstart
-</Image>
+<Image align="center" alt={1037} border={false} caption="Quickstart" title="Group 5 (1).svg" src="https://files.readme.io/7f8dc12-Group_5_1.svg" width="60% " />
 
  
 
@@ -20,7 +18,9 @@ next:
 
 <Image align="left" src="https://files.readme.io/1433553-263205a-Group_7_1.svg" />
 
-<br/><br/>
+<br />
+
+<br />
 
 To begin, register your application via our [dashboard](https://dashboard.basiq.io/) and configure it accordingly. Before proceeding to create a new API key, ensure your application settings are in order.
 
@@ -30,7 +30,7 @@ To begin, register your application via our [dashboard](https://dashboard.basiq.
 
 > 🚧 Keep your key secret
 >
-> Make sure you copy and save the key we give you straight away, as it will only be exposed it in full once. Your API keys carry many privileges, so be sure to keep them secret! 
+> Make sure you copy and save the key we give you straight away, as it will only be exposed it in full once. Your API keys carry many privileges, so be sure to keep them secret!
 >
 > Do not share your API keys in publicly accessible areas such GitHub, client-side code, etc
 
@@ -190,7 +190,7 @@ To ensure you receive the data once it's available, continue polling this jobs e
 
 ## STEP 6: Fetch your aggregated data
 
-Once you have successfully created a connection, you can go ahead and retrieve the data belonging to it. Let’s retrieve a list of all the accounts this user has connected through Basiq. 
+Once you have successfully created a connection, you can go ahead and retrieve the data belonging to it. Let’s retrieve a list of all the accounts this user has connected through Basiq.
 
 ```javascript STEP 5: Fetch accounts
 // STEP 5: Fetch your aggregated data 
@@ -227,3 +227,56 @@ The response will contain an array of Account objects, containing specific accou
  
 
 Feel free to deep dive into our [full API reference](https://api.basiq.io/) to see what else is possible with Basiq.
+
+<div
+  style={{
+    border: "2px solid #4e9ccf", // Classic blue border
+    borderRadius: "8px",
+    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Dark text for readability
+  }}
+>
+  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1e88e5', // Classic blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px';
+        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
