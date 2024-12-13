@@ -117,10 +117,10 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*income\*\* (transaction account): stop fortnightly salary, unemployment benefits
-        * \*liabilities\*\*: increase in BNPL (transaction account)
-        * \*expenses\*\*: has predictable expenses (credit-card account)
-        * \*risk flags\*\*: late fee (credit-card account)
+        * **income** (transaction account): stop fortnightly salary, unemployment benefits
+        * **liabilities**: increase in BNPL (transaction account)
+        * **expenses**: has predictable expenses (credit-card account)
+        * **risk flags**: late fee (credit-card account)
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -147,9 +147,9 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*income\*\* (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)
-        * \*liabilities\*\*: personal loan (loan account)
-        * \*expenses\*\*: predictable expenses (credit-card account)
+        * **income** (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)
+        * **liabilities**: personal loan (loan account)
+        * **expenses**: predictable expenses (credit-card account)
         * HooliGov Bank (AU00004)
       </td>
 
@@ -177,10 +177,10 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*income\*\* (transaction account): weekly volatile income from uber + credit transfers from Whistler
-        * \*liabilities\*\*: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)
-        * \*expenses\*\*: predictable expenses (credit-card account)
-        * \*assets\*\*: term deposit
+        * **income** (transaction account): weekly volatile income from uber + credit transfers from Whistler
+        * **liabilities**: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)
+        * **expenses**: predictable expenses (credit-card account)
+        * **assets**: term deposit
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -207,9 +207,9 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        * \*income\*\* (transaction account): high stable fortnightly income, 2 rental incomes
-        * \*liabilities\*\*: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)
-        * \*expenses\*\*: predictable expenses (credit-card account)
+        * **income** (transaction account): high stable fortnightly income, 2 rental incomes
+        * **liabilities**: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)
+        * **expenses**: predictable expenses (credit-card account)
       </td>
 
       <td style={{ textAlign: "left" }}>
