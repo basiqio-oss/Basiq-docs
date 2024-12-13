@@ -109,7 +109,7 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <br />
 
-If you have any queries, reach out.
+### If you have any queries, reach out.
 
 <button
   onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
@@ -131,5 +131,5 @@ If you have any queries, reach out.
     height: '45px', // Set the height to control vertical centering
   }}
 >
-  Please reach out to our support team
+  Support team
 </button>
