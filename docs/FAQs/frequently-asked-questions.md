@@ -112,6 +112,10 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 ### If you have any queries, reach out.
 
 <div style={{ display: 'flex', alignItems: 'center' }}>
+  <span style={{ marginLeft: '10px', fontSize: '16px' }}>
+    If you have any queries, reach out
+  </span>
+
   <button
     onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
     style={{
@@ -144,8 +148,4 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
   >
     Support team
   </button>
-
-  <span style={{ marginLeft: '10px', fontSize: '16px' }}>
-    If you have any queries, reach out
-  </span>
 </div>
