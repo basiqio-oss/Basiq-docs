@@ -52,7 +52,7 @@ Automate workflows to enable personalised, autonomous finance offerings with eve
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
     borderRadius: "8px",
-    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    backgroundColor: "#e3f2fd", // Light blue background
     padding: "16px",
     margin: "16px 0",
     fontFamily: "Arial, sans-serif",
@@ -67,18 +67,18 @@ Automate workflows to enable personalised, autonomous finance offerings with eve
       style={{
         padding: '12px 30px',
         backgroundColor: '#1e88e5', // Classic blue button color
-        color: '#ffffff',
+        color: '#ffffff', // Text color
         border: 'none',
         borderRadius: '50px',
         fontSize: '16px',
         fontWeight: '600',
         textTransform: 'uppercase',
         cursor: 'pointer',
-        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
         transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
         outline: 'none',
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center', // Ensures text is vertically centered
         height: '45px',
         position: 'relative',
         overflow: 'hidden',
@@ -87,13 +87,13 @@ Automate workflows to enable personalised, autonomous finance offerings with eve
       }}
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.1)';
-        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
-        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+        e.target.style.color = '#ffffff'; // Ensure text color remains white
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
         e.target.style.boxShadow = '0 4px 10px';
         e.target.style.backgroundColor = '#1e88e5'; // Original blue
+        e.target.style.color = '#ffffff'; // Ensure text color remains white
       }}
     >
       Support team
