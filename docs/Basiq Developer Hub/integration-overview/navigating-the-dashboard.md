@@ -58,3 +58,58 @@ The 'Settings' section is where you configure company-wide settings, including e
 In the 'Account Settings' section, manage your personal dashboard account settings. This includes updating passwords, activating two-factor authentication, and other personal account management functionalities.
 
 > 📘 *The Basiq Dashboard is designed to be dynamic, regularly evolving with new features and updates to enhance your financial data management experience. Familiarise yourself with these sections to maximise the benefits of the Basiq platform.*
+
+<br />
+
+<div
+  style={{
+    border: "2px solid #4e9ccf", // Classic blue border
+    borderRadius: "8px",
+    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Dark text for readability
+  }}
+>
+  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1e88e5', // Classic blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px';
+        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
