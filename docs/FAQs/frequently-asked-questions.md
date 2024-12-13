@@ -119,11 +119,7 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
   fontFamily: "Arial, sans-serif"
 }}
 >
-  <strong>📢 Attention!</strong> This is a callout box made directly in MDX using inline HTML and CSS.
-
-  <a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
-    your feedback on the reports feature
-  </a>
+  <strong>📢 Attention!</strong> IF you have any issues, please reach out to support.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <span
