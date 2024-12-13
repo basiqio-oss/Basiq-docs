@@ -114,3 +114,5 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 <a href="#" onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}>
   Please reach out to our support team. If you have any queries.
 </a>
+
+If you have any queries, <a href="#" onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}>please reach out to our support team</a> for assistance.
