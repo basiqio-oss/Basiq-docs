@@ -129,6 +129,16 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
     display: 'flex',
     justifyContent: 'center',
     height: '45px', // Set the height to control vertical centering
+    position: 'relative',
+    overflow: 'hidden', // To avoid any content overflow during the animation
+  }}
+  onMouseEnter={(e) => {
+    e.target.style.transform = 'scale(1.1)';
+    e.target.style.boxShadow = '0 6px 15px rgba(0, 123, 255, 0.4)';
+  }}
+  onMouseLeave={(e) => {
+    e.target.style.transform = 'scale(1)';
+    e.target.style.boxShadow = '0 4px 10px rgba(0, 123, 255, 0.2)';
   }}
 >
   Support team
