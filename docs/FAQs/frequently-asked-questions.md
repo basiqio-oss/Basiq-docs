@@ -112,7 +112,13 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 ### If you have any queries, reach out.
 
 <div style={{ display: 'flex', alignItems: 'center' }}>
-  <span style={{ marginLeft: '10px', fontSize: '16px' }}>
+  <span
+    style={{
+      marginLeft: '10px',
+      fontSize: '18px', // Increase text size
+      whiteSpace: 'nowrap', // Ensure text stays in one line
+    }}
+  >
     If you have any queries, reach out
   </span>
 
@@ -136,6 +142,8 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
       height: '45px',
       position: 'relative',
       overflow: 'hidden',
+      marginLeft: '10px', // Add space between text and button
+      minWidth: '150px', // Ensure the button has enough width for the text
     }}
     onMouseEnter={(e) => {
       e.target.style.transform = 'scale(1.1)';
