@@ -16,7 +16,9 @@ hidden: true
 }}
 >
   <strong>📢 Attention!</strong> This is a callout box made directly in MDX using inline HTML and CSS.
-
+<a href="#" onClick={() => Intercom('showNewMessage', 'Feedback on the new reports feature:')}>
+  your feedback on the reports feature
+</a>
   <ul>
     <li>Simple to create.</li>
     <li>No extra libraries required.</li>
