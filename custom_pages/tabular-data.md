@@ -41,20 +41,17 @@ export const InstitutionList = () => {
       <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
         <thead>
           <tr>
-            <th>Name</th>
             <th>Short Name</th>
             <th>FAQ</th>
             <th>CDR Policy</th>
             <th>Email</th>
-            <th>ABN</th>
-            <th>ACN</th>
+            <th>CDR Provider Number</th>
             <th>Logo</th>
           </tr>
         </thead>
         <tbody>
           {institutions.map((institution, index) => (
             <tr key={index}>
-              <td>{institution.name}</td>
               <td>{institution.shortName}</td>
               <td>
                 <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
@@ -67,8 +64,7 @@ export const InstitutionList = () => {
                 </a>
               </td>
               <td>{institution.cdrEmail}</td>
-              <td>{institution.abn}</td>
-              <td>{institution.acn}</td>
+              <td>{institution.cdrProviderNumber}</td>
               <td>
                 {institution.logo && institution.logo.links ? (
                   <img
