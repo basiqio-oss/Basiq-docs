@@ -9,7 +9,7 @@ export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1); // current page
-  const [totalPages, setTotalPages] = useState(1); // total pages
+  const [totalCount, setTotalCount] = useState(0); // total count of institutions
   const [perPage] = useState(10); // items per page
 
   useEffect(() => {
@@ -18,14 +18,18 @@ export const InstitutionList = () => {
       .then((response) => response.json())
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions(institutionData);
-        setTotalPages(Math.ceil(data.totalCount / perPage)); // calculate total pages
+        setInstitutions((prevInstitutions) => [...prevInstitutions, ...institutionData]); // append new data to the list
+        setTotalCount(data.totalCount); // set total count of institutions
       })
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => setLoading(false));
   }, [page, perPage]); // re-fetch when the page changes
 
-  if (loading) {
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1); // increment the page to load more data
+  };
+
+  if (loading && institutions.length === 0) {
     return <div>Loading institutions...</div>;
   }
 
@@ -65,24 +69,15 @@ export const InstitutionList = () => {
         ))}
       </ul>
 
-      {/* Pagination controls */}
-      <div>
-        <button
-          onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 1))}
-          disabled={page === 1}
-        >
-          Previous
-        </button>
-        <span>
-          Page {page} of {totalPages}
-        </span>
-        <button
-          onClick={() => setPage((prevPage) => Math.min(prevPage + 1, totalPages))}
-          disabled={page === totalPages}
-        >
-          Next
-        </button>
-      </div>
+      {/* Load More button */}
+      {institutions.length < totalCount && !loading && (
+        <div>
+          <button onClick={handleLoadMore}>Load More</button>
+        </div>
+      )}
+
+      {/* Loading state */}
+      {loading && institutions.length > 0 && <div>Loading more institutions...</div>}
     </div>
   );
 };
