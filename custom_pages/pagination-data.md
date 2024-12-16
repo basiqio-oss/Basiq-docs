@@ -52,23 +52,37 @@ export const InstitutionList = () => {
   return (
     <div>
       <h1>Institutions</h1>
-      <div style={{ marginBottom: "16px" }}>
-        <input
-          type="text"
-          placeholder="Search by institution name"
-          value={searchQuery}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-            setCurrentPage(1); // Reset to the first page on new search
-          }}
-          style={{
-            padding: "8px",
-            width: "100%",
-            maxWidth: "400px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-          }}
-        />
+      <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
+        <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
+          <input
+            type="text"
+            placeholder="Search by institution name"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1); // Reset to the first page on new search
+            }}
+            style={{
+              padding: "8px 8px 8px 32px", // Add padding for the icon
+              width: "100%",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              fontSize: "16px",
+            }}
+          />
+          <span
+            style={{
+              position: "absolute",
+              left: "8px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              fontSize: "18px",
+              color: "#ccc",
+            }}
+          >
+            &#x1F50D; {/* Unicode character for search icon */}
+          </span>
+        </div>
       </div>
       <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
         <thead>
