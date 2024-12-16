@@ -8,23 +8,26 @@ import React, { useEffect, useState } from "react";
 export const TokenFetcher = () => {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // To handle any errors
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("https://au-api.basiq.io/token", {
       method: "POST",
       headers: {
         "Authorization":
-          "Basic NjMxMjNmMWMtZjYxMy00ZjMyLWFiYzUtYzBhZDdhYTY2YmU1OjQ3NWYwMzhkLTBlZmItNGM1ZS1iMzQ0LTAzMzYxOTkyYTRlMw==",
+          "sha512-XBK+44B5anpMFsb9wZGbCxLuA0MLTw4wOg/fRfgnCFKzVho1vwwlbEUVWmIqiCa3R5AOKdPqONPrNslmn+YYkg==?Mw==",
+        "User-Agent": "ReadMe-API-Explorer",
         "Accept": "application/json",
         "Basiq-Version": "3.0",
-        "User-Agent":"ReadMe-API-Explorer",
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: "scope=SERVER_ACCESS",
+      body: "",
     })
       .then((response) => {
-        console.log('Response Status:', response.status);
+        console.log("Response Status:", response.status);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         return response.json();
       })
       .then((data) => {
