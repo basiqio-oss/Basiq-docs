@@ -88,3 +88,7 @@ export const InstitutionList = () => {
 };
 
 // If using this file directly in MDX, you can use the `InstitutionList` component as follows:
+
+<br />
+
+<InstitutionList />
