@@ -52,7 +52,7 @@ export const InstitutionList = () => {
         <tbody>
           {institutions.map((institution, index) => (
             <tr key={index}>
-             <td>
+              <td>
                 {institution.logo && institution.logo.links ? (
                   <img
                     src={institution.logo.links.square}
@@ -74,7 +74,16 @@ export const InstitutionList = () => {
                   CDR Policy
                 </a>
               </td>
-              <td>{institution.cdrEmail}</td>
+              <td>
+                {institution.shortName === "Bankwest Bank" ? (
+                  <>
+                    Call 13 2339<br />
+                    Overseas? Call +61 2 9009 0593
+                  </>
+                ) : (
+                  institution.cdrEmail
+                )}
+              </td>
               <td>{institution.cdrProviderNumber}</td>
             </tr>
           ))}
