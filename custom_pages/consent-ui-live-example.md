@@ -14,17 +14,15 @@ export const TokenFetcher = () => {
     fetch("https://au-api.basiq.io/token", {
       method: "POST",
       headers: {
-        "Authorization":
-          "sha512-XBK+44B5anpMFsb9wZGbCxLuA0MLTw4wOg/fRfgnCFKzVho1vwwlbEUVWmIqiCa3R5AOKdPqONPrNslmn+YYkg==?Mw==",
-        "User-Agent": "ReadMe-API-Explorer",
+        "Authorization": "Basic NjMxMjNmMWMtZjYxMy00ZjMyLWFiYzUtYzBhZDdhYTY2YmU1OjQ3NWYwMzhkLTBlZmItNGM1ZS1iMzQ0LTAzMzYxOTkyYTRlMw==",
         "Accept": "application/json",
         "Basiq-Version": "3.0",
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-      body: "",
+      body: "scope=SERVER_ACCESS"
     })
       .then((response) => {
-        console.log("Response Status:", response.status);
+        console.log('Response Status:', response.status);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -35,7 +33,7 @@ export const TokenFetcher = () => {
         if (data && data.access_token) {
           setToken(data.access_token);
         } else {
-          setError("No access token received.");
+          throw new Error("No access token received.");
         }
       })
       .catch((error) => {
@@ -45,18 +43,18 @@ export const TokenFetcher = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
-    return <div>Loading token...</div>;
-  }
-
   return (
-    <div>
-      <h1>Token Fetch Result</h1>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      {token ? (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Token Fetch Result</h1>
+      {error && <div className="text-red-500 mb-4">{error}</div>}
+      {loading ? (
+        <div>Loading token...</div>
+      ) : token ? (
         <div>
-          <h2>Access Token:</h2>
-          <pre>{token}</pre> {/* Display the token */}
+          <h2 className="text-xl font-semibold mb-2">Access Token:</h2>
+          <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            {token}
+          </pre>
         </div>
       ) : (
         <div>No token available.</div>
@@ -64,6 +62,8 @@ export const TokenFetcher = () => {
     </div>
   );
 };
+
+export default TokenFetcher;
 
 <br />
 
