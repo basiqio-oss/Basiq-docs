@@ -51,7 +51,6 @@ export const InstitutionList = () => {
 
   return (
     <div>
-      <h1>Institutions</h1>
       <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
         <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
           <input
