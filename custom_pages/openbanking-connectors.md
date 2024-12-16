@@ -51,6 +51,13 @@ export const InstitutionList = () => {
 
   return (
     <div>
+      <h1>Institutions</h1>
+      
+      {/* Display total institutions count */}
+      <div style={{ marginBottom: "16px", fontSize: "16px" }}>
+        <strong>Total Institutions: {institutions.length}</strong>
+      </div>
+
       <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
         <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
           <input
@@ -83,6 +90,7 @@ export const InstitutionList = () => {
           </span>
         </div>
       </div>
+
       <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
         <thead>
           <tr>
