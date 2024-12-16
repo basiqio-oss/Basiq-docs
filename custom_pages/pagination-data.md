@@ -155,3 +155,5 @@ export const InstitutionList = () => {
     </div>
   );
 };
+
+<InstitutionList />
