@@ -117,19 +117,41 @@ export const InstitutionList = () => {
       </table>
 
       {/* Pagination Controls */}
-      <div style={{ marginTop: "16px", display: "flex", justifyContent: "space-between" }}>
-        <button onClick={() => handlePageChange("prev")} disabled={currentPage === 1}>
-          Previous
+      <div style={{ marginTop: "16px", display: "flex", justifyContent: "center", alignItems: "center", gap: "16px" }}>
+        <button
+          onClick={() => handlePageChange("prev")}
+          disabled={currentPage === 1}
+          style={{
+            padding: "8px 16px",
+            border: "none",
+            borderRadius: "4px",
+            backgroundColor: currentPage === 1 ? "#d3d3d3" : "#007bff",
+            color: "white",
+            cursor: currentPage === 1 ? "not-allowed" : "pointer",
+            fontSize: "16px",
+          }}
+        >
+          &laquo; Previous
         </button>
-        <span>
+        <span style={{ fontSize: "16px", fontWeight: "bold" }}>
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={() => handlePageChange("next")} disabled={currentPage === totalPages}>
-          Next
+        <button
+          onClick={() => handlePageChange("next")}
+          disabled={currentPage === totalPages}
+          style={{
+            padding: "8px 16px",
+            border: "none",
+            borderRadius: "4px",
+            backgroundColor: currentPage === totalPages ? "#d3d3d3" : "#007bff",
+            color: "white",
+            cursor: currentPage === totalPages ? "not-allowed" : "pointer",
+            fontSize: "16px",
+          }}
+        >
+          Next &raquo;
         </button>
       </div>
     </div>
   );
 };
-
-<InstitutionList />
