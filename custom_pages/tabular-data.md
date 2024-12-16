@@ -95,8 +95,10 @@ export const InstitutionList = () => {
                     Call 13 2221<br />
                     Overseas? Call +61 2 9999 3283
                   </>
-                ) : (
+                ) : institution.cdrEmail ? (
                   institution.cdrEmail
+                ) : (
+                  "N/A"
                 )}
               </td>
               <td>{institution.cdrProviderNumber}</td>
