@@ -75,10 +75,25 @@ export const InstitutionList = () => {
                 </a>
               </td>
               <td>
-                {institution.shortName === "Bankwest" ? (
+                {institution.shortName === "Bankwest Bank" ? (
                   <>
                     Call 13 2339<br />
                     Overseas? Call +61 2 9009 0593
+                  </>
+                ) : institution.shortName === "CBA - CommBiz" ? (
+                  <>
+                    Call 132 221<br />
+                    Overseas? Call +61 2 9999 3283
+                  </>
+                ) : institution.shortName === "Unloan" ? (
+                  <>
+                    Visit Unloan Support<br />
+                    Call 1800 865 262
+                  </>
+                ) : institution.shortName === "CBA" ? (
+                  <>
+                    Call 13 2221<br />
+                    Overseas? Call +61 2 9999 3283
                   </>
                 ) : (
                   institution.cdrEmail
