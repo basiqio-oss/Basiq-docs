@@ -75,7 +75,7 @@ export const InstitutionList = () => {
                 </a>
               </td>
               <td>
-                {institution.shortName === "Bankwest Bank" ? (
+                {institution.shortName === "Bankwest" ? (
                   <>
                     Call 13 2339<br />
                     Overseas? Call +61 2 9009 0593
