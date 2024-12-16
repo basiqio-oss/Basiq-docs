@@ -17,7 +17,7 @@ export const TokenFetcher = () => {
         "Authorization":
           "Basic NjMxMjNmMWMtZjYxMy00ZjMyLWFiYzUtYzBhZDdhYTY2YmU1OjQ3NWYwMzhkLTBlZmItNGM1ZS1iMzQ0LTAzMzYxOTkyYTRlMw==",
         "Accept": "application/json",
-        "Basiq-version": "3.0",
+        "Basiq-Version": "3.0",
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: "scope=SERVER_ACCESS",
