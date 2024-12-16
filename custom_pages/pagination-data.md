@@ -1,7 +1,7 @@
 ---
 title: Pagination Data
 fullscreen: false
-hidden: true
+hidden: false
 ---
 import React, { useEffect, useState } from "react";
 
