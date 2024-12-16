@@ -18,6 +18,7 @@ export const TokenFetcher = () => {
           "Basic NjMxMjNmMWMtZjYxMy00ZjMyLWFiYzUtYzBhZDdhYTY2YmU1OjQ3NWYwMzhkLTBlZmItNGM1ZS1iMzQ0LTAzMzYxOTkyYTRlMw==",
         "Accept": "application/json",
         "Basiq-Version": "3.0",
+        "User-Agent":"ReadMe-API-Explorer",
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: "scope=SERVER_ACCESS",
