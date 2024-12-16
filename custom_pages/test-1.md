@@ -1,7 +1,7 @@
 ---
 title: test
 fullscreen: false
-hidden: false
+hidden: true
 ---
 import React, { useEffect, useState } from "react";
 
