@@ -103,3 +103,7 @@ export const InstitutionList = () => {
     </div>
   );
 };
+
+<br />
+
+<InstitutionList />
