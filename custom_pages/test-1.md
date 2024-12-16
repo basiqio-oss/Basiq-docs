@@ -8,18 +8,22 @@ import React, { useEffect, useState } from "react";
 export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1); // current page
+  const [totalPages, setTotalPages] = useState(1); // total pages
+  const [perPage] = useState(10); // items per page
 
   useEffect(() => {
-    fetch("https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')")
+    // Fetch institutions with pagination
+    fetch(`https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')&page=${page}&limit=${perPage}`)
       .then((response) => response.json())
       .then((data) => {
-        // Extract only the 'institution' object from the fetched data
         const institutionData = data.data.map((connector) => connector.institution);
         setInstitutions(institutionData);
+        setTotalPages(Math.ceil(data.totalCount / perPage)); // calculate total pages
       })
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => setLoading(false));
-  }, []);
+  }, [page, perPage]); // re-fetch when the page changes
 
   if (loading) {
     return <div>Loading institutions...</div>;
@@ -60,6 +64,25 @@ export const InstitutionList = () => {
           </li>
         ))}
       </ul>
+
+      {/* Pagination controls */}
+      <div>
+        <button
+          onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 1))}
+          disabled={page === 1}
+        >
+          Previous
+        </button>
+        <span>
+          Page {page} of {totalPages}
+        </span>
+        <button
+          onClick={() => setPage((prevPage) => Math.min(prevPage + 1, totalPages))}
+          disabled={page === totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
