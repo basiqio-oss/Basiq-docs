@@ -5,15 +5,11 @@ hidden: false
 ---
 import React, { useEffect, useState } from "react";
 
-export const InstitutionList = () => {
-  const [institutions, setInstitutions] = useState([]);
+export const TokenFetcher = () => {
+  const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [token, setToken] = useState(null); // to store the token response
-  const [page, setPage] = useState(1); // current page
-  const [totalCount, setTotalCount] = useState(0); // total count of institutions
-  const [perPage] = useState(10); // items per page
+  const [error, setError] = useState(null); // To handle any errors
 
-  // Fetch the token on component mount
   useEffect(() => {
     // POST request to get the token
     fetch("https://au-api.basiq.io/token", {
@@ -31,87 +27,40 @@ export const InstitutionList = () => {
       .then((data) => {
         console.log("Token response:", data); // Log the response from the token request
         if (data && data.access_token) {
-          setToken(data.access_token); // Set the token state
+          setToken(data.access_token); // Set the token state if the token is returned
+        } else {
+          setError("No access token received.");
         }
       })
-      .catch((error) => console.error("Error fetching token:", error));
+      .catch((error) => {
+        console.error("Error fetching token:", error);
+        setError("Error fetching token.");
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading once the request is complete
+      });
   }, []);
 
-  useEffect(() => {
-    // Fetch institutions with pagination once the token is fetched
-    if (token) {
-      fetch(
-        `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')&page=${page}&limit=${perPage}`,
-        {
-          headers: {
-            "Authorization": `Bearer ${token}`,
-          },
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const institutionData = data.data.map((connector) => connector.institution);
-          setInstitutions((prevInstitutions) => [...prevInstitutions, ...institutionData]); // append new data to the list
-          setTotalCount(data.totalCount); // set total count of institutions
-        })
-        .catch((error) => console.error("Error fetching institutions:", error))
-        .finally(() => setLoading(false));
-    }
-  }, [page, perPage, token]); // Re-fetch institutions when token or page changes
-
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1); // increment the page to load more data
-  };
-
-  if (loading && institutions.length === 0) {
-    return <div>Loading institutions...</div>;
+  if (loading) {
+    return <div>Loading token...</div>;
   }
 
   return (
     <div>
-      <h1>Institutions</h1>
-      <ul>
-        {institutions.map((institution, index) => (
-          <li key={index}>
-            <h2>{institution.name} ({institution.shortName})</h2>
-            <p><strong>Type:</strong> {institution.type}</p>
-            <p><strong>Country:</strong> {institution.country}</p>
-            <p><strong>Tier:</strong> {institution.tier}</p>
-            <p>
-              <strong>FAQ:</strong>{" "}
-              <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
-                {institution.cdrFAQ}
-              </a>
-            </p>
-            <p>
-              <strong>CDR Policy:</strong>{" "}
-              <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer">
-                {institution.cdrPolicy}
-              </a>
-            </p>
-            <p><strong>Email:</strong> {institution.cdrEmail}</p>
-            <p><strong>ABN:</strong> {institution.abn}</p>
-            <p><strong>ACN:</strong> {institution.acn}</p>
-            {institution.logo && institution.logo.links && (
-              <img
-                src={institution.logo.links.square}
-                alt={`${institution.shortName} Logo`}
-                style={{ width: "64px", height: "64px" }}
-              />
-            )}
-          </li>
-        ))}
-      </ul>
-
-      {/* Load More button */}
-      {institutions.length < totalCount && !loading && (
+      <h1>Token Fetch Result</h1>
+      {error && <div style={{ color: "red" }}>{error}</div>}
+      {token ? (
         <div>
-          <button onClick={handleLoadMore}>Load More</button>
+          <h2>Access Token:</h2>
+          <pre>{token}</pre> {/* Display the token */}
         </div>
+      ) : (
+        <div>No token available.</div>
       )}
-
-      {/* Loading state */}
-      {loading && institutions.length > 0 && <div>Loading more institutions...</div>}
     </div>
   );
 };
+
+<br />
+
+<TokenFetcher />
