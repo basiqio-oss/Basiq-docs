@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 
 export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Number of items per page
@@ -25,7 +26,11 @@ export const InstitutionList = () => {
       .finally(() => setLoading(false));
   }, []); // only fetch once on component mount
 
-  const totalPages = Math.ceil(institutions.length / itemsPerPage);
+  const filteredInstitutions = institutions.filter((institution) =>
+    institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredInstitutions.length / itemsPerPage);
 
   const handlePageChange = (direction) => {
     if (direction === "next" && currentPage < totalPages) {
@@ -35,7 +40,7 @@ export const InstitutionList = () => {
     }
   };
 
-  const paginatedInstitutions = institutions.slice(
+  const paginatedInstitutions = filteredInstitutions.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -47,6 +52,24 @@ export const InstitutionList = () => {
   return (
     <div>
       <h1>Institutions</h1>
+      <div style={{ marginBottom: "16px" }}>
+        <input
+          type="text"
+          placeholder="Search by institution name"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setCurrentPage(1); // Reset to the first page on new search
+          }}
+          style={{
+            padding: "8px",
+            width: "100%",
+            maxWidth: "400px",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+          }}
+        />
+      </div>
       <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
         <thead>
           <tr>
