@@ -43,9 +43,6 @@ export const InstitutionList = () => {
           <tr>
             <th>Name</th>
             <th>Short Name</th>
-            <th>Type</th>
-            <th>Country</th>
-            <th>Tier</th>
             <th>FAQ</th>
             <th>CDR Policy</th>
             <th>Email</th>
@@ -59,9 +56,6 @@ export const InstitutionList = () => {
             <tr key={index}>
               <td>{institution.name}</td>
               <td>{institution.shortName}</td>
-              <td>{institution.type}</td>
-              <td>{institution.country}</td>
-              <td>{institution.tier}</td>
               <td>
                 <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
                   FAQ
