@@ -64,5 +64,3 @@ export const TokenFetcher = () => {
 };
 
 export default TokenFetcher;
-
-<TokenFetcher />
