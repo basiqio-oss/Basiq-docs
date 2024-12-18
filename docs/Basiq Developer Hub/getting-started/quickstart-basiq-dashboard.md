@@ -532,7 +532,6 @@ Below is the CDR user Journey.
 >
 > [Basiq Dashboard](https://dashboard.basiq.io/)
 
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
@@ -559,7 +558,6 @@ Below is the CDR user Journey.
         fontWeight: '600',
         textTransform: 'uppercase',
         cursor: 'pointer',
-        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
         transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
         outline: 'none',
         display: 'flex',
@@ -572,12 +570,10 @@ Below is the CDR user Journey.
       }}
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.1)';
-        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
         e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 4px 10px';
         e.target.style.backgroundColor = '#1e88e5'; // Original blue
       }}
     >
