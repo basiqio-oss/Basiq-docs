@@ -7,38 +7,115 @@ import React, { useEffect, useState } from "react";
 
 export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1); // current page
-  const [totalCount, setTotalCount] = useState(0); // total count of institutions
-  const [perPage] = useState(10); // items per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // Number of items per page
 
   useEffect(() => {
-    // Fetch institutions with pagination
+    // Fetch all institutions
     fetch(
-      `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')&page=${page}&limit=${perPage}`
+      `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')`
     )
       .then((response) => response.json())
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions((prevInstitutions) => [...prevInstitutions, ...institutionData]); // append new data to the list
-        setTotalCount(data.totalCount); // set total count of institutions
+        setInstitutions(institutionData); // set all institutions
       })
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => setLoading(false));
-  }, [page, perPage]); // re-fetch when the page changes
+  }, []); // only fetch once on component mount
 
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1); // increment the page to load more data
+  const filteredInstitutions = institutions.filter((institution) =>
+    institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredInstitutions.length / itemsPerPage);
+
+  const handlePageChange = (direction) => {
+    if (direction === "next" && currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    } else if (direction === "prev" && currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
   };
 
-  if (loading && institutions.length === 0) {
+  const paginatedInstitutions = filteredInstitutions.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  if (loading) {
     return <div>Loading institutions...</div>;
   }
 
+  const darkModeStyles = {
+    backgroundColor: "var(--background-color)",
+    color: "var(--text-color)",
+  };
+
+  const inputStyles = {
+    ...darkModeStyles,
+    padding: "8px 8px 8px 32px",
+    width: "100%",
+    border: "1px solid var(--border-color)",
+    borderRadius: "4px",
+    fontSize: "16px",
+  };
+
+  const tableStyles = {
+    width: "100%",
+    textAlign: "left",
+    border: "1px solid var(--border-color)",
+  };
+
+  const buttonStyles = (disabled) => ({
+    padding: "8px 16px",
+    border: "none",
+    borderRadius: "4px",
+    backgroundColor: disabled ? "var(--disabled-bg)" : "var(--button-bg)",
+    color: "var(--button-text)",
+    cursor: disabled ? "not-allowed" : "pointer",
+    fontSize: "16px",
+  });
+
   return (
-    <div>
+    <div style={darkModeStyles}>
       <h1>Institutions</h1>
-      <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
+      
+      {/* Display total institutions count */}
+      <div style={{ marginBottom: "16px", fontSize: "16px" }}>
+        <strong>Total Institutions: {institutions.length}</strong>
+      </div>
+
+      <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
+        <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
+          <input
+            type="text"
+            placeholder="Search by institution name"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1); // Reset to the first page on new search
+            }}
+            style={inputStyles}
+          />
+          <span
+            style={{
+              position: "absolute",
+              left: "8px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              fontSize: "18px",
+              color: "var(--icon-color)",
+            }}
+          >
+            &#x1F50D; {/* Unicode character for search icon */}
+          </span>
+        </div>
+      </div>
+
+      <table border="1" cellPadding="8" cellSpacing="0" style={tableStyles}>
         <thead>
           <tr>
             <th>Logo</th>
@@ -50,7 +127,7 @@ export const InstitutionList = () => {
           </tr>
         </thead>
         <tbody>
-          {institutions.map((institution, index) => (
+          {paginatedInstitutions.map((institution, index) => (
             <tr key={index}>
               <td>
                 {institution.logo && institution.logo.links ? (
@@ -74,48 +151,33 @@ export const InstitutionList = () => {
                   CDR Policy
                 </a>
               </td>
-              <td>
-                {institution.shortName === "Bankwest Bank" ? (
-                  <>
-                    Call 13 2339<br />
-                    Overseas? Call +61 2 9009 0593
-                  </>
-                ) : institution.shortName === "CBA - CommBiz" ? (
-                  <>
-                    Call 132 221<br />
-                    Overseas? Call +61 2 9999 3283
-                  </>
-                ) : institution.shortName === "Unloan" ? (
-                  <>
-                    Visit Unloan Support<br />
-                    Call 1800 865 262
-                  </>
-                ) : institution.shortName === "CBA" ? (
-                  <>
-                    Call 13 2221<br />
-                    Overseas? Call +61 2 9999 3283
-                  </>
-                ) : institution.cdrEmail ? (
-                  institution.cdrEmail
-                ) : (
-                  "N/A"
-                )}
-              </td>
+              <td>{institution.cdrEmail || "N/A"}</td>
               <td>{institution.cdrProviderNumber}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      {/* Load More button */}
-      {institutions.length < totalCount && !loading && (
-        <div style={{ marginTop: "16px" }}>
-          <button onClick={handleLoadMore}>Load More</button>
-        </div>
-      )}
-
-      {/* Loading state */}
-      {loading && institutions.length > 0 && <div>Loading more institutions...</div>}
+      {/* Pagination Controls */}
+      <div style={{ marginTop: "16px", display: "flex", justifyContent: "center", alignItems: "center", gap: "16px" }}>
+        <button
+          onClick={() => handlePageChange("prev")}
+          disabled={currentPage === 1}
+          style={buttonStyles(currentPage === 1)}
+        >
+          &laquo; Previous
+        </button>
+        <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange("next")}
+          disabled={currentPage === totalPages}
+          style={buttonStyles(currentPage === totalPages)}
+        >
+          Next &raquo;
+        </button>
+      </div>
     </div>
   );
 };
