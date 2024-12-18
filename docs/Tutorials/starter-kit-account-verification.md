@@ -113,7 +113,6 @@ Here's a demo of how to spin up the starterKit in under 5 mins.
 > * [Public Git Repo](https://github.com/basiqio/account-verification-API-v3.0) for your use
 > * [Test Credentials](https://api.basiq.io/reference/testing) for our Sandbox users
 
-:wrench: Questions? Please reach out to [support@basiq.io](mailto:support@basiq.io).
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
