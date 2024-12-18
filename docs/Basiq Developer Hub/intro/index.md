@@ -55,8 +55,6 @@ To begin your journey with Basiq, follow these simple steps:
 
 We’re excited to have you on board and look forward to supporting your journey in leveraging financial data to its fullest potential.
 
-<br />
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
