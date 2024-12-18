@@ -10,9 +10,7 @@ metadata:
 next:
   description: ''
 ---
-<Image alt="Income Verification StarterKit" align="center" src="https://files.readme.io/1daec9fc906bc8b1f6b83221ef0436c6e37d5124c93d713406e68a369574a6db-Apple_Macbook_Pro.png">
-  Income Verification StarterKit
-</Image>
+<Image align="center" alt="Income Verification StarterKit" border={false} caption="Income Verification StarterKit" src="https://files.readme.io/1daec9fc906bc8b1f6b83221ef0436c6e37d5124c93d713406e68a369574a6db-Apple_Macbook_Pro.png" />
 
 # Overview: What is Income Verification?
 
@@ -129,7 +127,7 @@ A lender needs to verify a user’s income before approving a loan. The user, Jo
 
 John is seeking a loan due to financial pressures. He has four distinct sources of income:
 
-* **Salary:** 
+* **Salary:**
   * Paid monthly.
   * Received $6,000 from January 2023 to May 2023.
   * Promoted in June 2023, increasing salary to $8,000 per month (ongoing).
@@ -158,7 +156,7 @@ Below the analysis, display key metric data points like:
 * Source-specific income history.
 * Projections for next month's income.
 
-This can be seen in this example below: 
+This can be seen in this example below:
 
 <HTMLBlock>{`
 <!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/575cLC6XcgySwdSrgYx7?embed&embed_mobile=tab&embed_desktop=inline" title="BASIQ Income Verification" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
@@ -178,7 +176,7 @@ The **[Income Verification Starter Kit](https://iv-demo.basiq.io/)** automates t
 
 * **User Bank Account Connection**: Users securely connect their bank accounts.
 * **Generate Income Report**: After connection, the [Reports API](https://api.basiq.io/reference/createreport) will be used to generate a detailed report of the user's income.
-* **Analysis Metrics**: 
+* **Analysis Metrics**:
   * The generated report will automatically perform the **user-level analysis**:
     * **Average Monthly Income** calculation.
     * **Income Stability** for the past 12 months and 7 months.
@@ -209,4 +207,55 @@ These scores demonstrate the application’s focus on speed, accessibility, and 
 > * [Report API](https://api.basiq.io/reference/createreport)
 > * Income Verification Starter Kit [Demo](https://iv-demo.basiq.io/)
 
-If you have any questions or need assistance, feel free to reach out to our support team.
+<div
+  style={{
+    border: "2px solid #4e9ccf", // Classic blue border
+    borderRadius: "8px",
+    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Dark text for readability
+  }}
+>
+  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1e88e5', // Classic blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px';
+        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
