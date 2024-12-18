@@ -52,6 +52,7 @@ export const InstitutionList = () => {
   const darkModeStyles = {
     backgroundColor: "var(--background-color)",
     color: "var(--text-color)",
+    padding: "16px",
   };
 
   const inputStyles = {
@@ -66,7 +67,20 @@ export const InstitutionList = () => {
   const tableStyles = {
     width: "100%",
     textAlign: "left",
-    border: "1px solid var(--border-color)",
+    borderCollapse: "collapse", // Ensure borders don't overlap
+    backgroundColor: "var(--table-bg)", // Background for table
+    color: "var(--table-text)", // Text color for table
+  };
+
+  const thTdStyles = {
+    border: "1px solid var(--table-border)", // Table borders
+    padding: "8px",
+  };
+
+  const headerStyles = {
+    ...thTdStyles,
+    backgroundColor: "var(--table-header-bg)", // Header background
+    color: "var(--table-header-text)", // Header text color
   };
 
   const buttonStyles = (disabled) => ({
@@ -82,7 +96,7 @@ export const InstitutionList = () => {
   return (
     <div style={darkModeStyles}>
       <h1>Institutions</h1>
-      
+
       {/* Display total institutions count */}
       <div style={{ marginBottom: "16px", fontSize: "16px" }}>
         <strong>Total Institutions: {institutions.length}</strong>
@@ -115,21 +129,21 @@ export const InstitutionList = () => {
         </div>
       </div>
 
-      <table border="1" cellPadding="8" cellSpacing="0" style={tableStyles}>
+      <table style={tableStyles}>
         <thead>
           <tr>
-            <th>Logo</th>
-            <th>Short Name</th>
-            <th>FAQ</th>
-            <th>CDR Policy</th>
-            <th>Email</th>
-            <th>CDR Provider Number</th>
+            <th style={headerStyles}>Logo</th>
+            <th style={headerStyles}>Short Name</th>
+            <th style={headerStyles}>FAQ</th>
+            <th style={headerStyles}>CDR Policy</th>
+            <th style={headerStyles}>Email</th>
+            <th style={headerStyles}>CDR Provider Number</th>
           </tr>
         </thead>
         <tbody>
           {paginatedInstitutions.map((institution, index) => (
             <tr key={index}>
-              <td>
+              <td style={thTdStyles}>
                 {institution.logo && institution.logo.links ? (
                   <img
                     src={institution.logo.links.square}
@@ -140,19 +154,31 @@ export const InstitutionList = () => {
                   "N/A"
                 )}
               </td>
-              <td>{institution.shortName}</td>
-              <td>
-                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
+              <td style={thTdStyles}>{institution.shortName}</td>
+              <td style={thTdStyles}>
+                <a
+                  href={institution.cdrFAQ}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "var(--link-color)" }}
+                >
                   FAQ
                 </a>
               </td>
-              <td>
-                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer">
+              <td style={thTdStyles}>
+                <a
+                  href={institution.cdrPolicy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "var(--link-color)" }}
+                >
                   CDR Policy
                 </a>
               </td>
-              <td>{institution.cdrEmail || "N/A"}</td>
-              <td>{institution.cdrProviderNumber}</td>
+              <td style={thTdStyles}>
+                {institution.cdrEmail || "N/A"}
+              </td>
+              <td style={thTdStyles}>{institution.cdrProviderNumber}</td>
             </tr>
           ))}
         </tbody>
