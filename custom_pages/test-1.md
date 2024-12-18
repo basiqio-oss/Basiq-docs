@@ -5,82 +5,65 @@ hidden: true
 ---
 import React, { useEffect, useState } from "react";
 
-export const InstitutionList = () => {
-  const [institutions, setInstitutions] = useState([]);
+export const TokenFetcher = () => {
+  const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1); // current page
-  const [totalCount, setTotalCount] = useState(0); // total count of institutions
-  const [perPage] = useState(10); // items per page
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch institutions with pagination
-    fetch(`https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')&page=${page}&limit=${perPage}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions((prevInstitutions) => [...prevInstitutions, ...institutionData]); // append new data to the list
-        setTotalCount(data.totalCount); // set total count of institutions
+    fetch("https://au-api.basiq.io/token", {
+      method: "POST",
+      headers: {
+        "Authorization": "Basic NjMxMjNmMWMtZjYxMy00ZjMyLWFiYzUtYzBhZDdhYTY2YmU1OjQ3NWYwMzhkLTBlZmItNGM1ZS1iMzQ0LTAzMzYxOTkyYTRlMw==",
+        "Accept": "application/json",
+        "Basiq-Version": "3.0",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: "scope=SERVER_ACCESS"
+    })
+      .then((response) => {
+        console.log('Response Status:', response.status);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
       })
-      .catch((error) => console.error("Error fetching data:", error))
+      .then((data) => {
+        console.log("Token response:", data);
+        if (data && data.access_token) {
+          setToken(data.access_token);
+        } else {
+          throw new Error("No access token received.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching token:", error);
+        setError(`Error fetching token: ${error.message}`);
+      })
       .finally(() => setLoading(false));
-  }, [page, perPage]); // re-fetch when the page changes
-
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1); // increment the page to load more data
-  };
-
-  if (loading && institutions.length === 0) {
-    return <div>Loading institutions...</div>;
-  }
+  }, []);
 
   return (
-    <div>
-      <h1>Institutions</h1>
-      <ul>
-        {institutions.map((institution, index) => (
-          <li key={index}>
-            <h2>{institution.name} ({institution.shortName})</h2>
-            <p><strong>Type:</strong> {institution.type}</p>
-            <p><strong>Country:</strong> {institution.country}</p>
-            <p><strong>Tier:</strong> {institution.tier}</p>
-            <p>
-              <strong>FAQ:</strong>{" "}
-              <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
-                {institution.cdrFAQ}
-              </a>
-            </p>
-            <p>
-              <strong>CDR Policy:</strong>{" "}
-              <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer">
-                {institution.cdrPolicy}
-              </a>
-            </p>
-            <p><strong>Email:</strong> {institution.cdrEmail}</p>
-            <p><strong>ABN:</strong> {institution.abn}</p>
-            <p><strong>ACN:</strong> {institution.acn}</p>
-            {institution.logo && institution.logo.links && (
-              <img
-                src={institution.logo.links.square}
-                alt={`${institution.shortName} Logo`}
-                style={{ width: "64px", height: "64px" }}
-              />
-            )}
-          </li>
-        ))}
-      </ul>
-
-      {/* Load More button */}
-      {institutions.length < totalCount && !loading && (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Token Fetch Result</h1>
+      {error && <div className="text-red-500 mb-4">{error}</div>}
+      {loading ? (
+        <div>Loading token...</div>
+      ) : token ? (
         <div>
-          <button onClick={handleLoadMore}>Load More</button>
+          <h2 className="text-xl font-semibold mb-2">Access Token:</h2>
+          <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+            {token}
+          </pre>
         </div>
+      ) : (
+        <div>No token available.</div>
       )}
-
-      {/* Loading state */}
-      {loading && institutions.length > 0 && <div>Loading more institutions...</div>}
     </div>
   );
 };
+
+export default TokenFetcher;
 
 // If using this file directly in MDX, you can use the `InstitutionList` component as follows:
 
