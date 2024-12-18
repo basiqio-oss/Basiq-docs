@@ -162,8 +162,6 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
   </div>
 </div>
 
-<br />
-
 <div
   style={{
     border: "2px solid #4e9ccf", // Classic blue border
