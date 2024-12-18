@@ -2,7 +2,7 @@
 title: Frequently asked questions
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
