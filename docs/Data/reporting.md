@@ -1,5 +1,5 @@
 ---
-title: Reporting (Insights)
+title: Reporting
 excerpt: Reporting API
 deprecated: false
 hidden: false
