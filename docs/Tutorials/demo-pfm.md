@@ -12,11 +12,9 @@ next:
 ---
 # BASIQ PFM Demo Application
 
-Welcome to Basiq's Personal Finance Management (PFM) demo application! :rocket: 
+Welcome to Basiq's Personal Finance Management (PFM) demo application! :rocket:
 
-<Image title="8b7aa57-PFM_DevHubStarterKit_1080x800.png" alt={1080} align="center" src="https://files.readme.io/8b7aa57-PFM_DevHubStarterKit_1080x800.png">
-  PFM demo application
-</Image>
+<Image align="center" alt={1080} border={false} caption="PFM demo application" title="8b7aa57-PFM_DevHubStarterKit_1080x800.png" src="https://files.readme.io/8b7aa57-PFM_DevHubStarterKit_1080x800.png" />
 
 Our PFM demo application was designed to help accelerate your time to market by providing a personal finance management (PFM) application that incorporates best practices, follows our API integration, user flow guidelines, and can be easily tailored to align with your brand guidelines and product offerings.
 
@@ -47,9 +45,9 @@ Our PFM Demo application is built on a modern tech stack using React, Next.js, a
 
 # Check out the PFM demo application in action!
 
-<Embed url="http://www.google.com/sorry/index?continue=http://www.youtube.com/watch%3Fv%3DaPqLyO4LNVU&q=EhAmAB8YEA2fMapQNsg0Abi8GOCC-bYGIjDWK5HiVQNj8cCj2S8QfX_I8sYotVBVDTKin5lnZjEq-fOguTqj1gMdsrxfluRHrIsyAXJaAUM" favicon="http://www.google.com/favicon.ico" provider="google.com" href="http://www.google.com/sorry/index?continue=http://www.youtube.com/watch%3Fv%3DaPqLyO4LNVU&q=EhAmAB8YEA2fMapQNsg0Abi8GOCC-bYGIjDWK5HiVQNj8cCj2S8QfX_I8sYotVBVDTKin5lnZjEq-fOguTqj1gMdsrxfluRHrIsyAXJaAUM" typeOfEmbed="default" title="undefined" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FaPqLyO4LNVU%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DaPqLyO4LNVU%26key%3D02466f963b9b4bb8845a05b53d3235d7%26type%3Dtext%252Fhtml%26schema%3Dgoogle%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+<Embed url="http://www.google.com/sorry/index?continue=http://www.youtube.com/watch%3Fv%3DaPqLyO4LNVU&q=EhAmAB8YEA2fMapQNsg0Abi8GOCC-bYGIjDWK5HiVQNj8cCj2S8QfX_I8sYotVBVDTKin5lnZjEq-fOguTqj1gMdsrxfluRHrIsyAXJaAUM" href="http://www.google.com/sorry/index?continue=http://www.youtube.com/watch%3Fv%3DaPqLyO4LNVU&q=EhAmAB8YEA2fMapQNsg0Abi8GOCC-bYGIjDWK5HiVQNj8cCj2S8QfX_I8sYotVBVDTKin5lnZjEq-fOguTqj1gMdsrxfluRHrIsyAXJaAUM" typeOfEmbed="default" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FaPqLyO4LNVU%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DaPqLyO4LNVU%26key%3D02466f963b9b4bb8845a05b53d3235d7%26type%3Dtext%252Fhtml%26schema%3Dgoogle%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
-Our PFM demo application is hosted on [pfm-demo.basiq.io](https://pfm-demo.basiq.io), and provides a real-life example of how the application looks and feels. Please note that this demo app is for testing purposes and connects to test bank and sandbox accounts. 
+Our PFM demo application is hosted on [pfm-demo.basiq.io](https://pfm-demo.basiq.io), and provides a real-life example of how the application looks and feels. Please note that this demo app is for testing purposes and connects to test bank and sandbox accounts.
 
 You can use our sandbox credentials to login and test the app. We recommend using Hooli Bank for testing and the Wentworth Smith ID logins, as it provides the best dummy data to explore the application with.
 
@@ -63,7 +61,7 @@ You will need to follow the following steps to gain access and be able to click 
 
 # Get started today!
 
-To get started with our PFM Demo Kit, all you need is an API key to spin up a PFM demo application. Check our guide [here](https://api.basiq.io/docs/getting-started) for details on how to get started. Also, accelerate your time to market through our blog post [here](https://www.basiq.io/blog/accelerate-your-time-to-market-with-basiqs-pfm-demo-app/). 
+To get started with our PFM Demo Kit, all you need is an API key to spin up a PFM demo application. Check our guide [here](https://api.basiq.io/docs/getting-started) for details on how to get started. Also, accelerate your time to market through our blog post [here](https://www.basiq.io/blog/accelerate-your-time-to-market-with-basiqs-pfm-demo-app/).
 
 # Source Code with our development partners, Flying Donkey
 
@@ -84,3 +82,56 @@ If you encounter any issues or have any queries with the codebase when using and
 > * [Live Application](https://pfm-demo.basiq.io/) to test out
 > * [Public Git Repo](https://github.com/flyingdonkey-it/PFM-starterkit) for your use
 > * [Test Credentials](https://api.basiq.io/reference/testing) for our Sandbox users
+
+<div
+  style={{
+    border: "2px solid #4e9ccf", // Classic blue border
+    borderRadius: "8px",
+    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#333", // Dark text for readability
+  }}
+>
+  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1e88e5', // Classic blue button color
+        color: '#ffffff',
+        border: 'none',
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px', // Add space between text and button
+        minWidth: '150px', // Ensure the button has enough width for the text
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
+        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.boxShadow = '0 4px 10px';
+        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
