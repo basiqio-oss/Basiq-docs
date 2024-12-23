@@ -50,18 +50,20 @@ export const InstitutionList = () => {
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'partial-outage':
-        return '#ffa726'; // Orange
-      case 'under-maintenance':
-        return '#6c757d'; // Gray
-      case 'major-outage':
-        return '#dc3545'; // Red
-      case 'degraded-performance':
-        return '#ffc107'; // Yellow
-    }
-  };
+const getStatusColor = (status) => {
+  switch (status) {
+    case 'partial-outage':
+      return '#ffa726'; // Orange
+    case 'under-maintenance':
+      return '#6c757d'; // Gray
+    case 'major-outage':
+      return '#dc3545'; // Red
+    case 'degraded-performance':
+      return '#ffc107'; // Yellow
+    default:
+      return '#28a745'; // Green for "operational" status, or fallback
+  }
+};
 
   const closeToast = (index) => {
     setStatusNotifications((prevState) => prevState.filter((_, i) => i !== index));
