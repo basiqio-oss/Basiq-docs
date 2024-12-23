@@ -7,35 +7,41 @@ import React, { useState, useEffect } from 'react';
 
 export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
-  const [degradedInstitutions, setDegradedInstitutions] = useState([]);
+  const [partialOutageInstitutions, setPartialOutageInstitutions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [institutionsPerPage] = useState(10);
+  const [showNotification, setShowNotification] = useState(true);
 
   useEffect(() => {
-    // Fetch institutions and filter degraded-performance ones
     const fetchInstitutions = async () => {
       try {
         const response = await fetch(
-          'https://au-api.basiq.io/public/connectors?filter=connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)'
+          'https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'
         ); // Replace with actual API URL
         const data = await response.json();
 
-        // Check if response contains institution data
         if (Array.isArray(data.data)) {
           const institutionList = data.data.map((connector) => connector.institution);
-
           setInstitutions(institutionList);
 
-          // Filter for degraded-performance institutions
-          const degraded = data.data.filter(
-            (connector) =>
-              connector.method === 'open-banking' &&
-              connector.stage === 'live' &&
-              connector.status === 'degraded-performance'
-          ).map((connector) => connector.institution);
+          // Filter for partial-outage institutions
+          const partialOutage = data.data
+            .filter(
+              (connector) =>
+                connector.method === 'open-banking' &&
+                connector.stage === 'live' &&
+                connector.status === 'partial-outage'
+            )
+            .map((connector) => connector.institution);
 
-          setDegradedInstitutions(degraded);
+          setPartialOutageInstitutions(partialOutage);
+
+          // Set timeout to hide the notification
+          if (partialOutage.length > 0) {
+            setShowNotification(true);
+            setTimeout(() => setShowNotification(false), 5000); // Fade after 5 seconds
+          }
         } else {
           console.error('Unexpected API response structure:', data);
         }
@@ -59,26 +65,28 @@ export const InstitutionList = () => {
 
   return (
     <div>
-      {/* Notification for degraded institutions */}
-      {degradedInstitutions.length > 0 && (
+      {/* Notification for partial-outage institutions */}
+      {showNotification && partialOutageInstitutions.length > 0 && (
         <div
           style={{
             position: 'fixed',
             bottom: '20px',
             right: '20px',
-            backgroundColor: '#ffcc00',
+            backgroundColor: '#ffa726',
             color: '#000',
             padding: '15px 20px',
             borderRadius: '8px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
             zIndex: '1000',
+            opacity: '1',
+            animation: 'fadeOut 5s ease-in-out',
           }}
         >
           <p style={{ margin: 0 }}>
-            <strong>Degraded Institutions:</strong>
+            <strong>Partial Outage Institutions:</strong>
           </p>
           <ul>
-            {degradedInstitutions.map((institution, index) => (
+            {partialOutageInstitutions.map((institution, index) => (
               <li key={index}>{institution.shortName}</li>
             ))}
           </ul>
@@ -207,6 +215,17 @@ export const InstitutionList = () => {
           Next &raquo;
         </button>
       </div>
+
+      {/* CSS for Fade Out Animation */}
+      <style>
+        {`
+          @keyframes fadeOut {
+            0% { opacity: 1; }
+            90% { opacity: 0.1; }
+            100% { opacity: 0; }
+          }
+        `}
+      </style>
     </div>
   );
 };
