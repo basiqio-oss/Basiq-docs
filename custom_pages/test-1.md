@@ -56,8 +56,6 @@ export const InstitutionList = () => {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'operational':
-        return '#28a745'; // Green
       case 'partial-outage':
         return '#ffa726'; // Orange
       case 'under-maintenance':
