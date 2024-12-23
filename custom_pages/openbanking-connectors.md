@@ -217,4 +217,4 @@ export const InstitutionList = () => {
   );
 };
 
-<InstitutionList />;
+<InstitutionList />
