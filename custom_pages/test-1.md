@@ -11,13 +11,13 @@ export const InstitutionList = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [institutionsPerPage] = useState(10);
-  const [showNotification, setShowNotification] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     const fetchInstitutions = async () => {
       try {
         const response = await fetch(
-          'https://au-api.basiq.io/public/connectors?filter=connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)'
+          'https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'
         ); // Replace with actual API URL
         const data = await response.json();
 
@@ -37,7 +37,7 @@ export const InstitutionList = () => {
 
           setPartialOutageInstitutions(partialOutage);
 
-          // Set timeout to hide the notification
+          // Show the notification if there are partial outages
           if (partialOutage.length > 0) {
             setShowNotification(true);
             setTimeout(() => setShowNotification(false), 5000); // Fade after 5 seconds
@@ -50,7 +50,15 @@ export const InstitutionList = () => {
       }
     };
 
+    // Initial fetch
     fetchInstitutions();
+
+    // Set interval to fetch data every 30 seconds
+    const interval = setInterval(() => {
+      fetchInstitutions();
+    }, 30000);
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
   // Pagination logic
