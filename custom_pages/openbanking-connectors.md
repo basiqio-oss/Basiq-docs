@@ -100,27 +100,27 @@ export const InstitutionList = () => {
         style={{
           width: "100%",
           textAlign: "left",
-          backgroundColor: isDarkTheme ? "#000000" : "#ffffff", // Dark or light background
-          color: isDarkTheme ? "#ffffff" : "#000000", // Dark or light text
+          backgroundColor: isDarkTheme ? "#1e1e1e" : "#ffffff", // Table background color
+          color: isDarkTheme ? "#f5f5f5" : "#000000", // Default text color
           borderCollapse: "collapse",
         }}
       >
         <thead>
           <tr>
-            <th
-              style={{
-                backgroundColor: isDarkTheme ? "#1a1a1a" : "#f2f2f2", // Header background
-                color: isDarkTheme ? "#ffffff" : "#000000", // Header text color
-                fontWeight: "bold",
-              }}
-            >
-              Logo
-            </th>
-            <th>Short Name</th>
-            <th>FAQ</th>
-            <th>CDR Policy</th>
-            <th>Email</th>
-            <th>CDR Provider Number</th>
+            {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
+              <th
+                key={header}
+                style={{
+                  backgroundColor: isDarkTheme ? "#333333" : "#f2f2f2", // Header background color
+                  color: isDarkTheme ? "#ffffff" : "#000000", // Header text color
+                  fontWeight: "bold",
+                  borderBottom: isDarkTheme ? "1px solid #555555" : "1px solid #cccccc",
+                  padding: "8px",
+                }}
+              >
+                {header}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -128,8 +128,8 @@ export const InstitutionList = () => {
             <tr
               key={index}
               style={{
-                backgroundColor: isDarkTheme && index % 2 === 0 ? "#1a1a1a" : isDarkTheme ? "#000000" : "#ffffff",
-                color: isDarkTheme ? "#ffffff" : "#000000",
+                backgroundColor: isDarkTheme && index % 2 === 0 ? "#2b2b2b" : isDarkTheme ? "#1e1e1e" : "#ffffff",
+                color: isDarkTheme ? "#f5f5f5" : "#000000",
               }}
             >
               <td>
@@ -170,9 +170,7 @@ export const InstitutionList = () => {
                   CDR Policy
                 </a>
               </td>
-              <td>
-                {institution.cdrEmail || "N/A"}
-              </td>
+              <td>{institution.cdrEmail || "N/A"}</td>
               <td>{institution.cdrProviderNumber}</td>
             </tr>
           ))}
