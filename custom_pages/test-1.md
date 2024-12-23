@@ -7,41 +7,30 @@ import React, { useState, useEffect } from 'react';
 
 export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
-  const [partialOutageInstitutions, setPartialOutageInstitutions] = useState([]);
+  const [statusNotifications, setStatusNotifications] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [institutionsPerPage] = useState(10);
-  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     const fetchInstitutions = async () => {
       try {
         const response = await fetch(
           'https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'
-        ); // Replace with actual API URL
+        );
         const data = await response.json();
 
         if (Array.isArray(data.data)) {
           const institutionList = data.data.map((connector) => connector.institution);
           setInstitutions(institutionList);
 
-          // Filter for partial-outage institutions (status === "partial-outage")
-          const partialOutage = data.data
-            .filter(
-              (connector) =>
-                connector.method === 'open-banking' &&
-                connector.stage === 'live' &&
-                connector.status === 'partial-outage'
-            )
-            .map((connector) => connector.institution);
+          // Process status notifications for each institution
+          const statusList = data.data.map((connector) => {
+            const { status, institution } = connector;
+            return { status, institution };
+          });
 
-          setPartialOutageInstitutions(partialOutage);
-
-          // Show the notification if there are partial outages
-          if (partialOutage.length > 0) {
-            setShowNotification(true);
-            setTimeout(() => setShowNotification(false), 5000); // Hide after 5 seconds
-          }
+          setStatusNotifications(statusList);
         } else {
           console.error('Unexpected API response structure:', data);
         }
@@ -61,6 +50,27 @@ export const InstitutionList = () => {
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'operational':
+        return '#28a745'; // Green
+      case 'partial-outage':
+        return '#ffa726'; // Orange
+      case 'under-maintenance':
+        return '#6c757d'; // Gray
+      case 'major-outage':
+        return '#dc3545'; // Red
+      case 'degraded-performance':
+        return '#ffc107'; // Yellow
+      default:
+        return '#343a40'; // Dark gray
+    }
+  };
+
+  const closeToast = (index) => {
+    setStatusNotifications((prevState) => prevState.filter((_, i) => i !== index));
+  };
+
   // Pagination logic
   const filteredInstitutions = institutions.filter((institution) =>
     institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
@@ -73,33 +83,45 @@ export const InstitutionList = () => {
 
   return (
     <div>
-      {/* Notification for partial-outage institutions */}
-      {showNotification && partialOutageInstitutions.length > 0 && (
+      {/* Toast Notifications for statuses */}
+      {statusNotifications.map((notification, index) => (
         <div
+          key={index}
           style={{
             position: 'fixed',
-            bottom: '20px',
+            bottom: `${20 + index * 70}px`, // Stack multiple notifications
             right: '20px',
-            backgroundColor: '#ffa726',
-            color: '#000',
+            backgroundColor: getStatusColor(notification.status),
+            color: '#fff',
             padding: '15px 20px',
             borderRadius: '8px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
             zIndex: '1000',
             opacity: '1',
             animation: 'fadeOut 5s ease-in-out',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '300px',
           }}
         >
-          <p style={{ margin: 0 }}>
-            <strong>Partial Outage Institutions:</strong>
-          </p>
-          <ul>
-            {partialOutageInstitutions.map((institution, index) => (
-              <li key={index}>{institution.shortName}</li>
-            ))}
-          </ul>
+          <div>
+            <strong>{notification.institution.shortName}</strong> - {notification.status.replace('-', ' ')}
+          </div>
+          <button
+            onClick={() => closeToast(index)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#fff',
+              fontSize: '20px',
+              cursor: 'pointer',
+            }}
+          >
+            &times;
+          </button>
         </div>
-      )}
+      ))}
 
       {/* Search bar */}
       <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'flex-end' }}>
