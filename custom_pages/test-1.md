@@ -60,8 +60,6 @@ export const InstitutionList = () => {
         return '#dc3545'; // Red
       case 'degraded-performance':
         return '#ffc107'; // Yellow
-      default:
-        return '#343a40'; // Dark gray
     }
   };
 
