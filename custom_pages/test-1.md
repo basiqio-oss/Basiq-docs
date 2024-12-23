@@ -259,3 +259,5 @@ export const InstitutionList = () => {
     </div>
   );
 };
+
+<fetchInstitutions />
