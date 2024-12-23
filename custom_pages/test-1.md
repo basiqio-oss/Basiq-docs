@@ -16,7 +16,7 @@ export const InstitutionList = () => {
     // Fetch institutions and their outage status
     const fetchInstitutions = async () => {
       try {
-        const response = await fetch('https://api.example.com/institutions'); // Replace with actual API URL
+        const response = await fetch('https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'); // Replace with actual API URL
         const data = await response.json();
         setInstitutions(data.institutions);
 
