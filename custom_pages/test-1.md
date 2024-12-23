@@ -7,24 +7,38 @@ import React, { useState, useEffect } from 'react';
 
 export const InstitutionList = () => {
   const [institutions, setInstitutions] = useState([]);
-  const [outageInstitutions, setOutageInstitutions] = useState([]);
+  const [degradedInstitutions, setDegradedInstitutions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [institutionsPerPage] = useState(10);
 
   useEffect(() => {
-    // Fetch institutions and their outage status
+    // Fetch institutions and filter degraded-performance ones
     const fetchInstitutions = async () => {
       try {
-        const response = await fetch('https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'); // Replace with actual API URL
+        const response = await fetch(
+          'https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'
+        ); // Replace with actual API URL
         const data = await response.json();
-        setInstitutions(data.institutions);
 
-        // Filter institutions that are in outage
-        const outages = data.institutions.filter(
-          (institution) => institution.isOutage
-        );
-        setOutageInstitutions(outages);
+        // Check if response contains institution data
+        if (Array.isArray(data.data)) {
+          const institutionList = data.data.map((connector) => connector.institution);
+
+          setInstitutions(institutionList);
+
+          // Filter for degraded-performance institutions
+          const degraded = data.data.filter(
+            (connector) =>
+              connector.method === 'open-banking' &&
+              connector.stage === 'live' &&
+              connector.status === 'degraded-performance'
+          ).map((connector) => connector.institution);
+
+          setDegradedInstitutions(degraded);
+        } else {
+          console.error('Unexpected API response structure:', data);
+        }
       } catch (error) {
         console.error('Error fetching institutions:', error);
       }
@@ -33,20 +47,10 @@ export const InstitutionList = () => {
     fetchInstitutions();
   }, []);
 
-  const handlePageChange = (direction) => {
-    if (direction === 'prev' && currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    } else if (direction === 'next' && currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  // Search functionality
+  // Pagination logic
   const filteredInstitutions = institutions.filter((institution) =>
     institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  // Pagination logic
   const totalPages = Math.ceil(filteredInstitutions.length / institutionsPerPage);
   const paginatedInstitutions = filteredInstitutions.slice(
     (currentPage - 1) * institutionsPerPage,
@@ -55,25 +59,33 @@ export const InstitutionList = () => {
 
   return (
     <div>
-      {/* Display total institutions count */}
-      <div style={{ marginBottom: '16px', fontSize: '16px' }}>
-        <strong>Total Institutions: {institutions.length}</strong>
-      </div>
-
-      {/* Display institutions in outage */}
-      {outageInstitutions.length > 0 && (
-        <div style={{ marginBottom: '16px', fontSize: '16px', color: 'red' }}>
-          <strong>Outages Detected: {outageInstitutions.length}</strong>
+      {/* Notification for degraded institutions */}
+      {degradedInstitutions.length > 0 && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: '#ffcc00',
+            color: '#000',
+            padding: '15px 20px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            zIndex: '1000',
+          }}
+        >
+          <p style={{ margin: 0 }}>
+            <strong>Degraded Institutions:</strong>
+          </p>
           <ul>
-            {outageInstitutions.map((institution, index) => (
-              <li key={index}>
-                {institution.shortName} - {institution.reason || 'Outage reason not specified'}
-              </li>
+            {degradedInstitutions.map((institution, index) => (
+              <li key={index}>{institution.shortName}</li>
             ))}
           </ul>
         </div>
       )}
 
+      {/* Search bar */}
       <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'flex-end' }}>
         <div style={{ position: 'relative', maxWidth: '400px', width: '100%' }}>
           <input
@@ -82,10 +94,10 @@ export const InstitutionList = () => {
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
-              setCurrentPage(1); // Reset to the first page on new search
+              setCurrentPage(1); // Reset to first page on new search
             }}
             style={{
-              padding: '8px 8px 8px 32px', // Add padding for the icon
+              padding: '8px 8px 8px 32px',
               width: '100%',
               border: '1px solid #ccc',
               borderRadius: '4px',
@@ -102,11 +114,12 @@ export const InstitutionList = () => {
               color: '#ccc',
             }}
           >
-            &#x1F50D; {/* Unicode character for search icon */}
+            &#x1F50D;
           </span>
         </div>
       </div>
 
+      {/* Institutions Table */}
       <table border="1" cellPadding="8" cellSpacing="0" style={{ width: '100%', textAlign: 'left' }}>
         <thead>
           <tr>
@@ -120,14 +133,9 @@ export const InstitutionList = () => {
         </thead>
         <tbody>
           {paginatedInstitutions.map((institution, index) => (
-            <tr
-              key={index}
-              style={{
-                backgroundColor: institution.isOutage ? '#ffd6d6' : 'transparent',
-              }}
-            >
+            <tr key={index}>
               <td>
-                {institution.logo && institution.logo.links ? (
+                {institution.logo?.links?.square ? (
                   <img
                     src={institution.logo.links.square}
                     alt={`${institution.shortName} Logo`}
@@ -166,7 +174,7 @@ export const InstitutionList = () => {
         }}
       >
         <button
-          onClick={() => handlePageChange('prev')}
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
           style={{
             padding: '8px 16px',
@@ -184,7 +192,7 @@ export const InstitutionList = () => {
           Page {currentPage} of {totalPages}
         </span>
         <button
-          onClick={() => handlePageChange('next')}
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
           style={{
             padding: '8px 16px',
