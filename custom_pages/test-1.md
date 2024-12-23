@@ -245,17 +245,6 @@ export const InstitutionList = () => {
           Next &raquo;
         </button>
       </div>
-
-      {/* CSS for Fade Out Animation */}
-      <style>
-        {`
-          @keyframes fadeOut {
-            0% { opacity: 1; }
-            90% { opacity: 0.1; }
-            100% { opacity: 0; }
-          }
-        `}
-      </style>
     </div>
   );
 };
