@@ -16,7 +16,7 @@ export const InstitutionList = () => {
     const fetchInstitutions = async () => {
       try {
         const response = await fetch(
-          'https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'
+          'https://au-api.basiq.io/public/connectors'
         );
         const data = await response.json();
 
