@@ -260,4 +260,4 @@ export const InstitutionList = () => {
   );
 };
 
-<fetchInstitutions />
+<InstitutionList />
