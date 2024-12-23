@@ -30,7 +30,11 @@ export const InstitutionList = () => {
             return { status, institution };
           });
 
-          setStatusNotifications(statusList);
+          // Add new status notifications and limit to 10
+          setStatusNotifications((prevState) => {
+            const newState = [...prevState, ...statusList];
+            return newState.slice(-10); // Keep only the latest 10 notifications
+          });
         } else {
           console.error('Unexpected API response structure:', data);
         }
@@ -98,7 +102,6 @@ export const InstitutionList = () => {
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
             zIndex: '1000',
             opacity: '1',
-            animation: 'fadeOut 5s ease-in-out',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -245,17 +248,6 @@ export const InstitutionList = () => {
           Next &raquo;
         </button>
       </div>
-
-      {/* CSS for Fade Out Animation */}
-      <style>
-        {`
-          @keyframes fadeOut {
-            0% { opacity: 1; }
-            90% { opacity: 0.1; }
-            100% { opacity: 0; }
-          }
-        `}
-      </style>
     </div>
   );
 };
