@@ -45,6 +45,8 @@ export const InstitutionList = () => {
     currentPage * itemsPerPage
   );
 
+  const isDarkTheme = document.documentElement.getAttribute("data-color-mode") === "dark";
+
   if (loading) {
     return <div>Loading institutions...</div>;
   }
@@ -52,7 +54,7 @@ export const InstitutionList = () => {
   return (
     <div>
       <h1>Institutions</h1>
-      
+
       {/* Display total institutions count */}
       <div style={{ marginBottom: "16px", fontSize: "16px" }}>
         <strong>Total Institutions: {institutions.length}</strong>
@@ -91,10 +93,29 @@ export const InstitutionList = () => {
         </div>
       </div>
 
-      <table border="1" cellPadding="8" cellSpacing="0" style={{ width: "100%", textAlign: "left" }}>
+      <table
+        border="1"
+        cellPadding="8"
+        cellSpacing="0"
+        style={{
+          width: "100%",
+          textAlign: "left",
+          backgroundColor: isDarkTheme ? "#000000" : "#ffffff", // Dark or light background
+          color: isDarkTheme ? "#ffffff" : "#000000", // Dark or light text
+          borderCollapse: "collapse",
+        }}
+      >
         <thead>
           <tr>
-            <th>Logo</th>
+            <th
+              style={{
+                backgroundColor: isDarkTheme ? "#1a1a1a" : "#f2f2f2", // Header background
+                color: isDarkTheme ? "#ffffff" : "#000000", // Header text color
+                fontWeight: "bold",
+              }}
+            >
+              Logo
+            </th>
             <th>Short Name</th>
             <th>FAQ</th>
             <th>CDR Policy</th>
@@ -104,7 +125,13 @@ export const InstitutionList = () => {
         </thead>
         <tbody>
           {paginatedInstitutions.map((institution, index) => (
-            <tr key={index}>
+            <tr
+              key={index}
+              style={{
+                backgroundColor: isDarkTheme && index % 2 === 0 ? "#1a1a1a" : isDarkTheme ? "#000000" : "#ffffff",
+                color: isDarkTheme ? "#ffffff" : "#000000",
+              }}
+            >
               <td>
                 {institution.logo && institution.logo.links ? (
                   <img
@@ -118,41 +145,33 @@ export const InstitutionList = () => {
               </td>
               <td>{institution.shortName}</td>
               <td>
-                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={institution.cdrFAQ}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: isDarkTheme ? "#1e90ff" : "#007bff",
+                    textDecoration: "none",
+                  }}
+                >
                   FAQ
                 </a>
               </td>
               <td>
-                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={institution.cdrPolicy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: isDarkTheme ? "#1e90ff" : "#007bff",
+                    textDecoration: "none",
+                  }}
+                >
                   CDR Policy
                 </a>
               </td>
               <td>
-                {institution.shortName === "Bankwest Bank" ? (
-                  <>
-                    Call 13 2339<br />
-                    Overseas? Call +61 2 9009 0593
-                  </>
-                ) : institution.shortName === "CBA - CommBiz" ? (
-                  <>
-                    Call 132 221<br />
-                    Overseas? Call +61 2 9999 3283
-                  </>
-                ) : institution.shortName === "Unloan" ? (
-                  <>
-                    Visit Unloan Support<br />
-                    Call 1800 865 262
-                  </>
-                ) : institution.shortName === "CBA" ? (
-                  <>
-                    Call 13 2221<br />
-                    Overseas? Call +61 2 9999 3283
-                  </>
-                ) : institution.cdrEmail ? (
-                  institution.cdrEmail
-                ) : (
-                  "N/A"
-                )}
+                {institution.cdrEmail || "N/A"}
               </td>
               <td>{institution.cdrProviderNumber}</td>
             </tr>
@@ -200,6 +219,6 @@ export const InstitutionList = () => {
   );
 };
 
-<InstitutionList />
+<InstitutionList />;
 
 <p> </p>
