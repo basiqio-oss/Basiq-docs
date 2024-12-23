@@ -3,260 +3,109 @@ title: Toast Notifications
 fullscreen: false
 hidden: true
 ---
-import React, { useState, useEffect } from 'react';
+import React, \{ useState, useEffect } from 'react';
 
-export const InstitutionList = () => {
-  const [institutions, setInstitutions] = useState([]);
-  const [statusNotifications, setStatusNotifications] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [institutionsPerPage] = useState(10);
-
-  useEffect(() => {
-    const fetchInstitutions = async () => {
-      try {
-        const response = await fetch(
-          'https://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)'
-        );
-        const data = await response.json();
-
-        if (Array.isArray(data.data)) {
-          const institutionList = data.data.map((connector) => connector.institution);
-          setInstitutions(institutionList);
-
-          // Process status notifications for each institution
-          const statusList = data.data.map((connector) => {
-            const { status, institution } = connector;
-            return { status, institution };
-          });
-
-          setStatusNotifications(statusList);
-        } else {
-          console.error('Unexpected API response structure:', data);
-        }
-      } catch (error) {
-        console.error('Error fetching institutions:', error);
-      }
-    };
-
-    // Initial fetch
-    fetchInstitutions();
-
-    // Set interval to fetch data every 30 seconds
-    const interval = setInterval(() => {
-      fetchInstitutions();
-    }, 30000);
-
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
-
-const getStatusColor = (status) => {
-  switch (status) {
-    case 'partial-outage':
-      return '#ffa726'; // Orange
-    case 'under-maintenance':
-      return '#6c757d'; // Gray
-    case 'major-outage':
-      return '#dc3545'; // Red
-    case 'degraded-performance':
-      return '#ffc107'; // Yellow
-    default:
-      return '#28a745'; // Green for "operational" status, or fallback
-  }
+const getStatusColor = (status) => \{
+&#x20; switch (status) \{
+&#x20;   case 'partial-outage':
+&#x20;     return '#ffa726'; // Orange
+&#x20;   case 'under-maintenance':
+&#x20;     return '#6c757d'; // Gray
+&#x20;   case 'major-outage':
+&#x20;     return '#dc3545'; // Red
+&#x20;   case 'degraded-performance':
+&#x20;     return '#ffc107'; // Yellow
+&#x20;   default:
+&#x20;     return '#28a745'; // Green for "operational" status, or fallback
+&#x20; }
 };
 
-  const closeToast = (index) => {
-    setStatusNotifications((prevState) => prevState.filter((_, i) => i !== index));
-  };
+export const StatusNotifications = () => \{
+&#x20; const \[notifications, setNotifications] = useState(\[]);
+&#x20;&#x20;
+&#x20; useEffect(() => \{
+&#x20;   // Fetching the data periodically every 30 seconds
+&#x20;   const fetchData = async () => \{
+&#x20;     try \{
+&#x20;       const response = await fetch('https\://au-api.basiq.io/public/connectors?filter=connector.method.eq(%27open-banking%27)');
+&#x20;       const data = await response.json();
+&#x20;      &#x20;
+&#x20;       const filteredNotifications = data.data.filter(institution =>
+&#x20;         \['partial-outage', 'under-maintenance', 'major-outage', 'degraded-performance'].includes(institution.status)
+&#x20;       );
+&#x20;      &#x20;
+&#x20;       // Create notifications
+&#x20;       const newNotifications = filteredNotifications.map((institution, index) => (\{
+&#x20;         id: institution.id,
+&#x20;         name: institution.institution.shortName,
+&#x20;         status: institution.status,
+&#x20;         color: getStatusColor(institution.status),
+&#x20;       }));
+&#x20;      &#x20;
+&#x20;       // Update the notifications state
+&#x20;       setNotifications((prevNotifications) => \{
+&#x20;         // Limit to 10 notifications, showing only new ones
+&#x20;         const newStack = \[...newNotifications, ...prevNotifications].slice(0, 10);
+&#x20;         return newStack;
+&#x20;       });
+&#x20;     } catch (error) \{
+&#x20;       console.error('Error fetching data:', error);
+&#x20;     }
+&#x20;   };
 
-  // Pagination logic
-  const filteredInstitutions = institutions.filter((institution) =>
-    institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  const totalPages = Math.ceil(filteredInstitutions.length / institutionsPerPage);
-  const paginatedInstitutions = filteredInstitutions.slice(
-    (currentPage - 1) * institutionsPerPage,
-    currentPage * institutionsPerPage
-  );
+&#x20;   // Fetch the data every 30 seconds
+&#x20;   const interval = setInterval(fetchData, 30000);
 
-  return (
-    <div>
-      {/* Toast Notifications for statuses */}
-      {statusNotifications.map((notification, index) => (
-        <div
-          key={index}
-          style={{
-            position: 'fixed',
-            bottom: `${20 + index * 70}px`, // Stack multiple notifications
-            right: '20px',
-            backgroundColor: getStatusColor(notification.status),
-            color: '#fff',
-            padding: '15px 20px',
-            borderRadius: '8px',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-            zIndex: '1000',
-            opacity: '1',
-            animation: 'fadeOut 5s ease-in-out',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            width: '300px',
-          }}
-        >
-          <div>
-            <strong>{notification.institution.shortName}</strong> - {notification.status.replace('-', ' ')}
-          </div>
-          <button
-            onClick={() => closeToast(index)}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#fff',
-              fontSize: '20px',
-              cursor: 'pointer',
-            }}
-          >
-            &times;
-          </button>
-        </div>
-      ))}
+&#x20;   // Initial fetch
+&#x20;   fetchData();
 
-      {/* Search bar */}
-      <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'flex-end' }}>
-        <div style={{ position: 'relative', maxWidth: '400px', width: '100%' }}>
-          <input
-            type="text"
-            placeholder="Search by institution name"
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setCurrentPage(1); // Reset to first page on new search
-            }}
-            style={{
-              padding: '8px 8px 8px 32px',
-              width: '100%',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              fontSize: '16px',
-            }}
-          />
-          <span
-            style={{
-              position: 'absolute',
-              left: '8px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              fontSize: '18px',
-              color: '#ccc',
-            }}
-          >
-            &#x1F50D;
-          </span>
-        </div>
-      </div>
+&#x20;   return () => clearInterval(interval);
+&#x20; }, \[]);
 
-      {/* Institutions Table */}
-      <table border="1" cellPadding="8" cellSpacing="0" style={{ width: '100%', textAlign: 'left' }}>
-        <thead>
-          <tr>
-            <th>Logo</th>
-            <th>Short Name</th>
-            <th>FAQ</th>
-            <th>CDR Policy</th>
-            <th>Email</th>
-            <th>CDR Provider Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedInstitutions.map((institution, index) => (
-            <tr key={index}>
-              <td>
-                {institution.logo?.links?.square ? (
-                  <img
-                    src={institution.logo.links.square}
-                    alt={`${institution.shortName} Logo`}
-                    style={{ width: '64px', height: '64px' }}
-                  />
-                ) : (
-                  'N/A'
-                )}
-              </td>
-              <td>{institution.shortName}</td>
-              <td>
-                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer">
-                  FAQ
-                </a>
-              </td>
-              <td>
-                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer">
-                  CDR Policy
-                </a>
-              </td>
-              <td>{institution.cdrEmail || 'N/A'}</td>
-              <td>{institution.cdrProviderNumber}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+&#x20; const removeNotification = (id) => \{
+&#x20;   setNotifications((prevNotifications) =>
+&#x20;     prevNotifications.filter((notification) => notification.id !== id)
+&#x20;   );
+&#x20; };
 
-      {/* Pagination Controls */}
-      <div
-        style={{
-          marginTop: '16px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '16px',
-        }}
-      >
-        <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-          style={{
-            padding: '8px 16px',
-            border: 'none',
-            borderRadius: '4px',
-            backgroundColor: currentPage === 1 ? '#d3d3d3' : '#007bff',
-            color: 'white',
-            cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
-            fontSize: '16px',
-          }}
-        >
-          &laquo; Previous
-        </button>
-        <span style={{ fontSize: '16px', fontWeight: 'bold' }}>
-          Page {currentPage} of {totalPages}
-        </span>
-        <button
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-          disabled={currentPage === totalPages}
-          style={{
-            padding: '8px 16px',
-            border: 'none',
-            borderRadius: '4px',
-            backgroundColor: currentPage === totalPages ? '#d3d3d3' : '#007bff',
-            color: 'white',
-            cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
-            fontSize: '16px',
-          }}
-        >
-          Next &raquo;
-        </button>
-      </div>
-
-      {/* CSS for Fade Out Animation */}
-      <style>
-        {`
-          @keyframes fadeOut {
-            0% { opacity: 1; }
-            90% { opacity: 0.1; }
-            100% { opacity: 0; }
-          }
-        `}
-      </style>
-    </div>
-  );
+&#x20; return (
+&#x20;   \<div>
+&#x20;     \{notifications.map((notification) => (
+&#x20;       \<div
+&#x20;         key=\{notification.id}
+&#x20;         style=\{\{
+&#x20;           backgroundColor: notification.color,
+&#x20;           color: '#fff',
+&#x20;           padding: '10px 20px',
+&#x20;           borderRadius: '5px',
+&#x20;           marginBottom: '10px',
+&#x20;           position: 'relative',
+&#x20;         }}
+&#x20;       \>
+&#x20;         \<p style=\{\{ margin: '0' }}>
+&#x20;           \{notification.name} is currently experiencing \{notification.status.replace('-', ' ')}.
+&#x20;         \</p>
+&#x20;         \<button
+&#x20;           onClick=\{() => removeNotification(notification.id)}
+&#x20;           style=\{\{
+&#x20;             position: 'absolute',
+&#x20;             top: '10px',
+&#x20;             right: '10px',
+&#x20;             background: 'transparent',
+&#x20;             border: 'none',
+&#x20;             color: '#fff',
+&#x20;             fontSize: '18px',
+&#x20;             cursor: 'pointer',
+&#x20;           }}
+&#x20;         \>
+&#x20;           \&times;
+&#x20;         \</button>
+&#x20;       \</div>
+&#x20;     ))}
+&#x20;   \</div>
+&#x20; );
 };
+
 
 // If using this file directly in MDX, you can use the `InstitutionList` component as follows:
 
