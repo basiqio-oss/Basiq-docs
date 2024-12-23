@@ -25,7 +25,7 @@ export const InstitutionList = () => {
           const institutionList = data.data.map((connector) => connector.institution);
           setInstitutions(institutionList);
 
-          // Filter for partial-outage institutions
+          // Filter for partial-outage institutions (status === "partial-outage")
           const partialOutage = data.data
             .filter(
               (connector) =>
@@ -40,7 +40,7 @@ export const InstitutionList = () => {
           // Show the notification if there are partial outages
           if (partialOutage.length > 0) {
             setShowNotification(true);
-            setTimeout(() => setShowNotification(false), 5000); // Fade after 5 seconds
+            setTimeout(() => setShowNotification(false), 5000); // Hide after 5 seconds
           }
         } else {
           console.error('Unexpected API response structure:', data);
