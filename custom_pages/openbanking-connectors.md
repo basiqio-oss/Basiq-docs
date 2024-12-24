@@ -102,8 +102,8 @@ export const InstitutionList = () => {
         style={{
           width: "100%",
           textAlign: "left",
-          backgroundColor: isDarkTheme ? "var(--gray10)" : "#ffffff",
-          color: isDarkTheme ? "#f5f5f5" : "#000000",
+          backgroundColor: "#ffffff", // Always white table background
+          color: isDarkTheme ? "#f5f5f5" : "#000000", // Dynamic text color based on theme
           borderCollapse: "collapse",
         }}
       >
@@ -130,13 +130,8 @@ export const InstitutionList = () => {
             <tr
               key={index}
               style={{
-                backgroundColor:
-                  isDarkTheme && index % 2 === 0
-                    ? "var(--gray10)"
-                    : isDarkTheme
-                    ? "#1e1e1e"
-                    : "#ffffff",
-                color: isDarkTheme ? "#f5f5f5" : "#000000",
+                backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#ffffff", // Alternating row colors
+                color: isDarkTheme ? "#f5f5f5" : "#000000", // Dynamic text color
               }}
             >
               <td
@@ -229,3 +224,5 @@ export const InstitutionList = () => {
 };
 
 <InstitutionList />
+
+<p />
