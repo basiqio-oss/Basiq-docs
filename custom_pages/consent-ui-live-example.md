@@ -50,57 +50,43 @@ export const InstitutionList = () => {
   const checkAllLinks = (institutions) => {
     institutions.forEach((institution) => {
       if (institution.cdrFAQ) {
-        fetch(institution.cdrFAQ, { method: "HEAD" })
-          .then((response) => {
-            if (!response.ok) {
-              setNotifications((prevNotifications) => [
-                ...prevNotifications,
-                {
-                  institution: institution.shortName,
-                  type: "FAQ",
-                  link: institution.cdrFAQ,
-                },
-              ]);
-            }
-          })
-          .catch(() =>
-            setNotifications((prevNotifications) => [
-              ...prevNotifications,
-              {
-                institution: institution.shortName,
-                type: "FAQ",
-                link: institution.cdrFAQ,
-              },
-            ])
-          );
+        checkLink(institution.cdrFAQ, "FAQ", institution.shortName);
       }
-
       if (institution.cdrPolicy) {
-        fetch(institution.cdrPolicy, { method: "HEAD" })
-          .then((response) => {
-            if (!response.ok) {
-              setNotifications((prevNotifications) => [
-                ...prevNotifications,
-                {
-                  institution: institution.shortName,
-                  type: "CDR Policy",
-                  link: institution.cdrPolicy,
-                },
-              ]);
-            }
-          })
-          .catch(() =>
-            setNotifications((prevNotifications) => [
-              ...prevNotifications,
-              {
-                institution: institution.shortName,
-                type: "CDR Policy",
-                link: institution.cdrPolicy,
-              },
-            ])
-          );
+        checkLink(institution.cdrPolicy, "CDR Policy", institution.shortName);
       }
     });
+  };
+
+  const checkLink = (url, type, institutionName) => {
+    // Log each link for debugging purposes
+    console.log(`Checking link: ${url}`);
+
+    fetch(url, { method: "HEAD" })
+      .then((response) => {
+        if (response.status === 404) {
+          // If the status is 404, trigger a notification
+          setNotifications((prevNotifications) => [
+            ...prevNotifications,
+            {
+              institution: institutionName,
+              type: type,
+              link: url,
+            },
+          ]);
+        }
+      })
+      .catch(() => {
+        // In case of any error (e.g., network error), add a notification
+        setNotifications((prevNotifications) => [
+          ...prevNotifications,
+          {
+            institution: institutionName,
+            type: type,
+            link: url,
+          },
+        ]);
+      });
   };
 
   const filteredInstitutions = institutions.filter((institution) =>
