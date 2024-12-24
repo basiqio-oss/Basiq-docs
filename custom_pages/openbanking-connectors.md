@@ -228,4 +228,4 @@ export const InstitutionList = () => {
   );
 };
 
-export default InstitutionList;
+\< InstitutionList />
