@@ -10,6 +10,9 @@ export const InstitutionList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    document.documentElement.getAttribute("data-color-mode") === "dark"
+  );
   const itemsPerPage = 10; // Number of items per page
 
   useEffect(() => {
@@ -25,6 +28,22 @@ export const InstitutionList = () => {
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => setLoading(false));
   }, []); // only fetch once on component mount
+
+  useEffect(() => {
+    // Observe changes to the theme attribute
+    const observer = new MutationObserver(() => {
+      const darkTheme = document.documentElement.getAttribute("data-color-mode") === "dark";
+      setIsDarkTheme(darkTheme);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-color-mode"],
+    });
+
+    // Cleanup observer
+    return () => observer.disconnect();
+  }, []);
 
   const filteredInstitutions = institutions.filter((institution) =>
     institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
@@ -44,8 +63,6 @@ export const InstitutionList = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-
-  const isDarkTheme = document.documentElement.getAttribute("data-color-mode") === "dark";
 
   if (loading) {
     return <div>Loading institutions...</div>;
