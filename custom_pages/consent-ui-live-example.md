@@ -13,10 +13,11 @@ export const InstitutionList = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(
     document.documentElement.getAttribute("data-color-mode") === "dark"
   );
-  const [toastMessage, setToastMessage] = useState(""); // For toast notifications
+  const [notifications, setNotifications] = useState([]); // Stores error notifications
   const itemsPerPage = 10;
 
   useEffect(() => {
+    // Fetch institutions
     fetch(
       `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
@@ -24,6 +25,9 @@ export const InstitutionList = () => {
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
         setInstitutions(institutionData);
+
+        // Check all links after data is loaded
+        checkAllLinks(institutionData);
       })
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => setLoading(false));
@@ -43,19 +47,55 @@ export const InstitutionList = () => {
     return () => observer.disconnect();
   }, []);
 
-  const showToast = (message) => {
-    setToastMessage(message);
-    setTimeout(() => setToastMessage(""), 3000); // Hide toast after 3 seconds
-  };
+  const checkAllLinks = (institutions) => {
+    const errors = [];
+    institutions.forEach((institution) => {
+      if (institution.cdrFAQ) {
+        fetch(institution.cdrFAQ, { method: "HEAD" })
+          .then((response) => {
+            if (!response.ok) {
+              errors.push({
+                institution: institution.shortName,
+                type: "FAQ",
+                link: institution.cdrFAQ,
+              });
+            }
+          })
+          .catch(() =>
+            errors.push({
+              institution: institution.shortName,
+              type: "FAQ",
+              link: institution.cdrFAQ,
+            })
+          );
+      }
 
-  const checkLink = (url, type) => {
-    fetch(url, { method: "HEAD" })
-      .then((response) => {
-        if (!response.ok) {
-          showToast(`${type} link is not working (Error: ${response.status})`);
-        }
-      })
-      .catch(() => showToast(`${type} link could not be reached`));
+      if (institution.cdrPolicy) {
+        fetch(institution.cdrPolicy, { method: "HEAD" })
+          .then((response) => {
+            if (!response.ok) {
+              errors.push({
+                institution: institution.shortName,
+                type: "CDR Policy",
+                link: institution.cdrPolicy,
+              });
+            }
+          })
+          .catch(() =>
+            errors.push({
+              institution: institution.shortName,
+              type: "CDR Policy",
+              link: institution.cdrPolicy,
+            })
+          );
+      }
+    });
+
+    setTimeout(() => {
+      if (errors.length > 0) {
+        setNotifications(errors);
+      }
+    }, 2000); // Slight delay to collect errors
   };
 
   const filteredInstitutions = institutions.filter((institution) =>
@@ -177,10 +217,6 @@ export const InstitutionList = () => {
                   href={institution.cdrFAQ}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    checkLink(institution.cdrFAQ, "FAQ");
-                  }}
                   style={{
                     color: isDarkTheme ? "#1e90ff" : "#007bff",
                     textDecoration: "none",
@@ -194,10 +230,6 @@ export const InstitutionList = () => {
                   href={institution.cdrPolicy}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    checkLink(institution.cdrPolicy, "CDR Policy");
-                  }}
                   style={{
                     color: isDarkTheme ? "#1e90ff" : "#007bff",
                     textDecoration: "none",
@@ -249,20 +281,28 @@ export const InstitutionList = () => {
         </button>
       </div>
 
-      {toastMessage && (
+      {/* Notifications */}
+      {notifications.length > 0 && (
         <div
           style={{
             position: "fixed",
             bottom: "16px",
             right: "16px",
-            backgroundColor: "rgba(0,0,0,0.8)",
+            backgroundColor: "red",
             color: "white",
             padding: "12px 16px",
             borderRadius: "4px",
             zIndex: 1000,
           }}
         >
-          {toastMessage}
+          <h4>Broken Links:</h4>
+          <ul>
+            {notifications.map((error, idx) => (
+              <li key={idx}>
+                {error.institution} - {error.type}: {error.link}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
