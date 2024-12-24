@@ -18,7 +18,7 @@ export const InstitutionList = () => {
   useEffect(() => {
     // Fetch all institutions
     fetch(
-      `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking')`
+      `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
       .then((response) => response.json())
       .then((data) => {
