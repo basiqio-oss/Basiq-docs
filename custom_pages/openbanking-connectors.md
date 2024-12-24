@@ -10,9 +10,6 @@ export const InstitutionList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    document.documentElement.getAttribute("data-color-mode") === "dark"
-  );
   const itemsPerPage = 10; // Number of items per page
 
   useEffect(() => {
@@ -23,27 +20,11 @@ export const InstitutionList = () => {
       .then((response) => response.json())
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions(institutionData); // set all institutions
+        setInstitutions(institutionData); // Set all institutions
       })
       .catch((error) => console.error("Error fetching data:", error))
       .finally(() => setLoading(false));
-  }, []); // only fetch once on component mount
-
-  useEffect(() => {
-    // Observe changes to the theme attribute
-    const observer = new MutationObserver(() => {
-      const darkTheme = document.documentElement.getAttribute("data-color-mode") === "dark";
-      setIsDarkTheme(darkTheme);
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-color-mode"],
-    });
-
-    // Cleanup observer
-    return () => observer.disconnect();
-  }, []);
+  }, []); // Only fetch once on component mount
 
   const filteredInstitutions = institutions.filter((institution) =>
     institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
@@ -64,6 +45,8 @@ export const InstitutionList = () => {
     currentPage * itemsPerPage
   );
 
+  const isDarkTheme = document.documentElement.getAttribute("data-color-mode") === "dark";
+
   if (loading) {
     return <div>Loading institutions...</div>;
   }
@@ -77,6 +60,7 @@ export const InstitutionList = () => {
         <strong>Total Institutions: {institutions.length}</strong>
       </div>
 
+      {/* Search Bar */}
       <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
         <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
           <input
@@ -88,7 +72,7 @@ export const InstitutionList = () => {
               setCurrentPage(1); // Reset to the first page on new search
             }}
             style={{
-              padding: "8px 8px 8px 32px", // Add padding for the icon
+              padding: "8px 8px 8px 32px",
               width: "100%",
               border: "1px solid #ccc",
               borderRadius: "4px",
@@ -110,26 +94,27 @@ export const InstitutionList = () => {
         </div>
       </div>
 
+      {/* Institutions Table */}
       <table
         border="1"
         cellPadding="8"
         cellSpacing="0"
-         style={{
+        style={{
           width: "100%",
-            textAlign: "left",
-              backgroundColor: isDarkTheme ? "var(--gray10)" : "#ffffff", // Table background color
-                color: isDarkTheme ? "#f5f5f5" : "#000000", // Default text color
-                  borderCollapse: "collapse",
+          textAlign: "left",
+          backgroundColor: isDarkTheme ? "var(--gray10)" : "#ffffff",
+          color: isDarkTheme ? "#f5f5f5" : "#000000",
+          borderCollapse: "collapse",
         }}
-      	>
+      >
         <thead>
           <tr>
             {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
               <th
                 key={header}
                 style={{
-                  backgroundColor: isDarkTheme ? "#333333" : "#f2f2f2", // Header background color
-                  color: isDarkTheme ? "#ffffff" : "#000000", // Header text color
+                  backgroundColor: isDarkTheme ? "#333333" : "#f2f2f2",
+                  color: isDarkTheme ? "#ffffff" : "#000000",
                   fontWeight: "bold",
                   borderBottom: isDarkTheme ? "1px solid #555555" : "1px solid #cccccc",
                   padding: "8px",
@@ -145,11 +130,20 @@ export const InstitutionList = () => {
             <tr
               key={index}
               style={{
-                backgroundColor: isDarkTheme && index % 2 === 0 ? "#2b2b2b" : isDarkTheme ? "#1e1e1e" : "#ffffff",
+                backgroundColor:
+                  isDarkTheme && index % 2 === 0
+                    ? "var(--gray10)"
+                    : isDarkTheme
+                    ? "#1e1e1e"
+                    : "#ffffff",
                 color: isDarkTheme ? "#f5f5f5" : "#000000",
               }}
             >
-              <td>
+              <td
+                style={{
+                  backgroundColor: "#ffffff", // Always white background for the logo column
+                }}
+              >
                 {institution.logo && institution.logo.links ? (
                   <img
                     src={institution.logo.links.square}
@@ -234,6 +228,4 @@ export const InstitutionList = () => {
   );
 };
 
-<InstitutionList />
-
-<p />
+export default InstitutionList;
