@@ -114,14 +114,14 @@ export const InstitutionList = () => {
         border="1"
         cellPadding="8"
         cellSpacing="0"
-        style={{
+         style={{
           width: "100%",
-          textAlign: "left",
-          backgroundColor: isDarkTheme ? "#1e1e1e" : "#ffffff", // Table background color
-          color: isDarkTheme ? "#f5f5f5" : "#000000", // Default text color
-          borderCollapse: "collapse",
+            textAlign: "left",
+              backgroundColor: isDarkTheme ? "var(--gray10)" : "#ffffff", // Table background color
+                color: isDarkTheme ? "#f5f5f5" : "#000000", // Default text color
+                  borderCollapse: "collapse",
         }}
-      >
+      	>
         <thead>
           <tr>
             {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
