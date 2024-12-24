@@ -48,25 +48,30 @@ export const InstitutionList = () => {
   }, []);
 
   const checkAllLinks = (institutions) => {
-    const errors = [];
     institutions.forEach((institution) => {
       if (institution.cdrFAQ) {
         fetch(institution.cdrFAQ, { method: "HEAD" })
           .then((response) => {
             if (!response.ok) {
-              errors.push({
-                institution: institution.shortName,
-                type: "FAQ",
-                link: institution.cdrFAQ,
-              });
+              setNotifications((prevNotifications) => [
+                ...prevNotifications,
+                {
+                  institution: institution.shortName,
+                  type: "FAQ",
+                  link: institution.cdrFAQ,
+                },
+              ]);
             }
           })
           .catch(() =>
-            errors.push({
-              institution: institution.shortName,
-              type: "FAQ",
-              link: institution.cdrFAQ,
-            })
+            setNotifications((prevNotifications) => [
+              ...prevNotifications,
+              {
+                institution: institution.shortName,
+                type: "FAQ",
+                link: institution.cdrFAQ,
+              },
+            ])
           );
       }
 
@@ -74,28 +79,28 @@ export const InstitutionList = () => {
         fetch(institution.cdrPolicy, { method: "HEAD" })
           .then((response) => {
             if (!response.ok) {
-              errors.push({
-                institution: institution.shortName,
-                type: "CDR Policy",
-                link: institution.cdrPolicy,
-              });
+              setNotifications((prevNotifications) => [
+                ...prevNotifications,
+                {
+                  institution: institution.shortName,
+                  type: "CDR Policy",
+                  link: institution.cdrPolicy,
+                },
+              ]);
             }
           })
           .catch(() =>
-            errors.push({
-              institution: institution.shortName,
-              type: "CDR Policy",
-              link: institution.cdrPolicy,
-            })
+            setNotifications((prevNotifications) => [
+              ...prevNotifications,
+              {
+                institution: institution.shortName,
+                type: "CDR Policy",
+                link: institution.cdrPolicy,
+              },
+            ])
           );
       }
     });
-
-    setTimeout(() => {
-      if (errors.length > 0) {
-        setNotifications(errors);
-      }
-    }, 2000); // Slight delay to collect errors
   };
 
   const filteredInstitutions = institutions.filter((institution) =>
@@ -281,30 +286,35 @@ export const InstitutionList = () => {
         </button>
       </div>
 
-      {/* Notifications */}
-      {notifications.length > 0 && (
+      {/* Display individual toast notifications */}
+      {notifications.map((notification, idx) => (
         <div
+          key={idx}
           style={{
             position: "fixed",
-            bottom: "16px",
+            bottom: `${16 + idx * 60}px`,
             right: "16px",
             backgroundColor: "red",
             color: "white",
             padding: "12px 16px",
             borderRadius: "4px",
             zIndex: 1000,
+            maxWidth: "300px",
           }}
         >
-          <h4>Broken Links:</h4>
-          <ul>
-            {notifications.map((error, idx) => (
-              <li key={idx}>
-                {error.institution} - {error.type}: {error.link}
-              </li>
-            ))}
-          </ul>
+          <p>
+            <strong>{notification.institution}</strong> - {notification.type}:{" "}
+            <a
+              href={notification.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "white", textDecoration: "underline" }}
+            >
+              {notification.link}
+            </a>
+          </p>
         </div>
-      )}
+      ))}
     </div>
   );
 };
