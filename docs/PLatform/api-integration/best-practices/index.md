@@ -65,53 +65,45 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-        .doc-section {
-          padding: 20px;
-          background: #f9f9f9;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          margin: 10px 0;
-        }
+            .doc-section {
+              padding: 20px;
+              background: #f9f9f9;
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              margin: 10px 0;
+            }
 
-        .doc-highlight {
-          font-size: 1.1em;
-          color: #333;
-          background: #eef7fe;
-          padding: 10px;
-          border-radius: 6px;
-          margin-bottom: 16px;
-        }
+            .doc-highlight {
+              font-size: 1.1em;
+              color: #333;
+              background: #eef7fe;
+              padding: 10px;
+              border-radius: 6px;
+              margin-bottom: 16px;
+            }
 
-        .doc-list {
-          list-style: none;
-          padding-left: 0;
-          margin: 0;
-        }
+            .doc-list {
+              list-style: none;
+              padding-left: 0;
+              margin: 0;
+            }
 
-        .doc-list li {
-          font-size: 1em;
-          color: #555;
-          padding: 8px 0;
-          border-bottom: 1px solid #eee;
-        }
+            .doc-list li {
+              font-size: 1em;
+              color: #555;
+              padding: 8px 0;
+              border-bottom: 1px solid #eee;
+            }
 
-        .doc-list li:last-child {
-          border-bottom: none;
-        }
+            .doc-list li:last-child {
+              border-bottom: none;
+            }
 
-        .doc-list strong {
-          color: #0073e6;
-        }
-      `}
+            .doc-list strong {
+              color: #0073e6;
+            }
+          `}
 </style>
-
-### *Use the smart cache instead*
-
-**For ongoing daily refreshed data,** ask the Basiq team to enable your application for background refreshes (the "smart cache" feature). This is a much more efficient way to refresh data than initiating a Refresh Connection request yourself each day.
-
-**Note:** OpenBanking connections are limited to 20 connection refreshes per day.
-
-<br />
 
 <Columns layout="auto" className="documentation-columns">
   <Column>
@@ -193,70 +185,36 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-      .documentation-columns {
-        gap: 20px;
-      }
+          .documentation-columns {
+            gap: 20px;
+          }
 
-      .highlight {
-        color: #0073e6;
-        font-weight: bold;
-      }
+          .highlight {
+            color: #0073e6;
+            font-weight: bold;
+          }
 
-      .warning {
-        background: #ffefef;
-        border-left: 5px solid #f44336;
-        padding: 10px;
-        margin: 10px 0;
-      }
+          .warning {
+            background: #ffefef;
+            border-left: 5px solid #f44336;
+            padding: 10px;
+            margin: 10px 0;
+          }
 
-      h3, h4 {
-        margin-top: 0;
-      }
+          h3, h4 {
+            margin-top: 0;
+          }
 
-      ul {
-        list-style: disc;
-        padding-left: 20px;
-      }
+          ul {
+            list-style: disc;
+            padding-left: 20px;
+          }
 
-      p {
-        margin: 0 0 10px;
-      }
-    `}
+          p {
+            margin: 0 0 10px;
+          }
+        `}
 </style>
-
-## **Handling jobs: for ongoing access to data**
-
-### *Handling jobs correctly is essential to your applications UX*
-
-Providing your users with a simple, intuitive and informed experience is key to good UX, and handling jobs correctly is a key to achieving this.
-
-To help keep you and your users informed we provide both the job status and error messages. These are for you and our support team to troubleshoot issues and pass directly onto the user (i.e. new login credentials).
-
-To do this, you can use the `/job` endpoint, checking on the status of recent jobs to see if there were any failures.
-
-### *Check the users jobs regularly.*
-
-A common cadence is once a day and then every time they login, giving you the opportunity to handle any unresolved errors that have occurred. See our resources on how to effectively handle jobs.
-
-For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T\&Cs, etc.
-
-There is more to read on our job processes and how to handle it, including why and where jobs may fail and how to test your applications handling of these scenarios [here](doc:handling-jobs).
-
-## Purging Connection Data
-
-In addition to using our [API](https://api.basiq.io/reference/purgeconnectiondata), you can now purge connection data directly from the Dashboard. This is useful for dashboard users who need to manage user connections without the need for direct API calls.
-
-### How to Purge Data from the Dashboard:
-
-**Navigate to the User's Connections:** From the main dashboard, go to the specific user's profile and access their connections list.
-
-**Identify the Connection:** Each connection will have a unique Connection ID. Locate the connection that you wish to purge.
-
-**Initiate the Purge:** Click on the "Purge" button next to the relevant connection.
-
-**Confirm the Purge:** You will be asked to confirm the purge action. Once confirmed, all user data associated with that particular connection will be removed from our systems. Please note that the connectionID will remain intact. You can refresh the connection using that connectionID to refetch new financial data.
-
-> 🚧 Please note that this action is irreversible and should be performed with caution. The purge functionality via the Dashboard respects the same permissions and security protocols as the API endpoint.
 
 ### API Endpoint Reference
 
