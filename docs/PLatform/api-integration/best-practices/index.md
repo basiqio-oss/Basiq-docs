@@ -12,25 +12,100 @@ next:
 ---
 When integrating with the Basiq API, there are some best practices that play a crucial role in any applications success. These practices cover areas such as security considerations, UX, scalability etc. and have been tried and tested to ensure that you have all the necessary tools and guidelines for success.
 
-## **When authenticating:**
+<br />
 
-The token you receive will expire after one hour (3600 seconds). You should cache this token for global use: do not re-authenticate separately for each user or connection, etc., as this will cause trouble as your app scales.
+<Tabs>
+  <Tab title="Authentication Best Practices">
+    <div className="doc-section">
+      <h2>Authentication</h2>
 
-## **When configuring your application**
+      <p className="doc-highlight">
+        🔑 The token you receive will expire after one hour (3600 seconds).
+        <strong>Cache this token for global use</strong>: avoid re-authenticating separately for each user or connection, as this will cause scaling issues in your application.
+      </p>
+    </div>
+  </Tab>
 
-**Ensure you have carefully considered your consent policy:** any changes to your consent policy, such as additional data scope, will only be applied to new user consents. Users under the previous consent policy will either be restricted to the original policy, or need to re-consent.
+  <Tab title="Configuring Your Application">
+    <div className="doc-section">
+      <h2>Configuring Your Application</h2>
 
-**Be specific and demonstrate value in your applications purpose:** it is crucial to outline *why* you are requesting your users consent. The **purpose** you define in your consent policy will be displayed to users before they give consent so it is important they understand the value your application will provide to them.
+      <p className="doc-highlight">
+        📜 <strong>Consider your consent policy carefully:</strong> Any changes to your consent policy (e.g., adding new data scopes) will only apply to new user consents. Existing users will either be restricted to the original policy or need to re-consent.
+      </p>
 
-## **When refreshing a Connection:**
+      <p>
+        🎯 <strong>Be specific and show value:</strong> Clearly outline <em>why</em> you are requesting user consent. The <strong>purpose</strong> defined in your consent policy will be displayed to users, so ensure it communicates the value your application provides.
+      </p>
+    </div>
+  </Tab>
 
-**Keep these ad hoc refreshes to a minimum:** These requests put extra load on the banks' websites and if used excessively are liable to trigger action from the bank: your user may be locked out of their account, or the bank may even try to block Basiq.
+  <Tab title="Refreshing Connections">
+    <div className="doc-section">
+      <h2>Refreshing Connections</h2>
 
-**Use job steps to follow the progress of a connection:** If you attempt to create a new connection with the same credentials when a connection is already in progress then the new connection will automatically be paused for 6 minutes in order to avoid account lock-out issues, due to credentials already being in use.
+      <ul className="doc-list">
+        <li>
+          ⚠️ <strong>Minimize ad hoc refreshes:</strong> Excessive requests can overload bank websites, causing account lockouts or action from the bank.
+        </li>
 
-**Avoid bulk refreshes, e.g., cron jobs:** If you refresh thousands of connections at the same time, this will put load on the banks' websites which may cause problems. Let the smart cache handle this for you, and use the Refresh Connection request only after confirming that Basiq has not recently refreshed.
+        <li>
+          🕒 <strong>Use job steps to monitor progress:</strong> Creating a new connection with the same credentials while one is already in progress will pause the new connection for 6 minutes to prevent account lockout issues.
+        </li>
 
-**Before refreshing, check when the connection was last refreshed:** Check the user's jobs for a complete view of when the connection was last refreshed and the result, or for a more lightweight option, check the `connection.lastUsed` attribute to see when the connection was last refreshed. It's essential to ensure that the connection is active before attempting a refresh, as refreshing will not work for inactive connections.
+        <li>
+          🚫 <strong>Avoid bulk refreshes:</strong> Large-scale refreshes (e.g., via cron jobs) can overload bank websites. Instead, rely on the smart cache or confirm a connection has not recently been refreshed before initiating a new request.
+        </li>
+
+        <li>
+          🔍 <strong>Check the last refresh time:</strong> Use the `connection.lastUsed` attribute or the user’s jobs to determine the last refresh time and result. Ensure the connection is active before refreshing, as refreshing inactive connections will fail.
+        </li>
+      </ul>
+    </div>
+  </Tab>
+</Tabs>
+
+<style jsx>
+  {`
+      .doc-section {
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+      }
+
+      .doc-highlight {
+        font-size: 1.1em;
+        color: #333;
+        background: #eef7fe;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+      }
+
+      .doc-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .doc-list li {
+        font-size: 1em;
+        color: #555;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .doc-list li:last-child {
+        border-bottom: none;
+      }
+
+      .doc-list strong {
+        color: #0073e6;
+      }
+    `}
+</style>
 
 ### *Use the smart cache instead*
 
