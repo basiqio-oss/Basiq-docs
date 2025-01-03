@@ -65,44 +65,44 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-            .doc-section {
-              padding: 20px;
-              background: #f9f9f9;
-              border-radius: 8px;
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-              margin: 10px 0;
-            }
+                .doc-section {
+                  padding: 20px;
+                  background: #f9f9f9;
+                  border-radius: 8px;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                  margin: 10px 0;
+                }
 
-            .doc-highlight {
-              font-size: 1.1em;
-              color: #333;
-              background: #eef7fe;
-              padding: 10px;
-              border-radius: 6px;
-              margin-bottom: 16px;
-            }
+                .doc-highlight {
+                  font-size: 1.1em;
+                  color: #333;
+                  background: #eef7fe;
+                  padding: 10px;
+                  border-radius: 6px;
+                  margin-bottom: 16px;
+                }
 
-            .doc-list {
-              list-style: none;
-              padding-left: 0;
-              margin: 0;
-            }
+                .doc-list {
+                  list-style: none;
+                  padding-left: 0;
+                  margin: 0;
+                }
 
-            .doc-list li {
-              font-size: 1em;
-              color: #555;
-              padding: 8px 0;
-              border-bottom: 1px solid #eee;
-            }
+                .doc-list li {
+                  font-size: 1em;
+                  color: #555;
+                  padding: 8px 0;
+                  border-bottom: 1px solid #eee;
+                }
 
-            .doc-list li:last-child {
-              border-bottom: none;
-            }
+                .doc-list li:last-child {
+                  border-bottom: none;
+                }
 
-            .doc-list strong {
-              color: #0073e6;
-            }
-          `}
+                .doc-list strong {
+                  color: #0073e6;
+                }
+              `}
 </style>
 
 <Columns layout="auto" className="documentation-columns">
@@ -185,35 +185,35 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-          .documentation-columns {
-            gap: 20px;
-          }
+              .documentation-columns {
+                gap: 20px;
+              }
 
-          .highlight {
-            color: #0073e6;
-            font-weight: bold;
-          }
+              .highlight {
+                color: #0073e6;
+                font-weight: bold;
+              }
 
-          .warning {
-            background: #ffefef;
-            border-left: 5px solid #f44336;
-            padding: 10px;
-            margin: 10px 0;
-          }
+              .warning {
+                background: #ffefef;
+                border-left: 5px solid #f44336;
+                padding: 10px;
+                margin: 10px 0;
+              }
 
-          h3, h4 {
-            margin-top: 0;
-          }
+              h3, h4 {
+                margin-top: 0;
+              }
 
-          ul {
-            list-style: disc;
-            padding-left: 20px;
-          }
+              ul {
+                list-style: disc;
+                padding-left: 20px;
+              }
 
-          p {
-            margin: 0 0 10px;
-          }
-        `}
+              p {
+                margin: 0 0 10px;
+              }
+            `}
 </style>
 
 ### API Endpoint Reference
@@ -226,12 +226,103 @@ POST /users/{userId}/connections/{connectionId}/purge
 
 This endpoint requires the user's identifier `userId` and the connection's identifier `connectionId`. Please refer to our [API documentation](https://api.basiq.io/reference/purgeconnectiondata) for detailed information on request parameters and expected responses.
 
-# Error resolution
+<Columns layout="auto" className="documentation-columns">
+  <Column>
+    <div className="interactive-card">
+      <div className="card-content">
+        <div className="card-icon">
+          <i className="fa fa-plug" />
+        </div>
 
-## Using the `/connectors` endpoint
+        <h3 className="card-title">Using the Connectors Endpoint</h3>
 
-You can use the connectors endpoint to fetch the current status and stage of each connector we offer. This is especially useful if you encounter any issues when refreshing connections because you can then dynamically determine if there are any issues currently, and proceed accordingly. E.g. if a refresh fails, and you can see using the /connectors endpoint that a specific connector is currently down, you now know the issue is on their end and to try connecting again when they are operational. This can all be done without having to log any issues with Basiq's support team, meaning the whole process can be automated.
+        <p className="card-description">
+          Fetch the current status and stage of all connectors to dynamically resolve connection issues. Automate your workflows by determining the cause of issues without contacting support.
+        </p>
 
-## *Error logging*
+        <button className="learn-more-button">Learn More</button>
+      </div>
+    </div>
+  </Column>
 
-When logging any errors you encounter in production, it is important that you include the `userId`, `connectionId`, and `jobId`. Having a record of these when you reach out to our support team means that we are able to better investigate and help you debug.
+  <Column>
+    <div className="interactive-card">
+      <div className="card-content">
+        <div className="card-icon">
+          <i className="fa fa-exclamation-triangle" />
+        </div>
+
+        <h3 className="card-title">Error Logging</h3>
+
+        <p className="card-description">
+          Log key details like <code>userId</code>, <code>connectionId</code>, and <code>jobId</code>. This allows support teams to investigate issues effectively and provide better assistance.
+        </p>
+
+        <button className="learn-more-button">Learn More</button>
+      </div>
+    </div>
+  </Column>
+</Columns>
+
+<style jsx>
+  {`
+        .documentation-columns {
+          gap: 20px;
+          margin-top: 30px;
+        }
+
+        .interactive-card {
+          max-width: 360px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+          cursor: pointer;
+        }
+
+        .interactive-card:hover {
+          transform: translateY(-10px);
+        }
+
+        .card-content {
+          text-align: center;
+        }
+
+        .card-icon {
+          font-size: 48px;
+          color: #0073e6;
+          margin-bottom: 20px;
+        }
+
+        .card-title {
+          font-size: 1.4em;
+          color: #333;
+          margin-bottom: 16px;
+          font-weight: bold;
+        }
+
+        .card-description {
+          font-size: 1em;
+          color: #666;
+          line-height: 1.5;
+          margin-bottom: 20px;
+        }
+
+        .learn-more-button {
+          padding: 10px 20px;
+          background-color: #0073e6;
+          color: white;
+          font-size: 1em;
+          border: none;
+          border-radius: 30px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .learn-more-button:hover {
+          background-color: #005bb5;
+        }
+      `}
+</style>
