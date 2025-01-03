@@ -70,20 +70,31 @@ After setting up your account, you’ll want to keep it safe. Here are some reco
 
 * **Enable Two-Factor Verification**: This additional security layer requires a unique code from your mobile device, received via text message, to complete the login process. This means even if your username and password are compromised, unauthorised login is still prevented. To enable this, navigate to your user settings on the Basiq dashboard.
 
-<br />
-
 ## Adding Single Sign-On (SSO)
 
 If your organization requires Single Sign-On (SSO) integration, other than Google, the following information must be provided to enable it:
 
-<Accordion title="Required Information for SSO Setup" icon="fa-info-circle">
-  * **URL for single sign-on**: The unique login URL provided by your identity provider.
-  * **Entity ID**: Identifier for the identity provider.
-  * **Set of SAML Attributes**: These include `name` and `email`.
-  * **Metadata document**: An XML file or endpoint containing the identity provider metadata.
+<Cards columns={2}>
+  <Card title="URL for Single Sign-On" icon="fa-link">
+    The unique login URL provided by your identity provider.
+  </Card>
 
-  This information can be sent via email to **[support@basiq.io](mailto:support@basiq.io)** or through Jira if you have access.
-</Accordion>
+  <Card title="Entity ID" icon="fa-id-card">
+    Identifier for the identity provider.
+  </Card>
+
+  <Card title="Set of SAML Attributes" icon="fa-user">
+    These include `name` and `email`.
+  </Card>
+
+  <Card title="Metadata Document" icon="fa-file">
+    An XML file or endpoint containing the identity provider metadata.
+  </Card>
+</Cards>
+
+<p>
+  This information can be sent via email to <strong><a href="mailto:support@basiq.io">[support@basiq.io](mailto:support@basiq.io)</a></strong> or through Jira if you have access.
+</p>
 
 <div
   style={{
