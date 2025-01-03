@@ -37,7 +37,7 @@ In your dashboard, visit the 'Settings' section to finalise your organisation's 
 
 <iframe src="https://demo.arcade.software/dovS6GmzDt1tXBDnsdPe?embed" title="Basiq - 2FA " loading="lazy" style={{ position: 'relative', paddingBottom: '50.16%', height: '0', width: '100%', border: 'none' }} allow="clipboard-write" />
 
-## Adding Single Sign-On (SSO)
+<br />
 
 If your organization requires Single Sign-On (SSO) integration, other than Google, the following information must be provided to enable it:
 
