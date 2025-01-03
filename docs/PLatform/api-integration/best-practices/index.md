@@ -12,8 +12,6 @@ next:
 ---
 When integrating with the Basiq API, there are some best practices that play a crucial role in any applications success. These practices cover areas such as security considerations, UX, scalability etc. and have been tried and tested to ensure that you have all the necessary tools and guidelines for success.
 
-<br />
-
 <Tabs>
   <Tab title="Authentication Best Practices">
     <div className="doc-section">
@@ -67,44 +65,44 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-      .doc-section {
-        padding: 20px;
-        background: #f9f9f9;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin: 10px 0;
-      }
+          .doc-section {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+          }
 
-      .doc-highlight {
-        font-size: 1.1em;
-        color: #333;
-        background: #eef7fe;
-        padding: 10px;
-        border-radius: 6px;
-        margin-bottom: 16px;
-      }
+          .doc-highlight {
+            font-size: 1.1em;
+            color: #333;
+            background: #eef7fe;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+          }
 
-      .doc-list {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-      }
+          .doc-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+          }
 
-      .doc-list li {
-        font-size: 1em;
-        color: #555;
-        padding: 8px 0;
-        border-bottom: 1px solid #eee;
-      }
+          .doc-list li {
+            font-size: 1em;
+            color: #555;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+          }
 
-      .doc-list li:last-child {
-        border-bottom: none;
-      }
+          .doc-list li:last-child {
+            border-bottom: none;
+          }
 
-      .doc-list strong {
-        color: #0073e6;
-      }
-    `}
+          .doc-list strong {
+            color: #0073e6;
+          }
+        `}
 </style>
 
 ### *Use the smart cache instead*
