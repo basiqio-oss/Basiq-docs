@@ -13,10 +13,8 @@ next:
 When integrating with the Basiq API, there are some best practices that play a crucial role in any applications success. These practices cover areas such as security considerations, UX, scalability etc. and have been tried and tested to ensure that you have all the necessary tools and guidelines for success.
 
 <Tabs>
-  <Tab title="Authentication Best Practices">
+  <Tab title="Authentication">
     <div className="doc-section">
-      <h2>Authentication</h2>
-
       <p className="doc-highlight">
         🔑 The token you receive will expire after one hour (3600 seconds).
         <strong>Cache this token for global use</strong>: avoid re-authenticating separately for each user or connection, as this will cause scaling issues in your application.
@@ -26,8 +24,6 @@ When integrating with the Basiq API, there are some best practices that play a c
 
   <Tab title="Configuring Your Application">
     <div className="doc-section">
-      <h2>Configuring Your Application</h2>
-
       <p className="doc-highlight">
         📜 <strong>Consider your consent policy carefully:</strong> Any changes to your consent policy (e.g., adding new data scopes) will only apply to new user consents. Existing users will either be restricted to the original policy or need to re-consent.
       </p>
@@ -40,8 +36,6 @@ When integrating with the Basiq API, there are some best practices that play a c
 
   <Tab title="Refreshing Connections">
     <div className="doc-section">
-      <h2>Refreshing Connections</h2>
-
       <ul className="doc-list">
         <li>
           ⚠️ <strong>Minimize ad hoc refreshes:</strong> Excessive requests can overload bank websites, causing account lockouts or action from the bank.
@@ -65,44 +59,44 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-                                                .doc-section {
-                                                  padding: 20px;
-                                                  background: #f9f9f9;
-                                                  border-radius: 8px;
-                                                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                                                  margin: 10px 0;
-                                                }
+                                                    .doc-section {
+                                                      padding: 20px;
+                                                      background: #f9f9f9;
+                                                      border-radius: 8px;
+                                                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                                      margin: 10px 0;
+                                                    }
 
-                                                .doc-highlight {
-                                                  font-size: 1.1em;
-                                                  color: #333;
-                                                  background: #eef7fe;
-                                                  padding: 10px;
-                                                  border-radius: 6px;
-                                                  margin-bottom: 16px;
-                                                }
+                                                    .doc-highlight {
+                                                      font-size: 1.1em;
+                                                      color: #333;
+                                                      background: #eef7fe;
+                                                      padding: 10px;
+                                                      border-radius: 6px;
+                                                      margin-bottom: 16px;
+                                                    }
 
-                                                .doc-list {
-                                                  list-style: none;
-                                                  padding-left: 0;
-                                                  margin: 0;
-                                                }
+                                                    .doc-list {
+                                                      list-style: none;
+                                                      padding-left: 0;
+                                                      margin: 0;
+                                                    }
 
-                                                .doc-list li {
-                                                  font-size: 1em;
-                                                  color: #555;
-                                                  padding: 8px 0;
-                                                  border-bottom: 1px solid #eee;
-                                                }
+                                                    .doc-list li {
+                                                      font-size: 1em;
+                                                      color: #555;
+                                                      padding: 8px 0;
+                                                      border-bottom: 1px solid #eee;
+                                                    }
 
-                                                .doc-list li:last-child {
-                                                  border-bottom: none;
-                                                }
+                                                    .doc-list li:last-child {
+                                                      border-bottom: none;
+                                                    }
 
-                                                .doc-list strong {
-                                                  color: #0073e6;
-                                                }
-                                              `}
+                                                    .doc-list strong {
+                                                      color: #0073e6;
+                                                    }
+                                                  `}
 </style>
 
 <Columns layout="auto" className="documentation-columns">
@@ -181,35 +175,35 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-                                              .documentation-columns {
-                                                gap: 20px;
-                                              }
+                                                  .documentation-columns {
+                                                    gap: 20px;
+                                                  }
 
-                                              .highlight {
-                                                color: #0073e6;
-                                                font-weight: bold;
-                                              }
+                                                  .highlight {
+                                                    color: #0073e6;
+                                                    font-weight: bold;
+                                                  }
 
-                                              .warning {
-                                                background: #ffefef;
-                                                border-left: 5px solid #f44336;
-                                                padding: 10px;
-                                                margin: 10px 0;
-                                              }
+                                                  .warning {
+                                                    background: #ffefef;
+                                                    border-left: 5px solid #f44336;
+                                                    padding: 10px;
+                                                    margin: 10px 0;
+                                                  }
 
-                                              h3, h4 {
-                                                margin-top: 0;
-                                              }
+                                                  h3, h4 {
+                                                    margin-top: 0;
+                                                  }
 
-                                              ul {
-                                                list-style: disc;
-                                                padding-left: 20px;
-                                              }
+                                                  ul {
+                                                    list-style: disc;
+                                                    padding-left: 20px;
+                                                  }
 
-                                              p {
-                                                margin: 0 0 10px;
-                                              }
-                                            `}
+                                                  p {
+                                                    margin: 0 0 10px;
+                                                  }
+                                                `}
 </style>
 
 <blockquote className="warning">
@@ -270,63 +264,63 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-                                        .documentation-columns {
-                                          gap: 20px;
-                                          margin-top: 30px;
-                                        }
+                                            .documentation-columns {
+                                              gap: 20px;
+                                              margin-top: 30px;
+                                            }
 
-                                        .interactive-card {
-                                          max-width: 360px;
-                                          margin: 0 auto;
-                                          padding: 20px;
-                                          background-color: #ffffff;
-                                          border-radius: 12px;
-                                          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                                          transition: transform 0.3s ease;
-                                          cursor: pointer;
-                                        }
+                                            .interactive-card {
+                                              max-width: 360px;
+                                              margin: 0 auto;
+                                              padding: 20px;
+                                              background-color: #ffffff;
+                                              border-radius: 12px;
+                                              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                                              transition: transform 0.3s ease;
+                                              cursor: pointer;
+                                            }
 
-                                        .interactive-card:hover {
-                                          transform: translateY(-10px);
-                                        }
+                                            .interactive-card:hover {
+                                              transform: translateY(-10px);
+                                            }
 
-                                        .card-content {
-                                          text-align: center;
-                                        }
+                                            .card-content {
+                                              text-align: center;
+                                            }
 
-                                        .card-icon {
-                                          font-size: 48px;
-                                          color: #0073e6;
-                                          margin-bottom: 20px;
-                                        }
+                                            .card-icon {
+                                              font-size: 48px;
+                                              color: #0073e6;
+                                              margin-bottom: 20px;
+                                            }
 
-                                        .card-title {
-                                          font-size: 1.4em;
-                                          color: #333;
-                                          margin-bottom: 16px;
-                                          font-weight: bold;
-                                        }
+                                            .card-title {
+                                              font-size: 1.4em;
+                                              color: #333;
+                                              margin-bottom: 16px;
+                                              font-weight: bold;
+                                            }
 
-                                        .card-description {
-                                          font-size: 1em;
-                                          color: #666;
-                                          line-height: 1.5;
-                                          margin-bottom: 20px;
-                                        }
+                                            .card-description {
+                                              font-size: 1em;
+                                              color: #666;
+                                              line-height: 1.5;
+                                              margin-bottom: 20px;
+                                            }
 
-                                        .learn-more-button {
-                                          padding: 10px 20px;
-                                          background-color: #0073e6;
-                                          color: white;
-                                          font-size: 1em;
-                                          border: none;
-                                          border-radius: 30px;
-                                          cursor: pointer;
-                                          transition: background-color 0.3s ease;
-                                        }
+                                            .learn-more-button {
+                                              padding: 10px 20px;
+                                              background-color: #0073e6;
+                                              color: white;
+                                              font-size: 1em;
+                                              border: none;
+                                              border-radius: 30px;
+                                              cursor: pointer;
+                                              transition: background-color 0.3s ease;
+                                            }
 
-                                        .learn-more-button:hover {
-                                          background-color: #005bb5;
-                                        }
-                                      `}
+                                            .learn-more-button:hover {
+                                              background-color: #005bb5;
+                                            }
+                                          `}
 </style>
