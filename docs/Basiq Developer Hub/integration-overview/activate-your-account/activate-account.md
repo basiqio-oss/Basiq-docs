@@ -36,10 +36,11 @@ metadata:
 <style jsx>
   {`
     .data-storage-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      display: flex;
+      justify-content: space-between;
       gap: 20px;
       padding: 20px;
+      overflow-x: auto;
     }
 
     .data-storage-card {
@@ -48,6 +49,8 @@ metadata:
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      flex: 0 0 auto;
+      min-width: 280px;
     }
 
     .data-storage-card:hover {
