@@ -5,79 +5,68 @@ hidden: true
 metadata:
   robots: index
 ---
-### Step 1: Access the Basiq Dashboard
+\{const userId = "userId"}
 
-Start by visiting the Basiq Dashboard directly at [dashboard.basiq.io](https://dashboard.basiq.io). Here, you'll find the option to sign up, allowing you to immediately proceed to the registration page.
+\<Accordion title="When authenticating" icon="fa-info-circle">
+&#x20; The token you receive will expire after one hour (3600 seconds). You should cache this token for global use: \*\*do not\*\* re-authenticate separately for each user or connection, as this will cause trouble as your app scales.
+\</Accordion>
 
-<iframe src="https://demo.arcade.software/zTaAEuzoNYTom6qJRvat?embed" title="Basiq Dashboard | Activate your Account" loading="lazy" style={{ position: 'relative', paddingBottom: '54.56%', height: '0', width: '100%', border: 'none' }} allow="clipboard-write" />
+\<Accordion title="When configuring your application" icon="fa-cogs">
+&#x20; \<ul>
+&#x20;   \<li>
+&#x20;     \<strong>Ensure you have carefully considered your consent policy:\</strong> Changes to your consent policy, such as additional data scope, will only be applied to new user consents.
+&#x20;   \</li>
 
-### Step 2: Fill Out the Registration Form
+&#x20;   \<li>
+&#x20;     \<strong>Be specific and demonstrate value in your application's purpose:\</strong> Clearly outline \*why\* you are requesting users' consent. The purpose defined in your consent policy will be displayed to users before they give consent.
+&#x20;   \</li>
+&#x20; \</ul>
+\</Accordion>
 
-Upon accessing the sign-up section, you'll be required to enter your company's information. This includes details like your company name and contact information. It's important to use a secure password for your account's protection. As you sign up, a company profile is automatically created behind the scenes.
+\<Cards columns=\{2}>
+&#x20; \<Card title="Refreshing a Connection" icon="fa-refresh">
+&#x20;   \<ul>
+&#x20;     \<li>\<strong>Keep ad hoc refreshes to a minimum:\</strong> Excessive refresh requests can put extra load on the banks' websites and cause issues like user lockouts.\</li>
+&#x20;     \<li>\<strong>Use job steps to follow the progress of a connection:\</strong> When a connection is in progress, new requests will automatically be paused to avoid account lock-outs.\</li>
+&#x20;   \</ul>
+&#x20; \</Card>
 
-**Note on Existing Company Profiles:** Before completing your sign-up, consider if a company profile already exists within your organization. If a colleague has previously created an account, have them invite you via the members management area. This ensures that all team members are consolidated under a single company profile, facilitating better organization and management.
+&#x20; \<Card title="Handling Jobs" icon="fa-tasks">
+&#x20;   \<ul>
+&#x20;     \<li>\<strong>Check the user's jobs regularly:\</strong> Regular checks, such as once a day and after each login, will help you handle unresolved errors promptly.\</li>
+&#x20;     \<li>\<strong>Use the /job endpoint:\</strong> The \`/job\` endpoint can be used to check the status of recent jobs and troubleshoot issues like login credentials errors or new T\\\&Cs popups.\</li>
+&#x20;   \</ul>
+&#x20; \</Card>
+\</Cards>
 
-<iframe src="https://demo.arcade.software/289dlTqgvgcfKy1uKNP3?embed" title="Basiq - Registration Form" loading="lazy" style={{ position: 'relative', paddingBottom: '54.56%', height: '0', width: '100%', border: 'none' }} allow="clipboard-write" />
+\<Columns layout="auto">
+&#x20; \<Column>
+&#x20;   \<h3>Purging Connection Data\</h3>
+&#x20;   \<p>In addition to using the API, you can purge connection data directly from the Dashboard, making it easier for users to manage their connections without API calls.\</p>
+&#x20; \</Column>
 
-### Step 3: Account Verification
+&#x20; \<Column>
+&#x20;   \<h3>API Endpoint Reference\</h3>
 
-Check your email for a verification link from Basiq after registering. This email contains a link that you must click to verify your email address and activate your account.
+&#x20;   \<pre>
+&#x20;     POST /users/\{userId}/connections/\{connectionId}/purge
+&#x20;   \</pre>
 
-<iframe src="https://demo.arcade.software/6NBdW3y5d2CMiWHbJ8JS?embed" title="Basiq - Account Verification" loading="lazy" style={{ position: 'relative', paddingBottom: '54.56%', height: '0', width: '100%', border: 'none' }} allow="clipboard-write" />
+&#x20;   \<p>For more details, please refer to the \[API documentation]\(https\://api.basiq.io/reference/purgeconnectiondata).\</p>
+&#x20; \</Column>
 
-### Step 4: Log Into Your Dashboard
+&#x20; \<Column>
+&#x20;   \<h3>Error Resolution\</h3>
+&#x20;   \<p>You can use the \`/connectors\` endpoint to fetch the status and stage of each connector we offer. This helps you identify if any issues are caused by connector downtime and allows you to proceed accordingly.\</p>
+&#x20; \</Column>
+\</Columns>
 
-Once your account is verified, log back into the Basiq dashboard using your email and secure password. This action takes you to your dashboard, a central hub for managing Basiq’s services.
+\<Tabs>
+&#x20; \<Tab title="Error Logging">
+&#x20;   When logging errors in production, it's important to include the \`userId\`, \`connectionId\`, and \`jobId\`. This will help our support team investigate and assist you with debugging.
+&#x20; \</Tab>
 
-<iframe src="https://demo.arcade.software/fz3oQDFuivaJDZmeNcBz?embed" title="Basiq - Log Into Your Dashboard" loading="lazy" style={{ position: 'relative', paddingBottom: '54.56%', height: '0', width: '100%', border: 'none' }} allow="clipboard-write" />
-
-### Step 5: Complete Account Setup
-
-In your dashboard, visit the 'Settings' section to finalise your organisation's details, including its name and logo. Crucially, set up two-factor authentication (2FA) for enhanced security, following the instructions in your account settings.
-
-<iframe src="https://demo.arcade.software/dovS6GmzDt1tXBDnsdPe?embed" title="Basiq - 2FA " loading="lazy" style={{ position: 'relative', paddingBottom: '50.16%', height: '0', width: '100%', border: 'none' }} allow="clipboard-write" />
-
-<br />
-
-If your organization requires Single Sign-On (SSO) integration, other than Google, the following information must be provided to enable it:
-
-<Accordion title="Required Information for SSO Setup" icon="fa-info-circle">
-  * **URL for single sign-on**: The unique login URL provided by your identity provider.
-  * **Entity ID**: Identifier for the identity provider.
-  * **Set of SAML Attributes**: These include `name` and `email`.
-  * **Metadata document**: An XML file or endpoint containing the identity provider metadata.
-
-  This information can be sent via email to **[support@basiq.io](mailto:support@basiq.io)** or through Jira if you have access.
-</Accordion>
-
-### Where to Find This Information
-
-For more details on activating your account and configuring SSO, visit the official documentation at [api.basiq.io/docs/activate-your-account](https://api.basiq.io/docs/activate-your-account).
-
-## Keeping Your Account Safe
-
-After setting up your account, ensure your account remains secure by following these best practices:
-
-<Tabs>
-  <Tab title="Unique Password">
-    Use a unique password for Basiq that you don't use elsewhere.
-  </Tab>
-
-  <Tab title="Team Member Access">
-    Use the team members feature to delegate access with limited permissions.
-  </Tab>
-
-  <Tab title="System Updates">
-    Regularly update your computer and browser to safeguard against attacks.
-  </Tab>
-
-  <Tab title="Phishing Awareness">
-    Verify emails claiming to be from Basiq by directly visiting the site.
-  </Tab>
-
-  <Tab title="Two-Factor Authentication">
-    Enable 2FA for an extra layer of security.
-  </Tab>
-</Tabs>
-
-If you encounter any issues, reach out to our support team via Intercom or email.
+&#x20; \<Tab title="Data Storage Best Practices">
+&#x20;   Partners should have a secure data storage system for necessary information. API calls should be made only when required to obtain updated information. Note that Basiq is not an information storage service.
+&#x20; \</Tab>
+\</Tabs>
