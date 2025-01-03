@@ -18,7 +18,7 @@ The token you receive will expire after one hour (3600 seconds). You should cach
 
 ## **When configuring your application**
 
-**Ensure you have carefully considered your consent policy:** any changes to your consent policy, such as additional data scope, will only be applied to new user consents. Users under the previous consent policy will either be restricted to the original policy, or need to re-consent. 
+**Ensure you have carefully considered your consent policy:** any changes to your consent policy, such as additional data scope, will only be applied to new user consents. Users under the previous consent policy will either be restricted to the original policy, or need to re-consent.
 
 **Be specific and demonstrate value in your applications purpose:** it is crucial to outline *why* you are requesting your users consent. The **purpose** you define in your consent policy will be displayed to users before they give consent so it is important they understand the value your application will provide to them.
 
@@ -34,7 +34,7 @@ The token you receive will expire after one hour (3600 seconds). You should cach
 
 ### *Use the smart cache instead*
 
-**For ongoing daily refreshed data,** ask the Basiq team to enable your application for background refreshes (the "smart cache" feature). This is a much more efficient way to refresh data than initiating a Refresh Connection request yourself each day. 
+**For ongoing daily refreshed data,** ask the Basiq team to enable your application for background refreshes (the "smart cache" feature). This is a much more efficient way to refresh data than initiating a Refresh Connection request yourself each day.
 
 **Note:** OpenBanking connections are limited to 20 connection refreshes per day.
 
@@ -42,7 +42,7 @@ The token you receive will expire after one hour (3600 seconds). You should cach
 
 ### *Handling jobs correctly is essential to your applications UX*
 
-Providing your users with a simple, intuitive and informed experience is key to good UX, and handling jobs correctly is a key to achieving this. 
+Providing your users with a simple, intuitive and informed experience is key to good UX, and handling jobs correctly is a key to achieving this.
 
 To help keep you and your users informed we provide both the job status and error messages. These are for you and our support team to troubleshoot issues and pass directly onto the user (i.e. new login credentials).
 
@@ -50,11 +50,11 @@ To do this, you can use the `/job` endpoint, checking on the status of recent 
 
 ### *Check the users jobs regularly.*
 
-A common cadence is once a day and then every time they login, giving you the opportunity to handle any unresolved errors that have occurred. See our resources on how to effectively handle jobs. 
+A common cadence is once a day and then every time they login, giving you the opportunity to handle any unresolved errors that have occurred. See our resources on how to effectively handle jobs.
 
 For example, the user may have initially connected their banks without issues, but Basiq has since had trouble refreshing their data. The user may have changed their login credentials, or the bank may be presenting a popup requiring the user to acknowledge new T\&Cs, etc.
 
-There is more to read on our job processes and how to handle it, including why and where jobs may fail and how to test your applications handling of these scenarios [here](doc:handling-jobs). 
+There is more to read on our job processes and how to handle it, including why and where jobs may fail and how to test your applications handling of these scenarios [here](doc:handling-jobs).
 
 ## Purging Connection Data
 
@@ -66,7 +66,7 @@ In addition to using our [API](https://api.basiq.io/reference/purgeconnectiondat
 
 **Identify the Connection:** Each connection will have a unique Connection ID. Locate the connection that you wish to purge.
 
-**Initiate the Purge:** Click on the "Purge" button next to the relevant connection. 
+**Initiate the Purge:** Click on the "Purge" button next to the relevant connection.
 
 **Confirm the Purge:** You will be asked to confirm the purge action. Once confirmed, all user data associated with that particular connection will be removed from our systems. Please note that the connectionID will remain intact. You can refresh the connection using that connectionID to refetch new financial data.
 
@@ -91,3 +91,9 @@ You can use the connectors endpoint to fetch the current status and stage of eac
 ## *Error logging*
 
 When logging any errors you encounter in production, it is important that you include the `userId`, `connectionId`, and `jobId`. Having a record of these when you reach out to our support team means that we are able to better investigate and help you debug.
+
+<Cards columns={1}>
+  <Card title="Data Storage Best Practices" icon="fa-database">
+    Partners must have a data storage system to securely store the necessary information for use. API calls should only be made when required, such as to obtain updated information. Note that Basiq is not an information storage service.
+  </Card>
+</Cards>
