@@ -5,62 +5,65 @@ hidden: true
 metadata:
   robots: index
 ---
-<Accordion title="When authenticating" icon="fa-info-circle">
-  The token you receive will expire after one hour (3600 seconds). You should cache this token for global use: **do not** re-authenticate separately for each user or connection, as this will cause trouble as your app scales.
-</Accordion>
+<Tab title="Data Storage Best Practices">
+  <div className="data-storage-container">
+    <div className="data-storage-card">
+      <h3 className="data-storage-title">Secure Data Storage</h3>
 
-<Accordion title="When configuring your application" icon="fa-cogs">
-  <ul>
-    <li>
-      <strong>Ensure you have carefully considered your consent policy:</strong> Changes to your consent policy, such as additional data scope, will only be applied to new user consents.
-    </li>
+      <p className="data-storage-description">
+        Partners should implement a secure data storage system for storing necessary user information. Ensure that sensitive data is encrypted and access is restricted to authorized personnel only.
+      </p>
+    </div>
 
-    <li>
-      <strong>Be specific and demonstrate value in your application's purpose:</strong> Clearly outline *why* you are requesting users' consent. The purpose defined in your consent policy will be displayed to users before they give consent.
-    </li>
-  </ul>
-</Accordion>
+    <div className="data-storage-card">
+      <h3 className="data-storage-title">API Call Efficiency</h3>
 
-<Cards columns={2}>
-  <Card title="Refreshing a Connection" icon="fa-refresh">
-    <ul>
-      <li><strong>Keep ad hoc refreshes to a minimum:</strong> Excessive refresh requests can put extra load on the banks' websites and cause issues like user lockouts.</li>
-      <li><strong>Use job steps to follow the progress of a connection:</strong> When a connection is in progress, new requests will automatically be paused to avoid account lock-outs.</li>
-    </ul>
-  </Card>
+      <p className="data-storage-description">
+        API calls should only be made when absolutely necessary to fetch updated information. Minimizing unnecessary calls reduces load on the system and improves performance for all users.
+      </p>
+    </div>
 
-  <Card title="Handling Jobs" icon="fa-tasks">
-    <ul>
-      <li><strong>Check the user's jobs regularly:</strong> Regular checks, such as once a day and after each login, will help you handle unresolved errors promptly.</li>
-      <li><strong>Use the /job endpoint:</strong> The `/job` endpoint can be used to check the status of recent jobs and troubleshoot issues like login credentials errors or new T\&Cs popups.</li>
-    </ul>
-  </Card>
-</Cards>
+    <div className="data-storage-card">
+      <h3 className="data-storage-title">Storage Limitations</h3>
 
-<Columns layout="auto">
-  <Column>
-    <h3>Purging Connection Data</h3>
-    <p>In addition to using the API, you can purge connection data directly from the Dashboard, making it easier for users to manage their connections without API calls.</p>
-  </Column>
+      <p className="data-storage-description">
+        Note that Basiq is not an information storage service. Use Basiq’s data as an intermediate layer for processing, and store finalized data securely within your own system.
+      </p>
+    </div>
+  </div>
+</Tab>
 
-  <Column>
-    <h3>API Endpoint Reference</h3>
+<style jsx>
+  {`
+    .data-storage-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
 
-    <p>For more details, please refer to the [API documentation](https://api.basiq.io/reference/purgeconnectiondata).</p>
-  </Column>
+    .data-storage-card {
+      background-color: #f4f8fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-  <Column>
-    <h3>Error Resolution</h3>
-    <p>You can use the `/connectors` endpoint to fetch the status and stage of each connector we offer. This helps you identify if any issues are caused by connector downtime and allows you to proceed accordingly.</p>
-  </Column>
-</Columns>
+    .data-storage-card:hover {
+      transform: translateY(-5px);
+    }
 
-<Tabs>
-  <Tab title="Error Logging">
-    When logging errors in production, it's important to include the `userId`, `connectionId`, and `jobId`. This will help our support team investigate and assist you with debugging.
-  </Tab>
+    .data-storage-title {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 12px;
+    }
 
-  <Tab title="Data Storage Best Practices">
-    Partners should have a secure data storage system for necessary information. API calls should be made only when required to obtain updated information. Note that Basiq is not an information storage service.
-  </Tab>
-</Tabs>
+    .data-storage-description {
+      font-size: 1em;
+      color: #555;
+      line-height: 1.6;
+    }
+  `}
+</style>
