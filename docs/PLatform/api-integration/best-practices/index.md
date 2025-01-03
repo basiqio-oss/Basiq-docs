@@ -12,23 +12,19 @@ next:
 ---
 When integrating with the Basiq API, there are some best practices that play a crucial role in any applications success. These practices cover areas such as security considerations, UX, scalability etc. and have been tried and tested to ensure that you have all the necessary tools and guidelines for success.
 
-<Tabs>
-  <Tab title="Authentication Best Practices">
-    <div className="doc-section">
-      <h2>Authentication</h2>
-
-      <p className="doc-highlight">
+<Cards columns={3} className="doc-cards">
+  <Card title="Authentication Best Practices" icon="fa-key">
+    <div className="doc-card-content">
+      <p>
         🔑 The token you receive will expire after one hour (3600 seconds).
         <strong>Cache this token for global use</strong>: avoid re-authenticating separately for each user or connection, as this will cause scaling issues in your application.
       </p>
     </div>
-  </Tab>
+  </Card>
 
-  <Tab title="Configuring Your Application">
-    <div className="doc-section">
-      <h2>Configuring Your Application</h2>
-
-      <p className="doc-highlight">
+  <Card title="Configuring Your Application" icon="fa-cogs">
+    <div className="doc-card-content">
+      <p>
         📜 <strong>Consider your consent policy carefully:</strong> Any changes to your consent policy (e.g., adding new data scopes) will only apply to new user consents. Existing users will either be restricted to the original policy or need to re-consent.
       </p>
 
@@ -36,12 +32,10 @@ When integrating with the Basiq API, there are some best practices that play a c
         🎯 <strong>Be specific and show value:</strong> Clearly outline <em>why</em> you are requesting user consent. The <strong>purpose</strong> defined in your consent policy will be displayed to users, so ensure it communicates the value your application provides.
       </p>
     </div>
-  </Tab>
+  </Card>
 
-  <Tab title="Refreshing Connections">
-    <div className="doc-section">
-      <h2>Refreshing Connections</h2>
-
+  <Card title="Refreshing Connections" icon="fa-sync">
+    <div className="doc-card-content">
       <ul className="doc-list">
         <li>
           ⚠️ <strong>Minimize ad hoc refreshes:</strong> Excessive requests can overload bank websites, causing account lockouts or action from the bank.
@@ -60,49 +54,47 @@ When integrating with the Basiq API, there are some best practices that play a c
         </li>
       </ul>
     </div>
-  </Tab>
-</Tabs>
+  </Card>
+</Cards>
 
 <style jsx>
   {`
-          .doc-section {
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-          }
+    .doc-cards {
+      gap: 20px;
+    }
 
-          .doc-highlight {
-            font-size: 1.1em;
-            color: #333;
-            background: #eef7fe;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-          }
+    .doc-card-content {
+      font-size: 1em;
+      color: #555;
+      line-height: 1.5;
+      padding: 10px;
+    }
 
-          .doc-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-          }
+    .doc-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
 
-          .doc-list li {
-            font-size: 1em;
-            color: #555;
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-          }
+    .doc-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
 
-          .doc-list li:last-child {
-            border-bottom: none;
-          }
+    .doc-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0073e6;
+      font-size: 1.2em;
+      line-height: 1.2;
+    }
 
-          .doc-list strong {
-            color: #0073e6;
-          }
-        `}
+    .fa-key, .fa-cogs, .fa-sync {
+      color: #0073e6;
+    }
+  `}
 </style>
 
 ### *Use the smart cache instead*
