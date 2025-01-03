@@ -91,9 +91,3 @@ You can use the connectors endpoint to fetch the current status and stage of eac
 ## *Error logging*
 
 When logging any errors you encounter in production, it is important that you include the `userId`, `connectionId`, and `jobId`. Having a record of these when you reach out to our support team means that we are able to better investigate and help you debug.
-
-<Cards columns={1}>
-  <Card title="Data Storage Best Practices" icon="fa-database">
-    Partners must have a data storage system to securely store the necessary information for use. API calls should only be made when required, such as to obtain updated information. Note that Basiq is not an information storage service.
-  </Card>
-</Cards>
