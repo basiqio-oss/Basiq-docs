@@ -104,17 +104,3 @@ We’re excited to have you on board and look forward to supporting your journey
     </button>
   </div>
 </div>
-
-<br />
-
-&#x20;     \<marquee>
-&#x20;       \<p>
-&#x20;         You can track any changes in the framework by subscribing to the apps framework changelog&#x20;
-&#x20;         \<a href="https\://developer.monday.com/apps/changelog.rss" target="\_blank">RSS feed\</a> using your application of choice&#x20;
-&#x20;         (\<a href="https\://slack.com/help/articles/218688467-Add-RSS-feeds-to-Slack" target="\_blank" rel="\_nofollow">Slack\</a>,&#x20;
-&#x20;         \<a href="https\://support.microsoft.com/en-us/office/subscribe-to-an-rss-feed-73c6e717-7815-4594-98e5-81fa369e951c" target="\_blank" rel="\_nofollow">Outlook\</a>,&#x20;
-&#x20;         \<a href="https\://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp?hl=en" target="\_blank" rel="\_nofollow">Chrome extension\</a>, etc.).&#x20;
-&#x20;         \<br>
-&#x20;         Looking for updates to the API instead? Check out our \<a href="https\://developer.monday.com/api-reference/changelog" target="\_blank">API changelog\</a>.
-&#x20;       \</p>
-&#x20;     \</marquee>
