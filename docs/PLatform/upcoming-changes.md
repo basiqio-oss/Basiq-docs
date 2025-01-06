@@ -10,147 +10,86 @@ metadata:
 next:
   description: ''
 ---
-> 🚧 All changes listed in this page are actively being implemented and are subject to change
+# Manage Consent Integration Guide for Partners
 
-# New Events & Webhooks (May/June 2024)
+## What is Manage Consent?
 
-We are introducing new events and webhooks that will allow better usage of the Basiq platform these are:
+<Accordion title="What is Manage Consent?" icon="fa-info-circle">
+  The **Manage Consent** feature allows users to view and manage their consent preferences for data sharing with your platform. Users can check which institutions are connected, delete connections, or revoke consent entirely. This is a vital feature for compliance with the
+  [Consumer Data Right (CDR)](https://www.accc.gov.au/business/consumer-data-right/cdr-rules#Consent-Management).
+</Accordion>
 
-* Transactions updated: This event will be triggered whenever there are transaction changes for a user connection. 
-* Account updated: This event will be triggered whenever there are changes on the account fields excluding balance changes (there will be future events addressing balance changes)
-* Connection invalidated: This event will be triggered whenever a connection has been invalidated due to a reason that the user can action. (e.g. password changed, MFA...etc)
+## Consent Policy Configuration
 
-## Transactions updated event
+<Tabs>
+  <Tab title="Data Collection">
+    The data you wish to collect from the user (e.g., account details, transaction history). Partners need to define exactly what data they are seeking permission to access.
+  </Tab>
 
-```json transactions.updated
-{
-    "type": "event",
-    "id": "dbe633fd76d4eaea0c759e7b0a6fe7c9bc62087787d080b28400014cd4b3a998",
-    "createdDate": "2024-04-29T11:48:20Z",
-    "entity": "transactions",
-    "eventType": "updated",
-    "userId": "1e25009f-f208-47ea-8843-399cde5abbf2",
-    "dataRef": "https://au-api.basiq.io/users/1e25009f-f208-47ea-8843-399cde5abbf2/transactions",
-    "data": {
-        "connection": {
-            "id": "ee01356a-6ecb-4929-9c2d-87b961bb46d2",
-            "links": {
-                "self": "https://au-api.basiq.io/users/1e25009f-f208-47ea-8843-399cde5abbf2/connections/ee01356a-6ecb-4929-9c2d-87b961bb46d2"
-            },
-            "type": "connection"
-        },
-        "count": "13",
-        "links": {
-            "self": "https://au-api.basiq.io/users/1e25009f-f208-47ea-8843-399cde5abbf2/transactions?filter=connection.id.eq('ee01356a-6ecb-4929-9c2d-87b961bb46d2')"
-        },
-        "type": "transactions"
-    },
-    "links": {
-        "self": "https://au-api.basiq.io/events/dbe633fd76d4eaea0c759e7b0a6fe7c9bc62087787d080b28400014cd4b3a998"
-    }
-}
-```
+  <Tab title="Data Retention">
+    Defines how long user-consented data is stored. Data will be deleted after consent expiration or revocation, but partners may need to retain de-identified data based on legal obligations. [More about data retention in CDR](https://www.accc.gov.au/business/consumer-data-right/cdr-rules#Data-Retention-and-Disclosure).
+  </Tab>
 
-## Connection invalidated event
+  <Tab title="Data Usage">
+    Describes how the user's data will be used (e.g., for analytics, product enhancement, etc.). Be sure to clarify the intent behind data usage in the consent policy.
+  </Tab>
 
-```json connection.invalidated
-{
-    "type": "event",
-    "id": "1f4e1b561a4e4ea96a3b1f9a624552ec0be3af5f9c7beddd22111103afe030e8",
-    "createdDate": "2024-04-29T11:07:28Z",
-    "entity": "connection",
-    "eventType": "invalidated",
-    "userId": "feca3fe4-2036-4763-9459-6aaa28791021",
-    "dataRef": "https://au-api.basiq.io/users/feca3fe4-2036-4763-9459-6aaa28791021/connections/4133413b-5225-472a-a142-1d90f0b6839e",
-    "data": {
-      "createdDate": "2024-04-29T10:52:07Z",
-      "id": "4133413b-5225-472a-a142-1d90f0b6839e",
-      "institution": {
-        "id": "AU04301",
-        "links": {
-          "self": "https://au-api.basiq.io/institutions/AU04301"
-        },
-        "type": "institution"
-      },
-      "lastUsed": "2024-04-29T10:52:08Z",
-      "links": {
-        "accounts": "https://au-api.basiq.io/users/feca3fe4-2036-4763-9459-6aaa28791021/accounts?filter=institution.id.eq('AU04301')",
-        "self": "https://au-api.basiq.io/users/feca3fe4-2036-4763-9459-6aaa28791021/connections/4133413b-5225-472a-a142-1d90f0b6839e",
-        "transactions": "https://au-api.basiq.io/users/feca3fe4-2036-4763-9459-6aaa28791021/transactions?filter=institution.id.eq('AU04301')"
-      },
-      "mfaEnabled": false,
-      "status": "invalid-connection",
-      "type": "connection"
-    },
-    "links": {
-      "self": "https://au-api.basiq.io/events/1f4e1b561a4e4ea96a3b1f9a624552ec0be3af5f9c7beddd22111103afe030e8"
-    }
-  },
-```
+  <Tab title="Data Sharing">
+    Lists any third parties that the data will be shared with (e.g., affiliates, analytics companies). Full transparency about this is required under the CDR rules.
+  </Tab>
+</Tabs>
 
-## Account updated event
+## How the Consent UI Works
 
-```json account.updated
-{
-      "type": "event",
-      "id": "61723",
-      "createdDate": "2019-07-29T07:34:09Z",
-      "entity": "account",
-      "eventType": "updated",
-      "userId": "266f5849-6ef6-4aae-accf-386470d0598e",
-      "dataRef": "https://au-api.basiq.io/users/266f5849-6ef6-4aae-accf-386470d0598e/accounts/79fed86e-076c-47cc-9e72-def206caf5cc",
-      "data": {
-        "id": "79fed86e-076c-47cc-9e72-def206caf5cc",
-        "type": "account",
-        "accountNo": "923100088204661",
-        "creationDate": "2016-05-13",
-        "accountHolder": "Drazen Cuca",
-        "availableFunds": "1.00",
-        "currency": "AUD",
-        "class": {
-          "type": "savings",
-          "product": "SAVINGS MAXIMISER"
-        },
-        "status": "available",
-        "transactionIntervals": [
-          {
-            "from": "2022-08-24",
-            "to": "2024-03-27"
-          }
-        ],
-        "connection": {
-          "id": "667af773-e673-48a1-a34d-fd6306d5f1b9",
-          "type": "connection",
-          "links": {
-            "self": "https://au-api.basiq.io/users/266f5849-6ef6-4aae-accf-386470d0598e/connections/667af773-e673-48a1-a34d-fd6306d5f1b9"
-          }
-        },
-        "links": {
-          "self": "https://au-api.basiq.io/users/266f5849-6ef6-4aae-accf-386470d0598e/accounts/79fed86e-076c-47cc-9e72-def206caf5cc"
-        }
-      },
-      "links": {
-        "self": "https://au-api.basiq.io/events/61723"
-      }
-    }
-  ],
-  "links": {
-    "self": "https://au-api.basiq.io/link/a3dgf4567a89"
-  }
-}
-```
+<Accordion title="Overview of Consent UI" icon="fa-info-circle">
+  The **Consent UI** is a user interface that dynamically renders consent policies based on the configuration you define for your platform. It ensures a streamlined user experience for both Open Banking and traditional data collection methods.
+</Accordion>
 
-## Webhooks
+<Accordion title="Features of Consent UI" icon="fa-cogs">
+  <ul>
+    <li><strong>User-friendly Interface:</strong> The UI provides an easy-to-use interface for consumers to manage their consents.</li>
+    <li><strong>Dynamic Switching:</strong> Compatible with both Open Banking and traditional data collection methods.</li>
+  </ul>
+</Accordion>
 
-<br />
+## Implementing the Manage Consent Flow
 
-```json webhook transactions.updated
-{
-  "eventId": "dbe633fd76d4eaea0c759e7b0a6fe7c9bc62087787d080b28400014cd4b3a998",
-  "eventTypeId": "transactions.updated",
-  "links": {
-    "event": "https://au-api.basiq.io/events/1f4e1b561a4e4ea96a3b1f9a624552ec0be3af5f9c7beddd22111103afe030e8",
-    "eventEntity": "https://au-api.basiq.io/users/1e25009f-f208-47ea-8843-399cde5abbf2/transactions?filter=connection.id.eq('ee01356a-6ecb-4929-9c2d-87b961bb46d2')"
-  }
-}
-```
+<Columns layout="auto">
+  <Column>
+    <h5>Redirect URL Format</h5>
+    <p>To implement the "Manage Consent" functionality, use the following URL format:</p>
+
+    <pre>
+      window\.location = `https://consent.basiq.io/home?token={{client_token_bound_to_userId}}&action=manage`;
+    </pre>
+
+    <p>Replace <code>client\_token\_bound\_to\_userId</code> with the actual client token bound to the user's ID.</p>
+  </Column>
+</Columns>
+
+## Data Disclosure
+
+<Accordion title="Data Disclosure" icon="fa-warning">
+  If your application retains any form of user data (e.g., de-identified data) or creates copies of the data, it is necessary to include a detailed <strong>Data Disclosure</strong> section in your consent management policy. This section must inform users on how the data is collected, held, used, and disclosed.
+  For further guidance, please refer to the [CDR Data Disclosure requirements](https://www.accc.gov.au/business/consumer-data-right/cdr-rules#Data-Disclosure).
+</Accordion>
+
+## Additional Resources
+
+<Cards columns={4}>
+  <Card title="Learn More about CDR Rules" href="https://www.accc.gov.au/business/consumer-data-right/cdr-rules" icon="fa-book" target="_blank">
+    Read through the full Consumer Data Right rules to understand compliance.
+  </Card>
+
+  <Card title="Open Banking Overview" href="https://www.openbanking.org.uk/" icon="fa-bank" target="_blank">
+    An overview of Open Banking principles and implementation in the UK.
+  </Card>
+
+  <Card title="Best Practices" icon="fa-check-circle">
+    Learn about best practices for managing data and user consent.
+  </Card>
+
+  <Card title="Consent UI Details" href="https://www.basiq.io/docs" icon="fa-cogs">
+    Dive deeper into the Basiq Consent UI and its integration.
+  </Card>
+</Cards>
