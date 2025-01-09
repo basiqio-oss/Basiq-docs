@@ -3,115 +3,97 @@ title: '# Consent Management Policy Template'
 fullscreen: false
 hidden: true
 ---
-## Your Rights and Data Privacy
+<Accordion title="Consent Management Portal" icon="fa-info-circle">
+  The Consent Management Portal (CMP) provides users with the ability to:
 
-We are committed to ensuring that you remain in control of your personal data. Transparency and security are at the heart of our practices.
+  * **View Consent Details**: Review expiry dates, connected institutions, and consent status.
+  * **Manage Connections**: Delete specific connections or revoke consent entirely.
+  * **Submit Requests**: Contact support for data-related actions, including withdrawal or deletion.
 
-## Trust and Security First
+  Use the URL format:\
+  `https://[YOUR_DOMAIN]/consent?action=manage`\
+  to integrate the CMP into your system.
+</Accordion>
 
-Our mission is to provide services that empower you while respecting your data privacy. To achieve this, we operate under stringent privacy standards to ensure your data is handled securely and responsibly.
+<Cards columns={2}>
+  <Card title="Key Features" icon="fa-list-alt">
+    **View Consent**: Display user consent details and allow updates or deletions.\
+    **Support Options**: Provide an email or contact form for data-related queries.
+  </Card>
 
-### Key Principles
+  <Card title="Implementation Steps" icon="fa-code">
+    1. Add CMP link to your dashboard.
+    2. Use `action=manage` for user access to the CMP.
+    3. Include demo functionality to showcase features.
+  </Card>
+</Cards>
 
-* We never request your **online banking passwords** or sensitive account details.
-* Your data is **only used with your explicit consent** and is never shared without your approval.
-* Consent can be withdrawn at any time, and data can be deleted upon request.
+<Accordion title="Data Retention and De-identification" icon="fa-database">
+  Partners should implement a toggle to manage data retention:
 
-***
+  * **Toggle ON**: Partners store the data; Basiq deletes user data.
+  * **Toggle OFF**: Partners delete the data; Basiq also deletes user data.
 
-## Accredited Data Management
+  This ensures compliance and aligns with redundancy rules.
+</Accordion>
 
-We comply with \[relevant privacy frameworks, e.g., GDPR/CDR] to safeguard your data.
+<Columns layout="auto">
+  <Column>
+    **Scenario**:\
+    A user wants to review consent and delete redundant data.\
+    **Process**:
 
-### What This Means for You
+    1. Access CMP via `action=manage`.
+    2. Revoke consent for an institution.
+    3. Request data deletion.
+  </Column>
 
-* **More control** over how your data is shared and used.
-* The ability to **manage and revoke consent** at any time.
-* The right to request corrections or deletions of personal data.
+  <Column>
+    **Types of Data**:
 
-***
+    * Personal Information (Name, Contact)
+    * Financial Data (Transactions)\
+      **Usage Examples**:
+    * Displaying carbon footprints.
+    * Providing personalized recommendations.
+  </Column>
+</Columns>
 
-## Data We May Use
+<Tabs>
+  <Tab title="What is an ADR?">
+    **Accredited Data Recipient (ADR)**:\
+    Entities that handle CDR data per privacy safeguards.
 
-You have full control over what data you share with us. Below is an overview of the types of data we may request with your consent:
+    * **User Benefits**:
+      * Control data sharing.
+      * Withdraw consent anytime.
+      * Request data deletion.
+  </Tab>
 
-### Personal Information
+  <Tab title="Secure Data Practices">
+    * Store data in Australia (e.g., Microsoft Azure).
+    * Encrypt data in transit and at rest.
+    * Share data only with user consent.
+  </Tab>
 
-* Name
-* Contact details (address, email, phone number)
-* Occupation
+  <Tab title="Deletion and De-identification">
+    **Deletion**:
 
-### Financial Information
+    * Fully erase data from systems.
+    * Remove redundant data unless required by law.\
+      **De-identification**:
+    * Remove identifiable attributes.
+    * Use for aggregated analytics and fraud detection.
+  </Tab>
+</Tabs>
 
-* Linked account details
-* Transaction data (e.g., purchases, direct debits)
+<Accordion title="Transparency and User Control" icon="fa-lightbulb">
+  Partners should ensure transparency by:
 
-***
+  * Explaining data collection and usage.
+  * Disclosing third-party sharing (e.g., Basiq, Experian).
+  * Allowing users to submit requests easily.
 
-## How Your Data is Used
-
-Your data is used exclusively to provide personalized solutions and enhance our services. Examples include:
-
-* Generating insights to improve your experience.
-* Delivering personalized recommendations or analytics.
-* Communicating service updates or responding to queries.
-
-### Data Analysis and Reporting
-
-We may use **de-identified and aggregated data** for reporting and analytics purposes. This ensures your identity remains confidential while enabling us to improve our services.
-
-***
-
-## Data Security Practices
-
-We ensure your data is stored securely using encryption technologies, both **in transit and at rest**. Our systems are regularly audited to maintain compliance with industry standards.
-
-### Secure Storage
-
-* Data is stored on \[list service provider, e.g., AWS or Microsoft Azure].
-* All backups are encrypted.
-
-***
-
-## Managing Your Consent
-
-We provide you with tools to manage your consent, including:
-
-1. **Accessing Your Data**\
-   View the data we hold about you anytime via our dashboard or by contacting us.
-
-2. **Correcting Your Data**\
-   Request corrections to inaccurate or outdated information.
-
-3. **Withdrawing Consent**\
-   You can revoke your consent at any time. Upon withdrawal, we will delete your data (or de-identify it if required by law).
-
-4. **Requesting Deletion**\
-   Submit a deletion request, and we will remove redundant data, except where legally required to retain it.
-
-***
-
-## Making a Complaint
-
-We strive for excellence but acknowledge that issues may arise. If you have concerns about our data practices, please let us know.
-
-### Complaint Resolution Process
-
-1. Submit your complaint via our contact details.
-2. We will acknowledge receipt within **2 business days**.
-3. A full response will be provided within **14 days**, or we will inform you of any delays.
-
-If unresolved, you can escalate your concerns to \[local authority details, e.g., the Office of the Information Commissioner or a Financial Complaints Authority].
-
-***
-
-## Contact Us
-
-For questions, requests, or complaints, reach out to:
-
-**\[Your Organization Name]**\
-\[Address]
-Email: \[Contact Email]
-Phone: \[Contact Phone]
-
-*Last updated: \[Insert Date]*
+  **Contact Details**:\
+  Provide a support email for additional assistance.
+</Accordion>
