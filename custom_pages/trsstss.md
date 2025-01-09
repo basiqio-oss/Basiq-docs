@@ -1,7 +1,7 @@
 ---
 title: trsstss
 fullscreen: false
-hidden: false
+hidden: true
 ---
 import React from 'react';
 
