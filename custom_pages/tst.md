@@ -1,10 +1,8 @@
 ---
-title: tst
+title: '# Consent Management Policy Template'
 fullscreen: false
 hidden: true
 ---
-# Consent Management Policy Template
-
 ## Your Rights and Data Privacy
 
 We are committed to ensuring that you remain in control of your personal data. Transparency and security are at the heart of our practices.
@@ -112,8 +110,8 @@ If unresolved, you can escalate your concerns to \[local authority details, e.g.
 For questions, requests, or complaints, reach out to:
 
 **\[Your Organization Name]**\
-\[Address]\
-Email: \[Contact Email]\
+\[Address]
+Email: \[Contact Email]
 Phone: \[Contact Phone]
 
 *Last updated: \[Insert Date]*
