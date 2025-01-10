@@ -3,97 +3,98 @@ title: '# Consent Management Policy Template'
 fullscreen: false
 hidden: true
 ---
-<Accordion title="Consent Management Portal" icon="fa-info-circle">
-  The Consent Management Portal (CMP) provides users with the ability to:
+This document explains how partners can integrate and present a Consent Management Portal on their websites, ensuring compliance with the Consumer Data Right (CDR) requirements. This guide includes details on managing user consents, data retention policies, data deletion, and de-identification.
 
-  * **View Consent Details**: Review expiry dates, connected institutions, and consent status.
-  * **Manage Connections**: Delete specific connections or revoke consent entirely.
-  * **Submit Requests**: Contact support for data-related actions, including withdrawal or deletion.
+## Introduction to the Consumer Data Right (CDR)
 
-  Use the URL format:\
-  `https://[YOUR_DOMAIN]/consent?action=manage`\
-  to integrate the CMP into your system.
-</Accordion>
+The Consumer Data Right (CDR) regulates the collection and handling of CDR data in line with privacy safeguards and rules that:
 
-<Cards columns={2}>
-  <Card title="Key Features" icon="fa-list-alt">
-    **View Consent**: Display user consent details and allow updates or deletions.\
-    **Support Options**: Provide an email or contact form for data-related queries.
-  </Card>
+* Ensure your data is managed securely.
+* Provide you with control over how your data is shared and used.
 
-  <Card title="Implementation Steps" icon="fa-code">
-    1. Add CMP link to your dashboard.
-    2. Use `action=manage` for user access to the CMP.
-    3. Include demo functionality to showcase features.
-  </Card>
-</Cards>
+## Key User Benefits
 
-<Accordion title="Data Retention and De-identification" icon="fa-database">
-  Partners should implement a toggle to manage data retention:
+* **Choice and Control**: Users decide what data to share, how it’s used, and who can access it.
+* **Manage Consent**: Users can view, modify, or revoke their consents at any time.
+* **Data Deletion Requests**: Users can request deletion or de-identification of their personal data.
 
-  * **Toggle ON**: Partners store the data; Basiq deletes user data.
-  * **Toggle OFF**: Partners delete the data; Basiq also deletes user data.
+# Features of the Consent Management Portal
 
-  This ensures compliance and aligns with redundancy rules.
-</Accordion>
+## What is an Accredited Data Recipient (ADR)?
 
-<Columns layout="auto">
-  <Column>
-    **Scenario**:\
-    A user wants to review consent and delete redundant data.\
-    **Process**:
+An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs must comply with strict rules, including:
 
-    1. Access CMP via `action=manage`.
-    2. Revoke consent for an institution.
-    3. Request data deletion.
-  </Column>
+* Transparent disclosure of how data is used.
+* Secure storage and transfer of consumer data.
+* Privacy safeguards ensuring data is only used as consented by the user.
 
-  <Column>
-    **Types of Data**:
+## Types of Data Collected
 
-    * Personal Information (Name, Contact)
-    * Financial Data (Transactions)\
-      **Usage Examples**:
-    * Displaying carbon footprints.
-    * Providing personalized recommendations.
-  </Column>
-</Columns>
+With user consent, ADRs may collect:
 
-<Tabs>
-  <Tab title="What is an ADR?">
-    **Accredited Data Recipient (ADR)**:\
-    Entities that handle CDR data per privacy safeguards.
+1. **Personal Information**:
+   1. Full Name
+   2. Contact Details (address, email, phone number)
+   3. Occupation
+2. **Transaction Data**:
+   1. Details about purchases or payments.
+   2. Associated metadata (merchant, category).
+3. **De-Identified Data**:
+   1. Data stripped of personally identifiable information for analytics and reporting.
 
-    * **User Benefits**:
-      * Control data sharing.
-      * Withdraw consent anytime.
-      * Request data deletion.
-  </Tab>
+## How Data is Used
 
-  <Tab title="Secure Data Practices">
-    * Store data in Australia (e.g., Microsoft Azure).
-    * Encrypt data in transit and at rest.
-    * Share data only with user consent.
-  </Tab>
+With user consent, data is used for:
 
-  <Tab title="Deletion and De-identification">
-    **Deletion**:
+Here’s how we collect, hold, use and disclose data >>>
 
-    * Fully erase data from systems.
-    * Remove redundant data unless required by law.\
-      **De-identification**:
-    * Remove identifiable attributes.
-    * Use for aggregated analytics and fraud detection.
-  </Tab>
-</Tabs>
+<br />
 
-<Accordion title="Transparency and User Control" icon="fa-lightbulb">
-  Partners should ensure transparency by:
+<br />
 
-  * Explaining data collection and usage.
-  * Disclosing third-party sharing (e.g., Basiq, Experian).
-  * Allowing users to submit requests easily.
+## Data Security
 
-  **Contact Details**:\
-  Provide a support email for additional assistance.
-</Accordion>
+* All data is encrypted during transit and storage.
+* Data is stored within secure, audited environments in Australia.
+* Partners use trusted third-party services (e.g., AWS or Azure) for secure data handling.
+
+## Consent Management
+
+To support the proper management of user consent in compliance with the Consumer Data Right (CDR) regulations, partners have two main options for implementing consent management:
+
+### 1. Using the Basiq Dashboard for Consent Management
+
+Basiq provides a built-in dashboard where users and partners can manage consent details efficiently. This method enables two ways of handling consent revocation:
+
+#### A. Partner Revoking Consent on Behalf of Users:
+
+* **How it works**: Partners can access the Basiq dashboard and revoke consent on behalf of users. This is useful when users are unable or unwilling to manage their consents directly but need assistance from the partner.
+* **Steps**:
+  * The partner logs into the Basiq dashboard.
+  * Navigate to the "**Users**" section.
+  * Locate the user whose consent needs to be revoked.
+  * Click to revoke consent and follow the prompts to complete the action.
+
+#### B. User Revoking Consent Directly:
+
+* **How it works**: Partners can send a URL to the user from the Basiq dashboard, directing them to the consent management interface where they can revoke their consent independently.
+* **Steps**:
+  * The partner generates a URL link from the Basiq dashboard.
+  * The partner sends the URL to the user (via email or other communication methods).
+  * The user clicks the link and is directed to the Basiq consent management portal.
+  * The user reviews their consents and decides to revoke consent for specific data or institutions.
+  * This method gives users more direct control over their consent settings and enables partners to support users in a seamless way.
+
+### 2. Using the action=manage Parameter for Consent Management
+
+The second method for consent management involves redirecting users to the Consent Management Portal via the `action=manage` parameter. This method allows users to view, manage, and revoke their consents via a specific URL.
+
+#### How it Works:
+
+* **action=manage**: This is the URL parameter that directs users to the Consent Management Portal (CMP), where they can view and manage their consents.
+
+**Demo**:
+
+<HTMLBlock>{`
+<div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>  
+`}</HTMLBlock>
