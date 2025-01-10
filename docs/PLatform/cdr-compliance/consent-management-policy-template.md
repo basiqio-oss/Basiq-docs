@@ -5,6 +5,15 @@ hidden: true
 metadata:
   robots: index
 ---
+This document explains how partners can integrate and present a Consent Management Portal on their websites, ensuring compliance with the Consumer Data Right (CDR) requirements. This guide includes details on managing user consents, data retention policies, data deletion, and de-identification.
+
+## Introduction to the Consumer Data Right (CDR)
+
+The Consumer Data Right (CDR) regulates the collection and handling of CDR data in line with privacy safeguards and rules that:
+
+* Ensure your data is managed securely.
+* Provide you with control over how your data is shared and used.
+
 <Cards style={{ marginTop: '20px' }}>
   <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
     <p style={{ fontSize: '16px', color: '#003366' }}>
@@ -91,9 +100,9 @@ To support the proper management of user consent in compliance with the Consumer
       </p>
 
       <HTMLBlock>{`
-                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                    <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                                                                                  </div>
+                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                                                                                                              </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
