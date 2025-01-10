@@ -90,19 +90,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                    <iframe
-                                                                                                                                                      src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
-                                                                                                                                                      title="Partners Revoking Consent"
-                                                                                                                                                      frameborder="0"
-                                                                                                                                                      loading="lazy"
-                                                                                                                                                      webkitallowfullscreen
-                                                                                                                                                      mozallowfullscreen
-                                                                                                                                                      allowfullscreen
-                                                                                                                                                      allow="clipboard-write"
-                                                                                                                                                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                                                                                                                                                    />
-                                                                                                                                                  </div>
+                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                <iframe
+                                                                                                                                                                  src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
+                                                                                                                                                                  title="Partners Revoking Consent"
+                                                                                                                                                                  frameborder="0"
+                                                                                                                                                                  loading="lazy"
+                                                                                                                                                                  webkitallowfullscreen
+                                                                                                                                                                  mozallowfullscreen
+                                                                                                                                                                  allowfullscreen
+                                                                                                                                                                  allow="clipboard-write"
+                                                                                                                                                                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                                                                                                                                                                />
+                                                                                                                                                              </div>
       `}</HTMLBlock>
     </Accordion>
 
@@ -118,19 +118,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                    <iframe
-                                                                                                                                                      src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
-                                                                                                                                                      title="User Revoking Consent"
-                                                                                                                                                      frameborder="0"
-                                                                                                                                                      loading="lazy"
-                                                                                                                                                      webkitallowfullscreen
-                                                                                                                                                      mozallowfullscreen
-                                                                                                                                                      allowfullscreen
-                                                                                                                                                      allow="clipboard-write"
-                                                                                                                                                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                                                                                                                                                    />
-                                                                                                                                                  </div>
+                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                <iframe
+                                                                                                                                                                  src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
+                                                                                                                                                                  title="User Revoking Consent"
+                                                                                                                                                                  frameborder="0"
+                                                                                                                                                                  loading="lazy"
+                                                                                                                                                                  webkitallowfullscreen
+                                                                                                                                                                  mozallowfullscreen
+                                                                                                                                                                  allowfullscreen
+                                                                                                                                                                  allow="clipboard-write"
+                                                                                                                                                                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                                                                                                                                                                />
+                                                                                                                                                              </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
@@ -149,19 +149,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                    <iframe
-                                                                                                                                                      src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
-                                                                                                                                                      title="Basiq | action=manage"
-                                                                                                                                                      frameborder="0"
-                                                                                                                                                      loading="lazy"
-                                                                                                                                                      webkitallowfullscreen
-                                                                                                                                                      mozallowfullscreen
-                                                                                                                                                      allowfullscreen
-                                                                                                                                                      allow="clipboard-write"
-                                                                                                                                                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                                                                                                                                                    />
-                                                                                                                                                  </div>
+                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                <iframe
+                                                                                                                                                                  src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
+                                                                                                                                                                  title="Basiq | action=manage"
+                                                                                                                                                                  frameborder="0"
+                                                                                                                                                                  loading="lazy"
+                                                                                                                                                                  webkitallowfullscreen
+                                                                                                                                                                  mozallowfullscreen
+                                                                                                                                                                  allowfullscreen
+                                                                                                                                                                  allow="clipboard-write"
+                                                                                                                                                                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                                                                                                                                                                />
+                                                                                                                                                              </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
@@ -262,15 +262,6 @@ Users can view and manage their existing consents, including expiry details and 
   <Accordion title="Retention Policy" icon="fa-clipboard-check" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
     <p>Partners are required to ensure that all user data is deleted from their systems when the retention toggle is turned OFF. Additionally, Basiq will ensure the complete deletion of user data upon request, in accordance with this policy. It is essential for partners to follow this protocol to maintain data privacy and compliance standards.</p>
   </Accordion>
-</Accordion>
-
-<Accordion title="User Rights" icon="fa-clipboard-check" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-  <p><strong>User Rights</strong></p>
-  <p>Users have the right to exercise the following actions regarding their data:</p>
-
-  <ul>
-    <li><strong>Data Deletion or De-identification:</strong> Users may request that their data be either fully deleted or de-identified, ensuring that personal details are removed and the data is anonymized.</li>
-  </ul>
 </Accordion>
 
 This document provides you with a starting point for understanding and implementing our data de-identification process. You are free to use and adapt this information as needed to align with your use cases. Our team is here to assist and will be happy to review and approve any modifications you make.
