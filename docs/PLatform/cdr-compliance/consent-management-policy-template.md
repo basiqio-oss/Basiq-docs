@@ -91,9 +91,9 @@ To support the proper management of user consent in compliance with the Consumer
       </p>
 
       <HTMLBlock>{`
-                                                                                      <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                        <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                                                                      </div>
+                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                    <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                                                                                                  </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
@@ -103,7 +103,7 @@ To support the proper management of user consent in compliance with the Consumer
   Users can view and manage their existing consents, including expiry details and connected institutions.
 </Accordion>
 
-<Cards columns={4}>
+<Cards columns={3}>
   <Card title="View Consent" href="/consent/view" icon="fa-eye">
     Review active consents and details.
   </Card>
@@ -114,10 +114,6 @@ To support the proper management of user consent in compliance with the Consumer
 
   <Card title="Support" href="/contact" icon="fa-envelope">
     Contact support for assistance.
-  </Card>
-
-  <Card title="Learn More" href="/info" icon="fa-book">
-    Understand how we use your data.
   </Card>
 </Cards>
 
