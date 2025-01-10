@@ -55,7 +55,7 @@ This document explains how partners can integrate and present a Consent Manageme
 </Accordion>
 
 <Tabs style={{ animation: 'fadeIn 3s ease-out' }}>
-  <Tab title="1. Using the Basiq Dashboard for Consent Management">
+  <Tab title="1. Basiq Dashboard for Consent Management">
     <Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
@@ -82,16 +82,16 @@ This document explains how partners can integrate and present a Consent Manageme
     </Accordion>
   </Tab>
 
-  <Tab title="2. Using the action=manage Parameter for Consent Management">
+  <Tab title="2. Using the action=manage Parameter">
     <Accordion title="How it Works" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         The `action=manage` parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
       </p>
 
       <HTMLBlock>{`
-              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-              </div>
+                          <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                            <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                          </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
