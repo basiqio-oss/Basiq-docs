@@ -1,5 +1,5 @@
 ---
-title: '# Consent Management Policy Template'
+title: Consent Management Policy Template
 deprecated: false
 hidden: true
 metadata:
