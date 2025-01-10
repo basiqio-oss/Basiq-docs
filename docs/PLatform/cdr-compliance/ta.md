@@ -95,235 +95,99 @@ You can use this token to initiate your consent UI and resume the operation. If 
 
 <br />
 
-\<Cards style=\{\{ marginTop: '20px' }}>
-&#x20; \<Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
-&#x20;   \<p style=\{\{ fontSize: '16px', color: '#003366' }}>
-&#x20;     An \*\*Accredited Data Recipient (ADR)\*\* is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
-&#x20;   \</p>
+<Cards style={{ marginTop: '20px' }}>
+  <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
+    <p style={{ fontSize: '16px', color: '#003366' }}>
+      An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
+    </p>
 
-&#x20;   \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-&#x20;     \<li>Adhere to transparent disclosure of data usage.\</li>
-&#x20;     \<li>Ensure secure storage and transfer of consumer data.\</li>
-&#x20;     \<li>Implement privacy safeguards for data sharing based on user consent.\</li>
-&#x20;   \</ul>
-&#x20; \</Card>
+    <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+      <li>Adhere to transparent disclosure of data usage.</li>
+      <li>Ensure secure storage and transfer of consumer data.</li>
+      <li>Implement privacy safeguards for data sharing based on user consent.</li>
+    </ul>
+  </Card>
 
-&#x20; \<Card title="Key User Benefits" icon="fa-check-circle" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 2s ease-out' }}>
-&#x20;   \<ul style=\{\{ fontSize: '16px', color: '#003366' }}>
-&#x20;     \<li>\<strong>Choice and Control:\</strong> Users decide what data to share, how it’s used, and who can access it.\</li>
-&#x20;     \<li>\<strong>Manage Consent:\</strong> Users can view, modify, or revoke their consents at any time.\</li>
-&#x20;     \<li>\<strong>Data Deletion Requests:\</strong> Users can request deletion or de-identification of their personal data.\</li>
-&#x20;   \</ul>
-&#x20; \</Card>
+  <Card title="Key User Benefits" icon="fa-check-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 2s ease-out' }}>
+    <ul style={{ fontSize: '16px', color: '#003366' }}>
+      <li><strong>Choice and Control:</strong> Users decide what data to share, how it’s used, and who can access it.</li>
+      <li><strong>Manage Consent:</strong> Users can view, modify, or revoke their consents at any time.</li>
+      <li><strong>Data Deletion Requests:</strong> Users can request deletion or de-identification of their personal data.</li>
+    </ul>
+  </Card>
 
-&#x20; \<Card title="How Data is Used" icon="fa-cogs" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
-&#x20;   \<div style=\{\{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
-&#x20;     Data collected under the CDR framework is used for various purposes, all based on user consent.
-&#x20;   \</div>
+  <Card title="How Data is Used" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
+    <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+      Data collected under the CDR framework is used for various purposes, all based on user consent.
+    </div>
 
-&#x20;   \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-&#x20;     \<li>\<strong>Personalized Solutions:\</strong> Tailoring recommendations based on user activities.\</li>
-&#x20;     \<li>\<strong>Operational Purposes:\</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.\</li>
-&#x20;     \<li>\<strong>Communication:\</strong> Sending updates, notifications, or support for services related to the user's preferences.\</li>
-&#x20;   \</ul>
-&#x20; \</Card>
-\</Cards>
+    <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+      <li><strong>Personalized Solutions:</strong> Tailoring recommendations based on user activities.</li>
+      <li><strong>Operational Purposes:</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.</li>
+      <li><strong>Communication:</strong> Sending updates, notifications, or support for services related to the user's preferences.</li>
+    </ul>
+  </Card>
+</Cards>
 
-\<Accordion title="Data Security" icon="fa-lock" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
-&#x20; \<div style=\{\{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
-&#x20;   It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
-&#x20; \</div>
+<Accordion title="Data Security" icon="fa-lock" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+  <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+    It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
+  </div>
 
-&#x20; \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-&#x20;   \<li>\<strong>Storage:\</strong> All data must be securely stored in Australia.\</li>
-&#x20;   \<li>\<strong>Encryption:\</strong> Encrypt all CDR data in transit and at rest.\</li>
-&#x20;   \<li>\<strong>Access Control:\</strong> Limit data access to authorized personnel only.\</li>
-&#x20;   \<li>\<strong>Audits:\</strong> Regular audits ensure compliance with data security practices.\</li>
-&#x20; \</ul>
-\</Accordion>
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li><strong>Storage:</strong> All data must be securely stored in Australia.</li>
+    <li><strong>Encryption:</strong> Encrypt all CDR data in transit and at rest.</li>
+    <li><strong>Access Control:</strong> Limit data access to authorized personnel only.</li>
+    <li><strong>Audits:</strong> Regular audits ensure compliance with data security practices.</li>
+  </ul>
+</Accordion>
 
-\<Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
-&#x20; \<p style=\{\{ fontSize: '16px', color: '#003366' }}>
-&#x20;   Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
-&#x20; \</p>
+<Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+  <p style={{ fontSize: '16px', color: '#003366' }}>
+    Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
+  </p>
 
-&#x20; \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-&#x20;   \<li>Log into the Basiq dashboard.\</li>
-&#x20;   \<li>Navigate to the "Users" section.\</li>
-&#x20;   \<li>Locate the user whose consent needs to be revoked.\</li>
-&#x20;   \<li>Click to revoke consent.\</li>
-&#x20; \</ul>
-\</Accordion>
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li>Log into the Basiq dashboard.</li>
+    <li>Navigate to the "Users" section.</li>
+    <li>Locate the user whose consent needs to be revoked.</li>
+    <li>Click to revoke consent.</li>
+  </ul>
+</Accordion>
 
-\<Accordion title="B. User Revoking Consent Directly" icon="fa-user" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 4s ease-out' }}>
-&#x20; \<p style=\{\{ fontSize: '16px', color: '#003366' }}>
-&#x20;   Partners can send a URL to the user from the Basiq dashboard, allowing them to revoke consent independently.
-&#x20; \</p>
+<Accordion title="B. User Revoking Consent Directly" icon="fa-user" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 4s ease-out' }}>
+  <p style={{ fontSize: '16px', color: '#003366' }}>
+    Partners can send a URL to the user from the Basiq dashboard, allowing them to revoke consent independently.
+  </p>
 
-&#x20; \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-&#x20;   \<li>Generate a URL link from the Basiq dashboard.\</li>
-&#x20;   \<li>Send the link to the user (via email or other methods).\</li>
-&#x20;   \<li>The user reviews their consents and revokes them.\</li>
-&#x20; \</ul>
-\</Accordion>
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li>Generate a URL link from the Basiq dashboard.</li>
+    <li>Send the link to the user (via email or other methods).</li>
+    <li>The user reviews their consents and revokes them.</li>
+  </ul>
+</Accordion>
 
-\<Accordion title="Data Retention and De-identification" icon="fa-cogs" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
-&#x20; \<Accordion title="Deletion Process" icon="fa-trash" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-&#x20;   Securely delete user data when consent is withdrawn. Inform third-party data processors to delete or de-identify shared data.
-&#x20; \</Accordion>
+<Accordion title="Data Retention and De-identification" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+  <Accordion title="Deletion Process" icon="fa-trash" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+    Securely delete user data when consent is withdrawn. Inform third-party data processors to delete or de-identify shared data.
+  </Accordion>
 
-&#x20; \<Accordion title="De-identification" icon="fa-paint-brush" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-&#x20;   Stripping identifiable information (e.g., user ID, timestamps), while retaining only aggregated, anonymized insights.
-&#x20; \</Accordion>
+  <Accordion title="De-identification" icon="fa-paint-brush" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+    Stripping identifiable information (e.g., user ID, timestamps), while retaining only aggregated, anonymized insights.
+  </Accordion>
 
-&#x20; \<Accordion title="Retention Policy" icon="fa-clipboard-check" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-&#x20;   Partners must delete data from their systems, ensuring Basiq deletes user data when the retention toggle is OFF.
-&#x20; \</Accordion>
-\</Accordion>
+  <Accordion title="Retention Policy" icon="fa-clipboard-check" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+    Partners must delete data from their systems, ensuring Basiq deletes user data when the retention toggle is OFF.
+  </Accordion>
+</Accordion>
 
-\<Accordion title="User Rights" icon="fa-user-shield" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
-&#x20; \<div style=\{\{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
-&#x20;   Users have the right to request:
-&#x20; \</div>
+<Accordion title="User Rights" icon="fa-user-shield" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+  <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+    Users have the right to request:
+  </div>
 
-&#x20; \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-&#x20;   \<li>Deletion or de-identification of their data.\</li>
-&#x20;   \<li>Export of their data in machine-readable format.\</li>
-&#x20; \</ul>
-\</Accordion>
-
-&#x20; \<style>
-&#x20;   /\* Dark Mode Styles \*/
-&#x20;   body \{
-&#x20;     background-color: #121212;
-&#x20;     color: #e0e0e0;
-&#x20;     font-family: Arial, sans-serif;
-&#x20;     margin: 0;
-&#x20;     padding: 0;
-&#x20;   }
-
-&#x20;   h1, h2, h3, p \{
-&#x20;     color: #e0e0e0;
-&#x20;   }
-
-&#x20;   /\* Cards styling \*/
-&#x20;   .card \{
-&#x20;     background-color: #1f1f1f;
-&#x20;     color: #e0e0e0;
-&#x20;     border-radius: 8px;
-&#x20;     padding: 20px;
-&#x20;     margin: 15px 0;
-&#x20;     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-&#x20;   }
-
-&#x20;   .card ul \{
-&#x20;     list-style-type: circle;
-&#x20;     padding-left: 20px;
-&#x20;   }
-
-&#x20;   .card a \{
-&#x20;     color: #64b5f6;
-&#x20;     text-decoration: none;
-&#x20;   }
-
-&#x20;   .card a:hover \{
-&#x20;     text-decoration: underline;
-&#x20;   }
-
-&#x20;   .card-title \{
-&#x20;     font-size: 18px;
-&#x20;     font-weight: bold;
-&#x20;     color: #64b5f6;
-&#x20;     margin-bottom: 15px;
-&#x20;   }
-
-&#x20;   .card-icon \{
-&#x20;     font-size: 20px;
-&#x20;     margin-right: 10px;
-&#x20;   }
-
-&#x20;   /\* Accordion Styles \*/
-&#x20;   .accordion \{
-&#x20;     background-color: #333333;
-&#x20;     color: #e0e0e0;
-&#x20;     border-radius: 8px;
-&#x20;     padding: 15px;
-&#x20;     margin-top: 20px;
-&#x20;     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-&#x20;   }
-
-&#x20;   .accordion-title \{
-&#x20;     font-size: 18px;
-&#x20;     font-weight: bold;
-&#x20;     color: #64b5f6;
-&#x20;     cursor: pointer;
-&#x20;   }
-
-&#x20;   .accordion-content \{
-&#x20;     padding-left: 20px;
-&#x20;     font-size: 16px;
-&#x20;     margin-top: 10px;
-&#x20;   }
-
-&#x20;   .accordion ul \{
-&#x20;     list-style-type: circle;
-&#x20;   }
-
-&#x20;   /\* Tabs \*/
-&#x20;   .tabs \{
-&#x20;     display: flex;
-&#x20;     justify-content: space-around;
-&#x20;     background-color: #333333;
-&#x20;     padding: 10px 0;
-&#x20;     border-radius: 8px;
-&#x20;   }
-
-&#x20;   .tab \{
-&#x20;     color: #e0e0e0;
-&#x20;     padding: 10px 15px;
-&#x20;     cursor: pointer;
-&#x20;     text-align: center;
-&#x20;     flex: 1;
-&#x20;   }
-
-&#x20;   .tab:hover \{
-&#x20;     background-color: #444444;
-&#x20;     border-radius: 8px;
-&#x20;   }
-
-&#x20;   .tab-content \{
-&#x20;     display: none;
-&#x20;     padding: 20px;
-&#x20;     background-color: #1f1f1f;
-&#x20;     border-radius: 8px;
-&#x20;     margin-top: 15px;
-&#x20;   }
-
-&#x20;   .tab-content.active \{
-&#x20;     display: block;
-&#x20;   }
-
-&#x20;   /\* Buttons \*/
-&#x20;   .btn \{
-&#x20;     background-color: #64b5f6;
-&#x20;     color: #121212;
-&#x20;     border: none;
-&#x20;     padding: 10px 15px;
-&#x20;     border-radius: 8px;
-&#x20;     cursor: pointer;
-&#x20;     text-decoration: none;
-&#x20;   }
-
-&#x20;   .btn:hover \{
-&#x20;     background-color: #2196f3;
-&#x20;   }
-
-&#x20;   /\* General Link Styling \*/
-&#x20;   a \{
-&#x20;     color: #64b5f6;
-&#x20;   }
-
-&#x20;   a:hover \{
-&#x20;     text-decoration: underline;
-&#x20;   }
-&#x20; \</style>
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li>Deletion or de-identification of their data.</li>
+    <li>Export of their data in machine-readable format.</li>
+  </ul>
+</Accordion>
