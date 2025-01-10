@@ -129,3 +129,28 @@ The second method for consent management involves redirecting users to the Conse
 </Cards>
 
 ### Data Retention and De-identification
+
+#### Deletion Process:
+
+* Securely delete user data when consent is withdrawn.
+* Inform third-party data processors to delete or de-identify shared data.
+
+#### De-identification:
+
+De-identified data should:
+
+* Be stripped of all identifiable information (e.g., user ID, timestamps).
+* Retain only aggregated, anonymised insights.
+
+#### Retention Policy:
+
+* Partner Responsibility: If the retention toggle is OFF, partners must delete the data from their systems while ensuring Basiq deletes user data.
+
+### User Rights
+
+Ensure your platform enables the following:
+
+* **Access to Data**: Users can request a copy of their data.
+* **Correction of Errors**: Users can correct inaccuracies.
+* **Control**: Allow users to manage consents and data sharing preferences.
+* **Deletion Requests**: Users can request permanent deletion of their data.
