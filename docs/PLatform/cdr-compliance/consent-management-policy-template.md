@@ -73,104 +73,103 @@ The Consumer Data Right (CDR) regulates the collection and handling of CDR data 
 
 To support the proper management of user consent in compliance with the Consumer Data Right (CDR) regulations, partners have two main options for implementing consent management:
 
-<Tabs style={{ animation: 'fadeIn 3s ease-out' }}>
-  <Tab title="1. Using the Basiq Dashboard">
-    <Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
-      <p style={{ fontSize: '16px', color: '#003366' }}>
-        Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
-      </p>
+\<Tabs style=\{\{ animation: 'fadeIn 3s ease-out' }}>
+&#x20; \<Tab title="1. Using the Basiq Dashboard">
+&#x20;   \<Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+&#x20;     \<p style=\{\{ fontSize: '16px', color: '#003366' }}>
+&#x20;       Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
+&#x20;     \</p>
 
-      <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-        <li>Log into the Basiq dashboard.</li>
-        <li>Navigate to the "Users" section.</li>
-        <li>Locate the user whose consent needs to be revoked.</li>
-        <li>Click to revoke consent.</li>
-      </ul>
+&#x20;     \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+&#x20;       \<li>Log into the Basiq dashboard.\</li>
+&#x20;       \<li>Navigate to the "Users" section.\</li>
+&#x20;       \<li>Locate the user whose consent needs to be revoked.\</li>
+&#x20;       \<li>Click to revoke consent.\</li>
+&#x20;     \</ul>
 
-      <HTMLBlock>{`
-                         <div style={{ position: 'relative', paddingBottom: 'calc(50.161117078410314% + 41px)', height: '0', width: '100%' }}>
-            <iframe
-              src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
-              title="Partners Revoking Consent"
-              frameBorder="0"
-              loading="lazy"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowFullScreen
-              allow="clipboard-write"
-              style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', colorScheme: 'light' }}
-            />
-          </div>                                                                                                                             <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-      `}</HTMLBlock>
-    </Accordion>
+&#x20;     \<div style=\{\{ position: 'relative', paddingBottom: 'calc(50.161117078410314% + 41px)', height: '0', width: '100%' }}>
+&#x20;                 \<iframe
+&#x20;                   src="https\://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed\&embed\_mobile=tab\&embed\_desktop=inline\&show\_copy\_link=true"
+&#x20;                   title="Partners Revoking Consent"
+&#x20;                   frameBorder="0"
+&#x20;                   loading="lazy"
+&#x20;                   webkitallowfullscreen
+&#x20;                   mozallowfullscreen
+&#x20;                   allowFullScreen
+&#x20;                   allow="clipboard-write"
+&#x20;                   style=\{\{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', colorScheme: 'light' }}
+&#x20;                 />
+&#x20;               \</div>                                                                                                                             \<div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
 
-    <Accordion title="B. User Revoking Consent Directly" icon="fa-user" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 4s ease-out' }}>
-      <p style={{ fontSize: '16px', color: '#003366' }}>
-        Partners can send a URL to the user from the Basiq dashboard, allowing them to revoke consent independently.
-      </p>
+&#x20;   \</Accordion>
 
-      <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-        <li>Generate a URL link from the Basiq dashboard.</li>
-        <li>Send the link to the user (via email or other methods).</li>
-        <li>The user reviews their consents and revokes them.</li>
-      </ul>
-    </Accordion>
-  </Tab>
+&#x20;   \<Accordion title="B. User Revoking Consent Directly" icon="fa-user" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 4s ease-out' }}>
+&#x20;     \<p style=\{\{ fontSize: '16px', color: '#003366' }}>
+&#x20;       Partners can send a URL to the user from the Basiq dashboard, allowing them to revoke consent independently.
+&#x20;     \</p>
 
-  <Tab title="2. Using the action=manage Parameter">
-    <Accordion title="How it Works" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
-      <p style={{ fontSize: '16px', color: '#003366' }}>
-        The action=manage parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
-      </p>
+&#x20;     \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+&#x20;       \<li>Generate a URL link from the Basiq dashboard.\</li>
+&#x20;       \<li>Send the link to the user (via email or other methods).\</li>
+&#x20;       \<li>The user reviews their consents and revokes them.\</li>
+&#x20;     \</ul>
+&#x20;   \</Accordion>
+&#x20; \</Tab>
 
-      <HTMLBlock>{`
-                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                    <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                                                                                                                                  </div>
-      `}</HTMLBlock>
-    </Accordion>
-  </Tab>
-</Tabs>
+&#x20; \<Tab title="2. Using the action=manage Parameter">
+&#x20;   \<Accordion title="How it Works" icon="fa-link" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+&#x20;     \<p style=\{\{ fontSize: '16px', color: '#003366' }}>
+&#x20;       The action=manage parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
+&#x20;     \</p>
 
-<Accordion title="Consent Management Details" icon="fa-info-circle">
-  Users can view and manage their existing consents, including expiry details and connected institutions.
-</Accordion>
+&#x20;     \<HTMLBlock>\{\`
+&#x20;                                                                                                                                                       \<div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+&#x20;                                                                                                                                                         \<iframe src="https\://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;">\</iframe>
+&#x20;                                                                                                                                                       \</div>
+&#x20;     \`}\</HTMLBlock>
+&#x20;   \</Accordion>
+&#x20; \</Tab>
+\</Tabs>
 
-<Cards columns={3}>
-  <Card title="View Consent" href="/consent/view" icon="fa-eye">
-    Review active consents and details.
-  </Card>
+\<Accordion title="Consent Management Details" icon="fa-info-circle">
+&#x20; Users can view and manage their existing consents, including expiry details and connected institutions.
+\</Accordion>
 
-  <Card title="Revoke Consent" href="/consent/manage" icon="fa-times-circle">
-    Revoke individual or all consents.
-  </Card>
+\<Cards columns=\{3}>
+&#x20; \<Card title="View Consent" href="/consent/view" icon="fa-eye">
+&#x20;   Review active consents and details.
+&#x20; \</Card>
 
-  <Card title="Support" href="/contact" icon="fa-envelope">
-    Contact support for assistance.
-  </Card>
-</Cards>
+&#x20; \<Card title="Revoke Consent" href="/consent/manage" icon="fa-times-circle">
+&#x20;   Revoke individual or all consents.
+&#x20; \</Card>
 
-<Accordion title="Data Retention and De-identification" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
-  <Accordion title="Deletion Process" icon="fa-trash" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-    Securely delete user data when consent is withdrawn. Inform third-party data processors to delete or de-identify shared data.
-  </Accordion>
+&#x20; \<Card title="Support" href="/contact" icon="fa-envelope">
+&#x20;   Contact support for assistance.
+&#x20; \</Card>
+\</Cards>
 
-  <Accordion title="De-identification" icon="fa-paint-brush" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-    Stripping identifiable information (e.g., user ID, timestamps), while retaining only aggregated, anonymized insights.
-  </Accordion>
+\<Accordion title="Data Retention and De-identification" icon="fa-cogs" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+&#x20; \<Accordion title="Deletion Process" icon="fa-trash" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+&#x20;   Securely delete user data when consent is withdrawn. Inform third-party data processors to delete or de-identify shared data.
+&#x20; \</Accordion>
 
-  <Accordion title="Retention Policy" icon="fa-clipboard-check" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-    Partners must delete data from their systems, ensuring Basiq deletes user data when the retention toggle is OFF.
-  </Accordion>
-</Accordion>
+&#x20; \<Accordion title="De-identification" icon="fa-paint-brush" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+&#x20;   Stripping identifiable information (e.g., user ID, timestamps), while retaining only aggregated, anonymized insights.
+&#x20; \</Accordion>
 
-<Accordion title="User Rights" icon="fa-user-shield" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
-  <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
-    Users have the right to request:
-  </div>
+&#x20; \<Accordion title="Retention Policy" icon="fa-clipboard-check" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+&#x20;   Partners must delete data from their systems, ensuring Basiq deletes user data when the retention toggle is OFF.
+&#x20; \</Accordion>
+\</Accordion>
 
-  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-    <li>Deletion or de-identification of their data.</li>
-    <li>Export of their data in machine-readable format.</li>
-  </ul>
-</Accordion>
+\<Accordion title="User Rights" icon="fa-user-shield" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+&#x20; \<div style=\{\{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+&#x20;   Users have the right to request:
+&#x20; \</div>
+
+&#x20; \<ul style=\{\{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+&#x20;   \<li>Deletion or de-identification of their data.\</li>
+&#x20;   \<li>Export of their data in machine-readable format.\</li>
+&#x20; \</ul>
+\</Accordion>
