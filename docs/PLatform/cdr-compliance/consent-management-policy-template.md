@@ -14,7 +14,7 @@ The Consumer Data Right (CDR) regulates the collection and handling of CDR data 
 * Ensure your data is managed securely.
 * Provide you with control over how your data is shared and used.
 
-<Cards style={{ marginTop: '20px' }}>
+<Cards columns={2} style={{ marginTop: '20px' }}>
   <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
     <p style={{ fontSize: '16px', color: '#003366' }}>
       An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
@@ -34,6 +34,10 @@ The Consumer Data Right (CDR) regulates the collection and handling of CDR data 
       <li><strong>Data Deletion Requests:</strong> Users can request deletion or de-identification of their personal data.</li>
     </ul>
   </Card>
+
+  <Cards />
+
+  <Cards columns={1} style={{ marginTop: '20px' }} />
 
   <Card title="How Data is Used" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
@@ -100,9 +104,9 @@ To support the proper management of user consent in compliance with the Consumer
       </p>
 
       <HTMLBlock>{`
-                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                                                                                              </div>
+                                                                                                                          <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                            <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                                                                                                                          </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
