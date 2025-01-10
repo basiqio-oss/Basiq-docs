@@ -1,7 +1,7 @@
 ---
 title: '# Consent Management Policy Template'
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
