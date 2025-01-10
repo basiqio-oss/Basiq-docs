@@ -52,10 +52,6 @@ hidden: true
 </Accordion>
 
 <Tabs>
-  <Tab title="Consent Management Overview">
-    To support proper management of user consent in compliance with the Consumer Data Right (CDR) regulations, partners have two main options for implementing consent management.
-  </Tab>
-
   <Tab title="1. Using the Basiq Dashboard for Consent Management">
     <Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog">
       Partners can access the Basiq dashboard and revoke consent on behalf of users when they are unable to do so themselves.
