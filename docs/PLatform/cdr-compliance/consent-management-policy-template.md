@@ -29,26 +29,33 @@ This document explains how partners can integrate and present a Consent Manageme
   </Card>
 
   <Card title="How Data is Used" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
-    <Accordion title="Personalized Solutions" icon="fa-heart" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
-      <p style={{ fontSize: '16px', color: '#003366' }}>
-        Tailoring recommendations and services based on user activities and preferences.
-      </p>
-    </Accordion>
+    <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+      Data collected under the CDR framework is used for various purposes, all based on user consent.
+    </div>
 
-    <Accordion title="Operational Purposes" icon="fa-shield-virus" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
-      <p style={{ fontSize: '16px', color: '#003366' }}>
-        Use data for fraud detection, prevention, and analytics based on aggregated insights.
-      </p>
-    </Accordion>
-
-    <Accordion title="Communication" icon="fa-envelope" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 4s ease-out' }}>
-      <p style={{ fontSize: '16px', color: '#003366' }}>
-        Sending relevant notifications, service updates, or alerts as part of customer service.
-      </p>
-    </Accordion>
+    <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+      <li><strong>Personalized Solutions:</strong> Tailoring recommendations based on user activities.</li>
+      <li><strong>Operational Purposes:</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.</li>
+      <li><strong>Communication:</strong> Sending updates, notifications, or support for services related to the user's preferences.</li>
+    </ul>
   </Card>
+</Cards>
 
-  <Card title="1. Using the Basiq Dashboard for Consent Management" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 4s ease-out' }}>
+<Accordion title="Data Security" icon="fa-lock" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+  <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+    It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
+  </div>
+
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li><strong>Storage:</strong> All data must be securely stored in Australia.</li>
+    <li><strong>Encryption:</strong> Encrypt all CDR data in transit and at rest.</li>
+    <li><strong>Access Control:</strong> Limit data access to authorized personnel only.</li>
+    <li><strong>Audits:</strong> Regular audits ensure compliance with data security practices.</li>
+  </ul>
+</Accordion>
+
+<Tabs style={{ animation: 'fadeIn 3s ease-out' }}>
+  <Tab title="1. Using the Basiq Dashboard for Consent Management">
     <Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
@@ -73,9 +80,9 @@ This document explains how partners can integrate and present a Consent Manageme
         <li>The user reviews their consents and revokes them.</li>
       </ul>
     </Accordion>
-  </Card>
+  </Tab>
 
-  <Card title="2. Using the action=manage Parameter for Consent Management" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 5s ease-out' }}>
+  <Tab title="2. Using the action=manage Parameter for Consent Management">
     <Accordion title="How it Works" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         The `action=manage` parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
@@ -87,8 +94,10 @@ This document explains how partners can integrate and present a Consent Manageme
               </div>
       `}</HTMLBlock>
     </Accordion>
-  </Card>
+  </Tab>
+</Tabs>
 
+<Cards style={{ marginTop: '20px' }}>
   <Card title="Consent Management Details" href="/consent/manage" icon="fa-info-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     Users can view and manage their existing consents, including expiry details and connected institutions.
   </Card>
@@ -100,29 +109,29 @@ This document explains how partners can integrate and present a Consent Manageme
   <Card title="Revoke Consent" href="/consent/manage" icon="fa-times-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 5s ease-out' }}>
     Revoke individual or all consents.
   </Card>
-
-  <Card title="Data Retention and De-identification" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 2s ease-out' }}>
-    <Accordion title="Deletion Process" icon="fa-trash" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-      Securely delete user data when consent is withdrawn. Inform third-party data processors to delete or de-identify shared data.
-    </Accordion>
-
-    <Accordion title="De-identification" icon="fa-paint-brush" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-      Stripping identifiable information (e.g., user ID, timestamps), while retaining only aggregated, anonymized insights.
-    </Accordion>
-
-    <Accordion title="Retention Policy" icon="fa-clipboard-check" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
-      Partners must delete data from their systems, ensuring Basiq deletes user data when the retention toggle is OFF.
-    </Accordion>
-  </Card>
-
-  <Card title="User Rights" icon="fa-user-shield" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
-    <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
-      Users have the right to request:
-    </div>
-
-    <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-      <li>Deletion or de-identification of their data.</li>
-      <li>Export of their data in machine-readable format.</li>
-    </ul>
-  </Card>
 </Cards>
+
+<Accordion title="Data Retention and De-identification" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+  <Accordion title="Deletion Process" icon="fa-trash" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+    Securely delete user data when consent is withdrawn. Inform third-party data processors to delete or de-identify shared data.
+  </Accordion>
+
+  <Accordion title="De-identification" icon="fa-paint-brush" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+    Stripping identifiable information (e.g., user ID, timestamps), while retaining only aggregated, anonymized insights.
+  </Accordion>
+
+  <Accordion title="Retention Policy" icon="fa-clipboard-check" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px' }}>
+    Partners must delete data from their systems, ensuring Basiq deletes user data when the retention toggle is OFF.
+  </Accordion>
+</Accordion>
+
+<Accordion title="User Rights" icon="fa-user-shield" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+  <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+    Users have the right to request:
+  </div>
+
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li>Deletion or de-identification of their data.</li>
+    <li>Export of their data in machine-readable format.</li>
+  </ul>
+</Accordion>
