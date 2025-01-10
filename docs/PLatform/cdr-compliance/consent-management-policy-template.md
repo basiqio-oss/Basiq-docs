@@ -87,15 +87,15 @@ metadata:
       </p>
 
       <HTMLBlock>{`
-                                      <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                        <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                      </div>
+                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                    <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                                                  </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
 </Tabs>
 
-<Cards style={{ marginTop: '20px' }}>
+<Cards columns={4} style={{ marginTop: '20px' }}>
   <Card title="Consent Management Details" href="/consent/manage" icon="fa-info-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     Users can view and manage their existing consents, including expiry details and connected institutions.
   </Card>
@@ -133,23 +133,3 @@ metadata:
     <li>Export of their data in machine-readable format.</li>
   </ul>
 </Accordion>
-
-<br />
-
-<br />
-
-<br />
-
-<Cards columns={4} style={{ marginTop: '20px' }}>
-  <Card title="Consent Management Details" href="/consent/manage" icon="fa-info-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
-    Users can view and manage their existing consents, including expiry details and connected institutions.
-  </Card>
-
-  <Card title="View Consent" href="/consent/view" icon="fa-eye" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 4s ease-out' }}>
-    Review active consents and details.
-  </Card>
-
-  <Card title="Revoke Consent" href="/consent/manage" icon="fa-times-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 5s ease-out' }}>
-    Revoke individual or all consents.
-  </Card>
-</Cards>
