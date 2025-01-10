@@ -7,18 +7,19 @@ metadata:
 ---
 This document explains how partners can integrate and present a Consent Management Portal on their websites, ensuring compliance with the Consumer Data Right (CDR) requirements. This guide includes details on managing user consents, data retention policies, data deletion, and de-identification.
 
-<Accordion title="Introduction to the Consumer Data Right (CDR)" icon="fa-info-circle" style={{ backgroundColor: '#f0f8ff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 1s ease-out' }}>
-  <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#003366' }}>
-    The Consumer Data Right (CDR) is designed to regulate the collection, handling, and sharing of consumer data under privacy safeguards. This framework empowers users with control over their personal data, ensuring secure management and sharing across various platforms.
-  </div>
-
-  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-    <li>Data is securely managed and controlled.</li>
-    <li>Users have full control over how their data is shared and used.</li>
-  </ul>
-</Accordion>
-
 <Cards columns={3} style={{ marginTop: '20px' }}>
+  <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
+    <p style={{ fontSize: '16px', color: '#003366' }}>
+      An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
+    </p>
+
+    <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+      <li>Adhere to transparent disclosure of data usage.</li>
+      <li>Ensure secure storage and transfer of consumer data.</li>
+      <li>Implement privacy safeguards for data sharing based on user consent.</li>
+    </ul>
+  </Card>
+
   <Card title="Key User Benefits" icon="fa-check-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 2s ease-out' }}>
     <ul style={{ fontSize: '16px', color: '#003366' }}>
       <li><strong>Choice and Control:</strong> Users decide what data to share, how it’s used, and who can access it.</li>
@@ -27,27 +28,15 @@ This document explains how partners can integrate and present a Consent Manageme
     </ul>
   </Card>
 
-  <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
-    <p style={{ fontSize: '16px', color: '#003366' }}>
-      An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely.
-    </p>
-
-    <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-      <li>Transparent disclosure of how data is used.</li>
-      <li>Secure storage and transfer of consumer data.</li>
-      <li>Privacy safeguards ensuring data is only used as consented by the user.</li>
-    </ul>
-  </Card>
-
-  <Card title="How Data is Used" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 4s ease-out' }}>
+  <Card title="How Data is Used" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
-      Here's how data can be used under the CDR framework:
+      Data collected under the CDR framework is used for various purposes, all based on user consent.
     </div>
 
     <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
-      <li><strong>Providing Personalised Solutions</strong>: Tailoring recommendations based on user activities.</li>
-      <li><strong>Operational Purposes</strong>: Fraud detection, prevention, and analytical reporting using de-identified data.</li>
-      <li><strong>Communication</strong>: Sending updates, notifications, or support for services.</li>
+      <li><strong>Personalized Solutions:</strong> Tailoring recommendations based on user activities.</li>
+      <li><strong>Operational Purposes:</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.</li>
+      <li><strong>Communication:</strong> Sending updates, notifications, or support for services related to the user's preferences.</li>
     </ul>
   </Card>
 </Cards>
@@ -100,9 +89,9 @@ This document explains how partners can integrate and present a Consent Manageme
       </p>
 
       <HTMLBlock>{`
-                                <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                  <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                </div>
+              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+              </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
