@@ -5,7 +5,7 @@ hidden: true
 metadata:
   robots: index
 ---
-<Cards style={{ marginTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+<Cards style={{ marginTop: '20px' }}>
   <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
     <p style={{ fontSize: '16px', color: '#003366' }}>
       An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
@@ -25,9 +25,7 @@ metadata:
       <li><strong>Data Deletion Requests:</strong> Users can request deletion or de-identification of their personal data.</li>
     </ul>
   </Card>
-</Cards>
 
-<Cards style={{ marginTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
   <Card title="How Data is Used" icon="fa-cogs" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
       Data collected under the CDR framework is used for various purposes, all based on user consent.
@@ -39,7 +37,65 @@ metadata:
       <li><strong>Communication:</strong> Sending updates, notifications, or support for services related to the user's preferences.</li>
     </ul>
   </Card>
+</Cards>
 
+<Accordion title="Data Security" icon="fa-lock" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+  <div style={{ fontSize: '16px', fontWeight: 'bold', color: '#003366' }}>
+    It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
+  </div>
+
+  <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+    <li><strong>Storage:</strong> All data must be securely stored in Australia.</li>
+    <li><strong>Encryption:</strong> Encrypt all CDR data in transit and at rest.</li>
+    <li><strong>Access Control:</strong> Limit data access to authorized personnel only.</li>
+    <li><strong>Audits:</strong> Regular audits ensure compliance with data security practices.</li>
+  </ul>
+</Accordion>
+
+<Tabs style={{ animation: 'fadeIn 3s ease-out' }}>
+  <Tab title="1. Using the Basiq Dashboard for Consent Management">
+    <Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+      <p style={{ fontSize: '16px', color: '#003366' }}>
+        Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
+      </p>
+
+      <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+        <li>Log into the Basiq dashboard.</li>
+        <li>Navigate to the "Users" section.</li>
+        <li>Locate the user whose consent needs to be revoked.</li>
+        <li>Click to revoke consent.</li>
+      </ul>
+    </Accordion>
+
+    <Accordion title="B. User Revoking Consent Directly" icon="fa-user" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 4s ease-out' }}>
+      <p style={{ fontSize: '16px', color: '#003366' }}>
+        Partners can send a URL to the user from the Basiq dashboard, allowing them to revoke consent independently.
+      </p>
+
+      <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+        <li>Generate a URL link from the Basiq dashboard.</li>
+        <li>Send the link to the user (via email or other methods).</li>
+        <li>The user reviews their consents and revokes them.</li>
+      </ul>
+    </Accordion>
+  </Tab>
+
+  <Tab title="2. Using the action=manage Parameter for Consent Management">
+    <Accordion title="How it Works" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+      <p style={{ fontSize: '16px', color: '#003366' }}>
+        The action=manage parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
+      </p>
+
+      <HTMLBlock>{`
+              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+              </div>
+      `}</HTMLBlock>
+    </Accordion>
+  </Tab>
+</Tabs>
+
+<Cards style={{ marginTop: '20px' }}>
   <Card title="Consent Management Details" href="/consent/manage" icon="fa-info-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     Users can view and manage their existing consents, including expiry details and connected institutions.
   </Card>
