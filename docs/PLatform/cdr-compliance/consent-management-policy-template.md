@@ -88,19 +88,19 @@ To support the proper management of user consent in compliance with the Consumer
       </ul>
 
       <HTMLBlock>{`
-                         <div style={{ position: 'relative', paddingBottom: 'calc(50.161117078410314% + 41px)', height: '0', width: '100%' }}>
-            <iframe
-              src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
-              title="Partners Revoking Consent"
-              frameBorder="0"
-              loading="lazy"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowFullScreen
-              allow="clipboard-write"
-              style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', colorScheme: 'light' }}
-            />
-          </div>                                                                                                                             <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                  <iframe
+                    src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+                    title="Partners Revoking Consent"
+                    frameborder="0"
+                    loading="lazy"
+                    webkitallowfullscreen
+                    mozallowfullscreen
+                    allowfullscreen
+                    allow="clipboard-write"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                  />
+                </div>
       `}</HTMLBlock>
     </Accordion>
 
@@ -124,9 +124,9 @@ To support the proper management of user consent in compliance with the Consumer
       </p>
 
       <HTMLBlock>{`
-                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                    <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                                                                                                                                  </div>
+                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                                                                                                                                                              </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
