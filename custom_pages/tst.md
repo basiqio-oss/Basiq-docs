@@ -44,19 +44,24 @@ With user consent, ADRs may collect:
 
 ## How Data is Used
 
-With user consent, data is used for:
+Your organization must transparently outline the use of CDR data. Below is an example framework:
 
-Here’s how we collect, hold, use and disclose data >>>
-
-<br />
-
-<br />
+* **Providing Personalised Solutions**:
+  * Tailoring recommendations based on user activities.
+* **Operational Purposes**:
+  * Fraud detection and prevention.
+  * Analytical reporting (using de-identified data).
+* **Communication**:
+  * Sending updates, notifications, or support for services.
 
 ## Data Security
 
-* All data is encrypted during transit and storage.
-* Data is stored within secure, audited environments in Australia.
-* Partners use trusted third-party services (e.g., AWS or Azure) for secure data handling.
+Ensure compliance with these practices:
+
+* **Storage**: All data must be stored securely in Australia.
+* **Encryption**: Encrypt all CDR data in transit and at rest.
+* **Access Control**: Limit data access to authorised personnel or systems.
+* **Audits**: Regularly audit data handling practices.
 
 ## Consent Management
 
@@ -98,3 +103,29 @@ The second method for consent management involves redirecting users to the Conse
 <HTMLBlock>{`
 <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>  
 `}</HTMLBlock>
+
+<br />
+
+<Accordion title="Consent Management Details" icon="fa-info-circle">
+  Users can view and manage their existing consents, including expiry details and connected institutions.
+</Accordion>
+
+<Cards columns={4}>
+  <Card title="View Consent" href="/consent/view" icon="fa-eye">
+    Review active consents and details.
+  </Card>
+
+  <Card title="Revoke Consent" href="/consent/manage" icon="fa-times-circle">
+    Revoke individual or all consents.
+  </Card>
+
+  <Card title="Support" href="/contact" icon="fa-envelope">
+    Contact support for assistance.
+  </Card>
+
+  <Card title="Learn More" href="/info" icon="fa-book">
+    Understand how we use your data.
+  </Card>
+</Cards>
+
+### Data Retention and De-identification
