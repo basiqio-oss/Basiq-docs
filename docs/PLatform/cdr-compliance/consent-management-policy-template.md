@@ -71,7 +71,9 @@ The Consumer Data Right (CDR) regulates the collection and handling of CDR data 
 
 ## Consent Management
 
-To support the proper management of user consent in compliance with the Consumer Data Right (CDR) regulations, partners have two main options for implementing consent management:
+To support the proper management of user consent in compliance with the Consumer Data Right (CDR) regulations, partners are required to provide at least two methods for users to manage their consents. These methods can be implemented in various ways to ensure flexibility and convenience for users.
+
+Partners have three main options for implementing consent management:
 
 <Tabs style={{ animation: 'fadeIn 3s ease-out' }}>
   <Tab title="1. Using the Basiq Dashboard">
@@ -88,19 +90,19 @@ To support the proper management of user consent in compliance with the Consumer
       </ul>
 
       <HTMLBlock>{`
-                            <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                              <iframe
-                                src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
-                                title="Partners Revoking Consent"
-                                frameborder="0"
-                                loading="lazy"
-                                webkitallowfullscreen
-                                mozallowfullscreen
-                                allowfullscreen
-                                allow="clipboard-write"
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                              />
-                            </div>
+              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                <iframe
+                  src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
+                  title="Partners Revoking Consent"
+                  frameborder="0"
+                  loading="lazy"
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                  allowfullscreen
+                  allow="clipboard-write"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                />
+              </div>
       `}</HTMLBlock>
     </Accordion>
 
@@ -116,19 +118,19 @@ To support the proper management of user consent in compliance with the Consumer
       </ul>
 
       <HTMLBlock>{`
-                <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                  <iframe
-                    src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
-                    title="Partners Revoking Consent"
-                    frameborder="0"
-                    loading="lazy"
-                    webkitallowfullscreen
-                    mozallowfullscreen
-                    allowfullscreen
-                    allow="clipboard-write"
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                  />
-                </div>
+              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                <iframe
+                  src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
+                  title="User Revoking Consent"
+                  frameborder="0"
+                  loading="lazy"
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                  allowfullscreen
+                  allow="clipboard-write"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                />
+              </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
@@ -137,13 +139,48 @@ To support the proper management of user consent in compliance with the Consumer
     <Accordion title="How it Works" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         The action=manage parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
+        Partners can:
       </p>
 
+      <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+        <li>Integrate the CMP view into their web or mobile application for a seamless user experience.</li>
+        <li>Provide a link from their app or website to the CMP.</li>
+        <li>Replicate certain consent management functionalities within their app and redirect users to Basiq for more advanced operations.</li>
+      </ul>
+
       <HTMLBlock>{`
-                                                                                                                                                                          <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                                            <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                                                                                                                                                                          </div>
+              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                <iframe
+                  src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
+                  title="Basiq | action=manage"
+                  frameborder="0"
+                  loading="lazy"
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                  allowfullscreen
+                  allow="clipboard-write"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                />
+              </div>
       `}</HTMLBlock>
+    </Accordion>
+  </Tab>
+
+  <Tab title="3. Alternative Methods to Access Consent Management">
+    <Accordion title="Additional Options" icon="fa-phone" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
+      <p style={{ fontSize: '16px', color: '#003366' }}>
+        Partners should also provide alternative ways for users to manage their consents, such as:
+      </p>
+
+      <ul style={{ color: '#003366', listStyleType: 'circle', paddingLeft: '20px' }}>
+        <li>Offering a support email for consent-related requests.</li>
+        <li>Providing a phone number for users to contact support.</li>
+        <li>Ensuring access to a publicly available resource (e.g., a webpage or downloadable PDF) explaining consent management policies and procedures.</li>
+      </ul>
+
+      <p style={{ fontSize: '16px', color: '#003366' }}>
+        Ensure your company policies align with the Consent Policy configured in the Basiq customizer. Refer to the official <a href="https://www.oaic.gov.au/consumer-data-right/consumer-data-right-guidance-for-business/privacy-obligations/consumer-consent,-authorisation-and-dashboards" target="_blank" style={{ color: '#003366' }}>ACCC/CDR rules</a> for further guidance.
+      </p>
     </Accordion>
   </Tab>
 </Tabs>
