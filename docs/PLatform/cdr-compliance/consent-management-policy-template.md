@@ -76,7 +76,7 @@ To support the proper management of user consent in compliance with the Consumer
 Partners have three main options for implementing consent management:
 
 <Tabs style={{ animation: 'fadeIn 3s ease-out' }}>
-  <Tab title="1. Using the Basiq Dashboard">
+  <Tab title="Basiq Dashboard">
     <Accordion title="A. Partner Revoking Consent on Behalf of Users" icon="fa-user-cog" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         Partners can access the Basiq dashboard and revoke consent on behalf of users when needed.
@@ -90,19 +90,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                <iframe
-                  src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
-                  title="Partners Revoking Consent"
-                  frameborder="0"
-                  loading="lazy"
-                  webkitallowfullscreen
-                  mozallowfullscreen
-                  allowfullscreen
-                  allow="clipboard-write"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                />
-              </div>
+                          <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                            <iframe
+                              src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
+                              title="Partners Revoking Consent"
+                              frameborder="0"
+                              loading="lazy"
+                              webkitallowfullscreen
+                              mozallowfullscreen
+                              allowfullscreen
+                              allow="clipboard-write"
+                              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                            />
+                          </div>
       `}</HTMLBlock>
     </Accordion>
 
@@ -118,24 +118,24 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                <iframe
-                  src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
-                  title="User Revoking Consent"
-                  frameborder="0"
-                  loading="lazy"
-                  webkitallowfullscreen
-                  mozallowfullscreen
-                  allowfullscreen
-                  allow="clipboard-write"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                />
-              </div>
+                          <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                            <iframe
+                              src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
+                              title="User Revoking Consent"
+                              frameborder="0"
+                              loading="lazy"
+                              webkitallowfullscreen
+                              mozallowfullscreen
+                              allowfullscreen
+                              allow="clipboard-write"
+                              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                            />
+                          </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
 
-  <Tab title="2. Using the action=manage Parameter">
+  <Tab title="action=manage Parameter">
     <Accordion title="How it Works" icon="fa-link" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         The action=manage parameter directs users to the Consent Management Portal (CMP), where they can manage and revoke their consents directly.
@@ -149,24 +149,24 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                <iframe
-                  src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
-                  title="Basiq | action=manage"
-                  frameborder="0"
-                  loading="lazy"
-                  webkitallowfullscreen
-                  mozallowfullscreen
-                  allowfullscreen
-                  allow="clipboard-write"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                />
-              </div>
+                          <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                            <iframe
+                              src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
+                              title="Basiq | action=manage"
+                              frameborder="0"
+                              loading="lazy"
+                              webkitallowfullscreen
+                              mozallowfullscreen
+                              allowfullscreen
+                              allow="clipboard-write"
+                              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                            />
+                          </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
 
-  <Tab title="3. Alternative Methods to Access Consent Management">
+  <Tab title="3. Alternative Methods">
     <Accordion title="Additional Options" icon="fa-phone" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 3s ease-out' }}>
       <p style={{ fontSize: '16px', color: '#003366' }}>
         Partners should also provide alternative ways for users to manage their consents, such as:
