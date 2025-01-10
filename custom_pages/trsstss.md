@@ -3,8 +3,6 @@ title: Consent Management Policy
 fullscreen: false
 hidden: true
 ---
-import { Accordion, Cards, Card, Tabs, Tab } from 'your-mdx-components-library'
-
 <Accordion title="Introduction to the Consumer Data Right (CDR)" icon="fa-info-circle" style={{ backgroundColor: '#f0f8ff', color: '#003366', borderRadius: '8px', padding: '15px', animation: 'fadeIn 1s ease-out' }}>
   <div style={{ fontSize: '18px', fontWeight: 'bold', color: '#003366' }}>
     The Consumer Data Right (CDR) is designed to regulate the collection, handling, and sharing of consumer data under privacy safeguards. This framework empowers users with control over their personal data, ensuring secure management and sharing across various platforms.
@@ -98,9 +96,9 @@ import { Accordion, Cards, Card, Tabs, Tab } from 'your-mdx-components-library'
       </p>
 
       <HTMLBlock>{`
-                    <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                      <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
-                    </div>
+                                <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                  <iframe src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe>
+                                </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
