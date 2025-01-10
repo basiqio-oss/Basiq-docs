@@ -7,7 +7,7 @@ metadata:
 ---
 This document explains how partners can integrate and present a Consent Management Portal on their websites, ensuring compliance with the Consumer Data Right (CDR) requirements. This guide includes details on managing user consents, data retention policies, data deletion, and de-identification.
 
-<Cards columns={3} style={{ marginTop: '20px' }}>
+<Cards style={{ marginTop: '20px' }}>
   <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
     <p style={{ fontSize: '16px', color: '#003366' }}>
       An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
@@ -97,7 +97,7 @@ This document explains how partners can integrate and present a Consent Manageme
   </Tab>
 </Tabs>
 
-<Cards columns={3} style={{ marginTop: '20px' }}>
+<Cards style={{ marginTop: '20px' }}>
   <Card title="Consent Management Details" href="/consent/manage" icon="fa-info-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
     Users can view and manage their existing consents, including expiry details and connected institutions.
   </Card>
