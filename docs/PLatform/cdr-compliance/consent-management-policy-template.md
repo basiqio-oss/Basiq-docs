@@ -14,86 +14,60 @@ The Consumer Data Right (CDR) regulates the collection and handling of CDR data 
 * Ensure your data is managed securely.
 * Provide you with control over how your data is shared and used.
 
-\<Cards columns=\{2} style=\{\{ marginTop: '20px' }}>
-&#x20; \<Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
-&#x20;   \<p>
-&#x20;     An \*\*Accredited Data Recipient (ADR)\*\* is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
-&#x20;   \</p>
+<Cards columns={2} style={{ marginTop: '20px' }}>
+  <Card title="What is an Accredited Data Recipient (ADR)?" icon="fa-shield-alt" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 1s ease-out' }}>
+    <p>
+      An **Accredited Data Recipient (ADR)** is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
+    </p>
 
-&#x20;   \<ul>
-&#x20;     \<li>Adhere to transparent disclosure of data usage.\</li>
-&#x20;     \<li>Ensure secure storage and transfer of consumer data.\</li>
-&#x20;     \<li>Implement privacy safeguards for data sharing based on user consent.\</li>
-&#x20;   \</ul>
-&#x20; \</Card>
+    <ul>
+      <li>Adhere to transparent disclosure of data usage.</li>
+      <li>Ensure secure storage and transfer of consumer data.</li>
+      <li>Implement privacy safeguards for data sharing based on user consent.</li>
+    </ul>
+  </Card>
 
-&#x20; \<Card title="Key User Benefits" icon="fa-check-circle" style=\{\{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 2s ease-out' }}>
-&#x20;   \<ul>
-&#x20;     \<li>\<strong>Choice and Control:\</strong> Users decide what data to share, how it’s used, and who can access it.\</li>
-&#x20;     \<li>\<strong>Manage Consent:\</strong> Users can view, modify, or revoke their consents at any time.\</li>
-&#x20;     \<li>\<strong>Data Deletion Requests:\</strong> Users can request deletion or de-identification of their personal data.\</li>
-&#x20;   \</ul>
-&#x20; \</Card>
+  <Card title="Key User Benefits" icon="fa-check-circle" style={{ backgroundColor: '#ffffff', color: '#003366', borderRadius: '8px', padding: '20px', animation: 'fadeIn 2s ease-out' }}>
+    <ul>
+      <li><strong>Choice and Control:</strong> Users decide what data to share, how it’s used, and who can access it.</li>
+      <li><strong>Manage Consent:</strong> Users can view, modify, or revoke their consents at any time.</li>
+      <li><strong>Data Deletion Requests:</strong> Users can request deletion or de-identification of their personal data.</li>
+    </ul>
+  </Card>
 
-&#x20; \<Cards />
+  <Cards />
 
-&#x20; \<Cards columns=\{2} style=\{\{ marginTop: '20px' }} />
+  <Cards columns={2} style={{ marginTop: '20px' }} />
 
-&#x20; \<Card title="How Data is Used" icon="fa-cogs" style=\{\{ borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
-&#x20;   \<div>
-&#x20;     Data collected under the CDR framework is used for various purposes, all based on user consent.
-&#x20;   \</div>
+  <Card title="How Data is Used" icon="fa-cogs" style={{ borderRadius: '8px', padding: '20px', animation: 'fadeIn 3s ease-out' }}>
+    <div>
+      Data collected under the CDR framework is used for various purposes, all based on user consent.
+    </div>
 
-&#x20;   \<ul>
-&#x20;     \<li>\<strong>Personalized Solutions:\</strong> Tailoring recommendations based on user activities.\</li>
-&#x20;     \<li>\<strong>Operational Purposes:\</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.\</li>
-&#x20;     \<li>\<strong>Communication:\</strong> Sending updates, notifications, or support for services related to the user's preferences.\</li>
-&#x20;   \</ul>
-&#x20; \</Card>
+    <ul>
+      <li><strong>Personalized Solutions:</strong> Tailoring recommendations based on user activities.</li>
+      <li><strong>Operational Purposes:</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.</li>
+      <li><strong>Communication:</strong> Sending updates, notifications, or support for services related to the user's preferences.</li>
+    </ul>
+  </Card>
 
-&#x20; \<Card title="" icon="fa-user">
-&#x20;   \<img src="https\://i0.wp.com/greener.com.au/wp-content/uploads/2023/06/CDR-2.png" />
-&#x20; \</Card>
-\</Cards>
+  <Card title="" icon="fa-user">
+    <img src="https://i0.wp.com/greener.com.au/wp-content/uploads/2023/06/CDR-2.png" />
+  </Card>
+</Cards>
 
-\<Accordion title="Data Security" icon="fa-lock" style=\{\{  borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
-&#x20; \<div>
-&#x20;   It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
-&#x20; \</div>
+<Accordion title="Data Security" icon="fa-lock" style={{  borderRadius: '8px', padding: '15px', animation: 'fadeIn 2s ease-out' }}>
+  <div>
+    It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
+  </div>
 
-&#x20; \<ul>
-&#x20;   \<li>\<strong>Storage:\</strong> All data must be securely stored in Australia.\</li>
-&#x20;   \<li>\<strong>Encryption:\</strong> Encrypt all CDR data in transit and at rest.\</li>
-&#x20;   \<li>\<strong>Access Control:\</strong> Limit data access to authorized personnel only.\</li>
-&#x20;   \<li>\<strong>Audits:\</strong> Regular audits ensure compliance with data security practices.\</li>
-&#x20; \</ul>
-\</Accordion>
-
-\<!-- Responsive CSS -->
-\<style>
-&#x20; @media screen and (max-width: 768px) \{
-&#x20;   .cards \{
-&#x20;     grid-template-columns: 1fr; /\* Stack cards vertically on mobile \*/
-&#x20;   }
-&#x20;   .card \{
-&#x20;     padding: 15px;
-&#x20;   }
-&#x20;   img \{
-&#x20;     width: 100%; /\* Make images responsive \*/
-&#x20;   }
-&#x20; }
-
-&#x20; /\* If needed for finer adjustments \*/
-&#x20; @media screen and (max-width: 480px) \{
-&#x20;   .card \{
-&#x20;     padding: 10px;
-&#x20;   }
-&#x20;   h3 \{
-&#x20;     font-size: 1.2rem; /\* Adjust heading font size \*/
-&#x20;   }
-&#x20; }
-\</style>
-
+  <ul>
+    <li><strong>Storage:</strong> All data must be securely stored in Australia.</li>
+    <li><strong>Encryption:</strong> Encrypt all CDR data in transit and at rest.</li>
+    <li><strong>Access Control:</strong> Limit data access to authorized personnel only.</li>
+    <li><strong>Audits:</strong> Regular audits ensure compliance with data security practices.</li>
+  </ul>
+</Accordion>
 
 ## Consent Management
 
@@ -116,19 +90,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-                                                                                                                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                                                                                                                                <iframe
-                                                                                                                                                                                                                                                                  src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
-                                                                                                                                                                                                                                                                  title="Partners Revoking Consent"
-                                                                                                                                                                                                                                                                  frameborder="0"
-                                                                                                                                                                                                                                                                  loading="lazy"
-                                                                                                                                                                                                                                                                  webkitallowfullscreen
-                                                                                                                                                                                                                                                                  mozallowfullscreen
-                                                                                                                                                                                                                                                                  allowfullscreen
-                                                                                                                                                                                                                                                                  allow="clipboard-write"
-                                                                                                                                                                                                                                                                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                                                                                                                                                                                                                                                                />
-                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                                                                                                    <iframe
+                                                                                                                                                                                                                                                      src="https://demo.arcade.software/xfi9ECT8ilSRYF2gzsHb?embed&embed_mobile=tab&embed_desktop=inline"
+                                                                                                                                                                                                                                                      title="Partners Revoking Consent"
+                                                                                                                                                                                                                                                      frameborder="0"
+                                                                                                                                                                                                                                                      loading="lazy"
+                                                                                                                                                                                                                                                      webkitallowfullscreen
+                                                                                                                                                                                                                                                      mozallowfullscreen
+                                                                                                                                                                                                                                                      allowfullscreen
+                                                                                                                                                                                                                                                      allow="clipboard-write"
+                                                                                                                                                                                                                                                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                                                                                                                                                                                                                                                    />
+                                                                                                                                                                                                                                                  </div>
       `}</HTMLBlock>
     </Accordion>
 
@@ -144,19 +118,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-                                                                                                                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                                                                                                                                <iframe
-                                                                                                                                                                                                                                                                  src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
-                                                                                                                                                                                                                                                                  title="User Revoking Consent"
-                                                                                                                                                                                                                                                                  frameborder="0"
-                                                                                                                                                                                                                                                                  loading="lazy"
-                                                                                                                                                                                                                                                                  webkitallowfullscreen
-                                                                                                                                                                                                                                                                  mozallowfullscreen
-                                                                                                                                                                                                                                                                  allowfullscreen
-                                                                                                                                                                                                                                                                  allow="clipboard-write"
-                                                                                                                                                                                                                                                                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                                                                                                                                                                                                                                                                />
-                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                                                                                                    <iframe
+                                                                                                                                                                                                                                                      src="https://demo.arcade.software/4SusPv6H3COu7a0MG3G2?embed&embed_mobile=tab&embed_desktop=inline"
+                                                                                                                                                                                                                                                      title="User Revoking Consent"
+                                                                                                                                                                                                                                                      frameborder="0"
+                                                                                                                                                                                                                                                      loading="lazy"
+                                                                                                                                                                                                                                                      webkitallowfullscreen
+                                                                                                                                                                                                                                                      mozallowfullscreen
+                                                                                                                                                                                                                                                      allowfullscreen
+                                                                                                                                                                                                                                                      allow="clipboard-write"
+                                                                                                                                                                                                                                                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                                                                                                                                                                                                                                                    />
+                                                                                                                                                                                                                                                  </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
@@ -175,19 +149,19 @@ Partners have three main options for implementing consent management:
       </ul>
 
       <HTMLBlock>{`
-                                                                                                                                                                                                                                                              <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
-                                                                                                                                                                                                                                                                <iframe
-                                                                                                                                                                                                                                                                  src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
-                                                                                                                                                                                                                                                                  title="Basiq | action=manage"
-                                                                                                                                                                                                                                                                  frameborder="0"
-                                                                                                                                                                                                                                                                  loading="lazy"
-                                                                                                                                                                                                                                                                  webkitallowfullscreen
-                                                                                                                                                                                                                                                                  mozallowfullscreen
-                                                                                                                                                                                                                                                                  allowfullscreen
-                                                                                                                                                                                                                                                                  allow="clipboard-write"
-                                                                                                                                                                                                                                                                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
-                                                                                                                                                                                                                                                                />
-                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                  <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;">
+                                                                                                                                                                                                                                                    <iframe
+                                                                                                                                                                                                                                                      src="https://demo.arcade.software/Wad1ic93gwfM3NQFdMJ3?embed"
+                                                                                                                                                                                                                                                      title="Basiq | action=manage"
+                                                                                                                                                                                                                                                      frameborder="0"
+                                                                                                                                                                                                                                                      loading="lazy"
+                                                                                                                                                                                                                                                      webkitallowfullscreen
+                                                                                                                                                                                                                                                      mozallowfullscreen
+                                                                                                                                                                                                                                                      allowfullscreen
+                                                                                                                                                                                                                                                      allow="clipboard-write"
+                                                                                                                                                                                                                                                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+                                                                                                                                                                                                                                                    />
+                                                                                                                                                                                                                                                  </div>
       `}</HTMLBlock>
     </Accordion>
   </Tab>
