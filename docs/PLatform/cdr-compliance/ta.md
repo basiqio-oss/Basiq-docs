@@ -95,140 +95,151 @@ You can use this token to initiate your consent UI and resume the operation. If 
 
 <br />
 
-<div>
-  <div
-    style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '20px',
-          marginTop: '20px',
-        }}
-  >
-    <div
-      title="What is an Accredited Data Recipient (ADR)?"
-      icon="fa-shield-alt"
-      style={{
-            backgroundColor: '#ffffff',
-            color: '#003366',
-            borderRadius: '8px',
-            padding: '20px',
-            animation: 'fadeIn 1s ease-out',
-          }}
-    >
-      <p>
-        An <strong>Accredited Data Recipient (ADR)</strong> is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
-      </p>
+import React from 'react';
 
-      <ul>
-        <li>Adhere to transparent disclosure of data usage.</li>
-        <li>Ensure secure storage and transfer of consumer data.</li>
-        <li>Implement privacy safeguards for data sharing based on user consent.</li>
-      </ul>
-    </div>
+const ResponsiveCardsAccordion = () => \{
+&#x20; return (
+&#x20;   \<div>
+&#x20;     \<div
+&#x20;       style=\{\{
+&#x20;         display: 'grid',
+&#x20;         gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+&#x20;         gap: '20px',
+&#x20;         marginTop: '20px',
+&#x20;       }}
+&#x20;     \>
+&#x20;       \{/\* Card 1 \*/}
+&#x20;       \<div
+&#x20;         title="What is an Accredited Data Recipient (ADR)?"
+&#x20;         icon="fa-shield-alt"
+&#x20;         style=\{\{
+&#x20;           backgroundColor: '#ffffff',
+&#x20;           color: '#003366',
+&#x20;           borderRadius: '8px',
+&#x20;           padding: '20px',
+&#x20;           animation: 'fadeIn 1s ease-out',
+&#x20;         }}
+&#x20;       \>
+&#x20;         \<p>
+&#x20;           An \<strong>Accredited Data Recipient (ADR)\</strong> is an organization approved under the CDR framework to receive and manage consumer data securely. ADRs are required to adhere to strict privacy and security rules, ensuring that the consumer's data is used only with their consent.
+&#x20;         \</p>
+&#x20;         \<ul>
+&#x20;           \<li>Adhere to transparent disclosure of data usage.\</li>
+&#x20;           \<li>Ensure secure storage and transfer of consumer data.\</li>
+&#x20;           \<li>Implement privacy safeguards for data sharing based on user consent.\</li>
+&#x20;         \</ul>
+&#x20;       \</div>
 
-    <div
-      title="Key User Benefits"
-      icon="fa-check-circle"
-      style={{
-            backgroundColor: '#ffffff',
-            color: '#003366',
-            borderRadius: '8px',
-            padding: '20px',
-            animation: 'fadeIn 2s ease-out',
-          }}
-    >
-      <ul>
-        <li><strong>Choice and Control:</strong> Users decide what data to share, how it’s used, and who can access it.</li>
-        <li><strong>Manage Consent:</strong> Users can view, modify, or revoke their consents at any time.</li>
-        <li><strong>Data Deletion Requests:</strong> Users can request deletion or de-identification of their personal data.</li>
-      </ul>
-    </div>
-  </div>
+&#x20;       \{/\* Card 2 \*/}
+&#x20;       \<div
+&#x20;         title="Key User Benefits"
+&#x20;         icon="fa-check-circle"
+&#x20;         style=\{\{
+&#x20;           backgroundColor: '#ffffff',
+&#x20;           color: '#003366',
+&#x20;           borderRadius: '8px',
+&#x20;           padding: '20px',
+&#x20;           animation: 'fadeIn 2s ease-out',
+&#x20;         }}
+&#x20;       \>
+&#x20;         \<ul>
+&#x20;           \<li>\<strong>Choice and Control:\</strong> Users decide what data to share, how it’s used, and who can access it.\</li>
+&#x20;           \<li>\<strong>Manage Consent:\</strong> Users can view, modify, or revoke their consents at any time.\</li>
+&#x20;           \<li>\<strong>Data Deletion Requests:\</strong> Users can request deletion or de-identification of their personal data.\</li>
+&#x20;         \</ul>
+&#x20;       \</div>
+&#x20;     \</div>
 
-  <div
-    style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '20px',
-          marginTop: '20px',
-        }}
-  >
-    <div
-      title="How Data is Used"
-      icon="fa-cogs"
-      style={{
-            borderRadius: '8px',
-            padding: '20px',
-            animation: 'fadeIn 3s ease-out',
-          }}
-    >
-      <div>
-        Data collected under the CDR framework is used for various purposes, all based on user consent.
-      </div>
+&#x20;     \{/\* Card 3 \*/}
+&#x20;     \<div
+&#x20;       style=\{\{
+&#x20;         display: 'grid',
+&#x20;         gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+&#x20;         gap: '20px',
+&#x20;         marginTop: '20px',
+&#x20;       }}
+&#x20;     \>
+&#x20;       \<div
+&#x20;         title="How Data is Used"
+&#x20;         icon="fa-cogs"
+&#x20;         style=\{\{
+&#x20;           borderRadius: '8px',
+&#x20;           padding: '20px',
+&#x20;           animation: 'fadeIn 3s ease-out',
+&#x20;         }}
+&#x20;       \>
+&#x20;         \<div>
+&#x20;           Data collected under the CDR framework is used for various purposes, all based on user consent.
+&#x20;         \</div>
+&#x20;         \<ul>
+&#x20;           \<li>\<strong>Personalized Solutions:\</strong> Tailoring recommendations based on user activities.\</li>
+&#x20;           \<li>\<strong>Operational Purposes:\</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.\</li>
+&#x20;           \<li>\<strong>Communication:\</strong> Sending updates, notifications, or support for services related to the user's preferences.\</li>
+&#x20;         \</ul>
+&#x20;       \</div>
 
-      <ul>
-        <li><strong>Personalized Solutions:</strong> Tailoring recommendations based on user activities.</li>
-        <li><strong>Operational Purposes:</strong> Detecting fraud, preventing abuse, and performing analytical reporting using de-identified data.</li>
-        <li><strong>Communication:</strong> Sending updates, notifications, or support for services related to the user's preferences.</li>
-      </ul>
-    </div>
+&#x20;       \{/\* Card with Image \*/}
+&#x20;       \<div title="" icon="fa-user">
+&#x20;         \<img
+&#x20;           src="https\://i0.wp.com/greener.com.au/wp-content/uploads/2023/06/CDR-2.png"
+&#x20;           alt="CDR Image"
+&#x20;           style=\{\{
+&#x20;             width: '100%',
+&#x20;             height: 'auto',
+&#x20;             borderRadius: '8px',
+&#x20;           }}
+&#x20;         />
+&#x20;       \</div>
+&#x20;     \</div>
 
-    <div title="" icon="fa-user">
-      <img
-        src="https://i0.wp.com/greener.com.au/wp-content/uploads/2023/06/CDR-2.png"
-        alt="CDR Image"
-        style={{
-              width: '100%',
-              height: 'auto',
-              borderRadius: '8px',
-            }}
-      />
-    </div>
-  </div>
+&#x20;     \{/\* Accordion \*/}
+&#x20;     \<div
+&#x20;       style=\{\{
+&#x20;         borderRadius: '8px',
+&#x20;         padding: '15px',
+&#x20;         animation: 'fadeIn 2s ease-out',
+&#x20;         marginTop: '20px',
+&#x20;       }}
+&#x20;     \>
+&#x20;       \<h3>Data Security\</h3>
+&#x20;       \<div>
+&#x20;         It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
+&#x20;       \</div>
+&#x20;       \<ul>
+&#x20;         \<li>\<strong>Storage:\</strong> All data must be securely stored in Australia.\</li>
+&#x20;         \<li>\<strong>Encryption:\</strong> Encrypt all CDR data in transit and at rest.\</li>
+&#x20;         \<li>\<strong>Access Control:\</strong> Limit data access to authorized personnel only.\</li>
+&#x20;         \<li>\<strong>Audits:\</strong> Regular audits ensure compliance with data security practices.\</li>
+&#x20;       \</ul>
+&#x20;     \</div>
 
-  <div
-    style={{
-          borderRadius: '8px',
-          padding: '15px',
-          animation: 'fadeIn 2s ease-out',
-        }}
-  >
-    <h3>Data Security</h3>
+&#x20;     \{/\* Styles for mobile responsiveness \*/}
+&#x20;     \<style>
+&#x20;       \{\`
+&#x20;         @media screen and (max-width: 768px) \{
+&#x20;           div \{
+&#x20;             grid-template-columns: 1fr; /\* Stack cards vertically on mobile \*/
+&#x20;           }
+&#x20;           div > div \{
+&#x20;             padding: 15px;
+&#x20;           }
+&#x20;           img \{
+&#x20;             width: 100%; /\* Make images responsive \*/
+&#x20;           }
+&#x20;         }
 
-    <div>
-      It’s important to ensure that data is securely managed, following strict protocols for storage, encryption, and access.
-    </div>
+&#x20;         @media screen and (max-width: 480px) \{
+&#x20;           div > div \{
+&#x20;             padding: 10px;
+&#x20;           }
+&#x20;           h3 \{
+&#x20;             font-size: 1.2rem; /\* Adjust heading font size \*/
+&#x20;           }
+&#x20;         }
+&#x20;       \`}
+&#x20;     \</style>
+&#x20;   \</div>
+&#x20; );
+};
 
-    <ul>
-      <li><strong>Storage:</strong> All data must be securely stored in Australia.</li>
-      <li><strong>Encryption:</strong> Encrypt all CDR data in transit and at rest.</li>
-      <li><strong>Access Control:</strong> Limit data access to authorized personnel only.</li>
-      <li><strong>Audits:</strong> Regular audits ensure compliance with data security practices.</li>
-    </ul>
-  </div>
-
-  <style>
-    {`
-              @media screen and (max-width: 768px) {
-                div {
-                  grid-template-columns: 1fr; /* Stack cards vertically on mobile */
-                }
-                div > div {
-                  padding: 15px;
-                }
-                img {
-                  width: 100%; /* Make images responsive */
-                }
-              }
-
-              @media screen and (max-width: 480px) {
-                div > div {
-                  padding: 10px;
-                }
-                h3 {
-                  font-size: 1.2rem; /* Adjust heading font size */
-                }
-              }
-            `}
-  </style>
-</div>
+\< ResponsiveCardsAccordion />
