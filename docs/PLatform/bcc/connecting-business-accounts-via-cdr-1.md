@@ -36,24 +36,32 @@ export const InstitutionList = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Number of items per page
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Fetch all institutions
     fetch(
       `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions(institutionData); // set all institutions
+        setInstitutions(institutionData); // Set all institutions
       })
-      .catch((error) => console.error("Error fetching data:", error))
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setError("Failed to load institutions. Please try again later.");
+      })
       .finally(() => setLoading(false));
-  }, []); // only fetch once on component mount
-
+  }, []); // Fetch only once on component mount
 
   const filteredInstitutions = institutions.filter((institution) =>
-    institution.shortName.toLowerCase().includes(searchQuery.toLowerCase())
+    institution.shortName?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredInstitutions.length / itemsPerPage);
@@ -75,6 +83,10 @@ export const InstitutionList = () => {
     return <div>Loading institutions...</div>;
   }
 
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   return (
     <div>
       <h1>Institutions</h1>
@@ -84,6 +96,7 @@ export const InstitutionList = () => {
         <strong>Total Institutions: {institutions.length}</strong>
       </div>
 
+      {/* Search Bar */}
       <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
         <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
           <input
@@ -95,7 +108,7 @@ export const InstitutionList = () => {
               setCurrentPage(1); // Reset to the first page on new search
             }}
             style={{
-              padding: "8px 8px 8px 32px", // Add padding for the icon
+              padding: "8px 8px 8px 32px",
               width: "100%",
               border: "1px solid #ccc",
               borderRadius: "4px",
@@ -117,6 +130,7 @@ export const InstitutionList = () => {
         </div>
       </div>
 
+      {/* Institutions Table */}
       <table
         border="1"
         cellPadding="8"
@@ -124,21 +138,25 @@ export const InstitutionList = () => {
         style={{
           width: "100%",
           textAlign: "left",
-          backgroundColor: isDarkTheme ? "#1e1e1e" : "#ffffff", // Table background color
-          color: isDarkTheme ? "#f5f5f5" : "#000000", // Default text color
           borderCollapse: "collapse",
         }}
       >
         <thead>
           <tr>
-            {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
+            {[
+              "Logo",
+              "Short Name",
+              "FAQ",
+              "CDR Policy",
+              "Email",
+              "CDR Provider Number",
+            ].map((header) => (
               <th
                 key={header}
                 style={{
-                  backgroundColor: isDarkTheme ? "#333333" : "#f2f2f2", // Header background color
-                  color: isDarkTheme ? "#ffffff" : "#000000", // Header text color
+                  backgroundColor: "#f2f2f2",
                   fontWeight: "bold",
-                  borderBottom: isDarkTheme ? "1px solid #555555" : "1px solid #cccccc",
+                  borderBottom: "1px solid #cccccc",
                   padding: "8px",
                 }}
               >
@@ -152,12 +170,11 @@ export const InstitutionList = () => {
             <tr
               key={index}
               style={{
-                backgroundColor: isDarkTheme && index % 2 === 0 ? "#2b2b2b" : isDarkTheme ? "#1e1e1e" : "#ffffff",
-                color: isDarkTheme ? "#f5f5f5" : "#000000",
+                backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#ffffff",
               }}
             >
               <td>
-                {institution.logo && institution.logo.links ? (
+                {institution.logo?.links?.square ? (
                   <img
                     src={institution.logo.links.square}
                     alt={`${institution.shortName} Logo`}
@@ -167,16 +184,13 @@ export const InstitutionList = () => {
                   "N/A"
                 )}
               </td>
-              <td>{institution.shortName}</td>
+              <td>{institution.shortName || "N/A"}</td>
               <td>
                 <a
                   href={institution.cdrFAQ}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    color: isDarkTheme ? "#1e90ff" : "#007bff",
-                    textDecoration: "none",
-                  }}
+                  style={{ color: "#007bff", textDecoration: "none" }}
                 >
                   FAQ
                 </a>
@@ -186,23 +200,28 @@ export const InstitutionList = () => {
                   href={institution.cdrPolicy}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    color: isDarkTheme ? "#1e90ff" : "#007bff",
-                    textDecoration: "none",
-                  }}
+                  style={{ color: "#007bff", textDecoration: "none" }}
                 >
                   CDR Policy
                 </a>
               </td>
               <td>{institution.cdrEmail || "N/A"}</td>
-              <td>{institution.cdrProviderNumber}</td>
+              <td>{institution.cdrProviderNumber || "N/A"}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
       {/* Pagination Controls */}
-      <div style={{ marginTop: "16px", display: "flex", justifyContent: "center", alignItems: "center", gap: "16px" }}>
+      <div
+        style={{
+          marginTop: "16px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "16px",
+        }}
+      >
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}
@@ -242,5 +261,3 @@ export const InstitutionList = () => {
 };
 
 <InstitutionList />
-
-<p />
