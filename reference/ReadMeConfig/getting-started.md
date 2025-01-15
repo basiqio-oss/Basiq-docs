@@ -6,7 +6,7 @@ api:
   operationId: postToken
 api_config: getting-started
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
