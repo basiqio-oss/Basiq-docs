@@ -284,7 +284,7 @@ However, it's important to note that the current setup does not include the iden
       </td>
 
       <td style={{ textAlign: "left" }}>
-        You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law.\\
+        You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law.
         We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq.
       </td>
     </tr>
