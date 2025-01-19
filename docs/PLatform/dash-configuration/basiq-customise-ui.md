@@ -42,7 +42,7 @@ Input fields within the ConsentUI inherit the 'accent' and 'inactive' color valu
 
 ## Glimpse
 
-This is how the customiser UI looks like, loaded with an editor on the right hand side. The details are below: 
+This is how the customiser UI looks like, loaded with an editor on the right hand side. The details are below:
 
 <HTMLBlock>{`
 <div style="position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/nd6vv0GcUDqCd5BPOGqu?embed" title="Basiq - Glimpse Customise UI" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
@@ -59,551 +59,6 @@ However, it's important to note that the current setup does not include the iden
 ## Customisable fields
 
 #### Consent Tab Settings
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Section
-      </th>
-
-      <th>
-        Feature
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Title and Subtitle
-      </td>
-
-      <td>
-        Brand name
-      </td>
-
-      <td>
-        Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Title
-      </td>
-
-      <td>
-        Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Subtitle
-      </td>
-
-      <td>
-        Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Purposes
-      </td>
-
-      <td>
-        [Your Purpose]
-      </td>
-
-      <td>
-        Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        [Permissions](doc:consent-scopes)
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-        Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Name and occupation
-      </td>
-
-      <td>
-        [Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Name, occupation, contact details
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Organisation profile
-      </td>
-
-      <td>
-        [Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Organisation profile and contact details
-      </td>
-
-      <td>
-        [Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Account name, type and balance
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Account balance and details
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Transaction details
-      </td>
-
-      <td>
-        [Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Data
-      </td>
-
-      <td>
-        Duration (days)
-      </td>
-
-      <td>
-        Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Data retrieval span (days)
-      </td>
-
-      <td>
-        Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Retain data by default
-      </td>
-
-      <td>
-        When enabled, the system will automatically retain the retrieved financial data for the set duration. This setting is essential for maintaining continuous data access for analysis without prompting users for re-consent.
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-#### Appearance Tab Settings
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Section
-      </th>
-
-      <th>
-        Feature
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Header Image
-      </td>
-
-      <td>
-        Image selection
-      </td>
-
-      <td>
-        Manage the upload and display of a custom header image for brand visibility. The recommended size for header image is 
-
-        **1372x256**
-
-        .
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Always display header image
-      </td>
-
-      <td>
-        Check this option to always display headers on all screens.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Font
-      </td>
-
-      <td>
-        Font
-      </td>
-
-      <td>
-        Select the font style that will be used throughout the UI, aiding in brand consistency. If you have a custom font, please contact Basiq to discuss its integration.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Primary color
-      </td>
-
-      <td>
-        Use this to change primary color. E.g # 130F26
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Secondary color
-      </td>
-
-      <td>
-        Use this to change secondary color. E.g # 130F26
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Inactive color
-      </td>
-
-      <td>
-        Use this to change inactive color. E.g # 7F888C
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Heading size (px)
-      </td>
-
-      <td>
-        Adjust the size of heading texts in pixels.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Paragraph size (px)
-      </td>
-
-      <td>
-        Adjust the size of paragraph texts in pixels.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Line height (px)
-      </td>
-
-      <td>
-        Adjust the height of lines in pixels for readability.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Buttons
-      </td>
-
-      <td>
-        Primary button
-      </td>
-
-      <td>
-        Customise text and background color, along with border radius for primary buttons.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Secondary button
-      </td>
-
-      <td>
-        Customise text and background color, along with border radius for secondary buttons.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Border radius (px)
-      </td>
-
-      <td>
-        Customise the border radius of your buttons.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Colors
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-        Control the UI's overall appearance, including background color and the colors used for messages indicating success, failure, or warnings.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Success
-      </td>
-
-      <td>
-        \# 4FC35A
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Warning
-      </td>
-
-      <td>
-        \# FABE34
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Failure
-      </td>
-
-      <td>
-        \# FE493F
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Background
-      </td>
-
-      <td>
-        \# FFFFFF
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Links
-      </td>
-
-      <td>
-        \# 0459A8
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Accreditation
-      </td>
-
-      <td>
-        \# 2784DA
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Wrapper
-      </td>
-
-      <td>
-        Desktop width (px)
-      </td>
-
-      <td>
-        Define the width of the desktop UI wrapper in pixels to ensure proper layout fitting.
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-#### Institution Tab Settings
-
-| Section             | Description                                                                                                                                                           |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Select all Checkbox | Facilitates the selection or deselection of all financial institutions in the list for ease of management.                                                            |
-| Institution List    | A list where you can select which financial institutions will be available for users to connect with, tailored to the services and regions your application supports. |
-
-#### Flow Tab Setting
 
 <Table align={["left","left","left"]}>
   <thead>
@@ -625,29 +80,15 @@ However, it's important to note that the current setup does not include the iden
   <tbody>
     <tr>
       <td style={{ textAlign: "left" }}>
-        Preferences
+        Title and Subtitle
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Skip success screen
+        Brand name
       </td>
 
       <td style={{ textAlign: "left" }}>
-        A toggle to bypass the confirmation screen after successful consent, offering a more streamlined experience for users. Useful for repeat users who are familiar with the process and do not require additional confirmation.
-      </td>
-    </tr>
-
-    <tr>
-      <td style={{ textAlign: "left" }}>
-
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        Allow multiple connections
-      </td>
-
-      <td style={{ textAlign: "left" }}>
-        Permits users to connect multiple bank accounts from different financial institutions, broadening the scope of data aggregation for a more comprehensive financial overview.
+        Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.
       </td>
     </tr>
 
@@ -657,29 +98,520 @@ However, it's important to note that the current setup does not include the iden
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Analytics (GTM)
+        Title
       </td>
 
       <td style={{ textAlign: "left" }}>
-        This field accepts a Google Tag Manager tracking code, which allows for the collection of analytics on how users interact with the consent UI, providing insights into user behaviour and potential areas for UI improvement.
+        Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
       </td>
     </tr>
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        External URLs
+
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Redirect URL
+        Subtitle
       </td>
 
       <td style={{ textAlign: "left" }}>
-        The web address users will be redirected to after the consent process is completed. This URL is critical for maintaining a seamless user journey through the consent procedure, whether granting or revoking consent.
+        Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Purposes
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Your Purpose]
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        [Permissions](doc:consent-scopes)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Name and occupation
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - unchecked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Name, occupation, contact details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Organisation profile
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - unchecked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Organisation profile and contact details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - unchecked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Account name, type and balance
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Account balance and details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Transaction details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Data
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Duration (days)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Data retrieval span (days)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Retain consumer data
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law.\\
+        We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq.
       </td>
     </tr>
   </tbody>
 </Table>
+
+#### Appearance Tab Settings
+
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Section
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        Feature
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Header Image
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Image selection
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Manage the upload and display of a custom header image for brand visibility. The recommended size for header image is
+
+        **1372x256**
+
+        .
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Always display header image
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Check this option to always display headers on all screens.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Font
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Font
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Select the font style that will be used throughout the UI, aiding in brand consistency. If you have a custom font, please contact Basiq to discuss its integration.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Primary color
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Use this to change primary color. E.g # 130F26
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Secondary color
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Use this to change secondary color. E.g # 130F26
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Inactive color
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Use this to change inactive color. E.g # 7F888C
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Heading size (px)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Adjust the size of heading texts in pixels.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Paragraph size (px)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Adjust the size of paragraph texts in pixels.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Line height (px)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Adjust the height of lines in pixels for readability.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Buttons
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Primary button
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Customise text and background color, along with border radius for primary buttons.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Secondary button
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Customise text and background color, along with border radius for secondary buttons.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Border radius (px)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Customise the border radius of your buttons.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Colors
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Control the UI's overall appearance, including background color and the colors used for messages indicating success, failure, or warnings.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Success
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \# 4FC35A
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Warning
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \# FABE34
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Failure
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \# FE493F
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Background
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \# FFFFFF
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Links
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \# 0459A8
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Accreditation
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \# 2784DA
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Wrapper
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Desktop width (px)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Define the width of the desktop UI wrapper in pixels to ensure proper layout fitting.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+#### Institution Tab Settings
+
+| Section             | Description                                                                                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Select all Checkbox | Facilitates the selection or deselection of all financial institutions in the list for ease of management.                                                            |
+| Institution List    | A list where you can select which financial institutions will be available for users to connect with, tailored to the services and regions your application supports. |
+
+#### Flow Tab Setting
+
+| Section       | Feature                    | Description                                                                                                                                                                                                                   |
+| :------------ | :------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Preferences   | Skip success screen        | A toggle to bypass the confirmation screen after successful consent, offering a more streamlined experience for users. Useful for repeat users who are familiar with the process and do not require additional confirmation.  |
+|               | Allow multiple connections | Permits users to connect multiple bank accounts from different financial institutions, broadening the scope of data aggregation for a more comprehensive financial overview.                                                  |
+|               | Analytics (GTM)            | This field accepts a Google Tag Manager tracking code, which allows for the collection of analytics on how users interact with the consent UI, providing insights into user behaviour and potential areas for UI improvement. |
+| External URLs | Redirect URL               | The web address users will be redirected to after the consent process is completed. This URL is critical for maintaining a seamless user journey through the consent procedure, whether granting or revoking consent.         |
 
 ## Preview Screens
 
