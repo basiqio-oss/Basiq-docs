@@ -51,23 +51,236 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
 #### Consent Tab Settings
 
-| Section                           | Feature                                  | Description                                                                                                                                                                                                                      |
-| :-------------------------------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Title and Subtitle                | Brand name                               | Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.                                        |
-|                                   | Title                                    | Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.                                                            |
-|                                   | Subtitle                                 | Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.                                                             |
-| Purposes                          | \[Your Purpose]                          | Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.                                                        |
-| [Permissions](doc:consent-scopes) |                                          | Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose. |
-|                                   | Name and occupation                      | \[Checkbox - unchecked]                                                                                                                                                                                                          |
-|                                   | Name, occupation, contact details        | \[Checkbox - checked]                                                                                                                                                                                                            |
-|                                   | Organisation profile                     | \[Checkbox - unchecked]                                                                                                                                                                                                          |
-|                                   | Organisation profile and contact details | \[Checkbox - unchecked]                                                                                                                                                                                                          |
-|                                   | Account name, type and balance           | \[Checkbox - checked]                                                                                                                                                                                                            |
-|                                   | Account balance and details              | \[Checkbox - checked]                                                                                                                                                                                                            |
-|                                   | Transaction details                      | \[Checkbox - checked]                                                                                                                                                                                                            |
-| Data                              | Duration (days)                          | Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.                                         |
-|                                   | Data retrieval span (days)               | Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.           |
-|                                   | Retain data by default                   | When enabled, the system will automatically retain the retrieved financial data for the set duration. This setting is essential for maintaining continuous data access for analysis without prompting users for re-consent.      |
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>
+        Section
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        Feature
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Title and Subtitle
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Brand name
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Title
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Subtitle
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Purposes
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Your Purpose]
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        [Permissions](doc:consent-scopes)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Name and occupation
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - unchecked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Name, occupation, contact details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Organisation profile
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - unchecked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Organisation profile and contact details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - unchecked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Account name, type and balance
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Account balance and details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Transaction details
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        \[Checkbox - checked]
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Data
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Duration (days)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Data retrieval span (days)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Retain consumer data
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law.
+        We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 #### Appearance Tab Settings
 
