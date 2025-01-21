@@ -1089,7 +1089,7 @@
                 "tags": [
                     "Reports"
                 ],
-                "description": "Use this endpoint to retrieve a specific report. Ensure you check the\ndocumentation for the schema of each report type.\n\n| Request Header | Description                                                             | \n|----------------|-----------------------------------------------------------------------------|\n| Accept         | Specifies the format of the response. Use `application/json` or `application/pdf` | \n\nIf you want to generate the PDF, make sure to change `accept`\nin the CURL request to `application/pdf` for PDF generation.\n",
+                "description": "Use this endpoint to retrieve a specific report. Ensure you check the\ndocumentation for the schema of each report type.\n\n| Request Header | Description                                                             | \n|----------------|-----------------------------------------------------------------------------|\n| Accept         | Specifies the format of the response. Use `application/pdf` | \n\nIf you want to generate the PDF, make sure to change `accept`\nin the CURL request to `application/pdf` for PDF generation.\n",
                 "parameters": [
                     {
                         "in": "path",
