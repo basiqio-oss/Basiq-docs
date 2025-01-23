@@ -2,8 +2,8 @@
 title: Authentication
 excerpt: Set up the welcome page for your API to help users make their first call.
 api:
-  file: core.json
-  operationId: postToken
+  file: data.json
+  operationId: purgeConnectionData
 api_config: authentication
 deprecated: false
 hidden: true
