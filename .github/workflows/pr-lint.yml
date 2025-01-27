@@ -8,7 +8,7 @@ on:
 jobs:
   pr-lint:
     name: PR Title Linting
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       # Validate PR title format
       - name: Lint PR Title
@@ -20,14 +20,14 @@ jobs:
 
   branch-naming-rules:
     name: Branch Naming Validation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: pr-lint
     steps:
       # Validate branch naming conventions
       - name: Lint Branch Naming
         uses: deepakputhraya/action-branch-name@master
         with:
-          regex: '^(DX|DSO|Bump).+'
+          regex: '^(DX|DSO|Bump|dependabot/.+|feature/.+|hotfix/.+|release/.+).+'
           ignore: master,main
           min_length: 2
           max_length: 100
@@ -62,10 +62,8 @@ jobs:
               warnings=1
             fi
           done
-
           # If warnings found, store it in an environment variable
           echo "warnings=$warnings" >> $GITHUB_ENV
-
       # Send Slack notification if warnings exist
       - name: Send Slack Notification if Warnings Exist
         if: env.warnings == '1'
