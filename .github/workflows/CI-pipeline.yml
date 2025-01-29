@@ -1,0 +1,63 @@
+name: Sync API Ref to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_tag:
+        description: "Input tag version to deploy"
+        required: true
+        default: ""
+  pull_request:
+    branches:
+      - v3.0
+    types:
+      - closed
+
+jobs:
+  DeployProd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Core 
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/core.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Data
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/data.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+     # Sync OpenAPI file to ReadMe
+      - name: Sync Enrich
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/enrich.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Affordability
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/affordability.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Identity
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/identity.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Reporting
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/reporting.json --key=${{ secrets.README_API_KEY }} --version=3.0          
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Webhooks
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/webhooks.json --key=${{ secrets.README_API_KEY }} --version=3.0             
