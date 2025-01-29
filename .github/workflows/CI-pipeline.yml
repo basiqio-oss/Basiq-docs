@@ -22,8 +22,43 @@ jobs:
         uses: actions/checkout@v4
 
       # Sync OpenAPI file to ReadMe
-      - name: Upload OpenAPI Spec to ReadMe
+      - name: Sync Core 
         uses: readmeio/rdme@v10
         with:
           rdme: openapi upload ./reference/core.json --key=${{ secrets.README_API_KEY }} --version=3.0
 
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Data
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/data.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+     # Sync OpenAPI file to ReadMe
+      - name: Sync Enrich
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/enrich.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Affordability
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/affordability.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Identity
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/identity.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Reporting
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/reporting.json --key=${{ secrets.README_API_KEY }} --version=3.0          
+
+      # Sync OpenAPI file to ReadMe
+      - name: Sync Webhooks
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/webhooks.json --key=${{ secrets.README_API_KEY }} --version=3.0             
