@@ -27,23 +27,3 @@ jobs:
         with:
           rdme: openapi upload ./reference/core.json --key=${{ secrets.README_API_KEY }} --version=3.0
 
-      - name: Send deployment notification to Slack
-        id: slack
-        uses: slackapi/slack-github-action@v2.0.0
-        with:
-          webhook-type: 'incoming-webhook'
-          payload: |
-            {
-              "text": "Deployment status: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Deployment status: ${{ job.status }}\nActor: ${{ github.actor }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DEPLOYMENT_WEBHOOK }}
