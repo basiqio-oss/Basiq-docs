@@ -1,0 +1,7 @@
+- createreport-1
+- listallreports-1
+- retrievereport-1
+- deletereport-1
+- retrievereporttransactions-1
+- listreporttypes-1
+- retrievespecificreporttype-1
