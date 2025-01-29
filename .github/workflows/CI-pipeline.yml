@@ -1,0 +1,49 @@
+name: Sync API Ref to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_tag:
+        description: "Input tag version to deploy"
+        required: true
+        default: ""
+  pull_request:
+    branches:
+      - v3.0
+    types:
+      - opened
+      - closed
+
+jobs:
+  DeployProd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      # Sync OpenAPI file to ReadMe
+      - name: Upload OpenAPI Spec to ReadMe
+        uses: readmeio/rdme@v10
+        with:
+          rdme: openapi upload ./reference/core.json --key=${{ secrets.README_API_KEY }} --version=3.0
+
+      - name: Send deployment notification to Slack
+        id: slack
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          webhook-type: 'incoming-webhook'
+          payload: |
+            {
+              "text": "Deployment status: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Deployment status: ${{ job.status }}\nActor: ${{ github.actor }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_DEPLOYMENT_WEBHOOK }}
