@@ -96,7 +96,10 @@ export const InstitutionList = () => {
       <style>
         {`
 
-
+					.dark-table-container { 
+          	width: 100%;
+            overflow-x: auto;
+          }
           .dark-table {
             width: 100%;
             text-align: left;
@@ -182,7 +185,7 @@ export const InstitutionList = () => {
           className="dark-search-input"
         />
       </div>
-
+	 <div className="dark-table-container">
       <table className="dark-table">
         <thead>
           <tr>
@@ -243,6 +246,7 @@ export const InstitutionList = () => {
         </button>
       </div>
     </div>
+      </div>
   );
 };
 
