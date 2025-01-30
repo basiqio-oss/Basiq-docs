@@ -135,7 +135,6 @@ export const InstitutionList = () => {
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
-            color: white;
           }
 
           .dark-pagination {
