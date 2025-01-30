@@ -87,7 +87,7 @@ export const InstitutionList = () => {
   }
 
   return (
-    <div style={{ color: "white", backgroundColor: "#121212", padding: "20px", borderRadius: "8px" }}>
+    <div style={{  padding: "20px", borderRadius: "8px" }}>
       <h1>Institutions</h1>
 
       <div style={{ marginBottom: "16px", fontSize: "16px" }}>
