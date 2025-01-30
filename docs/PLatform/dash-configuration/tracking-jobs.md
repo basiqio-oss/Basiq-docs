@@ -12,21 +12,15 @@ next:
 ---
 # Job History
 
-<br />
-
 The **Job History** section logs activities performed on a connection, helping developers monitor the outcomes of operations like refreshing or purging data. Each job is uniquely identified and displays its status, date, and outcome.
-
 
 * **Job ID**: A unique identifier for each job.
   * **Status**: Indicates success, failure, or ongoing progress.
-    * **Date**: The time the job was executed.
-      <br />
-      This feature allows developers to track and debug connection-related operations efficiently.
-      <br />
+  * **Date**: The time the job was executed.
+
+This feature allows developers to track and debug connection-related operations efficiently.
 
 ## Job Overview
-
-<br />
 
 <Columns layout="auto">
   <Column>
@@ -49,8 +43,6 @@ The **Job History** section logs activities performed on a connection, helping d
 ***
 
 ## Examples from Job History
-
-<br />
 
 <Tabs>
   <Tab title="Successful Job">
@@ -101,8 +93,6 @@ The **Job History** section logs activities performed on a connection, helping d
 
 ## Quick Reference to Job Statuses
 
-<br />
-
 <Cards columns={3}>
   <Card title="Pending" icon="fa-clock">
     The job is still processing. Wait for the operation to complete.
@@ -121,7 +111,4 @@ The **Job History** section logs activities performed on a connection, helping d
 
 ## Programmatic Access
 
-<br />
-
 Use the Basiq API to retrieve and manage job history programmatically. This is especially useful for building custom monitoring tools or integrating job tracking into your workflows.
-
