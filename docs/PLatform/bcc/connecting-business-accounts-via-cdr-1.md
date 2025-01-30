@@ -35,11 +35,10 @@ export const InstitutionList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Number of items per page
+  const itemsPerPage = 10;
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch all institutions
     fetch(
       `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
@@ -51,14 +50,14 @@ export const InstitutionList = () => {
       })
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions(institutionData); // Set all institutions
+        setInstitutions(institutionData);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setError("Failed to load institutions. Please try again later.");
       })
       .finally(() => setLoading(false));
-  }, []); // Fetch only once on component mount
+  }, []);
 
   const filteredInstitutions = institutions.filter((institution) =>
     institution.shortName?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -80,23 +79,21 @@ export const InstitutionList = () => {
   );
 
   if (loading) {
-    return <div>Loading institutions...</div>;
+    return <div style={{ color: "white" }}>Loading institutions...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div style={{ color: "white" }}>{error}</div>;
   }
 
   return (
-    <div>
+    <div style={{ color: "white", backgroundColor: "#121212", padding: "20px", borderRadius: "8px" }}>
       <h1>Institutions</h1>
 
-      {/* Display total institutions count */}
       <div style={{ marginBottom: "16px", fontSize: "16px" }}>
         <strong>Total Institutions: {institutions.length}</strong>
       </div>
 
-      {/* Search Bar */}
       <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
         <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
           <input
@@ -105,7 +102,7 @@ export const InstitutionList = () => {
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
-              setCurrentPage(1); // Reset to the first page on new search
+              setCurrentPage(1);
             }}
             style={{
               padding: "8px 8px 8px 32px",
@@ -113,24 +110,13 @@ export const InstitutionList = () => {
               border: "1px solid #ccc",
               borderRadius: "4px",
               fontSize: "16px",
+              backgroundColor: "#222",
+              color: "white",
             }}
           />
-          <span
-            style={{
-              position: "absolute",
-              left: "8px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              fontSize: "18px",
-              color: "#ccc",
-            }}
-          >
-            &#x1F50D; {/* Unicode character for search icon */}
-          </span>
         </div>
       </div>
 
-      {/* Institutions Table */}
       <table
         border="1"
         cellPadding="8"
@@ -139,24 +125,19 @@ export const InstitutionList = () => {
           width: "100%",
           textAlign: "left",
           borderCollapse: "collapse",
+          backgroundColor: "transparent",
+          color: "white",
         }}
       >
         <thead>
           <tr>
-            {[
-              "Logo",
-              "Short Name",
-              "FAQ",
-              "CDR Policy",
-              "Email",
-              "CDR Provider Number",
-            ].map((header) => (
+            {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
               <th
                 key={header}
                 style={{
-                  backgroundColor: "#f2f2f2",
+                  backgroundColor: "#333",
                   fontWeight: "bold",
-                  borderBottom: "1px solid #cccccc",
+                  borderBottom: "1px solid #555",
                   padding: "8px",
                 }}
               >
@@ -167,41 +148,22 @@ export const InstitutionList = () => {
         </thead>
         <tbody>
           {paginatedInstitutions.map((institution, index) => (
-            <tr
-              key={index}
-              style={{
-                backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#ffffff",
-              }}
-            >
+            <tr key={index} style={{ backgroundColor: index % 2 === 0 ? "#1a1a1a" : "#2a2a2a" }}>
               <td>
                 {institution.logo?.links?.square ? (
-                  <img
-                    src={institution.logo.links.square}
-                    alt={`${institution.shortName} Logo`}
-                    style={{ width: "64px", height: "64px" }}
-                  />
+                  <img src={institution.logo.links.square} alt={`${institution.shortName} Logo`} style={{ width: "64px", height: "64px" }} />
                 ) : (
                   "N/A"
                 )}
               </td>
               <td>{institution.shortName || "N/A"}</td>
               <td>
-                <a
-                  href={institution.cdrFAQ}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#007bff", textDecoration: "none" }}
-                >
+                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer" style={{ color: "#4DB6AC" }}>
                   FAQ
                 </a>
               </td>
               <td>
-                <a
-                  href={institution.cdrPolicy}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#007bff", textDecoration: "none" }}
-                >
+                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer" style={{ color: "#4DB6AC" }}>
                   CDR Policy
                 </a>
               </td>
@@ -212,16 +174,7 @@ export const InstitutionList = () => {
         </tbody>
       </table>
 
-      {/* Pagination Controls */}
-      <div
-        style={{
-          marginTop: "16px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "16px",
-        }}
-      >
+      <div style={{ marginTop: "16px", display: "flex", justifyContent: "center", alignItems: "center", gap: "16px" }}>
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}
@@ -229,7 +182,7 @@ export const InstitutionList = () => {
             padding: "8px 16px",
             border: "none",
             borderRadius: "4px",
-            backgroundColor: currentPage === 1 ? "#d3d3d3" : "#007bff",
+            backgroundColor: currentPage === 1 ? "#555" : "#4DB6AC",
             color: "white",
             cursor: currentPage === 1 ? "not-allowed" : "pointer",
             fontSize: "16px",
@@ -247,7 +200,7 @@ export const InstitutionList = () => {
             padding: "8px 16px",
             border: "none",
             borderRadius: "4px",
-            backgroundColor: currentPage === totalPages ? "#d3d3d3" : "#007bff",
+            backgroundColor: currentPage === totalPages ? "#555" : "#4DB6AC",
             color: "white",
             cursor: currentPage === totalPages ? "not-allowed" : "pointer",
             fontSize: "16px",
@@ -259,5 +212,3 @@ export const InstitutionList = () => {
     </div>
   );
 };
-
-<InstitutionList />
