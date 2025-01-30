@@ -40,11 +40,10 @@ export const InstitutionList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Number of items per page
+  const itemsPerPage = 10;
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch all institutions
     fetch(
       `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
@@ -56,14 +55,14 @@ export const InstitutionList = () => {
       })
       .then((data) => {
         const institutionData = data.data.map((connector) => connector.institution);
-        setInstitutions(institutionData); // Set all institutions
+        setInstitutions(institutionData);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setError("Failed to load institutions. Please try again later.");
       })
       .finally(() => setLoading(false));
-  }, []); // Fetch only once on component mount
+  }, []);
 
   const filteredInstitutions = institutions.filter((institution) =>
     institution.shortName?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -85,99 +84,117 @@ export const InstitutionList = () => {
   );
 
   if (loading) {
-    return <div>Loading institutions...</div>;
+    return <div className="dark-mode">Loading institutions...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="dark-mode">{error}</div>;
   }
 
   return (
-    <div>
+    <div className="dark-mode">
+      <style>
+        {`
+
+
+          .dark-table {
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            background-color: transparent;
+          }
+
+          .dark-table th {
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            padding: 8px;
+            color: white;
+          }
+
+          .dark-table td {
+            padding: 8px;
+          }
+
+          .dark-row-even {
+            background-color: #1e1e1e;
+          }
+
+          .dark-row-odd {
+            background-color: #2c2c2c;
+          }
+
+          .dark-search-container {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: flex-end;
+          }
+
+          .dark-search-input {
+            padding: 8px 8px 8px 32px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: white;
+          }
+
+          .dark-pagination {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+          }
+
+          .dark-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+          }
+
+          .dark-button-enabled {
+            background-color: #4db8ff;
+          }
+
+          .dark-button-disabled {
+            background-color: #444;
+            cursor: not-allowed;
+          }
+        `}
+      </style>
+
       <h1>Institutions</h1>
 
-      {/* Display total institutions count */}
       <div style={{ marginBottom: "16px", fontSize: "16px" }}>
         <strong>Total Institutions: {institutions.length}</strong>
       </div>
 
-      {/* Search Bar */}
-      <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
-        <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
-          <input
-            type="text"
-            placeholder="Search by institution name"
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setCurrentPage(1); // Reset to the first page on new search
-            }}
-            style={{
-              padding: "8px 8px 8px 32px",
-              width: "100%",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              fontSize: "16px",
-            }}
-          />
-          <span
-            style={{
-              position: "absolute",
-              left: "8px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              fontSize: "18px",
-              color: "#ccc",
-            }}
-          >
-            &#x1F50D; {/* Unicode character for search icon */}
-          </span>
-        </div>
+      <div className="dark-search-container">
+        <input
+          type="text"
+          placeholder="Search by institution name"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setCurrentPage(1);
+          }}
+          className="dark-search-input"
+        />
       </div>
 
-      {/* Institutions Table */}
-      <table
-        border="1"
-        cellPadding="8"
-        cellSpacing="0"
-        style={{
-          width: "100%",
-          textAlign: "left",
-          borderCollapse: "collapse",
-        }}
-      >
+      <table className="dark-table">
         <thead>
           <tr>
-            {[
-              "Logo",
-              "Short Name",
-              "FAQ",
-              "CDR Policy",
-              "Email",
-              "CDR Provider Number",
-            ].map((header) => (
-              <th
-                key={header}
-                style={{
-                  backgroundColor: "#f2f2f2",
-                  fontWeight: "bold",
-                  borderBottom: "1px solid #cccccc",
-                  padding: "8px",
-                }}
-              >
-                {header}
-              </th>
+            {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
+              <th key={header}>{header}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {paginatedInstitutions.map((institution, index) => (
-            <tr
-              key={index}
-              style={{
-                backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#ffffff",
-              }}
-            >
+            <tr key={index} className={index % 2 === 0 ? "dark-row-even" : "dark-row-odd"}>
               <td>
                 {institution.logo?.links?.square ? (
                   <img
@@ -191,22 +208,12 @@ export const InstitutionList = () => {
               </td>
               <td>{institution.shortName || "N/A"}</td>
               <td>
-                <a
-                  href={institution.cdrFAQ}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#007bff", textDecoration: "none" }}
-                >
+                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
                   FAQ
                 </a>
               </td>
               <td>
-                <a
-                  href={institution.cdrPolicy}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#007bff", textDecoration: "none" }}
-                >
+                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
                   CDR Policy
                 </a>
               </td>
@@ -217,28 +224,11 @@ export const InstitutionList = () => {
         </tbody>
       </table>
 
-      {/* Pagination Controls */}
-      <div
-        style={{
-          marginTop: "16px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "16px",
-        }}
-      >
+      <div className="dark-pagination">
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}
-          style={{
-            padding: "8px 16px",
-            border: "none",
-            borderRadius: "4px",
-            backgroundColor: currentPage === 1 ? "#d3d3d3" : "#007bff",
-            color: "white",
-            cursor: currentPage === 1 ? "not-allowed" : "pointer",
-            fontSize: "16px",
-          }}
+          className={`dark-button ${currentPage === 1 ? "dark-button-disabled" : "dark-button-enabled"}`}
         >
           &laquo; Previous
         </button>
@@ -248,15 +238,7 @@ export const InstitutionList = () => {
         <button
           onClick={() => handlePageChange("next")}
           disabled={currentPage === totalPages}
-          style={{
-            padding: "8px 16px",
-            border: "none",
-            borderRadius: "4px",
-            backgroundColor: currentPage === totalPages ? "#d3d3d3" : "#007bff",
-            color: "white",
-            cursor: currentPage === totalPages ? "not-allowed" : "pointer",
-            fontSize: "16px",
-          }}
+          className={`dark-button ${currentPage === totalPages ? "dark-button-disabled" : "dark-button-enabled"}`}
         >
           Next &raquo;
         </button>
