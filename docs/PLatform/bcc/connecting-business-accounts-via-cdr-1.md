@@ -90,24 +90,23 @@ export const InstitutionList = () => {
     <div className="dark-mode">
       <style>
         {`
-
+          .dark-table-container {
+            width: 100%;
+            overflow-x: auto;
+          }
 
           .dark-table {
             width: 100%;
             text-align: left;
             border-collapse: collapse;
             background-color: transparent;
+            min-width: 600px;
           }
 
-          .dark-table th {
-            font-weight: bold;
+          .dark-table th, .dark-table td {
+            padding: 8px;
             border-bottom: 1px solid #444;
-            padding: 8px;
             color: white;
-          }
-
-          .dark-table td {
-            padding: 8px;
           }
 
           .dark-row-even {
@@ -125,12 +124,12 @@ export const InstitutionList = () => {
           }
 
           .dark-search-input {
-            padding: 8px 8px 8px 32px;
+            padding: 8px;
             width: 100%;
+            max-width: 300px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
-            color: white;
           }
 
           .dark-pagination {
@@ -157,6 +156,17 @@ export const InstitutionList = () => {
             background-color: #444;
             cursor: not-allowed;
           }
+
+          @media (max-width: 768px) {
+            .dark-table th, .dark-table td {
+              padding: 6px;
+              font-size: 14px;
+            }
+
+            .dark-search-input {
+              font-size: 14px;
+            }
+          }
         `}
       </style>
 
@@ -179,67 +189,47 @@ export const InstitutionList = () => {
         />
       </div>
 
-      <table className="dark-table">
-        <thead>
-          <tr>
-            {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
-              <th key={header}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedInstitutions.map((institution, index) => (
-            <tr key={index} className={index % 2 === 0 ? "dark-row-even" : "dark-row-odd"}>
-              <td>
-                {institution.logo?.links?.square ? (
-                  <img
-                    src={institution.logo.links.square}
-                    alt={`${institution.shortName} Logo`}
-                    style={{ width: "64px", height: "64px" }}
-                  />
-                ) : (
-                  "N/A"
-                )}
-              </td>
-              <td>{institution.shortName || "N/A"}</td>
-              <td>
-                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
-                  FAQ
-                </a>
-              </td>
-              <td>
-                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
-                  CDR Policy
-                </a>
-              </td>
-              <td>{institution.cdrEmail || "N/A"}</td>
-              <td>{institution.cdrProviderNumber || "N/A"}</td>
+      <div className="dark-table-container">
+        <table className="dark-table">
+          <thead>
+            <tr>
+              {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
+                <th key={header}>{header}</th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <div className="dark-pagination">
-        <button
-          onClick={() => handlePageChange("prev")}
-          disabled={currentPage === 1}
-          className={`dark-button ${currentPage === 1 ? "dark-button-disabled" : "dark-button-enabled"}`}
-        >
-          &laquo; Previous
-        </button>
-        <span style={{ fontSize: "16px", fontWeight: "bold" }}>
-          Page {currentPage} of {totalPages}
-        </span>
-        <button
-          onClick={() => handlePageChange("next")}
-          disabled={currentPage === totalPages}
-          className={`dark-button ${currentPage === totalPages ? "dark-button-disabled" : "dark-button-enabled"}`}
-        >
-          Next &raquo;
-        </button>
+          </thead>
+          <tbody>
+            {paginatedInstitutions.map((institution, index) => (
+              <tr key={index} className={index % 2 === 0 ? "dark-row-even" : "dark-row-odd"}>
+                <td>
+                  {institution.logo?.links?.square ? (
+                    <img
+                      src={institution.logo.links.square}
+                      alt={`${institution.shortName} Logo`}
+                      style={{ width: "48px", height: "48px" }}
+                    />
+                  ) : (
+                    "N/A"
+                  )}
+                </td>
+                <td>{institution.shortName || "N/A"}</td>
+                <td>
+                  <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
+                    FAQ
+                  </a>
+                </td>
+                <td>
+                  <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
+                    CDR Policy
+                  </a>
+                </td>
+                <td>{institution.cdrEmail || "N/A"}</td>
+                <td>{institution.cdrProviderNumber || "N/A"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 };
-
-<InstitutionList />
