@@ -279,6 +279,20 @@ The Consent UI is composed of several key screens, each designed to facilitate a
         We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq.
       </td>
     </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Ask to retain de-identified data
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        In both cases for `action=connect` and `action=manage`. The `BrandName` will remove personal details from your data so you can’t be identified, while ensuring compliance with applicable privacy safeguards.
+      </td>
+    </tr>
   </tbody>
 </Table>
 
