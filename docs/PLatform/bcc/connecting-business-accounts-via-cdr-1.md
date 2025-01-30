@@ -90,12 +90,7 @@ export const InstitutionList = () => {
     <div className="dark-mode">
       <style>
         {`
-          .dark-mode {
-            background-color: #121212;
-            color: white;
-            padding: 16px;
-            min-height: 100vh;
-          }
+
 
           .dark-table {
             width: 100%;
@@ -105,7 +100,6 @@ export const InstitutionList = () => {
           }
 
           .dark-table th {
-            background-color: #333;
             font-weight: bold;
             border-bottom: 1px solid #444;
             padding: 8px;
@@ -249,4 +243,4 @@ export const InstitutionList = () => {
   );
 };
 
-<InstitutionList />;
+<InstitutionList />
