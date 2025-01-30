@@ -40,7 +40,7 @@ export const InstitutionList = () => {
 
   useEffect(() => {
     fetch(
-      "https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)"
+      `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
       .then((response) => {
         if (!response.ok) {
@@ -95,43 +95,6 @@ export const InstitutionList = () => {
             overflow-x: auto;
           }
 
-          .dark-table {
-            width: 100%;
-            text-align: left;
-            border-collapse: collapse;
-            background-color: transparent;
-            min-width: 600px;
-          }
-
-          .dark-table th, .dark-table td {
-            padding: 8px;
-            border-bottom: 1px solid #444;
-            color: white;
-          }
-
-          .dark-row-even {
-            background-color: #1e1e1e;
-          }
-
-          .dark-row-odd {
-            background-color: #2c2c2c;
-          }
-
-          .dark-search-container {
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: flex-end;
-          }
-
-          .dark-search-input {
-            padding: 8px;
-            width: 100%;
-            max-width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-          }
-
           .dark-pagination {
             margin-top: 16px;
             display: flex;
@@ -156,25 +119,10 @@ export const InstitutionList = () => {
             background-color: #444;
             cursor: not-allowed;
           }
-
-          @media (max-width: 768px) {
-            .dark-table th, .dark-table td {
-              padding: 6px;
-              font-size: 14px;
-            }
-
-            .dark-search-input {
-              font-size: 14px;
-            }
-          }
         `}
       </style>
 
       <h1>Institutions</h1>
-
-      <div style={{ marginBottom: "16px", fontSize: "16px" }}>
-        <strong>Total Institutions: {institutions.length}</strong>
-      </div>
 
       <div className="dark-search-container">
         <input
@@ -230,8 +178,26 @@ export const InstitutionList = () => {
           </tbody>
         </table>
       </div>
+
+      <div className="dark-pagination">
+        <button
+          onClick={() => handlePageChange("prev")}
+          disabled={currentPage === 1}
+          className={`dark-button ${currentPage === 1 ? "dark-button-disabled" : "dark-button-enabled"}`}
+        >
+          &laquo; Previous
+        </button>
+        <span style={{ fontSize: "16px", fontWeight: "bold" }}>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange("next")}
+          disabled={currentPage === totalPages}
+          className={`dark-button ${currentPage === totalPages ? "dark-button-disabled" : "dark-button-enabled"}`}
+        >
+          Next &raquo;
+        </button>
+      </div>
     </div>
   );
 };
-
-<InstitutionList />
