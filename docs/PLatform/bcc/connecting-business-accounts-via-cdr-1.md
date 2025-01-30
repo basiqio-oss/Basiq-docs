@@ -40,7 +40,7 @@ export const InstitutionList = () => {
 
   useEffect(() => {
     fetch(
-      "https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)"
+      `https://au-api.basiq.io/public/connectors?filter=connector.method.eq('open-banking'),connector.stage.ne(%27alpha%27),connector.authorization.type.in(%27other%27,%27user%27,%27user-mfa%27,%27user-mfa-intermittent%27,%27token%27)`
     )
       .then((response) => {
         if (!response.ok) {
@@ -79,91 +79,143 @@ export const InstitutionList = () => {
   );
 
   if (loading) {
-    return <div style={{ color: "white" }}>Loading institutions...</div>;
+    return <div className="dark-mode">Loading institutions...</div>;
   }
 
   if (error) {
-    return <div style={{ color: "white" }}>{error}</div>;
+    return <div className="dark-mode">{error}</div>;
   }
 
   return (
-    <div style={{  padding: "20px", borderRadius: "8px" }}>
+    <div className="dark-mode">
+      <style>
+        {`
+          .dark-mode {
+            background-color: #121212;
+            color: white;
+            padding: 16px;
+            min-height: 100vh;
+          }
+
+          .dark-table {
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            background-color: transparent;
+          }
+
+          .dark-table th {
+            background-color: #333;
+            font-weight: bold;
+            border-bottom: 1px solid #444;
+            padding: 8px;
+            color: white;
+          }
+
+          .dark-table td {
+            padding: 8px;
+          }
+
+          .dark-row-even {
+            background-color: #1e1e1e;
+          }
+
+          .dark-row-odd {
+            background-color: #2c2c2c;
+          }
+
+          .dark-search-container {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: flex-end;
+          }
+
+          .dark-search-input {
+            padding: 8px 8px 8px 32px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #1e1e1e;
+            color: white;
+          }
+
+          .dark-pagination {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+          }
+
+          .dark-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+          }
+
+          .dark-button-enabled {
+            background-color: #4db8ff;
+          }
+
+          .dark-button-disabled {
+            background-color: #444;
+            cursor: not-allowed;
+          }
+        `}
+      </style>
+
       <h1>Institutions</h1>
 
       <div style={{ marginBottom: "16px", fontSize: "16px" }}>
         <strong>Total Institutions: {institutions.length}</strong>
       </div>
 
-      <div style={{ marginBottom: "16px", display: "flex", justifyContent: "flex-end" }}>
-        <div style={{ position: "relative", maxWidth: "400px", width: "100%" }}>
-          <input
-            type="text"
-            placeholder="Search by institution name"
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setCurrentPage(1);
-            }}
-            style={{
-              padding: "8px 8px 8px 32px",
-              width: "100%",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              fontSize: "16px",
-              backgroundColor: "#222",
-              color: "white",
-            }}
-          />
-        </div>
+      <div className="dark-search-container">
+        <input
+          type="text"
+          placeholder="Search by institution name"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setCurrentPage(1);
+          }}
+          className="dark-search-input"
+        />
       </div>
 
-      <table
-        border="1"
-        cellPadding="8"
-        cellSpacing="0"
-        style={{
-          width: "100%",
-          textAlign: "left",
-          borderCollapse: "collapse",
-          backgroundColor: "transparent",
-          color: "white",
-        }}
-      >
+      <table className="dark-table">
         <thead>
           <tr>
             {["Logo", "Short Name", "FAQ", "CDR Policy", "Email", "CDR Provider Number"].map((header) => (
-              <th
-                key={header}
-                style={{
-                  backgroundColor: "#333",
-                  fontWeight: "bold",
-                  borderBottom: "1px solid #555",
-                  padding: "8px",
-                }}
-              >
-                {header}
-              </th>
+              <th key={header}>{header}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {paginatedInstitutions.map((institution, index) => (
-            <tr key={index} style={{ backgroundColor: index % 2 === 0 ? "#1a1a1a" : "#2a2a2a" }}>
+            <tr key={index} className={index % 2 === 0 ? "dark-row-even" : "dark-row-odd"}>
               <td>
                 {institution.logo?.links?.square ? (
-                  <img src={institution.logo.links.square} alt={`${institution.shortName} Logo`} style={{ width: "64px", height: "64px" }} />
+                  <img
+                    src={institution.logo.links.square}
+                    alt={`${institution.shortName} Logo`}
+                    style={{ width: "64px", height: "64px" }}
+                  />
                 ) : (
                   "N/A"
                 )}
               </td>
               <td>{institution.shortName || "N/A"}</td>
               <td>
-                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer" style={{ color: "#4DB6AC" }}>
+                <a href={institution.cdrFAQ} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
                   FAQ
                 </a>
               </td>
               <td>
-                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer" style={{ color: "#4DB6AC" }}>
+                <a href={institution.cdrPolicy} target="_blank" rel="noopener noreferrer" style={{ color: "#4db8ff" }}>
                   CDR Policy
                 </a>
               </td>
@@ -174,19 +226,11 @@ export const InstitutionList = () => {
         </tbody>
       </table>
 
-      <div style={{ marginTop: "16px", display: "flex", justifyContent: "center", alignItems: "center", gap: "16px" }}>
+      <div className="dark-pagination">
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}
-          style={{
-            padding: "8px 16px",
-            border: "none",
-            borderRadius: "4px",
-            backgroundColor: currentPage === 1 ? "#555" : "#4DB6AC",
-            color: "white",
-            cursor: currentPage === 1 ? "not-allowed" : "pointer",
-            fontSize: "16px",
-          }}
+          className={`dark-button ${currentPage === 1 ? "dark-button-disabled" : "dark-button-enabled"}`}
         >
           &laquo; Previous
         </button>
@@ -196,15 +240,7 @@ export const InstitutionList = () => {
         <button
           onClick={() => handlePageChange("next")}
           disabled={currentPage === totalPages}
-          style={{
-            padding: "8px 16px",
-            border: "none",
-            borderRadius: "4px",
-            backgroundColor: currentPage === totalPages ? "#555" : "#4DB6AC",
-            color: "white",
-            cursor: currentPage === totalPages ? "not-allowed" : "pointer",
-            fontSize: "16px",
-          }}
+          className={`dark-button ${currentPage === totalPages ? "dark-button-disabled" : "dark-button-enabled"}`}
         >
           Next &raquo;
         </button>
