@@ -1,4 +1,0 @@
----
-title: Reports
-hidden: true
----
