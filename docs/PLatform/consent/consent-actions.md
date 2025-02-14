@@ -155,7 +155,7 @@ In the customised UI's Flow tab, a new field called "Manage Consent URL" has bee
 Partners are responsible for creating and maintaining the guide linked through the "Manage Consent URL." The following points outline what the guide should include:
 
 * **Accessibility**: The guide should be easy to find for consumers and available as a public page so that users can read it before giving consent.
-* **Content Requirements**: 
+* **Content Requirements**:
   * Clearly describe the process for revoking consent.
   * Provide direct access to consent management functionalities.
   * Ensure the instructions are straightforward and easy to follow.
@@ -296,7 +296,7 @@ In situations where users need to renew authorization for specific connections w
 To utilise the `connectionId` parameter for reauthorisation, construct the Basiq Consent URI with the following structure:
 
 ```json URL
-https://consent.basiq.io/home?&token=${token}&connectionId=${connectionId}
+https://consent.basiq.io/home?token=${token}&connectionId=${connectionId}
 ```
 
 #### Implementation Steps
