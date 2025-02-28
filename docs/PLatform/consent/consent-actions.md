@@ -232,7 +232,7 @@ The `action=update` parameter is suitable when:
 ### How It Works
 
 * **Initiating action=update**: When initiating the action=update, the current consent policy on the application is compared with the active consent.
-* **Policy Comparison**: If the consent policy remains the same, the process automatically falls back to action=extend, which extends the existing consent.
+* **Policy Comparison**: If the consent policy remains the same or changes only certain fields—such as Duration and Data retrieval span—without modifying the scopes, the process automatically falls back to `action=extend`, which extends the existing consent. This flow should be used only when scopes are updated.
 * **Scope Changes**: If the scopes in the consent policy have changed, users are prompted to re-consent, agreeing to the updated consent.
 * **Re-Consent Implications**: During the re-consent process, the old consent is revoked, resulting in the deletion of all existing connections. Previously connected institutions are displayed prominently for the user's reference.
 
