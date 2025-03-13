@@ -1,5 +1,5 @@
 ---
-title: Income Verification (IAV)
+title: Income/Expense Verification (IAV)
 excerpt: ''
 deprecated: false
 hidden: false
@@ -10,11 +10,11 @@ metadata:
 next:
   description: ''
 ---
-<Image align="center" alt="Income Verification StarterKit" border={false} caption="Income Verification StarterKit" src="https://files.readme.io/1daec9fc906bc8b1f6b83221ef0436c6e37d5124c93d713406e68a369574a6db-Apple_Macbook_Pro.png" />
+<Image align="center" alt="Income Verification StarterKit" border={false} caption="Income/Expense Verification StarterKit" src="https://files.readme.io/13d46d30bd73ebe4bacdd415778566d78996400303c077501133981e4c39c4c5-Screenshot_2025-03-14_at_8.29.56_am.png" />
 
-# Overview: What is Income Verification?
+# Overview: What is Income & Expense Verification?
 
-The Income Verification [Starter Kit](https://iv-demo.basiq.io/) streamlines the process of verifying a user's income. By securely connecting their bank account, this kit automatically generates an income verification report through our **[Reports API](https://api.basiq.io/reference/createreport)**. The report encompasses both user-level and group-level analyses, detailed in the sections below.
+The Verification [Starter Kit](https://iv-demo.basiq.io/) streamlines the process of verifying a user's income. By securely connecting their bank account, this kit automatically generates a verification report through our **[Reports API](https://api.basiq.io/reference/createreport)**. The report includes both user-level and group-level analyses, with details tailored to the verification type selected by the user (income or expense)..
 
 ## Creating an Income Verification Report
 
@@ -64,7 +64,8 @@ The payload should include:
     { "name": "accounts", "value": ["ag829sj", "aj82gka"] },
     { "name": "users", "value": ["272af9fa-0f4a-44dc-bf88-a63bec2d0662"] },
     { "name": "includeMetrics", "value": ["ME002", "ME003", "ME004"] },
-    { "name": "includeGroups", "value": ["INC-001", "INC-002", "EXP-001"] }
+    { "name": "includeGroups", "value": ["INC-001", "INC-002", "EXP-001"] },
+    { "name": "reportSubType", "value": "income" }
   ]
 }
 ```
@@ -117,7 +118,7 @@ To ensure that your report includes all income groups, even those without data (
 
 ## Use Case: Verifying User Income for Lending
 
-Let's take you through a use case.
+Let's take you through a use case for income, you can also try it for expense.
 
 ### Scenario:
 
@@ -193,7 +194,7 @@ Visit our [demo](https://iv-demo.basiq.io/) to connect a sample bank account and
 
 Our **[Income Verification Demo\*\*](https://iv-demo.basiq.io/) is optimised to ensure a high-quality user experience. Below are the results from a** Lighthouse audit\*\* conducted on Google Chrome, reflecting top-tier performance in several key areas:
 
-<Image align="center" src="https://files.readme.io/01e43f0a88f01bc4d3a3ae99f797dca52656e1457f913e92bba55b3c24bbf733-Screenshot_2024-09-19_at_11.16.42_AM.png" />
+<Image align="center" src="https://files.readme.io/cc2335309b0a21572f3e0d150c822b380c69aae227cd373508e833325106be1d-Screenshot_2025-03-14_at_8.27.53_am.png" />
 
 * Performance: 100
 * Accessibility: 95
