@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-<Image align="center" alt="Income Verification StarterKit" border={false} caption="Income/Expense Verification StarterKit" src="https://files.readme.io/13d46d30bd73ebe4bacdd415778566d78996400303c077501133981e4c39c4c5-Screenshot_2025-03-14_at_8.29.56_am.png" />
+<Image align="center" alt="Income Verification StarterKit" border={false} caption="Income/Expense Verification StarterKit" src="https://files.readme.io/88fc8ac887132e1a095a02367f990af654547c3ace1f0bfed07badcc4c6329a8-ssvve.png" />
 
 # Overview: What is Income & Expense Verification?
 
