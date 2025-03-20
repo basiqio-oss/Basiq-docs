@@ -1,7 +1,7 @@
 ---
 title: Modal Opener
 fullscreen: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
