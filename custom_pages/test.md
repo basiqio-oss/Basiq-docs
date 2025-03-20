@@ -6,94 +6,50 @@ metadata:
   title: ''
   description: ''
 ---
-import { useState, useEffect } from 'react';
+import \{ useEffect, useState } from 'react';
 
-export const PostList = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+export const AnimatedBarChart = () => \{
+&#x20; const \[bars, setBars] = useState(\[]);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        // Artificial delay to showcase the loader
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setPosts(data);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching posts:", err);
-        setError("Failed to load posts.");
-        setLoading(false);
-      }
-    };
+&#x20; useEffect(() => \{
+&#x20;   const chartData = \[
+&#x20;     \{ label: 'Jan', value: 45 },
+&#x20;     \{ label: 'Feb', value: 60 },
+&#x20;     \{ label: 'Mar', value: 35 },
+&#x20;     \{ label: 'Apr', value: 80 },
+&#x20;     \{ label: 'May', value: 55 },
+&#x20;     \{ label: 'Jun', value: 70 },
+&#x20;   ];
+&#x20;   setBars(chartData);
+&#x20; }, \[]);
 
-    fetchPosts();
-  }, []);
-
-  if (loading) {
-    return (
-      <>
-        {/* Inline keyframes for spinner animation */}
-        <style>
-          {`
-            @keyframes spin {
-              to { transform: rotate(360deg); }
-            }
-          `}
-        </style>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2.5rem' }}>
-          <div style={{ position: 'relative', width: '48px', height: '48px', marginBottom: '1rem' }}>
-            {/* Static background circle */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              border: '4px solid #e2e8f0',
-              borderRadius: '50%'
-            }}></div>
-            {/* Rotating overlay */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              border: '4px solid #3b82f6',
-              borderTopColor: 'transparent',
-              borderRadius: '50%',
-              animation: 'spin 1s linear infinite'
-            }}></div>
-          </div>
-          <span style={{ color: '#4b5563', fontSize: '1.125rem', fontWeight: 500 }}>Loading posts...</span>
-        </div>
-      </>
-    );
-  }
-
-  if (error) {
-    return <div style={{ color: '#ef4444', textAlign: 'center', padding: '2.5rem' }}>{error}</div>;
-  }
-
-  return (
-    <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem' }}>
-      <h1 style={{ fontSize: '2rem', fontWeight: 700, textAlign: 'center', marginBottom: '1.5rem' }}>Post List</h1>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        {posts.map(post => (
-          <li key={post.id} style={{ padding: '1rem', border: '1px solid #e5e7eb', borderRadius: '0.5rem', boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)', marginBottom: '1.5rem' }}>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.5rem' }}>{post.title}</h2>
-            <p style={{ color: '#374151' }}>{post.body}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+&#x20; return (
+&#x20;   \<div className="flex flex-col items-center py-8">
+&#x20;     \<div className="flex items-end justify-center gap-4 h-64 px-6 border-b border-gray-200 relative">
+&#x20;       \{bars.map((bar, i) => (
+&#x20;         \<div key=\{i} className="group relative flex flex-col items-center">
+&#x20;           \<div
+&#x20;             className="w-12 rounded-t-md transition-all duration-500 ease-in-out transform group-hover:-translate-y-2"
+&#x20;             style=\{\{
+&#x20;               height: \`$\{bar.value \* 2}px\`,
+&#x20;               background: \`linear-gradient(to top, #3b82f6, #60a5fa)\`,
+&#x20;               boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+&#x20;             }}
+&#x20;           \>
+&#x20;             \<div
+&#x20;               className="absolute inset-x-0 -bottom-1 h-2 transform skew-x-\[45deg] bg-blue-400 opacity-50"
+&#x20;               style=\{\{ transformOrigin: 'top left' }}
+&#x20;             />
+&#x20;           \</div>
+&#x20;           \<span className="mt-2 text-gray-600">\{bar.label}\</span>
+&#x20;         \</div>
+&#x20;       ))}
+&#x20;     \</div>
+&#x20;     \<h3 className="text-xl font-semibold mt-6">Monthly Performance\</h3>
+&#x20;   \</div>
+&#x20; );
 };
-
-<PostList />
+\<div>
+&#x20; \<AnimatedPieChart />
+&#x20; \<AnimatedBarChart />
+\</div>
