@@ -44,12 +44,7 @@ export default function AnimatedPaginatedChart() {
   return (
     <div style={{ maxWidth: '600px', margin: 'auto', padding: '1rem', fontFamily: 'Arial', background: theme.background, color: theme.text, minHeight: '100vh' }}>
       <div style={{ textAlign: 'right' }}>
-        <button
-          onClick={() => setDarkMode(prev => !prev)}
-          style={{ padding: '0.4rem 0.8rem', marginBottom: '1rem', cursor: 'pointer', borderRadius: '4px' }}
-        >
-          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
-        </button>
+
       </div>
 
       <h3 style={{ textAlign: 'center' }}>📈 Animated Chart & Pagination</h3>
