@@ -1,0 +1,86 @@
+---
+name: Pagination
+---
+import { useState, useEffect } from 'react';
+
+export default function AnimatedPaginatedChart() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGE_SIZE = 5;
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then((res) => {
+        if (!res.ok) throw new Error('Network error');
+        return res.json();
+      })
+      .then(async (json) => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setData(json);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Error loading data.');
+        setLoading(false);
+      });
+  }, []);
+
+  const totalPages = Math.ceil(data.length / PAGE_SIZE);
+  const currentData = data.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  if (loading) return <div style={{ textAlign: 'center', padding: '2rem' }}>Loading...</div>;
+  if (error) return <div style={{ color: 'red', textAlign: 'center', padding: '2rem' }}>{error}</div>;
+
+  return (
+    <div style={{ maxWidth: '600px', margin: 'auto', padding: '1rem', fontFamily: 'Arial' }}>
+      <h3 style={{ textAlign: 'center' }}>📈 Animated Chart & Pagination</h3>
+
+      {currentData.map((item) => (
+        <div key={item.id} style={{ marginBottom: '1rem' }}>
+          <div style={{ fontSize: '0.9rem', color: '#444' }}>{item.title.slice(0, 40)}...</div>
+          <div style={{ background: '#f0f0f0', height: '15px', borderRadius: '8px', overflow: 'hidden' }}>
+            <div
+              style={{
+                height: '100%',
+                background: '#3b82f6',
+                width: `${(item.id % 10 + 1) * 10}%`,
+                animation: 'expand 1s ease-out',
+              }}
+            ></div>
+          </div>
+        </div>
+      ))}
+
+      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <button
+          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+          disabled={currentPage === 1}
+          style={{ margin: '0 0.5rem', padding: '0.5rem 1rem' }}
+        >
+          Prev
+        </button>
+        <span>
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+          disabled={currentPage === totalPages}
+          style={{ margin: '0 0.5rem', padding: '0.5rem 1rem' }}
+        >
+          Next
+        </button>
+      </div>
+
+      <style>{`
+        @keyframes expand {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+      <AnimatedPaginatedChart />
