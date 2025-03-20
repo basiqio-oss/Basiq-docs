@@ -8,6 +8,7 @@ export default function AnimatedPaginatedChart() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [darkMode, setDarkMode] = useState(false);
   const PAGE_SIZE = 5;
 
   useEffect(() => {
@@ -30,21 +31,37 @@ export default function AnimatedPaginatedChart() {
   const totalPages = Math.ceil(data.length / PAGE_SIZE);
   const currentData = data.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  if (loading) return <div style={{ textAlign: 'center', padding: '2rem' }}>Loading...</div>;
-  if (error) return <div style={{ color: 'red', textAlign: 'center', padding: '2rem' }}>{error}</div>;
+  const theme = {
+    background: darkMode ? '#1f2937' : '#ffffff',
+    text: darkMode ? '#f9fafb' : '#111827',
+    cardBg: darkMode ? '#374151' : '#f3f4f6',
+    barBg: darkMode ? '#2563eb' : '#3b82f6',
+  };
+
+  if (loading) return <div style={{ textAlign: 'center', padding: '2rem', color: theme.text, background: theme.background }}>Loading...</div>;
+  if (error) return <div style={{ color: 'red', textAlign: 'center', padding: '2rem', background: theme.background }}>{error}</div>;
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '1rem', fontFamily: 'Arial' }}>
+    <div style={{ maxWidth: '600px', margin: 'auto', padding: '1rem', fontFamily: 'Arial', background: theme.background, color: theme.text, minHeight: '100vh' }}>
+      <div style={{ textAlign: 'right' }}>
+        <button
+          onClick={() => setDarkMode(prev => !prev)}
+          style={{ padding: '0.4rem 0.8rem', marginBottom: '1rem', cursor: 'pointer', borderRadius: '4px' }}
+        >
+          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+        </button>
+      </div>
+
       <h3 style={{ textAlign: 'center' }}>📈 Animated Chart & Pagination</h3>
 
       {currentData.map((item) => (
         <div key={item.id} style={{ marginBottom: '1rem' }}>
-          <div style={{ fontSize: '0.9rem', color: '#444' }}>{item.title.slice(0, 40)}...</div>
-          <div style={{ background: '#f0f0f0', height: '15px', borderRadius: '8px', overflow: 'hidden' }}>
+          <div style={{ fontSize: '0.9rem' }}>{item.title.slice(0, 40)}...</div>
+          <div style={{ background: theme.cardBg, height: '15px', borderRadius: '8px', overflow: 'hidden' }}>
             <div
               style={{
                 height: '100%',
-                background: '#3b82f6',
+                background: theme.barBg,
                 width: `${(item.id % 10 + 1) * 10}%`,
                 animation: 'expand 1s ease-out',
               }}
@@ -57,7 +74,7 @@ export default function AnimatedPaginatedChart() {
         <button
           onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
           disabled={currentPage === 1}
-          style={{ margin: '0 0.5rem', padding: '0.5rem 1rem' }}
+          style={{ margin: '0 0.5rem', padding: '0.5rem 1rem', cursor: 'pointer' }}
         >
           Prev
         </button>
@@ -67,7 +84,7 @@ export default function AnimatedPaginatedChart() {
         <button
           onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
           disabled={currentPage === totalPages}
-          style={{ margin: '0 0.5rem', padding: '0.5rem 1rem' }}
+          style={{ margin: '0 0.5rem', padding: '0.5rem 1rem', cursor: 'pointer' }}
         >
           Next
         </button>
