@@ -42,7 +42,7 @@ Content-Type: application/json
 
 ## Constructing Your Request
 
-When constructing your request, you'll need to prepare a JSON payload that specifies the type of report you want to generate, along with any filters relevant to the income verification.
+When constructing your request, you'll need to prepare a JSON payload that specifies the type of report you want to generate, along with any filters relevant to the your desired income or expense verification.
 
 ### Required Payload Structure
 
