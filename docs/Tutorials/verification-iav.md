@@ -51,6 +51,7 @@ The payload should include:
 * `reportType`: The type of report you are generating. For income verification, use `"CON_AFFOR_01"`.
 * `title`: A descriptive title for the report.
 * `filters`: An array of filter objects that specify the parameters for your report.
+* `reportSubType`: it can be either `income` or `expense` based on your use case.
 
 ### Example Payload:
 
