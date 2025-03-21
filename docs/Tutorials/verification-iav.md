@@ -16,7 +16,7 @@ next:
 
 The Verification [Starter Kit](https://iv-demo.basiq.io/) streamlines the process of verifying a user's income. By securely connecting their bank account, this kit automatically generates a verification report through our **[Reports API](https://api.basiq.io/reference/createreport)**. The report includes both user-level and group-level analyses, with details tailored to the verification type selected by the user (income or expense)..
 
-## Creating an Income Verification Report
+## Creating an Income or Expense Verification Report
 
 To generate an income verification report, make a POST request to the following endpoint::
 
