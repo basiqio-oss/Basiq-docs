@@ -18,7 +18,7 @@ The Verification [Starter Kit](https://iv-demo.basiq.io/) streamlines the proces
 
 ## Creating an Income or Expense Verification Report
 
-To generate an income verification report, make a POST request to the following endpoint::
+To generate an income or expense verification report, make a POST request to the following endpoint::
 
 ```Text REPORT API Endpoint
 POST https://au-api.basiq.io/reports
