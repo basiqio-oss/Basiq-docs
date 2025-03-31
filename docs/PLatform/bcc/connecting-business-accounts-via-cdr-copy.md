@@ -22,7 +22,7 @@ To help businesses navigate these steps, we’ve compiled a guide outlining the 
 
 ### Westpac
 
-<Image align="left" width="80px" src="https://files.readme.io/68a992ffeaa3660155d2a807432971192174e69572fe85e34c47f2913dcc023c-image.png" />
+<Image align="left" width="70px" src="https://files.readme.io/68a992ffeaa3660155d2a807432971192174e69572fe85e34c47f2913dcc023c-image.png" />
 
 For businesses registered prior to 1 November 2021, Westpac will require submitting an [Open Banking data sharing authority form](https://www.westpac.com.au/content/dam/public/wbc/documents/pdf/bb/open-banking-data-sharing-authority.pdf). Approval takes 1-2 days. For businesses registered after 1 November 2021, Administrators are automatically activated to nominate Users to share data.
 
