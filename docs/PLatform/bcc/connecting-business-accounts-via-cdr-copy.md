@@ -20,6 +20,36 @@ Each bank manages these additional steps in a different way. In some cases, it�
 
 To help businesses navigate these steps, we’ve compiled a guide outlining the processes for major banks, along with links to their official CDR data-sharing pages.
 
+### ANZ
+
+<Image align="left" width="70px" src="https://files.readme.io/e3718c049f55232ae213306d2de0ec1deab3dafacbc840b625693b671df2ac1c-anz.webp" />
+
+From November 2021, Administrators  in ANZ Internet Banking for Business can appoint one or more individuals (Administrators / Authorisors) to be Nominated Representative to share data on behalf of the business.
+
+**Step-by-step**
+
+* Access your Internet Banking for Business, select ‘Manage users’ from the ‘Settings’ section
+* Select the user whose access you wish to update
+* Select ‘Edit’
+* Click ‘Yes’ on Data sharing access.
+* Review the changes you have made, then select ‘Save’.
+
+[More information](https://www.anz.com.au/privacy/centre/open-banking-data-sharing/internet-banking-for-business-help/)
+
+### CBA
+
+<Image align="left" width="70px" src="https://files.readme.io/6b8bd26feff472fa08d7f9251fac5009fb00475c3030dd1d8dc66335270c3cbc-cba.png" />
+
+You can choose delegates to share your data with accredited organisations without further approval. The CBA website outlines methods to delegate via NetBank or CommBiz.
+
+**Step-by-step (NetBank)**
+
+* Log onto NetBank and go to Settings, Manage data sharing, then Setting up data sharing delegates.
+* Choose the business profile you'd like to assign a delegate to.
+* Tap on Add delegate to choose a director or business authority
+
+[More information](https://www.commbank.com.au/banking/open-banking/data-sharing-delegate.html#individual)
+
 ### Westpac
 
 <Image align="left" width="70px" src="https://files.readme.io/68a992ffeaa3660155d2a807432971192174e69572fe85e34c47f2913dcc023c-image.png" />
