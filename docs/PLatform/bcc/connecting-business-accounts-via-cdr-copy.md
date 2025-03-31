@@ -34,6 +34,8 @@ From November 2021, Administrators  in ANZ Internet Banking for Business can app
 
 [More information](https://www.anz.com.au/privacy/centre/open-banking-data-sharing/internet-banking-for-business-help/)
 
+<br />
+
 ### CBA
 
 <Image align="left" width="70px" src="https://files.readme.io/6b8bd26feff472fa08d7f9251fac5009fb00475c3030dd1d8dc66335270c3cbc-cba.png" />
@@ -49,6 +51,8 @@ You can choose delegates to share your data with accredited organisations withou
 * Tap on Add delegate to choose a director or business authority
 
 [More information](https://www.commbank.com.au/banking/open-banking/data-sharing-delegate.html#individual)
+
+<br />
 
 ### Westpac
 
