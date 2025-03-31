@@ -42,6 +42,8 @@ From November 2021, Administrators  in ANZ Internet Banking for Business can app
 
 You can choose delegates to share your data with accredited organisations without further approval. The CBA website outlines methods to delegate via NetBank or CommBiz.
 
+<br />
+
 **Step-by-step (NetBank)**
 
 * Log onto NetBank and go to Settings, Manage data sharing, then Setting up data sharing delegates.
