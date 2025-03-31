@@ -16,8 +16,6 @@ Businesses wanting to to share their banking data via CDR require the following 
 
 Each bank manages these additional steps in a different way. In some cases, it’s a simple case of providing authority via the bank’s app, while for others, it requires the business owner submitting a form to their bank. This is an industry issue which we’re working to resolve in collaboration with the relevant Government departments.
 
-***
-
 To help businesses navigate these steps, we’ve compiled a guide outlining the processes for major banks, along with links to their official CDR data-sharing pages.
 
 ### ANZ
@@ -70,6 +68,8 @@ For businesses registered prior to 1 November 2021, Westpac will require submitt
 [More information](https://www.westpac.com.au/business-banking/online-banking/support-faqs/data-sharing/)
 
 In the event that frontline bank staff do not know about CDR, apart from escalating the issue with the bank, you can also find the bank under the [Data Holders list](https://www.cdr.gov.au/find-a-provider?providerType=Data%2520Holder) and reach out via a specific email address for the respective CDR support team.
+
+***
 
 ## Testing CDR Data Sharing
 
