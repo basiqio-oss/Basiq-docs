@@ -1,7 +1,7 @@
 ---
-title: Connecting Business accounts via CDR (COPY)
+title: Connecting Business accounts via CDR (UPDATED, NOT PUBLIC)
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
@@ -15,6 +15,27 @@ Businesses wanting to to share their banking data via CDR require the following 
 * The controlling party of that business entity (e.g. director(s)) must give authority to other individuals to be able to share accounts owned by the business entity via their online banking access (if this is done correctly they will see an additional page in the CDR data sharing flow implemented by banks that asks them to pick the profile for data sharing and they can either select their personal profile or the business profiles they have authority for).
 
 Each bank manages these additional steps in a different way. In some cases, it’s a simple case of providing authority via the bank’s app, while for others, it requires the business owner submitting a form to their bank. This is an industry issue which we’re working to resolve in collaboration with the relevant Government departments.
+
+***
+
+To help businesses navigate these steps, we’ve compiled a guide outlining the processes for major banks, along with links to their official CDR data-sharing pages.
+
+### Westpac
+
+<Image align="left" width="100px" src="https://files.readme.io/68a992ffeaa3660155d2a807432971192174e69572fe85e34c47f2913dcc023c-image.png" />
+
+For businesses registered prior to 1 November 2021, Westpac will require submitting an [Open Banking data sharing authority form](https://www.westpac.com.au/content/dam/public/wbc/documents/pdf/bb/open-banking-data-sharing-authority.pdf). Approval takes 1-2 days. For businesses registered after 1 November 2021, Administrators are automatically activated to nominate Users to share data.
+
+**Step-by-step**
+
+* Administrators need to sign into Westpac Online Banking and navigate to the Business network profile\
+  Select Administration > User administration
+* Select the name of the User that you want to be a Nominated Representative (i.e. permission to data share on behalf of the Organisation)
+* Scroll down the page to the heading ‘Open Banking data sharing’ and select Manage data sharing
+* Check that the User is registered for Protect SMS (can be validated in the ‘Additional security’ section)
+* Select Save
+
+[More information](https://www.westpac.com.au/business-banking/online-banking/support-faqs/data-sharing/)
 
 In the event that frontline bank staff do not know about CDR, apart from escalating the issue with the bank, you can also find the bank under the [Data Holders list](https://www.cdr.gov.au/find-a-provider?providerType=Data%2520Holder) and reach out via a specific email address for the respective CDR support team.
 
