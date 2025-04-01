@@ -21,6 +21,55 @@ Businesses wanting to to share their banking data via CDR require the following 
 
 Each bank manages these additional steps in a different way. In some cases, it’s a simple case of providing authority via the bank’s app, while for others, it requires the business owner submitting a form to their bank. This is an industry issue which we’re working to resolve in collaboration with the relevant Government departments.
 
+To help businesses navigate these steps, we’ve compiled a guide outlining the processes for major banks, along with links to their official CDR data-sharing pages.
+
+### ANZ
+
+<Image align="left" width="70px" src="https://files.readme.io/e3718c049f55232ae213306d2de0ec1deab3dafacbc840b625693b671df2ac1c-anz.webp" />
+
+From November 2021, Administrators  in ANZ Internet Banking for Business can appoint one or more individuals (Administrators / Authorisors) to be Nominated Representative to share data on behalf of the business.
+
+**Step-by-step**
+
+* Access your Internet Banking for Business, select ‘Manage users’ from the ‘Settings’ section
+* Select the user whose access you wish to update
+* Select ‘Edit’
+* Click ‘Yes’ on Data sharing access.
+* Review the changes you have made, then select ‘Save’.
+
+[More information](https://www.anz.com.au/privacy/centre/open-banking-data-sharing/internet-banking-for-business-help/)
+
+### CBA
+
+<Image align="left" width="70px" src="https://files.readme.io/6b8bd26feff472fa08d7f9251fac5009fb00475c3030dd1d8dc66335270c3cbc-cba.png" />
+
+You can choose delegates to share your data with accredited organisations without further approval. The CBA website outlines methods to delegate via NetBank or CommBiz.
+
+**Step-by-step (NetBank)**
+
+* Log onto NetBank and go to Settings, Manage data sharing, then Setting up data sharing delegates.
+* Choose the business profile you'd like to assign a delegate to.
+* Tap on Add delegate to choose a director or business authority
+
+[More information](https://www.commbank.com.au/banking/open-banking/data-sharing-delegate.html#individual)
+
+### Westpac
+
+<Image align="left" width="70px" src="https://files.readme.io/68a992ffeaa3660155d2a807432971192174e69572fe85e34c47f2913dcc023c-image.png" />
+
+For businesses registered prior to 1 November 2021, Westpac will require submitting an [Open Banking data sharing authority form](https://www.westpac.com.au/content/dam/public/wbc/documents/pdf/bb/open-banking-data-sharing-authority.pdf). Approval takes 1-2 days. For businesses registered after 1 November 2021, Administrators are automatically activated to nominate Users to share data.
+
+**Step-by-step**
+
+* Administrators need to sign into Westpac Online Banking and navigate to the Business network profile\
+  Select Administration > User administration
+* Select the name of the User that you want to be a Nominated Representative (i.e. permission to data share on behalf of the Organisation)
+* Scroll down the page to the heading ‘Open Banking data sharing’ and select Manage data sharing
+* Check that the User is registered for Protect SMS (can be validated in the ‘Additional security’ section)
+* Select Save
+
+[More information](https://www.westpac.com.au/business-banking/online-banking/support-faqs/data-sharing/)
+
 In the event that frontline bank staff do not know about CDR, apart from escalating the issue with the bank, you can also find the bank under the [Data Holders list](https://www.cdr.gov.au/find-a-provider?providerType=Data%2520Holder) and reach out via a specific email address for the respective CDR support team.
 
 ## Testing CDR Data Sharing
