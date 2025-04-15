@@ -54,8 +54,8 @@ In order to support the Trusted Advisor model for partners, Basiq has extended t
     "scope": "CLIENT_ACCESS", 
     "userId": "10be99c6-1944-4552-bd6f-08d893875179",
     "orgName": "Accountants XYZ Pty Ltd",
-    "orgRefID": "0123456789",
-    "orgRefType": "Mortgage Broker",
+    "orgRefID": "000123456",
+    "orgRefType": "AFS",
     "orgType": "Financial Broker",
     "abnAcn": "51824753556"
 }
