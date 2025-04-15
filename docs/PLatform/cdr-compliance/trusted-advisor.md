@@ -31,17 +31,17 @@ The Trusted Advisor (TA) is passed to the consent UI on launch via the Client To
 
 * **orgName**: The name of the Trusted Advisor organisation (e.g., Accountants XYZ Pty Ltd).
 * **orgRefID**: The reference ID of the organisation (e.g., 0123456789).
-* **orgRefType**: The type of reference ID (no specific validation; can be ABN, ACN, or any identifier)
+* **orgRefType**: The type of reference ID (no specific validation; AFSL, ACL, LawID etc.)
 * **orgType**: The type of the Trusted Advisor organisation (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
 * **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
 
 ## Individual TA Access
 
-Suited to organisations that fit the definition of a Trusted Advisor, but their business model does not allow organisation-level access (e.g., mortgage aggregator firms). The consent process is identical for both the individual Trusted Advisor access model and the Organization TA access model. However, in the individual access model, the Trusted Advisor details pertain to an individual, such as: 
+Suited to organisations that fit the definition of a Trusted Advisor, but their business model does not allow organisation-level access (e.g., mortgage aggregator firms). The consent process is identical for both the individual Trusted Advisor access model and the Organization TA access model. However, in the individual access model, the Trusted Advisor details pertain to an individual, such as:
 
 * **orgName**: The name of the Trusted Advisor (e.g., John Doe).
 * **orgRefID**: The reference ID of the Trusted advisor (e.g., 0123456789).
-* **orgRefType**: The type of reference ID (no specific validation; can be ABN, ACN, or any identifier)
+* **orgRefType**: The type of reference ID (no specific validation; AFSL, ACL, LawID etc.)
 * **orgType**: The type of the Trusted Advisor Individual (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
 * **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
 
