@@ -14,8 +14,6 @@ next:
 
 Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform that provides the building blocks of financial services.
 
-<Image align="center" src="https://files.readme.io/e950f9a28e1c99c9ac7927fa50215d55c92079a0f8b4a952ea789a771e4918a9-cc54ca2-DevHub_01.png" />
-
 Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking and more.
 
 Basiq’s Products allow you to:
