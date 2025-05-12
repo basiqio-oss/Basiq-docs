@@ -32,8 +32,6 @@ Basiq’s Products allow you to:
   </Card>
 </Cards>
 
-<Image align="center" src="https://files.readme.io/65af321ccc443d82e9e87a9e90316ab48f72b671ad144697b297f039b332f4a4-c999063-DevHub_02.png" />
-
 Our partner ecosystem branches far and wide, but our most common use cases are:
 
 <Tabs>
