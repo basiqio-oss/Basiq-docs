@@ -69,7 +69,7 @@ We’re excited to have you on board and look forward to supporting your journey
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
         padding: '12px 30px',
-        backgroundColor: '#1e88e5', // Classic blue button color
+        backgroundColor: '#1E1E1E', // Classic blue button color
         color: '#ffffff',
         border: 'none',
         borderRadius: '50px',
