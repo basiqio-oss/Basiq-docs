@@ -18,8 +18,6 @@ Basiq is a cutting-edge platform designed to revolutionise the way businesses an
 
 Our mission is to empower developers and businesses by providing a seamless and secure gateway to financial data. We strive to bridge the gap between financial institutions and fintech innovators, ensuring that accessing and utilising financial data is as effortless as possible, while maintaining the highest standards of security and compliance.
 
-<Image align="center" src="https://files.readme.io/d5d0e45-bb68dee-DevHub_01.png" />
-
 ### Core Features of Basiq
 
 **1. Financial Data Services:** Access detailed financial data from a range of institutions. With Basiq, you can retrieve account balances, transaction details, and more, ensuring a comprehensive view of financial information.
@@ -31,8 +29,6 @@ Our mission is to empower developers and businesses by providing a seamless and 
 **4. Reporting Services:** Generate insightful reports and analytics from financial data. Our reporting tools help you to analyse financial trends and gain deeper insights into customer behavior.
 
 **5. Webhooks and Real-time Notifications:** Stay updated with real-time notifications. Basiq’s webhook services provide immediate alerts for account events, facilitating prompt responses to important changes.
-
-<Image align="center" src="https://files.readme.io/7d874db-43206b9-DevHub_02.png" />
 
 ### Why Choose Basiq?
 
