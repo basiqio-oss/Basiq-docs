@@ -18,7 +18,7 @@ Collection resources provide access to information about a list of objects of th
 
 Some collections support the ability to filter the results. Filtering a collection resource is conducted via the `filter` query parameter using the following notation:
 
-**`?filter=[property].[condition]([value])`** 
+**`?filter=[property].[condition]([value])`**
 
 > 📘 All filter values should be URL encoded: `?filter=URLEncode(*)`
 
@@ -26,16 +26,16 @@ Some collections support the ability to filter the results. Filtering a collecti
 
 Properties are accessed using the following notation `object.property`.
 
-**Supported Conditions** 
+**Supported Conditions**
 
 <Table align={["left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
 
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
 
       </th>
     </tr>
@@ -43,78 +43,78 @@ Properties are accessed using the following notation `object.property`.
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         eq
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Equals\
+      <td>
+        Equals
         `?filter=account.id.eq('s55bf3')`
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         bt
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Between two values - used for date range filtering.\
+      <td>
+        Between two values - used for date range filtering.
         `?filter=transaction.postDate.bt('2017-09-28','2018-01-30'). Values are inclusive.`
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         gt
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Greater than\
+      <td>
+        Greater than
         `?filter=transaction.postDate.gt('2018-01-28')`
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         gteq
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Greater than or equal to\
+      <td>
+        Greater than or equal to
         `?filter=transaction.postDate.gteq('2018-01-28')`
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         lt
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Less than\
+      <td>
+        Less than
         `?filter=transaction.postDate.lt('2018-01-28')`
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         lteq
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Less than or equal to\
+      <td>
+        Less than or equal to
         `?filter=transaction.postDate.lteq('2018-01-28')`
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         ne
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        Not equals (only currently for [Institutions](https://api.basiq.io/v2.1/reference/institutions) endpoint)\
+      <td>
+        Not equals (only currently for [Institutions](https://api.basiq.io/v2.1/reference/institutions) endpoint)
         `?filter=institution.institutionType.ne('Test Bank')`
       </td>
     </tr>
@@ -133,3 +133,53 @@ Multiple filters are treated as an **and (&)** operation example:
 GET /users/ea3a81/transactions?filter=transaction.postDate.bt('2018-01-01','2018-02-26') HTTP/1.1
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
