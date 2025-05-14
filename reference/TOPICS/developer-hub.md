@@ -72,8 +72,8 @@ The code generation installation process that `api` offers comes in the form of 
 The `api` CLI:
 
 * Downloads your OpenAPI definition and caches it in a `.api/` directory.
-* Generate a full api library appropriate for the language you want. 
-  > Note that only TypeScript and JavaScript (targeting CommonJS or ECMAScript) are available right now. 
+* Generate a full api library appropriate for the language you want.
+  > Note that only TypeScript and JavaScript (targeting CommonJS or ECMAScript) are available right now.
 * Install necessary packages required for the generated library to run.
 * Install an `@api/your-api` package in your local `package.json`
   * This allows you to use the library with `require('@api/your-api')` or `import '@api/your-api'`.
@@ -99,7 +99,7 @@ sdk.postToken({scope: 'SERVER_ACCESS'}, {
 <!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(62.5% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/Z5TOPedR9rrRsxF6JUYw?embed&embed_mobile=tab&embed_desktop=inline" title="Run Code " frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
 `}</HTMLBlock>
 
-<hr/>
+<hr />
 
 ## Usage
 
@@ -112,9 +112,9 @@ When making API requests using the SDK, you only need to supply either one or tw
 
 ### Examples
 
-As we have imported `CORE` OAS from the [github](https://github.com/basiqio/api-ref). We will receive the below functions. 
+As we have imported `CORE` OAS from the [github](https://github.com/basiqio/api-ref). We will receive the below functions.
 
->  You can repeat this process for the other sections.
+> You can repeat this process for the other sections.
 
 ```
 CORE/
@@ -150,7 +150,7 @@ Let's go through each of them and how to invoke these function calls.
 * `auth(...values: string\[])`
   * Handles authentication for the API using different methods such as HTTP Basic, Bearer tokens, or API Keys.
   * Example:\
-    Bearer Token: `sdk.auth('myBearerToken')`\
+    Bearer Token: `sdk.auth('myBearerToken')`
     API Key: `sdk.auth('basic myApiKey')`
 
 ```Text Auth
@@ -253,19 +253,19 @@ Here, `id` matches the `path` parameter for `getUser`, and the SDK will issue a 
 
 #### Get User Jobs
 
-* `getUserJobs`: 
+* `getUserJobs`:
   * Retrieves the details of all existing and previous jobs associated with a user (only jobs that are less than 7 days old).
   * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
 #### Retrieve a Job
 
-* `getJobs`: 
+* `getJobs`:
   * Retrieves the details of an existing job using the unique job identifier returned upon job creation.
   * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
 #### Create MFA Response
 
-* `postJobMfa`: 
+* `postJobMfa`:
   * Creates an MFA (Multi-Factor Authentication) response for a job. Ensure you generate an authentication token with scope CLIENT\_ACCESS and basiq-version = 3.0 to create this resource.
   * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
@@ -304,7 +304,7 @@ sdk.postToken({ scope: 'SERVER_ACCESS' }, {
 
 ```
 
-You can clone one of our boilerplate from [here](https://github.com/basiq-ash/Basiq-API-Boilerplate). Also, you can play around with our API reference and see how it all works in the wild [here](https://api.basiq.io/reference/posttoken). 
+You can clone one of our boilerplate from [here](https://github.com/basiq-ash/Basiq-API-Boilerplate). Also, you can play around with our API reference and see how it all works in the wild [here](https://api.basiq.io/reference/posttoken).
 
 <Image align="center" src="https://files.readme.io/8ef10e333d598feac5eb4849dde07b862fd73d6d3124f84c9dc4df599b3352b4-274ea20-connect_retina.png" />
 
@@ -316,4 +316,85 @@ Below is the walk through of how to use BASIQ APIs
 <!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/xyfpHOLf7mINMxk4v1Do?embed&embed_mobile=tab&embed_desktop=inline" title="API Ref Walkthrough" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
 `}</HTMLBlock>
 
-If you have any questions? feel free to reach out to our support team.
+<Tabs>
+  <Tab title="Use Cases">
+    <Cards columns={2}>
+      <Card title="Account Aggregation" icon="fa-database">
+        Access and aggregate all your customers' financial data in one place. Build or add Personal Financial Management (PFM) functionality and provide tailored product offerings and recommendations.
+      </Card>
+
+      <Card title="Account Verification" icon="fa-check-circle">
+        Instantly verify account ownership and balances in real time. Automate responsible lending, reduce dishonor fees for payments, and improve collections.
+      </Card>
+    </Cards>
+
+    <Cards columns={2}>
+      <Card title="Data Enrichment" icon="fa-layer-group">
+        Gain insights into customer transactions with powerful overlay services: expense classification, merchant identification, income detection, and behavioral spend analytics.
+      </Card>
+
+      <Card title="Wealth Management" icon="fa-chart-pie">
+        Use enriched data for next-generation financial planning and wealth management solutions.
+      </Card>
+    </Cards>
+  </Tab>
+
+  <Tab title="Supported Regions">
+    > 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**\
+    > We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](https://dashboard.basiq.io/status).
+  </Tab>
+</Tabs>
+
+<Accordion title="Partner Showcase" icon="fa-users">
+  Check out how some of our customers are using Basiq. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in action.
+</Accordion>
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
