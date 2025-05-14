@@ -391,8 +391,6 @@ We have two test banks to test MFA challenges
 | Whistler        | ShowBox       | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
 | Wentworth-Smith | whislter      | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
 
-<br />
-
 <div
   style={{
     border: "2px solid #1E1E1E", // Dark border
