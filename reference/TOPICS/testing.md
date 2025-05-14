@@ -33,19 +33,19 @@ The transaction data is completely random to best replicate the type of data tha
 <Table align={["left","left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         loginId
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         password
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         persona
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         suitable use case
       </th>
     </tr>
@@ -53,15 +53,15 @@ The transaction data is completely random to best replicate the type of data tha
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Wentworth-Smith
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         whislter
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         This is a joint account.
 
         * **income (transaction account)**: 2 sources of salary, monthly stable salary & fortnightly stable salary.
@@ -69,7 +69,7 @@ The transaction data is completely random to best replicate the type of data tha
         * **expenses**: has predictable expenses (credit-card account)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Review expenses
         * Affordability assessment
@@ -83,22 +83,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Whistler
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         ShowBox
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **income (transaction account)**: 1 source of salary, fortnightly salary
         * **liabilities**: has BNPL (transaction account), no mortgage / personal loan
         * **expenses**: no daily expenses
         * **risk flags**: large amount of external transfer (debit to Jared)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Assess liabilities
         * Access transaction data
@@ -108,22 +108,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Gilfoyle
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         PiedPiper
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **income** (transaction account): stop fortnightly salary, unemployment benefits
         * **liabilities**: increase in BNPL (transaction account)
         * **expenses**: has predictable expenses (credit-card account)
         * **risk flags**: late fee (credit-card account)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -138,22 +138,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         gavinBelson
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         hooli2016
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **income** (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)
         * **liabilities**: personal loan (loan account)
         * **expenses**: predictable expenses (credit-card account)
         * HooliGov Bank (AU00004)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -168,22 +168,22 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         jared
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         django
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **income** (transaction account): weekly volatile income from uber + credit transfers from Whistler
         * **liabilities**: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)
         * **expenses**: predictable expenses (credit-card account)
         * **assets**: term deposit
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -198,21 +198,21 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         richard
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         tabsnotspaces
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **income** (transaction account): high stable fortnightly income, 2 rental incomes
         * **liabilities**: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)
         * **expenses**: predictable expenses (credit-card account)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -227,40 +227,40 @@ The transaction data is completely random to best replicate the type of data tha
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         laurieBream
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         business2024
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Happy path persona with business fields and business consumer consent
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Business Consumer Consent
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         ashMann
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         hooli2024
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **income** (transaction account): 1 salary monthly income, rental income
         * **liabilities**: unshared credit card transactions (payments in the transaction account)
         * **expenses**: predictable expenses (credit-card account), rental expense
         * **risk flags**: gambling behaviours, cash withdrawal, crypto exchange
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * Verify income
         * Assess liabilities
         * Expense check
@@ -285,15 +285,15 @@ The transaction data is completely random to best replicate the type of data tha
 <Table align={["left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         loginID
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         password
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Failure scenario
       </th>
     </tr>
@@ -301,73 +301,73 @@ The transaction data is completely random to best replicate the type of data tha
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         bighead
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         password
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **Error:** `invalid-credentials`
         * **Detail:** "Account is locked"
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         erlich
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         aviato
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **Error:** `account-not-accessible-requires-user-action`
         * **Detail:** "An action is required from end-user before account details can be returned."
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         jianYang
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         nothotdog
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         * **Error:** `service-unavailable`
         * **Detail:** "Service is currently unavailable. Please try again later."
       </td>
@@ -390,3 +390,55 @@ We have two test banks to test MFA challenges
 | Gilfoyle        | PiedPiper     | security-questions | \["What's your first company?"]                                           | \["Hooli"]            |
 | Whistler        | ShowBox       | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
 | Wentworth-Smith | whislter      | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
+
+<br />
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
