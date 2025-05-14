@@ -316,39 +316,6 @@ Below is the walk through of how to use BASIQ APIs
 <!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/xyfpHOLf7mINMxk4v1Do?embed&embed_mobile=tab&embed_desktop=inline" title="API Ref Walkthrough" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
 `}</HTMLBlock>
 
-<Tabs>
-  <Tab title="Use Cases">
-    <Cards columns={2}>
-      <Card title="Account Aggregation" icon="fa-database">
-        Access and aggregate all your customers' financial data in one place. Build or add Personal Financial Management (PFM) functionality and provide tailored product offerings and recommendations.
-      </Card>
-
-      <Card title="Account Verification" icon="fa-check-circle">
-        Instantly verify account ownership and balances in real time. Automate responsible lending, reduce dishonor fees for payments, and improve collections.
-      </Card>
-    </Cards>
-
-    <Cards columns={2}>
-      <Card title="Data Enrichment" icon="fa-layer-group">
-        Gain insights into customer transactions with powerful overlay services: expense classification, merchant identification, income detection, and behavioral spend analytics.
-      </Card>
-
-      <Card title="Wealth Management" icon="fa-chart-pie">
-        Use enriched data for next-generation financial planning and wealth management solutions.
-      </Card>
-    </Cards>
-  </Tab>
-
-  <Tab title="Supported Regions">
-    > 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**\
-    > We are working to expand availability to other countries. Visit this link for a complete list of [supported financial institutions](https://dashboard.basiq.io/status).
-  </Tab>
-</Tabs>
-
-<Accordion title="Partner Showcase" icon="fa-users">
-  Check out how some of our customers are using Basiq. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in action.
-</Accordion>
-
 <div
   style={{
     border: "2px solid #1E1E1E", // Dark border
