@@ -48,8 +48,6 @@ Automate workflows to enable personalised, autonomous finance offerings with eve
 
 > 📘 For enablement purposes, please contact our Sales team or Customer success teams at either [support@basiq.io ](mailto:support@basiq.io).
 
-<br />
-
 <div
   style={{
     border: "2px solid #1E1E1E", // Dark border
