@@ -54,15 +54,15 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 <Table align={["left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         Section
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Feature
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Description
       </th>
     </tr>
@@ -70,226 +70,226 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Title and Subtitle
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Brand name
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Title
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Subtitle
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Purposes
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Your Purpose]
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         [Permissions](doc:consent-scopes)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Name and occupation
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - unchecked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Name, occupation, contact details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - checked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Organisation profile
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - unchecked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Organisation profile and contact details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - unchecked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Account name, type and balance
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - checked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Account balance and details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - checked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Transaction details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         \[Checkbox - checked]
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Data
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Duration (days)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Data retrieval span (days)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Retain consumer data
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law.
         We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Ask to retain de-identified data
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         In both cases for `action=connect` and `action=manage`. The `BrandName` will remove personal details from your data so you can’t be identified, while ensuring compliance with applicable privacy safeguards.
       </td>
     </tr>
@@ -301,15 +301,15 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 <Table align={["left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         Section
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Feature
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Description
       </th>
     </tr>
@@ -317,15 +317,15 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Header Image
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Image selection
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Manage the upload and display of a custom header image for brand visibility. The recommended size for header image is
 
         **1372x256**
@@ -335,267 +335,267 @@ The Consent UI is composed of several key screens, each designed to facilitate a
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Always display header image
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Check this option to always display headers on all screens.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Font
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Font
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Select the font style that will be used throughout the UI, aiding in brand consistency. If you have a custom font, please contact Basiq to discuss its integration.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Primary color
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Use this to change primary color. E.g # 130F26
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Secondary color
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Use this to change secondary color. E.g # 130F26
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Inactive color
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Use this to change inactive color. E.g # 7F888C
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Heading size (px)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Adjust the size of heading texts in pixels.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Paragraph size (px)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Adjust the size of paragraph texts in pixels.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Line height (px)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Adjust the height of lines in pixels for readability.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Buttons
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Primary button
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Customise text and background color, along with border radius for primary buttons.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Secondary button
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Customise text and background color, along with border radius for secondary buttons.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Border radius (px)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Customise the border radius of your buttons.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Colors
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Control the UI's overall appearance, including background color and the colors used for messages indicating success, failure, or warnings.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Success
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        \# 4FC35A
+      <td>
+        # 4FC35A
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Warning
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        \# FABE34
+      <td>
+        # FABE34
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Failure
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        \# FE493F
+      <td>
+        # FE493F
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Background
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        \# FFFFFF
+      <td>
+        # FFFFFF
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Links
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        \# 0459A8
+      <td>
+        # 0459A8
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Accreditation
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        \# 2784DA
+      <td>
+        # 2784DA
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Wrapper
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Desktop width (px)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Define the width of the desktop UI wrapper in pixels to ensure proper layout fitting.
       </td>
     </tr>
@@ -614,15 +614,15 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 <Table align={["left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         Section
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Feature
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         Description
       </th>
     </tr>
@@ -630,57 +630,57 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Preferences
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Skip success screen
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         A toggle to bypass the confirmation screen after successful consent, offering a more streamlined experience for users. Useful for repeat users who are familiar with the process and do not require additional confirmation.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Allow multiple connections
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Permits users to connect multiple bank accounts from different financial institutions, broadening the scope of data aggregation for a more comprehensive financial overview.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Analytics (GTM)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         This field accepts a Google Tag Manager tracking code, which allows for the collection of analytics on how users interact with the consent UI, providing insights into user behaviour and potential areas for UI improvement.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Reference name
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         When a user attempts to cancel out of our consent UI, a confirmation pop-up appears to ensure the user intends to leave the consent process. This pop-up provides a message indicating the action the system will take if the user confirms the cancelation. For example: If the partner name is "ExamplePartner", the confirmation pop-up will now display:
 
         "Are you sure you want to leave? You will be taken back to ExamplePartner."
@@ -688,29 +688,29 @@ The Consent UI is composed of several key screens, each designed to facilitate a
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         External URLs
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Redirect URL
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         The web address users will be redirected to after the consent process is completed. This URL is critical for maintaining a seamless user journey through the consent procedure, whether granting or revoking consent.
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
 
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Manage consent url
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         A publicly hosted page with details on Consent management for your users.
       </td>
     </tr>
@@ -735,25 +735,25 @@ This approach ensures compliance with bank security requirements and maintains t
 
 <div
   style={{
-    border: "2px solid #4e9ccf", // Classic blue border
+    border: "2px solid #1E1E1E", // Dark border
     borderRadius: "8px",
-    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    backgroundColor: "#1E1E1E", // Dark background
     padding: "16px",
     margin: "16px 0",
     fontFamily: "Arial, sans-serif",
-    color: "#333", // Dark text for readability
+    color: "#ffffff", // Light text for contrast
   }}
 >
-  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
         padding: '12px 30px',
-        backgroundColor: '#1e88e5', // Classic blue button color
+        backgroundColor: '#1E1E1E',
         color: '#ffffff',
-        border: 'none',
+        border: '2px solid #ffffff', // Add contrast border if needed
         borderRadius: '50px',
         fontSize: '16px',
         fontWeight: '600',
@@ -766,16 +766,16 @@ This approach ensures compliance with bank security requirements and maintains t
         height: '45px',
         position: 'relative',
         overflow: 'hidden',
-        marginLeft: '10px', // Add space between text and button
-        minWidth: '150px', // Ensure the button has enough width for the text
+        marginLeft: '10px',
+        minWidth: '150px',
       }}
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.1)';
-        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
-        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
       }}
     >
       Support team
