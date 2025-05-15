@@ -75,21 +75,151 @@ The payload should include:
 
 For income verification, the following metrics and income groups are relevant for this use-case:
 
-| ID    | Title                                      |
-| ----- | ------------------------------------------ |
-| ME001 | # OF IDENTIFIED SALARY SOURCES             |
-| ME002 | AVERAGE MONTHLY AMOUNT FROM SALARY         |
-| ME003 | SALARY HAS BEEN STABLE FOR (MONTHS)        |
-| ME004 | OTHER POSSIBLE INCOME MONTHLY              |
-| ME022 | HAS RECENT CHANGES TO SALARY CIRCUMSTANCES |
-| ME033 | AVERAGE INCOME MONTHLY                     |
-| ME035 | TOTAL INCOME HAS BEEN STABLE FOR (MONTHS)  |
-| ME036 | MEDIAN MONTHLY AMOUNT FROM SALARY          |
-| ME037 | MEDIAN INCOME MONTHLY                      |
-| ME040 | AVERAGE MONTHLY CREDITS                    |
-| ME042 | # OF RECENT INCOME SOURCES                 |
-| ME043 | # OF ONGOING REGULAR INCOME SOURCES        |
-| ME045 | TOTAL INCOME HAS BEEN SECURE FOR (MONTHS)  |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        ID
+      </th>
+
+      <th>
+        Title
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ME001
+      </td>
+
+      <td>
+        # OF IDENTIFIED SALARY SOURCES
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME002
+      </td>
+
+      <td>
+        AVERAGE MONTHLY AMOUNT FROM SALARY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME003
+      </td>
+
+      <td>
+        SALARY HAS BEEN STABLE FOR (MONTHS)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME004
+      </td>
+
+      <td>
+        OTHER POSSIBLE INCOME MONTHLY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME022
+      </td>
+
+      <td>
+        HAS RECENT CHANGES TO SALARY CIRCUMSTANCES
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME033
+      </td>
+
+      <td>
+        AVERAGE INCOME MONTHLY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME035
+      </td>
+
+      <td>
+        TOTAL INCOME HAS BEEN STABLE FOR (MONTHS)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME036
+      </td>
+
+      <td>
+        MEDIAN MONTHLY AMOUNT FROM SALARY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME037
+      </td>
+
+      <td>
+        MEDIAN INCOME MONTHLY
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME040
+      </td>
+
+      <td>
+        AVERAGE MONTHLY CREDITS
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME042
+      </td>
+
+      <td>
+        # OF RECENT INCOME SOURCES
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME043
+      </td>
+
+      <td>
+        # OF ONGOING REGULAR INCOME SOURCES
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ME045
+      </td>
+
+      <td>
+        TOTAL INCOME HAS BEEN SECURE FOR (MONTHS)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ### Including All Income Groups
 
@@ -211,31 +341,30 @@ These scores demonstrate the application’s focus on speed, accessibility, and 
 
 <div
   style={{
-    border: "2px solid #4e9ccf", // Classic blue border
+    border: "2px solid #1E1E1E", // Dark border
     borderRadius: "8px",
-    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    backgroundColor: "#1E1E1E", // Dark background
     padding: "16px",
     margin: "16px 0",
     fontFamily: "Arial, sans-serif",
-    color: "#333", // Dark text for readability
+    color: "#ffffff", // Light text for contrast
   }}
 >
-  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
         padding: '12px 30px',
-        backgroundColor: '#1e88e5', // Classic blue button color
+        backgroundColor: '#1E1E1E',
         color: '#ffffff',
-        border: 'none',
+        border: '2px solid #ffffff', // Add contrast border if needed
         borderRadius: '50px',
         fontSize: '16px',
         fontWeight: '600',
         textTransform: 'uppercase',
         cursor: 'pointer',
-        boxShadow: '0 4px 10px rgba(30, 136, 229, 0.2)', // Soft blue shadow
         transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
         outline: 'none',
         display: 'flex',
@@ -243,18 +372,16 @@ These scores demonstrate the application’s focus on speed, accessibility, and 
         height: '45px',
         position: 'relative',
         overflow: 'hidden',
-        marginLeft: '10px', // Add space between text and button
-        minWidth: '150px', // Ensure the button has enough width for the text
+        marginLeft: '10px',
+        minWidth: '150px',
       }}
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.1)';
-        e.target.style.boxShadow = '0 6px 15px'; // Darker shadow on hover
-        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
-        e.target.style.boxShadow = '0 4px 10px';
-        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
       }}
     >
       Support team
