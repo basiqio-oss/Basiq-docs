@@ -50,7 +50,7 @@ With Basiq's API, verifying accounts is quick and secure. The data comes directl
 
 ### Step 2: Pre-Consent Screen ( Optional )
 
-* Review the pre-consent information. This step is optional. 
+* Review the pre-consent information. This step is optional.
 
 <Image align="center" src="https://files.readme.io/2aaad68-image.png" />
 
@@ -58,7 +58,7 @@ With Basiq's API, verifying accounts is quick and secure. The data comes directl
 
 ### Step 3: Consent UI
 
-* Provide your consent to proceed. 
+* Provide your consent to proceed.
 
 <Image align="center" src="https://files.readme.io/25ddc7c-image.png" />
 
@@ -66,7 +66,7 @@ With Basiq's API, verifying accounts is quick and secure. The data comes directl
 
 ### Step 4: Select Institution
 
-* Choose your financial institution from the list provided. 
+* Choose your financial institution from the list provided.
 
 <Image align="center" src="https://files.readme.io/128bb1c-image.png" />
 
@@ -74,7 +74,7 @@ With Basiq's API, verifying accounts is quick and secure. The data comes directl
 
 ### Step 5: Connection to DataHolder
 
-* Steps 5 involve connecting to your DataHolder, which includes additional screens for account selection, reviewing consent from the DataHolder's end, and redirection back to BASIQ. These steps may vary depending on the specific bank or DataHolder. 
+* Steps 5 involve connecting to your DataHolder, which includes additional screens for account selection, reviewing consent from the DataHolder's end, and redirection back to BASIQ. These steps may vary depending on the specific bank or DataHolder.
 
 <Image align="center" src="https://files.readme.io/a930cb1-image.png" />
 
@@ -82,7 +82,7 @@ With Basiq's API, verifying accounts is quick and secure. The data comes directl
 
 ### Step 6: Redirection Back to BASIQ
 
-* You'll see a connection screen confirming the successful linkage between your account and the service. If the connection is unsuccessful, an error message will be displayed. Once confirmed, this screen indicates that your account is verified. You can then poll the job after clicking "Done," which will redirect you back to your client application. 
+* You'll see a connection screen confirming the successful linkage between your account and the service. If the connection is unsuccessful, an error message will be displayed. Once confirmed, this screen indicates that your account is verified. You can then poll the job after clicking "Done," which will redirect you back to your client application.
 
 ```erlang URL
 https://example./account-verification?jobId=d684c882-fb9c-4284-98a0-d3b65334922e&jobIds=d684c882-fb9c-4284-98a0-d3b65334922e
@@ -122,3 +122,53 @@ Our starter kits follow Basiq's best practices, ensuring:
 > 👍 Tutorial
 >
 > [Account Verification. ](https://api.basiq.io/docs/starter-kit-account-verification)
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
