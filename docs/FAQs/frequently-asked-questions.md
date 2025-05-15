@@ -159,3 +159,155 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
     </button>
   </div>
 </div>
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
+
+<br />
+
+<div
+  style={{
+    border: "2px solid #1E1E1E", // Dark border
+    borderRadius: "8px",
+    backgroundColor: "#1E1E1E", // Dark background
+    padding: "16px",
+    margin: "16px 0",
+    fontFamily: "Arial, sans-serif",
+    color: "#ffffff", // Light text for contrast
+  }}
+>
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <button
+      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      style={{
+        padding: '12px 30px',
+        backgroundColor: '#1E1E1E',
+        color: '#ffffff',
+        border: '2px solid #ffffff', // Add contrast border if needed
+        borderRadius: '50px',
+        fontSize: '16px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
+        outline: 'none',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '45px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginLeft: '10px',
+        minWidth: '150px',
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.transform = 'scale(1.1)';
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.transform = 'scale(1)';
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+      }}
+    >
+      Support team
+    </button>
+  </div>
+</div>
