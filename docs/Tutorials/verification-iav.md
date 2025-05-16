@@ -75,151 +75,21 @@ The payload should include:
 
 For income verification, the following metrics and income groups are relevant for this use-case:
 
-<Table>
-  <thead>
-    <tr>
-      <th>
-        ID
-      </th>
-
-      <th>
-        Title
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        ME001
-      </td>
-
-      <td>
-        # OF IDENTIFIED SALARY SOURCES
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME002
-      </td>
-
-      <td>
-        AVERAGE MONTHLY AMOUNT FROM SALARY
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME003
-      </td>
-
-      <td>
-        SALARY HAS BEEN STABLE FOR (MONTHS)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME004
-      </td>
-
-      <td>
-        OTHER POSSIBLE INCOME MONTHLY
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME022
-      </td>
-
-      <td>
-        HAS RECENT CHANGES TO SALARY CIRCUMSTANCES
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME033
-      </td>
-
-      <td>
-        AVERAGE INCOME MONTHLY
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME035
-      </td>
-
-      <td>
-        TOTAL INCOME HAS BEEN STABLE FOR (MONTHS)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME036
-      </td>
-
-      <td>
-        MEDIAN MONTHLY AMOUNT FROM SALARY
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME037
-      </td>
-
-      <td>
-        MEDIAN INCOME MONTHLY
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME040
-      </td>
-
-      <td>
-        AVERAGE MONTHLY CREDITS
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME042
-      </td>
-
-      <td>
-        # OF RECENT INCOME SOURCES
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME043
-      </td>
-
-      <td>
-        # OF ONGOING REGULAR INCOME SOURCES
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        ME045
-      </td>
-
-      <td>
-        TOTAL INCOME HAS BEEN SECURE FOR (MONTHS)
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| ID    | Title                                      |
+| ----- | ------------------------------------------ |
+| ME001 | OF IDENTIFIED SALARY SOURCES               |
+| ME002 | AVERAGE MONTHLY AMOUNT FROM SALARY         |
+| ME003 | SALARY HAS BEEN STABLE FOR (MONTHS)        |
+| ME004 | OTHER POSSIBLE INCOME MONTHLY              |
+| ME022 | HAS RECENT CHANGES TO SALARY CIRCUMSTANCES |
+| ME033 | AVERAGE INCOME MONTHLY                     |
+| ME035 | TOTAL INCOME HAS BEEN STABLE FOR (MONTHS)  |
+| ME036 | MEDIAN MONTHLY AMOUNT FROM SALARY          |
+| ME037 | MEDIAN INCOME MONTHLY                      |
+| ME040 | AVERAGE MONTHLY CREDITS                    |
+| ME042 | OF RECENT INCOME SOURCES                   |
+| ME043 | OF ONGOING REGULAR INCOME SOURCES          |
+| ME045 | TOTAL INCOME HAS BEEN SECURE FOR (MONTHS)  |
 
 ### Including All Income Groups
 
