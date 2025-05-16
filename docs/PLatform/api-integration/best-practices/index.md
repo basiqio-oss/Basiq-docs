@@ -59,44 +59,44 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-                                                                .doc-section {
-                                                                  padding: 20px;
-                                                                  background: #f9f9f9;
-                                                                  border-radius: 8px;
-                                                                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                                                                  margin: 10px 0;
-                                                                }
+                                                                    .doc-section {
+                                                                      padding: 20px;
+                                                                      background: #f9f9f9;
+                                                                      border-radius: 8px;
+                                                                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                                                      margin: 10px 0;
+                                                                    }
 
-                                                                .doc-highlight {
-                                                                  font-size: 1.1em;
-                                                                  color: #333;
-                                                                  background: #eef7fe;
-                                                                  padding: 10px;
-                                                                  border-radius: 6px;
-                                                                  margin-bottom: 16px;
-                                                                }
+                                                                    .doc-highlight {
+                                                                      font-size: 1.1em;
+                                                                      color: #333;
+                                                                      background: #eef7fe;
+                                                                      padding: 10px;
+                                                                      border-radius: 6px;
+                                                                      margin-bottom: 16px;
+                                                                    }
 
-                                                                .doc-list {
-                                                                  list-style: none;
-                                                                  padding-left: 0;
-                                                                  margin: 0;
-                                                                }
+                                                                    .doc-list {
+                                                                      list-style: none;
+                                                                      padding-left: 0;
+                                                                      margin: 0;
+                                                                    }
 
-                                                                .doc-list li {
-                                                                  font-size: 1em;
-                                                                  color: #555;
-                                                                  padding: 8px 0;
-                                                                  border-bottom: 1px solid #eee;
-                                                                }
+                                                                    .doc-list li {
+                                                                      font-size: 1em;
+                                                                      color: #555;
+                                                                      padding: 8px 0;
+                                                                      border-bottom: 1px solid #eee;
+                                                                    }
 
-                                                                .doc-list li:last-child {
-                                                                  border-bottom: none;
-                                                                }
+                                                                    .doc-list li:last-child {
+                                                                      border-bottom: none;
+                                                                    }
 
-                                                                .doc-list strong {
-                                                                  color: #0073e6;
-                                                                }
-                                                              `}
+                                                                    .doc-list strong {
+                                                                      color: #0073e6;
+                                                                    }
+                                                                  `}
 </style>
 
 <Columns layout="auto" className="documentation-columns">
@@ -175,35 +175,35 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-                                                              .documentation-columns {
-                                                                gap: 20px;
-                                                              }
+                                                                  .documentation-columns {
+                                                                    gap: 20px;
+                                                                  }
 
-                                                              .highlight {
-                                                                color: #0073e6;
-                                                                font-weight: bold;
-                                                              }
+                                                                  .highlight {
+                                                                    color: #0073e6;
+                                                                    font-weight: bold;
+                                                                  }
 
-                                                              .warning {
-                                                                background: #ffefef;
-                                                                border-left: 5px solid #f44336;
-                                                                padding: 10px;
-                                                                margin: 10px 0;
-                                                              }
+                                                                  .warning {
+                                                                    background: #ffefef;
+                                                                    border-left: 5px solid #f44336;
+                                                                    padding: 10px;
+                                                                    margin: 10px 0;
+                                                                  }
 
-                                                              h3, h4 {
-                                                                margin-top: 0;
-                                                              }
+                                                                  h3, h4 {
+                                                                    margin-top: 0;
+                                                                  }
 
-                                                              ul {
-                                                                list-style: disc;
-                                                                padding-left: 20px;
-                                                              }
+                                                                  ul {
+                                                                    list-style: disc;
+                                                                    padding-left: 20px;
+                                                                  }
 
-                                                              p {
-                                                                margin: 0 0 10px;
-                                                              }
-                                                            `}
+                                                                  p {
+                                                                    margin: 0 0 10px;
+                                                                  }
+                                                                `}
 </style>
 
 <blockquote className="warning">
@@ -266,90 +266,88 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <style jsx>
   {`
-                                                        .documentation-columns {
-                                                          gap: 20px;
-                                                          margin-top: 30px;
-                                                        }
+                                                            .documentation-columns {
+                                                              gap: 20px;
+                                                              margin-top: 30px;
+                                                            }
 
-                                                        .interactive-card {
-                                                          max-width: 360px;
-                                                          margin: 0 auto;
-                                                          padding: 20px;
-                                                          background-color: #ffffff;
-                                                          border-radius: 12px;
-                                                          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                                                          transition: transform 0.3s ease;
-                                                          cursor: pointer;
-                                                        }
+                                                            .interactive-card {
+                                                              max-width: 360px;
+                                                              margin: 0 auto;
+                                                              padding: 20px;
+                                                              background-color: #ffffff;
+                                                              border-radius: 12px;
+                                                              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                                                              transition: transform 0.3s ease;
+                                                              cursor: pointer;
+                                                            }
 
-                                                        .interactive-card:hover {
-                                                          transform: translateY(-10px);
-                                                        }
+                                                            .interactive-card:hover {
+                                                              transform: translateY(-10px);
+                                                            }
 
-                                                        .card-content {
-                                                          text-align: center;
-                                                        }
+                                                            .card-content {
+                                                              text-align: center;
+                                                            }
 
-                                                        .card-icon {
-                                                          font-size: 48px;
-                                                          color: #0073e6;
-                                                          margin-bottom: 20px;
-                                                        }
+                                                            .card-icon {
+                                                              font-size: 48px;
+                                                              color: #0073e6;
+                                                              margin-bottom: 20px;
+                                                            }
 
-                                                        .card-title {
-                                                          font-size: 1.4em;
-                                                          color: #333;
-                                                          margin-bottom: 16px;
-                                                          font-weight: bold;
-                                                        }
+                                                            .card-title {
+                                                              font-size: 1.4em;
+                                                              color: #333;
+                                                              margin-bottom: 16px;
+                                                              font-weight: bold;
+                                                            }
 
-                                                        .card-description {
-                                                          font-size: 1em;
-                                                          color: #666;
-                                                          line-height: 1.5;
-                                                          margin-bottom: 20px;
-                                                        }
+                                                            .card-description {
+                                                              font-size: 1em;
+                                                              color: #666;
+                                                              line-height: 1.5;
+                                                              margin-bottom: 20px;
+                                                            }
 
-                                                        .learn-more-button {
-                                                          padding: 10px 20px;
-                                                          background-color: #0073e6;
-                                                          color: white;
-                                                          font-size: 1em;
-                                                          border: none;
-                                                          border-radius: 30px;
-                                                          cursor: pointer;
-                                                          transition: background-color 0.3s ease;
-                                                        }
+                                                            .learn-more-button {
+                                                              padding: 10px 20px;
+                                                              background-color: #0073e6;
+                                                              color: white;
+                                                              font-size: 1em;
+                                                              border: none;
+                                                              border-radius: 30px;
+                                                              cursor: pointer;
+                                                              transition: background-color 0.3s ease;
+                                                            }
 
-                                                        .learn-more-button:hover {
-                                                          background-color: #005bb5;
-                                                        }
-                                                      `}
+                                                            .learn-more-button:hover {
+                                                              background-color: #005bb5;
+                                                            }
+                                                          `}
 </style>
-
-<br />
 
 <div
   style={{
-    border: "2px solid #4e9ccf", // Classic blue border
+    border: "2px solid #1E1E1E", // Dark border
     borderRadius: "8px",
-    backgroundColor: "#e3f2fd", // Light blue background (cascade effect)
+    backgroundColor: "#1E1E1E", // Dark background
     padding: "16px",
     margin: "16px 0",
     fontFamily: "Arial, sans-serif",
-    color: "#333", // Dark text for readability
+    color: "#ffffff", // Light text for contrast
   }}
 >
-  <strong style={{ color: "#1e88e5" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
       onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
       style={{
         padding: '12px 30px',
-        backgroundColor: '#1e88e5', // Classic blue button color
+        backgroundColor: '#1E1E1E',
         color: '#ffffff',
-        border: 'none',
+        border: '2px solid #ffffff', // Add contrast border if needed
         borderRadius: '50px',
         fontSize: '16px',
         fontWeight: '600',
@@ -362,16 +360,16 @@ When integrating with the Basiq API, there are some best practices that play a c
         height: '45px',
         position: 'relative',
         overflow: 'hidden',
-        marginLeft: '10px', // Add space between text and button
-        minWidth: '150px', // Ensure the button has enough width for the text
+        marginLeft: '10px',
+        minWidth: '150px',
       }}
       onMouseEnter={(e) => {
         e.target.style.transform = 'scale(1.1)';
-        e.target.style.backgroundColor = '#1565c0'; // Darker blue on hover
+        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
       }}
       onMouseLeave={(e) => {
         e.target.style.transform = 'scale(1)';
-        e.target.style.backgroundColor = '#1e88e5'; // Original blue
+        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
       }}
     >
       Support team
