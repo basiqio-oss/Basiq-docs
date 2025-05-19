@@ -3079,7 +3079,7 @@
                                                     },
                                                     "postDate": {
                                                         "type": "string",
-                                                        "description": "Date the transaction was posted as provided by the institution (this is the same date that appears on a bank statement). This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
+                                                        "description": "Date the transaction was posted as provided by the institution. This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
                                                         "example": "2018-11-02T00:00:00Z"
                                                     },
                                                     "subClass": {
@@ -3946,7 +3946,7 @@
                                         },
                                         "postDate": {
                                             "type": "string",
-                                            "description": "Date the transaction was posted as provided by the institution (this is the same date that appears on a bank statement). This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
+                                            "description": "Date the transaction was posted as provided by the institution. This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
                                             "example": "2018-11-02T00:00:00Z"
                                         },
                                         "subClass": {
@@ -16172,7 +16172,7 @@
                     },
                     "postDate": {
                         "type": "string",
-                        "description": "Date the transaction was posted as provided by the institution (this is the same date that appears on a bank statement). This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
+                        "description": "Date the transaction was posted as provided by the institution. This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
                         "example": "2018-11-02T00:00:00Z"
                     },
                     "subClass": {
@@ -17257,7 +17257,7 @@
                                 },
                                 "postDate": {
                                     "type": "string",
-                                    "description": "Date the transaction was posted as provided by the institution (this is the same date that appears on a bank statement). This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
+                                    "description": "Date the transaction was posted as provided by the institution. This value is null if the record is pending. e.g. \"2017-11-10T21:46:44Z\" or 2017-11-10T00:00:00Z.",
                                     "example": "2018-11-02T00:00:00Z"
                                 },
                                 "subClass": {
