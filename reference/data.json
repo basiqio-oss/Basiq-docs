@@ -1534,6 +1534,7 @@
                                     "required": [
                                         "type",
                                         "id",
+                                        "displayName",
                                         "lastUpdated",
                                         "status",
                                         "name",
