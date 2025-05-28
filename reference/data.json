@@ -70,6 +70,7 @@
                                                     "lastUpdated",
                                                     "status",
                                                     "name",
+                                                    "displayName",
                                                     "accountNo",
                                                     "accountHolder",
                                                     "isOwned",
@@ -94,6 +95,16 @@
                                                         "type": "string",
                                                         "description": "Uniquely identifies the account.",
                                                         "example": "s55bf3"
+                                                    },
+                                                      "name": {
+                                                        "type": "string",
+                                                        "description": "Mapped directly from CDR 'nickname'. Represents the user-defined name for the account without fallback to displayName.",
+                                                        "example": "My Home Loan"
+                                                    },
+                                                    "displayName": {
+                                                        "type": "string",
+                                                        "description": "Mapped directly from CDR 'displayName'. Represents the institution-defined display name for the account.",
+                                                        "example": "Hooli Home Loan"
                                                     },
                                                     "depositRate": {
                                                         "type": "string",
@@ -244,11 +255,6 @@
                                                         "type": "string",
                                                         "description": "Timestamp of last update, UTC, RFC 3339 format e.g. \"2017-09-28T13:39:33Z\"",
                                                         "example": "2019-09-28T13:39:33Z"
-                                                    },
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Account name as defined by institution or user.",
-                                                        "example": "Master Savings"
                                                     },
                                                     "status": {
                                                         "type": "string",
@@ -1528,6 +1534,7 @@
                                     "required": [
                                         "type",
                                         "id",
+                                        "displayName",
                                         "lastUpdated",
                                         "status",
                                         "name",
@@ -1555,6 +1562,16 @@
                                             "type": "string",
                                             "description": "Uniquely identifies the account.",
                                             "example": "s55bf3"
+                                        },
+                                         "name": {
+                                            "type": "string",
+                                            "description": "Mapped directly from CDR 'nickname'. Represents the user-defined name for the account without fallback to displayName.",
+                                            "example": "My Home Loan"
+                                        },
+                                        "displayName": {
+                                            "type": "string",
+                                            "description": "Mapped directly from CDR 'displayName'. Represents the institution-defined display name for the account.",
+                                            "example": "Hooli Home Loan"
                                         },
                                         "depositRate": {
                                             "type": "string",
@@ -1705,11 +1722,6 @@
                                             "type": "string",
                                             "description": "Timestamp of last update, UTC, RFC 3339 format e.g. \"2017-09-28T13:39:33Z\"",
                                             "example": "2019-09-28T13:39:33Z"
-                                        },
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Account name as defined by institution or user.",
-                                            "example": "Master Savings"
                                         },
                                         "status": {
                                             "type": "string",
