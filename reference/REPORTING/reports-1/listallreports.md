@@ -1,10 +1,9 @@
 ---
 title: List all reports
 excerpt: >-
-  Use this endpoint to retrieve a list of created reports. Every created report
-  is saved as a snapshot and can be retrieved up to 24 hours after creation.You
-  can call the reports/types endpoint to see the list of supported reports.
-  reports.
+  Use this endpoint to retrieve a list of created reports. Each report is stored
+  as a snapshot and remains available for up to 14 days after creation. To view
+  the list of supported report types, you can call the reports/types endpoint.
 api:
   file: reporting.json
   operationId: listallreports
