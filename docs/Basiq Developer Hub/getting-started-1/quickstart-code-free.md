@@ -13,10 +13,10 @@ metadata:
 next:
   description: ''
 ---
-```mdx
 <img align="left" src="https://files.readme.io/1a04ca3-Group_1496.svg" />
 
 <br />
+
 <br />
 
 The following guide will help you to get up and running with the Basiq API without writing any application code. It uses [Postman](https://www.postman.com) and is suitable for both technical and non-technical audiences.
@@ -25,7 +25,7 @@ If you would prefer to integrate your application with the API directly, and are
 
 > 🚧 Postman app required
 >
-> Postman is an API development tool which gives users a platform to make requests to any API. It's often used by developers to test out their own API's, however many of their consumers come from a non-technical background wanting to interact with a public API. We have curated a Postman collection for this use case, which features all of our API endpoints and makes it simple to get up and running using the platform. 
+> Postman is an API development tool which gives users a platform to make requests to any API. It's often used by developers to test out their own API's, however many of their consumers come from a non-technical background wanting to interact with a public API. We have curated a Postman collection for this use case, which features all of our API endpoints and makes it simple to get up and running using the platform.
 >
 > If you don't already have the app you can [download it here.](https://www.getpostman.com/downloads)
 
@@ -34,6 +34,7 @@ If you would prefer to integrate your application with the API directly, and are
 <img align="left" src="https://files.readme.io/546c6d2-Group_7_1.svg" />
 
 <br />
+
 <br />
 
 Register your application via our [dashboard](https://dashboard.basiq.io/) and create a new API key under the Developers tab. <br />
@@ -49,31 +50,34 @@ Register your application via our [dashboard](https://dashboard.basiq.io/) and c
 <img align="left" src="https://files.readme.io/546c6d2-Group_7_1.svg" />
 
 <br />
+
 <br />
 
 Go to [our sample code](https://documenter.getpostman.com/view/2889361/S1LyVTQP?version=latest) (also known as the Postman Collection) and click Run in Postman:
 
-<Image width="80%" src="https://files.readme.io/d674435-postmanstep7.png" />
+<Image align="center" width="80%" src="https://files.readme.io/d674435-postmanstep7.png" />
 
-*Make sure you select the Postman app that was installed earlier (the option will display your operating system, e.g. Mac/Windows).* 
+*Make sure you select the Postman app that was installed earlier (the option will display your operating system, e.g. Mac/Windows).*
 
-<Image width="80%" src="https://files.readme.io/4f282a8-postmanStep8" />
+<Image align="center" width="80%" src="https://files.readme.io/4f282a8-postmanStep8" />
 
 ## STEP 3: Authenticate
 
 <img align="left" src="https://files.readme.io/546c6d2-Group_7_1.svg" />
 
 <br />
-<br />
+
 <br />
 
-In Postman click on the menu options [ 1 ], [ 2 ], [ 3 ] & [ 4 ]
+<br />
+
+In Postman click on the menu options \[ 1 ], \[ 2 ], \[ 3 ] & \[ 4 ]
 
 \[ 5 ] Then replace XXXXXX with the API Key you generated via the dashboard in Step 1
 
 \[ 6 ] Click Save
 
-<Image width="80%" src="https://files.readme.io/07eec60-postmanstep9.png" />
+<Image align="center" width="80%" src="https://files.readme.io/07eec60-postmanstep9.png" />
 
 > 📘 Your access token will last an hour
 >
@@ -85,11 +89,11 @@ Before you start making calls to the API, it's a good idea to run the tests to e
 
 To run the tests, simply click Run from the collection menu:
 
-<Image width="80%" src="https://files.readme.io/4ec6f15-postmanstep10.png" />
+<Image align="center" width="80%" src="https://files.readme.io/4ec6f15-postmanstep10.png" />
 
 The Collection Runner window will open. Click Run:
 
-<Image width="80%" src="https://files.readme.io/105b527-postmanstep11.png" />
+<Image align="center" width="80%" src="https://files.readme.io/105b527-postmanstep11.png" />
 
 You will then see the results in the "Collection Runner" window.
 
@@ -97,13 +101,12 @@ You will then see the results in the "Collection Runner" window.
 
 ## STEP 4: Make your calls
 
-Basiq's full suite of products are available when you use the Postman collection, ready for you start making requests! 
+Basiq's full suite of products are available when you use the Postman collection, ready for you start making requests!
 
-In order to connect to Basiq's test banks, you will need to use the sandbox user logins. You can find the credentials for all scenarios [here](https://api.basiq.io/reference/connect). 
+In order to connect to Basiq's test banks, you will need to use the sandbox user logins. You can find the credentials for all scenarios [here](https://api.basiq.io/reference/connect).
 
 **Note:** You are free to make as many request as you like, however we cap the connections for sandbox users at 500 per account. If you would like to increase this quote, please email us at [support@basiq.io](mailto:support@basiq.io).
 
 > 📘 Environment Variables
 >
 > You will notice our Postman collection uses lots of environment variables. These are set with postman scripts and are all set automatically so you don't need to worry about copying and pasting for each request.
-```
