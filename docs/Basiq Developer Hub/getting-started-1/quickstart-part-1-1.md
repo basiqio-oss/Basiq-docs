@@ -10,15 +10,11 @@ metadata:
 next:
   description: ''
 ---
-```mdx
-<Image width="80%" src="https://files.readme.io/7f8dc12-Group_5_1.svg" />
+<Image align="center" width="80%" src="https://files.readme.io/7f8dc12-Group_5_1.svg" />
 
 ## STEP 1: Register
 
 <img align="left" src="https://files.readme.io/263205a-Group_7_1.svg" />
-<br />
-<br />
-<br />
 
 Register your application via our [dashboard](https://dashboard.basiq.io/) and create a new API key under the Developers tab.
 
@@ -28,19 +24,17 @@ Register your application via our [dashboard](https://dashboard.basiq.io/) and c
 
 > 🚧 Keep your key secret
 >
-> Make sure you copy and save the key we give you straight away, as it will only be exposed it in full once. Your API keys carry many privileges, so be sure to keep them secret! 
+> Make sure you copy and save the key we give you straight away, as it will only be exposed it in full once. Your API keys carry many privileges, so be sure to keep them secret!
 >
 > Do not share your API keys in publicly accessible areas such GitHub, client-side code, etc
 
 ## STEP 2: Authenticate
 
 <img align="left" src="https://files.readme.io/263205a-Group_7_1.svg" />
-<br />
-<br />
-<br />
-Trade your new API key for an access token. 
 
-The response will contain an access token which will allow you to make secure calls to the Basiq API. They expire every 60 minutes, so we recommend you store it globally and refresh 2-3 times an hour. 
+Trade your new API key for an access token.
+
+The response will contain an access token which will allow you to make secure calls to the Basiq API. They expire every 60 minutes, so we recommend you store it globally and refresh 2-3 times an hour.
 
 > 📘 Scope
 >
@@ -72,7 +66,7 @@ axios(config)
   console.log(error)
 })
 ```
-```curl
+```Text cURL
 curl --location --request POST 'https://au-api.basiq.io/token' \
   --header 'Authorization: Basic $YOUR_API_KEY' \
   --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -83,9 +77,7 @@ curl --location --request POST 'https://au-api.basiq.io/token' \
 ## STEP 3: Create a user
 
 <img align="left" src="https://files.readme.io/263205a-Group_7_1.svg" />
-<br />
-<br />
-<br />
+
 Creating a user gives you a "bucket" to store all your financial data.
 
 Upon successful creation of a user, you will receive a `userId`. With that and the `access_token` you created earlier, you have everything you need to start creating and fetching financial data.
@@ -128,4 +120,3 @@ curl --location --request POST 'https://au-api.basiq.io/users' \
 ```
 
 #### **Congratulations!** You have registered your application, and made your first, authenticated call to Basiq to create a user!
-```
