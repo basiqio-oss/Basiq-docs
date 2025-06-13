@@ -16,14 +16,11 @@ next:
       title: UI Integration Options
       url: https://api.basiq.io/v2.1/docs/ui-integration-options-1
 ---
-<Image width="80%" src="https://files.readme.io/f187581-Group_3_1.svg" />
+<Image align="center" width="80%" src="https://files.readme.io/f187581-Group_3_1.svg" />
 
 ## STEP 4: Create a Connection
 
 <img align="left" src="https://files.readme.io/263205a-Group_7_1.svg" />
-<br />
-<br />
-<br />
 
 Before you can retrieve a users financial data, you first need to link to their financial institutions by creating a connection. Do this by making a post request with the institution and login credentials. While you are starting out in sandbox mode, use the institutions and credentials provided [here](https://api.basiq.io/v2.1/reference/testing).
 
@@ -77,10 +74,8 @@ curl --location --request POST 'https://au-api.basiq.io/users/a920c00f-df79-4a12
 ## STEP 5: Fetch your aggregated data
 
 <img align="left" src="https://files.readme.io/263205a-Group_7_1.svg" />
-<br />
-<br />
-<br />
-Once you have successfully created a connection, you can go ahead and retrieve the data belonging to it. Let’s retrieve a list of all the accounts this user has connected through Basiq. 
+
+Once you have successfully created a connection, you can go ahead and retrieve the data belonging to it. Let’s retrieve a list of all the accounts this user has connected through Basiq.
 
 ```javascript STEP 5: Fetch accounts
 // STEP 5: Fetch your aggregated data 
