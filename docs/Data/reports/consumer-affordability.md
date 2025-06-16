@@ -17,7 +17,7 @@ The Consumer Affordability Report API is a powerful tool designed to provide len
 ### Access to Data Sources:
 
 * Future-proof your solution by accessing data from Consumer Data Rights (CDR), Web connectors, and Statement uploads.
-* Seamlessly transition from screen scraping to Open Banking as banks adopt newer data access methods.
+* Seamlessly transition from Digital Data Capture (DDC) to Open Banking as banks adopt newer data access methods.
 
 ### Extensive Data Library:
 
@@ -104,7 +104,7 @@ Customer-facing document displaying groups and metrics with definitions for the 
 
 ### Metrics
 
-<Table>
+<Table align={["left","left","left","left","left"]}>
   <thead>
     <tr>
       <th>
