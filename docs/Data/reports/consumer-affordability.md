@@ -3,6 +3,7 @@ title: Consumer Affordability Report
 excerpt: Consumer Affordability Report
 deprecated: false
 hidden: false
+icon: 📕
 metadata:
   title: ''
   description: ''
