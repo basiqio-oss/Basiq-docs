@@ -103,6 +103,14 @@ Utilise machine learning for transaction cleansing and categorisation, enhancing
 * **Modification of API**: The API will now accommodate requests for reports involving up to **five users**. Incorporate logic to manage requests with multiple users, ensuring avoidance of duplicate accounts.
 * **Error Handling**: Proper error messages will be returned if duplicate accounts are detected or if a user/account is entered more than once.
 
+### Business Affordability Dashboard Demo
+
+<HTMLBlock>{`
+
+`}</HTMLBlock>
+
+<br />
+
 ### Export Options:
 
 You can export reports in PDF or CSV formats for record-keeping and detailed transaction analysis. Currently, the option to export in CSV and PDF is only available via the API.
