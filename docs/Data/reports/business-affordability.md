@@ -60,3 +60,53 @@ The Business Affordability Report is ideal for:
 * Fintechs offering B2B credit, cash flow tools, or working capital services.
 * Alternative Credit Providers needing enriched and fast business profiling.
 * Embedded Finance Providers integrating lending into business platforms.
+
+### Access to Data Sources:
+
+* Future-proof your solution by accessing data from Consumer Data Rights (CDR), Web connectors, and Statement uploads.
+* Seamlessly transition from screen scraping to Open Banking as banks adopt newer data access methods.
+
+### Extensive Data Library:
+
+* Access thousands of data points, over 60 groups, 50+ metrics, and more than 500 merchant categories for comprehensive reporting.
+
+### Comprehensive Transaction Data Access:
+
+* Gain access to over 12 months of transaction data from multiple financial institutions, offering a detailed view of a customer’s financial health.
+
+### Advanced Data Categorisation:
+
+* Enriched transaction details including merchant, location, and category, with expenses categorised into more than 500 categories based on ANZSIC classifications for detailed spend behavior analysis.
+
+### Customisable Reporting:
+
+* Generate custom reports tailored to meet unique decisioning criteria using a growing library of data points and metrics.
+
+### Enhanced Decisioning Tools:
+
+* Utilise an expanding set of groups and metrics to refine decision-making processes.
+
+### Consolidated Multi-Account Reporting:
+
+* Enable consolidated reporting across multiple bank accounts with integrated consent UI, allowing for individual or combined reports for multiple applicants.
+
+### Predefined Risk Flags:
+
+Benefit from an extensive library of risk flags designed for comprehensive decisioning, aiding in identifying gaps in financial information for thorough and accurate assessments.
+
+### Powerful Enrichment Overlay Services:
+
+Utilise machine learning for transaction cleansing and categorisation, enhancing data quality for deeper insights.
+
+### Allow Multiple Users in Reports:
+
+* **Modification of API**: The API will now accommodate requests for reports involving up to **five users**. Incorporate logic to manage requests with multiple users, ensuring avoidance of duplicate accounts.
+* **Error Handling**: Proper error messages will be returned if duplicate accounts are detected or if a user/account is entered more than once.
+
+### Export Options:
+
+You can export reports in PDF or CSV formats for record-keeping and detailed transaction analysis. Currently, the option to export in CSV and PDF is only available via the API.
+
+<HTMLBlock>{`
+
+`}</HTMLBlock>
