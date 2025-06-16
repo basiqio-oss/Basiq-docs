@@ -28,7 +28,7 @@ Explore the Frequently Asked Questions (FAQs) below for our platform:
 
 <Accordion title="What is a DDC Connector?" icon="fa-info-circle">
   <p>
-    <strong>DDC Connector:</strong> Digital Data Capture (or "screen scraping") is a well-established method of aggregating financial data. It involves securely sharing login credentials, which are then passed to the bank's internet banking portal. The portal is parsed to extract a user's accounts and transactions. This method can be slow and is susceptible to changes in the bank's portal. DDC has seen a decline, especially after recent data breaches, as banks take measures to prevent bot access to their internet banking portals.
+    <strong>DDC Connector:</strong> Digital Data Capture is a well-established method of aggregating financial data. It involves securely sharing login credentials, which are then passed to the bank's internet banking portal. The portal is parsed to extract a user's accounts and transactions. This method can be slow and is susceptible to changes in the bank's portal. DDC has seen a decline, especially after recent data breaches, as banks take measures to prevent bot access to their internet banking portals.
   </p>
 
   <p>
