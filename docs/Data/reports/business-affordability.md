@@ -64,7 +64,7 @@ The Business Affordability Report is ideal for:
 ### Access to Data Sources:
 
 * Future-proof your solution by accessing data from Consumer Data Rights (CDR), Web connectors, and Statement uploads.
-* Seamlessly transition from screen scraping to Open Banking as banks adopt newer data access methods.
+* Seamlessly transition from screen Digital Data Capture (DDC) to Open Banking as banks adopt newer data access methods.
 
 ### Extensive Data Library:
 
@@ -72,7 +72,7 @@ The Business Affordability Report is ideal for:
 
 ### Comprehensive Transaction Data Access:
 
-* Gain access to over 12 months of transaction data from multiple financial institutions, offering a detailed view of a customer’s financial health.
+* Gain access upto 2 years of transaction data from multiple financial institutions, offering a detailed view of a customer’s financial health.
 
 ### Advanced Data Categorisation:
 
