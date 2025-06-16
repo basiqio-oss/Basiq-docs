@@ -1,6 +1,6 @@
 ---
-title: Reporting
-excerpt: Reporting API
+title: Consumer Affordability Report
+excerpt: Consumer Affordability Report
 deprecated: false
 hidden: false
 metadata:
@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-The Reporting API for Consumer Affordability is a powerful tool designed to provide lenders with comprehensive insights into the financial health and affordability of their customers. Leveraging a combination of data from various sources including Consumer Data Rights (CDR), Web connectors, and Statement uploads, this feature enables lenders to make informed lending decisions while ensuring regulatory compliance and enhancing the overall customer experience.
+The Consumer Affordability Report API is a powerful tool designed to provide lenders with comprehensive insights into the financial health and affordability of their customers. Leveraging a combination of data from various sources including Consumer Data Rights (CDR), Web connectors, and Statement uploads, this feature enables lenders to make informed lending decisions while ensuring regulatory compliance and enhancing the overall customer experience.
 
 ## Key Features:
 
@@ -82,21 +82,21 @@ Easily export [bank statements](https://api.basiq.io/docs/bank-statements) to su
 
 This video demonstrates how to generate a Consumer Affordability Insights report via the dashboard, providing a preview of the final PDF report.
 
-<Embed url="https://www.youtube.com/watch?v=AM_0rBRC8O8" title="Generating a consumer affordability insights report" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/AM_0rBRC8O8/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=AM_0rBRC8O8" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FAM_0rBRC8O8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DAM_0rBRC8O8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FAM_0rBRC8O8%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+<Embed url="https://www.youtube.com/watch?v=AM_0rBRC8O8" href="https://www.youtube.com/watch?v=AM_0rBRC8O8" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FAM_0rBRC8O8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DAM_0rBRC8O8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252FAM_0rBRC8O8%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ### Video: How Basiq's Reporting API Works:
 
 An animated video showcasing how the reporting API cleans, normalizes, and enriches large datasets when integrated with customer applications.
 
-<Embed url="https://www.youtube.com/watch?v=twqmjz0Aoo8" title="How Basiq's Reporting API works" favicon="https://www.google.com/favicon.ico" image="https://i.ytimg.com/vi/twqmjz0Aoo8/hqdefault.jpg" provider="youtube.com" href="https://www.youtube.com/watch?v=twqmjz0Aoo8" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252Ftwqmjz0Aoo8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253Dtwqmjz0Aoo8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252Ftwqmjz0Aoo8%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22640%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
+<Embed url="https://www.youtube.com/watch?v=twqmjz0Aoo8" href="https://www.youtube.com/watch?v=twqmjz0Aoo8" typeOfEmbed="youtube" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252Ftwqmjz0Aoo8%253Ffeature%253Doembed%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253Dtwqmjz0Aoo8%26image%3Dhttps%253A%252F%252Fi.ytimg.com%252Fvi%252Ftwqmjz0Aoo8%252Fhqdefault.jpg%26key%3D7788cb384c9f4d5dbbdbeffd9fe4b92f%26type%3Dtext%252Fhtml%26schema%3Dyoutube%22%20width%3D%22640%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
 
 ### Reports: Implementation Guide:
 
 Detailed guide covering all steps required for successful implementation of the Basiq Affordability solution, including project steps and customer considerations.
 
-<Embed url="https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf" provider="basiq-hosted-files.s3.ap-southeast-2.amazonaws.com" href="https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf" typeOfEmbed="pdf" title="undefined" html="%3Ciframe%20src%3D%22https%3A%2F%2Fdrive.google.com%2Fviewerng%2Fviewer%3Furl%3Dhttps%253A%2F%2Fbasiq-hosted-files.s3.ap-southeast-2.amazonaws.com%2Fdocs-resources%2FBasiq%252520-%252520Platform%252520Implementation_guide.pdf%26embedded%3Dtrue%22%20width%3D%22600%22%20height%3D%22780%22%20style%3D%22border%3A%20none%3B%22%3E%3C%2Fiframe%3E" />
+<Embed url="https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf" href="https://basiq-hosted-files.s3.ap-southeast-2.amazonaws.com/docs-resources/Basiq%20-%20Platform%20Implementation_guide.pdf" typeOfEmbed="pdf" html="%3Ciframe%20src%3D%22https%3A%2F%2Fdrive.google.com%2Fviewerng%2Fviewer%3Furl%3Dhttps%253A%2F%2Fbasiq-hosted-files.s3.ap-southeast-2.amazonaws.com%2Fdocs-resources%2FBasiq%252520-%252520Platform%252520Implementation_guide.pdf%26embedded%3Dtrue%22%20width%3D%22600%22%20height%3D%22780%22%20style%3D%22border%3A%20none%3B%22%3E%3C%2Fiframe%3E" />
 
-You can also follow up our API reference [here](https://api.basiq.io/reference/createreport). 
+You can also follow up our API reference [here](https://api.basiq.io/reference/createreport).
 
 ## Reports: Groups & Metrics:
 
@@ -104,54 +104,1045 @@ Customer-facing document displaying groups and metrics with definitions for the 
 
 ### Metrics
 
-| Section               | ID    | Title                                                 | Type    | Description                                                                                                                                           |
-| --------------------- | ----- | ----------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Expenses              | ME015 | % of spend on discretionary expenses                  | percent | Mean monthly spend on discretionary expenses as a percentage of total outgoings                                                                       |
-| Expenses              | ME013 | % of spend on non-discretionary expenses              | percent | Mean monthly spend on non-discretionary expenses as a percentage of total outgoings                                                                   |
-| Expenses              | ME034 | Average Outgoings monthly                             | money   | Mean monthly total outgoings                                                                                                                          |
-| Expenses              | ME039 | Average outgoings excluding liabilities               | money   | Mean monthly total outgoings excluding liability payments                                                                                             |
-| Expenses              | ME014 | Monthly spend on discretionary expenses               | money   | Mean monthly spend on discretionary expenses                                                                                                          |
-| Expenses              | ME012 | Monthly spend on non-discretionary expenses           | money   | Mean monthly spend on non-discretionary expenses                                                                                                      |
-| Expenses              | ME016 | Monthly spend on other expenses                       | money   | Mean monthly spend on other expenses                                                                                                                  |
-| Financial Commitments | ME008 | Average monthly amount                                | money   | Mean monthly repayments to lenders                                                                                                                    |
-| Financial Commitments | ME009 | # of identified companies                             | integer | Number of relationships with lending merchants                                                                                                        |
-| Financial Commitments | ME010 | Total credit card limit                               | money   | Total limits on available credit card accounts                                                                                                        |
-| Financial Commitments | ME011 | Total credit card balance                             | money   | Total of latest available balances on available credit card accounts                                                                                  |
-| Financial Commitments | ME046 | Average monthly ongoing amount to lenders             | money   | Ongoing monthly repayments to lenders                                                                                                                 |
-| Financial Commitments | ME048 | Ongoing Monthly Mortgage Repayment                    | money   | Projected ongoing monthly mortgage repayments                                                                                                         |
-| Government Services   | ME007 | Misc Government services monthly                      | money   | Mean monthly income through government benefits other than Rental Assistance and Youth Allowance                                                      |
-| Government Services   | ME006 | Rental Assistance monthly                             | money   | Mean monthly income from Rental Assistance                                                                                                            |
-| Government Services   | ME005 | Youth Allowance monthly                               | money   | Mean monthly income from Youth Allowance                                                                                                              |
-| Summary               | ME040 | Average Monthly Credits                               | money   | Mean monthly credits excluding internal transfers                                                                                                     |
-| Summary               | ME041 | Average Monthly Debits                                | money   | Mean monthly debits excluding internal transfers                                                                                                      |
-| Income Sources        | ME001 | # of identified salary sources                        | integer | Number of recent salary income sources                                                                                                                |
-| Income Sources        | ME002 | Average monthly amount from salary                    | money   | Mean monthly amount from salary income sources over the reporting period                                                                              |
-| Income Sources        | ME003 | Salary has been stable for (months)                   | integer | Number of months within report over which salary has been stable                                                                                      |
-| Income Sources        | ME004 | Other possible income monthly                         | money   | Mean monthly income from sources not covered within Salary and Benefits                                                                               |
-| Income Sources        | ME033 | Average Income monthly                                | money   | Total forward looking monthly total income excluding tax, insurance, superannuation credits                                                           |
-| Income Sources        | ME035 | Total Income has been stable for (months)             | integer | Number of months within report over which total income has been stable                                                                                |
-| Income Sources        | ME036 | Median monthly amount from Salary                     | money   | Median of the monthly sum of transaction amounts for all transactions in Group INC009                                                                 |
-| Income Sources        | ME037 | Median Income monthly                                 | money   | Sum of the individual group medians for all INC groups used in Metric ME033                                                                           |
-| Income Sources        | ME042 | # of recent income sources                            | integer | Number of recent income sources across all income groups                                                                                              |
-| Income Sources        | ME043 | # of ongoing regular income sources                   | integer | Number of recent income sources across all income groups where an income frequency has been detected                                                  |
-| Income Sources        | ME045 | Total Income has been secure for (months)             | integer | Number of months within report over which total ongoing income has been stable or improving (secure)                                                  |
-| Risk Flags            | ME022 | Has recent changes to salary circumstances            | boolean | Indicates new salary source in 2 months before end of reporting period or salary source stopping in 2 months prior to end of reporting period         |
-| Risk Flags            | ME023 | Has received crisis support payments                  | boolean | Indicates if any crisis support income has been received during reporting period                                                                      |
-| Risk Flags            | ME024 | Has superannuation credits                            | boolean | Indicates if any superannuation income has been received during reporting period                                                                      |
-| Risk Flags            | ME025 | Has cash advances                                     | boolean | Indicates cash withdrawals from credit card accounts during reporting period                                                                          |
-| Risk Flags            | ME026 | Has redraws                                           | boolean | Indicates transfers from mortgage accounts during reporting period                                                                                    |
-| Risk Flags            | ME027 | Has High-Cost Finance                                 | boolean | Indicates repayments (during reporting period) to lenders that may charge high interest rates                                                         |
-| Risk Flags            | ME028 | Missing non-discretionary expenses: groceries         | boolean | no instances of non-discretionary expenses: groceries detected                                                                                        |
-| Risk Flags            | ME029 | Missing non-discretionary expenses: telecommunication | boolean | no instances of non-discretionary expenses: telecommunication detected                                                                                |
-| Risk Flags            | ME030 | Missing non-discretionary expenses: utilities         | boolean | no instances of non-discretionary expenses: utilities detected                                                                                        |
-| Risk Flags            | ME031 | Has Unemployment Benefit                              | boolean | Indicates if Jobseeker payments have been received                                                                                                    |
-| Risk Flags            | ME032 | Receives Child Support                                | boolean | Indicates if child support payments have been detected                                                                                                |
-| Risk Flags            | ME047 | Has unshared mortgage account                         | boolean | Indicates if mortgage payments are detected without a mortgage account having been shared                                                             |
-| Risk Metrics          | ME019 | # of financial dishonours                             | integer | Number of financial dishonour transactions detected during reporting period                                                                           |
-| Risk Metrics          | ME017 | # of SACC loans                                       | integer | Number of relationships with SACC lenders                                                                                                             |
-| Risk Metrics          | ME020 | % of income spent on High Risk Activities             | percent | Percentage of income withdrawn at ATM's (including from credit cards), spent on gambling and credit card interest, and withdrawn via redraws          |
-| Risk Metrics          | ME018 | % of income withdrawn via ATM                         | percent | Percentage of income withdrawn as cash at ATM's over the reporting period                                                                             |
-| Risk Metrics          | ME021 | Total spend on High Risk Activities                   | money   | Total withdrawn at ATM's (including from credit cards), spent on gambling and credit card interest, and withdrawn via redraws during reporting period |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Section
+      </th>
+
+      <th>
+        ID
+      </th>
+
+      <th>
+        Title
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME015
+      </td>
+
+      <td>
+        % of spend on discretionary expenses
+      </td>
+
+      <td>
+        percent
+      </td>
+
+      <td>
+        Mean monthly spend on discretionary expenses as a percentage of total outgoings
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME013
+      </td>
+
+      <td>
+        % of spend on non-discretionary expenses
+      </td>
+
+      <td>
+        percent
+      </td>
+
+      <td>
+        Mean monthly spend on non-discretionary expenses as a percentage of total outgoings
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME034
+      </td>
+
+      <td>
+        Average Outgoings monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly total outgoings
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME039
+      </td>
+
+      <td>
+        Average outgoings excluding liabilities
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly total outgoings excluding liability payments
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME014
+      </td>
+
+      <td>
+        Monthly spend on discretionary expenses
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly spend on discretionary expenses
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME012
+      </td>
+
+      <td>
+        Monthly spend on non-discretionary expenses
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly spend on non-discretionary expenses
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Expenses
+      </td>
+
+      <td>
+        ME016
+      </td>
+
+      <td>
+        Monthly spend on other expenses
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly spend on other expenses
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Financial Commitments
+      </td>
+
+      <td>
+        ME008
+      </td>
+
+      <td>
+        Average monthly amount
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly repayments to lenders
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Financial Commitments
+      </td>
+
+      <td>
+        ME009
+      </td>
+
+      <td>
+        # of identified companies
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of relationships with lending merchants
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Financial Commitments
+      </td>
+
+      <td>
+        ME010
+      </td>
+
+      <td>
+        Total credit card limit
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Total limits on available credit card accounts
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Financial Commitments
+      </td>
+
+      <td>
+        ME011
+      </td>
+
+      <td>
+        Total credit card balance
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Total of latest available balances on available credit card accounts
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Financial Commitments
+      </td>
+
+      <td>
+        ME046
+      </td>
+
+      <td>
+        Average monthly ongoing amount to lenders
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Ongoing monthly repayments to lenders
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Financial Commitments
+      </td>
+
+      <td>
+        ME048
+      </td>
+
+      <td>
+        Ongoing Monthly Mortgage Repayment
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Projected ongoing monthly mortgage repayments
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Government Services
+      </td>
+
+      <td>
+        ME007
+      </td>
+
+      <td>
+        Misc Government services monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly income through government benefits other than Rental Assistance and Youth Allowance
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Government Services
+      </td>
+
+      <td>
+        ME006
+      </td>
+
+      <td>
+        Rental Assistance monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly income from Rental Assistance
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Government Services
+      </td>
+
+      <td>
+        ME005
+      </td>
+
+      <td>
+        Youth Allowance monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly income from Youth Allowance
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Summary
+      </td>
+
+      <td>
+        ME040
+      </td>
+
+      <td>
+        Average Monthly Credits
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly credits excluding internal transfers
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Summary
+      </td>
+
+      <td>
+        ME041
+      </td>
+
+      <td>
+        Average Monthly Debits
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly debits excluding internal transfers
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME001
+      </td>
+
+      <td>
+        # of identified salary sources
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of recent salary income sources
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME002
+      </td>
+
+      <td>
+        Average monthly amount from salary
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly amount from salary income sources over the reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME003
+      </td>
+
+      <td>
+        Salary has been stable for (months)
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of months within report over which salary has been stable
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME004
+      </td>
+
+      <td>
+        Other possible income monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Mean monthly income from sources not covered within Salary and Benefits
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME033
+      </td>
+
+      <td>
+        Average Income monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Total forward looking monthly total income excluding tax, insurance, superannuation credits
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME035
+      </td>
+
+      <td>
+        Total Income has been stable for (months)
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of months within report over which total income has been stable
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME036
+      </td>
+
+      <td>
+        Median monthly amount from Salary
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Median of the monthly sum of transaction amounts for all transactions in Group INC009
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME037
+      </td>
+
+      <td>
+        Median Income monthly
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Sum of the individual group medians for all INC groups used in Metric ME033
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME042
+      </td>
+
+      <td>
+        # of recent income sources
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of recent income sources across all income groups
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME043
+      </td>
+
+      <td>
+        # of ongoing regular income sources
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of recent income sources across all income groups where an income frequency has been detected
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Income Sources
+      </td>
+
+      <td>
+        ME045
+      </td>
+
+      <td>
+        Total Income has been secure for (months)
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of months within report over which total ongoing income has been stable or improving (secure)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME022
+      </td>
+
+      <td>
+        Has recent changes to salary circumstances
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates new salary source in 2 months before end of reporting period or salary source stopping in 2 months prior to end of reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME023
+      </td>
+
+      <td>
+        Has received crisis support payments
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates if any crisis support income has been received during reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME024
+      </td>
+
+      <td>
+        Has superannuation credits
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates if any superannuation income has been received during reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME025
+      </td>
+
+      <td>
+        Has cash advances
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates cash withdrawals from credit card accounts during reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME026
+      </td>
+
+      <td>
+        Has redraws
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates transfers from mortgage accounts during reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME027
+      </td>
+
+      <td>
+        Has High-Cost Finance
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates repayments (during reporting period) to lenders that may charge high interest rates
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME028
+      </td>
+
+      <td>
+        Missing non-discretionary expenses: groceries
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        no instances of non-discretionary expenses: groceries detected
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME029
+      </td>
+
+      <td>
+        Missing non-discretionary expenses: telecommunication
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        no instances of non-discretionary expenses: telecommunication detected
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME030
+      </td>
+
+      <td>
+        Missing non-discretionary expenses: utilities
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        no instances of non-discretionary expenses: utilities detected
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME031
+      </td>
+
+      <td>
+        Has Unemployment Benefit
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates if Jobseeker payments have been received
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME032
+      </td>
+
+      <td>
+        Receives Child Support
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates if child support payments have been detected
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Flags
+      </td>
+
+      <td>
+        ME047
+      </td>
+
+      <td>
+        Has unshared mortgage account
+      </td>
+
+      <td>
+        boolean
+      </td>
+
+      <td>
+        Indicates if mortgage payments are detected without a mortgage account having been shared
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Metrics
+      </td>
+
+      <td>
+        ME019
+      </td>
+
+      <td>
+        # of financial dishonours
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of financial dishonour transactions detected during reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Metrics
+      </td>
+
+      <td>
+        ME017
+      </td>
+
+      <td>
+        # of SACC loans
+      </td>
+
+      <td>
+        integer
+      </td>
+
+      <td>
+        Number of relationships with SACC lenders
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Metrics
+      </td>
+
+      <td>
+        ME020
+      </td>
+
+      <td>
+        % of income spent on High Risk Activities
+      </td>
+
+      <td>
+        percent
+      </td>
+
+      <td>
+        Percentage of income withdrawn at ATM's (including from credit cards), spent on gambling and credit card interest, and withdrawn via redraws
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Metrics
+      </td>
+
+      <td>
+        ME018
+      </td>
+
+      <td>
+        % of income withdrawn via ATM
+      </td>
+
+      <td>
+        percent
+      </td>
+
+      <td>
+        Percentage of income withdrawn as cash at ATM's over the reporting period
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Risk Metrics
+      </td>
+
+      <td>
+        ME021
+      </td>
+
+      <td>
+        Total spend on High Risk Activities
+      </td>
+
+      <td>
+        money
+      </td>
+
+      <td>
+        Total withdrawn at ATM's (including from credit cards), spent on gambling and credit card interest, and withdrawn via redraws during reporting period
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ### Groups
 
