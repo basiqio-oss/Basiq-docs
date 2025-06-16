@@ -110,3 +110,5 @@ You can export reports in PDF or CSV formats for record-keeping and detailed tra
 <HTMLBlock>{`
 
 `}</HTMLBlock>
+
+You can also follow up our API reference [here](https://api.basiq.io/reference/listreporttypes#/).
