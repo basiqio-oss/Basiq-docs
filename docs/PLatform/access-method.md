@@ -36,14 +36,14 @@ BASIQ offers partners a comprehensive suite of access methods designed to facili
 
 <Tabs>
   <Tab title="Overview">
-    The Web Connector, also known as "screen scraping", securely shares login credentials to access the bank's internet banking portal and extract a user's accounts and transactions. While effective, this method can be slow and susceptible to changes in the bank's portal, prompting banks to reinforce security measures.
+    The Web Connector, also known asDigital Data Capture (DDC), securely shares login credentials to access the bank's internet banking portal and extract a user's accounts and transactions. While effective, this method can be slow and susceptible to changes in the bank's portal, prompting banks to reinforce security measures.
   </Tab>
 
   <Tab title="API Versions">
     <Columns layout="auto">
       <Column>
         <Card title="Version 2" icon="fa-code">
-          Supports **DDC (Digital Data Capture)** only. This version limits access to data through screen scraping.
+          Supports **DDC (Digital Data Capture)** only. This version limits access to data through Digital Data Capture (DDC).
         </Card>
       </Column>
 
