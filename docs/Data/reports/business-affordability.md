@@ -35,17 +35,17 @@ Supports JSON and PDF report formats for flexibility across technical and non-te
 
 * Designed to reflect real-world business financial operations.
 * Includes:
-  * Balance history and trends
-  * Categorised income and expenses
-  * Financial ratios and liquidity indicators
-  * Risk profiling metrics
+  * Balance history and trends.
+  * Categorised income and expenses.
+  * Financial ratios and liquidity indicators.
+  * Risk profiling metrics.
 
 ### Smarter Decisioning for B2B Use Cases
 
 * Reduces complexity and time in B2B lending workflows.
 * Optimised for use cases such as:
-  * Business loan origination
-  * Trade credit assessments
+  * Business loan origination.
+  * Trade credit assessments.
 
 ### Competitive and Future-Ready
 
