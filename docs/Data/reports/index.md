@@ -1,7 +1,7 @@
 ---
 title: Reports
 deprecated: false
-hidden: true
+hidden: false
 icon: 🆕
 metadata:
   robots: index
