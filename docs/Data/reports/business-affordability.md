@@ -39,3 +39,24 @@ Supports JSON and PDF report formats for flexibility across technical and non-te
   * Categorised income and expenses
   * Financial ratios and liquidity indicators
   * Risk profiling metrics
+
+### Smarter Decisioning for B2B Use Cases
+
+* Reduces complexity and time in B2B lending workflows.
+* Optimised for use cases such as:
+  * Business loan origination
+  * Trade credit assessments
+
+### Competitive and Future-Ready
+
+* Ensures your organisation stays ahead by offering a full-spectrum affordability solution across both consumers and businesses.
+* Built to scale with new features and integrations as Open Banking for business evolves.
+
+### Use Cases
+
+The Business Affordability Report is ideal for:
+
+* Lenders and Banks evaluating SME and enterprise applicants.
+* Fintechs offering B2B credit, cash flow tools, or working capital services.
+* Alternative Credit Providers needing enriched and fast business profiling.
+* Embedded Finance Providers integrating lending into business platforms.
