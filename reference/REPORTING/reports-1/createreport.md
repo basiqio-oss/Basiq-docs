@@ -65,3 +65,4 @@ metadata:
 next:
   description: ''
 ---
+> ❗️ Do not include the `ToDate` parameter. If omitted, the report will automatically include data up to the current date.
