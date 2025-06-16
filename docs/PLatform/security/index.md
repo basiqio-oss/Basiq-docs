@@ -14,9 +14,9 @@ next:
 
 # First things first
 
-**We can’t do anything with users money.** All access is read-only, meaning we can see accounts and transactions to report on them, but are unable to perform any actions on behalf of the user. 
+**We can’t do anything with users money.** All access is read-only, meaning we can see accounts and transactions to report on them, but are unable to perform any actions on behalf of the user.
 
-**We don’t hold onto, or sell, data.** When an application or service no longer needs access to the data then it’s as simple as letting us know, after which it is immediately deleted. We have never sold any data shared by customers and we never will. 
+**We don’t hold onto, or sell, data.** When an application or service no longer needs access to the data then it’s as simple as letting us know, after which it is immediately deleted. We have never sold any data shared by customers and we never will.
 
 **We don’t have access to login details.** The credentials provided are stored in AWS data centres in Sydney and Melbourne using AES-256 envelope encryption, meaning each connection is encrypted with its own key. The Basiq team has strict and limited access to data and systems, and never have access to banking credentials shared with us.
 
@@ -28,7 +28,7 @@ next:
 
 BASIQ provides partners with a comprehensive suite of access methods to aggregate financial data efficiently. These options empower partners to retrieve and utilise data from various sources, enabling the development of innovative financial solutions tailored to their clients' needs.
 
-The **Web Connector**, also known as "screen scraping," securely shares login credentials to access a bank's internet banking portal and extract a user's accounts and transactions. While effective, this method can be slower and susceptible to changes in the bank's portal, often prompting banks to reinforce security measures.
+The **Web Connector**, also known as Digital Data Capture (DDC) securely shares login credentials to access a bank's internet banking portal and extract a user's accounts and transactions. While effective, this method can be slower and susceptible to changes in the bank's portal, often prompting banks to reinforce security measures.
 
 BASIQ offers two versions of its API to ensure partners have flexible and adaptable data access options. Version 2 exclusively supports **Digital Data Capture (DDC)**, where data is accessed through screen scraping. In contrast, Version 3 supports both DDC and the **Consumer Data Right (CDR)**, enabling partners to seamlessly switch between methods and ensuring compliance with evolving data access standards and regulations.
 
