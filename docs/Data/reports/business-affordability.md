@@ -1,6 +1,6 @@
 ---
-title: Business Affordability Report
-excerpt: Business Affordability Report API
+title: 'Business Affordability Report '
+excerpt: 'Business Affordability Report API '
 deprecated: false
 hidden: false
 metadata:
