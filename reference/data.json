@@ -338,6 +338,8 @@
                                       "description": "Link to a web page with more information on this fee."
                                     },
                                     "discounts": {
+                                      "type": "array",
+                                      "nullable": true,
                                       "items": {
                                         "required": [
                                           "discountType",
@@ -471,6 +473,8 @@
                                       "example": "P1M"
                                     },
                                     "tiers": {
+                                      "type": "array",
+                                      "nullable": true,
                                       "items": {
                                         "required": [
                                           "name",
@@ -622,6 +626,8 @@
                                       "example": "INVESTMENT"
                                     },
                                     "tiers": {
+                                      "type": "array",
+                                      "nullable": true,
                                       "items": {
                                         "required": [
                                           "name",
@@ -1793,7 +1799,7 @@
                                 "description": "Link to a web page with more information on this fee."
                               },
                               "discounts": {
-                                "type": "object",
+                                "type": "array",
                                 "nullable": true,
                                 "items": {
                                   "required": [
@@ -1928,6 +1934,8 @@
                                 "example": "P1M"
                               },
                               "tiers": {
+                                "type": "array",
+                                "nullable": true,
                                 "items": {
                                   "required": [
                                     "name",
@@ -2079,7 +2087,7 @@
                                 "example": "INVESTMENT"
                               },
                               "tiers": {
-                                "type": "object",
+                                "type": "array",
                                 "nullable": true,
                                 "items": {
                                   "required": [
@@ -12297,6 +12305,8 @@
                       "description": "Link to a web page with more information on this fee."
                     },
                     "discounts": {
+                      "type": "array",
+                      "nullable": true,
                       "items": {
                         "required": [
                           "discountType",
@@ -12430,6 +12440,8 @@
                       "example": "P1M"
                     },
                     "tiers": {
+                      "type": "array",
+                      "nullable": true,
                       "items": {
                         "required": [
                           "name",
@@ -12581,6 +12593,8 @@
                       "example": "INVESTMENT"
                     },
                     "tiers": {
+                      "type": "array",
+                      "nullable": true,
                       "items": {
                         "required": [
                           "name",
@@ -13134,6 +13148,8 @@
                   "description": "Link to a web page with more information on this fee."
                 },
                 "discounts": {
+                  "type": "array",
+                  "nullable": true,
                   "items": {
                     "required": [
                       "discountType",
@@ -13267,6 +13283,8 @@
                   "example": "P1M"
                 },
                 "tiers": {
+                  "type": "array",
+                  "nullable": true,
                   "items": {
                     "required": [
                       "name",
@@ -13418,6 +13436,8 @@
                   "example": "INVESTMENT"
                 },
                 "tiers": {
+                  "type": "array",
+                  "nullable": true,
                   "items": {
                     "required": [
                       "name",
@@ -13940,6 +13960,8 @@
             "example": "INVESTMENT"
           },
           "tiers": {
+            "type": "array",
+            "nullable": true,
             "items": {
               "required": [
                 "name",
@@ -14053,6 +14075,8 @@
             "example": "P1M"
           },
           "tiers": {
+            "type": "array",
+            "nullable": true,
             "items": {
               "required": [
                 "name",
@@ -14272,6 +14296,8 @@
             "description": "Link to a web page with more information on this fee."
           },
           "discounts": {
+            "type": "array",
+            "nullable": true,
             "items": {
               "required": [
                 "discountType",
@@ -14799,6 +14825,8 @@
                             "description": "Link to a web page with more information on this fee."
                           },
                           "discounts": {
+                            "type": "array",
+                            "nullable": true,
                             "items": {
                               "required": [
                                 "discountType",
@@ -14932,6 +14960,8 @@
                             "example": "P1M"
                           },
                           "tiers": {
+                            "type": "array",
+                            "nullable": true,
                             "items": {
                               "required": [
                                 "name",
@@ -15083,6 +15113,8 @@
                             "example": "INVESTMENT"
                           },
                           "tiers": {
+                            "type": "array",
+                            "nullable": true,
                             "items": {
                               "required": [
                                 "name",
