@@ -34,8 +34,8 @@ Access a customer's transaction data by linking their bank accounts through Basi
 
 Once the raw transaction data is collected, it is categorised into debits and credits. Transactions are then tagged, cleaned, and standardised for enrichment. For instance:
 
-* **Debit Transactions**: Bank fees, cash withdrawals, loan interest.
-* **Credit Transactions**: Payments to merchants, refunds, interest earned, loan repayments.
+* **Debit Transactions**: Payments to merchants, bank fees, cash withdrawals, loan interest, loan repayments.
+* **Credit Transactions**: Refunds, interest earned.
 
 Transactions are standardised to handle inconsistent formats across banks, ensuring reliable and accurate enrichment.
 
@@ -45,7 +45,7 @@ Transactions are standardised to handle inconsistent formats across banks, ensur
 
 ### Step 3: Data Enrichment
 
-Enriched data is matched against Basiq’s curated merchant database, which includes merchant identity, location, and categorisation details. 
+Enriched data is matched against Basiq’s curated merchant database, which includes merchant identity, location, and categorisation details.
 
 Enrichment provides:
 
@@ -63,7 +63,7 @@ When a transaction cannot be immediately categorised, Basiq's machine learning m
 
 <Image align="center" src="https://files.readme.io/6ae18a5fccb9da7adb901d027aaa2aedef62d59a90e64adffb887d72dbea9b46-enrich_06-1024x383.png" />
 
-You can read complete blog post [here](https://www.basiq.io/blog/back-to-basics-what-is-data-enrichment/). 
+You can read complete blog post [here](https://www.basiq.io/blog/back-to-basics-what-is-data-enrichment/).
 
 ## Enrich API
 
