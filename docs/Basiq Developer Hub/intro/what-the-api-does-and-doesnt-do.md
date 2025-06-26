@@ -56,50 +56,79 @@ We take data privacy very seriously and we do not hold onto or share any of your
 
 <div
   style={{
-    border: "2px solid #1E1E1E", // Dark border
-    borderRadius: "8px",
-    backgroundColor: "#1E1E1E", // Dark background
-    padding: "16px",
-    margin: "16px 0",
-    fontFamily: "Arial, sans-serif",
-    color: "#ffffff", // Light text for contrast
+    marginTop: '2rem',
+    marginBottom: '2rem',
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '1.5rem',
+    padding: '1.5rem',
+    background: 'linear-gradient(to bottom right, #f9fafb, #f3f4f6)',
+    border: '1px solid #e5e7eb',
+    borderRadius: '0.75rem',
+    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+    textAlign: 'center',
+    fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
   }}
 >
-  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4b5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '1rem', flexShrink: 0 }}>
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
 
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <button
-      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      <path d="M8 12h.01" />
+
+      <path d="M12 12h.01" />
+
+      <path d="M16 12h.01" />
+    </svg>
+
+    <p
       style={{
-        padding: '12px 30px',
-        backgroundColor: '#1E1E1E',
-        color: '#ffffff',
-        border: '2px solid #ffffff', // Add contrast border if needed
-        borderRadius: '50px',
-        fontSize: '16px',
-        fontWeight: '600',
-        textTransform: 'uppercase',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-        outline: 'none',
-        display: 'flex',
-        justifyContent: 'center',
-        height: '45px',
-        position: 'relative',
-        overflow: 'hidden',
-        marginLeft: '10px',
-        minWidth: '150px',
-      }}
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.1)';
-        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
+        fontSize: '1.125rem',
+        fontWeight: 600,
+        color: '#1f2937',
+        margin: 0,
       }}
     >
-      Support team
-    </button>
+      Got a question or need assistance?
+    </p>
   </div>
+
+  <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
+              padding: '0.75rem 2rem',
+              fontSize: '1rem',
+              fontWeight: 600,
+              borderRadius: '9999px',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              transition: 'all 0.3s ease-in-out',
+              backgroundColor: '#1f2937',
+              color: '#ffffff',
+              border: 'none',
+              cursor: 'pointer',
+              outline: 'none',
+              flexShrink: 0,
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#374151';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#1f2937';
+              e.currentTarget.style.transform = 'scale(1)';
+            }} onFocus={(e) => {
+              e.currentTarget.style.outline = '2px solid #6b7280';
+              e.currentTarget.style.outlineOffset = '2px';
+              e.currentTarget.style.backgroundColor = '#374151';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }} onBlur={(e) => {
+              e.currentTarget.style.outline = 'none';
+              e.currentTarget.style.outlineOffset = '0px';
+              e.currentTarget.style.backgroundColor = '#1f2937';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}>Chat with Support</button>
 </div>
