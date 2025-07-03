@@ -61,7 +61,7 @@ To get started with our PFM Demo Kit, all you need is an API key to spin up a PF
 
 # Source Code Access
 
-The PFM demo application is available on [GitHub](https://github.com/flyingdonkey-it/PFM-starterkit). This repository contains all the necessary code and instructions for setting up and customising the PFM Starter Kit to fit your needs.
+The PFM demo application is available on [GitHub](https://github.com/basiqio-oss/Basiq-pfm). This repository contains all the necessary code and instructions for setting up and customising the PFM Starter Kit to fit your needs.
 
 To get started, simply clone the repository and follow the instructions in the README file. The README file provides detailed instructions on how to customize the PFM demo application by updating the configuration files, branding, and logos.
 
@@ -123,33 +123,33 @@ Additionally, the GitHub repository provides access to the latest version of the
   </div>
 
   <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
-                                                          padding: '0.75rem 2rem',
-                                                          fontSize: '1rem',
-                                                          fontWeight: 600,
-                                                          borderRadius: '9999px',
-                                                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                                                          transition: 'all 0.3s ease-in-out',
-                                                          backgroundColor: '#1f2937',
-                                                          color: '#ffffff',
-                                                          border: 'none',
-                                                          cursor: 'pointer',
-                                                          outline: 'none',
-                                                          flexShrink: 0,
-                                                        }} onMouseEnter={(e) => {
-                                                          e.currentTarget.style.backgroundColor = '#374151';
-                                                          e.currentTarget.style.transform = 'scale(1.05)';
-                                                        }} onMouseLeave={(e) => {
-                                                          e.currentTarget.style.backgroundColor = '#1f2937';
-                                                          e.currentTarget.style.transform = 'scale(1)';
-                                                        }} onFocus={(e) => {
-                                                          e.currentTarget.style.outline = '2px solid #6b7280';
-                                                          e.currentTarget.style.outlineOffset = '2px';
-                                                          e.currentTarget.style.backgroundColor = '#374151';
-                                                          e.currentTarget.style.transform = 'scale(1.05)';
-                                                        }} onBlur={(e) => {
-                                                          e.currentTarget.style.outline = 'none';
-                                                          e.currentTarget.style.outlineOffset = '0px';
-                                                          e.currentTarget.style.backgroundColor = '#1f2937';
-                                                          e.currentTarget.style.transform = 'scale(1)';
-                                                        }}>Chat with Support</button>
+                                                              padding: '0.75rem 2rem',
+                                                              fontSize: '1rem',
+                                                              fontWeight: 600,
+                                                              borderRadius: '9999px',
+                                                              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                                              transition: 'all 0.3s ease-in-out',
+                                                              backgroundColor: '#1f2937',
+                                                              color: '#ffffff',
+                                                              border: 'none',
+                                                              cursor: 'pointer',
+                                                              outline: 'none',
+                                                              flexShrink: 0,
+                                                            }} onMouseEnter={(e) => {
+                                                              e.currentTarget.style.backgroundColor = '#374151';
+                                                              e.currentTarget.style.transform = 'scale(1.05)';
+                                                            }} onMouseLeave={(e) => {
+                                                              e.currentTarget.style.backgroundColor = '#1f2937';
+                                                              e.currentTarget.style.transform = 'scale(1)';
+                                                            }} onFocus={(e) => {
+                                                              e.currentTarget.style.outline = '2px solid #6b7280';
+                                                              e.currentTarget.style.outlineOffset = '2px';
+                                                              e.currentTarget.style.backgroundColor = '#374151';
+                                                              e.currentTarget.style.transform = 'scale(1.05)';
+                                                            }} onBlur={(e) => {
+                                                              e.currentTarget.style.outline = 'none';
+                                                              e.currentTarget.style.outlineOffset = '0px';
+                                                              e.currentTarget.style.backgroundColor = '#1f2937';
+                                                              e.currentTarget.style.transform = 'scale(1)';
+                                                            }}>Chat with Support</button>
 </div>
