@@ -59,24 +59,20 @@ You will need to follow the following steps to gain access and be able to click 
 
 To get started with our PFM Demo Kit, all you need is an API key to spin up a PFM demo application. Check our guide [here](https://api.basiq.io/docs/getting-started) for details on how to get started. Also, accelerate your time to market through our blog post [here](https://www.basiq.io/blog/accelerate-your-time-to-market-with-basiqs-pfm-demo-app/).
 
-# Source Code with our development partners, Flying Donkey
+# Source Code Access
 
-The PFM demo application is available on [GitHub](https://github.com/flyingdonkey-it/PFM-starterkit) and hosted and managed by [FlyingDonkey](https://flyingdonkey.com.au/). This repository contains all the necessary code and instructions for setting up and customising the PFM Starter Kit to fit your needs.
+The PFM demo application is available on [GitHub](https://github.com/flyingdonkey-it/PFM-starterkit). This repository contains all the necessary code and instructions for setting up and customising the PFM Starter Kit to fit your needs.
 
 To get started, simply clone the repository and follow the instructions in the README file. The README file provides detailed instructions on how to customize the PFM demo application by updating the configuration files, branding, and logos.
 
 Additionally, the GitHub repository provides access to the latest version of the PFM demo application, allowing you to stay up-to-date with the latest features and enhancements.
 
-If you encounter any issues or have any queries with the codebase when using and building your own PFM demo application, please reach out to the [Flying Donkey](https://flyingdonkey.com.au/) team.
-
-# Need a custom Saas solution?
-
-[Flying Donkey](https://flyingdonkey.com.au/) creates custom Saas solutions. Having built Basiq's PFM developer demo application, they know the Basiq API like the back of their hand. Accelerate your Basiq integration from weeks to days with a custom solution.
+<br />
 
 > 👍 Quick Links
 >
 > * [Live Application](https://pfm-demo.basiq.io/) to test out
-> * [Public Git Repo](https://github.com/flyingdonkey-it/PFM-starterkit) for your use
+> * [Public Git Repo](https://github.com/basiqio-oss/Basiq-pfm) for your use
 > * [Test Credentials](https://api.basiq.io/reference/testing) for our Sandbox users
 
 <div
@@ -127,33 +123,33 @@ If you encounter any issues or have any queries with the codebase when using and
   </div>
 
   <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
-                                      padding: '0.75rem 2rem',
-                                      fontSize: '1rem',
-                                      fontWeight: 600,
-                                      borderRadius: '9999px',
-                                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                                      transition: 'all 0.3s ease-in-out',
-                                      backgroundColor: '#1f2937',
-                                      color: '#ffffff',
-                                      border: 'none',
-                                      cursor: 'pointer',
-                                      outline: 'none',
-                                      flexShrink: 0,
-                                    }} onMouseEnter={(e) => {
-                                      e.currentTarget.style.backgroundColor = '#374151';
-                                      e.currentTarget.style.transform = 'scale(1.05)';
-                                    }} onMouseLeave={(e) => {
-                                      e.currentTarget.style.backgroundColor = '#1f2937';
-                                      e.currentTarget.style.transform = 'scale(1)';
-                                    }} onFocus={(e) => {
-                                      e.currentTarget.style.outline = '2px solid #6b7280';
-                                      e.currentTarget.style.outlineOffset = '2px';
-                                      e.currentTarget.style.backgroundColor = '#374151';
-                                      e.currentTarget.style.transform = 'scale(1.05)';
-                                    }} onBlur={(e) => {
-                                      e.currentTarget.style.outline = 'none';
-                                      e.currentTarget.style.outlineOffset = '0px';
-                                      e.currentTarget.style.backgroundColor = '#1f2937';
-                                      e.currentTarget.style.transform = 'scale(1)';
-                                    }}>Chat with Support</button>
+                                          padding: '0.75rem 2rem',
+                                          fontSize: '1rem',
+                                          fontWeight: 600,
+                                          borderRadius: '9999px',
+                                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                          transition: 'all 0.3s ease-in-out',
+                                          backgroundColor: '#1f2937',
+                                          color: '#ffffff',
+                                          border: 'none',
+                                          cursor: 'pointer',
+                                          outline: 'none',
+                                          flexShrink: 0,
+                                        }} onMouseEnter={(e) => {
+                                          e.currentTarget.style.backgroundColor = '#374151';
+                                          e.currentTarget.style.transform = 'scale(1.05)';
+                                        }} onMouseLeave={(e) => {
+                                          e.currentTarget.style.backgroundColor = '#1f2937';
+                                          e.currentTarget.style.transform = 'scale(1)';
+                                        }} onFocus={(e) => {
+                                          e.currentTarget.style.outline = '2px solid #6b7280';
+                                          e.currentTarget.style.outlineOffset = '2px';
+                                          e.currentTarget.style.backgroundColor = '#374151';
+                                          e.currentTarget.style.transform = 'scale(1.05)';
+                                        }} onBlur={(e) => {
+                                          e.currentTarget.style.outline = 'none';
+                                          e.currentTarget.style.outlineOffset = '0px';
+                                          e.currentTarget.style.backgroundColor = '#1f2937';
+                                          e.currentTarget.style.transform = 'scale(1)';
+                                        }}>Chat with Support</button>
 </div>
