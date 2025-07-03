@@ -43,10 +43,6 @@ Our PFM Demo application is built on a modern tech stack using React, Next.js, a
 * Strong pre-consent flow (when using our account verification starter kit) with a clearly defined value proposition to build trust with users
 * And more...
 
-# Check out the PFM demo application in action!
-
-<Embed url="http://www.google.com/sorry/index?continue=http://www.youtube.com/watch%3Fv%3DaPqLyO4LNVU&q=EhAmAB8YEA2fMapQNsg0Abi8GOCC-bYGIjDWK5HiVQNj8cCj2S8QfX_I8sYotVBVDTKin5lnZjEq-fOguTqj1gMdsrxfluRHrIsyAXJaAUM" href="http://www.google.com/sorry/index?continue=http://www.youtube.com/watch%3Fv%3DaPqLyO4LNVU&q=EhAmAB8YEA2fMapQNsg0Abi8GOCC-bYGIjDWK5HiVQNj8cCj2S8QfX_I8sYotVBVDTKin5lnZjEq-fOguTqj1gMdsrxfluRHrIsyAXJaAUM" typeOfEmbed="default" html="%3Ciframe%20class%3D%22embedly-embed%22%20src%3D%22%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%253A%252F%252Fwww.youtube.com%252Fembed%252FaPqLyO4LNVU%26display_name%3DYouTube%26url%3Dhttps%253A%252F%252Fwww.youtube.com%252Fwatch%253Fv%253DaPqLyO4LNVU%26key%3D02466f963b9b4bb8845a05b53d3235d7%26type%3Dtext%252Fhtml%26schema%3Dgoogle%22%20width%3D%22854%22%20height%3D%22480%22%20scrolling%3D%22no%22%20title%3D%22YouTube%20embed%22%20frameborder%3D%220%22%20allow%3D%22autoplay%3B%20fullscreen%3B%20encrypted-media%3B%20picture-in-picture%3B%22%20allowfullscreen%3D%22true%22%3E%3C%2Fiframe%3E" />
-
 Our PFM demo application is hosted on [pfm-demo.basiq.io](https://pfm-demo.basiq.io), and provides a real-life example of how the application looks and feels. Please note that this demo app is for testing purposes and connects to test bank and sandbox accounts.
 
 You can use our sandbox credentials to login and test the app. We recommend using Hooli Bank for testing and the Wentworth Smith ID logins, as it provides the best dummy data to explore the application with.
@@ -131,33 +127,33 @@ If you encounter any issues or have any queries with the codebase when using and
   </div>
 
   <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
-                              padding: '0.75rem 2rem',
-                              fontSize: '1rem',
-                              fontWeight: 600,
-                              borderRadius: '9999px',
-                              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                              transition: 'all 0.3s ease-in-out',
-                              backgroundColor: '#1f2937',
-                              color: '#ffffff',
-                              border: 'none',
-                              cursor: 'pointer',
-                              outline: 'none',
-                              flexShrink: 0,
-                            }} onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#374151';
-                              e.currentTarget.style.transform = 'scale(1.05)';
-                            }} onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = '#1f2937';
-                              e.currentTarget.style.transform = 'scale(1)';
-                            }} onFocus={(e) => {
-                              e.currentTarget.style.outline = '2px solid #6b7280';
-                              e.currentTarget.style.outlineOffset = '2px';
-                              e.currentTarget.style.backgroundColor = '#374151';
-                              e.currentTarget.style.transform = 'scale(1.05)';
-                            }} onBlur={(e) => {
-                              e.currentTarget.style.outline = 'none';
-                              e.currentTarget.style.outlineOffset = '0px';
-                              e.currentTarget.style.backgroundColor = '#1f2937';
-                              e.currentTarget.style.transform = 'scale(1)';
-                            }}>Chat with Support</button>
+                                  padding: '0.75rem 2rem',
+                                  fontSize: '1rem',
+                                  fontWeight: 600,
+                                  borderRadius: '9999px',
+                                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                  transition: 'all 0.3s ease-in-out',
+                                  backgroundColor: '#1f2937',
+                                  color: '#ffffff',
+                                  border: 'none',
+                                  cursor: 'pointer',
+                                  outline: 'none',
+                                  flexShrink: 0,
+                                }} onMouseEnter={(e) => {
+                                  e.currentTarget.style.backgroundColor = '#374151';
+                                  e.currentTarget.style.transform = 'scale(1.05)';
+                                }} onMouseLeave={(e) => {
+                                  e.currentTarget.style.backgroundColor = '#1f2937';
+                                  e.currentTarget.style.transform = 'scale(1)';
+                                }} onFocus={(e) => {
+                                  e.currentTarget.style.outline = '2px solid #6b7280';
+                                  e.currentTarget.style.outlineOffset = '2px';
+                                  e.currentTarget.style.backgroundColor = '#374151';
+                                  e.currentTarget.style.transform = 'scale(1.05)';
+                                }} onBlur={(e) => {
+                                  e.currentTarget.style.outline = 'none';
+                                  e.currentTarget.style.outlineOffset = '0px';
+                                  e.currentTarget.style.backgroundColor = '#1f2937';
+                                  e.currentTarget.style.transform = 'scale(1)';
+                                }}>Chat with Support</button>
 </div>
