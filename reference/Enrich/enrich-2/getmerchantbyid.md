@@ -1,5 +1,5 @@
 ---
-title: Get Merchant
+title: Retrieve a merchant
 excerpt: Retrieves a single merchant's details using its unique ID.
 api:
   file: enrich.json
