@@ -59,6 +59,10 @@ You will need to follow the following steps to gain access and be able to click 
 
 To get started with our PFM Demo Kit, all you need is an API key to spin up a PFM demo application. Check our guide [here](https://api.basiq.io/docs/getting-started) for details on how to get started. Also, accelerate your time to market through our blog post [here](https://www.basiq.io/blog/accelerate-your-time-to-market-with-basiqs-pfm-demo-app/).
 
+<HTMLBlock>{`
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.18807092960774% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/So3KyE5QsQ9nGBGIBP7q?embed&embed_mobile=tab&embed_desktop=inline&squared=true&show_copy_link=true" title="Connect Your Bank and Review Personal Finance Insights" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+`}</HTMLBlock>
+
 # Source Code Access
 
 The PFM demo application is available on [GitHub](https://github.com/basiqio-oss/Basiq-pfm). This repository contains all the necessary code and instructions for setting up and customising the PFM Starter Kit to fit your needs.
@@ -123,33 +127,33 @@ Additionally, the GitHub repository provides access to the latest version of the
   </div>
 
   <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
-                                                                          padding: '0.75rem 2rem',
-                                                                          fontSize: '1rem',
-                                                                          fontWeight: 600,
-                                                                          borderRadius: '9999px',
-                                                                          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                                                                          transition: 'all 0.3s ease-in-out',
-                                                                          backgroundColor: '#1f2937',
-                                                                          color: '#ffffff',
-                                                                          border: 'none',
-                                                                          cursor: 'pointer',
-                                                                          outline: 'none',
-                                                                          flexShrink: 0,
-                                                                        }} onMouseEnter={(e) => {
-                                                                          e.currentTarget.style.backgroundColor = '#374151';
-                                                                          e.currentTarget.style.transform = 'scale(1.05)';
-                                                                        }} onMouseLeave={(e) => {
-                                                                          e.currentTarget.style.backgroundColor = '#1f2937';
-                                                                          e.currentTarget.style.transform = 'scale(1)';
-                                                                        }} onFocus={(e) => {
-                                                                          e.currentTarget.style.outline = '2px solid #6b7280';
-                                                                          e.currentTarget.style.outlineOffset = '2px';
-                                                                          e.currentTarget.style.backgroundColor = '#374151';
-                                                                          e.currentTarget.style.transform = 'scale(1.05)';
-                                                                        }} onBlur={(e) => {
-                                                                          e.currentTarget.style.outline = 'none';
-                                                                          e.currentTarget.style.outlineOffset = '0px';
-                                                                          e.currentTarget.style.backgroundColor = '#1f2937';
-                                                                          e.currentTarget.style.transform = 'scale(1)';
-                                                                        }}>Chat with Support</button>
+                                                                              padding: '0.75rem 2rem',
+                                                                              fontSize: '1rem',
+                                                                              fontWeight: 600,
+                                                                              borderRadius: '9999px',
+                                                                              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                                                                              transition: 'all 0.3s ease-in-out',
+                                                                              backgroundColor: '#1f2937',
+                                                                              color: '#ffffff',
+                                                                              border: 'none',
+                                                                              cursor: 'pointer',
+                                                                              outline: 'none',
+                                                                              flexShrink: 0,
+                                                                            }} onMouseEnter={(e) => {
+                                                                              e.currentTarget.style.backgroundColor = '#374151';
+                                                                              e.currentTarget.style.transform = 'scale(1.05)';
+                                                                            }} onMouseLeave={(e) => {
+                                                                              e.currentTarget.style.backgroundColor = '#1f2937';
+                                                                              e.currentTarget.style.transform = 'scale(1)';
+                                                                            }} onFocus={(e) => {
+                                                                              e.currentTarget.style.outline = '2px solid #6b7280';
+                                                                              e.currentTarget.style.outlineOffset = '2px';
+                                                                              e.currentTarget.style.backgroundColor = '#374151';
+                                                                              e.currentTarget.style.transform = 'scale(1.05)';
+                                                                            }} onBlur={(e) => {
+                                                                              e.currentTarget.style.outline = 'none';
+                                                                              e.currentTarget.style.outlineOffset = '0px';
+                                                                              e.currentTarget.style.backgroundColor = '#1f2937';
+                                                                              e.currentTarget.style.transform = 'scale(1)';
+                                                                            }}>Chat with Support</button>
 </div>
