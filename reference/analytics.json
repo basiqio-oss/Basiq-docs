@@ -57,7 +57,7 @@
                             "type": "string",
                             "format": "date"
                         },
-                        "description": "End date of the analytics period (e.g., 2024-01-01)."
+                        "description": "End date of the analytics period (e.g., YYYY-MM-DD)."
                     },
                     {
                         "name": "connectionType",
