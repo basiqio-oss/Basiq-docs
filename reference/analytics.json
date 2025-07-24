@@ -23,7 +23,7 @@
                 ],
                 "operationId": "getUserAnalytics",
                 "summary": "Get User Analytics",
-                "description": "Retrieve user analytics over a given time interval.",
+                "description": "Retrieve user analytics, such as number of users and connections created for an application over a given time interval.",
                 "parameters": [
                     {
                         "name": "interval",
