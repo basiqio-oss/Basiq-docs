@@ -40,20 +40,45 @@
                         "description": "Time interval for analytics."
                     },
                     {
-                        "name": "connectionType",
+                        "name": "fromDate",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "enum": [
-                                "all",
-                                "CDR",
-                                "WEB",
-                                "PDF",
-                                "CSV"
-                            ]
+                            "format": "date"
                         },
-                        "description": "Filter analytics based on connection type."
+                        "description": "Start date of the analytics period (e.g., 2023-01-01)."
+                    },
+                    {
+                        "name": "toDate",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "description": "End date of the analytics period (e.g., 2024-01-01)."
+                    },
+                    {
+                        "name": "connectionType",
+                        "in": "query",
+                        "required": false,
+                        "style": "form",
+                        "explode": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "all",
+                                    "CDR",
+                                    "WEB",
+                                    "PDF",
+                                    "CSV"
+                                ]
+                            }
+                        },
+                        "description": "Filter analytics by one or more connection types."
                     }
                 ],
                 "responses": {
@@ -96,7 +121,7 @@
                 },
                 "security": [
                     {
-                        "bearerAuth": []
+                        "services_token": []
                     }
                 ]
             }
@@ -104,7 +129,7 @@
     },
     "components": {
         "securitySchemes": {
-            "bearerAuth": {
+            "services_token": {
                 "type": "http",
                 "scheme": "bearer",
                 "bearerFormat": "JWT"
