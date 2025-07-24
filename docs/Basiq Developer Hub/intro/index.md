@@ -20,8 +20,6 @@ Basiq is a cutting-edge platform designed to revolutionise the way businesses an
   <CoolCard header="API Reference" href="https://api.basiq.io/reference/introduction/" icon="fa-duotone fa-solid fa-code-simple" text="Call your APIs" />
 </Grid>
 
-<br />
-
 ### Our Mission
 
 Our mission is to empower developers and businesses by providing a seamless and secure gateway to financial data. We strive to bridge the gap between financial institutions and fintech innovators, ensuring that accessing and utilising financial data is as effortless as possible, while maintaining the highest standards of security and compliance.
@@ -107,33 +105,33 @@ We’re excited to have you on board and look forward to supporting your journey
   </div>
 
   <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
-                  padding: '0.75rem 2rem',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  borderRadius: '9999px',
-                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                  transition: 'all 0.3s ease-in-out',
-                  backgroundColor: '#1f2937',
-                  color: '#ffffff',
-                  border: 'none',
-                  cursor: 'pointer',
-                  outline: 'none',
-                  flexShrink: 0,
-                }} onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#374151';
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }} onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1f2937';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }} onFocus={(e) => {
-                  e.currentTarget.style.outline = '2px solid #6b7280';
-                  e.currentTarget.style.outlineOffset = '2px';
-                  e.currentTarget.style.backgroundColor = '#374151';
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }} onBlur={(e) => {
-                  e.currentTarget.style.outline = 'none';
-                  e.currentTarget.style.outlineOffset = '0px';
-                  e.currentTarget.style.backgroundColor = '#1f2937';
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}>Chat with Support</button>
+                      padding: '0.75rem 2rem',
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      borderRadius: '9999px',
+                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                      transition: 'all 0.3s ease-in-out',
+                      backgroundColor: '#1f2937',
+                      color: '#ffffff',
+                      border: 'none',
+                      cursor: 'pointer',
+                      outline: 'none',
+                      flexShrink: 0,
+                    }} onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#374151';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }} onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#1f2937';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }} onFocus={(e) => {
+                      e.currentTarget.style.outline = '2px solid #6b7280';
+                      e.currentTarget.style.outlineOffset = '2px';
+                      e.currentTarget.style.backgroundColor = '#374151';
+                      e.currentTarget.style.transform = 'scale(1.05)';
+                    }} onBlur={(e) => {
+                      e.currentTarget.style.outline = 'none';
+                      e.currentTarget.style.outlineOffset = '0px';
+                      e.currentTarget.style.backgroundColor = '#1f2937';
+                      e.currentTarget.style.transform = 'scale(1)';
+                    }}>Chat with Support</button>
 </div>
