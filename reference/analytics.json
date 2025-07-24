@@ -47,7 +47,7 @@
                             "type": "string",
                             "format": "date"
                         },
-                        "description": "Start date of the analytics period (e.g., 2023-01-01)."
+                        "description": "Start date of the analytics period (e.g., YYYY-MM-DD)."
                     },
                     {
                         "name": "toDate",
