@@ -1,0 +1,119 @@
+---
+name: CoolImageCard
+---
+export const CoolImageCard = ({ alt, darkSrc, header, href, id, src, text }) => {
+  const linkcss = {
+    color: 'var(--color-text-default)',
+		fontSize: '14px',
+    lineHeight: '1.4',
+		textAlign: 'left',
+		textDecoration: 'none',
+  }
+
+  const cardcss = {
+		alignItems: 'flex-start',
+    background: 'rgba(255,255,255,0.05)',
+    border: '1px solid var(--color-border-default)',
+    borderRadius: 'var(--border-radius-lg)',
+    display: 'flex',
+    flexDirection: 'column',	
+		overflow: 'hidden',
+		transition: 'all var(--transition-timing) var(--transition-fast)',
+  }
+  
+  const containercss = {
+		display: 'flex',
+    flexDirection: 'column',
+		padding: '1.5em 0',
+	}
+
+  const headercss = {
+		fontSize: '1.1em',
+    fontWeight: 'var(--font-weight-bold)',
+		marginBottom: '0.5em',
+  }
+  
+  const arrowcss = {
+    fontSize: '0.8em',
+    marginLeft: '0.5em',
+    opacity: 0,
+    transition: 'all var(--transition-timing) var(--transition-fast)',
+		transform: 'translateX(-5px)',
+	}
+
+  const textcss = {
+    color: 'var(--color-text-minimum)',
+		fontSize: '1.1em',
+  }
+  
+  const imagecss = {
+    height: '200px',
+		maxWidth: 'none',
+		width: 'contain',
+  }
+
+  const style = `
+	  .CoolImageCard:hover,
+    .CoolImageCard:active,
+    .CoolImageCard:focus {
+	    .CoolImageCard-card {
+				background: rgba(255, 255, 255, 0.1) !important;
+      }
+
+			i {
+			  opacity: 0.75 !important;
+			  transform: none !important;
+		  }
+		}
+    `
+
+	const imgSrcStyle = `
+		#${id}.CoolImageCard img {
+			content: url(${src});
+		}
+
+		[data-color-mode="light"] #${id}.CoolImageCard img {
+			content: url(${src});
+		}
+
+		[data-color-mode="dark"] #${id}.CoolImageCard img {
+			content: url(${darkSrc});
+		}
+
+		@media (prefers-color-scheme: dark) {
+			[data-color-mode="system"] #${id}.CoolImageCard img {
+				content: url(${darkSrc});
+			}
+		}
+	`
+
+  return (
+    <>
+			<style>{style}</style>
+      <a className="CoolImageCard" href={href} id={id} style={linkcss}>
+				<div className="CoolImageCard-card" style={cardcss}>
+					<style>{imgSrcStyle}</style>
+          <img alt={alt} height="200" style={imagecss} />
+				</div>
+				<div style={containercss}>
+          <span style={headercss}>	
+            {header}
+            <i aria-hidden="true" className="fa-regular fa-arrow-right" style={arrowcss} />
+          </span>
+          <span style={textcss}>{text}</span>
+				</div>
+      </a>
+		</>
+  );
+};
+
+<CoolImageCard 
+  alt=""
+	darkSrc="https://files.readme.io/296f6ff438542e27386dc267efa778719ecff6b41b5da945032ae86ee6fd9650-support.webp"
+  header="Project Setup" 
+	href="#"
+  icon="fa-duotone fa-solid fa-traffic-light"
+	id="1"
+	src="https://files.readme.io/2e19c90682aa5e4c722ea2b122c90b9612abf4a489d2d2028da25a18b70bc13c-Changelog_7.webp"
+	text="Learn how to write and publish docs."
+/>
