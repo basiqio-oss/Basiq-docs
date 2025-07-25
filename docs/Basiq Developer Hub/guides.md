@@ -5,12 +5,12 @@ hidden: true
 metadata:
   robots: index
 ---
-<Grid columns="3" gap="20px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolCard header="Quick Start" href="https://docs.readme.com/main/docs/quickstart" icon="fa-duotone fa-solid fa-rocket-launch" text="Learn how to write and publish docs" />
+<Grid columns="3" gap="20px" style={{ gridTemplateColumns: 'repeat(auto‑fit, minmax(200px, 1fr))' }}>
+  <CoolCard header="Quick Start" href="https://api.basiq.io/docs/getting-started" icon="fa-duotone fa-solid fa-rocket-launch" text="Register your app, get API keys, authenticate, and create a user" />
 
-  <CoolCard header="API Reference" href="https://docs.readme.com/main/docs/api-reference" icon="fa-duotone fa-solid fa-code-simple" text="Use an OAS file, or create one with ReadMe" />
+  <CoolCard header="API Reference" href="https://api.basiq.io/reference/introduction" icon="fa-duotone fa-solid fa-code-simple" text="Full OpenAPI specification & endpoints for Connect, Enrich, Reporting, Webhooks, Affordability" />
 
-  <CoolCard header="Customize" href="https://docs.readme.com/main/docs/design-themes" icon="fa-duotone fa-solid fa-brush" text="Checkout logo, brand, and theme options" />
+  <CoolCard header="Customize UI Consent" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-brush" text="Configure consent UI, customize policy, institutions and branding" />
 </Grid>
 
 {/* Note to editors: Consider moving Recent Releases to Basics as they’re demoted */}
