@@ -3,7 +3,7 @@ title: Getting started
 excerpt: ''
 deprecated: false
 hidden: false
-icon: 💼
+icon: fad fa-briefcase
 metadata:
   title: ''
   description: ''
