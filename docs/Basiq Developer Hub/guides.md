@@ -1,14 +1,8 @@
 ---
 title: Welcome to Basiq
 excerpt: >-
-  Basiq is a cutting-edge platform designed to revolutionise the way businesses
-  and developers interact with financial data. At its core, Basiq provides a
-  robust, secure, and efficient means to access and process financial
-  information. Our platform is built with the intention of simplifying financial
-  data integration, offering tools and services that enable businesses to make
-  informed decisions, enhance customer experiences, and innovate in the
-  financial technology space. Basiq is a Consumer Data Right accredited API
-  platform that provides the building blocks of financial services.
+  Basiq is a Consumer Data Right accredited API platform that provides the
+  building blocks of financial services.
 deprecated: false
 hidden: true
 metadata:
