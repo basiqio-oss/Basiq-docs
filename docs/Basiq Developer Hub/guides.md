@@ -1,5 +1,5 @@
 ---
-title: Welcome to BASIQ APIs
+title: Welcome to Basiq
 excerpt: Helping you integrate with financial institutions as quickly as possible.
 deprecated: false
 hidden: true
