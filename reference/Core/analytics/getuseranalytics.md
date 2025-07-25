@@ -11,8 +11,8 @@ icon: 🆕
 ---
 <SimpleStepper>
   <SimpleStep header="Step 1: Understand the data">
-    🚧 The displayed number of billable users may not match your actual billing total.\
-    For precise billing information, please reach out to support.
+    <i> 🚧 The displayed number of billable users may not match your actual billing total.\
+    For precise billing information, please reach out to support. </i>
   </SimpleStep>
 
   <SimpleStep header="Step 2: Use the correct interval">
