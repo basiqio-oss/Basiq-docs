@@ -9,11 +9,13 @@ api:
 hidden: false
 icon: 🆕
 ---
-<Terminal>
-  {`
-          🚧 The reported number of billable users may not reflect the actual billing total. 
-          For precise billing information, please contact support.
+<ToggleList>
+  <ToggleListItem title="Important billing note">
+    🚧 The reported number of billable users may not reflect the actual billing total.\
+    For accurate billing details, please contact support.
+  </ToggleListItem>
 
-          ℹ️ Billable users are only visible when using the 'monthly' interval.
-          `}
-</Terminal>
+  <ToggleListItem title="When are billable users shown?">
+    ℹ️ Billable user counts are only available when the interval is set to 'monthly'.
+  </ToggleListItem>
+</ToggleList>
