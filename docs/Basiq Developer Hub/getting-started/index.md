@@ -3,6 +3,7 @@ title: Getting started
 excerpt: ''
 deprecated: false
 hidden: false
+icon: 💼
 metadata:
   title: ''
   description: ''
