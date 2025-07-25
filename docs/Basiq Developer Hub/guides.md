@@ -27,33 +27,23 @@ metadata:
   <CoolTile header="Statement Reports API" href="https://api.basiq.io/docs/bank-statements" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Generate and download bank statements via report jobs, in JSON or PDF" />
 </Grid>
 
-## ReadMe Basics
+## Developer Basics
 
-<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolTile header="Refactored" href="https://docs.readme.com/main/docs/migration-moving-your-docs-to-their-new-home" icon="fa-duotone fa-solid fa-box-open" text="Migrate your docs to the new ReadMe" />
+<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
+  <CoolTile header="Developer Hub" href="https://api.basiq.io/reference/developer-hub" icon="fa-duotone fa-solid fa-layer-group" text="Guides, best practices, SDK & CLI support" />
 
-  <CoolTile header="Integrations" href="https://docs.readme.com/main/docs/integrations" icon="fa-duotone fa-solid fa-arrow-down-left-and-arrow-up-right-to-center" text="Integrate with third-party services" />
+  <CoolTile header="Access Methods" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-link" text="Web connector, Open Banking, statement upload options" />
 
-  <CoolTile header="Recipes" href="https://docs.readme.com/main/docs/recipes" icon="fa-duotone fa-solid fa-flask" text="Step-by-step code walkthroughs" />
+  <CoolTile header="Connections & Sync" href="https://api.basiq.io/docs/data-connections" icon="fa-duotone fa-solid fa-code-branch" text="Manage user connections, refresh patterns, caching" />
 
-  <CoolTile header="Changelog" href="https://docs.readme.com/main/docs/changelog" icon="fa-duotone fa-solid fa-megaphone" text="Keep users up-to-date on the latest changes" />
+  <CoolTile header="Reports & Affordability APIs" href="https://api.basiq.io/reference/introduction#reporting" icon="fa-duotone fa-solid fa-chart-simple" text="Create and retrieve statements, affordability and expense summaries" />
 
-  <CoolTile header="API V2" href="https://docs.readme.com/main/reference/api-migration-guide" icon="fa-duotone fa-solid fa-brackets-curly" text="Control your docs using our API" />
+  <CoolTile header="Webhooks & Real‑time" href="https://api.basiq.io/reference/introduction#webhooks" icon="fa-duotone fa-solid fa-bell" text="Post‑back events for jobs, connections or data updates" />
 
-  <CoolTile header="CLI" href="https://docs.readme.com/main/docs/upgrading-to-rdme10" icon="fa-duotone fa-solid fa-terminal" text="Use rdme to update your docs" />
-
-  <CoolTile header="My Developers" href="https://docs.readme.com/main/docs/my-developers" icon="fa-duotone fa-solid fa-user-group-simple" text="Get developer usage data in ReadMe" />
-
-  <CoolTile header="OpenAPI" href="https://docs.readme.com/main/docs/openapi" icon="fa-duotone fa-solid fa-file-circle-info" text="Learn about our support for OAS" />
-
-  <CoolTile header="RDMD" href="https://docs.readme.com/rdmd/docs/getting-started" icon="fa-duotone fa-solid fa-font-case" text="Learn about ReadMe-flavored Markdown" />
-
-  <CoolTile header="MDX" href="https://docs.readme.com/main/docs/mdx" icon="fa-duotone fa-solid fa-code" text="Write interactive docs and components" />
-
-  <CoolTile header="Sync with GitHub" href="https://docs.readme.com/main/docs/bi-directional-sync" icon="fa-duotone fa-solid fa-code-compare" text="Connect ReadMe to a GitHub project" />
+  <CoolTile header="SDK / CLI" href="https://api.basiq.io/reference/developer-hub" icon="fa-duotone fa-solid fa-terminal" text="Generate JavaScript / TypeScript SDK from OpenAPI or use CLI" />
 </Grid>
 
-## Enterprise Guides
+## Integration Guides
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
   <CoolTile header="Group Overview" href="https://docs.readme.com/ent/docs/enterprise-group-overview" icon="fa-duotone fa-solid fa-layer-group" text="Managing your projects and global settings" />
@@ -67,4 +57,12 @@ metadata:
   <CoolImageCard alt="" header="Community & Support" href="https://docs.readme.com/main/docs/need-more-support" id="welcome01" darkSrc="https://files.readme.io/5d14314e2f5abf4961b7ff0bbefcccf87cf721c66fa53b644d8af827d5176fa0-support.webp" src="https://files.readme.io/70d42a5e2dd38b4384f1ba5fcb81572d534e492a70421d6d8013f7b6b0aecbc7-support_1.webp" text="Reach out to our support team or make new feature requests." />
 
   <CoolImageCard alt="" header="Changelog" href="https://docs.readme.com/main/changelog" id="welcome02" darkSrc="https://files.readme.io/7283c747bcadeba55ecd8262d055fedfb82ba09f6ec73b75ccebe1bafe800ddb-Changelog_6.webp" src="https://files.readme.io/2e19c90682aa5e4c722ea2b122c90b9612abf4a489d2d2028da25a18b70bc13c-Changelog_7.webp" text="Read about new features, improvements, and bug fixes." />
+</Grid>
+
+<br />
+
+<Grid columns={2} gap="20px">
+  <CoolImageCard header="Dashboard & Teams" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" src="https://example.basiq.io/dashboard‑screenshot.png" text="Invite teammates, manage apps, enforce MFA, and customise environments" />
+
+  <CoolImageCard header="Consent UI Customisation" href="https://api.basiq.io/docs/access-method" src="https://example.basiq.io/consent-ui-preview.png" text="Customize branding, policy scope, institution listing and flow" />
 </Grid>
