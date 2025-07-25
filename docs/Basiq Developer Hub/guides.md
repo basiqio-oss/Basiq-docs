@@ -17,18 +17,14 @@ metadata:
 
 ## Recent Releases
 
-<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolTile header="AI Agent" href="https://docs.readme.com/main/docs/aiagent" icon="fa-duotone fa-solid fa-message-bot" isBeta text="Edit and review your docs with AI" />
+<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto‑fit, minmax(200px, 1fr))' }}>
+  {/* Assuming these are recent beta features of Basiq (fill in details from latest docs) */}
 
-  <CoolTile header="New Themes" href="https://docs.readme.com/main/docs/design-themes" icon="fa-duotone fa-solid fa-brush" text="New themes and more on the way—with more options" />
+  <CoolTile header="API v3.0 (Beta)" href="https://api.basiq.io/v2.1/docs/quickstart-part-1" icon="fa-duotone fa-solid fa-code-branch" isBeta text="New endpoint version with Consent UI v3.0 and extended Connect flows" />
 
-  <CoolTile header="MCP Servers" href="https://docs.readme.com/main/docs/readme-mcp-turbocharge-your-api-for-ai-assistants" icon="fa-duotone fa-solid fa-robot" isBeta text="Create MCP servers from your docs" />
+  <CoolTile header="Dashboard MFA & Team Invites" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" icon="fa-duotone fa-solid fa-user-lock" text="Multi‑factor authentication, team permissions and app environment setup" />
 
-  <CoolTile header="Branches" href="https://docs.readme.com/main/docs/branches" icon="fa-duotone fa-solid fa-code-branch" text="Save changes without publishing" />
-
-  <CoolTile header="LLMs.txt" href="https://docs.readme.com/main/docs/LLMstxt" icon="fa-duotone fa-solid fa-file-magnifying-glass" text="Make your docs LLM-friendly" />
-
-  <CoolTile header="Ask AI" href="https://docs.readme.com/main/docs/AskAI" icon="fa-duotone fa-solid fa-user-robot" text="Make it easy for users to leverage AI" />
+  <CoolTile header="Statement Reports API" href="https://api.basiq.io/docs/bank-statements" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Generate and download bank statements via report jobs, in JSON or PDF" />
 </Grid>
 
 ## ReadMe Basics
