@@ -3,7 +3,7 @@ title: Introduction
 excerpt: ''
 deprecated: false
 hidden: false
-icon: 👋
+icon: fad fa-hand-wave
 metadata:
   title: ''
   description: ''
