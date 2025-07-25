@@ -6,6 +6,7 @@ excerpt: >-
   protecting your customers data.
 deprecated: false
 hidden: false
+icon: 🚀
 metadata:
   title: ''
   description: ''
