@@ -19,17 +19,17 @@ metadata:
 ## Recent Releases
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+  <CoolTile header="Analytics API" href="https://api.basiq.io/docs/analytics-api" icon="fa-duotone fa-solid fa-chart-line" isBeta text="Access categorised insights and financial behavior patterns" />
+
   <CoolTile header="Dashboard MFA & Team Invites" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" icon="fa-duotone fa-solid fa-user-lock" text="Multi‑factor authentication, team permissions and app environment setup" />
 
   <CoolTile header="Statement Reports API" href="https://api.basiq.io/docs/bank-statements" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Generate and download bank statements via report jobs, in JSON or PDF" />
-
-  <CoolTile header="Analytics API" href="https://api.basiq.io/docs/analytics-api" icon="fa-duotone fa-solid fa-chart-line" isBeta text="Access categorised insights and financial behavior patterns" />
 
   <CoolTile header="PFM App Update" href="https://api.basiq.io/docs/pfm-demo-app" icon="fa-duotone fa-solid fa-mobile-screen" text="New PFM demo app with budgeting, transactions and affordability" />
 
   <CoolTile header="Consent Status Filters" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-filter-circle-xmark" text="Retrieve consents using status filters: active, expired, revoked" />
 
-  <CoolTile header="🚀 Merchant Search & Retrieve" href="https://api.basiq.io/docs/merchant-search" icon="fa-duotone fa-solid fa-store" text="Enrich your transactions by searching and retrieving merchant info" />
+  <CoolTile header="Merchant Search & Retrieve" href="https://api.basiq.io/docs/merchant-search" icon="fa-duotone fa-solid fa-store" text="Enrich your transactions by searching and retrieving merchant info" />
 </Grid>
 
 ## Developer Basics
