@@ -10,3 +10,24 @@ hidden: false
 icon: 🆕
 ---
 > 🚧 The reported number of billable users may not reflect the actual billing total. For precise billing information, please contact support.
+
+<br />
+
+<Terminal>
+  {`
+      🚧 The reported number of billable users may not reflect the actual billing total. 
+      For precise billing information, please contact support.
+
+      ℹ️ Billable users are only visible when using the 'monthly' interval.
+      `}
+</Terminal>
+
+<br />
+
+<Terminal>
+  {`
+   	> 🚧 The reported number of billable users may not reflect the actual billing total. 	For precise billing information, please contact support.
+
+  The Billable users are only visible in Monthly Intervals.
+  `}
+</Terminal>
