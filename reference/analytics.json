@@ -34,7 +34,9 @@
                             "enum": [
                                 "daily",
                                 "weekly",
-                                "monthly"
+                                "monthly",
+                                "quarterly",
+                                "annually"
                             ]
                         },
                         "description": "Time interval for analytics."
@@ -224,8 +226,9 @@
                                     }
                                 },
                                 "billable": {
-                                    "type": "object",
-                                    "nullable": true
+                                    "type": "number",
+                                    "nullable": true,
+                                    "example": 184
                                 }
                             }
                         }
