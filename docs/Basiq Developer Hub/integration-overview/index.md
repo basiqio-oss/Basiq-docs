@@ -6,7 +6,7 @@ excerpt: >-
   protecting your customers data.
 deprecated: false
 hidden: false
-icon: 🚀
+icon: fad fa-rocket-launch
 metadata:
   title: ''
   description: ''
