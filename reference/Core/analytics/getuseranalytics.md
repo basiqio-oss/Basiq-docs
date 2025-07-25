@@ -11,11 +11,11 @@ icon: 🆕
 ---
 <SimpleStepper>
   <SimpleStep header="Step 1: Understand the data">
-    <i> 🚧 The displayed number of billable users may not match your actual billing total.\
+    <i> The displayed number of billable users may not match your actual billing total.\
     For precise billing information, please reach out to support. </i>
   </SimpleStep>
 
   <SimpleStep header="Step 2: Use the correct interval">
-    ℹ️ Billable user counts are only returned when the interval is set to <code>monthly</code>.
+    <i> ℹ️ Billable user counts are only returned when the interval is set to <code>monthly</code>. </i>
   </SimpleStep>
 </SimpleStepper>
