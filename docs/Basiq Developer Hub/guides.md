@@ -19,8 +19,6 @@ metadata:
 ## Recent Releases
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolTile header="API v3.0 (Beta)" href="https://api.basiq.io/v2.1/docs/quickstart-part-1" icon="fa-duotone fa-solid fa-code-branch" isBeta text="New endpoint version with Consent UI v3.0 and extended Connect flows" />
-
   <CoolTile header="Dashboard MFA & Team Invites" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" icon="fa-duotone fa-solid fa-user-lock" text="Multi‑factor authentication, team permissions and app environment setup" />
 
   <CoolTile header="Statement Reports API" href="https://api.basiq.io/docs/bank-statements" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Generate and download bank statements via report jobs, in JSON or PDF" />
