@@ -16,6 +16,6 @@ icon: 🆕
   </SimpleStep>
 
   <SimpleStep header="Step 2: Use the correct interval">
-    <i> ℹ️ Billable user counts are only returned when the interval is set to <code>monthly</code>. </i>
+    <i> Billable user counts are only returned when the interval is set to <code>monthly</code>. </i>
   </SimpleStep>
 </SimpleStepper>
