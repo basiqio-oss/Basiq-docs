@@ -2,7 +2,7 @@
 title: Our Mission
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 icon: fad fa-file-signature
 metadata:
   title: ''
