@@ -2665,7 +2665,15 @@
               "schema": {
                 "type": "string"
               }
+            },
+            {
+            "name": "filter",
+            "in": "query",
+            "description": "Account filters; account.id, connection.id, institution.id, Only equals (eq) and not equals (ne) operations are currently supported.",
+            "schema": {
+              "type": "string"
             }
+          }
           ],
           "responses": {
             "200": {
