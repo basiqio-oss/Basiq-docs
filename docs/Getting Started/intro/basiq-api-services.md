@@ -2,7 +2,7 @@
 title: Basiq API services
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
