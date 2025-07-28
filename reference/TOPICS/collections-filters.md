@@ -3,6 +3,7 @@ title: Collections & Filters
 excerpt: ''
 deprecated: false
 hidden: false
+icon: fad fa-filters
 metadata:
   title: ''
   description: ''
