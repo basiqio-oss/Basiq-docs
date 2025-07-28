@@ -1,6 +1,6 @@
 ---
 title: Get user jobs
-excerpt: >-
+excerpt: >
   Retrieves the details of all existing and previous jobs associated with a
   user.
 
