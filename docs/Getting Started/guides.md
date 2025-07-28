@@ -46,7 +46,7 @@ metadata:
 
   <CoolTile header="Reports & Affordability APIs" href="https://api.basiq.io/reference/introduction#reporting" icon="fa-duotone fa-solid fa-chart-simple" text="Create and retrieve statements, affordability and expense summaries" />
 
-  <CoolTile header="Webhooks & Real‑time" href="https://api.basiq.io/reference/introduction#webhooks" icon="fa-duotone fa-solid fa-bell" text="Post‑back events for jobs, connections or data updates" />
+  <CoolTile header="Webhooks & Real‑time" href="https://api.basiq.io/reference/addwebhook/" icon="fa-duotone fa-solid fa-bell" text="Post‑back events for jobs, connections or data updates" />
 
   <CoolTile header="SDK / CLI" href="https://api.basiq.io/reference/developer-hub" icon="fa-duotone fa-solid fa-terminal" text="Generate JavaScript / TypeScript SDK from OpenAPI or use CLI" />
 </Grid>
