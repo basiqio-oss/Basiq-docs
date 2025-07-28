@@ -8,7 +8,7 @@ api:
   operationId: postToken
 api_config: authentication
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
