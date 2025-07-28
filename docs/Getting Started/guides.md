@@ -25,7 +25,7 @@ metadata:
 
   <CoolTile header="Merchant Search & Retrieve" href="https://api.basiq.io/reference/merchantsearch" icon="fa-duotone fa-solid fa-store" text="Enrich your transactions by searching and retrieving merchant info" />
 
-  <CoolTile header="PFM App Update" href="https://api.basiq.io/docs/pfm-demo-app" icon="fa-duotone fa-solid fa-mobile-screen" text="New PFM demo app with budgeting, transactions and affordability" />
+  <CoolTile header="PFM App Update" href="https://api.basiq.io/docs/demo-pfm" icon="fa-duotone fa-solid fa-mobile-screen" text="New PFM demo app with budgeting, transactions and affordability" />
 
   <CoolTile header="Consent Status Filters" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-filter-circle-xmark" text="Retrieve consents using status filters: active, expired, revoked" />
 
