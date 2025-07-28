@@ -29,9 +29,9 @@ metadata:
 
   <CoolTile header="Consent Status Filters" href="https://api.basiq.io/reference/getconsents" icon="fa-duotone fa-solid fa-filter-circle-xmark" text="Retrieve consents using status filters: active, expired, revoked" />
 
-  <CoolTile header="Statement Reports API" href="https://api.basiq.io/reference/statements" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Generate and download bank statements via report jobs, in JSON or PDF" />
+  <CoolTile header="Business Affordability Report" href="https://api.basiq.io/docs/business-affordability" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Assess a business’s financial capacity with downloadable JSON or PDF reports." />
 
-  <CoolTile header="Dashboard MFA & Team Invites" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" icon="fa-duotone fa-solid fa-user-lock" text="Multi‑factor authentication, team permissions and app environment setup" />
+  <CoolTile header="Dashboard MFA & Team Invites" href="https://api.basiq.io/docs/quickstart-basiq-dashboard/editing-profile-account-settings-and-enabling-2fa" icon="fa-duotone fa-solid fa-user-lock" text="Multi‑factor authentication, team permissions and app environment setup" />
 </Grid>
 
 ## Developer Basics
