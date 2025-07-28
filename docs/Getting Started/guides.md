@@ -4,7 +4,8 @@ excerpt: >-
   Basiq is a Consumer Data Right accredited API platform that provides the
   building blocks of financial services.
 deprecated: false
-hidden: true
+hidden: false
+icon: fad fa-hand-wave
 metadata:
   robots: index
 ---
