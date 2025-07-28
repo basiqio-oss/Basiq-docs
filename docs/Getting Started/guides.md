@@ -27,7 +27,7 @@ metadata:
 
   <CoolTile header="PFM App Update" href="https://api.basiq.io/docs/demo-pfm" icon="fa-duotone fa-solid fa-mobile-screen" text="New PFM demo app with budgeting, transactions and affordability" />
 
-  <CoolTile header="Consent Status Filters" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-filter-circle-xmark" text="Retrieve consents using status filters: active, expired, revoked" />
+  <CoolTile header="Consent Status Filters" href="https://api.basiq.io/reference/getconsents" icon="fa-duotone fa-solid fa-filter-circle-xmark" text="Retrieve consents using status filters: active, expired, revoked" />
 
   <CoolTile header="Statement Reports API" href="https://api.basiq.io/docs/bank-statements" icon="fa-duotone fa-solid fa-file-invoice-dollar" text="Generate and download bank statements via report jobs, in JSON or PDF" />
 
