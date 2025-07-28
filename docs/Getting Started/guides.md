@@ -57,8 +57,6 @@ metadata:
 
   <CoolTile header="Application Setup" href="https://api.basiq.io/docs/application-setup" icon="fa-duotone fa-solid fa-gears" text="Register your application and generate API keys." />
 
-  <CoolTile header="Navigating the Dashboard" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" icon="fa-duotone fa-solid fa-gauge" text="Invite teammates, manage apps, and customise environments." />
-
   <CoolTile header="Consent UI Customisation" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-palette" text="Tailor the consent flow, branding, and policies." />
 </Grid>
 
