@@ -3,7 +3,7 @@ title: Our Mission
 excerpt: ''
 deprecated: false
 hidden: false
-icon: fad fa-hand-wave
+icon: fad fa-file-signature
 metadata:
   title: ''
   description: ''
