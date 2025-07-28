@@ -65,5 +65,5 @@ metadata:
 <Grid columns={2} gap="20px">
   <CoolImageCard header="PFM Starter Kit" href="https://api.basiq.io/docs/pfm-overview" src="https://files.readme.io/843b303b4f8eaa9f02ffb0abec834798a08f6f8439889db0506828090a2c09fa-PFM-1080x700.png" text="Help users better manage their finances with Basiq’s Personal Finance Management tools." />
 
-  <CoolImageCard header="Income Verification Kit" href="https://api.basiq.io/docs/income-verification" src="https://example.basiq.io/income-verification.png" text="Verify user income streams to support lending and affordability workflows." />
+  <CoolImageCard header="Income Verification Kit" href="https://api.basiq.io/docs/income-verification" src="https://files.readme.io/843b303b4f8eaa9f02ffb0abec834798a08f6f8439889db0506828090a2c09fa-PFM-1080x700.png" text="Verify user income streams to support lending and affordability workflows." />
 </Grid>
