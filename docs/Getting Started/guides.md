@@ -23,7 +23,7 @@ metadata:
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
   <CoolTile header="Analytics API" href="https://api.basiq.io/reference/getuseranalytics" icon="fa-duotone fa-solid fa-chart-line" isBeta text="Access categorised insights and financial behavior patterns" />
 
-  <CoolTile header="Merchant Search & Retrieve" href="https://api.basiq.io/docs/merchant-search" icon="fa-duotone fa-solid fa-store" text="Enrich your transactions by searching and retrieving merchant info" />
+  <CoolTile header="Merchant Search & Retrieve" href="https://api.basiq.io/reference/merchantsearch" icon="fa-duotone fa-solid fa-store" text="Enrich your transactions by searching and retrieving merchant info" />
 
   <CoolTile header="PFM App Update" href="https://api.basiq.io/docs/pfm-demo-app" icon="fa-duotone fa-solid fa-mobile-screen" text="New PFM demo app with budgeting, transactions and affordability" />
 
