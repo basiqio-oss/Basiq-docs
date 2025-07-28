@@ -65,7 +65,7 @@ metadata:
 <br />
 
 <Grid columns={2} gap="20px">
-  <CoolImageCard header="Dashboard & Teams" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" src="https://example.basiq.io/dashboard‑screenshot.png" text="Invite teammates, manage apps, enforce MFA, and customise environments" />
+  <CoolImageCard header="PFM Starter Kit" href="https://api.basiq.io/docs/pfm-overview" src="https://example.basiq.io/pfm-starter-kit.png" text="Help users better manage their finances with Basiq’s Personal Finance Management tools." />
 
-  <CoolImageCard header="Consent UI Customisation" href="https://api.basiq.io/docs/access-method" src="https://example.basiq.io/consent-ui-preview.png" text="Customize branding, policy scope, institution listing and flow" />
+  <CoolImageCard header="Income Verification Kit" href="https://api.basiq.io/docs/income-verification" src="https://example.basiq.io/income-verification.png" text="Verify user income streams to support lending and affordability workflows." />
 </Grid>
