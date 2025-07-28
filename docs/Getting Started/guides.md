@@ -13,7 +13,7 @@ metadata:
 
   <CoolCard header="API Reference" href="https://api.basiq.io/reference/introduction" icon="fa-duotone fa-solid fa-code-simple" text="Full OpenAPI specification & endpoints for Connect, Enrich, Reporting, Webhooks, Affordability" />
 
-  <CoolCard header="Customize UI Consent" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-brush" text="Configure consent UI, customize policy, institutions and branding" />
+  <CoolCard header="Consent Management" href="https://api.basiq.io/docs/consent" icon="fa-duotone fa-solid fa-brush" text="Configure consent UI, customize policy, institutions and branding" />
 </Grid>
 
 {/* Note to editors: Consider moving Recent Releases to Basics as they’re demoted */}
