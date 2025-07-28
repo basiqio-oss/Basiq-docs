@@ -6,6 +6,7 @@ excerpt: >-
   their financial data.
 deprecated: false
 hidden: false
+icon: fad fa-computer
 metadata:
   title: ''
   description: ''
