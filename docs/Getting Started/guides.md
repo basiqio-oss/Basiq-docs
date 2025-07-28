@@ -53,17 +53,15 @@ metadata:
 ## Integration Guides
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolTile header="Group Overview" href="https://docs.readme.com/ent/docs/enterprise-group-overview" icon="fa-duotone fa-solid fa-layer-group" text="Managing your projects and global settings" />
+  <CoolTile header="Activate Your Account" href="https://api.basiq.io/docs/activate-your-account" icon="fa-duotone fa-solid fa-user-check" text="Steps to verify and activate your Basiq account." />
 
-  <CoolTile header="User Management" href="https://docs.readme.com/ent/docs/user-management-overview" icon="fa-duotone fa-solid fa-user-lock" text="Set up access for teammates and end users" />
+  <CoolTile header="Application Setup" href="https://api.basiq.io/docs/application-setup" icon="fa-duotone fa-solid fa-gears" text="Register your application and generate API keys." />
 
-  <CoolTile header="Staging" href="https://docs.readme.com/ent/docs/publishing-content-with-staging" icon="fa-duotone fa-solid fa-window-restore" text="Preview environment for content and settings" />
-</Grid>
+  <CoolTile header="Navigating the Dashboard" href="https://api.basiq.io/docs/quickstart-basiq-dashboard" icon="fa-duotone fa-solid fa-gauge" text="Invite teammates, manage apps, and customise environments." />
 
-<Grid columns={2} gap="20px">
-  <CoolImageCard alt="" header="Community & Support" href="https://docs.readme.com/main/docs/need-more-support" id="welcome01" darkSrc="https://files.readme.io/5d14314e2f5abf4961b7ff0bbefcccf87cf721c66fa53b644d8af827d5176fa0-support.webp" src="https://files.readme.io/70d42a5e2dd38b4384f1ba5fcb81572d534e492a70421d6d8013f7b6b0aecbc7-support_1.webp" text="Reach out to our support team or make new feature requests." />
+  <CoolTile header="Create Permission Sets" href="https://api.basiq.io/docs/permission-sets" icon="fa-duotone fa-solid fa-key" text="Define access levels for different scopes and roles." />
 
-  <CoolImageCard alt="" header="Changelog" href="https://docs.readme.com/main/changelog" id="welcome02" darkSrc="https://files.readme.io/7283c747bcadeba55ecd8262d055fedfb82ba09f6ec73b75ccebe1bafe800ddb-Changelog_6.webp" src="https://files.readme.io/2e19c90682aa5e4c722ea2b122c90b9612abf4a489d2d2028da25a18b70bc13c-Changelog_7.webp" text="Read about new features, improvements, and bug fixes." />
+  <CoolTile header="Consent UI Customisation" href="https://api.basiq.io/docs/access-method" icon="fa-duotone fa-solid fa-palette" text="Tailor the consent flow, branding, and policies." />
 </Grid>
 
 <br />
