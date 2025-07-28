@@ -3,6 +3,7 @@ title: Testing
 excerpt: ''
 deprecated: false
 hidden: false
+icon: fad fa-mobile
 metadata:
   title: ''
   description: ''
