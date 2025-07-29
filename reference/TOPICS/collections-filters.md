@@ -2,7 +2,7 @@
 title: Collections & Filters
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 icon: fad fa-filters
 metadata:
   title: ''
