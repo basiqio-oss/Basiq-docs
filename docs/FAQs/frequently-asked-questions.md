@@ -3,6 +3,7 @@ title: Frequently asked questions
 excerpt: ''
 deprecated: false
 hidden: false
+icon: fad fa-comment-question
 metadata:
   title: ''
   description: ''
