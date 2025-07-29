@@ -17,13 +17,13 @@ Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches
 
 Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking and more.
 
-<div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem' }}>
+<Grid columns="3" gap="20px" style={{ gridTemplateColumns: 'repeat(auto‑fit, minmax(200px, 1fr))' }}>
   <CoolCard header="Connect" icon="fa-duotone fa-link" text="Access account and transaction data in real-time." style={{ flex: '1 1 250px' }} />
 
   <CoolCard header="Enrich" icon="fa-duotone fa-chart-line" text="Enhance transactions with merchant data." style={{ flex: '1 1 250px' }} />
 
   <CoolCard header="Discover" icon="fa-duotone fa-search" text="Gain deeper insights into your customer's finances." style={{ flex: '1 1 250px' }} />
-</div>
+</Grid>
 
 ***
 
