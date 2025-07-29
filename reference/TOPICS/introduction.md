@@ -25,11 +25,11 @@ Our APIs enable secure access to customer-consented financial data and tools to 
   <CoolCard header="Discover" icon="fa-duotone fa-search" text="Gain deeper insights into your customer's finances." />
 </Grid>
 
-***
+<hr style={{ margin: '3em 0' }} />
 
 ## Use Cases
 
-<Grid columns="2" gap="30px" style={{ marginTop: '2em' }}>
+<Grid columns="2" gap="30px">
   <CoolTile header="Account Aggregation" icon="fa-duotone fa-database" text="Aggregate customer financial data and build PFM functionality with personalised insights." />
 
   <CoolTile header="Account Verification" icon="fa-duotone fa-check-circle" text="Verify account ownership and balances instantly for improved lending and payments." />
@@ -41,92 +41,69 @@ Our APIs enable secure access to customer-consented financial data and tools to 
   <CoolTile header="Wealth Management" icon="fa-duotone fa-chart-pie" text="Use enriched financial data for tailored wealth solutions and advice." />
 </Grid>
 
-***
+<hr style={{ margin: '3em 0' }} />
 
 ## Supported Regions
 
-> 🚧 **Basiq APIs are currently only available in Australia and New Zealand.**\
-> Visit the [status page](https://dashboard.basiq.io/status) for supported institutions.
+<div
+  style={{
+    backgroundColor: '#fef3c7',
+    padding: '1.5em',
+    borderRadius: '0.75em',
+    border: '1px solid #fcd34d',
+    fontSize: '1rem',
+    color: '#92400e',
+    fontWeight: 500,
+    lineHeight: '1.6',
+  }}
+>
+  <p style={{ margin: 0 }}>
+    🚧 <strong>Basiq APIs are currently only available in Australia and New Zealand.</strong><br />
+    Visit the <a href="https://dashboard.basiq.io/status" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: '#92400e' }}>status page</a> for supported institutions.
+  </p>
+</div>
 
-***
+<hr style={{ margin: '3em 0' }} />
 
-<Accordion title="Partner Showcase" icon="fa-duotone fa-users">
-  Check out how some of our customers are using Basiq. Visit our [Partner Showcase](https://basiq.io/blog/category/partner-showcase/) to see Basiq in action.
-</Accordion>
-
-***
+## Partner Showcase
 
 <div
   style={{
-    marginTop: '2rem',
-    marginBottom: '2rem',
+    background: 'linear-gradient(to right, #f3f4f6, #e5e7eb)',
+    padding: '2em',
+    borderRadius: '1em',
     display: 'flex',
-    flexWrap: 'wrap',
+    flexDirection: 'column',
+    gap: '1em',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: '1.5rem',
-    padding: '1.5rem',
-    background: 'linear-gradient(to bottom right, #f9fafb, #f3f4f6)',
-    border: '1px solid #e5e7eb',
-    borderRadius: '0.75rem',
-    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
     textAlign: 'center',
-    fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.05)',
   }}
 >
-  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4b5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '1rem', flexShrink: 0 }}>
-      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-
-      <path d="M8 12h.01" />
-
-      <path d="M12 12h.01" />
-
-      <path d="M16 12h.01" />
-    </svg>
-
-    <p style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1f2937', margin: 0 }}>
-      Got a question or need assistance?
-    </p>
+  <div style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1f2937' }}>
+    🎉 See Basiq in Action
   </div>
 
-  <button
-    onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+  <p style={{ maxWidth: '600px', fontSize: '1rem', color: '#374151', lineHeight: 1.6 }}>
+    Explore real-world examples of how our customers are building the future of finance with Basiq. From lending and PFM to wealth tech — we power it all.
+  </p>
+
+  <a
+    href="https://basiq.io/blog/category/partner-showcase/"
+    target="_blank"
+    rel="noopener noreferrer"
     style={{
-      padding: '0.75rem 2rem',
-      fontSize: '1rem',
+      backgroundColor: '#111827',
+      color: '#fff',
+      padding: '0.75rem 1.5rem',
       fontWeight: 600,
       borderRadius: '9999px',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-      transition: 'all 0.3s ease-in-out',
-      backgroundColor: '#1f2937',
-      color: '#ffffff',
-      border: 'none',
-      cursor: 'pointer',
-      outline: 'none',
-      flexShrink: 0,
+      textDecoration: 'none',
+      transition: 'all 0.2s ease-in-out',
     }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.backgroundColor = '#374151';
-      e.currentTarget.style.transform = 'scale(1.05)';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.backgroundColor = '#1f2937';
-      e.currentTarget.style.transform = 'scale(1)';
-    }}
-    onFocus={(e) => {
-      e.currentTarget.style.outline = '2px solid #6b7280';
-      e.currentTarget.style.outlineOffset = '2px';
-      e.currentTarget.style.backgroundColor = '#374151';
-      e.currentTarget.style.transform = 'scale(1.05)';
-    }}
-    onBlur={(e) => {
-      e.currentTarget.style.outline = 'none';
-      e.currentTarget.style.outlineOffset = '0px';
-      e.currentTarget.style.backgroundColor = '#1f2937';
-      e.currentTarget.style.transform = 'scale(1)';
-    }}
+    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#374151'}
+    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#111827'}
   >
-    Chat with Support
-  </button>
+    View Partner Showcase
+  </a>
 </div>
