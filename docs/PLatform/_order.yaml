@@ -6,6 +6,5 @@
 - bcc
 - webhooks
 - errors-1
-- upgrades-copy
 - security
 - go-live-migration
