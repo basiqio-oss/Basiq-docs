@@ -7,6 +7,6 @@
 - webhooks
 - errors-1
 - upgrades
+- upgrades-copy
 - security
 - go-live-migration
-- upgrades-copy
