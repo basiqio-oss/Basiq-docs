@@ -1,5 +1,5 @@
 ---
-title: Intro to Basiq API
+title: Introduction to Basiq API
 excerpt: ''
 deprecated: false
 hidden: false
