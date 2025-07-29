@@ -127,3 +127,8 @@ Where available, you can apply multiple filters to a collection by separating th
 Multiple filters are treated as an **and (&)** operation example:
 
 > 🚧 Note the examples above have not url encoded the filters. You will need to ensure that the filter values are url encoded before calling the resource
+
+```Text Example
+GET /users/ea3a81/transactions?filter=transaction.postDate.bt('2018-01-01','2018-02-26') HTTP/1.1
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
