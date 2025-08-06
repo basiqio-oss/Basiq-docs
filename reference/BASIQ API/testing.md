@@ -256,7 +256,7 @@ The transaction data is completely random to best replicate the type of data tha
 
       <td>
         * **income** (transaction account): 1 salary monthly income, rental income
-        * **liabilities**: unshared credit card transactions (payments in the transaction account)
+        * **liabilities**: unshared credit card transactions (payments in the transaction account). BPAY related CDR fields like `billerCode`, `billerName`, and `crn` are disclosed under “Bankwest credit card” transactions under this user as examples.
         * **expenses**: predictable expenses (credit-card account), rental expense
         * **risk flags**: gambling behaviours, cash withdrawal, crypto exchange
       </td>
