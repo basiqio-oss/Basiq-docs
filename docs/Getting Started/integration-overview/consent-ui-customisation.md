@@ -512,7 +512,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td>
-        # 4FC35A
+        `#4FC35A`
       </td>
     </tr>
 
@@ -526,7 +526,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td>
-        # FABE34
+        `#FABE34`
       </td>
     </tr>
 
@@ -540,7 +540,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td>
-        # FE493F
+        `#FE493F`
       </td>
     </tr>
 
@@ -554,7 +554,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td>
-        # FFFFFF
+        `#FFFFFF`
       </td>
     </tr>
 
@@ -568,7 +568,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td>
-        # 0459A8
+        `#0459A8`
       </td>
     </tr>
 
@@ -582,7 +582,7 @@ The Consent UI is composed of several key screens, each designed to facilitate a
       </td>
 
       <td>
-        # 2784DA
+        `#2784DA`
       </td>
     </tr>
 
