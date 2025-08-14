@@ -24,12 +24,8 @@ jobs:
 
       - name: Validate API definition
         run: |
-          rdme openapi validate ./reference/core.json \
-            --key=${{ secrets.README_API_KEY_DEMO_PROJECT }}
+          rdme openapi validate ./reference/core.json 
 
       - name: Upload API definition
         run: |
-          rdme openapi upload ./reference/core.json \
-            --branch=stable \
-            --slug=core-api \
-            --key=${{ secrets.README_API_KEY_DEMO_PROJECT }}
+          rdme openapi upload ./reference/core.json --slug=core-api --key=${{ secrets.README_API_KEY_DEMO_PROJECT }}
