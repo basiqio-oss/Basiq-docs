@@ -1,5 +1,5 @@
 ---
-title: Error 404
+title: Page Not Found
 fullscreen: false
 hidden: false
 ---
