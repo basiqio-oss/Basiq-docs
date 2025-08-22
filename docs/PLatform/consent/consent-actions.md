@@ -251,13 +251,10 @@ Extend the duration of connections that are about to expire.
 >
 > For open banking type connections with an expiryDate less than 7 days away, they will be categorised under the 'Expiring soon' section, and a 'Renew' button will be visible as per the below screenshot.
 
-<CoolCard header="Consent vs Connection" href="#" icon="fa-duotone fa-solid fa-link" isBeta text="Understand the difference between user consent and system connection (authorisation)." />
-
 <div className="mt-4 p-4 bg-gray-50 rounded-2xl shadow-sm">
   <h3 className="text-lg font-semibold">Clarification of Terms</h3>
   <p className="mt-2"><strong>Consent</strong> is the user’s agreement to share their data. It’s a legal and ethical concept — the user gives permission.</p>
   <p className="mt-2"><strong>Connection</strong> (sometimes ‘Authorisation’) is the technical implementation of that agreement with each Data Holder. It’s how systems enforce the user’s choice by creating, maintaining, or revoking a secure link to the data source.</p>
-  <p className="mt-2 italic">👉 In short: Consent is the “yes” from the user. Connection is how the system makes that “yes” work in practice.</p>
 </div>
 
 ### When to Use action=Reauthorise
