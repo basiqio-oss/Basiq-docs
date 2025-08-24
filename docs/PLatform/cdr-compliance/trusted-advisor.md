@@ -18,15 +18,16 @@ The Trusted Advisor access model allows organisations or individuals to access c
 
 A Trusted Advisor can be an organisation or an individual who meets the following qualifications:
 
-## Organisation TA Access
+## TADirect
 
-Organisations that clearly fit the definition of a Trusted Advisor (e.g., mortgage broker firms). The Trusted Advisor details will be visible on the Consent screen before consent is provided, as well as on the Consent Management and Consent Extension screens for users who previously provided consent with an Individual or Organisation TA.
+TADirect is suited for organisations that clearly fit the definition of a Trusted Advisor (e.g., mortgage broker firms). The Trusted Advisor details will be visible on the Consent screen before consent is provided, as well as on the Consent Management and Consent Extension screens for users who previously provided consent with a TADirect or TAviaPRM advisor.
 
 For existing consents, Trusted Advisor details are read from the Consent object.
 
-Integration with the API for Organisation level TA access works in the same way as a standard integration. However, the Consent UI will render the organisation being named as a Trusted Advisor. The Trusted Advisor information is obtained from the provided token.
+Integration with the API for TADirect works in the same way as a standard integration. However, the Consent UI will render the organisation being named as a Trusted Advisor. The Trusted Advisor information is obtained from the provided token.
 
-Token Specification for Organisation TA Access\
+### Token Specification for TADirect
+
 The Trusted Advisor (TA) is passed to the consent UI on launch via the Client Token. The following claims should be added to the token based on the JWT Specs:
 
 * **orgName**: The name of the Trusted Advisor organisation (e.g., Accountants XYZ Pty Ltd).
@@ -35,9 +36,9 @@ The Trusted Advisor (TA) is passed to the consent UI on launch via the Client To
 * **orgType**: The type of the Trusted Advisor organisation (e.g., Accountant, Financial Broker, Financial Advisor, Legal Professional, Tax Agent, Financial Counselling Agency).
 * **abnAcn**: ABN or ACN number (optional, must follow ABN/ACN format if included)
 
-## Individual TA Access
+## TAviaPRM
 
-Suited to organisations that fit the definition of a Trusted Advisor, but their business model does not allow organisation-level access (e.g., mortgage aggregator firms). The consent process is identical for both the individual Trusted Advisor access model and the Organization TA access model. However, in the individual access model, the Trusted Advisor details pertain to an individual, such as:
+TAviaPRM is suited to organisations that fit the definition of a Trusted Advisor but their business model does not allow organisation-level access (e.g., mortgage aggregator firms). The consent process is identical for both the TAviaPRM model and the TADirect model. However, in the TAviaPRM model, the Trusted Advisor details pertain to an individual, such as:
 
 * **orgName**: The name of the Trusted Advisor (e.g., John Doe).
 * **orgRefID**: The reference ID of the Trusted advisor (e.g., 0123456789).
@@ -47,7 +48,7 @@ Suited to organisations that fit the definition of a Trusted Advisor, but their 
 
 # Token Endpoint Extension
 
-In order to support the Trusted Advisor model for partners, Basiq has extended the POST /token endpoint for requests with the scope "CLIENT\_ACCESS." The new organisation fields should be included in the request body as follows:
+In order to support the Trusted Advisor model for partners, Basiq has extended the POST /token endpoint for requests with the scope "CLIENT_ACCESS." The new organisation fields should be included in the request body as follows:
 
 ```yaml body
 {
