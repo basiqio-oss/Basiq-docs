@@ -61,6 +61,8 @@ metadata:
   <CoolTile header="Consent UI Customisation" href="https://api.basiq.io/docs/consent-ui-customisation" icon="fa-duotone fa-solid fa-palette" text="Tailor the consent flow, branding, and policies." />
 </Grid>
 
-## BASIQ Status Page Updates
+## API & Connector Health
 
 <StatusPage title="Commonwealth Bank (CBA) Web Connector - Significantly increased failure rate" url="https://status.basiq.io/" />
+
+<br />
