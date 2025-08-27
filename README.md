@@ -44,11 +44,4 @@ Access comprehensive API documentation for each section:
 
 Visit the [Basiq Developer Hub](https://api.basiq.io/reference) for detailed guides, tutorials, and FAQs.
 
-- **Documentation Sections**:
-  - **Data**
-  - **FAQs**
-  - **Platform**
-  - **Payments**
-  - **Tutorials**
-
 ---
