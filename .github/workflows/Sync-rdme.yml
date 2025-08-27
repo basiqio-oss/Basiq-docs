@@ -1,0 +1,31 @@
+name: ReadMe API Reference Sync
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  api-reference:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.10.0'
+
+      - name: Install rdme CLI v10
+        run: npm install -g rdme@10
+
+      - name: Validate API definition
+        run: |
+          rdme openapi validate ./reference/core.json 
+
+      - name: Upload API definition
+        run: |
+          rdme openapi upload ./reference/core.json --slug=core-api --key=${{ secrets.README_API_KEY }}
