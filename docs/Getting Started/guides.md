@@ -28,7 +28,7 @@ metadata:
 
   <CoolTile header="PFM App Update" href="https://api.basiq.io/docs/demo-pfm" icon="fa-duotone fa-solid fa-mobile-screen" text="New PFM demo app with budgeting, transactions and affordability" />
 
-  <CoolTile header="Basiq Demo App" href="https://demo.basiq.io" icon="fa-duotone fa-solid fa-display" text="A one-stop demo app to explore Basiq’s APIs and end-to-end workflows." />
+  <CoolTile header="Basiq Demo App" href="https://demo.basiq.io" icon="fa-duotone fa-solid fa-display" featured text="A one-stop demo app to explore Basiq’s APIs and end-to-end workflows." />
 
   <CoolTile header="Consent Status Filters" href="https://api.basiq.io/reference/getconsents" icon="fa-duotone fa-solid fa-filter-circle-xmark" text="Retrieve consents using status filters: active, expired, revoked" />
 
