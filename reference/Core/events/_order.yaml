@@ -2,3 +2,7 @@
 - gettypebyid-1
 - listeventtypes-1
 - geteventtypebyid-1
+- getevents
+- gettypebyid
+- listeventtypes
+- geteventtypebyid
