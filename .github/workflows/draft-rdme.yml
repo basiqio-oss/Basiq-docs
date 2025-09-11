@@ -28,4 +28,4 @@ jobs:
 
       - name: Upload API definition
         run: |
-          rdme openapi upload ./reference/core.json --slug=core-api --key=${{ secrets.README_API_KEY_DEMO_PROJECT }}
+          rdme openapi upload ./reference/core.json --slug=core --key=${{ secrets.README_API_KEY_DEMO_PROJECT }}
