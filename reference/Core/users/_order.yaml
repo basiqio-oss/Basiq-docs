@@ -1,1 +1,4 @@
-[]
+- createuser
+- getuser
+- updateuser
+- deleteuser
