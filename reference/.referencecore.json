@@ -2665,14 +2665,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "Filter consents by status. Supported values are `active`, `revoked`, and `expired`. If omitted, all consents are returned. Only one value is allowed per request.",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
