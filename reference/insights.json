@@ -18,6 +18,9 @@
   "paths": {
     "/users/{userId}/insights/account": {
       "post": {
+        "tags": [
+                    "CDR Insights"
+                ],
         "summary": "Get Account Insights",
         "description": "Retrieve account insights for a specific user based on account number",
         "operationId": "getAccountInsights",
