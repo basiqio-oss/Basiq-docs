@@ -254,6 +254,591 @@
           }
         ]
       }
+    },
+    "/users/{userId}/insights/balance": {
+      "post": {
+        "tags": [
+          "Insights"
+        ],
+        "summary": "Get Account Balance Insights",
+        "description": "Retrieve balance insights for a user's accounts based on specified minimum and maximum balance criteria",
+        "operationId": "getBalanceInsights",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier for the user",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "2fc2691d-a6e5-4d1d-9748-c3b217ad76b0"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceInsightRequest"
+              },
+              "examples": {
+                "basic_range": {
+                  "summary": "Basic balance range query",
+                  "description": "Query for accounts with balance between 1 and 2",
+                  "value": {
+                    "balance": {
+                      "min": "1",
+                      "max": "2"
+                    }
+                  }
+                },
+                "higher_range": {
+                  "summary": "Higher balance range query",
+                  "description": "Query for accounts with balance between 5 and 10",
+                  "value": {
+                    "balance": {
+                      "min": "5",
+                      "max": "10"
+                    }
+                  }
+                },
+                "decimal_range": {
+                  "summary": "Decimal balance range query",
+                  "description": "Query for accounts with balance between 1.44 and 2 (decimal precision)",
+                  "value": {
+                    "balance": {
+                      "min": "1.44",
+                      "max": "2"
+                    }
+                  }
+                },
+                "narrow_decimal_range": {
+                  "summary": "Narrow decimal balance range query",
+                  "description": "Query for accounts with balance between 1 and 1.44 (narrow decimal range)",
+                  "value": {
+                    "balance": {
+                      "min": "1",
+                      "max": "1.44"
+                    }
+                  }
+                },
+                "exact_balance": {
+                  "summary": "Exact balance match query",
+                  "description": "Edge case query where min equals max (exact balance of 1.44)",
+                  "value": {
+                    "balance": {
+                      "min": "1.44",
+                      "max": "1.44"
+                    }
+                  }
+                },
+                "no_matching_accounts": {
+                  "summary": "High value balance query with no matches",
+                  "description": "Edge case query with extremely high balance (9999.99) that no accounts would have",
+                  "value": {
+                    "balance": {
+                      "min": "9999.99",
+                      "max": "9999.99"
+                    }
+                  }
+                },
+                "empty_balance": {
+                  "summary": "Empty balance object - validation error",
+                  "description": "Invalid request with empty balance object causing parameter validation error",
+                  "value": {
+                    "balance": {}
+                  }
+                },
+                "invalid_data_type": {
+                  "summary": "Invalid data type - validation error",
+                  "description": "Invalid request with non-numeric values for min/max causing parameter validation error",
+                  "value": {
+                    "balance": {
+                      "min": "ash",
+                      "max": "test"
+                    }
+                  }
+                },
+                "numeric_input_error": {
+                  "summary": "Numeric input instead of string - content error",
+                  "description": "Invalid request with numeric values instead of strings for min/max causing invalid content error",
+                  "value": {
+                    "balance": {
+                      "min": 1,
+                      "max": 2
+                    }
+                  }
+                },
+                "negative_range": {
+                  "summary": "Negative range query (min > max)",
+                  "description": "Edge case query where min is greater than max, resulting in no matches",
+                  "value": {
+                    "balance": {
+                      "min": "10",
+                      "max": "5"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved balance insights",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceInsightResponse"
+                },
+                "examples": {
+                  "positive_match": {
+                    "summary": "Accounts within balance range",
+                    "description": "Example showing accounts that match the specified balance criteria",
+                    "value": {
+                      "type": "insight",
+                      "id": "bd6a6e90-6be3-45ac-9748-a110a29991a0",
+                      "created": "2025-09-18T09:13:50Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "2"
+                            },
+                            "match": true,
+                            "confidence": 0.95
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/bd6a6e90-6be3-45ac-9748-a110a29991a0"
+                      }
+                    }
+                  },
+                  "negative_match": {
+                    "summary": "Accounts outside balance range",
+                    "description": "Example showing accounts that do not match the specified balance criteria",
+                    "value": {
+                      "type": "insight",
+                      "id": "8d01e746-ba07-4f55-bfd9-4ae437f66a58",
+                      "created": "2025-09-18T09:18:52Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "5",
+                              "max": "10"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "5",
+                              "max": "10"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "5",
+                              "max": "10"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/8d01e746-ba07-4f55-bfd9-4ae437f66a58"
+                      }
+                    }
+                  },
+                  "decimal_precision": {
+                    "summary": "Decimal precision balance range",
+                    "description": "Example showing decimal precision in balance criteria with no matches",
+                    "value": {
+                      "type": "insight",
+                      "id": "e118abf4-dc11-4182-938d-3b1003e15d38",
+                      "created": "2025-09-18T09:19:42Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/e118abf4-dc11-4182-938d-3b1003e15d38"
+                      }
+                    }
+                  },
+                  "narrow_decimal_range": {
+                    "summary": "Narrow decimal range with no matches",
+                    "description": "Example showing narrow decimal range (1 to 1.44) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "8ef117bc-6695-4607-ab76-8213c440ee1d",
+                      "created": "2025-09-18T09:20:44Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/8ef117bc-6695-4607-ab76-8213c440ee1d"
+                      }
+                    }
+                  },
+                  "exact_balance_match": {
+                    "summary": "Exact balance match edge case",
+                    "description": "Edge case showing exact balance query (min = max = 1.44) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "d253ebaa-ead6-479b-95f3-ad6d009e6d2c",
+                      "created": "2025-09-18T09:21:36Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/d253ebaa-ead6-479b-95f3-ad6d009e6d2c"
+                      }
+                    }
+                  },
+                  "high_value_no_matches": {
+                    "summary": "High value balance with no matching accounts",
+                    "description": "Edge case showing extremely high balance query (9999.99) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "d4a3706b-e0e2-42c0-ba6e-797b8c45300a",
+                      "created": "2025-09-18T09:22:10Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "9999.99",
+                              "max": "9999.99"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "9999.99",
+                              "max": "9999.99"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "9999.99",
+                              "max": "9999.99"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/d4a3706b-e0e2-42c0-ba6e-797b8c45300a"
+                      }
+                    }
+                  },
+                  "negative_range_response": {
+                    "summary": "Negative range query response",
+                    "description": "Response showing negative range query (min > max) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "505710db-535f-45ff-92a4-cadabec7188e",
+                      "created": "2025-09-18T09:24:01Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "10",
+                              "max": "5"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "10",
+                              "max": "5"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "10",
+                              "max": "5"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/505710db-535f-45ff-92a4-cadabec7188e"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid input parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "missing_parameters": {
+                    "summary": "Missing required parameters",
+                    "description": "Error response when balance object is empty",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "18219ea4-670e-44fd-a741-2651d3658480",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameters are not in valid format.",
+                          "source": {
+                            "pointer": "balance/min/max",
+                            "parameter": "min/max"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_data_type": {
+                    "summary": "Invalid data type for parameters",
+                    "description": "Error response when non-numeric values are provided for min/max",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "4bbed936-4756-4b58-85b8-2c987a5fbf01",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameter is not in valid format.",
+                          "source": {
+                            "pointer": "balance/min",
+                            "parameter": "min"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_content": {
+                    "summary": "Invalid request content",
+                    "description": "Error response when numeric values are provided instead of strings for min/max",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "34975765-2340-4577-b0ea-aab230d4552c",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid body content."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimpleErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -472,6 +1057,155 @@
             "maximum": 1,
             "description": "Confidence score for the match (0.0 to 1.0)",
             "example": 0.4
+          }
+        }
+      },
+      "BalanceInsightRequest": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "string",
+                "description": "Minimum balance threshold",
+                "example": "1"
+              },
+              "max": {
+                "type": "string",
+                "description": "Maximum balance threshold",
+                "example": "2"
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ]
+          }
+        },
+        "required": [
+          "balance"
+        ]
+      },
+      "BalanceInsightResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "insight"
+            ],
+            "description": "Type of response object"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for this insight"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the insight was created"
+          },
+          "insightType": {
+            "type": "string",
+            "enum": [
+              "balance"
+            ],
+            "description": "Type of insight"
+          },
+          "data": {
+            "type": "array",
+            "description": "Array of account balance analysis results",
+            "items": {
+              "$ref": "#/components/schemas/AccountBalanceData"
+            }
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "format": "uri",
+                "description": "Self-referencing link to this insight"
+              }
+            },
+            "required": [
+              "self"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ]
+      },
+      "AccountBalanceData": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the account"
+          },
+          "accountNumber": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "object",
+                "properties": {
+                  "min": {
+                    "type": "string",
+                    "description": "Minimum balance from request"
+                  },
+                  "max": {
+                    "type": "string",
+                    "description": "Maximum balance from request"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max"
+                ]
+              },
+              "match": {
+                "type": "boolean",
+                "description": "Whether the account balance matches the criteria"
+              },
+              "confidence": {
+                "type": "number",
+                "format": "float",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence score for the match result"
+              }
+            },
+            "required": [
+              "input",
+              "match",
+              "confidence"
+            ]
+          }
+        },
+        "required": [
+          "accountId",
+          "accountNumber"
+        ]
+      },
+      "SimpleErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "string",
+            "description": "Error code"
           }
         }
       }
