@@ -1,272 +1,272 @@
 {
-    "openapi": "3.0.3",
-    "info": {
-        "title": "Core",
-        "description": "All included utility endpoints for Basiq partners",
-        "version": "3.0.0",
-        "termsOfService": "https://docs.basiq.io/en/collections/440849-privacy-terms-and-common-questions",
-        "license": {
-            "name": "Commercial",
-            "url": "https://basiq.io"
-        }
-    },
-    "servers": [
-        {
-            "url": "https://au-api.basiq.io"
-        }
-    ],
-    "paths": {
-        "/analytics/users": {
-            "get": {
-                "tags": [
-                    "Analytics"
-                ],
-                "operationId": "getUserAnalytics",
-                "summary": "Get User Analytics",
-                "description": "Retrieve user analytics, such as number of users and connections created for an application over a given time interval.",
-                "parameters": [
-                    {
-                        "name": "interval",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "daily",
-                                "weekly",
-                                "monthly",
-                                "quarterly",
-                                "annually"
-                            ]
-                        },
-                        "description": "Time interval for analytics."
-                    },
-                    {
-                        "name": "fromDate",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "format": "date"
-                        },
-                        "description": "Start date of the analytics period (e.g., 2023-01-01)."
-                    },
-                    {
-                        "name": "toDate",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "format": "date"
-                        },
-                        "description": "End date of the analytics period (e.g., 2024-01-01)."
-                    },
-                    {
-                        "name": "connectionType",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "description": "Comma-separated list of case-sensitive connection types to filter by.",
-                            "example": "all,cdr,pdf,web,csv"
-                        },
-                        "description": "Filter analytics by one or more connection types. Must be a comma-separated string. Values are case-sensitive: all, cdr, pdf, web, csv."
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful analytics response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AnalyticsResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request parameters",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized - missing or invalid token"
-                    },
-                    "403": {
-                        "description": "Access denied - expired or invalid token",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorList"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error"
-                    }
-                },
-                "security": [
-                    {
-                        "services_token": []
-                    }
-                ]
-            }
-        }
-    },
-    "components": {
-        "securitySchemes": {
-            "services_token": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerFormat": "JWT"
-            }
-        },
-        "schemas": {
-            "AnalyticsResponse": {
-                "type": "object",
-                "properties": {
-                    "interval": {
-                        "type": "string"
-                    },
-                    "fromDate": {
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "toDate": {
-                        "type": "string",
-                        "format": "date"
-                    },
-                    "meta": {
-                        "type": "object",
-                        "properties": {
-                            "totalRecords": {
-                                "type": "integer"
-                            },
-                            "page": {
-                                "type": "integer"
-                            },
-                            "pageSize": {
-                                "type": "integer"
-                            }
-                        }
-                    },
-                    "initial": {
-                        "type": "object",
-                        "properties": {
-                            "created": {
-                                "type": "integer"
-                            },
-                            "deleted": {
-                                "type": "integer"
-                            }
-                        }
-                    },
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "date": {
-                                    "type": "string",
-                                    "format": "date"
-                                },
-                                "created": {
-                                    "type": "integer"
-                                },
-                                "deleted": {
-                                    "type": "integer"
-                                },
-                                "active": {
-                                    "type": "object",
-                                    "properties": {
-                                        "total": {
-                                            "type": "integer"
-                                        },
-                                        "connected": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer"
-                                                },
-                                                "distribution": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "CDR": {
-                                                            "type": "integer"
-                                                        },
-                                                        "WEB": {
-                                                            "type": "integer"
-                                                        },
-                                                        "PDF": {
-                                                            "type": "integer"
-                                                        },
-                                                        "CSV": {
-                                                            "type": "integer"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "ErrorList": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string"
-                    },
-                    "correlationId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "data": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ErrorItem"
-                        }
-                    }
-                }
-            },
-            "ErrorItem": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "error"
-                        ]
-                    },
-                    "code": {
-                        "type": "string"
-                    },
-                    "title": {
-                        "type": "string"
-                    },
-                    "detail": {
-                        "type": "string"
-                    },
-                    "source": {
-                        "type": "object",
-                        "nullable": true,
-                        "properties": {
-                            "parameter": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        }
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Core",
+    "description": "All included utility endpoints for Basiq partners",
+    "version": "3.0.0",
+    "termsOfService": "https://docs.basiq.io/en/collections/440849-privacy-terms-and-common-questions",
+    "license": {
+      "name": "Commercial",
+      "url": "https://basiq.io"
     }
+  },
+  "servers": [
+    {
+      "url": "https://au-api.basiq.io"
+    }
+  ],
+  "paths": {
+    "/analytics/users": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "operationId": "getUserAnalytics",
+        "summary": "Get User Analytics",
+        "description": "Retrieve user analytics, such as number of users and connections created for an application over a given time interval.",
+        "parameters": [
+          {
+            "name": "interval",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "daily",
+                "weekly",
+                "monthly",
+                "quarterly",
+                "annually"
+              ]
+            },
+            "description": "Time interval for analytics."
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Start date of the analytics period (e.g., 2023-01-01)."
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "End date of the analytics period (e.g., 2024-01-01)."
+          },
+          {
+            "name": "connectionType",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Comma-separated list of case-sensitive connection types to filter by.",
+              "example": "all,cdr,pdf,web,csv"
+            },
+            "description": "Filter analytics by one or more connection types. Must be a comma-separated string. Values are case-sensitive: all, cdr, pdf, web, csv."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful analytics response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorList"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - missing or invalid token"
+          },
+          "403": {
+            "description": "Access denied - expired or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "services_token": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "AnalyticsResponse": {
+        "type": "object",
+        "properties": {
+          "interval": {
+            "type": "string"
+          },
+          "fromDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "totalRecords": {
+                "type": "integer"
+              },
+              "page": {
+                "type": "integer"
+              },
+              "pageSize": {
+                "type": "integer"
+              }
+            }
+          },
+          "initial": {
+            "type": "object",
+            "properties": {
+              "created": {
+                "type": "integer"
+              },
+              "deleted": {
+                "type": "integer"
+              }
+            }
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "created": {
+                  "type": "integer"
+                },
+                "deleted": {
+                  "type": "integer"
+                },
+                "active": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "integer"
+                    },
+                    "connected": {
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        },
+                        "distribution": {
+                          "type": "object",
+                          "properties": {
+                            "CDR": {
+                              "type": "integer"
+                            },
+                            "WEB": {
+                              "type": "integer"
+                            },
+                            "PDF": {
+                              "type": "integer"
+                            },
+                            "CSV": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ErrorList": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "correlationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorItem"
+            }
+          }
+        }
+      },
+      "ErrorItem": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "error"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "parameter": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
