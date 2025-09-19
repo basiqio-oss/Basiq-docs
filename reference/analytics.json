@@ -18,7 +18,9 @@
   "paths": {
     "/analytics/users": {
       "get": {
-        "tags": ["Analytics"],
+        "tags": [
+          "Analytics"
+        ],
         "operationId": "getUserAnalytics",
         "summary": "Get User Analytics",
         "description": "Retrieve user analytics, such as number of users and connections created for an application over a given time interval.",
@@ -29,7 +31,13 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["daily", "weekly", "monthly", "quarterly", "annually"]
+              "enum": [
+                "daily",
+                "weekly",
+                "monthly",
+                "quarterly",
+                "annually"
+              ]
             },
             "description": "Time interval for analytics."
           },
@@ -112,7 +120,9 @@
     },
     "/analytics/connections": {
       "get": {
-        "tags": ["Analytics"],
+        "tags": [
+          "Analytics"
+        ],
         "operationId": "getConnectionAnalytics",
         "summary": "Get Connection Analytics",
         "description": "Retrieve connection analytics, including connection creation, status distribution, method distribution, and disruption rates over a given time interval.",
@@ -123,7 +133,13 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["daily", "weekly", "monthly", "quarterly", "annually"]
+              "enum": [
+                "daily",
+                "weekly",
+                "monthly",
+                "quarterly",
+                "annually"
+              ]
             },
             "description": "Time interval for analytics."
           },
@@ -318,7 +334,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["error"]
+            "enum": [
+              "error"
+            ]
           },
           "code": {
             "type": "string"
