@@ -18,9 +18,7 @@
   "paths": {
     "/analytics/users": {
       "get": {
-        "tags": [
-          "Analytics"
-        ],
+        "tags": ["Analytics"],
         "operationId": "getUserAnalytics",
         "summary": "Get User Analytics",
         "description": "Retrieve user analytics, such as number of users and connections created for an application over a given time interval.",
@@ -31,13 +29,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": [
-                "daily",
-                "weekly",
-                "monthly",
-                "quarterly",
-                "annually"
-              ]
+              "enum": ["daily", "weekly", "monthly", "quarterly", "annually"]
             },
             "description": "Time interval for analytics."
           },
@@ -80,6 +72,89 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalyticsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorList"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - missing or invalid token"
+          },
+          "403": {
+            "description": "Access denied - expired or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorList"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    },
+    "/analytics/connections": {
+      "get": {
+        "tags": ["Analytics"],
+        "operationId": "getConnectionAnalytics",
+        "summary": "Get Connection Analytics",
+        "description": "Retrieve connection analytics, including connection creation, status distribution, method distribution, and disruption rates over a given time interval.",
+        "parameters": [
+          {
+            "name": "interval",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["daily", "weekly", "monthly", "quarterly", "annually"]
+            },
+            "description": "Time interval for analytics."
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "Start date of the analytics period (e.g., 2023-01-01)."
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "End date of the analytics period (e.g., 2024-01-01)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful connection analytics response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectionAnalyticsResponse"
                 }
               }
             }
@@ -243,9 +318,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "error"
-            ]
+            "enum": ["error"]
           },
           "code": {
             "type": "string"
@@ -264,6 +337,147 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "ConnectionAnalyticsResponse": {
+        "type": "object",
+        "properties": {
+          "interval": {
+            "type": "string"
+          },
+          "fromDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "totalRecords": {
+                "type": "integer"
+              },
+              "page": {
+                "type": "integer"
+              },
+              "pageSize": {
+                "type": "integer"
+              }
+            }
+          },
+          "initial": {
+            "type": "object",
+            "properties": {
+              "created": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "integer"
+                  },
+                  "methodDistribution": {
+                    "$ref": "#/components/schemas/MethodDistribution"
+                  }
+                }
+              }
+            }
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string"
+                },
+                "disruptionRate": {
+                  "type": "string"
+                },
+                "created": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "methodDistribution": {
+                      "$ref": "#/components/schemas/MethodDistribution"
+                    }
+                  }
+                },
+                "nonDeleted": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "statusDistribution": {
+                      "type": "object",
+                      "properties": {
+                        "successful": {
+                          "type": "integer"
+                        },
+                        "pending": {
+                          "type": "integer"
+                        },
+                        "failed": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "methodDistribution": {
+                      "type": "object",
+                      "properties": {
+                        "CDR": {
+                          "$ref": "#/components/schemas/StatusDistribution"
+                        },
+                        "CSV": {
+                          "$ref": "#/components/schemas/StatusDistribution"
+                        },
+                        "PDF": {
+                          "$ref": "#/components/schemas/StatusDistribution"
+                        },
+                        "WEB": {
+                          "$ref": "#/components/schemas/StatusDistribution"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "MethodDistribution": {
+        "type": "object",
+        "properties": {
+          "CDR": {
+            "type": "integer"
+          },
+          "CSV": {
+            "type": "integer"
+          },
+          "PDF": {
+            "type": "integer"
+          },
+          "WEB": {
+            "type": "integer"
+          }
+        }
+      },
+      "StatusDistribution": {
+        "type": "object",
+        "properties": {
+          "successful": {
+            "type": "integer"
+          },
+          "pending": {
+            "type": "integer"
+          },
+          "failed": {
+            "type": "integer"
           }
         }
       }
