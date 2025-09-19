@@ -18,9 +18,7 @@
   "paths": {
     "/users/{userId}/insights/account": {
       "post": {
-        "tags": [
-          "Insights"
-        ],
+        "tags": ["Insights"],
         "summary": "Get Account Insights",
         "description": "Retrieve account insights for a specific user based on account number",
         "operationId": "getAccountInsights",
@@ -43,9 +41,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "accountNumber"
-                ],
+                "required": ["accountNumber"],
                 "properties": {
                   "accountNumber": {
                     "type": "string",
@@ -257,9 +253,7 @@
     },
     "/users/{userId}/insights/balance": {
       "post": {
-        "tags": [
-          "Insights"
-        ],
+        "tags": ["Insights"],
         "summary": "Get Account Balance Insights",
         "description": "Retrieve balance insights for a user's accounts based on specified minimum and maximum balance criteria",
         "operationId": "getBalanceInsights",
@@ -284,6 +278,15 @@
                 "$ref": "#/components/schemas/BalanceInsightRequest"
               },
               "examples": {
+                "min_only_query": {
+                  "summary": "Minimum balance only query",
+                  "description": "Query for accounts with balance above minimum threshold (no maximum specified)",
+                  "value": {
+                    "balance": {
+                      "min": "1"
+                    }
+                  }
+                },
                 "basic_range": {
                   "summary": "Basic balance range query",
                   "description": "Query for accounts with balance between 1 and 2",
@@ -394,6 +397,54 @@
                   "$ref": "#/components/schemas/BalanceInsightResponse"
                 },
                 "examples": {
+                  "min_only_response": {
+                    "summary": "Response for minimum balance only query",
+                    "description": "Example response when querying with only minimum balance specified",
+                    "value": {
+                      "type": "insight",
+                      "id": "d12c46dc-3821-4887-a208-2ff07040cc0b",
+                      "created": "2025-09-19T00:08:55Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": ""
+                            },
+                            "match": true,
+                            "confidence": 1.0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": ""
+                            },
+                            "match": false,
+                            "confidence": 0.0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": ""
+                            },
+                            "match": true,
+                            "confidence": 1.0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/d12c46dc-3821-4887-a208-2ff07040cc0b"
+                      }
+                    }
+                  },
                   "positive_match": {
                     "summary": "Accounts within balance range",
                     "description": "Example showing accounts that match the specified balance criteria",
@@ -852,20 +903,11 @@
     "schemas": {
       "AccountInsightResponse": {
         "type": "object",
-        "required": [
-          "type",
-          "id",
-          "created",
-          "insightType",
-          "data",
-          "links"
-        ],
+        "required": ["type", "id", "created", "insightType", "data", "links"],
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "insight"
-            ],
+            "enum": ["insight"],
             "description": "The type of response object",
             "example": "insight"
           },
@@ -883,9 +925,7 @@
           },
           "insightType": {
             "type": "string",
-            "enum": [
-              "account"
-            ],
+            "enum": ["account"],
             "description": "The type of insight",
             "example": "account"
           },
@@ -898,9 +938,7 @@
           },
           "links": {
             "type": "object",
-            "required": [
-              "self"
-            ],
+            "required": ["self"],
             "properties": {
               "self": {
                 "type": "string",
@@ -914,10 +952,7 @@
       },
       "AccountInsightData": {
         "type": "object",
-        "required": [
-          "accountId",
-          "accountNumber"
-        ],
+        "required": ["accountId", "accountNumber"],
         "properties": {
           "accountId": {
             "type": "string",
@@ -935,11 +970,7 @@
       },
       "AccountNumberMatch": {
         "type": "object",
-        "required": [
-          "input",
-          "match",
-          "confidence"
-        ],
+        "required": ["input", "match", "confidence"],
         "properties": {
           "input": {
             "type": "string",
@@ -963,17 +994,11 @@
       },
       "ErrorResponse": {
         "type": "object",
-        "required": [
-          "type",
-          "correlationId",
-          "data"
-        ],
+        "required": ["type", "correlationId", "data"],
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
+            "enum": ["list"],
             "description": "Response type for error responses",
             "example": "list"
           },
@@ -994,18 +1019,11 @@
       },
       "ErrorDetail": {
         "type": "object",
-        "required": [
-          "type",
-          "code",
-          "title",
-          "detail"
-        ],
+        "required": ["type", "code", "title", "detail"],
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "error"
-            ],
+            "enum": ["error"],
             "description": "Type of data object",
             "example": "error"
           },
@@ -1034,11 +1052,7 @@
       },
       "AccountTypeMatch": {
         "type": "object",
-        "required": [
-          "input",
-          "match",
-          "confidence"
-        ],
+        "required": ["input", "match", "confidence"],
         "properties": {
           "input": {
             "type": "string",
@@ -1062,39 +1076,33 @@
       },
       "BalanceInsightRequest": {
         "type": "object",
+        "required": ["balance"],
         "properties": {
           "balance": {
             "type": "object",
+            "required": ["min"],
             "properties": {
               "min": {
                 "type": "string",
-                "description": "Minimum balance threshold",
+                "description": "Minimum balance threshold (as string)",
                 "example": "1"
               },
               "max": {
                 "type": "string",
-                "description": "Maximum balance threshold",
+                "description": "Maximum balance threshold (as string, optional)",
                 "example": "2"
               }
             },
-            "required": [
-              "min",
-              "max"
-            ]
+            "description": "Balance criteria for filtering accounts. Only 'min' is required, 'max' is optional."
           }
-        },
-        "required": [
-          "balance"
-        ]
+        }
       },
       "BalanceInsightResponse": {
         "type": "object",
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "insight"
-            ],
+            "enum": ["insight"],
             "description": "Type of response object"
           },
           "id": {
@@ -1109,9 +1117,7 @@
           },
           "insightType": {
             "type": "string",
-            "enum": [
-              "balance"
-            ],
+            "enum": ["balance"],
             "description": "Type of insight"
           },
           "data": {
@@ -1130,19 +1136,10 @@
                 "description": "Self-referencing link to this insight"
               }
             },
-            "required": [
-              "self"
-            ]
+            "required": ["self"]
           }
         },
-        "required": [
-          "type",
-          "id",
-          "created",
-          "insightType",
-          "data",
-          "links"
-        ]
+        "required": ["type", "id", "created", "insightType", "data", "links"]
       },
       "AccountBalanceData": {
         "type": "object",
@@ -1167,10 +1164,7 @@
                     "description": "Maximum balance from request"
                   }
                 },
-                "required": [
-                  "min",
-                  "max"
-                ]
+                "required": ["min"]
               },
               "match": {
                 "type": "boolean",
@@ -1184,17 +1178,10 @@
                 "description": "Confidence score for the match result"
               }
             },
-            "required": [
-              "input",
-              "match",
-              "confidence"
-            ]
+            "required": ["input", "match", "confidence"]
           }
         },
-        "required": [
-          "accountId",
-          "accountNumber"
-        ]
+        "required": ["accountId", "accountNumber"]
       },
       "SimpleErrorResponse": {
         "type": "object",
