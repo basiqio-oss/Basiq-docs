@@ -72,6 +72,15 @@ Replace `{{client_token_bound_to_userId}}` with the actual client token bound to
 <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/65BYh2YL4VuCBy5Kqaqz?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
 `}</HTMLBlock>
 
+# Recommended Approach for New User Onboarding
+
+When initiating consent requests, it is **recommended to specify `action=connect`**. While leaving the `action` field `null` is also supported, explicitly setting the action ensures clarity and aligns with best practices.
+
+**Key points:**
+
+* `action=connect` is the preferred option for new user onboarding.
+* Always specifying the `action` makes your integration clearer and more maintainable.
+
 ### Alternative Approach
 
 Alternatively, users can utilise the flow tab feature within the Customise UI to enable multiple connections from different financial institutions.
@@ -130,7 +139,7 @@ On the Consent Management screen, you can now view the history of previously exp
 
 In the customised UI's Flow tab, a new field called "Manage Consent URL" has been introduced. This field allows customers to provide a URL that directs consumers to detailed instructions on how they can revoke their consent. Ensuring this URL is populated is crucial for compliance and enhances the consumer experience by clearly outlining the steps to manage consent.
 
-<Image align="center" src="https://files.readme.io/3dbb584-Screenshot_2024-06-12_at_3.06.02_PM.png" />
+<Image align="center" border={false} src="https://files.readme.io/3dbb584-Screenshot_2024-06-12_at_3.06.02_PM.png" />
 
 ### Functionality
 
