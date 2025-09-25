@@ -72,7 +72,7 @@ Replace `{{client_token_bound_to_userId}}` with the actual client token bound to
 <div style="position: relative; padding-bottom: calc(50.161117078410314% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/65BYh2YL4VuCBy5Kqaqz?embed" title="Basiq | action=manage" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
 `}</HTMLBlock>
 
-# Recommended Approach for New User Onboarding
+### Recommended Approach for New User Onboarding
 
 When initiating consent requests, it is **recommended to specify `action=connect`**. While leaving the `action` field `null` is also supported, explicitly setting the action ensures clarity and aligns with best practices.
 
