@@ -860,31 +860,320 @@
             }
           },
           "401": {
-            "description": "Unauthorized - Invalid or missing authentication",
+            "description": "Unauthorized - invalid or missing authentication",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SimpleErrorResponse"
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "access_denied": {
+                    "summary": "Access denied",
+                    "description": "Error when authentication token is invalid or expired",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "0cf1a1fe-de4a-4e01-b81e-60790a1e881b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "access-denied",
+                          "title": "Access denied.",
+                          "detail": "invalid token",
+                          "source": null
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
           },
           "404": {
-            "description": "Not Found - User not found",
+            "description": "User not found",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SimpleErrorResponse"
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
           },
           "500": {
-            "description": "Internal Server Error",
+            "description": "Internal server error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SimpleErrorResponse"
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    },
+    "/users/{userId}/insights/identity": {
+      "post": {
+        "tags": [
+          "Insights"
+        ],
+        "summary": "Get Identity Insights",
+        "description": "Retrieve identity insights for a specific user by comparing provided personal details (name, phone, email, address).",
+        "operationId": "getIdentityInsights",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier for the user",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "example": "321ac6df-beec-435b-a93e-678fe919badc"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdentityInsightRequest"
+              },
+              "examples": {
+                "basic_identity": {
+                  "summary": "Basic identity input",
+                  "description": "Query with only a name provided",
+                  "value": {
+                    "name": "jared Dunn",
+                    "phone": "",
+                    "email": "",
+                    "address": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved identity insights",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdentityInsightResponse"
+                },
+                "examples": {
+                  "name_match": {
+                    "summary": "Example with name match",
+                    "description": "Example response showing a matched name with high confidence",
+                    "value": {
+                      "type": "insight",
+                      "id": "c2d5f682-04f7-4a09-b5c3-cabcd5b41df8",
+                      "created": "2025-09-30T01:39:20Z",
+                      "insightType": "identity",
+                      "data": [
+                        {
+                          "name": {
+                            "input": "jared Dunn",
+                            "match": true,
+                            "confidence": 0.9
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/321ac6df-beec-435b-a93e-678fe919badc/insights/c2d5f682-04f7-4a09-b5c3-cabcd5b41df8"
+                      }
+                    }
+                  },
+                  "multi_field_low_confidence": {
+                    "summary": "Example with multiple fields and low confidence",
+                    "description": "Shows low-confidence matches for name, phones, emails, and addresses",
+                    "value": {
+                      "type": "insight",
+                      "id": "21ed0640-7561-4825-9993-712837e483cc",
+                      "created": "2025-09-30T02:27:26Z",
+                      "insightType": "identity",
+                      "data": [
+                        {
+                          "name": {
+                            "input": "aa",
+                            "match": false,
+                            "confidence": 0.2
+                          },
+                          "phones": [
+                            {
+                              "input": "0452626178",
+                              "match": false,
+                              "confidence": 0.4
+                            }
+                          ],
+                          "emails": [
+                            {
+                              "input": "aa@aa.io",
+                              "match": false,
+                              "confidence": 0.3
+                            }
+                          ],
+                          "addresses": [
+                            {
+                              "input": "aa",
+                              "match": false,
+                              "confidence": 0.1
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/321ac6df-beec-435b-a93e-678fe919badc/insights/21ed0640-7561-4825-9993-712837e483cc"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid input parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "masked_phone": {
+                    "summary": "Masked phone number error",
+                    "description": "Error response when the phone number is masked and cannot be matched",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "485e20ea-4d24-4dff-b2fc-580e28e113a0",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Phone number is masked and cannot be matched.",
+                          "source": {
+                            "pointer": "phone",
+                            "parameter": "phone"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_phone_format": {
+                    "summary": "Invalid phone number format",
+                    "description": "Error response when the phone number format is invalid",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "c3b2096f-0b45-45c4-80fc-cc8427a6e6ec",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Phone number format is invalid.",
+                          "source": {
+                            "pointer": "phone",
+                            "parameter": "phone"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_email_format": {
+                    "summary": "Invalid email format",
+                    "description": "Error response when the email format is invalid",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "a2fa867a-b7a5-460c-b2a4-048db66e7f8f",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Email format is invalid.",
+                          "source": {
+                            "pointer": "email",
+                            "parameter": "email"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_name_characters": {
+                    "summary": "Name contains invalid characters",
+                    "description": "Error response when the name contains invalid or disallowed characters",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "e76488af-83c4-4da4-a760-6f626da6b9ad",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Name contains invalid characters.",
+                          "source": {
+                            "pointer": "name",
+                            "parameter": "name"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - invalid or missing authentication",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "access_denied": {
+                    "summary": "Access denied",
+                    "description": "Error when authentication token is invalid or expired",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "0cf1a1fe-de4a-4e01-b81e-60790a1e881b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "access-denied",
+                          "title": "Access denied.",
+                          "detail": "invalid token",
+                          "source": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -1201,6 +1490,130 @@
           "links"
         ]
       },
+      "IdentityInsightRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full name of the user",
+            "example": "jared Dunn"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Phone number of the user",
+            "example": "+61412345678"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email address of the user",
+            "example": "jared@example.com"
+          },
+          "address": {
+            "type": "string",
+            "description": "Address of the user",
+            "example": "123 Main St, Sydney NSW 2000"
+          }
+        }
+      },
+      "IdentityInsightResponse": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "insight"
+            ],
+            "description": "The type of response object"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for this insight"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the insight was created"
+          },
+          "insightType": {
+            "type": "string",
+            "enum": [
+              "identity"
+            ],
+            "description": "The type of insight"
+          },
+          "data": {
+            "type": "array",
+            "description": "Array of identity matching results",
+            "items": {
+              "$ref": "#/components/schemas/IdentityInsightData"
+            }
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "format": "uri",
+                "description": "Self-referencing link to this insight"
+              }
+            },
+            "required": [
+              "self"
+            ]
+          }
+        }
+      },
+      "IdentityInsightData": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/IdentityMatch"
+          },
+          "phone": {
+            "$ref": "#/components/schemas/IdentityMatch"
+          },
+          "email": {
+            "$ref": "#/components/schemas/IdentityMatch"
+          },
+          "address": {
+            "$ref": "#/components/schemas/IdentityMatch"
+          }
+        }
+      },
+      "IdentityMatch": {
+        "type": "object",
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Original input value provided"
+          },
+          "match": {
+            "type": "boolean",
+            "description": "Whether the field matches the user’s records"
+          },
+          "confidence": {
+            "type": "number",
+            "format": "float",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence score for the match"
+          }
+        }
+      },
       "AccountBalanceData": {
         "type": "object",
         "properties": {
@@ -1251,19 +1664,6 @@
           "accountId",
           "accountNumber"
         ]
-      },
-      "SimpleErrorResponse": {
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "string",
-            "description": "Error message"
-          },
-          "code": {
-            "type": "string",
-            "description": "Error code"
-          }
-        }
       }
     }
   }
