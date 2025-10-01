@@ -21,7 +21,7 @@
         "tags": [
           "Insights"
         ],
-        "summary": "Get Account Insights",
+        "summary": "Account Insights",
         "description": "Retrieve account insights for a specific user based on account number",
         "operationId": "getAccountInsights",
         "parameters": [
@@ -260,7 +260,7 @@
         "tags": [
           "Insights"
         ],
-        "summary": "Get Account Balance Insights",
+        "summary": "Account Balance Insights",
         "description": "Retrieve balance insights for a user's accounts based on specified minimum and maximum balance criteria",
         "operationId": "getBalanceInsights",
         "parameters": [
@@ -921,7 +921,7 @@
         "tags": [
           "Insights"
         ],
-        "summary": "Get Identity Insights",
+        "summary": "Identity Insights",
         "description": "Retrieve identity insights for a specific user by comparing provided personal details (name, phone, email, address).",
         "operationId": "getIdentityInsights",
         "parameters": [
