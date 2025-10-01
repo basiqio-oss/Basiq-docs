@@ -22,7 +22,7 @@
           "Analytics"
         ],
         "operationId": "getUserAnalytics",
-        "summary": "Get User Analytics",
+        "summary": "User Analytics",
         "description": "Retrieve user analytics, such as number of users and connections created for an application over a given time interval.",
         "parameters": [
           {
@@ -124,7 +124,7 @@
           "Analytics"
         ],
         "operationId": "getConnectionAnalytics",
-        "summary": "Get Connection Analytics",
+        "summary": "Connection Analytics",
         "description": "Retrieve connection analytics, including connection creation, status distribution, method distribution, and disruption rates over a given time interval.",
         "parameters": [
           {
