@@ -1,5 +1,5 @@
 ---
-title: Get Identity Insights
+title: ' Identity Insights'
 excerpt: >-
   Retrieve identity insights for a specific user by comparing provided personal
   details (name, phone, email, address).
