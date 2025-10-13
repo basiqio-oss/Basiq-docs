@@ -21,7 +21,7 @@
         "tags": [
           "Insights"
         ],
-        "summary": "List User Insights",
+        "summary": "List all Insights",
         "description": "Returns a paginated list of previously generated insights for the specified user. Supports filtering by creation date and insight type. Maximum 20 insights per page.",
         "operationId": "listUserInsights",
         "parameters": [
@@ -219,7 +219,7 @@
         "tags": [
           "Insights"
         ],
-        "summary": "Get Specific Insight",
+        "summary": "Retrieve an Insight",
         "description": "Returns detailed information for a specific insight by ID",
         "operationId": "getInsightById",
         "parameters": [
