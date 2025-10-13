@@ -16,6 +16,415 @@
     }
   ],
   "paths": {
+    "/users/{userId}/insights": {
+      "get": {
+        "tags": [
+          "Insights"
+        ],
+        "summary": "List User Insights",
+        "description": "Returns a paginated list of previously generated insights for the specified user. Supports filtering by creation date and insight type. Maximum 20 insights per page.",
+        "operationId": "listUserInsights",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the user",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "0a84e628-dad7-40f4-bbc0-abeb3ddd90ea"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "description": "Filter parameter supporting multiple filter fields separated by commas. Supported fields: 'created' (date in YYYY-MM-DD format) and 'insightType' (account, balance, identity). Operators: gteq (>=), lteq (<=), gt (>), lt (<), eq (=), bt (between two dates). Examples: 'created.gteq('2025-06-16')', 'created.bt('2025-08-25','2025-09-02')', 'insightType.eq('account')', 'created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')'",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "dateGteq": {
+                "summary": "Date greater than or equal",
+                "value": "created.gteq('2025-06-16')"
+              },
+              "dateBetween": {
+                "summary": "Date between range",
+                "value": "created.bt('2025-08-25','2025-09-02')"
+              },
+              "insightTypeOnly": {
+                "summary": "Filter by insight type",
+                "value": "insightType.eq('account')"
+              },
+              "combined": {
+                "summary": "Combined date and type filter",
+                "value": "created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of insights",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightListResponse"
+                },
+                "examples": {
+                  "accountInsight": {
+                    "summary": "Account insight example",
+                    "value": {
+                      "type": "list",
+                      "count": 1,
+                      "size": 1,
+                      "data": [
+                        {
+                          "type": "insight",
+                          "id": "54878d1a-295b-44c3-8f1e-402e68f912fe",
+                          "created": "2025-10-13T00:48:57Z",
+                          "insightType": "account",
+                          "data": [
+                            {
+                              "accountId": "2ce42fbc-37fe-4207-b962-31b744aee35c",
+                              "accountNumber": {
+                                "input": "10445533",
+                                "match": false,
+                                "confidence": 0
+                              },
+                              "accountType": {
+                                "input": "saving",
+                                "match": false,
+                                "confidence": 0
+                              }
+                            }
+                          ],
+                          "links": {
+                            "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights/54878d1a-295b-44c3-8f1e-402e68f912fe"
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid filter parameters or request content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "invalidDateFormat": {
+                    "summary": "Invalid date format",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "e2dce626-714b-4b69-add2-f84c504be64b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid filter param: invalid date format for 'created' (expected YYYY-MM-DD): not-a-date"
+                        }
+                      ]
+                    }
+                  },
+                  "invalidDateRange": {
+                    "summary": "Invalid date range (to before from)",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "88b01510-78c3-4d76-b46e-9043b45425f0",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid filter param: invalid dates for 'created': 'to date' is before 'from date'"
+                        }
+                      ]
+                    }
+                  },
+                  "invalidInsightType": {
+                    "summary": "Invalid insight type value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "c8de1d9c-6dd5-4026-8160-5620c95f9792",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid filter param: invalid insightType: not-supported"
+                        }
+                      ]
+                    }
+                  },
+                  "unsupportedFilterField": {
+                    "summary": "Unsupported filter field",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "9948dc17-4159-4999-b5d3-97fc0ac0476d",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid filter param: unsupported filter field: foo"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    },
+    "/users/{userId}/insights/{insightId}": {
+      "get": {
+        "tags": [
+          "Insights"
+        ],
+        "summary": "Get Specific Insight",
+        "description": "Returns detailed information for a specific insight by ID",
+        "operationId": "getInsightById",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the user",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "0a84e628-dad7-40f4-bbc0-abeb3ddd90ea"
+          },
+          {
+            "name": "insightId",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the insight (must be valid UUID format)",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "54878d1a-295b-44c3-8f1e-402e68f912fe"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with insight details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Insight"
+                },
+                "examples": {
+                  "accountInsight": {
+                    "summary": "Account insight",
+                    "value": {
+                      "type": "insight",
+                      "id": "54878d1a-295b-44c3-8f1e-402e68f912fe",
+                      "created": "2025-10-13T00:48:57Z",
+                      "insightType": "account",
+                      "data": [
+                        {
+                          "accountId": "2ce42fbc-37fe-4207-b962-31b744aee35c",
+                          "accountNumber": {
+                            "input": "10445533",
+                            "match": false,
+                            "confidence": 0
+                          },
+                          "accountType": {
+                            "input": "saving",
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights/54878d1a-295b-44c3-8f1e-402e68f912fe"
+                      }
+                    }
+                  },
+                  "balanceInsight": {
+                    "summary": "Balance insight",
+                    "value": {
+                      "type": "insight",
+                      "id": "abc123-def456",
+                      "created": "2025-06-16T11:32:42Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "account-id-1",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "2"
+                            },
+                            "match": true,
+                            "confidence": 1
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-id/insights/abc123-def456"
+                      }
+                    }
+                  },
+                  "identityInsight": {
+                    "summary": "Identity insight",
+                    "value": {
+                      "type": "insight",
+                      "id": "xyz789-uvw012",
+                      "created": "2025-06-16T11:32:42Z",
+                      "insightType": "identity",
+                      "data": [
+                        {
+                          "name": {
+                            "input": "jovo stanojevic",
+                            "match": true,
+                            "confidence": 1
+                          },
+                          "phones": [
+                            {
+                              "input": "0641234567",
+                              "match": true,
+                              "confidence": 1
+                            }
+                          ],
+                          "emails": [
+                            {
+                              "input": "jovo@example.com",
+                              "match": false,
+                              "confidence": 0
+                            }
+                          ],
+                          "addresses": [
+                            {
+                              "input": "belgrade serbia",
+                              "match": false,
+                              "confidence": 0.4
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-id/insights/xyz789-uvw012"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid insight ID format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "invalidInsightIdFormat": {
+                    "summary": "Invalid insight ID format",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "cfba6dc7-2666-4807-86ca-d8058922a961",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Insight ID is not in valid format"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User or insight not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "insightNotFound": {
+                    "summary": "Insight not found",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "a7e7393b-ea41-49f5-a0d6-0410de2b042f",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "resource-not-found",
+                          "title": "Requested resource is not found",
+                          "detail": "Requested CDR user insight does not exist."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    },
     "/users/{userId}/insights/account": {
       "post": {
         "tags": [
@@ -1196,6 +1605,132 @@
       }
     },
     "schemas": {
+      "InsightListResponse": {
+        "type": "object",
+        "required": [
+          "type",
+          "count",
+          "size",
+          "data",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "list"
+            ],
+            "description": "Response type indicator"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Total number of insights available"
+          },
+          "size": {
+            "type": "integer",
+            "description": "Number of insights in current page (max 20)"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Insight"
+            },
+            "description": "Array of insight objects"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to current page"
+              },
+              "next": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to next page (if available)"
+              },
+              "prev": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to previous page (if available)"
+              }
+            },
+            "required": [
+              "self"
+            ]
+          }
+        }
+      },
+      "Insight": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "insight"
+            ],
+            "description": "Resource type indicator"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the insight"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 timestamp of when the insight was created"
+          },
+          "insightType": {
+            "type": "string",
+            "enum": [
+              "account",
+              "balance",
+              "identity"
+            ],
+            "description": "Type of insight: account verification, balance verification, or identity verification"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/AccountInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/BalanceInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/IdentityInsightDataItem"
+                }
+              ]
+            },
+            "description": "Array of insight data objects, structure varies by insightType"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to this specific insight"
+              }
+            },
+            "required": [
+              "self"
+            ]
+          }
+        }
+      },
       "AccountInsightResponse": {
         "type": "object",
         "required": [
@@ -1276,6 +1811,27 @@
           },
           "accountType": {
             "$ref": "#/components/schemas/AccountTypeMatch"
+          }
+        }
+      },
+      "AccountInsightDataItem": {
+        "type": "object",
+        "required": [
+          "accountId"
+        ],
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The account identifier being verified"
+          },
+          "accountNumber": {
+            "$ref": "#/components/schemas/VerificationResult",
+            "description": "Account number verification result"
+          },
+          "accountType": {
+            "$ref": "#/components/schemas/VerificationResult",
+            "description": "Account type verification result"
           }
         }
       },
@@ -1371,8 +1927,20 @@
             "example": "invalid token"
           },
           "source": {
-            "type": "string",
-            "nullable": true,
+            "oneOf": [
+              {
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "pointer": {
+                    "type": "string"
+                  },
+                  "parameter": {
+                    "type": "string"
+                  }
+                }
+              }
+            ],
             "description": "Source of the error (optional)",
             "example": null
           }
@@ -1589,6 +2157,36 @@
           }
         }
       },
+      "IdentityInsightDataItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/VerificationResult",
+            "description": "Name verification result"
+          },
+          "phones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VerificationResult"
+            },
+            "description": "Array of phone number verification results"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VerificationResult"
+            },
+            "description": "Array of email verification results"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VerificationResult"
+            },
+            "description": "Array of address verification results"
+          }
+        }
+      },
       "IdentityMatch": {
         "type": "object",
         "required": [
@@ -1603,7 +2201,7 @@
           },
           "match": {
             "type": "boolean",
-            "description": "Whether the field matches the user’s records"
+            "description": "Whether the field matches the user's records"
           },
           "confidence": {
             "type": "number",
@@ -1664,6 +2262,93 @@
           "accountId",
           "accountNumber"
         ]
+      },
+      "BalanceInsightDataItem": {
+        "type": "object",
+        "required": [
+          "accountId"
+        ],
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The account identifier being verified"
+          },
+          "accountNumber": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "object",
+                "properties": {
+                  "min": {
+                    "type": "string",
+                    "description": "Minimum balance value"
+                  },
+                  "max": {
+                    "type": "string",
+                    "description": "Maximum balance value"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max"
+                ]
+              },
+              "match": {
+                "type": "boolean",
+                "nullable": true,
+                "description": "Whether the balance falls within the specified range"
+              },
+              "confidence": {
+                "type": "number",
+                "format": "float",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence score of the match (0.0 to 1.0)"
+              }
+            },
+            "required": [
+              "input",
+              "match",
+              "confidence"
+            ]
+          }
+        }
+      },
+      "VerificationResult": {
+        "type": "object",
+        "required": [
+          "input"
+        ],
+        "properties": {
+          "input": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object"
+              }
+            ],
+            "description": "The input value being verified"
+          },
+          "match": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Whether the input matched the source data. Null if verification could not be completed."
+          },
+          "confidence": {
+            "type": "number",
+            "format": "float",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence score of the match (0.0 to 1.0)"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message if verification could not be completed"
+          }
+        }
       }
     }
   }
