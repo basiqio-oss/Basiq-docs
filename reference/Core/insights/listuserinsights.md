@@ -1,5 +1,5 @@
 ---
-title: List all Insights
+title: List User Insights
 excerpt: >-
   Returns a paginated list of previously generated insights for the specified
   user. Supports filtering by creation date and insight type. Maximum 20

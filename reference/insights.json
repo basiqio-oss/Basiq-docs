@@ -339,7 +339,7 @@
                             {
                               "input": "belgrade serbia",
                               "match": false,
-                              "confidence": 0.4
+                              "confidence": 0
                             }
                           ]
                         }
@@ -494,12 +494,12 @@
                           "accountNumber": {
                             "input": "032096658830",
                             "match": true,
-                            "confidence": 0.9
+                            "confidence": 0
                           },
                           "accountType": {
                             "input": "savings",
                             "match": true,
-                            "confidence": 0.8
+                            "confidence": 0
                           }
                         },
                         {
@@ -507,12 +507,12 @@
                           "accountNumber": {
                             "input": "032096658830",
                             "match": false,
-                            "confidence": 0.6
+                            "confidence": 0
                           },
                           "accountType": {
                             "input": "savings",
                             "match": true,
-                            "confidence": 0.7
+                            "confidence": 0
                           }
                         }
                       ],
@@ -535,12 +535,12 @@
                           "accountNumber": {
                             "input": "032096658830",
                             "match": false,
-                            "confidence": 0.3
+                            "confidence": 0
                           },
                           "accountType": {
                             "input": "savings",
                             "match": false,
-                            "confidence": 0.1
+                            "confidence": 0
                           }
                         },
                         {
@@ -548,12 +548,12 @@
                           "accountNumber": {
                             "input": "032096658830",
                             "match": false,
-                            "confidence": 0.2
+                            "confidence": 0
                           },
                           "accountType": {
                             "input": "savings",
                             "match": false,
-                            "confidence": 0.2
+                            "confidence": 0
                           }
                         },
                         {
@@ -561,12 +561,25 @@
                           "accountNumber": {
                             "input": "032096658830",
                             "match": false,
-                            "confidence": 0.3
+                            "confidence": 0
                           },
                           "accountType": {
                             "input": "savings",
                             "match": false,
-                            "confidence": 0.4
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "88c781ff-104d-4834-bb36-e9428f508017",
+                          "accountNumber": {
+                            "input": "032096658830",
+                            "match": false,
+                            "confidence": 0
+                          },
+                          "accountType": {
+                            "input": "savings",
+                            "match": false,
+                            "confidence": 0
                           }
                         }
                       ],
@@ -877,7 +890,7 @@
                               "max": "2"
                             },
                             "match": true,
-                            "confidence": 0.95
+                            "confidence": 0
                           }
                         },
                         {
@@ -1390,7 +1403,7 @@
                           "name": {
                             "input": "jared Dunn",
                             "match": true,
-                            "confidence": 0.9
+                            "confidence": 0
                           }
                         }
                       ],
@@ -1412,27 +1425,27 @@
                           "name": {
                             "input": "aa",
                             "match": false,
-                            "confidence": 0.2
+                            "confidence": 0
                           },
                           "phones": [
                             {
                               "input": "0452626178",
                               "match": false,
-                              "confidence": 0.4
+                              "confidence": 0
                             }
                           ],
                           "emails": [
                             {
                               "input": "aa@aa.io",
                               "match": false,
-                              "confidence": 0.3
+                              "confidence": 0
                             }
                           ],
                           "addresses": [
                             {
                               "input": "aa",
                               "match": false,
-                              "confidence": 0.1
+                              "confidence": 0
                             }
                           ]
                         }
@@ -1859,7 +1872,7 @@
             "minimum": 0,
             "maximum": 1,
             "description": "Confidence score for the match (0.0 to 1.0)",
-            "example": 0.3
+            "example": 0
           }
         }
       },
@@ -1970,7 +1983,7 @@
             "minimum": 0,
             "maximum": 1,
             "description": "Confidence score for the match (0.0 to 1.0)",
-            "example": 0.4
+            "example": 0
           }
         }
       },
