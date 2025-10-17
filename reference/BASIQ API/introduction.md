@@ -29,17 +29,15 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
 ## Use Cases
 
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1rem' }}>
-  <CoolTile header="Account Aggregation" icon="fa-duotone fa-database" text="Aggregate customer financial data and build PFM functionality with personalised insights." />
+<Grid columns="2" gapX="30px" gapY="30px" paddingY="1.5em">
+  <CoolTile header="Account Aggregation" icon="fa-duotone fa-database" text="Aggregate customer financial data and build PFM functionality with personalized insights." />
 
   <CoolTile header="Account Verification" icon="fa-duotone fa-check-circle" text="Verify account ownership and balances instantly for improved lending and payments." />
 
-  <CoolTile header="Data Enrichment" icon="fa-duotone fa-layer-group" text="Classify transactions, identify merchants and uncover behavioral insights." />
+  <CoolTile header="Data Enrichment" icon="fa-duotone fa-layer-group" text="Classify transactions, identify merchants, and uncover behavioral insights." />
 
   <CoolTile header="Wealth Management" icon="fa-duotone fa-chart-pie" text="Use enriched financial data for tailored wealth solutions and advice." />
-</div>
-
-<Grid columns="2" gapX="30px" gapY="30px" paddingY="1.5em"> <CoolTile header="Account Aggregation" icon="fa-duotone fa-database" text="Aggregate customer financial data and build PFM functionality with personalized insights." /> <CoolTile header="Account Verification" icon="fa-duotone fa-check-circle" text="Verify account ownership and balances instantly for improved lending and payments." /> <CoolTile header="Data Enrichment" icon="fa-duotone fa-layer-group" text="Classify transactions, identify merchants, and uncover behavioral insights." /> <CoolTile header="Wealth Management" icon="fa-duotone fa-chart-pie" text="Use enriched financial data for tailored wealth solutions and advice." /> </Grid>
+</Grid>
 
 ***
 
