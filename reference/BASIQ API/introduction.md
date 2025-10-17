@@ -49,21 +49,10 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
 ## Partner Showcase
 
-<div
-  style={{
-  background: '#f9fafb',
-  border: '1px solid #e5e7eb',
-  borderRadius: '0.5rem',
-  padding: '1.5rem',
-  marginTop: '1rem',
-}}
->
-  <strong>See Basiq in action:</strong>\
-  Discover how our customers are building financial experiences using Basiq.
+<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+<CoolTile header="Fintech Insights" href="https://basiq.io/blog/category/partner-showcase/" icon="fa-duotone fa-solid fa-lightbulb" text="See how fintechs are leveraging Basiq APIs to create personalized financial experiences." />
 
-  <a href="https://basiq.io/blog/category/partner-showcase/" target="_blank" style={{ textDecoration: 'underline', display: 'inline-block', marginTop: '0.5rem' }}>
-    Explore the Partner Showcase →
-  </a>
-</div>
+<CoolTile header="Wealth Management Success" href="https://basiq.io/blog/category/partner-showcase/" icon="fa-duotone fa-solid fa-chart-pie" text="Discover how enriched financial data powers smarter wealth solutions for customers." />
 
-<br />
+<CoolTile header="Lending & Payments" href="https://basiq.io/blog/category/partner-showcase/" icon="fa-duotone fa-solid fa-credit-card" text="Learn how partners are improving lending decisions and payment workflows using Basiq." />
+</Grid>
