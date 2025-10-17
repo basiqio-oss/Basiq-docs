@@ -43,20 +43,7 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
 ## Supported Regions
 
-<div
-  style={{
-  backgroundColor: '#fff7ed',
-  border: '1px solid #fdba74',
-  borderRadius: '0.5rem',
-  padding: '1rem',
-  marginTop: '1rem',
-  color: '#92400e',
-  fontWeight: 500,
-}}
->
-  ⚠️ <strong>Basiq APIs are currently only available in Australia and New Zealand.</strong><br />
-  Visit the <a href="https://dashboard.basiq.io/status" target="_blank" style={{ textDecoration: 'underline' }}>status page</a> for supported institutions.
-</div>
+<div style={{ backgroundColor: '#fff7ed', border: '1px solid #fdba74', borderRadius: '0.5rem', padding: '1rem', marginTop: '1rem', color: '#92400e', fontWeight: 500, }}> ⚠️ <strong>Basiq APIs are currently only available in Australia and New Zealand.</strong><br /> Visit the <a href="https://dashboard.basiq.io/status" target="_blank" style={{ textDecoration: 'underline' }}>status page</a> for supported institutions. </div>
 
 ***
 
