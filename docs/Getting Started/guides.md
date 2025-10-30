@@ -63,6 +63,6 @@ metadata:
 
 ## API & Connector Health
 
-<StatusPage title="Commonwealth Bank (CBA) Web Connector - Significantly increased failure rate" url="https://status.basiq.io/" />
+<StatusPage url="https://status.basiq.io/" />
 
 <br />
