@@ -63,6 +63,6 @@ metadata:
 
 ## API & Connector Health
 
-<StatusPage url="https://status.basiq.io/" />
+<StatusPage title="API & Connector Health" url="https://status.basiq.io/" />
 
 <br />
