@@ -27,9 +27,11 @@ jobs:
           rdme openapi validate ./reference/core.json
           rdme openapi validate ./reference/insights.json
           rdme openapi validate ./reference/analytics.json
+          rdme openapi validate ./reference/enrich.json
 
       - name: Upload API definitions
         run: |
           rdme openapi upload ./reference/core.json --slug=core --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/insights.json --slug=insights --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/analytics.json --slug=analytics --key=${{ secrets.README_API_KEY }}
+          rdme openapi upload ./reference/enrich.json --slug=enrich --key=${{ secrets.README_API_KEY }}
