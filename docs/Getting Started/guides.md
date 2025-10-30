@@ -22,11 +22,11 @@ metadata:
 ## Recent Releases
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+  <CoolTile header={<span>Identity <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>New</span></span>} href="#" icon="fa-duotone fa-solid fa-id-card" text="Identity features are on the way — stay tuned for updates." />
+
   <CoolTile header={<span>Insights API – Account Details <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>} href="https://api.basiq.io/reference/getaccountinsights#/" icon="fa-duotone fa-solid fa-lightbulb" text="Get detailed account insights via /users/{userId}/insights/account to build richer account experiences." />
 
   <CoolTile header={<span>Account Balance Verification <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>} href="https://api.basiq.io/reference/getbalanceinsights#/" icon="fa-duotone fa-solid fa-scale-balanced" text="Query account balance insights with flexible filtering (min/max parameters)." />
-
-  <CoolTile header={<span>Identity <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>COMING SOON</span></span>} href="#" icon="fa-duotone fa-solid fa-id-card" text="Identity features are on the way — stay tuned for updates." />
 
   <CoolTile header="Analytics API – Connection Analytics" href="https://api.basiq.io/reference/getconnectionanalytics#/" icon="fa-duotone fa-solid fa-chart-line" text="Retrieve insights about user connections to build stronger analytics dashboards." />
 
