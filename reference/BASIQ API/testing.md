@@ -107,7 +107,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        maxsmith@micr0soft.com
+        [maxsmith@micr0soft.com](mailto:maxsmith@micr0soft.com)
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -194,7 +194,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        gilfoyle@mgail.com
+        [gilfoyle@mgail.com](mailto:gilfoyle@mgail.com)
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -240,7 +240,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        gavinbelson@h0tmail.com
+        [gavinbelson@h0tmail.com](mailto:gavinbelson@h0tmail.com)
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -286,11 +286,11 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Jared.D@h0tmail.com
+        [Jared.D@h0tmail.com](mailto:Jared.D@h0tmail.com)
       </td>
 
       <td style={{ textAlign: "left" }}>
-        TUGGERAH NSW 2259, Australia
+        Tuggerah NSW 2259, Australia
       </td>
     </tr>
 
@@ -331,7 +331,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        r.birtles@tetlerjones.c0m.au
+        [r.birtles@tetlerjones.c0m.au](mailto:r.birtles@tetlerjones.c0m.au)
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -365,8 +365,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        	
-        business@manlyaccountants.com.au
+        [business@manlyaccountants.com.au](mailto:business@manlyaccountants.com.au)
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -412,7 +411,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        ashmann@gmail.com
+        [ashmann@gmail.com](mailto:ashmann@gmail.com)
       </td>
 
       <td style={{ textAlign: "left" }}>
