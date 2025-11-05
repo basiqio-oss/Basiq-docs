@@ -1607,6 +1607,210 @@
           }
         ]
       }
+    },
+    "/users/{userId}/insights/income": {
+      "post": {
+        "tags": [
+          "Insights"
+        ],
+        "summary": "Verify Income Insights",
+        "description": "Verifies if a user's income falls within a specified range. Returns a match result with confidence level based on the user's financial data.",
+        "operationId": "verifyIncomeInsight",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the user",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "0a84e628-dad7-40f4-bbc0-abeb3ddd90ea"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Income range to verify against user's financial data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IncomeInsightRequest"
+              },
+              "examples": {
+                "withinRange": {
+                  "summary": "Income within range",
+                  "value": {
+                    "income": {
+                      "min": "1",
+                      "max": "10000"
+                    }
+                  }
+                },
+                "outsideRange": {
+                  "summary": "Income outside range",
+                  "value": {
+                    "income": {
+                      "min": "1",
+                      "max": "2"
+                    }
+                  }
+                },
+                "equalsMin": {
+                  "summary": "Income equals minimum",
+                  "value": {
+                    "income": {
+                      "min": "9179.95",
+                      "max": "10000"
+                    }
+                  }
+                },
+                "equalsMax": {
+                  "summary": "Income equals maximum",
+                  "value": {
+                    "income": {
+                      "min": "1",
+                      "max": "9179.95"
+                    }
+                  }
+                },
+                "exactMatch": {
+                  "summary": "Income equals both min and max",
+                  "value": {
+                    "income": {
+                      "min": "9179.95",
+                      "max": "9179.95"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Income insight successfully verified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncomeInsightResponse"
+                },
+                "examples": {
+                  "matchTrue": {
+                    "summary": "Income matches range",
+                    "value": {
+                      "insightType": "income",
+                      "data": [
+                        {
+                          "input": {
+                            "min": "1",
+                            "max": "10000"
+                          },
+                          "match": true,
+                          "confidence": 1
+                        }
+                      ]
+                    }
+                  },
+                  "matchFalse": {
+                    "summary": "Income does not match range",
+                    "value": {
+                      "insightType": "income",
+                      "data": [
+                        {
+                          "input": {
+                            "min": "1",
+                            "max": "2"
+                          },
+                          "match": false,
+                          "confidence": 1
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid parameters or request format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "missingMin": {
+                    "summary": "Missing min parameter",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameters are not in valid format."
+                        }
+                      ]
+                    }
+                  },
+                  "missingMax": {
+                    "summary": "Missing max parameter",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameters are not in valid format."
+                        }
+                      ]
+                    }
+                  },
+                  "emptyIncome": {
+                    "summary": "Empty income object",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameters are not in valid format."
+                        }
+                      ]
+                    }
+                  },
+                  "nonNumeric": {
+                    "summary": "Non-numeric values provided",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameter is not in valid format."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -2360,6 +2564,96 @@
           "error": {
             "type": "string",
             "description": "Error message if verification could not be completed"
+          }
+        }
+      },
+      "IncomeInsightRequest": {
+        "type": "object",
+        "required": [
+          "income"
+        ],
+        "properties": {
+          "income": {
+            "type": "object",
+            "required": [
+              "min",
+              "max"
+            ],
+            "properties": {
+              "min": {
+                "type": "string",
+                "description": "Minimum income value as a numeric string",
+                "example": "1"
+              },
+              "max": {
+                "type": "string",
+                "description": "Maximum income value as a numeric string",
+                "example": "10000"
+              }
+            },
+            "description": "Income range to verify"
+          }
+        }
+      },
+      "IncomeInsightResponse": {
+        "type": "object",
+        "required": [
+          "insightType",
+          "data"
+        ],
+        "properties": {
+          "insightType": {
+            "type": "string",
+            "enum": [
+              "income"
+            ],
+            "description": "Type of insight returned"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IncomeInsightDataItem"
+            },
+            "description": "Array containing income verification result"
+          }
+        }
+      },
+      "IncomeInsightDataItem": {
+        "type": "object",
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
+        "properties": {
+          "input": {
+            "type": "object",
+            "required": [
+              "min",
+              "max"
+            ],
+            "properties": {
+              "min": {
+                "type": "string",
+                "description": "Minimum income value from request"
+              },
+              "max": {
+                "type": "string",
+                "description": "Maximum income value from request"
+              }
+            },
+            "description": "Echo of the input parameters"
+          },
+          "match": {
+            "type": "boolean",
+            "description": "Whether the user's income falls within the specified range"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence level of the match result (0 or 1)",
+            "example": 1
           }
         }
       }
