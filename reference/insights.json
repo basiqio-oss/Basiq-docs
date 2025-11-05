@@ -18,7 +18,9 @@
   "paths": {
     "/users/{userId}/insights": {
       "get": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "List all Insights",
         "description": "Returns a paginated list of previously generated insights for the specified user. Supports filtering by creation date and insight type. Maximum 20 insights per page.",
         "operationId": "listUserInsights",
@@ -214,7 +216,9 @@
     },
     "/users/{userId}/insights/{insightId}": {
       "get": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Retrieve an Insight",
         "description": "Returns detailed information for a specific insight by ID",
         "operationId": "getInsightById",
@@ -423,7 +427,9 @@
     },
     "/users/{userId}/insights/account": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Account Insights",
         "description": "Retrieve account insights for a specific user based on account number",
         "operationId": "getAccountInsights",
@@ -446,7 +452,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["accountNumber"],
+                "required": [
+                  "accountNumber"
+                ],
                 "properties": {
                   "accountNumber": {
                     "type": "string",
@@ -671,7 +679,9 @@
     },
     "/users/{userId}/insights/balance": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Account Balance Insights",
         "description": "Retrieve balance insights for a user's accounts based on specified minimum and maximum balance criteria",
         "operationId": "getBalanceInsights",
@@ -1330,7 +1340,9 @@
     },
     "/users/{userId}/insights/identity": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Identity Insights",
         "description": "Retrieve identity insights for a specific user by comparing provided personal details (name, phone, email, address).",
         "operationId": "getIdentityInsights",
@@ -1598,8 +1610,10 @@
     },
     "/users/{userId}/insights/income": {
       "post": {
-        "tags": ["Insights"],
-        "summary": "Income Insights",
+        "tags": [
+          "Insights"
+        ],
+        "summary": "Verify Income Insights",
         "description": "Verifies if a user's income falls within a specified range. Returns a match result with confidence level based on the user's financial data.",
         "operationId": "verifyIncomeInsight",
         "parameters": [
@@ -1810,11 +1824,19 @@
     "schemas": {
       "InsightListResponse": {
         "type": "object",
-        "required": ["type", "count", "size", "data", "links"],
+        "required": [
+          "type",
+          "count",
+          "size",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["list"],
+            "enum": [
+              "list"
+            ],
             "description": "Response type indicator"
           },
           "count": {
@@ -1851,17 +1873,28 @@
                 "description": "Link to previous page (if available)"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
         }
       },
       "Insight": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "Resource type indicator"
           },
           "id": {
@@ -1876,7 +1909,11 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["account", "balance", "identity"],
+            "enum": [
+              "account",
+              "balance",
+              "identity"
+            ],
             "description": "Type of insight: account verification, balance verification, or identity verification"
           },
           "data": {
@@ -1905,17 +1942,28 @@
                 "description": "Link to this specific insight"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
         }
       },
       "AccountInsightResponse": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "The type of response object",
             "example": "insight"
           },
@@ -1933,7 +1981,9 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["account"],
+            "enum": [
+              "account"
+            ],
             "description": "The type of insight",
             "example": "account"
           },
@@ -1946,7 +1996,9 @@
           },
           "links": {
             "type": "object",
-            "required": ["self"],
+            "required": [
+              "self"
+            ],
             "properties": {
               "self": {
                 "type": "string",
@@ -1960,7 +2012,10 @@
       },
       "AccountInsightData": {
         "type": "object",
-        "required": ["accountId", "accountNumber"],
+        "required": [
+          "accountId",
+          "accountNumber"
+        ],
         "properties": {
           "accountId": {
             "type": "string",
@@ -1978,7 +2033,9 @@
       },
       "AccountInsightDataItem": {
         "type": "object",
-        "required": ["accountId"],
+        "required": [
+          "accountId"
+        ],
         "properties": {
           "accountId": {
             "type": "string",
@@ -1997,7 +2054,11 @@
       },
       "AccountNumberMatch": {
         "type": "object",
-        "required": ["input", "match", "confidence"],
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
         "properties": {
           "input": {
             "type": "string",
@@ -2021,11 +2082,17 @@
       },
       "ErrorResponse": {
         "type": "object",
-        "required": ["type", "correlationId", "data"],
+        "required": [
+          "type",
+          "correlationId",
+          "data"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["list"],
+            "enum": [
+              "list"
+            ],
             "description": "Response type for error responses",
             "example": "list"
           },
@@ -2046,11 +2113,18 @@
       },
       "ErrorDetail": {
         "type": "object",
-        "required": ["type", "code", "title", "detail"],
+        "required": [
+          "type",
+          "code",
+          "title",
+          "detail"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["error"],
+            "enum": [
+              "error"
+            ],
             "description": "Type of data object",
             "example": "error"
           },
@@ -2091,7 +2165,11 @@
       },
       "AccountTypeMatch": {
         "type": "object",
-        "required": ["input", "match", "confidence"],
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
         "properties": {
           "input": {
             "type": "string",
@@ -2115,11 +2193,15 @@
       },
       "BalanceInsightRequest": {
         "type": "object",
-        "required": ["balance"],
+        "required": [
+          "balance"
+        ],
         "properties": {
           "balance": {
             "type": "object",
-            "required": ["min"],
+            "required": [
+              "min"
+            ],
             "properties": {
               "min": {
                 "type": "string",
@@ -2141,7 +2223,9 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "Type of response object"
           },
           "id": {
@@ -2156,7 +2240,9 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["balance"],
+            "enum": [
+              "balance"
+            ],
             "description": "Type of insight"
           },
           "data": {
@@ -2175,10 +2261,19 @@
                 "description": "Self-referencing link to this insight"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
         },
-        "required": ["type", "id", "created", "insightType", "data", "links"]
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ]
       },
       "IdentityInsightRequest": {
         "type": "object",
@@ -2207,11 +2302,20 @@
       },
       "IdentityInsightResponse": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "The type of response object"
           },
           "id": {
@@ -2226,7 +2330,9 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["identity"],
+            "enum": [
+              "identity"
+            ],
             "description": "The type of insight"
           },
           "data": {
@@ -2245,7 +2351,9 @@
                 "description": "Self-referencing link to this insight"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
         }
       },
@@ -2298,7 +2406,11 @@
       },
       "IdentityMatch": {
         "type": "object",
-        "required": ["input", "match", "confidence"],
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
         "properties": {
           "input": {
             "type": "string",
@@ -2340,7 +2452,9 @@
                     "description": "Maximum balance from request"
                   }
                 },
-                "required": ["min"]
+                "required": [
+                  "min"
+                ]
               },
               "match": {
                 "type": "boolean",
@@ -2354,14 +2468,23 @@
                 "description": "Confidence score for the match result"
               }
             },
-            "required": ["input", "match", "confidence"]
+            "required": [
+              "input",
+              "match",
+              "confidence"
+            ]
           }
         },
-        "required": ["accountId", "accountNumber"]
+        "required": [
+          "accountId",
+          "accountNumber"
+        ]
       },
       "BalanceInsightDataItem": {
         "type": "object",
-        "required": ["accountId"],
+        "required": [
+          "accountId"
+        ],
         "properties": {
           "accountId": {
             "type": "string",
@@ -2383,7 +2506,10 @@
                     "description": "Maximum balance value"
                   }
                 },
-                "required": ["min", "max"]
+                "required": [
+                  "min",
+                  "max"
+                ]
               },
               "match": {
                 "type": "boolean",
@@ -2398,13 +2524,19 @@
                 "description": "Confidence score of the match (0.0 to 1.0)"
               }
             },
-            "required": ["input", "match", "confidence"]
+            "required": [
+              "input",
+              "match",
+              "confidence"
+            ]
           }
         }
       },
       "VerificationResult": {
         "type": "object",
-        "required": ["input"],
+        "required": [
+          "input"
+        ],
         "properties": {
           "input": {
             "oneOf": [
@@ -2437,11 +2569,16 @@
       },
       "IncomeInsightRequest": {
         "type": "object",
-        "required": ["income"],
+        "required": [
+          "income"
+        ],
         "properties": {
           "income": {
             "type": "object",
-            "required": ["min", "max"],
+            "required": [
+              "min",
+              "max"
+            ],
             "properties": {
               "min": {
                 "type": "string",
@@ -2460,11 +2597,16 @@
       },
       "IncomeInsightResponse": {
         "type": "object",
-        "required": ["insightType", "data"],
+        "required": [
+          "insightType",
+          "data"
+        ],
         "properties": {
           "insightType": {
             "type": "string",
-            "enum": ["income"],
+            "enum": [
+              "income"
+            ],
             "description": "Type of insight returned"
           },
           "data": {
@@ -2478,11 +2620,18 @@
       },
       "IncomeInsightDataItem": {
         "type": "object",
-        "required": ["input", "match", "confidence"],
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
         "properties": {
           "input": {
             "type": "object",
-            "required": ["min", "max"],
+            "required": [
+              "min",
+              "max"
+            ],
             "properties": {
               "min": {
                 "type": "string",
