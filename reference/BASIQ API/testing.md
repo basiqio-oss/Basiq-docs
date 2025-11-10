@@ -31,7 +31,7 @@ The transaction data is completely random to best replicate the type of data tha
 
 <br />
 
-<Table align={["left","left","left","left","left","left","left","left"]}>
+<Table align={["left","left","left","left","left","left","left","left","left"]}>
   <thead>
     <tr>
       <th style={{ textAlign: "left" }}>
@@ -60,6 +60,10 @@ The transaction data is completely random to best replicate the type of data tha
 
       <th style={{ textAlign: "left" }}>
         email
+      </th>
+
+      <th style={{ textAlign: "left" }}>
+        account number
       </th>
 
       <th style={{ textAlign: "left" }}>
@@ -111,6 +115,17 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
+        transaction:  
+        45678945678901
+
+        credit card: 23456723456789
+
+        savings: 34567834567890
+
+        mortgage:1 2345612345678
+      </td>
+
+      <td style={{ textAlign: "left" }}>
         13/91 Fisher Rd, Dee Why NSW 2099, Australia
       </td>
     </tr>
@@ -149,6 +164,10 @@ The transaction data is completely random to best replicate the type of data tha
 
       <td style={{ textAlign: "left" }}>
         [whistler@h0tmail.com](mailto:whistler@h0tmail.com)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        transaction: 000001919644181
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -198,6 +217,14 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
+        transaction: 000001919644171
+
+        credit card: 000001919644170
+
+        savings: 000001919644172
+      </td>
+
+      <td style={{ textAlign: "left" }}>
         Dee Why NSW 2099, Australia
       </td>
     </tr>
@@ -241,6 +268,16 @@ The transaction data is completely random to best replicate the type of data tha
 
       <td style={{ textAlign: "left" }}>
         [gavinbelson@h0tmail.com](mailto:gavinbelson@h0tmail.com)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        transaction: 000001000002
+
+        credit card: 000001004381
+
+        savings: 000001002935
+
+        loan: 000001002955
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -290,6 +327,14 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
+        transaction: 000001023480
+
+        credit card: 000001023483
+
+        term deposit: 000001023482
+      </td>
+
+      <td style={{ textAlign: "left" }}>
         Tuggerah NSW 2259, Australia
       </td>
     </tr>
@@ -335,6 +380,14 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
+        transaction: 000001077380
+
+        credit card: 000001077379
+
+        mortgage: 000001077381
+      </td>
+
+      <td style={{ textAlign: "left" }}>
         51 Dabinett Rd, Ponde SA 5238, Australia
       </td>
     </tr>
@@ -366,6 +419,12 @@ The transaction data is completely random to best replicate the type of data tha
 
       <td style={{ textAlign: "left" }}>
         [business@manlyaccountants.com.au](mailto:business@manlyaccountants.com.au)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        transaction: 062245684154861747642
+
+        credit card: 772245684154861747642
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -412,6 +471,12 @@ The transaction data is completely random to best replicate the type of data tha
 
       <td style={{ textAlign: "left" }}>
         [ashmann@gmail.com](mailto:ashmann@gmail.com)
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        transaction: 090001077738
+
+        credit card: 090001077779
       </td>
 
       <td style={{ textAlign: "left" }}>
