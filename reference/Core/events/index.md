@@ -158,7 +158,7 @@ Events mark changes or behaviour in entities and can be used to trigger actions 
       </td>
 
       <td style={{ textAlign: "left" }}>
-        when a connection is activated
+        when a connection is activated (only available for Open banking connections)
       </td>
 
       <td style={{ textAlign: "left" }}>
