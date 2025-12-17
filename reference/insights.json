@@ -1613,7 +1613,7 @@
         "tags": [
           "Insights"
         ],
-        "summary": "Verify Income Insights",
+        "summary": "Income Insights",
         "description": "Verifies if a user's income falls within a specified range. Returns a match result with confidence level based on the user's financial data.",
         "operationId": "verifyIncomeInsight",
         "parameters": [
@@ -2576,8 +2576,7 @@
           "income": {
             "type": "object",
             "required": [
-              "min",
-              "max"
+              "min"
             ],
             "properties": {
               "min": {
