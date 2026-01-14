@@ -18,7 +18,9 @@
   "paths": {
     "/users/{userId}/insights": {
       "get": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "List all Insights",
         "description": "Returns a paginated list of previously generated insights for the specified user. Supports filtering by creation date and insight type. Maximum 20 insights per page.",
         "operationId": "listUserInsights",
@@ -214,7 +216,9 @@
     },
     "/users/{userId}/insights/{insightId}": {
       "get": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Retrieve an Insight",
         "description": "Returns detailed information for a specific insight by ID",
         "operationId": "getInsightById",
@@ -423,7 +427,9 @@
     },
     "/users/{userId}/insights/account": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Account Insights",
         "description": "Retrieve account insights for a specific user based on account number",
         "operationId": "getAccountInsights",
@@ -446,7 +452,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["accountNumber"],
+                "required": [
+                  "accountNumber"
+                ],
                 "properties": {
                   "accountNumber": {
                     "type": "string",
@@ -525,13 +533,52 @@
                         {
                           "accountId": "20e91af1-f1d8-46c0-b5e5-559b2cb435b7",
                           "accountNumber": {
-                            "input": "123",
+                            "input": "032096658830",
                             "match": false,
                             "confidence": 0
                           },
                           "accountType": {
                             "input": "savings",
-                            "match": true,
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "614b5cf2-1425-481e-8706-610f08c0c7dd",
+                          "accountNumber": {
+                            "input": "032096658830",
+                            "match": false,
+                            "confidence": 0
+                          },
+                          "accountType": {
+                            "input": "savings",
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "88c781ff-104d-4834-bb36-e9428f508017",
+                          "accountNumber": {
+                            "input": "032096658830",
+                            "match": false,
+                            "confidence": 0
+                          },
+                          "accountType": {
+                            "input": "savings",
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "88c781ff-104d-4834-bb36-e9428f508017",
+                          "accountNumber": {
+                            "input": "032096658830",
+                            "match": false,
+                            "confidence": 0
+                          },
+                          "accountType": {
+                            "input": "savings",
+                            "match": false,
                             "confidence": 0
                           }
                         }
@@ -546,7 +593,7 @@
             }
           },
           "400": {
-            "description": "Bad request - invalid content format",
+            "description": "Bad request - invalid input parameters",
             "content": {
               "application/json": {
                 "schema": {
@@ -632,7 +679,9 @@
     },
     "/users/{userId}/insights/balance": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Account Balance Insights",
         "description": "Retrieve balance insights for a user's accounts based on specified minimum and maximum balance criteria",
         "operationId": "getBalanceInsights",
@@ -657,22 +706,109 @@
                 "$ref": "#/components/schemas/BalanceInsightRequest"
               },
               "examples": {
-                "range_check": {
-                  "summary": "Balance range check",
-                  "description": "Check if account balance falls within a specified range",
+                "min_only_query": {
+                  "summary": "Minimum balance only query",
+                  "description": "Query for accounts with balance above minimum threshold (no maximum specified)",
                   "value": {
                     "balance": {
-                      "min": "100",
-                      "max": "1000"
+                      "min": "1"
                     }
                   }
                 },
-                "minimum_only": {
-                  "summary": "Minimum balance check",
-                  "description": "Check if account balance is at least a specified amount",
+                "basic_range": {
+                  "summary": "Basic balance range query",
+                  "description": "Query for accounts with balance between 1 and 2",
                   "value": {
                     "balance": {
-                      "min": "500"
+                      "min": "1",
+                      "max": "2"
+                    }
+                  }
+                },
+                "higher_range": {
+                  "summary": "Higher balance range query",
+                  "description": "Query for accounts with balance between 5 and 10",
+                  "value": {
+                    "balance": {
+                      "min": "5",
+                      "max": "10"
+                    }
+                  }
+                },
+                "decimal_range": {
+                  "summary": "Decimal balance range query",
+                  "description": "Query for accounts with balance between 1.44 and 2 (decimal precision)",
+                  "value": {
+                    "balance": {
+                      "min": "1.44",
+                      "max": "2"
+                    }
+                  }
+                },
+                "narrow_decimal_range": {
+                  "summary": "Narrow decimal balance range query",
+                  "description": "Query for accounts with balance between 1 and 1.44 (narrow decimal range)",
+                  "value": {
+                    "balance": {
+                      "min": "1",
+                      "max": "1.44"
+                    }
+                  }
+                },
+                "exact_balance": {
+                  "summary": "Exact balance match query",
+                  "description": "Edge case query where min equals max (exact balance of 1.44)",
+                  "value": {
+                    "balance": {
+                      "min": "1.44",
+                      "max": "1.44"
+                    }
+                  }
+                },
+                "no_matching_accounts": {
+                  "summary": "High value balance query with no matches",
+                  "description": "Edge case query with extremely high balance (9999.99) that no accounts would have",
+                  "value": {
+                    "balance": {
+                      "min": "9999.99",
+                      "max": "9999.99"
+                    }
+                  }
+                },
+                "empty_balance": {
+                  "summary": "Empty balance object - validation error",
+                  "description": "Invalid request with empty balance object causing parameter validation error",
+                  "value": {
+                    "balance": {}
+                  }
+                },
+                "invalid_data_type": {
+                  "summary": "Invalid data type - validation error",
+                  "description": "Invalid request with non-numeric values for min/max causing parameter validation error",
+                  "value": {
+                    "balance": {
+                      "min": "ash",
+                      "max": "test"
+                    }
+                  }
+                },
+                "numeric_input_error": {
+                  "summary": "Numeric input instead of string - content error",
+                  "description": "Invalid request with numeric values instead of strings for min/max causing invalid content error",
+                  "value": {
+                    "balance": {
+                      "min": 1,
+                      "max": 2
+                    }
+                  }
+                },
+                "negative_range": {
+                  "summary": "Negative range query (min > max)",
+                  "description": "Edge case query where min is greater than max, resulting in no matches",
+                  "value": {
+                    "balance": {
+                      "min": "10",
+                      "max": "5"
                     }
                   }
                 }
@@ -689,21 +825,43 @@
                   "$ref": "#/components/schemas/BalanceInsightResponse"
                 },
                 "examples": {
-                  "balance_in_range": {
-                    "summary": "Balance within range",
-                    "description": "Account balance falls within the specified range",
+                  "min_only_response": {
+                    "summary": "Response for minimum balance only query",
+                    "description": "Example response when querying with only minimum balance specified",
                     "value": {
                       "type": "insight",
-                      "id": "b3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8",
-                      "created": "2025-09-17T10:30:00Z",
+                      "id": "d12c46dc-3821-4887-a208-2ff07040cc0b",
+                      "created": "2025-09-19T00:08:55Z",
                       "insightType": "balance",
                       "data": [
                         {
-                          "accountId": "account-uuid-here",
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
                           "accountNumber": {
                             "input": {
-                              "min": "100",
-                              "max": "1000"
+                              "min": "1",
+                              "max": ""
+                            },
+                            "match": true,
+                            "confidence": 1
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": ""
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": ""
                             },
                             "match": true,
                             "confidence": 1
@@ -711,33 +869,343 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/b3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8"
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/d12c46dc-3821-4887-a208-2ff07040cc0b"
                       }
                     }
                   },
-                  "balance_outside_range": {
-                    "summary": "Balance outside range",
-                    "description": "Account balance does not fall within the specified range",
+                  "positive_match": {
+                    "summary": "Accounts within balance range",
+                    "description": "Example showing accounts that match the specified balance criteria",
                     "value": {
                       "type": "insight",
-                      "id": "c4d5e6f7-g8h9-i0j1-k2l3-m4n5o6p7q8r9",
-                      "created": "2025-09-17T10:35:00Z",
+                      "id": "bd6a6e90-6be3-45ac-9748-a110a29991a0",
+                      "created": "2025-09-18T09:13:50Z",
                       "insightType": "balance",
                       "data": [
                         {
-                          "accountId": "account-uuid-here",
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
                           "accountNumber": {
                             "input": {
-                              "min": "10000",
-                              "max": "20000"
+                              "min": "1",
+                              "max": "2"
+                            },
+                            "match": true,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "2"
                             },
                             "match": false,
-                            "confidence": 1
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
                           }
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/c4d5e6f7-g8h9-i0j1-k2l3-m4n5o6p7q8r9"
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/bd6a6e90-6be3-45ac-9748-a110a29991a0"
+                      }
+                    }
+                  },
+                  "negative_match": {
+                    "summary": "Accounts outside balance range",
+                    "description": "Example showing accounts that do not match the specified balance criteria",
+                    "value": {
+                      "type": "insight",
+                      "id": "8d01e746-ba07-4f55-bfd9-4ae437f66a58",
+                      "created": "2025-09-18T09:18:52Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "5",
+                              "max": "10"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "5",
+                              "max": "10"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "5",
+                              "max": "10"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/8d01e746-ba07-4f55-bfd9-4ae437f66a58"
+                      }
+                    }
+                  },
+                  "decimal_precision": {
+                    "summary": "Decimal precision balance range",
+                    "description": "Example showing decimal precision in balance criteria with no matches",
+                    "value": {
+                      "type": "insight",
+                      "id": "e118abf4-dc11-4182-938d-3b1003e15d38",
+                      "created": "2025-09-18T09:19:42Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "2"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/e118abf4-dc11-4182-938d-3b1003e15d38"
+                      }
+                    }
+                  },
+                  "narrow_decimal_range": {
+                    "summary": "Narrow decimal range with no matches",
+                    "description": "Example showing narrow decimal range (1 to 1.44) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "8ef117bc-6695-4607-ab76-8213c440ee1d",
+                      "created": "2025-09-18T09:20:44Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/8ef117bc-6695-4607-ab76-8213c440ee1d"
+                      }
+                    }
+                  },
+                  "exact_balance_match": {
+                    "summary": "Exact balance match edge case",
+                    "description": "Edge case showing exact balance query (min = max = 1.44) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "d253ebaa-ead6-479b-95f3-ad6d009e6d2c",
+                      "created": "2025-09-18T09:21:36Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "1.44",
+                              "max": "1.44"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/d253ebaa-ead6-479b-95f3-ad6d009e6d2c"
+                      }
+                    }
+                  },
+                  "high_value_no_matches": {
+                    "summary": "High value balance with no matching accounts",
+                    "description": "Edge case showing extremely high balance query (9999.99) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "d4a3706b-e0e2-42c0-ba6e-797b8c45300a",
+                      "created": "2025-09-18T09:22:10Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "9999.99",
+                              "max": "9999.99"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "9999.99",
+                              "max": "9999.99"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "9999.99",
+                              "max": "9999.99"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/d4a3706b-e0e2-42c0-ba6e-797b8c45300a"
+                      }
+                    }
+                  },
+                  "negative_range_response": {
+                    "summary": "Negative range query response",
+                    "description": "Response showing negative range query (min > max) with no matching accounts",
+                    "value": {
+                      "type": "insight",
+                      "id": "505710db-535f-45ff-92a4-cadabec7188e",
+                      "created": "2025-09-18T09:24:01Z",
+                      "insightType": "balance",
+                      "data": [
+                        {
+                          "accountId": "155e5916-b4ff-433f-924f-3eca8493de6d",
+                          "accountNumber": {
+                            "input": {
+                              "min": "10",
+                              "max": "5"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "45e79e60-d9f0-440c-bbf0-1e174722215e",
+                          "accountNumber": {
+                            "input": {
+                              "min": "10",
+                              "max": "5"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        },
+                        {
+                          "accountId": "c87d0d9e-39d7-4621-8bb4-031f4679abb5",
+                          "accountNumber": {
+                            "input": {
+                              "min": "10",
+                              "max": "5"
+                            },
+                            "match": false,
+                            "confidence": 0
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/2fc2691d-a6e5-4d1d-9748-c3b217ad76b0/insights/505710db-535f-45ff-92a4-cadabec7188e"
                       }
                     }
                   }
@@ -746,24 +1214,65 @@
             }
           },
           "400": {
-            "description": "Bad request - invalid parameters",
+            "description": "Bad Request - Invalid input parameters",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
                 },
                 "examples": {
-                  "invalid_balance_format": {
-                    "summary": "Invalid balance format",
+                  "missing_parameters": {
+                    "summary": "Missing required parameters",
+                    "description": "Error response when balance object is empty",
                     "value": {
                       "type": "list",
-                      "correlationId": "d5e6f7g8-h9i0-j1k2-l3m4-n5o6p7q8r9s0",
+                      "correlationId": "18219ea4-670e-44fd-a741-2651d3658480",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameters are not in valid format.",
+                          "source": {
+                            "pointer": "balance/min/max",
+                            "parameter": "min/max"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_data_type": {
+                    "summary": "Invalid data type for parameters",
+                    "description": "Error response when non-numeric values are provided for min/max",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "4bbed936-4756-4b58-85b8-2c987a5fbf01",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameter is not in valid format.",
+                          "source": {
+                            "pointer": "balance/min",
+                            "parameter": "min"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_content": {
+                    "summary": "Invalid request content",
+                    "description": "Error response when numeric values are provided instead of strings for min/max",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "34975765-2340-4577-b0ea-aab230d4552c",
                       "data": [
                         {
                           "type": "error",
                           "code": "invalid-content",
                           "title": "Invalid request content",
-                          "detail": "Balance values must be numeric strings"
+                          "detail": "Invalid body content."
                         }
                       ]
                     }
@@ -778,6 +1287,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "access_denied": {
+                    "summary": "Access denied",
+                    "description": "Error when authentication token is invalid or expired",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "0cf1a1fe-de4a-4e01-b81e-60790a1e881b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "access-denied",
+                          "title": "Access denied.",
+                          "detail": "invalid token",
+                          "source": null
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -812,9 +1340,11 @@
     },
     "/users/{userId}/insights/identity": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Identity Insights",
-        "description": "Verify user identity information against their financial records. Supports verification of name, phone, email, and address.",
+        "description": "Retrieve identity insights for a specific user by comparing provided personal details (name, phone, email, address).",
         "operationId": "getIdentityInsights",
         "parameters": [
           {
@@ -825,7 +1355,7 @@
             "schema": {
               "type": "string",
               "format": "uuid",
-              "example": "60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3"
+              "example": "321ac6df-beec-435b-a93e-678fe919badc"
             }
           }
         ],
@@ -837,19 +1367,14 @@
                 "$ref": "#/components/schemas/IdentityInsightRequest"
               },
               "examples": {
-                "full_identity": {
-                  "summary": "Full identity verification",
+                "basic_identity": {
+                  "summary": "Basic identity input",
+                  "description": "Query with only a name provided",
                   "value": {
-                    "name": "John Smith",
-                    "phone": "+61412345678",
-                    "email": "john.smith@example.com",
-                    "address": "123 Main St, Sydney NSW 2000"
-                  }
-                },
-                "name_only": {
-                  "summary": "Name verification only",
-                  "value": {
-                    "name": "John Smith"
+                    "name": "jared Dunn",
+                    "phone": "",
+                    "email": "",
+                    "address": ""
                   }
                 }
               }
@@ -865,65 +1390,68 @@
                   "$ref": "#/components/schemas/IdentityInsightResponse"
                 },
                 "examples": {
-                  "full_match": {
-                    "summary": "Full identity match",
+                  "name_match": {
+                    "summary": "Example with name match",
+                    "description": "Example response showing a matched name with high confidence",
                     "value": {
                       "type": "insight",
-                      "id": "e6f7g8h9-i0j1-k2l3-m4n5-o6p7q8r9s0t1",
-                      "created": "2025-09-17T11:00:00Z",
+                      "id": "c2d5f682-04f7-4a09-b5c3-cabcd5b41df8",
+                      "created": "2025-09-30T01:39:20Z",
                       "insightType": "identity",
                       "data": [
                         {
                           "name": {
-                            "input": "John Smith",
+                            "input": "jared Dunn",
                             "match": true,
-                            "confidence": 1
-                          },
-                          "phone": {
-                            "input": "+61412345678",
-                            "match": true,
-                            "confidence": 1
-                          },
-                          "email": {
-                            "input": "john.smith@example.com",
-                            "match": true,
-                            "confidence": 1
-                          },
-                          "address": {
-                            "input": "123 Main St, Sydney NSW 2000",
-                            "match": true,
-                            "confidence": 0.85
-                          }
-                        }
-                      ],
-                      "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/e6f7g8h9-i0j1-k2l3-m4n5-o6p7q8r9s0t1"
-                      }
-                    }
-                  },
-                  "partial_match": {
-                    "summary": "Partial identity match",
-                    "value": {
-                      "type": "insight",
-                      "id": "f7g8h9i0-j1k2-l3m4-n5o6-p7q8r9s0t1u2",
-                      "created": "2025-09-17T11:05:00Z",
-                      "insightType": "identity",
-                      "data": [
-                        {
-                          "name": {
-                            "input": "John Smith",
-                            "match": true,
-                            "confidence": 1
-                          },
-                          "phone": {
-                            "input": "+61499999999",
-                            "match": false,
                             "confidence": 0
                           }
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/f7g8h9i0-j1k2-l3m4-n5o6-p7q8r9s0t1u2"
+                        "self": "https://au-api.basiq.io/users/321ac6df-beec-435b-a93e-678fe919badc/insights/c2d5f682-04f7-4a09-b5c3-cabcd5b41df8"
+                      }
+                    }
+                  },
+                  "multi_field_low_confidence": {
+                    "summary": "Example with multiple fields and low confidence",
+                    "description": "Shows low-confidence matches for name, phones, emails, and addresses",
+                    "value": {
+                      "type": "insight",
+                      "id": "21ed0640-7561-4825-9993-712837e483cc",
+                      "created": "2025-09-30T02:27:26Z",
+                      "insightType": "identity",
+                      "data": [
+                        {
+                          "name": {
+                            "input": "aa",
+                            "match": false,
+                            "confidence": 0
+                          },
+                          "phones": [
+                            {
+                              "input": "0452626178",
+                              "match": false,
+                              "confidence": 0
+                            }
+                          ],
+                          "emails": [
+                            {
+                              "input": "aa@aa.io",
+                              "match": false,
+                              "confidence": 0
+                            }
+                          ],
+                          "addresses": [
+                            {
+                              "input": "aa",
+                              "match": false,
+                              "confidence": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/321ac6df-beec-435b-a93e-678fe919badc/insights/21ed0640-7561-4825-9993-712837e483cc"
                       }
                     }
                   }
@@ -932,11 +1460,93 @@
             }
           },
           "400": {
-            "description": "Bad request - invalid parameters",
+            "description": "Bad Request - Invalid input parameters",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "masked_phone": {
+                    "summary": "Masked phone number error",
+                    "description": "Error response when the phone number is masked and cannot be matched",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "485e20ea-4d24-4dff-b2fc-580e28e113a0",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Phone number is masked and cannot be matched.",
+                          "source": {
+                            "pointer": "phone",
+                            "parameter": "phone"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_phone_format": {
+                    "summary": "Invalid phone number format",
+                    "description": "Error response when the phone number format is invalid",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "c3b2096f-0b45-45c4-80fc-cc8427a6e6ec",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Phone number format is invalid.",
+                          "source": {
+                            "pointer": "phone",
+                            "parameter": "phone"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_email_format": {
+                    "summary": "Invalid email format",
+                    "description": "Error response when the email format is invalid",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "a2fa867a-b7a5-460c-b2a4-048db66e7f8f",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Email format is invalid.",
+                          "source": {
+                            "pointer": "email",
+                            "parameter": "email"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "invalid_name_characters": {
+                    "summary": "Name contains invalid characters",
+                    "description": "Error response when the name contains invalid or disallowed characters",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "e76488af-83c4-4da4-a760-6f626da6b9ad",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Name contains invalid characters.",
+                          "source": {
+                            "pointer": "name",
+                            "parameter": "name"
+                          }
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -947,6 +1557,25 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "access_denied": {
+                    "summary": "Access denied",
+                    "description": "Error when authentication token is invalid or expired",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "0cf1a1fe-de4a-4e01-b81e-60790a1e881b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "access-denied",
+                          "title": "Access denied.",
+                          "detail": "invalid token",
+                          "source": null
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -981,37 +1610,76 @@
     },
     "/users/{userId}/insights/income": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Income Insights",
-        "description": "Retrieve income insights for a user based on specified minimum and maximum income range",
-        "operationId": "getIncomeInsights",
+        "description": "Verifies if a user's income falls within a specified range. Returns a match result with confidence level based on the user's financial data.",
+        "operationId": "verifyIncomeInsight",
         "parameters": [
           {
             "name": "userId",
             "in": "path",
             "required": true,
-            "description": "Unique identifier for the user",
+            "description": "The unique identifier of the user",
             "schema": {
               "type": "string",
-              "format": "uuid",
-              "example": "60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3"
-            }
+              "format": "uuid"
+            },
+            "example": "0a84e628-dad7-40f4-bbc0-abeb3ddd90ea"
           }
         ],
         "requestBody": {
           "required": true,
+          "description": "Income range to verify against user's financial data",
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/IncomeInsightRequest"
               },
               "examples": {
-                "income_range": {
-                  "summary": "Income range verification",
+                "withinRange": {
+                  "summary": "Income within range",
                   "value": {
                     "income": {
                       "min": "1",
                       "max": "10000"
+                    }
+                  }
+                },
+                "outsideRange": {
+                  "summary": "Income outside range",
+                  "value": {
+                    "income": {
+                      "min": "1",
+                      "max": "2"
+                    }
+                  }
+                },
+                "equalsMin": {
+                  "summary": "Income equals minimum",
+                  "value": {
+                    "income": {
+                      "min": "9179.95",
+                      "max": "10000"
+                    }
+                  }
+                },
+                "equalsMax": {
+                  "summary": "Income equals maximum",
+                  "value": {
+                    "income": {
+                      "min": "1",
+                      "max": "9179.95"
+                    }
+                  }
+                },
+                "exactMatch": {
+                  "summary": "Income equals both min and max",
+                  "value": {
+                    "income": {
+                      "min": "9179.95",
+                      "max": "9179.95"
                     }
                   }
                 }
@@ -1021,19 +1689,16 @@
         },
         "responses": {
           "200": {
-            "description": "Successfully retrieved income insights",
+            "description": "Income insight successfully verified",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IncomeInsightResponse"
                 },
                 "examples": {
-                  "income_match": {
-                    "summary": "Income within range",
+                  "matchTrue": {
+                    "summary": "Income matches range",
                     "value": {
-                      "type": "insight",
-                      "id": "g8h9i0j1-k2l3-m4n5-o6p7-q8r9s0t1u2v3",
-                      "created": "2025-09-17T11:30:00Z",
                       "insightType": "income",
                       "data": [
                         {
@@ -1044,32 +1709,23 @@
                           "match": true,
                           "confidence": 1
                         }
-                      ],
-                      "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/g8h9i0j1-k2l3-m4n5-o6p7-q8r9s0t1u2v3"
-                      }
+                      ]
                     }
                   },
-                  "income_no_match": {
-                    "summary": "Income outside range",
+                  "matchFalse": {
+                    "summary": "Income does not match range",
                     "value": {
-                      "type": "insight",
-                      "id": "h9i0j1k2-l3m4-n5o6-p7q8-r9s0t1u2v3w4",
-                      "created": "2025-09-17T11:35:00Z",
                       "insightType": "income",
                       "data": [
                         {
                           "input": {
-                            "min": "50000",
-                            "max": "100000"
+                            "min": "1",
+                            "max": "2"
                           },
                           "match": false,
                           "confidence": 1
                         }
-                      ],
-                      "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/h9i0j1k2-l3m4-n5o6-p7q8-r9s0t1u2v3w4"
-                      }
+                      ]
                     }
                   }
                 }
@@ -1077,24 +1733,49 @@
             }
           },
           "400": {
-            "description": "Bad request - invalid parameters",
+            "description": "Bad Request - Invalid parameters or request format",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
                 },
                 "examples": {
-                  "invalid_income_format": {
-                    "summary": "Invalid income format",
+                  "missingMin": {
+                    "summary": "Missing min parameter",
                     "value": {
-                      "type": "list",
-                      "correlationId": "i0j1k2l3-m4n5-o6p7-q8r9-s0t1u2v3w4x5",
                       "data": [
                         {
-                          "type": "error",
-                          "code": "invalid-content",
-                          "title": "Invalid request content",
-                          "detail": "Income values must be numeric strings"
+                          "detail": "Parameters are not in valid format."
+                        }
+                      ]
+                    }
+                  },
+                  "missingMax": {
+                    "summary": "Missing max parameter",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameters are not in valid format."
+                        }
+                      ]
+                    }
+                  },
+                  "emptyIncome": {
+                    "summary": "Empty income object",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameters are not in valid format."
+                        }
+                      ]
+                    }
+                  },
+                  "nonNumeric": {
+                    "summary": "Non-numeric values provided",
+                    "value": {
+                      "data": [
+                        {
+                          "detail": "Parameter is not in valid format."
                         }
                       ]
                     }
@@ -1104,7 +1785,7 @@
             }
           },
           "401": {
-            "description": "Unauthorized - invalid or missing authentication",
+            "description": "Unauthorized - Invalid or missing authentication token",
             "content": {
               "application/json": {
                 "schema": {
@@ -1122,16 +1803,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Internal server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
           }
         },
         "security": [
@@ -1141,7 +1812,7 @@
         ]
       }
     },
-    "/users/{userId}/insights/expense-ratio": {
+    "/users/{userId}/insights/expense-ratio":{
       "post": {
         "tags": ["Insights"],
         "summary": "Expense Ratio Insights",
@@ -1364,11 +2035,11 @@
         },
         "security": [
           {
-            "services_token": []
+            "services_token": ["bank:accounts.basic:read", "bank:accounts.detail:read", "bank:transactions:read"]
           }
         ]
       }
-    }
+    }    
   },
   "components": {
     "securitySchemes": {
@@ -1381,11 +2052,19 @@
     "schemas": {
       "InsightListResponse": {
         "type": "object",
-        "required": ["type", "count", "size", "data", "links"],
+        "required": [
+          "type",
+          "count",
+          "size",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["list"],
+            "enum": [
+              "list"
+            ],
             "description": "Response type indicator"
           },
           "count": {
@@ -1394,7 +2073,7 @@
           },
           "size": {
             "type": "integer",
-            "description": "Number of insights in current response"
+            "description": "Number of insights in current page (max 20)"
           },
           "data": {
             "type": "array",
@@ -1409,25 +2088,41 @@
               "self": {
                 "type": "string",
                 "format": "uri",
-                "description": "Self-referencing link"
+                "description": "Link to current page"
               },
               "next": {
                 "type": "string",
                 "format": "uri",
-                "description": "Link to next page of results"
+                "description": "Link to next page (if available)"
+              },
+              "prev": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to previous page (if available)"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
         }
       },
       "Insight": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "Resource type indicator"
           },
           "id": {
@@ -1442,15 +2137,29 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["account", "balance", "identity", "income", "expense-ratio"],
-            "description": "Type of insight"
+            "enum": [
+              "account",
+              "balance",
+              "identity"
+            ],
+            "description": "Type of insight: account verification, balance verification, or identity verification"
           },
           "data": {
             "type": "array",
             "items": {
-              "type": "object"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/AccountInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/BalanceInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/IdentityInsightDataItem"
+                }
+              ]
             },
-            "description": "Array of insight data items (structure varies by insightType)"
+            "description": "Array of insight data objects, structure varies by insightType"
           },
           "links": {
             "type": "object",
@@ -1458,60 +2167,103 @@
               "self": {
                 "type": "string",
                 "format": "uri",
-                "description": "Self-referencing link to this insight"
+                "description": "Link to this specific insight"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
         }
       },
       "AccountInsightResponse": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
-            "description": "Type of response object"
+            "enum": [
+              "insight"
+            ],
+            "description": "The type of response object",
+            "example": "insight"
           },
           "id": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for this insight"
+            "description": "Unique identifier for this insight",
+            "example": "a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
           },
           "created": {
             "type": "string",
             "format": "date-time",
-            "description": "Timestamp when the insight was created"
+            "description": "Timestamp when the insight was created",
+            "example": "2025-09-17T05:18:02Z"
           },
           "insightType": {
             "type": "string",
-            "enum": ["account"],
-            "description": "Type of insight"
+            "enum": [
+              "account"
+            ],
+            "description": "The type of insight",
+            "example": "account"
           },
           "data": {
             "type": "array",
-            "description": "Array of account verification results",
+            "description": "Array of account insight data",
             "items": {
-              "$ref": "#/components/schemas/AccountInsightDataItem"
+              "$ref": "#/components/schemas/AccountInsightData"
             }
           },
           "links": {
             "type": "object",
+            "required": [
+              "self"
+            ],
             "properties": {
               "self": {
                 "type": "string",
                 "format": "uri",
-                "description": "Self-referencing link to this insight"
+                "description": "Self-referencing link to this insight",
+                "example": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
               }
-            },
-            "required": ["self"]
+            }
+          }
+        }
+      },
+      "AccountInsightData": {
+        "type": "object",
+        "required": [
+          "accountId",
+          "accountNumber"
+        ],
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the account",
+            "example": "20e91af1-f1d8-46c0-b5e5-559b2cb435b7"
+          },
+          "accountNumber": {
+            "$ref": "#/components/schemas/AccountNumberMatch"
+          },
+          "accountType": {
+            "$ref": "#/components/schemas/AccountTypeMatch"
           }
         }
       },
       "AccountInsightDataItem": {
         "type": "object",
-        "required": ["accountId"],
+        "required": [
+          "accountId"
+        ],
         "properties": {
           "accountId": {
             "type": "string",
@@ -1519,43 +2271,189 @@
             "description": "The account identifier being verified"
           },
           "accountNumber": {
-            "$ref": "#/components/schemas/VerificationResult"
+            "$ref": "#/components/schemas/VerificationResult",
+            "description": "Account number verification result"
           },
           "accountType": {
-            "$ref": "#/components/schemas/VerificationResult"
+            "$ref": "#/components/schemas/VerificationResult",
+            "description": "Account type verification result"
+          }
+        }
+      },
+      "AccountNumberMatch": {
+        "type": "object",
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "The original account number input",
+            "example": "032096658830"
+          },
+          "match": {
+            "type": "boolean",
+            "description": "Whether the account number matches",
+            "example": false
+          },
+          "confidence": {
+            "type": "number",
+            "format": "float",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence score for the match (0.0 to 1.0)",
+            "example": 0
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "type",
+          "correlationId",
+          "data"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "list"
+            ],
+            "description": "Response type for error responses",
+            "example": "list"
+          },
+          "correlationId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for tracking this request",
+            "example": "0cf1a1fe-de4a-4e01-b81e-60790a1e881b"
+          },
+          "data": {
+            "type": "array",
+            "description": "Array containing error details",
+            "items": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            }
+          }
+        }
+      },
+      "ErrorDetail": {
+        "type": "object",
+        "required": [
+          "type",
+          "code",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Type of data object",
+            "example": "error"
+          },
+          "code": {
+            "type": "string",
+            "description": "Error code identifier",
+            "example": "access-denied"
+          },
+          "title": {
+            "type": "string",
+            "description": "Human-readable error title",
+            "example": "Access denied."
+          },
+          "detail": {
+            "type": "string",
+            "description": "Detailed error message",
+            "example": "invalid token"
+          },
+          "source": {
+            "oneOf": [
+              {
+                "type": "object",
+                "nullable": true,
+                "properties": {
+                  "pointer": {
+                    "type": "string"
+                  },
+                  "parameter": {
+                    "type": "string"
+                  }
+                }
+              }
+            ],
+            "description": "Source of the error (optional)",
+            "example": null
+          }
+        }
+      },
+      "AccountTypeMatch": {
+        "type": "object",
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "The original account type input",
+            "example": "savings"
+          },
+          "match": {
+            "type": "boolean",
+            "description": "Whether the account type matches",
+            "example": false
+          },
+          "confidence": {
+            "type": "number",
+            "format": "float",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence score for the match (0.0 to 1.0)",
+            "example": 0
           }
         }
       },
       "BalanceInsightRequest": {
         "type": "object",
-        "required": ["balance"],
+        "required": [
+          "balance"
+        ],
         "properties": {
           "balance": {
             "type": "object",
-            "required": ["min"],
+            "required": [
+              "min"
+            ],
             "properties": {
               "min": {
                 "type": "string",
-                "description": "Minimum balance value as a numeric string",
-                "example": "100"
+                "description": "Minimum balance threshold (as string)",
+                "example": "1"
               },
               "max": {
                 "type": "string",
-                "description": "Maximum balance value as a numeric string",
-                "example": "1000"
+                "description": "Maximum balance threshold (as string, optional)",
+                "example": "2"
               }
             },
-            "description": "Balance range to verify"
+            "description": "Balance criteria for filtering accounts. Only 'min' is required, 'max' is optional."
           }
         }
       },
       "BalanceInsightResponse": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "Type of response object"
           },
           "id": {
@@ -1570,7 +2468,9 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["balance"],
+            "enum": [
+              "balance"
+            ],
             "description": "Type of insight"
           },
           "data": {
@@ -1589,51 +2489,19 @@
                 "description": "Self-referencing link to this insight"
               }
             },
-            "required": ["self"]
+            "required": [
+              "self"
+            ]
           }
-        }
-      },
-      "AccountBalanceData": {
-        "type": "object",
-        "required": ["accountId", "accountNumber"],
-        "properties": {
-          "accountId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the account"
-          },
-          "accountNumber": {
-            "type": "object",
-            "required": ["input", "match", "confidence"],
-            "properties": {
-              "input": {
-                "type": "object",
-                "required": ["min"],
-                "properties": {
-                  "min": {
-                    "type": "string",
-                    "description": "Minimum balance from request"
-                  },
-                  "max": {
-                    "type": "string",
-                    "description": "Maximum balance from request"
-                  }
-                }
-              },
-              "match": {
-                "type": "boolean",
-                "description": "Whether the account balance matches the criteria"
-              },
-              "confidence": {
-                "type": "number",
-                "format": "float",
-                "minimum": 0,
-                "maximum": 1,
-                "description": "Confidence score for the match result"
-              }
-            }
-          }
-        }
+        },
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ]
       },
       "IdentityInsightRequest": {
         "type": "object",
@@ -1662,11 +2530,20 @@
       },
       "IdentityInsightResponse": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["insight"],
+            "enum": [
+              "insight"
+            ],
             "description": "The type of response object"
           },
           "id": {
@@ -1681,7 +2558,9 @@
           },
           "insightType": {
             "type": "string",
-            "enum": ["identity"],
+            "enum": [
+              "identity"
+            ],
             "description": "The type of insight"
           },
           "data": {
@@ -1693,14 +2572,16 @@
           },
           "links": {
             "type": "object",
-            "required": ["self"],
             "properties": {
               "self": {
                 "type": "string",
                 "format": "uri",
                 "description": "Self-referencing link to this insight"
               }
-            }
+            },
+            "required": [
+              "self"
+            ]
           }
         }
       },
@@ -1721,9 +2602,43 @@
           }
         }
       },
+      "IdentityInsightDataItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/VerificationResult",
+            "description": "Name verification result"
+          },
+          "phones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VerificationResult"
+            },
+            "description": "Array of phone number verification results"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VerificationResult"
+            },
+            "description": "Array of email verification results"
+          },
+          "addresses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VerificationResult"
+            },
+            "description": "Array of address verification results"
+          }
+        }
+      },
       "IdentityMatch": {
         "type": "object",
-        "required": ["input", "match", "confidence"],
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
         "properties": {
           "input": {
             "type": "string",
@@ -1742,12 +2657,124 @@
           }
         }
       },
+      "AccountBalanceData": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the account"
+          },
+          "accountNumber": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "object",
+                "properties": {
+                  "min": {
+                    "type": "string",
+                    "description": "Minimum balance from request"
+                  },
+                  "max": {
+                    "type": "string",
+                    "description": "Maximum balance from request"
+                  }
+                },
+                "required": [
+                  "min"
+                ]
+              },
+              "match": {
+                "type": "boolean",
+                "description": "Whether the account balance matches the criteria"
+              },
+              "confidence": {
+                "type": "number",
+                "format": "float",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence score for the match result"
+              }
+            },
+            "required": [
+              "input",
+              "match",
+              "confidence"
+            ]
+          }
+        },
+        "required": [
+          "accountId",
+          "accountNumber"
+        ]
+      },
+      "BalanceInsightDataItem": {
+        "type": "object",
+        "required": [
+          "accountId"
+        ],
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The account identifier being verified"
+          },
+          "accountNumber": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "object",
+                "properties": {
+                  "min": {
+                    "type": "string",
+                    "description": "Minimum balance value"
+                  },
+                  "max": {
+                    "type": "string",
+                    "description": "Maximum balance value"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max"
+                ]
+              },
+              "match": {
+                "type": "boolean",
+                "nullable": true,
+                "description": "Whether the balance falls within the specified range"
+              },
+              "confidence": {
+                "type": "number",
+                "format": "float",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence score of the match (0.0 to 1.0)"
+              }
+            },
+            "required": [
+              "input",
+              "match",
+              "confidence"
+            ]
+          }
+        }
+      },
       "VerificationResult": {
         "type": "object",
-        "required": ["input"],
+        "required": [
+          "input"
+        ],
         "properties": {
           "input": {
-            "oneOf": [{ "type": "string" }, { "type": "object" }],
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object"
+              }
+            ],
             "description": "The input value being verified"
           },
           "match": {
@@ -1770,11 +2797,15 @@
       },
       "IncomeInsightRequest": {
         "type": "object",
-        "required": ["income"],
+        "required": [
+          "income"
+        ],
         "properties": {
           "income": {
             "type": "object",
-            "required": ["min"],
+            "required": [
+              "min"
+            ],
             "properties": {
               "min": {
                 "type": "string",
@@ -1793,55 +2824,41 @@
       },
       "IncomeInsightResponse": {
         "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
+        "required": [
+          "insightType",
+          "data"
+        ],
         "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["insight"],
-            "description": "Type of response object"
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for this insight"
-          },
-          "created": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Timestamp when the insight was created"
-          },
           "insightType": {
             "type": "string",
-            "enum": ["income"],
+            "enum": [
+              "income"
+            ],
             "description": "Type of insight returned"
           },
           "data": {
             "type": "array",
-            "description": "Array containing income verification result",
             "items": {
               "$ref": "#/components/schemas/IncomeInsightDataItem"
-            }
-          },
-          "links": {
-            "type": "object",
-            "required": ["self"],
-            "properties": {
-              "self": {
-                "type": "string",
-                "format": "uri",
-                "description": "Self-referencing link to this insight"
-              }
-            }
+            },
+            "description": "Array containing income verification result"
           }
         }
       },
       "IncomeInsightDataItem": {
         "type": "object",
-        "required": ["input", "match", "confidence"],
+        "required": [
+          "input",
+          "match",
+          "confidence"
+        ],
         "properties": {
           "input": {
             "type": "object",
-            "required": ["min", "max"],
+            "required": [
+              "min",
+              "max"
+            ],
             "properties": {
               "min": {
                 "type": "string",
@@ -1867,49 +2884,30 @@
           }
         }
       },
-      "ExpenseRatioInsightResponse": {
-        "type": "object",
-        "required": ["type", "id", "created", "insightType", "data", "links"],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["insight"],
-            "description": "Type of response object"
+            "ExpenseRatioInsightResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Insight"
           },
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for this insight"
-          },
-          "created": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Timestamp when the insight was created"
-          },
-          "insightType": {
-            "type": "string",
-            "enum": ["expense-ratio"],
-            "description": "Type of insight returned"
-          },
-          "data": {
-            "type": "array",
-            "description": "Array containing expense ratio result",
-            "items": {
-              "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
-            }
-          },
-          "links": {
+          {
             "type": "object",
-            "required": ["self"],
+            "required": ["insightType", "data"],
             "properties": {
-              "self": {
+              "insightType": {
                 "type": "string",
-                "format": "uri",
-                "description": "Self-referencing link to this insight"
+                "enum": ["expense-ratio"],
+                "description": "Type of insight returned"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
+                },
+                "description": "Array containing expense ratio result"
               }
             }
           }
-        }
+        ]
       },
       "ExpenseRatioInsightDataItem": {
         "type": "object",
@@ -1960,66 +2958,6 @@
             "type": "string",
             "description": "The expense value to calculate the ratio against income (ME040 Average Monthly Credit)",
             "example": "2500"
-          }
-        }
-      },
-      "ErrorResponse": {
-        "type": "object",
-        "required": ["type", "correlationId", "data"],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["list"],
-            "description": "Response type for error responses",
-            "example": "list"
-          },
-          "correlationId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for tracking this request",
-            "example": "0cf1a1fe-de4a-4e01-b81e-60790a1e881b"
-          },
-          "data": {
-            "type": "array",
-            "description": "Array containing error details",
-            "items": {
-              "$ref": "#/components/schemas/ErrorDetail"
-            }
-          }
-        }
-      },
-      "ErrorDetail": {
-        "type": "object",
-        "required": ["type", "code", "title", "detail"],
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["error"],
-            "description": "Type of data object",
-            "example": "error"
-          },
-          "code": {
-            "type": "string",
-            "description": "Error code identifier"
-          },
-          "title": {
-            "type": "string",
-            "description": "Human-readable error title"
-          },
-          "detail": {
-            "type": "string",
-            "description": "Detailed error message"
-          },
-          "source": {
-            "type": "object",
-            "nullable": true,
-            "properties": {
-              "parameter": {
-                "type": "string",
-                "description": "The parameter that caused the error"
-              }
-            },
-            "description": "Source of the error"
           }
         }
       }
