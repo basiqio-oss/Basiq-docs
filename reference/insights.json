@@ -1812,9 +1812,11 @@
         ]
       }
     },
-    "/users/{userId}/insights/expense-ratio":{
+    "/users/{userId}/insights/expense-ratio": {
       "post": {
-        "tags": ["Insights"],
+        "tags": [
+          "Insights"
+        ],
         "summary": "Expense Ratio Insights",
         "description": "Calculate and return the expense-to-income ratio. The endpoint uses the internal ME040 (Average Monthly Credit) calculation and returns the ratio as the closest percentage range measured in tens.",
         "operationId": "getExpenseRatioInsights",
@@ -2035,11 +2037,15 @@
         },
         "security": [
           {
-            "services_token": ["bank:accounts.basic:read", "bank:accounts.detail:read", "bank:transactions:read"]
+            "services_token": [
+              "bank:accounts.basic:read",
+              "bank:accounts.detail:read",
+              "bank:transactions:read"
+            ]
           }
         ]
       }
-    }    
+    }
   },
   "components": {
     "securitySchemes": {
@@ -2884,18 +2890,23 @@
           }
         }
       },
-            "ExpenseRatioInsightResponse": {
+      "ExpenseRatioInsightResponse": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Insight"
           },
           {
             "type": "object",
-            "required": ["insightType", "data"],
+            "required": [
+              "insightType",
+              "data"
+            ],
             "properties": {
               "insightType": {
                 "type": "string",
-                "enum": ["expense-ratio"],
+                "enum": [
+                  "expense-ratio"
+                ],
                 "description": "Type of insight returned"
               },
               "data": {
@@ -2911,11 +2922,16 @@
       },
       "ExpenseRatioInsightDataItem": {
         "type": "object",
-        "required": ["input", "result"],
+        "required": [
+          "input",
+          "result"
+        ],
         "properties": {
           "input": {
             "type": "object",
-            "required": ["expense"],
+            "required": [
+              "expense"
+            ],
             "properties": {
               "expense": {
                 "type": "string",
@@ -2926,7 +2942,9 @@
           },
           "result": {
             "type": "object",
-            "required": ["range"],
+            "required": [
+              "range"
+            ],
             "properties": {
               "range": {
                 "type": "string",
@@ -2952,7 +2970,9 @@
       },
       "ExpenseRatioInsightRequest": {
         "type": "object",
-        "required": ["expense"],
+        "required": [
+          "expense"
+        ],
         "properties": {
           "expense": {
             "type": "string",
