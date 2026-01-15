@@ -1811,7 +1811,235 @@
           }
         ]
       }
-    }
+    },
+    "/users/{userId}/insights/expense-ratio":{
+      "post": {
+        "tags": ["Insights"],
+        "summary": "Expense Ratio Insights",
+        "description": "Calculate and return the expense-to-income ratio. The endpoint uses the internal ME040 (Average Monthly Credit) calculation and returns the ratio as the closest percentage range measured in tens.",
+        "operationId": "getExpenseRatioInsights",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier for the user",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpenseRatioInsightRequest"
+              },
+              "examples": {
+                "typical_expense": {
+                  "summary": "Typical expense value",
+                  "value": {
+                    "expense": "2500"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved expense ratio insights",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseRatioInsightResponse"
+                },
+                "examples": {
+                  "below_10_percent": {
+                    "summary": "Expense ratio below 10%",
+                    "value": {
+                      "type": "insight",
+                      "id": "a2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2025-12-16T11:32:42Z",
+                      "insightType": "expense-ratio",
+                      "data": [
+                        {
+                          "input": {
+                            "expense": "500"
+                          },
+                          "result": {
+                            "range": "below 10%"
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
+                  },
+                  "50_to_60_percent": {
+                    "summary": "Expense ratio 50% to 60%",
+                    "value": {
+                      "type": "insight",
+                      "id": "ed17a3ce-cf15-4ff2-a9e3-26b50602bd61",
+                      "created": "2025-12-16T11:32:42Z",
+                      "insightType": "expense-ratio",
+                      "data": [
+                        {
+                          "input": {
+                            "expense": "2750"
+                          },
+                          "result": {
+                            "range": "50% to 60%"
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/ed17a3ce-cf15-4ff2-a9e3-26b50602bd61"
+                      }
+                    }
+                  },
+                  "income_exceeded": {
+                    "summary": "Expenses exceed income",
+                    "value": {
+                      "type": "insight",
+                      "id": "xyz789-uvw012-abc345",
+                      "created": "2025-12-16T11:32:42Z",
+                      "insightType": "expense-ratio",
+                      "data": [
+                        {
+                          "input": {
+                            "expense": "6000"
+                          },
+                          "result": {
+                            "range": "Income Exceeded"
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/xyz789-uvw012-abc345"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "negativeExpense": {
+                    "summary": "Negative expense value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "e2dce626-714b-4b69-add2-f84c504be64b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameter value is not valid",
+                          "source": {
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Insufficient authorization scopes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "insufficientScopes": {
+                    "summary": "Missing required scopes",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "9948dc17-4159-4999-b5d3-97fc0ac0476d",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "access-denied",
+                          "title": "Access denied",
+                          "detail": "Required scopes: bank:accounts.basic:read, bank:accounts.detail:read, bank:transactions:read"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "userNotFound": {
+                    "summary": "User not found",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "a7e7393b-ea41-49f5-a0d6-0410de2b042f",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "resource-not-found",
+                          "title": "Requested resource is not found",
+                          "detail": "Requested user does not exist"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": ["bank:accounts.basic:read", "bank:accounts.detail:read", "bank:transactions:read"]
+          }
+        ]
+      }
+    }    
   },
   "components": {
     "securitySchemes": {
@@ -2653,6 +2881,83 @@
             "maximum": 1,
             "description": "Confidence level of the match result (0 or 1)",
             "example": 1
+          }
+        }
+      },
+            "ExpenseRatioInsightResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Insight"
+          },
+          {
+            "type": "object",
+            "required": ["insightType", "data"],
+            "properties": {
+              "insightType": {
+                "type": "string",
+                "enum": ["expense-ratio"],
+                "description": "Type of insight returned"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
+                },
+                "description": "Array containing expense ratio result"
+              }
+            }
+          }
+        ]
+      },
+      "ExpenseRatioInsightDataItem": {
+        "type": "object",
+        "required": ["input", "result"],
+        "properties": {
+          "input": {
+            "type": "object",
+            "required": ["expense"],
+            "properties": {
+              "expense": {
+                "type": "string",
+                "description": "Echo of the expense value from request"
+              }
+            },
+            "description": "Echo of the input parameters"
+          },
+          "result": {
+            "type": "object",
+            "required": ["range"],
+            "properties": {
+              "range": {
+                "type": "string",
+                "enum": [
+                  "below 10%",
+                  "10% to 20%",
+                  "20% to 30%",
+                  "30% to 40%",
+                  "40% to 50%",
+                  "50% to 60%",
+                  "60% to 70%",
+                  "70% to 80%",
+                  "80% to 90%",
+                  "90% to 100%",
+                  "Income Exceeded"
+                ],
+                "description": "Expense-to-income ratio range. Calculated as: expense / ME040 (Average Monthly Credit). 'Income Exceeded' indicates ratio greater than 100%."
+              }
+            },
+            "description": "Result containing the expense ratio range"
+          }
+        }
+      },
+      "ExpenseRatioInsightRequest": {
+        "type": "object",
+        "required": ["expense"],
+        "properties": {
+          "expense": {
+            "type": "string",
+            "description": "The expense value to calculate the ratio against income (ME040 Average Monthly Credit)",
+            "example": "2500"
           }
         }
       }
