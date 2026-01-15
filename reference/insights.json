@@ -1860,8 +1860,8 @@
                   "$ref": "#/components/schemas/ExpenseRatioInsightResponse"
                 },
                 "examples": {
-                  "below_10_percent": {
-                    "summary": "Expense ratio below 10%",
+                  "0_to_10_percent": {
+                    "summary": "Expense ratio 0% to 10%",
                     "value": {
                       "type": "insight",
                       "id": "a2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
@@ -1873,7 +1873,7 @@
                             "expense": "500"
                           },
                           "result": {
-                            "range": "below 10%"
+                            "range": "0% to 10%"
                           }
                         }
                       ],
@@ -2037,11 +2037,7 @@
         },
         "security": [
           {
-            "services_token": [
-              "bank:accounts.basic:read",
-              "bank:accounts.detail:read",
-              "bank:transactions:read"
-            ]
+            "services_token": []
           }
         ]
       }
@@ -2891,34 +2887,61 @@
         }
       },
       "ExpenseRatioInsightResponse": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Insight"
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "created",
+          "insightType",
+          "data",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "insight"
+            ],
+            "description": "Type of response object"
           },
-          {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for this insight"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the insight was created"
+          },
+          "insightType": {
+            "type": "string",
+            "enum": [
+              "expense-ratio"
+            ],
+            "description": "Type of insight returned"
+          },
+          "data": {
+            "type": "array",
+            "description": "Array containing expense ratio result",
+            "items": {
+              "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
+            }
+          },
+          "links": {
             "type": "object",
             "required": [
-              "insightType",
-              "data"
+              "self"
             ],
             "properties": {
-              "insightType": {
+              "self": {
                 "type": "string",
-                "enum": [
-                  "expense-ratio"
-                ],
-                "description": "Type of insight returned"
-              },
-              "data": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
-                },
-                "description": "Array containing expense ratio result"
+                "format": "uri",
+                "description": "Self-referencing link to this insight"
               }
             }
           }
-        ]
+        }
       },
       "ExpenseRatioInsightDataItem": {
         "type": "object",
@@ -2949,7 +2972,7 @@
               "range": {
                 "type": "string",
                 "enum": [
-                  "below 10%",
+                  "0% to 10%",
                   "10% to 20%",
                   "20% to 30%",
                   "30% to 40%",
