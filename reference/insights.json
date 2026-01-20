@@ -1740,42 +1740,112 @@
                   "$ref": "#/components/schemas/ErrorResponse"
                 },
                 "examples": {
-                  "missingMin": {
-                    "summary": "Missing min parameter",
+                  "onlyMaxInBody": {
+                    "summary": "Only 'max' in body (missing min)",
                     "value": {
+                      "type": "list",
+                      "correlationId": "d586ea82-fb5f-4f8c-a0a4-7be49ffe5a4e",
                       "data": [
                         {
-                          "detail": "Parameters are not in valid format."
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameters are not in valid format.",
+                          "source": {
+                            "pointer": "income/min/max",
+                            "parameter": "min/max"
+                          }
                         }
                       ]
                     }
                   },
-                  "missingMax": {
-                    "summary": "Missing max parameter",
+                  "insanelyLongValues": {
+                    "summary": "Insanely long values",
                     "value": {
+                      "type": "list",
+                      "correlationId": "e5ef3e2f-6a69-4dca-8953-363943b194c1",
                       "data": [
                         {
-                          "detail": "Parameters are not in valid format."
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameter is not in valid format.",
+                          "source": {
+                            "pointer": "income/min",
+                            "parameter": "min"
+                          }
                         }
                       ]
                     }
                   },
                   "emptyIncome": {
-                    "summary": "Empty income object",
+                    "summary": "Empty/Missing income object",
                     "value": {
+                      "type": "list",
+                      "correlationId": "7ae8ba86-6ab8-47f6-86b4-50d1d45690ef",
                       "data": [
                         {
-                          "detail": "Parameters are not in valid format."
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameter is not in valid format.",
+                          "source": {
+                            "pointer": "income/min",
+                            "parameter": "min"
+                          }
                         }
                       ]
                     }
                   },
-                  "nonNumeric": {
-                    "summary": "Non-numeric values provided",
+                  "nonNumericString": {
+                    "summary": "Non-numeric string values",
                     "value": {
+                      "type": "list",
+                      "correlationId": "53f8da57-178d-4a21-ba28-45b5da4405fa",
                       "data": [
                         {
-                          "detail": "Parameter is not in valid format."
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Parameter is not in valid format.",
+                          "source": {
+                            "pointer": "income/min",
+                            "parameter": "min"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "integerValues": {
+                    "summary": "Integer values instead of strings",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "4696148d-58d7-4bb0-a54c-cfd0d61bcc0b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid body content."
+                        }
+                      ]
+                    }
+                  },
+                  "negativeRangeMinGreaterThanMax": {
+                    "summary": "Negative range - Min greater than Max",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "a011584c-7412-473f-bd60-f0d0a0e4554b",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "Minimum value cannot be greater than maximum value.",
+                          "source": {
+                            "pointer": "income/min/max",
+                            "parameter": "min/max"
+                          }
                         }
                       ]
                     }
@@ -1795,11 +1865,43 @@
             }
           },
           "404": {
-            "description": "User not found",
+            "description": "User not found or no active consent",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "noActiveConsent": {
+                    "summary": "User has no active consent",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "164fc6f0-7b99-4eb3-a028-77a0597dedbe",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "resource-not-found",
+                          "title": "Requested resource is not found",
+                          "detail": "User has no active consent."
+                        }
+                      ]
+                    }
+                  },
+                  "userNotFound": {
+                    "summary": "Non-existing userId",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "2bf06d23-cf45-40db-889d-1b73424979ae",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "resource-not-found",
+                          "title": "Requested resource is not found",
+                          "detail": "Requested user does not exist."
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
