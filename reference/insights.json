@@ -2040,20 +2040,248 @@
                   "$ref": "#/components/schemas/ErrorResponse"
                 },
                 "examples": {
-                  "negativeExpense": {
-                    "summary": "Negative expense value",
+                  "insanelyLongExpense": {
+                    "summary": "Insanely long expense value",
                     "value": {
                       "type": "list",
-                      "correlationId": "e2dce626-714b-4b69-add2-f84c504be64b",
+                      "correlationId": "bde1a9ce-75e3-45aa-acf1-1299f03baf03",
                       "data": [
                         {
                           "type": "error",
                           "code": "parameter-not-valid",
                           "title": "Parameter value is not valid",
-                          "detail": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
                           "source": {
+                            "pointer": "expense-ratio",
                             "parameter": "expense"
                           }
+                        }
+                      ]
+                    }
+                  },
+                  "emptyString": {
+                    "summary": "Empty string as expense value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "8d2e49b6-db44-42b5-9fbe-6a68d834c71c",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "emptyBody": {
+                    "summary": "Empty body",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "bf0f42e5-da24-49fe-8ddd-dd68a9bfba20",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "zeroValue": {
+                    "summary": "Zero value expense",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "23aa3322-a52f-44ce-af4e-45a25590decd",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "negativeValue": {
+                    "summary": "Negative value expense",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "fe3e46cf-e376-4325-9a39-2318ca356ca7",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "nanValue": {
+                    "summary": "NaN as expense value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "c4ad43f3-703c-4472-9fc3-a31aea7c62eb",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "infinityValue": {
+                    "summary": "Infinity as expense value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "f0b78e34-6cb9-4d5d-a4b6-6ffbc5579272",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "disallowedCharacters": {
+                    "summary": "Disallowed character as a value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "ddbc7bf5-6db4-44a3-8dfa-eed450d0b040",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Input validation failed: field with key 'expense' contains disallowed characters"
+                        }
+                      ]
+                    }
+                  },
+                  "invalidJson": {
+                    "summary": "Invalid JSON",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "b6b0bb95-2578-4a3f-972c-310c456ef461",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Input validation failed: invalid JSON"
+                        }
+                      ]
+                    }
+                  },
+                  "booleanValue": {
+                    "summary": "Boolean value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "34638a47-8471-41a4-848e-1a60146de8cd",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid body content."
+                        }
+                      ]
+                    }
+                  },
+                  "nonNumericString": {
+                    "summary": "Non-numeric string",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "bc774e3a-b1d3-4ef3-b0d2-50886e2d1192",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "integerValue": {
+                    "summary": "Integer expense value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "d04435fe-f3e0-42ac-a633-3cfd5ad8aa4e",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "Invalid body content."
+                        }
+                      ]
+                    }
+                  },
+                  "specialCharacters": {
+                    "summary": "Special characters as expense value",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "c75fe1d7-a390-4768-89fd-0993f1999393",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "parameter-not-valid",
+                          "title": "Parameter value is not valid",
+                          "detail": "The provided expense parameter is in invalid format",
+                          "source": {
+                            "pointer": "expense-ratio",
+                            "parameter": "expense"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "userNoTransactions": {
+                    "summary": "Valid body but user without transactions",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "3088f3f9-400d-4417-b8b4-4245e1e5f5f6",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-content",
+                          "title": "Invalid request content",
+                          "detail": "User has no transactions"
                         }
                       ]
                     }
@@ -2068,6 +2296,40 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "wrongToken": {
+                    "summary": "Wrong token used (expired)",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "25af36e7-c99c-4725-8d9c-eac33fd3ce3e",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "access-denied",
+                          "title": "Access denied.",
+                          "detail": "token has expired",
+                          "source": null
+                        }
+                      ]
+                    }
+                  },
+                  "withoutToken": {
+                    "summary": "Without token",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "aabdfdc0-1f43-4cf7-a896-fbe121f24d09",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "invalid-authorization-token",
+                          "title": "Invalid authorization token.",
+                          "detail": "",
+                          "source": null
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
@@ -2100,24 +2362,54 @@
             }
           },
           "404": {
-            "description": "User not found",
+            "description": "User not found or no active consent",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
                 },
                 "examples": {
-                  "userNotFound": {
-                    "summary": "User not found",
+                  "userNotFoundNonExisting": {
+                    "summary": "Valid body but with wrong/non existing userId",
                     "value": {
                       "type": "list",
-                      "correlationId": "a7e7393b-ea41-49f5-a0d6-0410de2b042f",
+                      "correlationId": "b35f1203-47b0-49d6-9271-10f594549f7a",
                       "data": [
                         {
                           "type": "error",
                           "code": "resource-not-found",
                           "title": "Requested resource is not found",
-                          "detail": "Requested user does not exist"
+                          "detail": "Requested user does not exist."
+                        }
+                      ]
+                    }
+                  },
+                  "noActiveConsent": {
+                    "summary": "Request after removing consent",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "73892179-226e-408d-ba3d-0b9e311adad5",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "resource-not-found",
+                          "title": "Requested resource is not found",
+                          "detail": "User has no active consent."
+                        }
+                      ]
+                    }
+                  },
+                  "userRemoved": {
+                    "summary": "Request after removing user",
+                    "value": {
+                      "type": "list",
+                      "correlationId": "121a3d45-5371-477e-9de8-43e12ff2ef5a",
+                      "data": [
+                        {
+                          "type": "error",
+                          "code": "resource-not-found",
+                          "title": "Requested resource is not found",
+                          "detail": "Requested user does not exist."
                         }
                       ]
                     }
