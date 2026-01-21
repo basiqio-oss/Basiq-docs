@@ -2299,7 +2299,7 @@
                 },
                 "examples": {
                   "wrongToken": {
-                    "summary": "Wrong token used (expired)",
+                    "summary": "Expired token used",
                     "value": {
                       "type": "list",
                       "correlationId": "25af36e7-c99c-4725-8d9c-eac33fd3ce3e",
