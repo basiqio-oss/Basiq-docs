@@ -19,12 +19,12 @@ metadata:
 
 {/* Note to editors: Consider moving Recent Releases to Basics as they’re demoted */}
 
-## Recent Releases;
+## Recent Releases
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolTile header={<span>Payees API <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>}  href="https://api.basiq.io/reference/payees" icon="fa-duotone fa-solid fa-users" text="Manage and retrieve payee information with support for multiple payee types including domestic, biller, international, and digital wallet payments." />
+  <CoolTile header={<span>Payees API <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>} href="https://api.basiq.io/reference/payees" icon="fa-duotone fa-solid fa-users" text="Manage and retrieve payee information with support for multiple payee types including domestic, biller, international, and digital wallet payments." />
 
-  <CoolTile header={<span>Expense Ratio Insights <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>}  href="https://api.basiq.io/reference/getexpenseratioinsights" icon="fa-duotone fa-solid fa-chart-pie" text="Analyze spending patterns and expense distribution across categories with detailed financial insights." />
+  <CoolTile header={<span>Expense Ratio Insights <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>} href="https://api.basiq.io/reference/getexpenseratioinsights" icon="fa-duotone fa-solid fa-chart-pie" text="Analyze spending patterns and expense distribution across categories with detailed financial insights." />
 
   <CoolTile header={<span>Verify Income Insights <span style={{ color: '#f59e0b', fontSize: '0.8em' }}>NEW</span></span>} href="https://api.basiq.io/reference/verifyincomeinsight" icon="fa-duotone fa-solid fa-money-bill-wave" text="Verifies if a user’s income falls within a specified range using a required min and optional max value." />
 
