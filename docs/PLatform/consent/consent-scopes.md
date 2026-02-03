@@ -10,7 +10,7 @@ metadata:
 next:
   description: ''
 ---
-Here we provide a breakdown on the configurable scopes for your very own customisable consent policy. You can see the **name and description**, the **API endpoints** where it returns the data, as well as what **specific data points** are fetched with each one. 
+Here we provide a breakdown on the configurable scopes for your very own customisable consent policy. You can see the **name and description**, the **API endpoints** where it returns the data, as well as what **specific data points** are fetched with each one.
 
 <Table align={["left","left","left","left"]}>
   <thead>
@@ -40,9 +40,9 @@ Here we provide a breakdown on the configurable scopes for your very own customi
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API  
+        Basiq API
 
-        * `/connections`CDR Scope  
+        * `/connections`CDR Scope
         * `common:customer.basic:read`
       </td>
 
@@ -62,9 +62,9 @@ Here we provide a breakdown on the configurable scopes for your very own customi
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API  
+        Basiq API
 
-        * `/connections`CDR Scope  
+        * `/connections`CDR Scope
         * `common:customer.detail:read`
       </td>
 
@@ -88,9 +88,9 @@ Here we provide a breakdown on the configurable scopes for your very own customi
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API  
+        Basiq API
 
-        * `/identities`CDR Scope  
+        * `/identities`CDR Scope
         * `common:customer.basic:read`
       </td>
 
@@ -116,10 +116,10 @@ Here we provide a breakdown on the configurable scopes for your very own customi
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API\
-        `/identities`  
+        Basiq API  
+        `/identities`
 
-        CDR Scope  
+        CDR Scope
 
         * `common:customer.detail:read`
       </td>
@@ -145,24 +145,24 @@ Here we provide a breakdown on the configurable scopes for your very own customi
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        Account name, type and balance 
+        Account name, type and balance
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API  
+        Basiq API
 
-        * `/accounts`CDR Scope  
+        * `/accounts`CDR Scope
         * `bank:accounts.basic:read`
       </td>
 
       <td style={{ textAlign: "left" }}>
-        This scope allows access to basic information of the customer's accounts.  
+        This scope allows access to basic information of the customer's accounts.
 
-        Includes simple account information including balance. This scope does not include account numbers, product information or transaction data.  
+        Includes simple account information including balance. This scope does not include account numbers, product information or transaction data.
 
-        **Account number in this scope is masked**   
+        **Account number in this scope is masked**
 
-        **Account name, type and balance are required.**\
+        **Account name, type and balance are required.**  
         ![](https://files.readme.io/dca0227-permissions.png)
       </td>
 
@@ -176,15 +176,15 @@ Here we provide a breakdown on the configurable scopes for your very own customi
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        Account numbers and features  
+        Account numbers and features
 
-        *requires Account name, type and balance scope*
+        _requires Account name, type and balance scope_
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API  
+        Basiq API
 
-        * `/accounts`CDR Scope  
+        * `/accounts`CDR Scope
         * `bank:accounts.detail:read`
       </td>
 
@@ -208,9 +208,9 @@ Here we provide a breakdown on the configurable scopes for your very own customi
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Basiq API  
+        Basiq API
 
-        * `/transactions`CDR Scope  
+        * `/transactions`CDR Scope
         * `bank:transactions:read`
       </td>
 
@@ -226,5 +226,30 @@ Here we provide a breakdown on the configurable scopes for your very own customi
         * Who you have sent money to and received money from
       </td>
     </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Bank Payee Data
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Basiq API   
+
+        * `/payees` CDR Scope  
+        * `bank:payees:read`
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        This scope allows access to payee information stored by the customer.
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        * Billers
+        * international beneficiaries
+        * domestic payees.
+      </td>
+    </tr>
   </tbody>
 </Table>
+
+<br />
