@@ -66,7 +66,7 @@ An example of a webhook messages is shown below for the event `user.created`:
     "eventTypeId": "user.created",
     "eventId": "f2f567b6bbb213c40a2875105327bb37b44a38ab8861b64074e2978b98d1f7c7",
     "links": {
-      "event": "https://au-api.basiq.io/events/44a85f64-5717-4562-b3fc-2c963f66af44",
+      "event": "https://au-api.basiq.io/events/f2f567b6bbb213c40a2875105327bb37b44a38ab8861b64074e2978b98d1f7c7",
       "eventEntity": "https://au-api.basiq.io/users/88a85f64-5717-4562-b3fc-2c963f66af88"
     }
 }
