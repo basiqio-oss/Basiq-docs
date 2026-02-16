@@ -78,7 +78,6 @@
                     "value": {
                       "type": "list",
                       "count": 1,
-                      "size": 1,
                       "data": [
                         {
                           "type": "insight",
@@ -2451,7 +2450,6 @@
         "required": [
           "type",
           "count",
-          "size",
           "data",
           "links"
         ],
@@ -2466,10 +2464,6 @@
           "count": {
             "type": "integer",
             "description": "Total number of insights available"
-          },
-          "size": {
-            "type": "integer",
-            "description": "Number of insights in current page (max 20)"
           },
           "data": {
             "type": "array",
