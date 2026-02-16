@@ -24,7 +24,7 @@ To create a webhook endpoint, you can use any web framework or platform that can
 
 To subscribe to webhook events, you will need to [create a webhook](https://api.basiq.io/reference/addwebhook) subscription in our system. You can do this by sending a POST request to the /notifications/webhooks endpoint with the following information:
 
-URL: The URL of your webhook endpoint\
+URL: The URL of your webhook endpoint  
 Events: The types of events you want to receive notifications for
 
 Once you have created a webhook subscription, we will send HTTP POST requests to your webhook endpoint whenever an event of the subscribed type occurs in our system.
@@ -43,20 +43,20 @@ The payload will include information such as the [event type](https://api.basiq.
 
 To manage your webhook subscriptions, you can send requests to the /notifications/webhooks endpoint. You can use the following methods to manage your subscriptions:
 
-GET: Retrieve a list of your current webhook subscriptions\
+GET: Retrieve a list of your current webhook subscriptions  
 POST: Create a new webhook subscription
 
 You can also send requests to the /notifications/webhooks/\{webhookId} endpoint to manage a specific webhook subscription. This endpoint supports the following methods:
 
-[GET](https://api.basiq.io/reference/listappwebhooks): Retrieve information about a specific webhook subscription\
-[POST](https://api.basiq.io/reference/updatewebhook): Update the details of a specific webhook subscription\
+[GET](https://api.basiq.io/reference/listappwebhooks): Retrieve information about a specific webhook subscription  
+[POST](https://api.basiq.io/reference/updatewebhook): Update the details of a specific webhook subscription  
 [DELETE](https://api.basiq.io/reference/deletewebhook): Delete a specific webhook subscription
 
 ## Webhook Messages
 
-When a webhook is triggered for a certain event we will send you `message`. You can query and retrieve these messages by calling the APIs through the url: 
+When a webhook is triggered for a certain event we will send you `message`. You can query and retrieve these messages by calling the APIs through the url:
 
-GET `/notifications/webhooks/{webhookId}/messages/`: [Retrieve a list of your current webhook messages](https://api.basiq.io/reference/listmessages)\
+GET `/notifications/webhooks/{webhookId}/messages/`: [Retrieve a list of your current webhook messages](https://api.basiq.io/reference/listmessages)  
 GET `/notifications/webhooks/{webhookId}/messages/{messageId}`: [Retrieve a specific webhook message](https://api.basiq.io/reference/getwebhookmessage)
 
 An example of a webhook messages is shown below for the event `user.created`:
@@ -64,7 +64,7 @@ An example of a webhook messages is shown below for the event `user.created`:
 ```json User created webhook message
 {
     "eventTypeId": "user.created",
-    "eventId": "44a85f64-5717-4562-b3fc-2c963f66af44",
+    "eventId": "f2f567b6bbb213c40a2875105327bb37b44a38ab8861b64074e2978b98d1f7c7",
     "links": {
       "event": "https://au-api.basiq.io/events/44a85f64-5717-4562-b3fc-2c963f66af44",
       "eventEntity": "https://au-api.basiq.io/users/88a85f64-5717-4562-b3fc-2c963f66af88"
@@ -76,8 +76,8 @@ An example of a webhook messages is shown below for the event `user.created`:
 
 To test your webhook endpoint, you can send a test webhook request by sending a POST request to the [/notifications/messages/test endpoint](https://api.basiq.io/reference/testmessage) with the following information:
 
-URL: The URL of your webhook endpoint\
-Events: The types of events you want to test\
+URL: The URL of your webhook endpoint  
+Events: The types of events you want to test  
 This will send a test webhook request to your endpoint with sample data for the selected event types.
 
 > 📘 Webhooks
