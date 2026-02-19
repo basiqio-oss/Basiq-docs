@@ -61,7 +61,7 @@ For businesses registered prior to 1 November 2021, Westpac will require submitt
 
 **Step-by-step**
 
-* Administrators need to sign into Westpac Online Banking and navigate to the Business network profile\
+* Administrators need to sign into Westpac Online Banking and navigate to the Business network profile  
   Select Administration > User administration
 * Select the name of the User that you want to be a Nominated Representative (i.e. permission to data share on behalf of the Organisation)
 * Scroll down the page to the heading ‘Open Banking data sharing’ and select Manage data sharing
@@ -74,7 +74,7 @@ In the event that frontline bank staff do not know about CDR, apart from escalat
 
 ## Testing CDR Data Sharing
 
-Businesses can now test their accounts via [myCDR](https://mycdrdata.cds.cuscal.com.au/) to explore their CDR data in the Business Connecting Consumer (BCC) flow. [myCDR](https://mycdrdata.cds.cuscal.com.au/) is a testing tool that allows you to review your data. Once you’ve gone through this process, connect with our sales team to start sharing your data. Visit [myCDR](https://mycdrdata.cds.cuscal.com.au/) Data to begin.
+Businesses can explore their CDR data in the Business Connecting Consumer (BCC) flow. To start sharing your data, please contact our sales team to get access and guidance on testing.
 
 > 📘 Note:
 >
