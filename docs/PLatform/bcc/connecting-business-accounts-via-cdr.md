@@ -74,7 +74,7 @@ In the event that frontline bank staff do not know about CDR, apart from escalat
 
 ## Testing CDR Data Sharing
 
-Businesses can explore their CDR data in the Business Connecting Consumer (BCC) flow. To start sharing your data, please contact our sales team to get access and guidance on testing.
+Businesses can explore their CDR data in the Business Connecting Consumer (BCC) flow. To start sharing your data, please contact our support team to get access and guidance on testing.
 
 > 📘 Note:
 >
