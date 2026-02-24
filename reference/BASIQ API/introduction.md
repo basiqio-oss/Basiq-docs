@@ -1,9 +1,8 @@
 ---
 title: Introduction to Basiq API
 excerpt: >-
-  Basiq is the API platform trusted by 200+ fintechs and banks. Access real-time
-  financial data, enrich transactions, and unlock powerful insights, all with
-  customer consent.
+  Basiq is a Consumer Data Right accredited API platform that provides the
+  building blocks of financial services.
 deprecated: false
 hidden: false
 icon: fad fa-hand-wave
