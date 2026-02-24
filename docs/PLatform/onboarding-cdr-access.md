@@ -9,312 +9,386 @@ hidden: true
 metadata:
   robots: index
 ---
-# Onboarding with the Basiq API & Accessing CDR
+# Your Journey to Going Live with Basiq
 
-Before you start integrating with Basiq, it's critical to understand the complete onboarding journey. This isn't just an API integration—it's a structured process that includes security assessments, compliance verification, and due diligence.
+You've decided to integrate with Basiq. Great. But before you task your engineering team with building, you need to know something critical:
 
-**This page exists to set expectations upfront.** Many companies discover mid-integration that there are requirements they weren't aware of. We want you to have full clarity before you invest engineering time.
+**Getting from "let's do this" to "we're live with real data" isn't a straight line.**
+
+Most companies don't realize this until they're 3 weeks into integration. This page exists to show you the real journey—so you can plan accordingly.
 
 ***
 
-## The Reality: What You Need to Know
+## The Thing Nobody Tells You
+
+You're about to discover that integrating with Basiq isn't just about connecting an API. It's about security assessments, compliance verification, commercial discussions, and regulatory coordination. It sounds heavy because it is. But there's a reason.
+
+Every piece of data flowing through Basiq is someone's financial information. Transactions, account balances, identity data. That's not light stuff. The process exists to ensure it's handled properly.
+
+**Here's what we're going to walk through:**
+
+The realistic steps from today to go-live, who gets involved at each stage, where surprises typically happen, and how long this actually takes.
+
+***
+
+## Week 1-2: The First Conversation (The Qualification Phase)
+
+Your first call with our team isn't about APIs. It's about reality-checking.
+
+**We're asking:**
+
+* Are you ACCC-accredited, or on the path to accreditation? (This is the biggest one. If the answer is "we don't know," that's where the conversation starts.)
+* What does your compliance infrastructure look like?
+* What's your timeline actually looking like?
+* What are we charging you, and does that fit your budget?
+
+**Why this matters to you:**
+
+If you don't have ACCC accreditation, live data access isn't possible. Period. But here's the thing—you can still build in Sandbox while pursuing accreditation. We need to discuss this openly so you don't waste 3 months of engineering time on something you can't go live with.
 
 <Callout theme="default">
-  **You cannot move directly from "building" to "live"** without completing several prerequisite steps. The timeline from starting integration to accessing live CDR data typically ranges from 2-6 months depending on your company size and complexity.
-
-  Without this clarity upfront, teams often:
-
-  * Begin full integration without completing prerequisites
-  * Discover mid-build that they need ACCC accreditation
-  * Reach go-live only to find commercial terms need discussion
-  * Experience frustration when timelines don't align with expectations
-
-  This page eliminates that confusion.
+  **This is where frustrated founders often say later: "I wish I'd known this before we started."** We're telling you now. If you're not accredited, that's the first item on your to-do list. We can help, but it needs to happen before live access is possible.
 </Callout>
+
+If everything checks out—accreditation is on track, budget aligns, timeline is realistic—you move forward.
+
+**Who's involved:** You (founders/business + legal), Basiq (business development + compliance)
+
+**How long:** 1-2 weeks of conversations and approvals
 
 ***
 
-## The Four Onboarding Stages
+## Week 2-4: Your Team Gets Started (The Build Planning Phase)
 
-### Stage 1: Prerequisites & Due Diligence (Weeks 1-2)
+Now your engineers get involved. This is where the actual work begins.
 
-Before any integration begins, you must confirm you meet baseline requirements. This is where many organizations realize they need additional setup or can't proceed yet.
+**What your team is doing:**
 
-**What we assess:**
+* Getting Sandbox API credentials (instant)
+* Reading our API docs and integrating documentation
+* Drawing diagrams of how Basiq fits into your system
+* Writing the code that'll handle consent flows, API calls, error handling
+* Setting up secure token management (you're handling customer data now)
 
-* [ ] ACCC Data Recipient Accreditation status (or pathway to accreditation)
-* [ ] Compliance infrastructure (data handling, privacy, security)
-* [ ] Technical capability (API integration experience, secure infrastructure)
-* [ ] Commercial alignment (pricing tier, feature access, SLA requirements)
+**Why this takes longer than you think:**
 
-**Who's involved:** You (business & legal), Basiq (business development & compliance)
-
-**Why this matters:** This step prevents wasted engineering time on both sides. If accreditation isn't complete, you can still build in Sandbox, but live access won't be possible until it's done.
+Most teams estimate this at 1 week. It usually takes 2-4 weeks for smaller teams, 6-8+ weeks for larger organizations. Why? Because you're doing it right. You're building error handling (what happens when the API is down?), logging (how will you debug issues?), monitoring (how will you know if something breaks?).
 
 <Callout theme="default">
-  **Not accredited yet?** No problem. You can begin sandbox integration in parallel while pursuing accreditation. However, we need to discuss this openly upfront to align timelines.
+  **Use Sandbox aggressively here.** This isn't a "quick test" environment. It's where you learn the API, find edge cases, and build properly. Teams that rush through Sandbox always regret it in production.
 </Callout>
+
+Your engineering team is mostly on their own here, but you've got Basiq support via email and Slack if things get stuck.
+
+**Who's involved:** Your engineering team (primary), Basiq (support role)
+
+**How long:** 2-4 weeks (fintech) to 6-8+ weeks (enterprise)
 
 ***
 
-### Stage 2: Architecture & Build Planning (Weeks 2-4 for fintech | Weeks 2-8 for enterprise)
+## Week 2-3: The Security Audit (Happening Simultaneously)
 
-Now that we've confirmed you're ready to proceed, we move to the technical build phase.
+While your team is building, something else is happening that often surprises people.
+
+**The Basiq security team is asking your security/engineering leadership detailed questions:**
+
+* How do you encrypt customer data?
+* Who has access to it and why?
+* What's your process if there's a data breach?
+* How do you audit who's touched customer data?
+* Any third-party tools processing this data? We need to review those.
+
+**Why this takes time:**
+
+This isn't a checkbox exercise. It's a real conversation with your technical and security team. If your security person is in-between roles, or if you don't have one, this phase extends. If gaps are found (and often they are), you need to fix them.
+
+<Callout theme="default">
+  **This is where most projects slip.** Not because it's impossible to fix, but because it requires the right people to be available and engaged. Your CTO or lead engineer needs to be in these conversations.
+</Callout>
+
+By the end of this phase, we've either:
+
+* Given you a green light to proceed
+* Identified gaps and worked with you on fixes (which might add 2-4 weeks)
+
+**Who's involved:** Your security/engineering team + Basiq security team
+
+**How long:** 1-2 weeks (if your team is responsive) to 4+ weeks (if gaps need fixing)
+
+***
+
+## Week 4-6: Testing & Final Push (The Integration Testing Phase)
+
+Your build is complete. Time to make sure it actually works.
 
 **What happens:**
 
-* API credentials generated for Sandbox
-* Your team reviews Basiq API documentation
-* Integration architecture documented (how Basiq fits into your systems)
-* Data flow diagrams created
-* Development begins in non-production environments
+* End-to-end testing in Sandbox (real scenarios, not just happy paths)
+* Load testing (your system shouldn't crash at 1000 users)
+* Error scenario testing (what happens when Basiq is down? When API requests time out?)
+* Monitoring & alerting configured (because you can't manage what you can't see)
+* Go-live checklist reviewed (do you have all the pieces?)
 
-**Who's involved:** Your engineering team (primarily)
+**Common breakdown points:**
 
-**Your responsibility:**
-
-* Design how consent flows through your application
-* Integrate core Basiq endpoints (accounts, transactions, identity, etc.)
-* Implement secure token management
-* Build error handling for API failures
-
-**Basiq support:** Docs, API guides, developer support via email/Slack
+* "We didn't build retry logic" → Your app crashes when the API hiccups
+* "We're not logging API calls" → When something breaks, you have no idea what happened
+* "We didn't test rate limits" → You hit API limits in production and weren't prepared
+* "Security assessment revealed gaps" → You're now fixing things while trying to go live
 
 <Callout theme="default">
-  **Sandbox is production-grade.** The only difference is you're working with test data. Use this phase to build properly—error handling, logging, monitoring, rate limit handling.
+  **This is where good preparation in Week 2-4 pays off.** Teams that built properly in Sandbox rarely hit surprises here.
 </Callout>
+
+**Who's involved:** Your team (testing, monitoring setup) + Basiq (production credentials provisioning)
+
+**How long:** 1-2 weeks of focused testing
 
 ***
 
-### Stage 3: CDR Security Assessment (1-2 weeks, concurrent with Stage 2)
+## Weeks 4-6 (Parallel): The CDR Registry & ACCC Coordination
 
-This is the critical gating item that often surprises teams. We conduct a detailed security and compliance assessment with your technical team.
+While you're testing, something else is happening behind the scenes.
 
-**What we review:**
-
-* Data encryption at rest and in transit
-* Access control—who has access to customer data and why
-* Your incident response & breach notification procedures
-* Third-party vendor risk (any tools touching customer data)
-* Audit trail capabilities (can you log who accessed what data when?)
-
-**Who's involved:** Basiq security team + your Dev/SecOps/CTO
-
-**Why 1-2 weeks?** The timing depends on your team's availability. We ask detailed questions; you need the right people to answer them thoroughly.
-
-**Important:** This assessment isn't optional—it's mandatory for live access. It's also not a pass/fail; if gaps are found, we work with you to address them.
+Basiq is working with ACCC to register your organization for live CDR access. This is regulatory coordination, not technical work. It just takes time.
 
 <Callout theme="default">
-  **This is where timelines often slip.** If your security person is unavailable or if critical gaps are discovered, this phase can extend. Plan accordingly.
+  **This is automatic if accreditation is complete.** If it's not, this phase waits. That's why accreditation status matters so much upfront.
 </Callout>
 
-***
+**Who's involved:** Basiq + ACCC (you don't need to be hands-on here, but you're in the loop)
 
-### Stage 4: Integration Testing & Go-Live (Weeks 3-6 into the process)
-
-Once architecture is solid and security assessment is progressing, you move to serious testing.
-
-**What happens:**
-
-* Full end-to-end testing in Sandbox
-* Load testing (how does your system handle 1000+ concurrent users?)
-* Error scenarios tested (network timeouts, rate limits, API downtime)
-* Monitoring & alerting configured in production
-* Go-live checklist completed
-
-**Common blockers at this stage:**
-
-* Logging/monitoring not configured (you can't debug without logs)
-* Rate limiting not handled (your app crashes when API rate limits are hit)
-* No retry logic (transient failures aren't retried)
-* Security gaps discovered during assessment (requires rework)
+**How long:** 2-4 weeks depending on ACCC processing
 
 ***
 
-## Timeline by Company Size
+## Week 6-8: You're Live
 
-The journey length depends heavily on your organization's complexity and accreditation status.
+All pieces aligned. Accreditation verified. Security assessment green-lit. Integration tested. ACCC registration complete.
+
+Your live API credentials are provisioned. Your data is flowing. You're live.
+
+**But here's the thing:** Going live isn't the end. It's the beginning of monitoring, supporting customers through it, and handling the inevitable questions that come up.
+
+***
+
+## Timeline Reality Check by Company Size
+
+Here's what this actually looks like in practice:
 
 <Tabs>
   <Tab title="Small Fintech (10-30 people)">
-    **Typical timeline: 2-4 weeks to live CDR access**
+    **Real timeline: 4-6 weeks to go live**
 
-    **Phase breakdown:**
+    **Week 1-2:** Qualification call, accreditation check, commercial approval
+    **Week 2-4:** Build in Sandbox, security assessment conversations
+    **Week 4-6:** Final testing, credential provisioning
+    **Week 4-6 (parallel):** ACCC coordination
 
-    * Prerequisites & due diligence: 1 week
-    * Build ETA & architecture: 1-2 weeks
-    * Integration & development: 2 weeks
-    * CDR security assessment: 1 week (concurrent)
-    * CDR setup with ACCC: 2 weeks (concurrent)
+    **Why this timeline works:**
 
-    **Key assumption:** You have ACCC accreditation or are on the path to it.
+    * Smaller teams move faster, fewer approval layers
+    * Direct communication with security person
+    * Assumes accreditation is already complete or very close
 
-    **Risk factors:**
+    **Where it usually slips:**
 
-    * Security assessment delayed if key person unavailable
-    * ACCC approval slower than expected
+    * Accreditation not actually complete (adds 4-8 weeks minimum)
+    * Security person unavailable during assessment
+    * ACCC processing slower than expected
   </Tab>
 
   <Tab title="Mid-Market (50-200 people)">
-    **Typical timeline: 2-3 months to live CDR access**
+    **Real timeline: 8-12 weeks to go live**
 
-    **Phase breakdown:**
+    **Week 1-2:** Qualification, accreditation verification, legal review
+    **Week 2-6:** Build in Sandbox, security/compliance assessment
+    **Week 6-10:** Testing, integration refinement, monitoring setup
+    **Week 4-10 (parallel):** ACCC coordination
+    **Week 10-12:** Final go-live prep and credential provisioning
 
-    * Prerequisites & due diligence: 1-2 weeks
-    * Build ETA & architecture: 3-4 weeks
-    * Integration & development: 3-4 weeks
-    * CDR security assessment: 1-2 weeks (concurrent)
-    * CDR setup with ACCC: 2-3 weeks (concurrent)
+    **Why this takes longer:**
 
-    **Key assumption:** Moderate integration complexity, security assessment requires cross-functional coordination.
+    * Multiple approval layers (legal, security, engineering leadership)
+    * More complex integrations (legacy systems, multiple data sources)
+    * Security assessment takes longer (more people to coordinate)
 
-    **Risk factors:**
+    **Where it usually slips:**
 
-    * Accreditation process slower than expected
-    * Security gaps discovered during assessment requiring rework
-    * Integration complexity higher than anticipated
+    * Accreditation takes longer than expected
+    * Security gaps requiring rework
+    * Integration complexity underestimated
   </Tab>
 
   <Tab title="Enterprise (500+ people)">
-    **Typical timeline: 3-6 months to live CDR access**
+    **Real timeline: 3-6 months to go live**
 
-    **Phase breakdown:**
+    **Week 1-3:** Qualification, accreditation confirmation, extensive legal/compliance review
+    **Week 2-10:** Build Phase 1 + security assessment Phase 1
+    **Week 8-16:** Build Phase 2 + security assessment Phase 2 + vendor reviews
+    **Week 16-20:** Integration testing, monitoring, compliance final review
+    **Week 4-20 (parallel):** ACCC coordination and regulatory verification
+    **Week 20-24:** Final go-live prep
 
-    * Prerequisites & due diligence: 2-3 weeks
-    * Build ETA & architecture: 6-8 weeks
-    * Integration & development: 6-8 weeks
-    * CDR security assessment: 2-3 weeks (concurrent)
-    * CDR setup with ACCC: 3-4 weeks (concurrent)
-    * Additional: Vendor risk assessments, policy updates, training
+    **Why this takes significantly longer:**
 
-    **Key assumption:** High integration complexity, multiple systems, extensive compliance requirements.
+    * Enterprise security & compliance are thorough (as they should be)
+    * Multiple systems integration (not just one API)
+    * Vendor risk assessments (any third-party tools touching data)
+    * Internal change management & approvals
 
-    **Risk factors:**
+    **Where it slips:**
 
-    * Internal approval processes
-    * Accreditation still in progress
+    * Accreditation still being processed
     * Major security gaps requiring significant rework
     * Multiple rounds of assessment needed
+    * Internal stakeholder alignment
   </Tab>
 </Tabs>
 
 ***
 
-## What Happens at Each Stage: Ownership & Responsibility
+## What Actually Changes When You Go Live
 
-This table clarifies who does what to prevent confusion:
+You might be thinking: "This all seems like a lot for an API integration."
 
-| Stage                   | Activity                        | Basiq Owns                | You Own                        | Timeline  |
-| ----------------------- | ------------------------------- | ------------------------- | ------------------------------ | --------- |
-| **Prerequisites**       | ACCC accreditation verification | Compliance review         | Obtaining accreditation        | 1-3 weeks |
-| **Prerequisites**       | Commercial terms discussion     | Proposal & pricing        | Approval & sign-off            | 1-2 weeks |
-| **Build ETA**           | API credentials generation      | Provisioning              | Integration setup              | 1 day     |
-| **Build ETA**           | Architecture review             | Guidance & best practices | Design & implementation        | 1-2 weeks |
-| **Integration**         | API documentation & support     | Support & updates         | Building & testing             | 2-4 weeks |
-| **Integration**         | Sandbox support                 | Troubleshooting           | Integration work               | Ongoing   |
-| **Security Assessment** | Assessment process              | Conducting assessment     | Answering questions thoroughly | 1-2 weeks |
-| **Security Assessment** | Gap remediation                 | Advisory                  | Implementation                 | Variable  |
-| **CDR Setup**           | ACCC registration               | Coordination with ACCC    | Providing accreditation proof  | 2-4 weeks |
-| **Go-Live**             | Production credentials          | Provisioning              | Configuration & testing        | 1 day     |
+Here's why it matters:
+
+**In Sandbox:** You're testing with fake data. No one's real financial information is at stake. If something breaks, it's a learning moment.
+
+**In Production:** You're handling real transactions, real account balances, real identity data. If something breaks, someone can't see their money. If data isn't encrypted properly, someone's financial life is exposed. If you don't have proper logging, you can't prove what happened.
+
+The process exists because the stakes are real.
 
 ***
 
-## The Commercial Piece
+## The Commercial Piece (The Part That Surprises People)
 
-This is often the surprise. API access isn't one-size-fits-all.
+Here's something to know: Basiq's pricing isn't a fixed website number.
 
-**Pricing & terms depend on:**
+It depends on:
 
-* Data volume (transactions per month)
-* Feature set (which Basiq features you're using)
-* Support level (email vs. priority support)
-* Company size & stage
-* Custom requirements
+* How much data you're pulling (transactions per month)
+* Which features you're using
+* How much support you need
+* Your company size and stage
+* Any custom work
 
 <Callout theme="default">
-  **Don't assume pricing from the website applies to you.** Every implementation is unique. We discuss commercials during Stage 1 (Prerequisites) so there are no surprises later.
+  **Don't assume you know the price.** We discuss this during Week 1-2 so there are no surprises when you're ready to go live.
 </Callout>
 
 ***
 
-## How to Prepare Right Now
+## The Honest Reality
 
-If you're considering Basiq, here's what you should do before reaching out:
+**What happens with teams who skip these steps:**
+
+* They integrate without confirming accreditation status, then discover mid-build they can't go live
+* They skip the security assessment, then face it later when everything needs rework
+* They don't discuss commercial terms until they're ready to go live (now there's negotiation pressure)
+* They don't build proper error handling or monitoring, so production is a nightmare
+* They end up frustrated because expectations weren't set upfront
+
+**What happens with teams who do it right:**
+
+* They integrate with full clarity on accreditation, timeline, and cost
+* Security assessment happens alongside build, not as a surprise
+* Build is solid because they tested thoroughly in Sandbox
+* Go-live is boring (in the best way) because everything's been planned
+* No surprises. No LinkedIn complaints. No rushed rework.
+
+***
+
+## Before You Reach Out: What to Prepare
+
+If you're seriously considering Basiq, here's what you should get straight first:
 
 <Cards>
-  <Card title="1. Verify ACCC Status" icon="✓">
-    Confirm whether your organization is ACCC-accredited or what the path to accreditation looks like. This is the foundational question.
+  <Card title="Accreditation Status" icon="✓">
+    Are you ACCC-accredited? On the path? Don't know? Find out. This is the first question.
   </Card>
 
-  <Card title="2. Identify Your Technical Contact" icon="👤">
-    Who's the primary engineer who'll own the Basiq integration? They should understand your data architecture.
+  <Card title="Your Technical Lead" icon="👤">
+    Who owns this project on your side? They need to be real, not delegated to a junior engineer.
   </Card>
 
-  <Card title="3. Map Your Tech Stack" icon="🏗️">
-    How will Basiq fit into your existing systems? What integrations are needed downstream?
+  <Card title="Your Timeline" icon="📅">
+    When do you actually need live access? Be realistic. Most teams add 4-8 weeks to their first estimate.
   </Card>
 
-  <Card title="4. Plan Your Timeline" icon="📅">
-    When do you *actually* need live access? Be realistic. Most teams underestimate by 4-8 weeks.
+  <Card title="Your Integration Scope" icon="🏗️">
+    Is this one API integration or are you integrating across multiple systems?
   </Card>
 
-  <Card title="5. Security Review" icon="🔐">
-    Have your security/compliance person review the CDR requirements. They'll be involved anyway.
+  <Card title="Your Security Story" icon="🔐">
+    Do you have security practices in place? Who's your security person?
   </Card>
 </Cards>
 
 ***
 
-## FAQ: The Questions We Hear Most
+## FAQ: Questions From Other Teams Like You
 
 <Callout theme="default">
-  No. It's mandatory for any organization accessing live CDR data. It exists to protect your customers' data and your business.
+  Yes, absolutely. Sandbox access is instant. Start building while we sort out accreditation and commercial terms. Just don't assume you'll be live quickly if accreditation isn't complete.
 </Callout>
 
 <Callout theme="default">
-  Yes. Sandbox access is instant. You don't need ACCC accreditation to test—use this time to build properly and prepare for the assessments ahead.
+  You can build in Sandbox (really good idea to start here). But live access won't happen until accreditation is complete. We need to be honest about that upfront.
 </Callout>
 
 <Callout theme="default">
-  You can still build in Sandbox. But live access won't be possible until accreditation is complete. Discuss this with us upfront so we can align on realistic timelines.
+  No. It's not negotiable. It's not arbitrary. It protects your customers' data and your business. Every company goes through it.
 </Callout>
 
 <Callout theme="default">
-  Yes, and we recommend it. Start development in parallel with the assessment. That said, if the assessment reveals gaps, rework may delay your timeline.
+  Yes, and you should. Start both immediately. If the assessment reveals gaps, you'll fix them while you're integrating.
 </Callout>
 
 <Callout theme="default">
-  It's not pass/fail—it's a discovery process. If gaps are identified, we work with you to address them. Most gaps are fixable; it just takes additional work and time.
+  It's not pass/fail. It's discovery. If problems are found, we work with you to fix them. Most teams do, and they end up with a more secure integration.
 </Callout>
 
 <Callout theme="default">
-  Yes. Pricing varies based on volume, features, and complexity. We discuss this during Stage 1 so you're not surprised later.
+  It varies. We discuss it during Week 1-2 based on your use case. No surprises later.
 </Callout>
 
 <Callout theme="default">
-  Migration support is available. We can help transition your existing integrations to Basiq. Discuss this during the commercial conversation.
+  Migration support is available. We can help transition existing integrations. Discuss this upfront so we can factor it into timeline and pricing.
 </Callout>
 
 ***
 
-## The Bottom Line
+## The Reality
 
-Integrating with Basiq isn't a simple API integration—it's a structured onboarding process with security, compliance, and commercial components. **This is by design.** It protects your customers' data and ensures a solid foundation for your business.
+This process is longer than a typical API integration. It's also better.
 
-**We share this to set expectations upfront.** If you're ready to have this conversation with full clarity on what's ahead, let's talk. We'd rather have realistic timelines and aligned expectations than surprise you mid-project.
+By the time you go live, you'll have:
+
+* Verified your system is secure
+* Tested everything thoroughly
+* Aligned expectations with your team
+* Built it the right way, not the fast way
+
+Will it take longer than you initially thought? Probably. Is it worth it? Absolutely.
 
 ***
 
-## Ready to Get Started?
+## Ready to Start?
 
-Contact us with the following information and we'll schedule an initial conversation:
+If this timeline works for you and you're ready to have an honest conversation about where you actually are (vs. where you hope to be), let's talk.
 
-* Organization name & size
-* Your ACCC accreditation status
-* Primary technical contact
-* Approximate timeline for needing live access
-* Any migration context (if moving from another provider)
+Get in touch with the following:
 
-**Email:** [onboarding@basiq.io](mailto:onboarding@basiq.io)
+* Your organization name & size
+* Your ACCC accreditation status (or timeline to it)
+* Your primary technical contact
+* When you actually need live access
+* Any migration context (if moving from somewhere else)
 
-We'll set up a call to discuss your situation specifically and give you a realistic timeline based on your circumstances.
+**Contact:** [onboarding@basiq.io](mailto:onboarding@basiq.io)
+
+We'll schedule a call, give you a realistic timeline based on your situation, and answer the specific questions you have.
+
+No surprises. No wasted engineering time. Just honest conversations about what's actually involved.
