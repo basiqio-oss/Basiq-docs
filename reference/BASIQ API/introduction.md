@@ -32,8 +32,6 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 ## Use Cases
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
-  <CoolTile header="Account Aggregation" icon="fa-duotone fa-database" text="Aggregate customer financial data and build PFM functionality with personalized insights." />
-
   <CoolTile header="Account Verification" icon="fa-duotone fa-check-circle" text="Verify account ownership and balances instantly for improved lending and payments." />
 
   <CoolTile header="Data Enrichment" icon="fa-duotone fa-layer-group" text="Classify transactions, identify merchants, and uncover behavioral insights." />
