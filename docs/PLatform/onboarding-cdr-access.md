@@ -11,11 +11,9 @@ metadata:
 ---
 # Your Journey to Going Live with Basiq
 
-You've decided to integrate with Basiq. Great. But before you task your engineering team with building, you need to know something critical:
+You've decided to integrate with Basiq. Great. But before you task your engineering team with building, you need to know something critical:**Getting from "let's do this" to "we're live with real data" isn't a straight line.**
 
-**Getting from "let's do this" to "we're live with real data" isn't a straight line.**
-
-Most companies don't realize this until they're 3 weeks into integration. This page exists to show you the real journey—so you can plan accordingly.
+Most companies don't realise this until they're 3 weeks into integration. This page exists to show you the real journey so you can plan accordingly.
 
 ***
 
