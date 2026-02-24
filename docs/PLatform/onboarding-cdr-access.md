@@ -272,7 +272,7 @@ It depends on:
 * Your company size and stage
 * Any custom work
 
-<Callout theme="default">
+<Callout icon="📘">
   **Don't assume you know the price.** We discuss this during Week 1-2 so there are no surprises when you're ready to go live.
 </Callout>
 
