@@ -6,7 +6,7 @@ excerpt: >-
   integration   surprises.
 deprecated: false
 hidden: true
-icon: fad fa-hand-wave
+icon: fad fa-person-snowboarding
 metadata:
   robots: index
 ---
