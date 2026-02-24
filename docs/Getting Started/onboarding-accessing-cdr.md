@@ -5,7 +5,7 @@ excerpt: >-
   before   integrating with Basiq. Set expectations upfront to avoid
   integration   surprises.
 deprecated: false
-hidden: false
+hidden: true
 icon: fad fa-hand-wave
 metadata:
   robots: index
