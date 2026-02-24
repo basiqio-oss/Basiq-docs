@@ -372,11 +372,6 @@ If you're seriously considering Basiq, here's what you should get straight first
   </p>
 </Accordion>
 
-<Accordion title="What is Open Banking (CDR)?" icon="fa-info-circle">
-  <p>
-    <strong>Open Banking (CDR):</strong> Open banking, also known as the Consumer Data Right (CDR) in Australia, is a new method for capturing user consent and sharing financial data. Regulated by the Australian federal government, it requires banks to share data via APIs specifically built for this purpose. Unlike traditional Direct Debit (DDC), CDR does not require users to share login credentials, is more performant and robust, and banks are mandated to participate.
-  </p>
-</Accordion>
 
 ***
 
@@ -412,3 +407,5 @@ Get in touch with the following:
 We'll schedule a call, give you a realistic timeline based on your situation, and answer the specific questions you have.
 
 No surprises. No wasted engineering time. Just honest conversations about what's actually involved.
+
+<br />
