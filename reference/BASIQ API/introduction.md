@@ -27,11 +27,11 @@ Our APIs enable secure access to customer-consented financial data and tools to 
   <CoolCard header="Discover" icon="fa-duotone fa-search" text="Gain deeper insights into your customers' finances." />
 </Grid>
 
----
+***
 
 ## Use Cases
 
-<Grid columns="2" gapX="30px" gapY="30px" paddingY="1.5em">
+<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
   <CoolTile header="Account Aggregation" icon="fa-duotone fa-database" text="Aggregate customer financial data and build PFM functionality with personalized insights." />
 
   <CoolTile header="Account Verification" icon="fa-duotone fa-check-circle" text="Verify account ownership and balances instantly for improved lending and payments." />
@@ -41,26 +41,17 @@ Our APIs enable secure access to customer-consented financial data and tools to 
   <CoolTile header="Wealth Management" icon="fa-duotone fa-chart-pie" text="Use enriched financial data for tailored wealth solutions and advice." />
 </Grid>
 
----
+***
 
 ## Supported Regions
 
-<Grid columns="2" gapX="30px" gapY="30px" paddingY="1.5em">
-  <CoolTile 
-    header="Australia & New Zealand" 
-    icon="fa-duotone fa-globe" 
-    text="Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage."
-  />
+<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
+  <CoolTile header="Australia & New Zealand" icon="fa-duotone fa-globe" text="Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage." />
 
-  <CoolTile 
-    header="Check Status" 
-    href="https://dashboard.basiq.io/status" 
-    icon="fa-duotone fa-signal" 
-    text="View real-time API and connector status for all supported institutions and regions."
-  />
+  <CoolTile header="Check Status" href="https://dashboard.basiq.io/status" icon="fa-duotone fa-signal" text="View real-time API and connector status for all supported institutions and regions." />
 </Grid>
 
----
+***
 
 ## Partner Showcase
 
