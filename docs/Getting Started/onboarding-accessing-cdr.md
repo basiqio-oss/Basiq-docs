@@ -16,8 +16,6 @@ You've decided to integrate with Basiq. Great. But before you task your engineer
 
 Most companies don't realise this until they're 3 weeks into integration. This page exists to show you the real journey so you can plan accordingly.
 
-***
-
 ## The Thing Nobody Tells You
 
 You're about to discover that integrating with Basiq isn't just about connecting an API. It's about security assessments, compliance verification, commercial discussions, and regulatory coordination. It sounds heavy because it is. But there's a reason.
@@ -27,8 +25,6 @@ Every piece of data flowing through Basiq is someone's financial information. Tr
 **Here's what we're going to walk through:**
 
 The realistic steps from today to go-live, who gets involved at each stage, where surprises typically happen, and how long this actually takes.
-
-***
 
 ## Week 1-2: The First Conversation (The Qualification Phase)
 
@@ -55,8 +51,6 @@ If everything checks out—accreditation is on track, budget aligns, timeline is
 
 **How long:** 1-2 weeks of conversations and approvals
 
-***
-
 ## Week 2-4: Your Team Gets Started (The Build Planning Phase)
 
 Now your engineers get involved. This is where the actual work begins.
@@ -82,8 +76,6 @@ Your engineering team is mostly on their own here, but you've got Basiq support 
 **Who's involved:** Your engineering team (primary), Basiq (support role)
 
 **How long:** 2-4 weeks (fintech) to 6-8+ weeks (enterprise)
-
-***
 
 ## Week 2-3: The Security Audit (Happening Simultaneously)
 
@@ -114,8 +106,6 @@ By the end of this phase, we've either:
 
 **How long:** 1-2 weeks (if your team is responsive) to 4+ weeks (if gaps need fixing)
 
-***
-
 ## Week 4-6: Testing & Final Push (The Integration Testing Phase)
 
 Your build is complete. Time to make sure it actually works.
@@ -143,8 +133,6 @@ Your build is complete. Time to make sure it actually works.
 
 **How long:** 1-2 weeks of focused testing
 
-***
-
 ## Weeks 4-6 (Parallel): The CDR Registry & ACCC Coordination
 
 While you're testing, something else is happening behind the scenes.
@@ -159,8 +147,6 @@ Basiq is working with ACCC to register your organization for live CDR access. Th
 
 **How long:** 2-4 weeks depending on ACCC processing
 
-***
-
 ## Week 6-8: You're Live
 
 All pieces aligned. Accreditation verified. Security assessment green-lit. Integration tested. ACCC registration complete.
@@ -168,8 +154,6 @@ All pieces aligned. Accreditation verified. Security assessment green-lit. Integ
 Your live API credentials are provisioned. Your data is flowing. You're live.
 
 **But here's the thing:** Going live isn't the end. It's the beginning of monitoring, supporting customers through it, and handling the inevitable questions that come up.
-
-***
 
 ## Timeline Reality Check by Company Size
 
@@ -245,8 +229,6 @@ Here's what this actually looks like in practice:
   </Tab>
 </Tabs>
 
-***
-
 ## What Actually Changes When You Go Live
 
 You might be thinking: "This all seems like a lot for an API integration."
@@ -258,8 +240,6 @@ Here's why it matters:
 **In Production:** You're handling real transactions, real account balances, real identity data. If something breaks, someone can't see their money. If data isn't encrypted properly, someone's financial life is exposed. If you don't have proper logging, you can't prove what happened.
 
 The process exists because the stakes are real.
-
-***
 
 ## The Commercial Piece (The Part That Surprises People)
 
@@ -276,8 +256,6 @@ It depends on:
 <Callout icon="📘" theme="info">
   **Don't assume you know the price.** We discuss this during Week 1-2 so there are no surprises when you're ready to go live.
 </Callout>
-
-***
 
 ## The Honest Reality
 
@@ -296,8 +274,6 @@ It depends on:
 * Build is solid because they tested thoroughly in Sandbox
 * Go-live is boring (in the best way) because everything's been planned
 * No surprises. No media complaints. No rushed rework.
-
-***
 
 ## Before You Reach Out: What to Prepare
 
@@ -324,10 +300,6 @@ If you're seriously considering Basiq, here's what you should get straight first
     Do you have security practices in place? Who's your security person?
   </Card>
 </Cards>
-
-***
-
-<br />
 
 ## FAQ: Questions From Other Teams Like You
 
@@ -373,8 +345,6 @@ If you're seriously considering Basiq, here's what you should get straight first
   </p>
 </Accordion>
 
-***
-
 ## The Reality
 
 This process is longer than a typical API integration. It's also better.
@@ -387,8 +357,6 @@ By the time you go live, you'll have:
 * Built it the right way, not the fast way
 
 Will it take longer than you initially thought? Probably. Is it worth it? Absolutely.
-
-***
 
 ## Ready to Start?
 
