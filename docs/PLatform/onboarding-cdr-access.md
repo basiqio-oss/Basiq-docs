@@ -326,35 +326,57 @@ If you're seriously considering Basiq, here's what you should get straight first
 
 ***
 
+<br />
+
 ## FAQ: Questions From Other Teams Like You
 
-<Callout theme="default">
-  Yes, absolutely. Sandbox access is instant. Start building while we sort out accreditation and commercial terms. Just don't assume you'll be live quickly if accreditation isn't complete.
-</Callout>
+<Accordion title="Can we start building today?" icon="fa-code">
+  <p>
+    <strong>Yes, absolutely.</strong> Sandbox access is instant. Start building while we sort out accreditation and commercial terms. Just don't assume you'll be live quickly if accreditation isn't complete.
+  </p>
+</Accordion>
 
-<Callout theme="default">
-  You can build in Sandbox (really good idea to start here). But live access won't happen until accreditation is complete. We need to be honest about that upfront.
-</Callout>
+<Accordion title="What if we're not accredited yet?" icon="fa-question-circle">
+  <p>
+    <strong>You can build in Sandbox</strong> (really good idea to start here). But live access won't happen until accreditation is complete. We need to be honest about that upfront.
+  </p>
+</Accordion>
 
-<Callout theme="default">
-  No. It's not negotiable. It's not arbitrary. It protects your customers' data and your business. Every company goes through it.
-</Callout>
+<Accordion title="Can we skip the security assessment?" icon="fa-shield">
+  <p>
+    <strong>No.</strong> It's not negotiable. It's not arbitrary. It protects your customers' data and your business. Every company goes through it.
+  </p>
+</Accordion>
 
-<Callout theme="default">
-  Yes, and you should. Start both immediately. If the assessment reveals gaps, you'll fix them while you're integrating.
-</Callout>
+<Accordion title="Can we run the security assessment and build at the same time?" icon="fa-sync">
+  <p>
+    <strong>Yes, and you should.</strong> Start both immediately. If the assessment reveals gaps, you'll fix them while you're integrating.
+  </p>
+</Accordion>
 
-<Callout theme="default">
-  It's not pass/fail. It's discovery. If problems are found, we work with you to fix them. Most teams do, and they end up with a more secure integration.
-</Callout>
+<Accordion title="What if the security assessment finds problems?" icon="fa-exclamation-triangle">
+  <p>
+    <strong>It's not pass/fail.</strong> It's discovery. If problems are found, we work with you to fix them. Most teams do, and they end up with a more secure integration.
+  </p>
+</Accordion>
 
-<Callout theme="default">
-  It varies. We discuss it during Week 1-2 based on your use case. No surprises later.
-</Callout>
+<Accordion title="How much is this going to cost?" icon="fa-dollar-sign">
+  <p>
+    <strong>It varies.</strong> We discuss it during Week 1-2 based on your use case. No surprises later.
+  </p>
+</Accordion>
 
-<Callout theme="default">
-  Migration support is available. We can help transition existing integrations. Discuss this upfront so we can factor it into timeline and pricing.
-</Callout>
+<Accordion title="What if we're switching from another provider?" icon="fa-exchange-alt">
+  <p>
+    <strong>Migration support is available.</strong> We can help transition existing integrations. Discuss this upfront so we can factor it into timeline and pricing.
+  </p>
+</Accordion>
+
+<Accordion title="What is Open Banking (CDR)?" icon="fa-info-circle">
+  <p>
+    <strong>Open Banking (CDR):</strong> Open banking, also known as the Consumer Data Right (CDR) in Australia, is a new method for capturing user consent and sharing financial data. Regulated by the Australian federal government, it requires banks to share data via APIs specifically built for this purpose. Unlike traditional Direct Debit (DDC), CDR does not require users to share login credentials, is more performant and robust, and banks are mandated to participate.
+  </p>
+</Accordion>
 
 ***
 
