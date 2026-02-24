@@ -44,7 +44,7 @@ Your first call with our team isn't about APIs. It's about reality-checking.
 
 If you don't have ACCC accreditation, live data access isn't possible. Period. But here's the thing—you can still build in Sandbox while pursuing accreditation. We need to discuss this openly so you don't waste 3 months of engineering time on something you can't go live with.
 
-<Callout icon="🚧">
+<Callout icon="🚧" theme="warn">
   **This is where frustrated founders often say later: "I wish I'd known this before we started."** We're telling you now. If you're not accredited, that's the first item on your to-do list. We can help, but it needs to happen before live access is possible.
 </Callout>
 
@@ -72,11 +72,11 @@ Now your engineers get involved. This is where the actual work begins.
 
 Most teams estimate this at 1 week. It usually takes 2-4 weeks for smaller teams, 6-8+ weeks for larger organizations. Why? Because you're doing it right. You're building error handling (what happens when the API is down?), logging (how will you debug issues?), monitoring (how will you know if something breaks?).
 
-<Callout icon="📘">
+<Callout icon="📘" theme="info">
   **Use Sandbox aggressively here.** This isn't a "quick test" environment. It's where you learn the API, find edge cases, and build properly. Teams that rush through Sandbox always regret it in production.
 </Callout>
 
-Your engineering team is mostly on their own here, but you've got Basiq support via email and Slack if things get stuck.
+Your engineering team is mostly on their own here, but you've got Basiq support via email and Jira if things get stuck.
 
 **Who's involved:** Your engineering team (primary), Basiq (support role)
 
@@ -100,7 +100,7 @@ While your team is building, something else is happening that often surprises pe
 
 This isn't a checkbox exercise. It's a real conversation with your technical and security team. If your security person is in-between roles, or if you don't have one, this phase extends. If gaps are found (and often they are), you need to fix them.
 
-<Callout icon="🚧">
+<Callout icon="🚧" theme="warn">
   **This is where most projects slip.** Not because it's impossible to fix, but because it requires the right people to be available and engaged. Your CTO or lead engineer needs to be in these conversations.
 </Callout>
 
@@ -134,7 +134,7 @@ Your build is complete. Time to make sure it actually works.
 * "We didn't test rate limits" → You hit API limits in production and weren't prepared
 * "Security assessment revealed gaps" → You're now fixing things while trying to go live
 
-<Callout icon="👍">
+<Callout icon="👍" theme="okay">
   **This is where good preparation in Week 2-4 pays off.** Teams that built properly in Sandbox rarely hit surprises here.
 </Callout>
 
@@ -150,7 +150,7 @@ While you're testing, something else is happening behind the scenes.
 
 Basiq is working with ACCC to register your organization for live CDR access. This is regulatory coordination, not technical work. It just takes time.
 
-<Callout icon="❗️">
+<Callout icon="❗️" theme="error">
   **This is automatic if accreditation is complete.** If it's not, this phase waits. That's why accreditation status matters so much upfront.
 </Callout>
 
