@@ -407,8 +407,6 @@ We'll schedule a call, give you a realistic timeline based on your situation, an
 
 No surprises. No wasted engineering time. Just honest conversations about what's actually involved.
 
-<br />
-
 <div
   style={{
     border: "2px solid #1E1E1E", // Dark border
