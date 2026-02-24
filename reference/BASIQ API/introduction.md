@@ -11,6 +11,17 @@ metadata:
 next:
   description: ''
 ---
+<div style={{ marginBottom: '3rem', textAlign: 'center' }}>
+  <h1 style={{ fontSize: '3rem', fontWeight: 'bold', margin: '0 0 1rem 0', background: 'linear-gradient(135deg, #1e40af 0%, #0c4a6e 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+    Build Financial Services at Scale
+  </h1>
+  <p style={{ fontSize: '1.25rem', color: '#64748b', margin: 0, maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.6' }}>
+    Basiq is the API platform trusted by 200+ fintechs and banks. Access real-time financial data, enrich transactions, and unlock powerful insights—all with customer consent.
+  </p>
+</div>
+
+---
+
 ## What is Basiq?
 
 Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches-cdr-data-holder-and-data-recipient-solution/) API platform that provides the building blocks of financial services.
@@ -43,20 +54,62 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
 ## Supported Regions
 
-<Grid columns="2" gapX="30px" gapY="30px" paddingY="1.5em">
-  <CoolTile 
-    header="Australia & New Zealand" 
-    icon="fa-duotone fa-globe" 
-    text="Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage."
-  />
+<div style={{ 
+  background: 'linear-gradient(135deg, #1e40af 0%, #0c4a6e 100%)', 
+  borderRadius: '1rem', 
+  padding: '3rem 2rem',
+  marginTop: '2rem',
+  color: 'white',
+  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)'
+}}>
+  <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌏</div>
+    <h3 style={{ fontSize: '1.875rem', fontWeight: 'bold', margin: 0, marginBottom: '0.5rem' }}>Available in Australia & New Zealand</h3>
+    <p style={{ fontSize: '1.125rem', opacity: 0.9, margin: 0 }}>Comprehensive API coverage with 200+ supported institutions across both regions</p>
+  </div>
+  
+  <Grid columns="2" gapX="30px" gapY="20px" paddingY="1rem" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+    <div style={{ 
+      background: 'rgba(255, 255, 255, 0.1)', 
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      borderRadius: '0.75rem', 
+      padding: '1.5rem',
+      backdropFilter: 'blur(10px)'
+    }}>
+      <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🇦🇺</div>
+      <h4 style={{ fontSize: '1.125rem', fontWeight: '600', margin: '0 0 0.5rem 0' }}>Australia</h4>
+      <p style={{ margin: 0, opacity: 0.9, fontSize: '0.95rem' }}>Full API access with real-time data from major banks and financial institutions</p>
+    </div>
+    
+    <div style={{ 
+      background: 'rgba(255, 255, 255, 0.1)', 
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      borderRadius: '0.75rem', 
+      padding: '1.5rem',
+      backdropFilter: 'blur(10px)'
+    }}>
+      <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🇳🇿</div>
+      <h4 style={{ fontSize: '1.125rem', fontWeight: '600', margin: '0 0 0.5rem 0' }}>New Zealand</h4>
+      <p style={{ margin: 0, opacity: 0.9, fontSize: '0.95rem' }}>Complete coverage of NZ financial institutions with seamless integration support</p>
+    </div>
+  </Grid>
 
-  <CoolTile 
-    header="Check Status" 
-    href="https://dashboard.basiq.io/status" 
-    icon="fa-duotone fa-signal" 
-    text="View real-time API and connector status for all supported institutions and regions."
-  />
-</Grid>
+  <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+    <a href="https://dashboard.basiq.io/status" style={{ 
+      display: 'inline-block',
+      background: 'rgba(255, 255, 255, 0.2)',
+      border: '1px solid rgba(255, 255, 255, 0.3)',
+      color: 'white',
+      padding: '0.75rem 1.5rem',
+      borderRadius: '0.5rem',
+      textDecoration: 'none',
+      fontWeight: '500',
+      transition: 'all 0.3s ease'
+    }}>
+      Check Real-time Status →
+    </a>
+  </div>
+</div>
 
 ---
 
@@ -69,3 +122,9 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
   <CoolTile header="Lending & Payments" href="https://basiq.io/blog/category/partner-showcase/" icon="fa-duotone fa-solid fa-credit-card" text="Learn how partners are improving lending decisions and payment workflows using Basiq." />
 </Grid>
+
+---
+
+## API & Connector Health
+
+<StatusPage title="API & Connectors" url="https://status.basiq.io/" />
