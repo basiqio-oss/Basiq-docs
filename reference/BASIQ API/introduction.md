@@ -1,5 +1,5 @@
 ---
-title: Introduction to Basiq API
+title: Introduction to Basiq
 excerpt: >-
   Basiq is a Consumer Data Right accredited API platform that provides the
   building blocks of financial services.
