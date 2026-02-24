@@ -272,7 +272,7 @@ It depends on:
 * Your company size and stage
 * Any custom work
 
-<Callout icon="📘">
+<Callout icon="📘" theme="info">
   **Don't assume you know the price.** We discuss this during Week 1-2 so there are no surprises when you're ready to go live.
 </Callout>
 
@@ -294,7 +294,7 @@ It depends on:
 * Security assessment happens alongside build, not as a surprise
 * Build is solid because they tested thoroughly in Sandbox
 * Go-live is boring (in the best way) because everything's been planned
-* No surprises. No LinkedIn complaints. No rushed rework.
+* No surprises. No media complaints. No rushed rework.
 
 ***
 
