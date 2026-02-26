@@ -24,10 +24,10 @@ Every piece of data flowing through Basiq is sensitive—transactions, account b
 
 **Here's what we're going to walk through:**
 
-- The realistic steps from today to go-live
-- Who gets involved at each stage
-- How to stay on track
-- Typical timelines
+* The realistic steps from today to go-live
+* Who gets involved at each stage
+* How to stay on track
+* Typical timelines
 
 ## Week 1-2: The First Conversation (The Qualification Phase)
 
@@ -36,6 +36,7 @@ Your first call with our team sets the foundation.
 **We're asking:**
 
 * Are you ACCC-accredited, or on the path to accreditation?
+  * _(Note: ACCC accreditation applies to PRM & TAviaPRM models, which typically require around 2 weeks for CDR setup. BCC & TA models do not involve the ACCC, so setup is usually around 3 days.)_
 * What does your compliance infrastructure look like?
 * What's your timeline actually looking like?
 * What are we charging you, and does that fit your budget?
@@ -150,57 +151,57 @@ Your live API credentials are provisioned, and your data flows securely. Going l
   <Tab title="Small Fintech (10-30 people)">
     **Real timeline: 4-6 weeks to go live**
 
-    **Week 1-2:** Qualification call, accreditation check, commercial approval  
-    **Week 2-4:** Build in Sandbox, security assessment conversations  
-    **Week 4-6:** Final testing, credential provisioning  
+    **Week 1-2:** Qualification call, accreditation check, commercial approval\
+    **Week 2-4:** Build in Sandbox, security assessment conversations\
+    **Week 4-6:** Final testing, credential provisioning\
     **Week 4-6 (parallel):** ACCC coordination
 
     **Why this timeline works:**
 
-    * Smaller teams move quickly  
-    * Direct communication with security lead  
-    * Accreditation nearly complete or in progress  
+    * Smaller teams move quickly
+    * Direct communication with security lead
+    * Accreditation nearly complete or in progress
   </Tab>
 
   <Tab title="Mid-Market (50-200 people)">
     **Real timeline: 8-12 weeks to go live**
 
-    **Week 1-2:** Qualification, accreditation verification, legal review  
-    **Week 2-6:** Build in Sandbox, security/compliance assessment  
-    **Week 6-10:** Testing, integration refinement, monitoring setup  
-    **Week 4-10 (parallel):** ACCC coordination  
+    **Week 1-2:** Qualification, accreditation verification, legal review\
+    **Week 2-6:** Build in Sandbox, security/compliance assessment\
+    **Week 6-10:** Testing, integration refinement, monitoring setup\
+    **Week 4-10 (parallel):** ACCC coordination\
     **Week 10-12:** Final go-live prep and credential provisioning
 
     **Why this takes longer:**
 
-    * Multiple approval layers  
-    * More complex integrations  
-    * Security assessment coordination  
+    * Multiple approval layers
+    * More complex integrations
+    * Security assessment coordination
   </Tab>
 
   <Tab title="Enterprise (500+ people)">
     **Real timeline: 3-6 months to go live**
 
-    **Week 1-3:** Qualification, accreditation confirmation, legal/compliance review  
-    **Week 2-10:** Build Phase 1 + security assessment Phase 1  
-    **Week 8-16:** Build Phase 2 + security assessment Phase 2 + vendor reviews  
-    **Week 16-20:** Integration testing, monitoring, compliance final review  
-    **Week 4-20 (parallel):** ACCC coordination  
+    **Week 1-3:** Qualification, accreditation confirmation, legal/compliance review\
+    **Week 2-10:** Build Phase 1 + security assessment Phase 1\
+    **Week 8-16:** Build Phase 2 + security assessment Phase 2 + vendor reviews\
+    **Week 16-20:** Integration testing, monitoring, compliance final review\
+    **Week 4-20 (parallel):** ACCC coordination\
     **Week 20-24:** Final go-live prep
 
     **Why this takes longer:**
 
-    * Thorough enterprise security & compliance  
-    * Multiple system integrations  
-    * Vendor risk assessments  
-    * Internal approvals & change management  
+    * Thorough enterprise security & compliance
+    * Multiple system integrations
+    * Vendor risk assessments
+    * Internal approvals & change management
   </Tab>
 </Tabs>
 
 ## What Actually Changes When You Go Live
 
 **In Sandbox:** You test with simulated data safely.  
-**In Production:** You handle real transactions, balances, and identity data with secure logging, monitoring, and error handling in place.  
+**In Production:** You handle real transactions, balances, and identity data with secure logging, monitoring, and error handling in place.
 
 The process ensures reliability and confidence when going live.
 
@@ -208,10 +209,10 @@ The process ensures reliability and confidence when going live.
 
 Basiq's pricing varies depending on:
 
-* Data usage (transactions per month)  
-* Features you’re using  
-* Level of support  
-* Company size and stage  
+* Data usage (transactions per month)
+* Features you’re using
+* Level of support
+* Company size and stage
 * Any custom work
 
 <Callout icon="📘" theme="info">
@@ -290,10 +291,10 @@ Basiq's pricing varies depending on:
 
 This process is longer than a typical API integration, but it ensures:
 
-* Your system is secure  
-* Everything is tested thoroughly  
-* Expectations are aligned  
-* Integration is built the right way  
+* Your system is secure
+* Everything is tested thoroughly
+* Expectations are aligned
+* Integration is built the right way
 
 The result: a smooth go-live with confidence.
 
@@ -301,10 +302,10 @@ The result: a smooth go-live with confidence.
 
 If this timeline works for you and you're ready for an honest conversation about where you are, reach out with:
 
-* Organization name & size  
-* ACCC accreditation status (or timeline)  
-* Primary technical contact  
-* Target go-live date  
+* Organization name & size
+* ACCC accreditation status (or timeline)
+* Primary technical contact
+* Target go-live date
 * Any migration context
 
 **Contact:** [onboarding@basiq.io](mailto:onboarding@basiq.io)
