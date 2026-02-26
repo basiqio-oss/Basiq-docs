@@ -36,7 +36,7 @@ Your first call with our team sets the foundation.
 **We're asking:**
 
 * Are you ACCC-accredited, or on the path to accreditation? (Our supported models are [here](https://api.basiq.io/docs/supported-access-models))
-  * _(Note: ACCC accreditation applies to PRM & TAviaPRM models, which typically require around 2 weeks for CDR setup. BCDC & TA models do not involve the ACCC, so setup is usually around 3 days.)_
+  * _(Note: ACCC accreditation applies to <Glossary>PRM</Glossary> & TAviaPRM models, which typically require around 2 weeks for CDR setup. <Glossary>BCDC</Glossary> & <Glossary>TA</Glossary> models do not involve the ACCC, so setup is usually around 3 days.)_
 * What does your compliance infrastructure look like?
 * What's your timeline actually looking like?
 * What are we charging you, and does that fit your budget?
