@@ -71,7 +71,7 @@ Now your engineers get involved. This is where the actual work begins.
 
 **Why this matters:**
 
-Most teams estimate this at 1 week, but thorough integration typically takes 2-4 weeks for smaller teams and 6-8+ weeks for larger organizations. Proper handling of error flows, logging, and monitoring ensures a smooth live launch.
+Proper handling of error flows, logging, and monitoring ensures a smooth live launch.
 
 <Callout icon="📘" theme="info">
   **Use Sandbox fully.** It’s where you learn the API, explore edge cases, and build with confidence. Teams who test carefully here go live more smoothly.
@@ -81,11 +81,9 @@ Your engineering team leads this phase, with Basiq support via email and Jira as
 
 **Who's involved:** Engineering team (primary), Basiq (support)
 
-**How long:** 2-4 weeks (fintech) to 6-8+ weeks (enterprise)
-
 ## The Security Audit (Happening Simultaneously)
 
-While your team builds, Basiq’s security team collaborates with yours to review:
+While your team builds, Basiq’s security team collaborates with yours to review. Basiq must do a due diligence on all businesses wanting access to the platform/openbanking data. In many cases Basiq holds majority of the risk in this relationship due to us been the license holder. This is the reasoning for the due diligence. 
 
 * Encryption of customer data
 * Access control and auditing
