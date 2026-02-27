@@ -29,19 +29,21 @@ Every piece of data flowing through Basiq is sensitive—transactions, account b
 * How to stay on track
 * Typical timelines
 
-## Week 1-2: The First Conversation (The Qualification Phase)
+## &#x20;The First Conversation (The Qualification Phase)
 
 Your first call with our team sets the foundation.
 
 **We're asking:**
 
-* Are you ACCC-accredited, or on the path to accreditation? (Our supported models are [here](https://api.basiq.io/docs/supported-access-models))
-  * _(Note: ACCC accreditation applies to <Glossary>PRM</Glossary> & TAviaPRM models, which typically require around 2 weeks for CDR setup. <Glossary>BCDC</Glossary> & <Glossary>TA</Glossary> models do not involve the ACCC, so setup is usually around 3 days.)_
-* What does your compliance infrastructure look like?
-* What's your timeline actually looking like?
-* What are we charging you, and does that fit your budget?
+* What's your usecase? 
+* Whats your intent to use the data for? 
+* Do you currently consume openbanking from another vendor? 
+* What sort of business are you? (Startup, scaleup, mid, enterprise, bank etc).
+* Other qualification question to ensure, Basiq is a good fit and more importantly you meet open banking requirements 
 
 **Why this matters to you:**
+
+This initial conversation is extremely important to have prior to building integration across our API to ensure the alignment from the begin. 
 
 Accreditation enables live data access, but you can start building in Sandbox immediately while working toward accreditation. Discussing it upfront ensures your team is productive and focused on the right tasks.
 
@@ -53,9 +55,9 @@ If everything aligns—accreditation, budget, and timeline—you move forward.
 
 **Who's involved:** You (founders/business + legal), Basiq (business development + compliance)
 
-**How long:** 1-2 weeks of conversations and approvals
+**How long:** 1-2 weeks of conversations and approvals (Integration timeline will strictly depends on the resource your business has or this piece of work). 
 
-## Week 2-4: Your Team Gets Started (The Build Planning Phase)
+## Your Team Gets Started (The Build Planning Phase)
 
 Now your engineers get involved. This is where the actual work begins.
 
@@ -81,7 +83,7 @@ Your engineering team leads this phase, with Basiq support via email and Jira as
 
 **How long:** 2-4 weeks (fintech) to 6-8+ weeks (enterprise)
 
-## Week 2-3: The Security Audit (Happening Simultaneously)
+## The Security Audit (Happening Simultaneously)
 
 While your team builds, Basiq’s security team collaborates with yours to review:
 
