@@ -105,11 +105,11 @@ By the end, we either:
 
 **Who's involved:** Security/engineering team + Basiq security team
 
-**How long:** 1-2 weeks (responsive teams)
+## Testing & Final Push, Commercials Agreed
 
-## Week 4-6: Testing & Final Push (The Integration Testing Phase)
+Your build is complete. Time to validate it works as expected and move towards executing and agreed MSA. 
 
-Your build is complete. Time to validate it works as expected.
+Please note commercials differ depending on a myriad of factors. Our pricing, product and services are aimed at mid to large size businesses.
 
 **What happens:**
 
