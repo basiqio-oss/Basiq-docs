@@ -33,6 +33,8 @@ Every piece of data flowing through Basiq is sensitive—transactions, account b
 
 Your first call with our team sets the foundation.
 
+_Please note commercials differ depending on a myriad of factors. Our pricing, product and services are aimed at mid to large size businesses._
+
 **We're asking:**
 
 * What's your usecase? 
@@ -109,7 +111,7 @@ By the end, we either:
 
 Your build is complete. Time to validate it works as expected and move towards executing and agreed MSA. 
 
-Please note commercials differ depending on a myriad of factors. Our pricing, product and services are aimed at mid to large size businesses.
+<br />
 
 **What happens:**
 
