@@ -3020,7 +3020,7 @@
                           },
                           "balance": {
                             "type": "string",
-                            "description": "Value of the account balance at time the transaction was completed.",
+                            "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
                             "example": "123.12"
                           },
                           "direction": {
@@ -3887,7 +3887,7 @@
                     },
                     "balance": {
                       "type": "string",
-                      "description": "Value of the account balance at time the transaction was completed.",
+                      "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
                       "example": "123.12"
                     },
                     "direction": {
@@ -16137,7 +16137,7 @@
           },
           "balance": {
             "type": "string",
-            "description": "Value of the account balance at time the transaction was completed.",
+            "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
             "example": "123.12"
           },
           "direction": {
@@ -17222,7 +17222,7 @@
                 },
                 "balance": {
                   "type": "string",
-                  "description": "Value of the account balance at time the transaction was completed.",
+                  "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
                   "example": "123.12"
                 },
                 "direction": {
