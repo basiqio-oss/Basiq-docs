@@ -10,15 +10,15 @@ metadata:
 next:
   description: ''
 ---
-The Auth Links (auth\_link) object represents a secured authorised link attached to a user. The link can be sent to a user (applicant) to allow for the self-service capture of financial data. The auth\_link is a URL that directs a user to Basiq's hosted consent.
+The Auth Links (auth_link) object represents a secured authorised link attached to a user. The link can be sent to a user (applicant) to allow for the self-service capture of financial data. The auth_link is a URL that directs a user to Basiq's hosted consent.
 
 Once authenticated via 2FA the user/applicant can upload banking data either via a direct bank connection or via official PDF bank statement upload.
 
-Auth Link objects expire after 7 days. Attempting to use the URL returned by the object after it has expired will fail. There is no limit to the number of Auth Link objects that can be created for a User, but only the latest Auth Link will be valid.  An AuthLink can be used once. If the user exits the flow, they will need a new link.
+Auth Link objects expire after 30 days. Attempting to use the URL returned by the object after it has expired will fail. There is no limit to the number of Auth Link objects that can be created for a User, but only the latest Auth Link will be valid.  An AuthLink can be used once. If the user exits the flow, they will need a new link.
 
-The URL associated with a single auth\_link object will allow a user/applicant to link and share data from multiple accounts at multiple financial institutions.
+The URL associated with a single auth_link object will allow a user/applicant to link and share data from multiple accounts at multiple financial institutions.
 
-When the user selects 'I have disclosed all my accounts' the auth\_link is automatically deleted.
+When the user selects 'I have disclosed all my accounts' the auth_link is automatically deleted.
 
 > 📘 Generate a secure link by Creating an Auth Link resource
 >
