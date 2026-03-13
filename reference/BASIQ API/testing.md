@@ -470,7 +470,7 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td style={{ textAlign: "left" }}>
-        [ashmann@gmail.com](mailto:ashmann@gmail.com)
+        [ashmann@gamil.com](mailto:ashmann@gamil.com)
       </td>
 
       <td style={{ textAlign: "left" }}>
