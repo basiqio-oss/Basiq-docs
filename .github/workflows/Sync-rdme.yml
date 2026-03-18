@@ -30,6 +30,7 @@ jobs:
           rdme openapi validate ./reference/enrich.json
           rdme openapi validate ./reference/payees.json
           rdme openapi validate ./reference/data.json
+          rdme openapi validate ./reference/webhooks.json
 
 
       - name: Upload API definitions
@@ -40,3 +41,4 @@ jobs:
           rdme openapi upload ./reference/enrich.json --slug=enrich --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/payees.json --slug=payees --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/data.json --slug=data --key=${{ secrets.README_API_KEY }}
+          rdme openapi upload ./reference/webhooks.json --slug=webhooks --key=${{ secrets.README_API_KEY }}
