@@ -1,5 +1,5 @@
 ---
-title: Get webhook delivery statistics
+title: Webhook delivery stats
 api:
   file: webhooks.json
   operationId: getWebhookStats
