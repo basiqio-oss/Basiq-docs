@@ -12,7 +12,7 @@ jobs:
     steps:
       # Validate PR title format
       - name: Lint PR Title
-        uses: seferov/pr-lint-action@2f6ccc0e32d53505ab87d1340a8b5c42cb874bd6 # v1.2.0
+        uses: seferov/pr-lint-action@cbef81c153f36262fbcd92fe97d6c6b8736d891d # v2.0.0
         with:
           title-regex: '^(DX|DSO|Bump).+'
           title-regex-flags: 'g'
