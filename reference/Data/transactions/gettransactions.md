@@ -1,6 +1,4 @@
 ---
-title: List all transactions
-excerpt: List all transactions belonging to a specified user
 api:
   file: data.json
   operationId: getTransactions
