@@ -35,7 +35,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Account filters; account.id, connection.id, institution.id, Only equals (eq) and not equals (ne) operations are currently supported.",
+            "description": "Account filters: account.id, connection.id, institution.id. Only the equals (eq) operation is currently supported.",
             "schema": {
               "type": "string"
             }
@@ -1524,7 +1524,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Account filters; account.id, connection.id, institution.id, Only equals (eq) and not equals (ne) operations are currently supported.",
+            "description": "Account filters; account.id, connection.id, institution.id, Only equals (eq) operation is currently supported.",
             "schema": {
               "type": "string"
             }
@@ -2911,7 +2911,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Transaction filters; account.id, transaction.postDate, transaction.status, institution.id, transaction.direction, transaction.class",
+            "description": "Transaction filters; connection.id, account.id, transaction.postDate, transaction.status, institution.id, transaction.direction, transaction.class",
             "schema": {
               "type": "string"
             }

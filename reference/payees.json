@@ -51,7 +51,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Filter expression to narrow down results. Supports the following filters:\n- `type.eq('value')` - Filter by payee type (domestic, biller, international, digitalWallet)\n- `connectionId.eq('value')` - Filter by connection ID\n- `created.bt('startDate','endDate')` - Filter by creation date range\n- `created.gt('date')` - Filter by creation date greater than\n- `created.gteq('date')` - Filter by creation date greater than or equal\n- `created.lt('date')` - Filter by creation date less than",
+            "description": "Filter expression to narrow down results. Supports the following filters:\n- `type.eq('value')` - Filter by payee type (domestic, biller, international, digitalWallet)\n- `connectionId.eq('value')` - Filter by connection ID\n- `created.bt('startDate','endDate')` - Filter by creation date range\n- `created.gt('date')` - Filter by creation date greater than\n- `created.gteq('date')` - Filter by creation date greater than or equal\n- `created.lt('date')` - Filter by creation date less than\n- `created.lteq('date')` - Filter by creation date less than or equal\n- `created.eq('date')` - Filter by creation date equal to",   
             "schema": {
               "type": "string"
             },
