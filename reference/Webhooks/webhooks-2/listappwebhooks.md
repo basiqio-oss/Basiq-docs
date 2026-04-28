@@ -1,6 +1,4 @@
 ---
-title: List all webhooks
-excerpt: ''
 api:
   file: webhooks.json
   operationId: listAppWebhooks

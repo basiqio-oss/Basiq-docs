@@ -1,6 +1,4 @@
 ---
-title: Retrieve a webhook
-excerpt: ''
 api:
   file: webhooks.json
   operationId: getWebhook

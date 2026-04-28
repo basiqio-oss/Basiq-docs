@@ -1,6 +1,4 @@
 ---
-title: Update a webhook
-excerpt: ''
 api:
   file: webhooks.json
   operationId: updateWebhook

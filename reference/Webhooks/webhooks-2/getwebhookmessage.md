@@ -1,6 +1,4 @@
 ---
-title: Retrieve a message
-excerpt: ''
 api:
   file: webhooks.json
   operationId: getWebhookMessage

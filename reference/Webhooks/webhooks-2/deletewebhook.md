@@ -1,6 +1,4 @@
 ---
-title: Delete a webhook
-excerpt: ''
 api:
   file: webhooks.json
   operationId: deleteWebhook

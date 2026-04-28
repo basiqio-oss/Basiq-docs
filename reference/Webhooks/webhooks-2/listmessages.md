@@ -1,6 +1,4 @@
 ---
-title: List all messages
-excerpt: ''
 api:
   file: webhooks.json
   operationId: listMessages
