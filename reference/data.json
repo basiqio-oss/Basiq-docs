@@ -35,7 +35,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Account filters; account.id, connection.id, institution.id, Only equals (eq) operation is currently supported.",
+            "description": "Account filters: account.id, connection.id, institution.id. Only the equals (eq) operation is currently supported.",
             "schema": {
               "type": "string"
             }
