@@ -67,7 +67,7 @@ jobs:
       # Send Slack notification if warnings exist
       - name: Send Slack Notification if Warnings Exist
         if: env.warnings == '1'
-        uses: slackapi/slack-github-action@af78098f536edbc4de71162a307590698245be95
+        uses: slackapi/slack-github-action@03ea5433c137af7c0495bc0cad1af10403fc800c
         with:
           payload: |
             {
