@@ -493,12 +493,12 @@
                           "accountNumber": {
                             "input": "032096658830",
                             "match": true,
-                            "confidence": 0
+                            "confidence": 1
                           },
                           "accountType": {
                             "input": "savings",
                             "match": true,
-                            "confidence": 0
+                            "confidence": 1
                           }
                         },
                         {
@@ -511,7 +511,7 @@
                           "accountType": {
                             "input": "savings",
                             "match": true,
-                            "confidence": 0
+                            "confidence": 1
                           }
                         }
                       ],
