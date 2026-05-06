@@ -406,7 +406,7 @@
         ],
         "summary": "List Insight Types",
         "operationId": "getInsightTypes",
-        "description": "Returns the list of supported CDR Insight types and the Insight-specific input schema (`data`) each type expects.",
+        "description": "Returns the list of supported CDR Insight types and the Insight-specific input schema (`data`) each type expects. ",
         "parameters": [],
         "responses": {
           "200": {
@@ -506,6 +506,198 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    },
+    "/insights/types/{typeId}": {
+      "get": {
+        "tags": [
+          "Insights"
+        ],
+        "summary": "Retrieve Insight Type",
+        "operationId": "getInsightType",
+        "description": "Returns the definition of a single supported CDR Insight type identified by `{typeId}`. The `dataSchema` field describes only the Insight-specific input data (`data` field) accepted by existing Insight endpoints.",
+        "parameters": [
+          {
+            "name": "typeId",
+            "in": "path",
+            "required": true,
+            "description": "The Insight type identifier. Must be one of the supported enum values.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ACCOUNT_VERIFICATION",
+                "BALANCE_VERIFICATION",
+                "IDENTITY_VERIFICATION",
+                "INCOME_VERIFICATION",
+                "EXPENSE_RATIO_VERIFICATION"
+              ]
+            },
+            "examples": {
+              "accountVerification": {
+                "summary": "Account Verification",
+                "value": "ACCOUNT_VERIFICATION"
+              },
+              "balanceVerification": {
+                "summary": "Balance Verification",
+                "value": "BALANCE_VERIFICATION"
+              },
+              "identityVerification": {
+                "summary": "Identity Verification",
+                "value": "IDENTITY_VERIFICATION"
+              },
+              "incomeVerification": {
+                "summary": "Income Verification",
+                "value": "INCOME_VERIFICATION"
+              },
+              "expenseRatioVerification": {
+                "summary": "Expense Ratio Verification",
+                "value": "EXPENSE_RATIO_VERIFICATION"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved Insight type definition",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightTypeItem"
+                },
+                "examples": {
+                  "accountVerification": {
+                    "summary": "Account Verification",
+                    "value": {
+                      "type": "insightType",
+                      "id": "ACCOUNT_VERIFICATION",
+                      "supportMultipleUsers": false,
+                      "name": "Account Verification",
+                      "description": "Verifies whether the provided account number matches any of the user's accounts.",
+                      "dataSchema": {
+                        "accountNumber": "string",
+                        "accountType": "string"
+                      }
+                    }
+                  },
+                  "balanceVerification": {
+                    "summary": "Balance Verification",
+                    "value": {
+                      "type": "insightType",
+                      "id": "BALANCE_VERIFICATION",
+                      "supportMultipleUsers": false,
+                      "name": "Balance Verification",
+                      "description": "Verifies whether an account balance falls within the specified minimum and/or maximum values.",
+                      "dataSchema": {
+                        "balance": {
+                          "min": "string",
+                          "max": "string"
+                        }
+                      }
+                    }
+                  },
+                  "identityVerification": {
+                    "summary": "Identity Verification",
+                    "value": {
+                      "type": "insightType",
+                      "id": "IDENTITY_VERIFICATION",
+                      "supportMultipleUsers": false,
+                      "name": "Identity Verification",
+                      "description": "Verifies one or more identity attributes for a user.",
+                      "dataSchema": {
+                        "name": "string",
+                        "email": "string",
+                        "phone": "string",
+                        "address": "string"
+                      }
+                    }
+                  },
+                  "incomeVerification": {
+                    "summary": "Income Verification",
+                    "value": {
+                      "type": "insightType",
+                      "id": "INCOME_VERIFICATION",
+                      "supportMultipleUsers": false,
+                      "name": "Income Verification",
+                      "description": "Verifies user income against provided minimum and/or maximum thresholds.",
+                      "dataSchema": {
+                        "income": {
+                          "min": "string",
+                          "max": "string"
+                        }
+                      }
+                    }
+                  },
+                  "expenseRatioVerification": {
+                    "summary": "Expense Ratio Verification",
+                    "value": {
+                      "type": "insightType",
+                      "id": "EXPENSE_RATIO_VERIFICATION",
+                      "supportMultipleUsers": true,
+                      "name": "Expense Ratio Verification",
+                      "description": "Calculates an expense-to-income ratio based on the provided expense value.",
+                      "dataSchema": {
+                        "expense": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized – missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden – insufficient permissions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found – the specified `typeId` does not match a known Insight type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "unknownTypeId": {
+                    "summary": "Unknown typeId",
+                    "value": {
+                      "correlationId": "abc123",
+                      "data": [
+                        {
+                          "type": "parameter-not-valid",
+                          "title": "Parameter not valid",
+                          "detail": "Insight type 'UNKNOWN_TYPE' is not supported.",
+                          "source": {
+                            "parameter": "typeId"
+                          }
+                        }
+                      ]
+                    }
+                  }
                 }
               }
             }
