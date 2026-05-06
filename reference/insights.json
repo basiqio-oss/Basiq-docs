@@ -22,7 +22,7 @@
           "Insights"
         ],
         "summary": "Create an Insight",
-        "description": "Creates a new insight for one or more users. Supports the following insight types: `EXPENSE_RATIO_VERIFICATION`, `BALANCE_VERIFICATION`, `ACCOUNT_VERIFICATION`, `IDENTITY_VERIFICATION`, and `INCOME_VERIFICATION`. Supports 1–10 users per request. A single insight object is created referencing all users. The self link in the response uses the first userId from the `users` array. No changes are made to existing per-user insight endpoints.",
+        "description": "Creates a new insight for one or more users. Supports the following insight types: `EXPENSE_RATIO_VERIFICATION`, `BALANCE_VERIFICATION`, `ACCOUNT_VERIFICATION`, `IDENTITY_VERIFICATION`, and `INCOME_VERIFICATION`. Supports 1–10 users per request. A single insight object is created referencing all users. The self link in the response uses the first userId from the `users` array. ",
         "operationId": "createInsight",
         "requestBody": {
           "required": true,
@@ -525,7 +525,7 @@
         ],
         "summary": "Retrieve Insight Type",
         "operationId": "getInsightType",
-        "description": "Returns the definition of a single supported CDR Insight type identified by `{typeId}`. The `dataSchema` field describes only the Insight-specific input data (`data` field) accepted by existing Insight endpoints.",
+        "description": "Returns the definition of a single supported CDR Insight type identified by `{typeId}`.",
         "parameters": [
           {
             "name": "typeId",
@@ -993,7 +993,7 @@
                       "data": [
                         {
                           "accountId": "account-id-1",
-                          "accountNumber": {
+                          "balance": {
                             "input": {
                               "min": "1",
                               "max": "2"
@@ -1985,9 +1985,7 @@
               {
                 "title": "ExpenseRatioData",
                 "description": "Required when type is EXPENSE_RATIO_VERIFICATION.",
-                "required": [
-                  "expense"
-                ],
+                "required": ["expense"],
                 "properties": {
                   "expense": {
                     "type": "string",
@@ -1999,15 +1997,11 @@
               {
                 "title": "BalanceVerificationData",
                 "description": "Required when type is BALANCE_VERIFICATION.",
-                "required": [
-                  "balance"
-                ],
+                "required": ["balance"],
                 "properties": {
                   "balance": {
                     "type": "object",
-                    "required": [
-                      "min"
-                    ],
+                    "required": ["min"],
                     "properties": {
                       "min": {
                         "type": "string",
@@ -2026,9 +2020,7 @@
               {
                 "title": "AccountVerificationData",
                 "description": "Required when type is ACCOUNT_VERIFICATION.",
-                "required": [
-                  "accountNumber"
-                ],
+                "required": ["accountNumber"],
                 "properties": {
                   "accountNumber": {
                     "type": "string",
@@ -2072,15 +2064,11 @@
               {
                 "title": "IncomeVerificationData",
                 "description": "Required when type is INCOME_VERIFICATION.",
-                "required": [
-                  "income"
-                ],
+                "required": ["income"],
                 "properties": {
                   "income": {
                     "type": "object",
-                    "required": [
-                      "min"
-                    ],
+                    "required": ["min"],
                     "properties": {
                       "min": {
                         "type": "string",
@@ -2114,9 +2102,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "insightType"
-            ],
+            "enum": ["insightType"],
             "description": "Resource type identifier, always `insightType`."
           },
           "id": {
@@ -2162,9 +2148,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "list"
-            ],
+            "enum": ["list"],
             "description": "Resource type identifier, always `list`."
           },
           "count": {
@@ -2239,18 +2223,10 @@
             "description": "Array containing the insight result. Shape varies by insightType.",
             "items": {
               "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
-                },
-                {
-                  "$ref": "#/components/schemas/AccountInsightDataItem"
-                },
-                {
-                  "$ref": "#/components/schemas/BalanceInsightDataItem"
-                },
-                {
-                  "$ref": "#/components/schemas/IdentityInsightDataItem"
-                }
+                { "$ref": "#/components/schemas/ExpenseRatioInsightDataItem" },
+                { "$ref": "#/components/schemas/AccountInsightDataItem" },
+                { "$ref": "#/components/schemas/BalanceInsightDataItem" },
+                { "$ref": "#/components/schemas/IdentityInsightDataItem" }
               ]
             }
           },
@@ -2897,8 +2873,9 @@
             "format": "uuid",
             "description": "Unique identifier for the account"
           },
-          "accountNumber": {
+          "balance": {
             "type": "object",
+            "description": "Balance verification result",
             "properties": {
               "input": {
                 "type": "object",
@@ -2937,7 +2914,7 @@
         },
         "required": [
           "accountId",
-          "accountNumber"
+          "balance"
         ]
       },
       "BalanceInsightDataItem": {
@@ -2951,8 +2928,9 @@
             "format": "uuid",
             "description": "The account identifier being verified"
           },
-          "accountNumber": {
+          "balance": {
             "type": "object",
+            "description": "Balance verification result",
             "properties": {
               "input": {
                 "type": "object",
