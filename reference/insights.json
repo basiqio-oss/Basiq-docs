@@ -1674,7 +1674,9 @@
               {
                 "title": "ExpenseRatioData",
                 "description": "Required when type is EXPENSE_RATIO_VERIFICATION.",
-                "required": ["expense"],
+                "required": [
+                  "expense"
+                ],
                 "properties": {
                   "expense": {
                     "type": "string",
@@ -1686,11 +1688,15 @@
               {
                 "title": "BalanceVerificationData",
                 "description": "Required when type is BALANCE_VERIFICATION.",
-                "required": ["balance"],
+                "required": [
+                  "balance"
+                ],
                 "properties": {
                   "balance": {
                     "type": "object",
-                    "required": ["min"],
+                    "required": [
+                      "min"
+                    ],
                     "properties": {
                       "min": {
                         "type": "string",
@@ -1709,7 +1715,9 @@
               {
                 "title": "AccountVerificationData",
                 "description": "Required when type is ACCOUNT_VERIFICATION.",
-                "required": ["accountNumber"],
+                "required": [
+                  "accountNumber"
+                ],
                 "properties": {
                   "accountNumber": {
                     "type": "string",
@@ -1753,11 +1761,15 @@
               {
                 "title": "IncomeVerificationData",
                 "description": "Required when type is INCOME_VERIFICATION.",
-                "required": ["income"],
+                "required": [
+                  "income"
+                ],
                 "properties": {
                   "income": {
                     "type": "object",
-                    "required": ["min"],
+                    "required": [
+                      "min"
+                    ],
                     "properties": {
                       "min": {
                         "type": "string",
@@ -1835,10 +1847,18 @@
             "description": "Array containing the insight result. Shape varies by insightType.",
             "items": {
               "oneOf": [
-                { "$ref": "#/components/schemas/ExpenseRatioInsightDataItem" },
-                { "$ref": "#/components/schemas/AccountInsightDataItem" },
-                { "$ref": "#/components/schemas/BalanceInsightDataItem" },
-                { "$ref": "#/components/schemas/IdentityInsightDataItem" }
+                {
+                  "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/AccountInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/BalanceInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/IdentityInsightDataItem"
+                }
               ]
             }
           },
