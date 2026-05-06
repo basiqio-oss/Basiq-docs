@@ -1,7 +1,7 @@
 - createinsight
+- listuserinsights
 - getinsightbyid
 - getinsighttype
-- listuserinsights
 - getinsighttypes
 - getaccountinsights
 - getbalanceinsights
