@@ -22,7 +22,7 @@
           "Insights"
         ],
         "summary": "Create an Insight",
-        "description": "Creates a new insight for one or more users. Currently supports `expense-ratio` as the insight type. Reuses the same calculation logic and response structure as `POST /users/{userId}/insights/expense-ratio`. Supports 1–10 users per request. A single insight object is created referencing all users. The self link in the response uses the first userId from the `users` array.",
+        "description": "Creates a new insight for one or more users. Supports the following insight types: `EXPENSE_RATIO_VERIFICATION`, `BALANCE_VERIFICATION`, `ACCOUNT_VERIFICATION`, `IDENTITY_VERIFICATION`, and `INCOME_VERIFICATION`. Supports 1–10 users per request. A single insight object is created referencing all users. The self link in the response uses the first userId from the `users` array. No changes are made to existing per-user insight endpoints.",
         "operationId": "createInsight",
         "requestBody": {
           "required": true,
@@ -32,20 +32,20 @@
                 "$ref": "#/components/schemas/PostInsightsRequest"
               },
               "examples": {
-                "single_user_expense_ratio": {
-                  "summary": "Single user – expense-ratio",
+                "expense_ratio_single_user": {
+                  "summary": "Expense Ratio – single user",
                   "value": {
                     "users": [
                       "a9242681-8c49-434c-9eeb-e011fba2a0cc"
                     ],
                     "type": "EXPENSE_RATIO_VERIFICATION",
                     "data": {
-                      "expense": "2500"
+                      "expense": "1000"
                     }
                   }
                 },
-                "multi_user_expense_ratio": {
-                  "summary": "Multiple users – expense-ratio",
+                "expense_ratio_multi_user": {
+                  "summary": "Expense Ratio – multiple users",
                   "value": {
                     "users": [
                       "a9242681-8c49-434c-9eeb-e011fba2a0cc",
@@ -56,6 +56,64 @@
                       "expense": "1000"
                     }
                   }
+                },
+                "balance_verification": {
+                  "summary": "Balance Verification",
+                  "value": {
+                    "users": [
+                      "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                    ],
+                    "type": "BALANCE_VERIFICATION",
+                    "data": {
+                      "balance": {
+                        "min": "1",
+                        "max": "2"
+                      }
+                    }
+                  }
+                },
+                "account_verification": {
+                  "summary": "Account Verification",
+                  "value": {
+                    "users": [
+                      "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                    ],
+                    "type": "ACCOUNT_VERIFICATION",
+                    "data": {
+                      "accountNumber": "032096658830",
+                      "accountType": "savings"
+                    }
+                  }
+                },
+                "identity_verification": {
+                  "summary": "Identity Verification",
+                  "value": {
+                    "users": [
+                      "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                    ],
+                    "type": "IDENTITY_VERIFICATION",
+                    "data": {
+                      "name": "Jane Doe",
+                      "email": "jane@example.com",
+                      "phone": "+61400000000",
+                      "address": "123 Main St, Sydney NSW 2000"
+                    }
+                  }
+                },
+                "income_verification": {
+                  "summary": "Income Verification",
+                  "value": {
+                    "users": [
+                      "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                    ],
+                    "type": "INCOME_VERIFICATION",
+                    "data": {
+                      "income": {
+                        "min": "1",
+                        "max": "2"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -63,11 +121,11 @@
         },
         "responses": {
           "200": {
-            "description": "Successfully created expense-ratio insight",
+            "description": "Successfully created insight",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostInsightsExpenseRatioResponse"
+                  "$ref": "#/components/schemas/PostInsightsResponse"
                 },
                 "examples": {
                   "0_to_10_percent_single_user": {
@@ -365,7 +423,7 @@
             "name": "filter",
             "in": "query",
             "required": false,
-            "description": "Filter parameter supporting multiple filter fields separated by commas. Supported fields: 'created' (date in YYYY-MM-DD format) and 'insightType' (account, balance, identity, expense-ratio). Operators: gteq (>=), lteq (<=), gt (>), lt (<), eq (=), bt (between two dates). Examples: 'created.gteq('2025-06-16')', 'created.bt('2025-08-25','2025-09-02')', 'insightType.eq('account')', 'created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')'",
+            "description": "Filter parameter supporting multiple filter fields separated by commas. Supported fields: 'created' (date in YYYY-MM-DD format) and 'insightType' (account, balance, identity, income, expense-ratio). Operators: gteq (>=), lteq (<=), gt (>), lt (<), eq (=), bt (between two dates). Examples: 'created.gteq('2025-06-16')', 'created.bt('2025-08-25','2025-09-02')', 'insightType.eq('account')', 'created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')'",
             "schema": {
               "type": "string"
             },
@@ -381,6 +439,10 @@
               "insightTypeOnly": {
                 "summary": "Filter by insight type",
                 "value": "insightType.eq('account')"
+              },
+              "insightTypeIncome": {
+                "summary": "Filter by income insight type",
+                "value": "insightType.eq('income')"
               },
               "insightTypeExpenseRatio": {
                 "summary": "Filter by expense-ratio insight type",
@@ -1597,27 +1659,125 @@
             "type": "string",
             "description": "The type of insight to generate.",
             "enum": [
-              "EXPENSE_RATIO_VERIFICATION"
+              "EXPENSE_RATIO_VERIFICATION",
+              "BALANCE_VERIFICATION",
+              "ACCOUNT_VERIFICATION",
+              "IDENTITY_VERIFICATION",
+              "INCOME_VERIFICATION"
             ],
             "example": "EXPENSE_RATIO_VERIFICATION"
           },
           "data": {
             "type": "object",
-            "required": [
-              "expense"
-            ],
-            "description": "Input data for the insight. For expense-ratio, supply the `expense` field.",
-            "properties": {
-              "expense": {
-                "type": "string",
-                "description": "The expense value (as a numeric string) to calculate the ratio against income (ME040 Average Monthly Credit). Must be a positive numeric string.",
-                "example": "1000"
+            "description": "Input data for the insight. The required fields vary by `type`.",
+            "oneOf": [
+              {
+                "title": "ExpenseRatioData",
+                "description": "Required when type is EXPENSE_RATIO_VERIFICATION.",
+                "required": ["expense"],
+                "properties": {
+                  "expense": {
+                    "type": "string",
+                    "description": "The expense value (as a numeric string) to calculate the ratio against income (ME040 Average Monthly Credit). Must be a positive numeric string.",
+                    "example": "1000"
+                  }
+                }
+              },
+              {
+                "title": "BalanceVerificationData",
+                "description": "Required when type is BALANCE_VERIFICATION.",
+                "required": ["balance"],
+                "properties": {
+                  "balance": {
+                    "type": "object",
+                    "required": ["min"],
+                    "properties": {
+                      "min": {
+                        "type": "string",
+                        "description": "Minimum balance threshold as a numeric string.",
+                        "example": "1"
+                      },
+                      "max": {
+                        "type": "string",
+                        "description": "Maximum balance threshold as a numeric string. Optional.",
+                        "example": "2"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "title": "AccountVerificationData",
+                "description": "Required when type is ACCOUNT_VERIFICATION.",
+                "required": ["accountNumber"],
+                "properties": {
+                  "accountNumber": {
+                    "type": "string",
+                    "description": "The account number to verify.",
+                    "example": "032096658830"
+                  },
+                  "accountType": {
+                    "type": "string",
+                    "description": "The account type to verify. Optional.",
+                    "example": "savings"
+                  }
+                }
+              },
+              {
+                "title": "IdentityVerificationData",
+                "description": "Required when type is IDENTITY_VERIFICATION. At least one field must be provided.",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Full name to verify.",
+                    "example": "Jane Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Email address to verify.",
+                    "example": "jane@example.com"
+                  },
+                  "phone": {
+                    "type": "string",
+                    "description": "Phone number to verify (E.164 format recommended).",
+                    "example": "+61400000000"
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "Address to verify.",
+                    "example": "123 Main St, Sydney NSW 2000"
+                  }
+                }
+              },
+              {
+                "title": "IncomeVerificationData",
+                "description": "Required when type is INCOME_VERIFICATION.",
+                "required": ["income"],
+                "properties": {
+                  "income": {
+                    "type": "object",
+                    "required": ["min"],
+                    "properties": {
+                      "min": {
+                        "type": "string",
+                        "description": "Minimum income threshold as a numeric string.",
+                        "example": "1"
+                      },
+                      "max": {
+                        "type": "string",
+                        "description": "Maximum income threshold as a numeric string. Optional.",
+                        "example": "2"
+                      }
+                    }
+                  }
+                }
               }
-            }
+            ]
           }
         }
       },
-      "PostInsightsExpenseRatioResponse": {
+      "PostInsightsResponse": {
         "type": "object",
         "required": [
           "type",
@@ -1628,7 +1788,7 @@
           "data",
           "links"
         ],
-        "description": "Response for a multi-user expense-ratio insight created via POST /insights. Identical to the legacy expense-ratio response but includes an additional `users` array.",
+        "description": "Response for an insight created via POST /insights. Includes a `users` array reflecting the users from the request.",
         "properties": {
           "type": {
             "type": "string",
@@ -1662,15 +1822,24 @@
           "insightType": {
             "type": "string",
             "enum": [
-              "expense-ratio"
+              "expense-ratio",
+              "balance",
+              "account",
+              "identity",
+              "income"
             ],
             "description": "Type of insight returned"
           },
           "data": {
             "type": "array",
-            "description": "Array containing the expense ratio result",
+            "description": "Array containing the insight result. Shape varies by insightType.",
             "items": {
-              "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
+              "oneOf": [
+                { "$ref": "#/components/schemas/ExpenseRatioInsightDataItem" },
+                { "$ref": "#/components/schemas/AccountInsightDataItem" },
+                { "$ref": "#/components/schemas/BalanceInsightDataItem" },
+                { "$ref": "#/components/schemas/IdentityInsightDataItem" }
+              ]
             }
           },
           "links": {
@@ -1784,9 +1953,10 @@
               "account",
               "balance",
               "identity",
+              "income",
               "expense-ratio"
             ],
-            "description": "Type of insight: account verification, balance verification, identity verification, or expense-ratio"
+            "description": "Type of insight: account verification, balance verification, identity verification, income verification, or expense-ratio"
           },
           "data": {
             "type": "array",
@@ -1800,6 +1970,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/IdentityInsightDataItem"
+                },
+                {
+                  "$ref": "#/components/schemas/IncomeInsightDataItem"
                 },
                 {
                   "$ref": "#/components/schemas/ExpenseRatioInsightDataItem"
