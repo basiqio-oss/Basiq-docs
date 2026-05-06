@@ -1,6 +1,6 @@
 - createinsight
-- listuserinsights
 - getinsightbyid
+- listuserinsights
 - getaccountinsights
 - getbalanceinsights
 - getidentityinsights
