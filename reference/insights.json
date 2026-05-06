@@ -406,7 +406,7 @@
         ],
         "summary": "List Insight Types",
         "operationId": "getInsightTypes",
-        "description": "Returns the list of supported CDR Insight types and the Insight-specific input schema (`data`) each type expects. This endpoint exposes static reference data — Insight Type records are pre-seeded per environment (dev and prod) and are not created or validated at runtime. The `dataSchema` for each type describes only the Insight-specific input currently accepted by existing Insight endpoints. It does not define or imply the full request structure used by `POST /insights` (i.e. `users`, `type`, and other transport-level fields are not part of this schema). No behaviour change is made to any existing Insight endpoints.",
+        "description": "Returns the list of supported CDR Insight types and the Insight-specific input schema (`data`) each type expects. ",
         "parameters": [],
         "responses": {
           "200": {
