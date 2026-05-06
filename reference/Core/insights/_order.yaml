@@ -1,3 +1,4 @@
+- createinsight
 - listuserinsights
 - getinsightbyid
 - getaccountinsights
@@ -5,4 +6,3 @@
 - getidentityinsights
 - verifyincomeinsight
 - getexpenseratioinsights
-- createinsight
