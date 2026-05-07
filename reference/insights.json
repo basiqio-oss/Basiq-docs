@@ -22,7 +22,7 @@
           "Insights"
         ],
         "summary": "Create an Insight",
-        "description": "Creates a new insight for one or more users. Supports the following insight types: `EXPENSE_RATIO_VERIFICATION`, `BALANCE_VERIFICATION`, `ACCOUNT_VERIFICATION`, `IDENTITY_VERIFICATION`, and `INCOME_VERIFICATION`. Supports 1–10 users per request. A single insight object is created referencing all users. The self link in the response uses the first userId from the `users` array. ",
+        "description": "Creates a new insight for one or more users. Supported insight types are EXPENSE_RATIO_VERIFICATION, BALANCE_VERIFICATION, ACCOUNT_VERIFICATION, IDENTITY_VERIFICATION, and INCOME_VERIFICATION. Multi-user requests (1–10 users) are currently supported only for EXPENSE_RATIO_VERIFICATION.A single insight object is created referencing all users. The self link in the response uses the first userId from the users array.",
         "operationId": "createInsight",
         "requestBody": {
           "required": true,
