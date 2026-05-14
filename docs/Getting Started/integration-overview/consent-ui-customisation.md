@@ -51,250 +51,24 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
 #### Consent Tab Settings
 
-<Table align={["left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Section
-      </th>
-
-      <th>
-        Feature
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        Title and Subtitle
-      </td>
-
-      <td>
-        Brand name
-      </td>
-
-      <td>
-        Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Title
-      </td>
-
-      <td>
-        Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Subtitle
-      </td>
-
-      <td>
-        Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Purposes
-      </td>
-
-      <td>
-        \[Your Purpose]
-      </td>
-
-      <td>
-        Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        [Permissions](doc:consent-scopes)
-      </td>
-
-      <td>
-
-      </td>
-
-      <td>
-        Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Name and occupation
-      </td>
-
-      <td>
-        \[Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Name, occupation, contact details
-      </td>
-
-      <td>
-        \[Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Organisation profile
-      </td>
-
-      <td>
-        \[Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Organisation profile and contact details
-      </td>
-
-      <td>
-        \[Checkbox - unchecked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Account name, type and balance
-      </td>
-
-      <td>
-        \[Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Account balance and details
-      </td>
-
-      <td>
-        \[Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Transaction details
-      </td>
-
-      <td>
-        \[Checkbox - checked]
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        Data
-      </td>
-
-      <td>
-        Duration (days)
-      </td>
-
-      <td>
-        Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Data retrieval span (days)
-      </td>
-
-      <td>
-        Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Retain consumer data
-      </td>
-
-      <td>
-        You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law.
-        We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-        Ask to retain de-identified data
-      </td>
-
-      <td>
-        In both cases for `action=connect` and `action=manage`. The `BrandName` will remove personal details from your data so you can’t be identified, while ensuring compliance with applicable privacy safeguards.
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Section                           | Feature                                  | Description                                                                                                                                                                                                                                                                                                                                   |
+| :-------------------------------- | :--------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title and Subtitle                | Brand name                               | Identifies your service in the consent UI, establishing a clear brand presence for users during the consent process. This should be recognisable and consistent with your other branding.                                                                                                                                                     |
+|                                   | Title                                    | Custom text fields for setting the main title hat appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.                                                                                                                                                                         |
+|                                   | Subtitle                                 | Custom text fields for setting the subtitle that appear in the consent UI, which can be used to communicate the purpose of the data sharing to the user effectively.                                                                                                                                                                          |
+| Purposes                          | [Your Purpose]                           | Defines the specific reasons for data collection. This section is to articulate the scope and intent of the data retrieval to users, ensuring transparency in data usage.                                                                                                                                                                     |
+| [Permissions](doc:consent-scopes) |                                          | Detailed control over the types of financial data the application will access, such as account names, balances, and transaction details. This ensures users are informed about what data is being accessed and for what purpose.                                                                                                              |
+|                                   | Name and occupation                      | [Checkbox - unchecked]                                                                                                                                                                                                                                                                                                                        |
+|                                   | Name, occupation, contact details        | [Checkbox - checked]                                                                                                                                                                                                                                                                                                                          |
+|                                   | Organisation profile                     | [Checkbox - unchecked]                                                                                                                                                                                                                                                                                                                        |
+|                                   | Organisation profile and contact details | [Checkbox - unchecked]                                                                                                                                                                                                                                                                                                                        |
+|                                   | Account name, type and balance           | [Checkbox - checked]                                                                                                                                                                                                                                                                                                                          |
+|                                   | Account balance and details              | [Checkbox - checked]                                                                                                                                                                                                                                                                                                                          |
+|                                   | Transaction details                      | [Checkbox - checked]                                                                                                                                                                                                                                                                                                                          |
+| Data                              | Duration (days)                          | Determines the validity period of user consent for data sharing. A standard setting is 365 days, but it can be adjusted according to specific business needs or regulatory requirements.                                                                                                                                                      |
+|                                   | Data retrieval span (days)               | Specifies the extent of historical financial data that users allow to access upon giving consent. This can range from a recent few days to an extensive span of up to two years, enabling detailed financial analysis.                                                                                                                        |
+|                                   | Retain consumer data                     | You should select this option if you anticipate that your organisation will need to retain CDR data once it is no longer required for CDR purposes only if it is authorised or required to retain the data by or under an Australian law. We will remove CDR data upon consent expiration. Data retention should be handled outside of Basiq. |
+|                                   | Ask to retain de-identified data         | In both cases for `action=connect` and `action=manage`. The `BrandName` will remove personal details from your data so you can’t be identified, while ensuring compliance with applicable privacy safeguards.                                                                                                                                 |
 
 #### Appearance Tab Settings
 
@@ -640,6 +414,20 @@ The Consent UI is composed of several key screens, each designed to facilitate a
 
       <td>
         A toggle to bypass the confirmation screen after successful consent, offering a more streamlined experience for users. Useful for repeat users who are familiar with the process and do not require additional confirmation.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        Skip error pages
+      </td>
+
+      <td>
+        A toggle to bypass Consent UI error pages and redirect users directly back to the configured Redirect URL when connection failures occur. Applies to DCR errors and other connection failures, allowing partners to handle error experiences within their own applications.
       </td>
     </tr>
 
