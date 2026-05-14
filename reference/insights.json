@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Core",
+    "title": "Insights",
     "description": "All included utility endpoints for Basiq partners",
     "version": "3.0.0",
     "termsOfService": "https://docs.basiq.io/en/collections/440849-privacy-terms-and-common-questions",
