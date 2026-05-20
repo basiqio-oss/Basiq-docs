@@ -72,12 +72,8 @@
                           "name",
                           "displayName",
                           "accountNo",
-                          "accountHolder",
                           "isOwned",
                           "accountOwnership",
-                          "balance",
-                          "availableFunds",
-                          "creditLimit",
                           "currency",
                           "class",
                           "connection",
@@ -1545,12 +1541,8 @@
                     "status",
                     "name",
                     "accountNo",
-                    "accountHolder",
                     "isOwned",
                     "accountOwnership",
-                    "balance",
-                    "availableFunds",
-                    "creditLimit",
                     "currency",
                     "class",
                     "connection",
@@ -2960,7 +2952,6 @@
                           "amount",
                           "currency",
                           "class",
-                          "subClass",
                           "connection",
                           "direction",
                           "enrich",
@@ -3021,7 +3012,8 @@
                           "balance": {
                             "type": "string",
                             "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
-                            "example": "123.12"
+                            "example": "123.12",
+                            "nullable": true
                           },
                           "direction": {
                             "type": "string",
@@ -3827,7 +3819,6 @@
                     "amount",
                     "currency",
                     "class",
-                    "subClass",
                     "connection",
                     "direction",
                     "enrich",
@@ -3888,7 +3879,8 @@
                     "balance": {
                       "type": "string",
                       "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
-                      "example": "123.12"
+                      "example": "123.12",
+                      "nullable": true
                     },
                     "direction": {
                       "type": "string",
@@ -5746,8 +5738,6 @@
                               "id",
                               "lastUpdated",
                               "accountNo",
-                              "availableFunds",
-                              "balance",
                               "class",
                               "currency",
                               "links",
@@ -8248,9 +8238,7 @@
                           "institution",
                           "method",
                           "stage",
-                          "stats",
                           "status",
-                          "scopes",
                           "authorization"
                         ],
                         "type": "object",
@@ -8915,9 +8903,7 @@
                     "institution",
                     "method",
                     "stage",
-                    "stats",
                     "status",
-                    "scopes",
                     "authorization"
                   ],
                   "type": "object",
@@ -9899,8 +9885,6 @@
                 "id",
                 "lastUpdated",
                 "accountNo",
-                "availableFunds",
-                "balance",
                 "class",
                 "currency",
                 "links",
@@ -10012,8 +9996,6 @@
           "id",
           "lastUpdated",
           "accountNo",
-          "availableFunds",
-          "balance",
           "class",
           "currency",
           "links",
@@ -10316,9 +10298,7 @@
                 "institution",
                 "method",
                 "stage",
-                "stats",
                 "status",
-                "scopes",
                 "authorization"
               ],
               "type": "object",
@@ -10653,9 +10633,7 @@
           "institution",
           "method",
           "stage",
-          "stats",
           "status",
-          "scopes",
           "authorization"
         ],
         "type": "object",
@@ -11454,8 +11432,6 @@
                     "id",
                     "lastUpdated",
                     "accountNo",
-                    "availableFunds",
-                    "balance",
                     "class",
                     "currency",
                     "links",
@@ -12044,12 +12020,8 @@
           "status",
           "name",
           "accountNo",
-          "accountHolder",
           "isOwned",
           "accountOwnership",
-          "balance",
-          "availableFunds",
-          "creditLimit",
           "currency",
           "class",
           "connection",
@@ -12168,18 +12140,6 @@
           },
           "class": {
             "description": "Describes the class(type) of accounts.",
-            "enum": [
-              "transaction",
-              "savings",
-              "credit-card",
-              "mortgage",
-              "loan",
-              "investment",
-              "term-deposit",
-              "insurance",
-              "foreign",
-              "unknown"
-            ],
             "required": [
               "type",
               "product"
@@ -12188,7 +12148,19 @@
               "type": {
                 "type": "string",
                 "description": "Account type",
-                "example": "mortgage"
+                "example": "mortgage",
+                "enum": [
+                  "transaction",
+                  "savings",
+                  "credit-card",
+                  "mortgage",
+                  "loan",
+                  "investment",
+                  "term-deposit",
+                  "insurance",
+                  "foreign",
+                  "unknown"
+                ]
               },
               "product": {
                 "type": "string",
@@ -12196,7 +12168,8 @@
                 "example": "Hooli Home Loan"
               }
             },
-            "x-readme-ref-name": "AccountClass"
+            "x-readme-ref-name": "AccountClass",
+            "type": "object"
           },
           "connection": {
             "type": "string",
@@ -14564,12 +14537,8 @@
                 "status",
                 "name",
                 "accountNo",
-                "accountHolder",
                 "isOwned",
                 "accountOwnership",
-                "balance",
-                "availableFunds",
-                "creditLimit",
                 "currency",
                 "class",
                 "connection",
@@ -14688,18 +14657,6 @@
                 },
                 "class": {
                   "description": "Describes the class(type) of accounts.",
-                  "enum": [
-                    "transaction",
-                    "savings",
-                    "credit-card",
-                    "mortgage",
-                    "loan",
-                    "investment",
-                    "term-deposit",
-                    "insurance",
-                    "foreign",
-                    "unknown"
-                  ],
                   "required": [
                     "type",
                     "product"
@@ -14708,7 +14665,19 @@
                     "type": {
                       "type": "string",
                       "description": "Account type",
-                      "example": "mortgage"
+                      "example": "mortgage",
+                      "enum": [
+                        "transaction",
+                        "savings",
+                        "credit-card",
+                        "mortgage",
+                        "loan",
+                        "investment",
+                        "term-deposit",
+                        "insurance",
+                        "foreign",
+                        "unknown"
+                      ]
                     },
                     "product": {
                       "type": "string",
@@ -14716,7 +14685,8 @@
                       "example": "Hooli Home Loan"
                     }
                   },
-                  "x-readme-ref-name": "AccountClass"
+                  "x-readme-ref-name": "AccountClass",
+                  "type": "object"
                 },
                 "connection": {
                   "type": "string",
@@ -16077,7 +16047,6 @@
           "amount",
           "currency",
           "class",
-          "subClass",
           "connection",
           "direction",
           "enrich",
@@ -16138,7 +16107,8 @@
           "balance": {
             "type": "string",
             "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
-            "example": "123.12"
+            "example": "123.12",
+            "nullable": true
           },
           "direction": {
             "type": "string",
@@ -17162,7 +17132,6 @@
                 "amount",
                 "currency",
                 "class",
-                "subClass",
                 "connection",
                 "direction",
                 "enrich",
@@ -17223,7 +17192,8 @@
                 "balance": {
                   "type": "string",
                   "description": "Account balance at the time the transaction was completed. Included for Web connection integrations. CDR does not supply transaction balance, so this field will be empty for CDR connections.",
-                  "example": "123.12"
+                  "example": "123.12",
+                  "nullable": true
                 },
                 "direction": {
                   "type": "string",

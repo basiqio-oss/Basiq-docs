@@ -5407,25 +5407,13 @@
                           },
                           "entity": {
                             "type": "string",
-                            "description": "The entity associated with the event that has occurred",
-                            "example": "consent",
-                            "enum": [
-                              "consent",
-                              "connection"
-                            ]
+                            "description": "The entity associated with the event that has occurred. Known values include consent, connection, account, transaction, and user. This list is not exhaustive.",
+                            "example": "consent"
                           },
                           "eventType": {
                             "type": "string",
-                            "description": "The type of event that has occurred",
-                            "example": "revoked",
-                            "enum": [
-                              "revoked",
-                              "expired",
-                              "updated",
-                              "created",
-                              "archived",
-                              "deleted"
-                            ]
+                            "description": "The type of event that has occurred. Known values include revoked, expired, updated, created, archived, and deleted. This list is not exhaustive.",
+                            "example": "revoked"
                           },
                           "userId": {
                             "type": "string",
@@ -7773,14 +7761,8 @@
                               "properties": {
                                 "title": {
                                   "type": "string",
-                                  "description": "Name of the step the job needs to complete.",
-                                  "example": "retrieve-accounts",
-                                  "enum": [
-                                    "verify-credentials",
-                                    "retrieve-accounts",
-                                    "retrieve-transactions",
-                                    "retrieve-statements"
-                                  ]
+                                  "description": "Name of the step the job needs to complete. Known values include verify-credentials, retrieve-accounts, retrieve-transactions, and retrieve-statements. Additional step types may be returned for report and affordability jobs. This list is not exhaustive.",
+                                  "example": "retrieve-accounts"
                                 },
                                 "status": {
                                   "type": "string",
