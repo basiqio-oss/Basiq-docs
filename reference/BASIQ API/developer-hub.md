@@ -28,6 +28,7 @@ Whether you're hands on and integrating, or just want to get acquainted with the
 
 The full OpenAPI specification for [api.basiq.io/reference](https://api.basiq.io/reference) is available on [GitHub](https://github.com/basiqio/api-ref). We regularly update the repository to reflect the latest changes. You can download the spec and explore features like:
 
+* Platform
 * Core
 * Data
 * Identity
