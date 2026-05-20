@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Data",
+    "title": "Platform",
     "description": "All included utility endpoints for Basiq partners",
     "version": "3.0.0",
     "license": {
