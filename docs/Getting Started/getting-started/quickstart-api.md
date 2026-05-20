@@ -42,6 +42,10 @@ Exchange your newly acquired API key for an access token. This token enables sec
 >
 > The scope you supply will depend on the action you are performing, see the [authentication section](https://api.basiq.io/reference/authentication) for further detail. For this quick start we will be using `SERVER_ACCESS`.
 
+> 🚧 API key format — do not Base64-encode
+>
+> The API key is passed **verbatim** as the Basic auth value. Unlike standard HTTP Basic Auth, there is no `base64(username:password)` encoding step — use the key exactly as issued from the dashboard. Encoding the key will result in a `400` error.
+
 ```javascript STEP 2: Authenticate
 var axios = require('axios');
 var qs = require('qs');
