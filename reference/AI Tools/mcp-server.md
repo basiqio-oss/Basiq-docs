@@ -41,8 +41,6 @@ This enables AI tools to understand and work with the Basiq API more accurately 
 https://api.basiq.io/mcp
 ```
 
-***
-
 # Setup
 
 ## Cursor
