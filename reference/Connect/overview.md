@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: OpenAPI specification
 deprecated: false
 hidden: true
 icon: fad fa-hand-wave
