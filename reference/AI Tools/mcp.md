@@ -2,6 +2,26 @@
 title: MCP Server
 hidden: true
 ---
+# MCP Server
+
+The Basiq Model Context Protocol (MCP) server enables AI coding tools and agents to interact directly with the Basiq API and documentation.
+
+It turns Basiq into an AI-accessible API platform, allowing assistants to search documentation, understand endpoints, and generate working integrations.
+
+## AI-first API access
+
+When connected via MCP, AI tools can:
+
+* Explore Basiq API endpoints and schemas
+* Retrieve authentication and consent flows
+* Generate production-ready integration code
+* Assist with debugging API issues
+* Follow multi-step integration workflows
+
+## MCP Server URL
+
+[https://api.basiq.io/mcp](https://api.basiq.io/mcp)
+
 The Basiq API Model Context Protocol (MCP) server enables AI-powered code editors like Cursor and Windsurf, plus general-purpose tools like Claude Desktop, to interact directly with your Basiq API API and documentation.
 
 ## What is MCP?
@@ -19,7 +39,7 @@ Basiq API hosts a remote MCP server at `https://api.basiq.io/mcp`. Configure you
 
 <Tabs>
   <Tab title="Cursor">
-    **Add to `~/.cursor/mcp.json`:**
+    **Add to`~/.cursor/mcp.json`:**
 
     ```json
     {
@@ -30,24 +50,10 @@ Basiq API hosts a remote MCP server at `https://api.basiq.io/mcp`. Configure you
       }
     }
     ```
-
-    </Tab>
-  <Tab title="Windsurf">
-    **Add to `~/.codeium/windsurf/mcp_config.json`:**
-
-    ```json
-    {
-      "mcpServers": {
-        "basiq": {
-          "url": "https://api.basiq.io/mcp"
-        }
-      }
-    }
-    ```
-
   </Tab>
-  <Tab title="Claude Desktop">
-    **Add to `claude_desktop_config.json`:**
+
+  <Tab title="Windsurf">
+    **Add to`~/.codeium/windsurf/mcp_config.json`:**
 
     ```json
     {
@@ -58,7 +64,20 @@ Basiq API hosts a remote MCP server at `https://api.basiq.io/mcp`. Configure you
       }
     }
     ```
+  </Tab>
 
+  <Tab title="Claude Desktop">
+    **Add to`claude_desktop_config.json`:**
+
+    ```json
+    {
+      "mcpServers": {
+        "basiq": {
+          "url": "https://api.basiq.io/mcp"
+        }
+      }
+    }
+    ```
   </Tab>
 </Tabs>
 
@@ -74,3 +93,13 @@ Once configured, you can test your MCP server connection:
    * "Create a [integration type] using Basiq API"
 
 The AI should now have access to your Basiq API account data and documentation through the MCP server.
+
+## Relationship to LLM Resources
+
+MCP is a live integration layer.
+
+For lightweight documentation access without a live connection, use:
+
+[https://api.basiq.io/llms.txt](https://api.basiq.io/llms.txt)
+
+These tools are designed to complement each other: - MCP → real-time API + tool access - llms.txt → static documentation index for AI retrieval
