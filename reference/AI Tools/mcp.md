@@ -8,22 +8,6 @@ The Basiq Model Context Protocol (MCP) server enables AI coding tools and agents
 
 It turns Basiq into an AI-accessible API platform, allowing assistants to search documentation, understand endpoints, and generate working integrations.
 
-## AI-first API access
-
-When connected via MCP, AI tools can:
-
-* Explore Basiq API endpoints and schemas
-* Retrieve authentication and consent flows
-* Generate production-ready integration code
-* Assist with debugging API issues
-* Follow multi-step integration workflows
-
-## MCP Server URL
-
-[https://api.basiq.io/mcp](https://api.basiq.io/mcp)
-
-The Basiq API Model Context Protocol (MCP) server enables AI-powered code editors like Cursor and Windsurf, plus general-purpose tools like Claude Desktop, to interact directly with your Basiq API API and documentation.
-
 ## What is MCP?
 
 Model Context Protocol (MCP) is an open standard that allows AI applications to securely access external data sources and tools. The Basiq API MCP server provides AI agents with:
@@ -32,6 +16,21 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
 * **Documentation search** capabilities
 * **Real-time data** from your Basiq API account
 * **Code generation** assistance for Basiq API integrations
+
+## What the Basiq MCP server provides
+
+When connected, AI tools can:
+
+* Search and retrieve Basiq API documentation
+* Explore endpoints, schemas, and authentication flows
+* Generate production-ready integration code
+* Assist with debugging API usage
+* Follow multi-step onboarding workflows
+* Understand webhook and consent-based data flows
+
+## MCP Server URL
+
+[https://api.basiq.io/mcp](https://api.basiq.io/mcp)
 
 ## Basiq API MCP Server Setup
 
@@ -101,5 +100,3 @@ MCP is a live integration layer.
 For lightweight documentation access without a live connection, use:
 
 [https://api.basiq.io/llms.txt](https://api.basiq.io/llms.txt)
-
-These tools are designed to complement each other: - MCP → real-time API + tool access - llms.txt → static documentation index for AI retrieval
