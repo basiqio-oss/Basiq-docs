@@ -1,4 +1,4 @@
 ---
 title: Insights
-hidden: false
+hidden: true
 ---
