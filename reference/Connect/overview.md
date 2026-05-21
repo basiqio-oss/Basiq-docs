@@ -2,7 +2,7 @@
 title: OpenAPI specification
 deprecated: false
 hidden: false
-icon: fad fa-hand-wave
+icon: fad fa-download
 metadata:
   robots: index
 ---
