@@ -29,14 +29,26 @@ Our APIs enable secure access to customer-consented financial data and tools to 
 
 ***
 
-## Use Cases
+## Products
+
+Explore the Basiq products available in the API reference. Select a product to open its OpenAPI spec.
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
-  <CoolTile header="Account Verification" icon="fa-duotone fa-check-circle" text="Verify account ownership and balances instantly for improved lending and payments." />
+  <CoolTile header="Connect" href="/branches/3.0/apis/connect.json" icon="fa-duotone fa-link" text="Access customer-consented account, transaction, connection, consent, job, and user data." />
 
-  <CoolTile header="Data Enrichment" icon="fa-duotone fa-layer-group" text="Classify transactions, identify merchants, and uncover behavioral insights." />
+  <CoolTile header="Enrich" href="/branches/3.0/apis/enrich.json" icon="fa-duotone fa-chart-line" text="Enhance transaction descriptions with merchant details, categories, and classification data." />
 
-  <CoolTile header="Wealth Management" icon="fa-duotone fa-chart-pie" text="Use enriched financial data for tailored wealth solutions and advice." />
+  <CoolTile header="CDR Insights" href="/branches/3.0/apis/insights.json" icon="fa-duotone fa-search" text="Create and retrieve insights for account, balance, expense ratio, identity, and income verification." />
+
+  <CoolTile header="Reporting" href="/branches/3.0/apis/reporting.json" icon="fa-duotone fa-file-chart-column" text="Generate, list, retrieve, and delete reports and report transactions from available report types." />
+
+  <CoolTile header="Identity Services" href="/branches/3.0/apis/identity.json" icon="fa-duotone fa-id-card" text="Retrieve identity records and identity details associated with a Basiq user." />
+
+  <CoolTile header="Platform" href="/branches/3.0/apis/platform.json" icon="fa-duotone fa-layer-group" text="Manage platform resources such as auth links, connectors, events, analytics, payees, and statements." />
+
+  <CoolTile header="Webhooks" href="/branches/3.0/apis/webhooks.json" icon="fa-duotone fa-webhook" text="Add webhook delivery to Platform with webhook configuration, messages, test messages, and delivery statistics." />
+
+  <CoolTile header="Affordability" href="/branches/3.0/apis/affordability.json" icon="fa-duotone fa-scale-balanced" text="Use the legacy affordability API to create and retrieve affordability, expense, income, and transaction summaries." />
 </Grid>
 
 ***
