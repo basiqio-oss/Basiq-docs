@@ -1,4 +1,4 @@
 ---
 title: Analytics
-hidden: true
+hidden: false
 ---
