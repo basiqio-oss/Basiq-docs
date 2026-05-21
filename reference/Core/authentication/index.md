@@ -1,4 +1,4 @@
 ---
 title: Authentication
-hidden: false
+hidden: true
 ---
