@@ -11,7 +11,7 @@ Use the Enrich openapi spec to classify transaction descriptions and retrieve en
 <Callout icon="📘">
   **OpenAPI specification**
 
-  Download or inspect the Enrich OpenAPI file: <Anchor label="`enrich.json`" target="_blank" href="/openapi/enrich.json">`enrich.json`</Anchor>
+  Download or inspect the Enrich OpenAPI file: <Anchor label="`enrich.json`" target="_blank" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/enrich.json">`enrich.json`</Anchor>
 </Callout>
 
 ## What’s included
@@ -23,3 +23,5 @@ The Enrich specification includes endpoints for:
 * Retrieving merchant details by merchant ID
 
 Use this specification when you want to improve raw transaction data with merchant, category, and payment context.
+
+<br />
