@@ -56,7 +56,7 @@ This command initiates the `api` installer, guiding you through project-specific
 * API Registry UUID  
   Example: `@basiq/v3.0#11eh2b8zmpevg72s`
 * URLs  
-  Example: https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/connect.json
+  Example: [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/connect.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/connect.json)
 * Local file paths are also supported.
 
 API Registry UUID can be found from [here](https://api.basiq.io/reference/posttoken).
@@ -114,7 +114,7 @@ When making API requests using the SDK, you only need to supply either one or tw
 
 ### Examples
 
-As we have imported `CORE` OAS from the [github](https://github.com/basiqio/api-ref). We will receive the below functions.
+As we have imported `CONNECT` OAS from the [github](https://github.com/basiqio/api-ref). We will receive the below functions.
 
 > You can repeat this process for the other sections.
 
