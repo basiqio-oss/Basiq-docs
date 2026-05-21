@@ -121,24 +121,28 @@ As we have imported `CORE` OAS from the [github](https://github.com/basiqio/api-
 ```
 Connect/
 ├── authentication/
-│   └── post/
+│   └── post_token/
 ├── users/
 │   ├── create/
 │   ├── retrieve/
 │   ├── update/
 │   └── delete/
+├── accounts/
+│   ├── list_all/
+│   └── retrieve/
+├── transactions/
+│   ├── list_all/
+│   └── retrieve/
+├── connections/
+│   ├── list_all/
+│   ├── retrieve/
+│   ├── refresh/
+│   ├── refresh_all/
+│   ├── purge_data/
+│   └── delete/
 ├── consents/
 │   ├── retrieve/
 │   └── delete/
-├── auth_links/
-│   ├── create/
-│   ├── retrieve/
-│   └── delete/
-├── events/
-│   ├── list_all/
-│   ├── retrieve/
-│   ├── list_types/
-│   └── retrieve_type/
 └── jobs/
     ├── get_user_jobs/
     ├── retrieve_job/
@@ -216,41 +220,65 @@ Here, `id` matches the `path` parameter for `getUser`, and the SDK will issue a 
   * Deletes a user consent permanently.
   * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
-#### Post Auth Link
+#### List Accounts
 
-* postAuthLink(body: Object, metadata?: Object):
-  * Creates an authentication link for a user to authorize a connection.
-  * Throws: Errors similar to other endpoints.
+* `getAccounts(metadata?: Object)`:
+  * Retrieves all accounts belonging to a user.
+  * Throws: Errors like 400, 401, 403, 404, 500.
 
-#### Get Auth Link
+#### Retrieve an Account
 
-* getAuthLink(metadata?: Object):
-  * Retrieves the most recent authentication link for a user.
-  * Throws: Errors like 400, 401, 403, 404, 410, 500, 503.
+* `getAccount(metadata: Object)`:
+  * Retrieves a specific account belonging to a user.
+  * Throws: Errors like 400, 401, 403, 404, 500.
 
-#### Delete Auth Link
+#### List Transactions
 
-* deleteAuthLink(metadata: Object):
-  * Deletes the user's authentication link.
-  * Throws: Errors like 400, 401, 404, 500, 503.
+* `getTransactions(metadata?: Object)`:
+  * Retrieves all transactions belonging to a specified user.
+  * Throws: Errors like 400, 401, 403, 404, 500.
 
-#### Get all Events
+#### Retrieve a Transaction
 
-* getEvents(metadata?: Object):
-  * Retrieves a list of all events.
+* `getTransaction(metadata: Object)`:
+  * Retrieves an existing transaction.
+  * Throws: Errors like 400, 401, 403, 404, 500.
+
+#### List Connections
+
+* `getConnections(metadata?: Object)`:
+  * Retrieves all connections belonging to a user.
+  * Throws: Errors like 400, 401, 403, 404, 500.
+
+#### Retrieve a Connection
+
+* `getConnection(metadata: Object)`:
+  * Retrieves details of a specific connection. Login credentials such as `loginId`, `password`, and `securityCode` are never returned.
+  * Throws: Errors like 400, 401, 403, 404, 500.
+
+#### Refresh a Connection
+
+* `refreshConnection(metadata: Object)`:
+  * Refreshes an existing connection and returns a job resource to track the asynchronous refresh.
   * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
-#### Get an Event
+#### Refresh all Connections
 
-* getTypeById(metadata: Object):
-  * Retrieves a specific event type by its ID.
-  * Throws: Errors like 400, 401, 403, 404, 429, 500, 503.
+* `refreshConnections(metadata: Object)`:
+  * Refreshes all connections belonging to the specified user.
+  * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
-#### List Event Types
+#### Purge Connection Data
 
-* listEventTypes():
-  * Returns a list of event types.
-  * Throws: Errors like 401, 403, 429, 500, 503.
+* `purgeConnectionData(metadata: Object)`:
+  * Removes all user data related to a specific institution for an active user connection.
+  * Throws: Errors like 400, 401, 403, 404, 500, 503.
+
+#### Delete a Connection
+
+* `deleteConnection(metadata: Object)`:
+  * Permanently deletes a connection without deleting existing account and transaction data associated with it.
+  * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
 #### Get User Jobs
 
