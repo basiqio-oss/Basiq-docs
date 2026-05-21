@@ -11,7 +11,7 @@ Use the Connect API to authenticate with Basiq, manage users, link financial ins
 <Callout icon="📘" theme="info">
   **OpenAPI specification**
 
-  Download or inspect the Connect OpenAPI file: [`connect.json`](https://api.basiq.io/openapi/connect.json)
+  Download or inspect the Connect OpenAPI file: <Anchor label="`connect.json`" target="_blank" href="https://api.basiq.io/openapi/connect.json">`connect.json`</Anchor>
 </Callout>
 
 ## What’s included
