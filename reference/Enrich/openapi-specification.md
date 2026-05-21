@@ -1,7 +1,7 @@
 ---
 title: OpenAPI specification
 deprecated: false
-hidden: true
+hidden: false
 icon: fad fa-download
 metadata:
   robots: index
@@ -11,7 +11,7 @@ Use the Enrich openapi spec to classify transaction descriptions and retrieve en
 <Callout icon="📘">
   **OpenAPI specification**
 
-  Download or inspect the Enrich OpenAPI file: [`enrich.json`](/branches/3.0/apis/enrich.json)
+  Download or inspect the Enrich OpenAPI file: <Anchor label="`enrich.json`" target="_blank" href="/openapi/enrich.json">`enrich.json`</Anchor>
 </Callout>
 
 ## What’s included
