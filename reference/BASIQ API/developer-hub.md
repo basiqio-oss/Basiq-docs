@@ -53,9 +53,9 @@ This command initiates the `api` installer, guiding you through project-specific
 
 ## Supported URI Formats:
 
-* API Registry UUID\
+* API Registry UUID  
   Example: `@basiq/v3.0#4rlk1xm0uio155`
-* URLs\
+* URLs  
   Example: `https://raw.githubusercontent.com/basiqio/api-ref/main/core.yml`
 * Local file paths are also supported.
 
@@ -151,9 +151,8 @@ Let's go through each of them and how to invoke these function calls.
 
 * `auth(...values: string\[])`
   * Handles authentication for the API using different methods such as HTTP Basic, Bearer tokens, or API Keys.
-  * Example:\
-    Bearer Token: `sdk.auth('myBearerToken')`
-    API Key: `sdk.auth('basic myApiKey')`
+  * Example:  
+    Bearer Token: `sdk.auth('myBearerToken')` API Key: `sdk.auth('basic myApiKey')`
 
 ```Text Auth
 sdk.auth('Basic <YOUR-API-KEY>');
@@ -268,7 +267,7 @@ Here, `id` matches the `path` parameter for `getUser`, and the SDK will issue a 
 #### Create MFA Response
 
 * `postJobMfa`:
-  * Creates an MFA (Multi-Factor Authentication) response for a job. Ensure you generate an authentication token with scope CLIENT\_ACCESS and basiq-version = 3.0 to create this resource.
+  * Creates an MFA (Multi-Factor Authentication) response for a job. Ensure you generate an authentication token with scope CLIENT_ACCESS and basiq-version = 3.0 to create this resource.
   * Throws: Errors like 400, 401, 403, 404, 500, 503.
 
 ### Code Example:
@@ -368,33 +367,33 @@ Below is the walk through of how to use BASIQ APIs
   </div>
 
   <button onClick={() => Intercom('showNewMessage', 'issues on FAQs:')} style={{
-            padding: '0.75rem 2rem',
-            fontSize: '1rem',
-            fontWeight: 600,
-            borderRadius: '9999px',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-            transition: 'all 0.3s ease-in-out',
-            backgroundColor: '#1f2937',
-            color: '#ffffff',
-            border: 'none',
-            cursor: 'pointer',
-            outline: 'none',
-            flexShrink: 0,
-          }} onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#374151';
-            e.currentTarget.style.transform = 'scale(1.05)';
-          }} onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#1f2937';
-            e.currentTarget.style.transform = 'scale(1)';
-          }} onFocus={(e) => {
-            e.currentTarget.style.outline = '2px solid #6b7280';
-            e.currentTarget.style.outlineOffset = '2px';
-            e.currentTarget.style.backgroundColor = '#374151';
-            e.currentTarget.style.transform = 'scale(1.05)';
-          }} onBlur={(e) => {
-            e.currentTarget.style.outline = 'none';
-            e.currentTarget.style.outlineOffset = '0px';
-            e.currentTarget.style.backgroundColor = '#1f2937';
-            e.currentTarget.style.transform = 'scale(1)';
-          }}>Chat with Support</button>
+              padding: '0.75rem 2rem',
+              fontSize: '1rem',
+              fontWeight: 600,
+              borderRadius: '9999px',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              transition: 'all 0.3s ease-in-out',
+              backgroundColor: '#1f2937',
+              color: '#ffffff',
+              border: 'none',
+              cursor: 'pointer',
+              outline: 'none',
+              flexShrink: 0,
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#374151';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#1f2937';
+              e.currentTarget.style.transform = 'scale(1)';
+            }} onFocus={(e) => {
+              e.currentTarget.style.outline = '2px solid #6b7280';
+              e.currentTarget.style.outlineOffset = '2px';
+              e.currentTarget.style.backgroundColor = '#374151';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }} onBlur={(e) => {
+              e.currentTarget.style.outline = 'none';
+              e.currentTarget.style.outlineOffset = '0px';
+              e.currentTarget.style.backgroundColor = '#1f2937';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}>Chat with Support</button>
 </div>
