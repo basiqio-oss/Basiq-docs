@@ -26,7 +26,7 @@ jobs:
         run: |
           rdme openapi validate ./reference/connect.json
           rdme openapi validate ./reference/enrich.json
-          rdme openapi validate ./reference/reports.json
+          rdme openapi validate ./reference/reporting.json
           rdme openapi validate ./reference/platform.json
           rdme openapi validate ./reference/insights.json
           rdme openapi validate ./reference/analytics.json
@@ -37,7 +37,7 @@ jobs:
         run: |
           rdme openapi upload ./reference/connect.json --slug=connect --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/enrich.json --slug=enrich --key=${{ secrets.README_API_KEY }}
-          rdme openapi upload ./reference/reports.json --slug=reports --key=${{ secrets.README_API_KEY }}
+          rdme openapi upload ./reference/reporting.json --slug=reports --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/platform.json --slug=platform --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/insights.json --slug=insights --key=${{ secrets.README_API_KEY }}
           rdme openapi upload ./reference/analytics.json --slug=analytics --key=${{ secrets.README_API_KEY }}
