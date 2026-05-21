@@ -20,7 +20,7 @@ These resources help AI systems understand the Basiq API without requiring manua
 This file provides a structured index of all Basiq API documentation, including:
 
 * Authentication
-* Core API endpoints
+* Connect API endpoints
 * Webhooks
 * Guides and quickstarts
 
