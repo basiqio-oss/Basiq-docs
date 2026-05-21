@@ -19,19 +19,7 @@ Basiq is a [Consumer Data Right accredited](https://blog.basiq.io/basiq-launches
 
 Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking and more.
 
-<Grid columns="3" gap="20px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolCard header="Connect" icon="fa-duotone fa-link" text="Access account and transaction data in real-time." />
-
-  <CoolCard header="Enrich" icon="fa-duotone fa-chart-line" text="Enhance transactions with merchant and category data." />
-
-  <CoolCard header="Discover" icon="fa-duotone fa-search" text="Gain deeper insights into your customers' finances." />
-</Grid>
-
-***
-
-## Products
-
-Explore the Basiq products available in the API reference. Select a product to open its OpenAPI spec.
+Explore the Basiq products available in the API reference.
 
 <Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
   <CoolTile header="Connect" href="/branches/3.0/apis/connect.json" icon="fa-duotone fa-link" text="Access customer-consented account, transaction, connection, consent, job, and user data." />
@@ -51,25 +39,14 @@ Explore the Basiq products available in the API reference. Select a product to o
   <CoolTile header="Affordability" href="/branches/3.0/apis/affordability.json" icon="fa-duotone fa-scale-balanced" text="Use the legacy affordability API to create and retrieve affordability, expense, income, and transaction summaries." />
 </Grid>
 
-***
-
-## Overview
+<br />
 
 <Grid columns="2" gap="20px">
   <div>
-    <CoolTile
-      header="Supported Regions"
-      icon="fa-duotone fa-globe"
-      text="Australia & New Zealand — Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage."
-    />
+    <CoolTile header="Supported Regions" icon="fa-duotone fa-globe" text="Australia & New Zealand — Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage." />
   </div>
 
   <div>
-    <CoolTile
-      header="Platform Status"
-      icon="fa-duotone fa-signal"
-      href="https://dashboard.basiq.io/status"
-      text="View real-time API and connector status for supported institutions and regions."
-    />
+    <CoolTile header="Platform Status" icon="fa-duotone fa-signal" href="https://dashboard.basiq.io/status" text="View real-time API and connector status for supported institutions and regions." />
   </div>
 </Grid>
