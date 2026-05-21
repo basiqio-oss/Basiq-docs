@@ -121,24 +121,28 @@ As we have imported `CORE` OAS from the [github](https://github.com/basiqio/api-
 ```
 Connect/
 ├── authentication/
-│   └── post/
+│   └── post_token/
 ├── users/
 │   ├── create/
 │   ├── retrieve/
 │   ├── update/
 │   └── delete/
+├── accounts/
+│   ├── list_all/
+│   └── retrieve/
+├── transactions/
+│   ├── list_all/
+│   └── retrieve/
+├── connections/
+│   ├── list_all/
+│   ├── retrieve/
+│   ├── refresh/
+│   ├── refresh_all/
+│   ├── purge_data/
+│   └── delete/
 ├── consents/
 │   ├── retrieve/
 │   └── delete/
-├── auth_links/
-│   ├── create/
-│   ├── retrieve/
-│   └── delete/
-├── events/
-│   ├── list_all/
-│   ├── retrieve/
-│   ├── list_types/
-│   └── retrieve_type/
 └── jobs/
     ├── get_user_jobs/
     ├── retrieve_job/
