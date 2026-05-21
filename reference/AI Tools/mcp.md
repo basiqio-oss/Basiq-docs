@@ -1,5 +1,5 @@
 ---
-title: MCP
+title: MCP Server
 hidden: true
 ---
 The Basiq API Model Context Protocol (MCP) server enables AI-powered code editors like Cursor and Windsurf, plus general-purpose tools like Claude Desktop, to interact directly with your Basiq API API and documentation.
