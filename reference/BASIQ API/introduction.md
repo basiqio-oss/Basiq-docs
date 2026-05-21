@@ -46,7 +46,7 @@ Basiq APIs are grouped into core product areas. Each maps directly to an OpenAPI
 Start here to understand how Basiq fits together.
 
 <Grid columns="3" gap="20px">
-  <CoolCard header="Data Access" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/platform.json" icon="fa-duotone fa-database" text="Access bank, transaction, and account data via secure consented connections." />
+  <CoolCard header="Data Access" href="https://api.basiq.io/reference/posttoken" icon="fa-duotone fa-database" text="Access bank, transaction, and account data via secure consented connections." />
 
   <CoolCard header="Insights Layer" icon="fa-duotone fa-brain" text="Transform raw financial data into income, expense, and affordability insights." />
 
