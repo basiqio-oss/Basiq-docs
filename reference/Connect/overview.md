@@ -6,7 +6,7 @@ icon: fad fa-download
 metadata:
   robots: index
 ---
-Use the Connect API to authenticate with Basiq, manage users, link financial institutions, retrieve account and transaction data, and monitor asynchronous jobs.
+Use the Connect openapi spec to authenticate with Basiq, manage users, link financial institutions, retrieve account and transaction data, and monitor asynchronous jobs.
 
 <Callout icon="📘" theme="info">
   **OpenAPI specification**
