@@ -1,5 +1,6 @@
 - BASIQ API
 - ReadMeConfig
+- Connect
 - Core
 - Data
 - Identity
@@ -7,6 +8,5 @@
 - Enrich
 - Affordability (LEGACY)
 - MCP Server
-- Connect
 - Platform
 - Webhooks
