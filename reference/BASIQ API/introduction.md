@@ -53,14 +53,23 @@ Explore the Basiq products available in the API reference. Select a product to o
 
 ***
 
-## Supported Regions
+## Overview
 
-<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
-  <CoolTile header="Australia & New Zealand" icon="fa-duotone fa-globe" text="Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage." />
-</Grid>
+<Grid columns="2" gap="20px">
+  <div>
+    <CoolTile
+      header="Supported Regions"
+      icon="fa-duotone fa-globe"
+      text="Australia & New Zealand — Basiq APIs are fully operational in Australia and New Zealand with comprehensive institution coverage."
+    />
+  </div>
 
-## Platform Status
-
-<Grid columns="3" gapX="30px" gapY="30px" paddingY="1.5em">
-  <CoolTile header="Check Status" href="https://dashboard.basiq.io/status" icon="fa-duotone fa-signal" text="View real-time API and connector status for supported institutions and regions." />
+  <div>
+    <CoolTile
+      header="Platform Status"
+      icon="fa-duotone fa-signal"
+      href="https://dashboard.basiq.io/status"
+      text="View real-time API and connector status for supported institutions and regions."
+    />
+  </div>
 </Grid>
