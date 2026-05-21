@@ -8,10 +8,10 @@ metadata:
 ---
 Use the Connect API to authenticate with Basiq, manage users, link financial institutions, retrieve account and transaction data, and monitor asynchronous jobs.
 
-<Callout icon="📘">
+<Callout icon="📘" theme="info">
   **OpenAPI specification**
 
-  Download or inspect the Connect OpenAPI file: [`connect.json`](/branches/3.0/apis/connect.json)
+  Download or inspect the Connect OpenAPI file: [`connect.json`](https://api.basiq.io/openapi/connect.json)
 </Callout>
 
 ## What’s included
