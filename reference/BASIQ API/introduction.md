@@ -13,29 +13,11 @@ metadata:
 next:
   description: ''
 ---
-<br />
+## What is Basiq?
 
-## Introduction to Basiq
+Basiq is a <a href="https://blog.basiq.io/basiq-launches-cdr-data-holder-and-data-recipient-solution/">Consumer Data Right accredited</a> API platform that provides the building blocks of financial services.
 
-Basiq is a Consumer Data Right accredited API platform that provides the building blocks of financial services.
-
-Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, and digital banking.
-
-<Grid columns="3" gap="20px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolCard header="Connect" icon="fa-duotone fa-link" text="Access account and transaction data in real-time." />
-
-  <CoolCard header="Enrich" icon="fa-duotone fa-chart-line" text="Enhance transactions with merchant and category data." />
-
-  <CoolCard header="Insights" icon="fa-duotone fa-magnifying-glass-chart" text="Generate financial insights across income, expense, identity, and affordability." />
-</Grid>
-
-<Grid columns="3" gap="20px" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-  <CoolCard header="Connect" icon="fa-duotone fa-link" text="Access account and transaction data in real-time." />
-
-  <CoolCard header="Enrich" icon="fa-duotone fa-chart-line" text="Enhance transactions with merchant and category data." />
-
-  <CoolCard header="Insights" icon="fa-duotone fa-magnifying-glass-chart" text="Generate financial insights across income, expense, identity, and affordability." />
-</Grid>
+Our APIs enable secure access to customer-consented financial data and tools to uncover valuable insights. Over 200 fintechs and banks rely on our platform to deliver innovative financial solutions across lending, payments, wealth, digital banking, and more.
 
 ## API Products
 
