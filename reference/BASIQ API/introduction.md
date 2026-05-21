@@ -48,9 +48,9 @@ Start here to understand how Basiq fits together.
 <Grid columns="3" gap="20px">
   <CoolCard header="Data Access" href="https://api.basiq.io/reference/posttoken" icon="fa-duotone fa-database" text="Access bank, transaction, and account data via secure consented connections." />
 
-  <CoolCard header="Insights Layer" icon="fa-duotone fa-brain" text="Transform raw financial data into income, expense, and affordability insights." />
+  <CoolCard header="Insights Layer" icon="fa-duotone fa-brain"  href="#" text="Transform raw financial data into income, expense, and affordability insights." />
 
-  <CoolCard header="Platform Services" icon="fa-duotone fa-sitemap" text="Manage consent, connectors, webhooks, and system configuration." />
+  <CoolCard header="Platform Services" icon="fa-duotone fa-sitemap" href="#" text="Manage consent, connectors, webhooks, and system configuration." />
 </Grid>
 
 ## System Status
