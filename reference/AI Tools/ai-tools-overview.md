@@ -1,5 +1,5 @@
 ---
-title: AI Tools Overview
+title: Overview
 deprecated: false
 hidden: true
 metadata:
