@@ -19,7 +19,7 @@ Basiq is a <a href="https://blog.basiq.io/basiq-launches-cdr-data-holder-and-dat
 
 It provides a single integration point to access banking and financial data, and to generate insights that power lending, payments, wealth, and digital finance products.
 
-## API Products
+## Basiq Products
 
 Basiq APIs are grouped into core product areas. Each maps directly to an OpenAPI specification.
 
