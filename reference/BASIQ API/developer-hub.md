@@ -54,9 +54,9 @@ This command initiates the `api` installer, guiding you through project-specific
 ## Supported URI Formats:
 
 * API Registry UUID  
-  Example: `@basiq/v3.0#4rlk1xm0uio155`
+  Example: `@basiq/v3.0#11eh2b8zmpevg72s`
 * URLs  
-  Example: `[https://raw.githubusercontent.com/basiqio/api-ref/main/core](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/main/connect.json)`
+  Example: `[[https://raw.githubusercontent.com/basiqio/api-ref/main/core](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/main/connect.json)](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/main/connect.json)`
 * Local file paths are also supported.
 
 API Registry UUID can be found from [here](https://api.basiq.io/reference/posttoken).
