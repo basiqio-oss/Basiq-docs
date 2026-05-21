@@ -1,7 +1,7 @@
 ---
 title: OpenAPI specification
 deprecated: false
-hidden: true
+hidden: false
 icon: fad fa-hand-wave
 metadata:
   robots: index
