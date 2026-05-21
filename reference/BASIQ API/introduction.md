@@ -30,15 +30,15 @@ Basiq APIs are grouped into core product areas. Each maps directly to an OpenAPI
 
   <CoolTile header="Insights" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/insights.json" icon="fa-duotone fa-magnifying-glass-chart" text="Income, expense, balance, identity, and affordability insights." />
 
-  <CoolTile header="Reporting" href="/branches/3.0/apis/reporting.json" icon="fa-duotone fa-file-chart-column" text="Generate and manage financial reports across supported report types." />
+  <CoolTile header="Reporting" href="" icon="fa-duotone fa-file-chart-column" text="Generate and manage financial reports across supported report types." />
 
-  <CoolTile header="Identity" href="/branches/3.0/apis/identity.json" icon="fa-duotone fa-id-card" text="Identity verification data and identity records linked to users." />
+  <CoolTile header="Identity" href="" icon="fa-duotone fa-id-card" text="Identity verification data and identity records linked to users." />
 
-  <CoolTile header="Platform" href="/branches/3.0/apis/platform.json" icon="fa-duotone fa-layer-group" text="Auth links, connectors, analytics, payees, statements, and system resources." />
+  <CoolTile header="Platform" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/platform.json" icon="fa-duotone fa-layer-group" text="Auth links, connectors, analytics, payees, statements, and system resources." />
 
-  <CoolTile header="Webhooks" href="/branches/3.0/apis/webhooks.json" icon="fa-duotone fa-webhook" text="Event-driven updates for jobs, connections, and data changes." />
+  <CoolTile header="Webhooks" href="" icon="fa-duotone fa-webhook" text="Event-driven updates for jobs, connections, and data changes." />
 
-  <CoolTile header="Affordability" href="/branches/3.0/apis/affordability.json" icon="fa-duotone fa-scale-balanced" text="Income, expense, and affordability assessments (legacy APIs)." />
+  <CoolTile header="Affordability" href="" icon="fa-duotone fa-scale-balanced" text="Income, expense, and affordability assessments (legacy APIs)." />
 </Grid>
 
 ## API Overview
