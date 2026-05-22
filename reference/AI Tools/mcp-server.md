@@ -1,6 +1,6 @@
 ---
 title: MCP Server
-hidden: true
+hidden: false
 ---
 # MCP Server
 
