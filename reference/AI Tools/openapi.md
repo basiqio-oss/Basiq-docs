@@ -2,7 +2,6 @@
 title: OpenAPI
 deprecated: false
 hidden: false
-icon: fad fa-hand-wave
 metadata:
   robots: index
 ---
@@ -51,6 +50,5 @@ For best developer and AI experience:
 
 - MCP Server → [https://api.basiq.io/mcp](https://api.basiq.io/mcp)
 - LLM Resources → [https://api.basiq.io/llms.txt](https://api.basiq.io/llms.txt)
--
 
 <br />
