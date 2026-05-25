@@ -25,7 +25,7 @@ Basiq APIs are grouped into core product areas. Each maps directly to an OpenAPI
 
   <CoolTile header="Enrich" href="https://api.basiq.io/reference/enrich" icon="fa-duotone fa-chart-line" text="Merchant enrichment, categorisation, and transaction classification." />
 
-  <CoolTile header="Insights" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/insights.json" icon="fa-duotone fa-magnifying-glass-chart" text="Income, expense, balance, identity, and affordability insights." />
+  <CoolTile header="Insights" href="https://api.basiq.io/reference/createinsight" icon="fa-duotone fa-magnifying-glass-chart" text="Income, expense, balance, identity, and affordability insights." />
 
   <CoolTile header="Reporting" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/reporting.json" icon="fa-duotone fa-file-chart-column" text="Generate and manage financial reports across supported report types." />
 
