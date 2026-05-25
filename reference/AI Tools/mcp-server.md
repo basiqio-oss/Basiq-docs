@@ -1,6 +1,28 @@
 ---
 title: MCP Server
 hidden: false
+metadata:
+  title: Basiq MCP Server | AI-Powered API Access, Tools & Integration Setup
+  description: >-
+    Connect your AI tools to the Basiq MCP Server to access API documentation,
+    schemas, endpoints, and live requests. Learn how to integrate MCP with
+    Cursor, Claude Desktop, VS Code Copilot, Windsurf, and other AI clients.
+  keywords:
+    - basiq mcp server
+    - model context protocol basiq
+    - basiq api integration
+    - ai api tools
+    - basiq documentation mcp
+    - mcp server setup
+    - ai coding assistant integration
+    - cursor mcp basiq
+    - claude desktop mcp setup
+    - vscode copilot mcp
+    - windsurf mcp configuration
+    - open banking api tools
+    - basiq api endpoints
+    - webhook integration basiq
+    - financial data api mcp
 ---
 # MCP Server
 
