@@ -3,6 +3,22 @@ title: Overview
 deprecated: false
 hidden: false
 metadata:
+  title: Basiq AI Tools Overview | MCP Server, LLM Resources & API Integration
+  description: >-
+    Explore Basiq AI tools including the MCP server and LLM-friendly
+    documentation. Learn how to connect AI systems, generate integrations, and
+    work with Basiq API faster and more efficiently.
+  keywords:
+    - basiq ai tools
+    - basiq mcp server
+    - basiq api documentation
+    - basiq llm resources
+    - ai api integration
+    - financial data api
+    - open banking api
+    - api automation tools
+    - developer tools basiq
+    - ai assisted api integration
   robots: index
 ---
 # AI Tools
