@@ -17,7 +17,7 @@ Connect → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads
 Enrich → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/enrich.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/enrich.json)
 Insights → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/insights.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/insights.json)
 Identity → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/identity.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/identity.json)
-Reporting → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/reporting.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/reporting.json)
+Reporting → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/reports.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/reports.json)
 Webhooks → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/webhooks.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/webhooks.json)
 Platform → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/platform.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/platform.json)
 Affordability → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/affordability.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/affordability.json)
