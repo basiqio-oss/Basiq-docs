@@ -10,15 +10,15 @@ The Basiq MCP server gives your AI assistant direct access to Basiq API document
 
 Once connected to the Basiq MCP server, your AI assistant can:
 
-* Search and retrieve Basiq API documentation
-* Explore API endpoints, request schemas, and authentication flows
-* Generate production-ready integration code
-* Assist with debugging API usage and responses
-* Understand consent-based financial data workflows
-* Work with webhook integrations and event handling
-* Follow onboarding and multi-step integration flows
-* Access enabled API routes exposed through your Basiq dashboard
-* Execute API requests directly against enabled endpoints
+- Search and retrieve Basiq API documentation
+- Explore API endpoints, request schemas, and authentication flows
+- Generate production-ready integration code
+- Assist with debugging API usage and responses
+- Understand consent-based financial data workflows
+- Work with webhook integrations and event handling
+- Follow onboarding and multi-step integration flows
+- Access enabled API routes exposed through your Basiq dashboard
+- Execute API requests directly against enabled endpoints
 
 ## What is MCP?
 
@@ -26,12 +26,12 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
 
 The Basiq MCP server turns Basiq into an AI-accessible API platform by giving AI coding assistants structured access to:
 
-* API documentation
-* Endpoint definitions
-* Authentication details
-* Request and response schemas
-* Search and retrieval tools
-* Real-time API interactions
+- API documentation
+- Endpoint definitions
+- Authentication details
+- Request and response schemas
+- Search and retrieval tools
+- Real-time API interactions
 
 This enables AI tools to understand and work with the Basiq API more accurately and efficiently.
 
@@ -141,10 +141,10 @@ The exact configuration method depends on the MCP client you are using.
 
 Common approaches include:
 
-* Custom request headers
-* Environment variables
-* Query parameter configuration
-* Client-specific authentication settings
+- Custom request headers
+- Environment variables
+- Query parameter configuration
+- Client-specific authentication settings
 
 Refer to your MCP client documentation for details.
 
@@ -158,11 +158,11 @@ Once configured:
 
 Example prompts:
 
-* “How do I create a user in Basiq?”
-* “Show me an example of connecting a bank account”
-* “Generate a webhook handler for Basiq”
-* “Create a transaction sync workflow using Basiq”
-* “Explain how consent-based data access works”
+- “How do I create a user in Basiq?”
+- “Show me an example of connecting a bank account”
+- “Generate a webhook handler for Basiq”
+- “Create a transaction sync workflow using Basiq”
+- “Explain how consent-based data access works”
 
 If connected successfully, your AI assistant will be able to access Basiq documentation and enabled MCP tools.
 
@@ -176,15 +176,15 @@ List all available API endpoints exposed through the MCP server.
 
 Useful for:
 
-* Discovering available routes
-* Exploring API categories
-* Understanding integration surface areas
+- Discovering available routes
+- Exploring API categories
+- Understanding integration surface areas
 
 Example prompts:
 
-* “List all available Basiq endpoints”
-* “Show me all identity endpoints”
-* “What API routes are available?”
+- “List all available Basiq endpoints”
+- “Show me all identity endpoints”
+- “What API routes are available?”
 
 ## get-endpoint
 
@@ -192,18 +192,18 @@ Retrieve detailed information for a specific endpoint.
 
 Returns:
 
-* HTTP method
-* Endpoint path
-* Parameters
-* Request schema
-* Response schema
-* Authentication requirements
+- HTTP method
+- Endpoint path
+- Parameters
+- Request schema
+- Response schema
+- Authentication requirements
 
 Example prompts:
 
-* “Get details for the users endpoint”
-* “Show me the schema for transaction retrieval”
-* “Explain the connect endpoint”
+- “Get details for the users endpoint”
+- “Show me the schema for transaction retrieval”
+- “Explain the connect endpoint”
 
 ## execute-request
 
@@ -211,16 +211,16 @@ Execute requests directly against enabled Basiq API endpoints.
 
 Useful for:
 
-* Testing integrations
-* Validating requests
-* Inspecting live responses
-* Debugging workflows
+- Testing integrations
+- Validating requests
+- Inspecting live responses
+- Debugging workflows
 
 Example prompts:
 
-* “Execute a request to retrieve transactions”
-* “Test the accounts endpoint”
-* “Call the identity verification endpoint”
+- “Execute a request to retrieve transactions”
+- “Test the accounts endpoint”
+- “Call the identity verification endpoint”
 
 ## search-endpoints
 
@@ -228,9 +228,9 @@ Search endpoints using keywords, categories, or functionality.
 
 Example prompts:
 
-* “Search endpoints related to webhooks”
-* “Find transaction-related endpoints”
-* “Search for authentication APIs”
+- “Search endpoints related to webhooks”
+- “Find transaction-related endpoints”
+- “Search for authentication APIs”
 
 ## list-specs
 
@@ -238,15 +238,15 @@ List available API specifications exposed through the MCP server.
 
 Useful for:
 
-* Discovering API definitions
-* Understanding available schemas
-* Reviewing supported services
+- Discovering API definitions
+- Understanding available schemas
+- Reviewing supported services
 
 Example prompts:
 
-* “List available API specs”
-* “Show all specification files”
-* “What API specs are exposed?”
+- “List available API specs”
+- “Show all specification files”
+- “What API specs are exposed?”
 
 ## fetch
 
@@ -254,15 +254,15 @@ Retrieve documentation pages or specification content directly.
 
 Useful for:
 
-* Getting full documentation content
-* Reviewing schemas
-* Accessing integration details
+- Getting full documentation content
+- Reviewing schemas
+- Accessing integration details
 
 Example prompts:
 
-* “Fetch the webhook documentation”
-* “Retrieve the identity API docs”
-* “Get the reporting API specification”
+- “Fetch the webhook documentation”
+- “Retrieve the identity API docs”
+- “Get the reporting API specification”
 
 ## search
 
@@ -270,29 +270,16 @@ Full-text search across Basiq documentation and API references.
 
 Searches:
 
-* Documentation pages
-* Endpoint descriptions
-* Schema definitions
-* Integration guides
+- Documentation pages
+- Endpoint descriptions
+- Schema definitions
+- Integration guides
 
 Example prompts:
 
-* “Search for webhook verification”
-* “Find transaction sync documentation”
-* “Search for consent management”
-
-# Custom MCP Tools
-
-Basiq also supports custom MCP tools that can be defined and exposed to AI assistants.
-
-Custom tools allow you to:
-
-* Create organization-specific workflows
-* Expose internal business logic
-* Automate repetitive actions
-* Extend AI functionality beyond standard API access
-
-These tools can be managed directly from the Basiq dashboard.
+- “Search for webhook verification”
+- “Find transaction sync documentation”
+- “Search for consent management”
 
 # Enabled MCP Routes
 
@@ -302,16 +289,16 @@ By default, all routes are enabled.
 
 Available route groups include:
 
-* `affordability.json`
-* `analytics.json`
-* `connect.json`
-* `enrich.json`
-* `identity.json`
-* `insights.json`
-* `payees.json`
-* `platform.json`
-* `reporting.json`
-* `webhooks.json`
+- `affordability.json`
+- `analytics.json`
+- `connect.json`
+- `enrich.json`
+- `identity.json`
+- `insights.json`
+- `payees.json`
+- `platform.json`
+- `reporting.json`
+- `webhooks.json`
 
 This allows you to limit AI access to only the APIs relevant to your environment or use case.
 
@@ -381,31 +368,31 @@ Custom MCP tools can extend Basiq integrations with organization-specific workfl
 
 If your MCP client cannot connect:
 
-* Verify the server URL is exactly:
+- Verify the server URL is exactly:
 
 ```txt
 https://api.basiq.io/mcp
 ```
 
-* Restart your AI editor after configuration changes
-* Ensure outbound HTTPS connections are allowed
-* Confirm your MCP configuration file syntax is valid
+- Restart your AI editor after configuration changes
+- Ensure outbound HTTPS connections are allowed
+- Confirm your MCP configuration file syntax is valid
 
 ## Authentication Problems
 
 If authenticated requests fail:
 
-* Verify API credentials are configured correctly
-* Ensure authentication headers are being passed properly
-* Confirm your MCP client supports authenticated remote MCP servers
+- Verify API credentials are configured correctly
+- Ensure authentication headers are being passed properly
+- Confirm your MCP client supports authenticated remote MCP servers
 
 ## No Results or Missing Endpoints
 
 If searches or endpoint listings return incomplete results:
 
-* Try broader search terms
-* Verify the route group is enabled in the dashboard
-* Confirm your environment has access to the requested APIs
+- Try broader search terms
+- Verify the route group is enabled in the dashboard
+- Confirm your environment has access to the requested APIs
 
 ## MCP Tool Access
 
@@ -413,11 +400,11 @@ Some MCP features may require upgraded Ask AI plans or additional dashboard conf
 
 Available enhancements may include:
 
-* Increased usage limits
-* Additional MCP tools
-* Custom AI behavior
-* Advanced AI integrations
-* Ask AI API access
+- Increased usage limits
+- Additional MCP tools
+- Custom AI behavior
+- Advanced AI integrations
+- Ask AI API access
 
 # Security
 
@@ -425,9 +412,9 @@ The Basiq MCP server supports secure AI access to documentation and enabled APIs
 
 Access can be controlled through:
 
-* MCP route enablement
-* Authentication configuration
-* API permission scopes
-* Dashboard-level controls
+- MCP route enablement
+- Authentication configuration
+- API permission scopes
+- Dashboard-level controls
 
 Only enabled routes and authorized API functionality are exposed through the MCP server.
