@@ -33,7 +33,7 @@ Basiq APIs are grouped into core product areas. Each maps directly to an OpenAPI
 
   <CoolTile header="Platform" href="https://api.basiq.io/reference/postauthlink" icon="fa-duotone fa-layer-group" text="Auth links, connectors, analytics, payees, statements, and system resources." />
 
-  <CoolTile header="Webhooks" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/webhooks.json" icon="fa-duotone fa-webhook" text="Event-driven updates for jobs, connections, and data changes." />
+  <CoolTile header="Webhooks" href="https://api.basiq.io/reference/listappwebhooks" icon="fa-duotone fa-webhook" text="Event-driven updates for jobs, connections, and data changes." />
 
   <CoolTile header="Affordability" href="https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/affordability.json" icon="fa-duotone fa-scale-balanced" text="Income, expense, and affordability assessments (legacy APIs)." />
 </Grid>
