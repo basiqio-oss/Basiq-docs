@@ -1,8 +1,9 @@
 ---
-title: Copy of Overview
+title: Overview
 deprecated: false
 hidden: true
 metadata:
+  title: Basiq AI tools
   robots: index
 ---
 # AI Tools
