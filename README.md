@@ -6,15 +6,13 @@
 
 # Features
 
-- **Core**
-- **Data**
+- **Connect**
+- **Platform**
+- **Enrich**
+- **CDR Insights**
 - **Identity**
 - **Reporting**
 - **Webhooks**
-- **Enrich**
-- **Affordability**
-
----
 
 ### Changelog
 Please check the [changelog](https://api.basiq.io/changelog) for more details on API changes.
@@ -30,13 +28,18 @@ Report an issue: [Issues](https://github.com/basiqio-oss/Basiq-docs/issues/new)
 
 Access comprehensive API documentation for each section:
 
-- **Core**: [`core.json`](./reference/core.json)
-- **Data**: [`data.json`](./reference/data.json)
-- **Identity**: [`identity.json`](./reference/identity.json)
-- **Reporting**: [`reporting.json`](./reference/reporting.json)
-- **Webhooks**: [`webhooks.json`](./reference/webhooks.json)
-- **Enrich**: [`enrich.json`](./reference/enrich.json)
-- **Affordability**: [`affordability.json`](./reference/affordability.json)
+- **Connect**: [connect.json](./reference/connect.json)
+- **Platform**: [platform.json](./reference/platform.json)
+- **Enrich**: [enrich.json](./reference/enrich.json)
+- **CDR Insights**: [insights.json](./reference/insights.json)
+- **Identity**: [identity.json](./reference/identity.json)
+- **Reporting**: [reports.json](./reference/reports.json)
+- **Webhooks**: [webhooks.json](./reference/webhooks.json)
+
+### AI Tools & Extensions
+
+- **LLMs & AI Integrations**: See [llms.txt](https://api.basiq.io/llms.txt) for information on supported large language models and AI-powered features.
+- **MCP (Model Context Protocol)**: Documentation and usage examples for MCP are available in the repo and developer hub.
 
 ---
 
