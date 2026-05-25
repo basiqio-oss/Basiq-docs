@@ -3,6 +3,25 @@ title: LLM Resources
 deprecated: false
 hidden: false
 metadata:
+  title: Basiq LLM Resources | AI-Readable API Documentation & llms.txt Guide
+  description: >-
+    Access Basiq LLM resources designed for AI systems and developers. Use
+    llms.txt to discover API documentation, improve integration accuracy, and
+    support AI-driven code generation. Learn how it connects with MCP for
+    real-time API access.
+  keywords:
+    - basiq llm resources
+    - llms.txt basiq
+    - ai readable api documentation
+    - basiq api index
+    - machine readable api docs
+    - ai integration tools
+    - llm optimized documentation
+    - basiq developer resources
+    - open banking api documentation
+    - ai api discovery
+    - mcp vs llm resources
+    - basiq ai developer tools
   robots: index
 ---
 # LLM Resources
