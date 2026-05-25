@@ -3,6 +3,26 @@ title: OpenAPI
 deprecated: false
 hidden: false
 metadata:
+  title: Basiq OpenAPI Specification | API Schema, Endpoints & AI Code Generation
+  description: >-
+    Explore the Basiq OpenAPI specification for complete API schemas, endpoints,
+    and authentication flows. Generate SDKs, validate requests, and build
+    type-safe integrations with support for AI-driven development workflows.
+  keywords:
+    - basiq openapi specification
+    - basiq api schema
+    - basiq endpoints documentation
+    - openapi financial api
+    - basiq sdk generation
+    - api request validation
+    - ai code generation api
+    - basiq connect api schema
+    - basiq webhooks openapi
+    - open banking api specification
+    - machine readable api spec
+    - basiq identity api
+    - basiq reporting api
+    - api integration type safety
   robots: index
 ---
 The Basiq OpenAPI specification provides a complete, machine-readable definition of all API endpoints, request/response schemas, and authentication flows.
