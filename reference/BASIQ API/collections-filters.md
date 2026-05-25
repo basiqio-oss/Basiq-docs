@@ -19,7 +19,7 @@ Collection resources provide access to information about a list of objects of th
 
 Some collections support the ability to filter the results. Filtering a collection resource is conducted via the `filter` query parameter using the following notation:
 
-**`?filter=[property].[condition]([value])`**
+`?filter=[property].[condition]([value])`
 
 **Accessing Properties**
 
@@ -113,7 +113,7 @@ Properties are accessed using the following notation `object.property`.
       </td>
 
       <td>
-        Not equals (only currently for [Institutions](ref:institutions) endpoint)
+        Not equals (only currently for [Institutions](https://api.basiq.io/update/reference/getconnectors) endpoint)
         `?filter=institution.institutionType.ne('Test Bank')`
       </td>
     </tr>
@@ -132,3 +132,5 @@ Multiple filters are treated as an **and (&)** operation example:
 GET /users/ea3a81/transactions?filter=transaction.postDate.bt('2018-01-01','2018-02-26') HTTP/1.1
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
+
+<br />
