@@ -2,7 +2,6 @@
 api:
   file: enrich.json
   operationId: Enrich
-deprecated: false
 hidden: false
 metadata:
   title: ''
