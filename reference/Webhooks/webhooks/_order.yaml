@@ -1,3 +1,4 @@
+- addwebhook
 - listappwebhooks
 - updatewebhook
 - deletewebhook
@@ -6,4 +7,3 @@
 - getwebhookmessage
 - testmessage
 - getwebhookstats
-- addwebhook
