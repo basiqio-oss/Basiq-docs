@@ -24,7 +24,7 @@
   ],
   "paths": {
     "/notifications/webhooks": {
-        "post": {
+      "post": {
         "tags": [
           "Webhooks"
         ],
