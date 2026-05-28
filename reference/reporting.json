@@ -164,10 +164,6 @@
                         "value": "2022-01-01"
                       },
                       {
-                        "name": "toDate",
-                        "value": "2023-01-01"
-                      },
-                      {
                         "name": "account",
                         "value": "ag829sj"
                       },
@@ -738,10 +734,6 @@
                         {
                           "name": "fromDate",
                           "value": "2023-03-01"
-                        },
-                        {
-                          "name": "toDate",
-                          "value": "2024-03-21"
                         },
                         {
                           "name": "account",
