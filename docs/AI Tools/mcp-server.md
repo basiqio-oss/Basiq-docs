@@ -8,10 +8,10 @@ The Basiq API Model Context Protocol (MCP) server enables AI-powered code editor
 
 Model Context Protocol (MCP) is an open standard that allows AI applications to securely access external data sources and tools. The Basiq API MCP server provides AI agents with:
 
-* **Direct API access** to Basiq API functionality
-* **Documentation search** capabilities
-* **Real-time data** from your Basiq API account
-* **Code generation** assistance for Basiq API integrations
+- **Direct API access** to Basiq API functionality
+- **Documentation search** capabilities
+- **Real-time data** from your Basiq API account
+- **Code generation** assistance for Basiq API integrations
 
 ## Basiq API MCP Server Setup
 
@@ -46,6 +46,22 @@ Basiq API hosts a remote MCP server at `https://api.basiq.io/mcp`. Configure you
     ```
 
   </Tab>
+  <Tab title="VsCode">
+    **Add to `.vscode/mcp_config.json`:**
+
+    ```json
+    {
+     "servers": {
+     "basiq": {
+       "type": "http",
+       "url": "https://api.basiq.io/mcp"
+      }
+     } 
+    }
+    ```
+
+  </Tab>
+
   <Tab title="Claude Desktop">
     **Add to `claude_desktop_config.json`:**
 
@@ -69,8 +85,8 @@ Once configured, you can test your MCP server connection:
 1. **Open your AI editor** (Cursor, Windsurf, etc.)
 2. **Start a new chat** with the AI assistant
 3. **Ask about Basiq API** - try questions like:
-   * "How do I [common use case]?"
-   * "Show me an example of [API functionality]"
-   * "Create a [integration type] using Basiq API"
+   - "How do I \[common use case]?"
+   - "Show me an example of \[API functionality]"
+   - "Create a \[integration type] using Basiq API"
 
 The AI should now have access to your Basiq API account data and documentation through the MCP server.
