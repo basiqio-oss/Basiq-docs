@@ -64,7 +64,7 @@ Check the [last refresh](https://api.basiq.io/reference/refreshconnection) time 
 
 ## Managing Connection Data
 
-When a connection is deleted, the existing data for accounts and transactions remains within the User object. If you need to completely remove all data associated with a connection:
+When an open banking connection is deleted, all associated account and transaction data is deleted. For web connections, use the purge flow below if you need to completely remove all data associated with a connection:
 
 ### Purge Existing Data
 
@@ -80,7 +80,7 @@ When a connection is deleted, the existing data for accounts and transactions re
 
 ### Establish New OB Connection
 
-* **Create the<Glossary>OB</Glossary> Connection**: After the connection is deleted and the data is purged, you can establish a new <Glossary>OB</Glossary> or web connection for the user. This ensures continuity and compliance with updated connection protocols.
+* **Create the<Glossary>OB</Glossary> Connection**: After the web connection is deleted and the data is purged, you can establish a new <Glossary>OB</Glossary> or web connection for the user. This ensures continuity and compliance with updated connection protocols.
 
 <br />
 
