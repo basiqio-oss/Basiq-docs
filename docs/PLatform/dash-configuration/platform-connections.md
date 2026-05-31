@@ -1,6 +1,9 @@
 ---
 title: Connections
-excerpt: ''
+excerpt: >-
+  Learn how connections link users’ financial institutions to your app,
+  including connection states, profile details, and actions such as refresh,
+  purge, and revoke/delete.
 deprecated: false
 hidden: false
 metadata:
@@ -92,7 +95,7 @@ View connection states in the **Connections** section of the dashboard.
     <Accordion title="Revoke/Delete Connection" icon="fa-ban">
       Permanently unlinks the financial institution. This action:
 
-      * Does not delete stored account or transaction data.
+      * Deletes all account and transaction data associated with open banking connections.
       * Is irreversible.
 
       **When to use:** When a user decides to disconnect their institution or when the connection is no longer needed.
@@ -183,7 +186,7 @@ View connection states in the **Connections** section of the dashboard.
 
     1. Select the connection.
     2. Click **Revoke** to unlink the institution.
-    3. Note: Data will remain unless purged beforehand.
+    3. Note: For open banking connections, deleting the connection also deletes all associated account and transaction data.
 
     **Demo:**
 
