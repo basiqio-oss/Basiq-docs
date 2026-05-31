@@ -5794,7 +5794,7 @@
           "Connections"
         ],
         "summary": "Delete a connection",
-        "description": "",
+        "description": "Permanently deletes a connection. ",
         "operationId": "deleteConnection",
         "parameters": [
           {
