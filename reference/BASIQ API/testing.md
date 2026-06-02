@@ -54,7 +54,7 @@ Set institution method for **Hooli OB (AU00000)** to `open-banking` in the Dashb
 | 374829        | 227470 | **Hooli OB (AU00000) -&#x20;**`open-banking` |
 
 <HTMLBlock>{`
-<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.325% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/eC8idjjHhphuXwSyN7bM?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="Share Financial Data with a Third-Party App" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.325% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/eC8idjjHhphuXwSyN7bM?embed&embed_mobile=tab&embed_desktop=inline" title="Share Financial Data with a Third-Party App" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
 `}</HTMLBlock>
 
 > 📘 Initial Testing and Billing Policy
