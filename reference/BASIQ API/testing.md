@@ -19,7 +19,7 @@ The transaction data is completely random to best replicate the type of data tha
 
 > 🚧 Sandbox environment
 >
-> You can use our sandbox environment for free right now - just grab an API key to get started (via the [Developer Dashboard](https://dashboard.basiq.io/)). We recommend using our test bank `Hooli`.
+> You can use our sandbox environment for free right now - just grab an API key to get started (via the [Developer Dashboard](https://dashboard.basiq.io/)). We recommend using our test bank `Hooli` for openbanking flow.&#x20;
 
 **Note:** There is a limit of 500 for sandbox connections.  If you reach your limit and need to have this increased, feel free to reach out to [support@basiq.io](mailto:support@basiq.io).
 
@@ -598,6 +598,6 @@ We have two test banks to test MFA challenges
 | Whistler        | ShowBox       | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
 | Wentworth-Smith | whislter      | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
 
-
+<br />
 
 <br />
