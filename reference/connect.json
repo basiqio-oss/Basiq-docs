@@ -9546,44 +9546,47 @@
                                             "description": "Link to a web page with more information on this discount."
                                           },
                                           "eligibility": {
+                                            "type": "array",
                                             "description": "Eligibility constraints that apply to this discount. Mandatory if discountType is ELIGIBILITY_ONLY.",
-                                            "required": [
-                                              "discountEligibilityType"
-                                            ],
-                                            "properties": {
-                                              "discountEligibilityType": {
-                                                "type": "string",
-                                                "description": "The type of the specific eligibility constraint for a discountType.",
-                                                "enum": [
-                                                  "BUSINESS",
-                                                  "EMPLOYMENT_STATUS",
-                                                  "INTRODUCTORY",
-                                                  "MAX_AGE",
-                                                  "MIN_AGE",
-                                                  "MIN_INCOME",
-                                                  "MIN_TURNOVER",
-                                                  "NATURAL_PERSON",
-                                                  "OTHER",
-                                                  "PENSION_RECIPIENT",
-                                                  "RESIDENCY_STATUS",
-                                                  "STAFF",
-                                                  "STUDENT"
-                                                ]
+                                            "items": {
+                                              "required": [
+                                                "discountEligibilityType"
+                                              ],
+                                              "properties": {
+                                                "discountEligibilityType": {
+                                                  "type": "string",
+                                                  "description": "The type of the specific eligibility constraint for a discountType.",
+                                                  "enum": [
+                                                    "BUSINESS",
+                                                    "EMPLOYMENT_STATUS",
+                                                    "INTRODUCTORY",
+                                                    "MAX_AGE",
+                                                    "MIN_AGE",
+                                                    "MIN_INCOME",
+                                                    "MIN_TURNOVER",
+                                                    "NATURAL_PERSON",
+                                                    "OTHER",
+                                                    "PENSION_RECIPIENT",
+                                                    "RESIDENCY_STATUS",
+                                                    "STAFF",
+                                                    "STUDENT"
+                                                  ]
+                                                },
+                                                "additionalValue": {
+                                                  "type": "string",
+                                                  "description": "Generic field containing additional information relevant to the discountEligibilityType specified. Whether mandatory or not is dependent on the value of discountEligibilityType."
+                                                },
+                                                "additionalInfo": {
+                                                  "type": "string",
+                                                  "description": "Display text providing more information on this eligibility constraint. Whether mandatory or not is dependent on the value of discountEligibilityType."
+                                                },
+                                                "additionalInfoUri": {
+                                                  "type": "string",
+                                                  "description": "Link to a web page with more information on this eligibility constraint."
+                                                }
                                               },
-                                              "additionalValue": {
-                                                "type": "string",
-                                                "description": "Generic field containing additional information relevant to the discountEligibilityType specified. Whether mandatory or not is dependent on the value of discountEligibilityType."
-                                              },
-                                              "additionalInfo": {
-                                                "type": "string",
-                                                "description": "Display text providing more information on this eligibility constraint. Whether mandatory or not is dependent on the value of discountEligibilityType."
-                                              },
-                                              "additionalInfoUri": {
-                                                "type": "string",
-                                                "description": "Link to a web page with more information on this eligibility constraint."
-                                              }
-                                            },
-                                            "x-readme-ref-name": "feesdiscounteligibilityMetadata"
+                                              "x-readme-ref-name": "feesdiscounteligibilityMetadata"
+                                            }
                                           }
                                         },
                                         "x-readme-ref-name": "feesdiscountMetadata"
@@ -9672,6 +9675,8 @@
                                             ]
                                           },
                                           "applicabilityConditions": {
+                                            "type": "object",
+                                            "nullable": true,
                                             "properties": {
                                               "additionalInfo": {
                                                 "type": "string",
@@ -9825,6 +9830,8 @@
                                             ]
                                           },
                                           "applicabilityConditions": {
+                                            "type": "object",
+                                            "nullable": true,
                                             "properties": {
                                               "additionalInfo": {
                                                 "type": "string",
@@ -11007,44 +11014,47 @@
                                       "description": "Link to a web page with more information on this discount."
                                     },
                                     "eligibility": {
+                                      "type": "array",
                                       "description": "Eligibility constraints that apply to this discount. Mandatory if discountType is ELIGIBILITY_ONLY.",
-                                      "required": [
-                                        "discountEligibilityType"
-                                      ],
-                                      "properties": {
-                                        "discountEligibilityType": {
-                                          "type": "string",
-                                          "description": "The type of the specific eligibility constraint for a discountType.",
-                                          "enum": [
-                                            "BUSINESS",
-                                            "EMPLOYMENT_STATUS",
-                                            "INTRODUCTORY",
-                                            "MAX_AGE",
-                                            "MIN_AGE",
-                                            "MIN_INCOME",
-                                            "MIN_TURNOVER",
-                                            "NATURAL_PERSON",
-                                            "OTHER",
-                                            "PENSION_RECIPIENT",
-                                            "RESIDENCY_STATUS",
-                                            "STAFF",
-                                            "STUDENT"
-                                          ]
+                                      "items": {
+                                        "required": [
+                                          "discountEligibilityType"
+                                        ],
+                                        "properties": {
+                                          "discountEligibilityType": {
+                                            "type": "string",
+                                            "description": "The type of the specific eligibility constraint for a discountType.",
+                                            "enum": [
+                                              "BUSINESS",
+                                              "EMPLOYMENT_STATUS",
+                                              "INTRODUCTORY",
+                                              "MAX_AGE",
+                                              "MIN_AGE",
+                                              "MIN_INCOME",
+                                              "MIN_TURNOVER",
+                                              "NATURAL_PERSON",
+                                              "OTHER",
+                                              "PENSION_RECIPIENT",
+                                              "RESIDENCY_STATUS",
+                                              "STAFF",
+                                              "STUDENT"
+                                            ]
+                                          },
+                                          "additionalValue": {
+                                            "type": "string",
+                                            "description": "Generic field containing additional information relevant to the discountEligibilityType specified. Whether mandatory or not is dependent on the value of discountEligibilityType."
+                                          },
+                                          "additionalInfo": {
+                                            "type": "string",
+                                            "description": "Display text providing more information on this eligibility constraint. Whether mandatory or not is dependent on the value of discountEligibilityType."
+                                          },
+                                          "additionalInfoUri": {
+                                            "type": "string",
+                                            "description": "Link to a web page with more information on this eligibility constraint."
+                                          }
                                         },
-                                        "additionalValue": {
-                                          "type": "string",
-                                          "description": "Generic field containing additional information relevant to the discountEligibilityType specified. Whether mandatory or not is dependent on the value of discountEligibilityType."
-                                        },
-                                        "additionalInfo": {
-                                          "type": "string",
-                                          "description": "Display text providing more information on this eligibility constraint. Whether mandatory or not is dependent on the value of discountEligibilityType."
-                                        },
-                                        "additionalInfoUri": {
-                                          "type": "string",
-                                          "description": "Link to a web page with more information on this eligibility constraint."
-                                        }
-                                      },
-                                      "x-readme-ref-name": "feesdiscounteligibilityMetadata"
+                                        "x-readme-ref-name": "feesdiscounteligibilityMetadata"
+                                      }
                                     }
                                   },
                                   "x-readme-ref-name": "feesdiscountMetadata"
@@ -11133,6 +11143,8 @@
                                       ]
                                     },
                                     "applicabilityConditions": {
+                                      "type": "object",
+                                      "nullable": true,
                                       "properties": {
                                         "additionalInfo": {
                                           "type": "string",
@@ -11286,6 +11298,8 @@
                                       ]
                                     },
                                     "applicabilityConditions": {
+                                      "type": "object",
+                                      "nullable": true,
                                       "properties": {
                                         "additionalInfo": {
                                           "type": "string",
@@ -12224,6 +12238,7 @@
                           },
                           "paymentDetails": {
                             "type": "object",
+                            "nullable": true,
                             "properties": {
                               "bpay": {
                                 "type": "object",
@@ -13091,6 +13106,7 @@
                     },
                     "paymentDetails": {
                       "type": "object",
+                      "nullable": true,
                       "properties": {
                         "bpay": {
                           "type": "object",
