@@ -23,7 +23,33 @@ The transaction data is completely random to best replicate the type of data tha
 
 **Note:** There is a limit of 500 for sandbox connections.  If you reach your limit and need to have this increased, feel free to reach out to [support@basiq.io](mailto:support@basiq.io).
 
-> 📘 🆕 Initial Testing and Billing Policy
+## 🆕 Open Banking Sandbox
+
+The Open Banking (OB) sandbox introduces a deterministic consent-based flow using the Hooli OB institution (AU00000).
+
+This mode is different from the standard sandbox test users. It simulates a full Data Holder consent lifecycle including authorization, re-authorization, refresh, and revocation.
+
+### Key Differences (OB Sandbox vs Standard Sandbox)
+
+- Uses a single institution: Hooli OB (AU00000)
+- Consent-based flow is required before accessing data
+- Deterministic login credentials are used for authorization
+- Data access depends on consented accounts
+- Supports full consent lifecycle (authorize, extend, refresh, revoke)
+
+### Getting Started
+
+Follow these steps to use the Open Banking sandbox:
+
+#### Step 1: Enable Open Banking
+
+Set institution method for **Hooli OB (AU00000)** to `open-banking` in the Dashboard Customizer UI, and use the following credentials.&#x20;
+
+| Member Number | OTP    | Institution                                  |
+| ------------- | ------ | -------------------------------------------- |
+| 374829        | 227470 | **Hooli OB (AU00000) -&#x20;**`open-banking` |
+
+> 📘 Initial Testing and Billing Policy
 >
 > For initial testing, BASIQ services are available at no cost. This free access allows you to extensively test our platform's capabilities using our sandbox environment. However, once you transition from testing to becoming a paying customer, charges will apply for any users on your platform. This billing policy ensures that you have the opportunity to fully explore and understand the value of BASIQ services before any financial commitment is required.
 >
@@ -34,39 +60,39 @@ The transaction data is completely random to best replicate the type of data tha
 <Table align={["left","left","left","left","left","left","left","left","left"]}>
   <thead>
     <tr>
-      <th style={{ textAlign: "left" }}>
+      <th>
         loginId
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         password
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         persona
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         suitable use case
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         name
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         phone
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         email
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         account number
       </th>
 
-      <th style={{ textAlign: "left" }}>
+      <th>
         address
       </th>
     </tr>
@@ -74,412 +100,383 @@ The transaction data is completely random to best replicate the type of data tha
 
   <tbody>
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Wentworth-Smith
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         whislter
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         This is a joint account.
 
-        * **income (transaction account)**: 2 sources of salary, monthly stable salary & fortnightly stable salary.
-        * **liabilities**: mortgage (mortgage account) and car loan (payments in the transaction account)
-        * **expenses**: has predictable expenses (credit-card account)
+        - **income (transaction account)**: 2 sources of salary, monthly stable salary & fortnightly stable salary.
+        - **liabilities**: mortgage (mortgage account) and car loan (payments in the transaction account)
+        - **expenses**: has predictable expenses (credit-card account)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Review expenses
-        * Affordability assessment
-        * Assess liabilities
-        * PFM
-        * Access transaction data
-        * Identify spending patterns
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Review expenses
+        - Affordability assessment
+        - Assess liabilities
+        - PFM
+        - Access transaction data
+        - Identify spending patterns
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Max Wentworth-Smith
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0419000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [maxsmith@micr0soft.com](mailto:maxsmith@micr0soft.com)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction:  
-        45678945678901
-
-        credit card: 23456723456789
-
-        savings: 34567834567890
-
-        mortgage:1 2345612345678
+      <td>
+        transaction:<br />45678945678901credit card: 23456723456789savings: 34567834567890mortgage:1 2345612345678
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         13/91 Fisher Rd, Dee Why NSW 2099, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Whistler
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         ShowBox
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * **income (transaction account)**: 1 source of salary, fortnightly salary
-        * **liabilities**: has BNPL (transaction account), no mortgage / personal loan
-        * **expenses**: no daily expenses
-        * **risk flags**: large amount of external transfer (debit to Jared)
+      <td>
+        - **income (transaction account)**: 1 source of salary, fortnightly salary
+        - **liabilities**: has BNPL (transaction account), no mortgage / personal loan
+        - **expenses**: no daily expenses
+        - **risk flags**: large amount of external transfer (debit to Jared)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Assess liabilities
-        * Access transaction data
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Assess liabilities
+        - Access transaction data
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Whistler Smith
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0405000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [whistler@h0tmail.com](mailto:whistler@h0tmail.com)
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         transaction: 000001919644181
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         201 Sussex St, Sydney NSW 2000, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         Gilfoyle
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         PiedPiper
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * **income** (transaction account): stop fortnightly salary, unemployment benefits
-        * **liabilities**: increase in BNPL (transaction account)
-        * **expenses**: has predictable expenses (credit-card account)
-        * **risk flags**: late fee (credit-card account)
+      <td>
+        - **income** (transaction account): stop fortnightly salary, unemployment benefits
+        - **liabilities**: increase in BNPL (transaction account)
+        - **expenses**: has predictable expenses (credit-card account)
+        - **risk flags**: late fee (credit-card account)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Assess liabilities
-        * Expense check
-        * Affordability assessment
-        * Identify spending patterns
-        * PFM
-        * Analyse creditworthiness
-        * Access transaction data
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Assess liabilities
+        - Expense check
+        - Affordability assessment
+        - Identify spending patterns
+        - PFM
+        - Analyse creditworthiness
+        - Access transaction data
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Gilfoyle Bertram
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0405000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [gilfoyle@mgail.com](mailto:gilfoyle@mgail.com)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction: 000001919644171
-
-        credit card: 000001919644170
-
-        savings: 000001919644172
+      <td>
+        transaction: 000001919644171credit card: 000001919644170savings: 000001919644172
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Dee Why NSW 2099, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         gavinBelson
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         hooli2016
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * **income** (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)
-        * **liabilities**: personal loan (loan account)
-        * **expenses**: predictable expenses (credit-card account)
-        * HooliGov Bank (AU00004)
+      <td>
+        - **income** (transaction account): 1 salary + 1 additional earning, increase monthly salary + extra income (tutoring weekly volatile)
+        - **liabilities**: personal loan (loan account)
+        - **expenses**: predictable expenses (credit-card account)
+        - HooliGov Bank (AU00004)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Assess liabilities
-        * Expense check
-        * Affordability assessment
-        * Identify spending patterns
-        * PFM
-        * Analyse creditworthiness
-        * Access transaction data
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Assess liabilities
+        - Expense check
+        - Affordability assessment
+        - Identify spending patterns
+        - PFM
+        - Analyse creditworthiness
+        - Access transaction data
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Gavin Belson
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0490000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [gavinbelson@h0tmail.com](mailto:gavinbelson@h0tmail.com)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction: 000001000002
-
-        credit card: 000001004381
-
-        savings: 000001002935
-
-        loan: 000001002955
+      <td>
+        transaction: 000001000002credit card: 000001004381savings: 000001002935loan: 000001002955
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         YARDARINO WA 6525, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         jared
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         django
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * **income** (transaction account): weekly volatile income from uber + credit transfers from Whistler
-        * **liabilities**: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)
-        * **expenses**: predictable expenses (credit-card account)
-        * **assets**: term deposit
+      <td>
+        - **income** (transaction account): weekly volatile income from uber + credit transfers from Whistler
+        - **liabilities**: unshared mortgage account (payments in the transaction account), car loan (payments in the transaction account)
+        - **expenses**: predictable expenses (credit-card account)
+        - **assets**: term deposit
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Assess liabilities
-        * Expense check
-        * Affordability assessment
-        * Identify spending patterns
-        * PFM
-        * Analyse creditworthiness
-        * Access transaction data
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Assess liabilities
+        - Expense check
+        - Affordability assessment
+        - Identify spending patterns
+        - PFM
+        - Analyse creditworthiness
+        - Access transaction data
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Jared Dunn
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0405000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [Jared.D@h0tmail.com](mailto:Jared.D@h0tmail.com)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction: 000001023480
-
-        credit card: 000001023483
-
-        term deposit: 000001023482
+      <td>
+        transaction: 000001023480credit card: 000001023483term deposit: 000001023482
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Tuggerah NSW 2259, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         richard
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         tabsnotspaces
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * **income** (transaction account): high stable fortnightly income, 2 rental incomes
-        * **liabilities**: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)
-        * **expenses**: predictable expenses (credit-card account)
+      <td>
+        - **income** (transaction account): high stable fortnightly income, 2 rental incomes
+        - **liabilities**: 3 mortgages (1 shared mortgage account & 2 unshared mortgages), 2 car loans (payments in the transaction account), 4 credit cards (1 shared credit card account & 3 unshared credit card accounts)
+        - **expenses**: predictable expenses (credit-card account)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Assess liabilities
-        * Expense check
-        * Affordability assessment
-        * Identify spending patterns
-        * PFM
-        * Analyse creditworthiness
-        * Access transaction data
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Assess liabilities
+        - Expense check
+        - Affordability assessment
+        - Identify spending patterns
+        - PFM
+        - Analyse creditworthiness
+        - Access transaction data
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Richard Birtles
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0482000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [r.birtles@tetlerjones.c0m.au](mailto:r.birtles@tetlerjones.c0m.au)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction: 000001077380
-
-        credit card: 000001077379
-
-        mortgage: 000001077381
+      <td>
+        transaction: 000001077380credit card: 000001077379mortgage: 000001077381
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         51 Dabinett Rd, Ponde SA 5238, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         laurieBream
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         business2024
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Happy path persona with business fields and business consumer consent
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Business Consumer Consent
+      <td>
+        - Business Consumer Consent
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Laurie Bream
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0490000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [business@manlyaccountants.com.au](mailto:business@manlyaccountants.com.au)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction: 062245684154861747642
-
-        credit card: 772245684154861747642
+      <td>
+        transaction: 062245684154861747642credit card: 772245684154861747642
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         21 Sydney Rd, Manly NSW 2095, Australia
       </td>
     </tr>
 
     <tr>
-      <td style={{ textAlign: "left" }}>
+      <td>
         ashMann
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         hooli2024
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * **income** (transaction account): 1 salary monthly income, rental income
-        * **liabilities**: unshared credit card transactions (payments in the transaction account). BPAY related CDR fields like `billerCode`, `billerName`, and `crn` are disclosed under “Bankwest credit card” transactions under this user as examples.
-        * **expenses**: predictable expenses (credit-card account), rental expense
-        * **risk flags**: gambling behaviours, cash withdrawal, crypto exchange
+      <td>
+        - **income** (transaction account): 1 salary monthly income, rental income
+        - **liabilities**: unshared credit card transactions (payments in the transaction account). BPAY related CDR fields like `billerCode`, `billerName`, and `crn` are disclosed under “Bankwest credit card” transactions under this user as examples.
+        - **expenses**: predictable expenses (credit-card account), rental expense
+        - **risk flags**: gambling behaviours, cash withdrawal, crypto exchange
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        * Verify income
-        * Assess liabilities
-        * Expense check
-        * Affordability assessment
-        * Identify spending patterns
-        * PFM
-        * Analyse creditworthiness
-        * Access transaction data
-        * Personalised financial advice
-        * Capture account details
+      <td>
+        - Verify income
+        - Assess liabilities
+        - Expense check
+        - Affordability assessment
+        - Identify spending patterns
+        - PFM
+        - Analyse creditworthiness
+        - Access transaction data
+        - Personalised financial advice
+        - Capture account details
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         Ash Mann
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         0497000000
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         [ashmann@gamil.com](mailto:ashmann@gamil.com)
       </td>
 
-      <td style={{ textAlign: "left" }}>
-        transaction: 090001077738
-
-        credit card: 090001077779
+      <td>
+        transaction: 090001077738credit card: 090001077779
       </td>
 
-      <td style={{ textAlign: "left" }}>
+      <td>
         201 Sussex St, Sydney NSW 2000, Australia
       </td>
     </tr>
@@ -520,8 +517,8 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td>
-        * **Error:** `invalid-credentials`
-        * **Detail:** "Account is locked"
+        - **Error:** `invalid-credentials`
+        - **Detail:** "Account is locked"
       </td>
     </tr>
 
@@ -549,8 +546,8 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td>
-        * **Error:** `account-not-accessible-requires-user-action`
-        * **Detail:** "An action is required from end-user before account details can be returned."
+        - **Error:** `account-not-accessible-requires-user-action`
+        - **Detail:** "An action is required from end-user before account details can be returned."
       </td>
     </tr>
 
@@ -578,8 +575,8 @@ The transaction data is completely random to best replicate the type of data tha
       </td>
 
       <td>
-        * **Error:** `service-unavailable`
-        * **Detail:** "Service is currently unavailable. Please try again later."
+        - **Error:** `service-unavailable`
+        - **Detail:** "Service is currently unavailable. Please try again later."
       </td>
     </tr>
   </tbody>
@@ -589,64 +586,18 @@ The transaction data is completely random to best replicate the type of data tha
 
 We have two test banks to test MFA challenges
 
-* Pied Piper Bank  (`mfa-challenge` _always_)
-* Nucleus Bank (`mfa-challenge` _intermittent - 50/50_)
+- Pied Piper Bank  (`mfa-challenge` _always_)
+- Nucleus Bank (`mfa-challenge` _intermittent - 50/50_)
 
-| loginId         | password      | mfaChallengeMethod | mfaChallengeInput                                                        | mfaChallengeSolution |
-| :-------------- | :------------ | :----------------- | :----------------------------------------------------------------------- | :------------------- |
-| jared           | django        | token              | ["OTP Password"]                                                         | ["1234"]             |
-| richard         | tabsnotspaces | token              | ["OTP Password"]                                                         | ["1234"]             |
-| gavinBelson     | hooli2016     | security-questions | ["What's your first company?"]                                           | ["Hooli"]            |
-| Gilfoyle        | PiedPiper     | security-questions | ["What's your first company?"]                                           | ["Hooli"]            |
-| Whistler        | ShowBox       | security-questions | ["What's your favourite company?", "What's the ID of this institution?"] | ["Basiq", "AU00000"] |
-| Wentworth-Smith | whislter      | security-questions | ["What's your favourite company?", "What's the ID of this institution?"] | ["Basiq", "AU00000"] |
+| loginId         | password      | mfaChallengeMethod | mfaChallengeInput                                                         | mfaChallengeSolution  |
+| :-------------- | :------------ | :----------------- | :------------------------------------------------------------------------ | :-------------------- |
+| jared           | django        | token              | \["OTP Password"]                                                         | \["1234"]             |
+| richard         | tabsnotspaces | token              | \["OTP Password"]                                                         | \["1234"]             |
+| gavinBelson     | hooli2016     | security-questions | \["What's your first company?"]                                           | \["Hooli"]            |
+| Gilfoyle        | PiedPiper     | security-questions | \["What's your first company?"]                                           | \["Hooli"]            |
+| Whistler        | ShowBox       | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
+| Wentworth-Smith | whislter      | security-questions | \["What's your favourite company?", "What's the ID of this institution?"] | \["Basiq", "AU00000"] |
 
-<div
-  style={{
-    border: "2px solid #1E1E1E", // Dark border
-    borderRadius: "8px",
-    backgroundColor: "#1E1E1E", // Dark background
-    padding: "16px",
-    margin: "16px 0",
-    fontFamily: "Arial, sans-serif",
-    color: "#ffffff", // Light text for contrast
-  }}
->
-  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
 
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <button
-      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
-      style={{
-        padding: '12px 30px',
-        backgroundColor: '#1E1E1E',
-        color: '#ffffff',
-        border: '2px solid #ffffff', // Add contrast border if needed
-        borderRadius: '50px',
-        fontSize: '16px',
-        fontWeight: '600',
-        textTransform: 'uppercase',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-        outline: 'none',
-        display: 'flex',
-        justifyContent: 'center',
-        height: '45px',
-        position: 'relative',
-        overflow: 'hidden',
-        marginLeft: '10px',
-        minWidth: '150px',
-      }}
-      onMouseEnter={(e) => {
-        e.target.style.transform = 'scale(1.1)';
-        e.target.style.backgroundColor = '#333333'; // Slightly lighter dark on hover
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = 'scale(1)';
-        e.target.style.backgroundColor = '#1E1E1E'; // Original dark
-      }}
-    >
-      Support team
-    </button>
-  </div>
-</div>
+
+<br />
