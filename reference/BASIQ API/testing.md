@@ -53,6 +53,10 @@ Set institution method for **Hooli OB (AU00000)** to `open-banking` in the Dashb
 | ------------- | ------ | -------------------------------------------- |
 | 374829        | 227470 | **Hooli OB (AU00000) -&#x20;**`open-banking` |
 
+<HTMLBlock>{`
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.325% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/eC8idjjHhphuXwSyN7bM?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="Share Financial Data with a Third-Party App" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+`}</HTMLBlock>
+
 > 📘 Initial Testing and Billing Policy
 >
 > For initial testing, BASIQ services are available at no cost. This free access allows you to extensively test our platform's capabilities using our sandbox environment. However, once you transition from testing to becoming a paying customer, charges will apply for any users on your platform. This billing policy ensures that you have the opportunity to fully explore and understand the value of BASIQ services before any financial commitment is required.
