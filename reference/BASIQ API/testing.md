@@ -46,7 +46,7 @@ Follow these steps to use the Open Banking sandbox:
 Set institution method for **Hooli OB (AU00000)** to `open-banking` in the Dashboard Customizer UI, and use the following credentials.&#x20;
 
 <HTMLBlock>{`
-<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(62.793% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/1QEVhWrUeCjVXe0PHF8r?embed&embed_mobile=tab&embed_desktop=inline" title="How to create a great Arcade for new features" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(50.325% + 41px); height: 0px; width: 100%;"><iframe src="https://demo.arcade.software/2cDuJHVaDh47skD2xTq5?embed&embed_mobile=tab&embed_desktop=inline" title="Connect to a Financial Institution Using Consent Flow" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
 `}</HTMLBlock>
 
 | Member Number | OTP    | Institution                                  |
