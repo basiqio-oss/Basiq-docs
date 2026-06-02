@@ -42,6 +42,8 @@ Webhooks → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/head
 Platform → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/platform.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/platform.json)
 Affordability → [https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/affordability.json](https://raw.githubusercontent.com/basiqio-oss/Basiq-docs/refs/heads/v3.0/reference/affordability.json)
 
+Our Public Github Repo for our docs → [https://github.com/basiqio-oss/Basiq-docs](https://github.com/basiqio-oss/Basiq-docs "https://github.com/basiqio-oss/Basiq-docs")
+
 ## What this enables
 
 With the OpenAPI spec, you can:
