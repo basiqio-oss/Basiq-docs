@@ -5,6 +5,6 @@
 - cdr-compliance
 - bcc
 - webhooks
-- errors-1
+- errors
 - security
 - go-live-migration
