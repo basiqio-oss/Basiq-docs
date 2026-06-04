@@ -1,6 +1,8 @@
 ---
 title: Errors
-excerpt: ''
+excerpt: >-
+  Understand Connect API error responses and bank-returned errors surfaced on
+  jobs.
 deprecated: false
 hidden: false
 metadata:
@@ -13,6 +15,55 @@ next:
 The Connect API uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the `2xx` range indicate success, codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, user's credentials are invalid, etc.), and codes in the `5xx` range indicate an error with the Connect API's servers (these are rare).
 
 In addition to returning an appropriate HTTP code the body will also include a JSON formatted error object that provides more details about the specifics of the error. The error object will return the error as an array to indicate multiple errors (where present).
+
+## Consent UI and bank errors
+
+For consent UI flows, any error returned by the bank is surfaced on the Jobs endpoint. Because each bank can return different authorization and consent messages, bank-returned errors are not maintained as a fixed error-code list.
+
+When a job step fails, inspect the failed step's `result` object for the bank-specific error details:
+
+* `code` identifies the error category.
+* `title` provides a short summary.
+* `detail` contains the bank-returned message, when available.
+
+In this example, the first step, `verify-credentials`, failed because the bank returned `access_denied`:
+
+```json Job with bank-returned error
+{
+  "type": "job",
+  "id": "5c50a2d1-561c-48c4-a186-b763bdf5502a",
+  "created": "2024-09-25T04:22:25Z",
+  "updated": "2024-09-25T04:22:38Z",
+  "jobType": "connection",
+  "steps": [
+    {
+      "title": "verify-credentials",
+      "status": "failed",
+      "result": {
+        "code": "authorization-failed",
+        "title": "Authorization failed",
+        "detail": "access_denied"
+      }
+    },
+    {
+      "title": "retrieve-accounts",
+      "status": "pending",
+      "result": null
+    },
+    {
+      "title": "retrieve-transactions",
+      "status": "pending",
+      "result": null
+    }
+  ],
+  "links": {
+    "self": "https://au-api.basiq.io/jobs/5c50a2d1-561c-48c4-a186-b763bdf5502a",
+    "source": "https://au-api.basiq.io/users/b2afc9cd-0f3c-41f0-9e19-d18482abc9fc/connections/60612323-9c42-478a-8ff2-640445dbe64a"
+  }
+}
+```
+
+## API error response format
 
 <Table align={["left","left"]}>
   <thead>
