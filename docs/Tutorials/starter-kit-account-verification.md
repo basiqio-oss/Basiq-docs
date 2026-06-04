@@ -2,7 +2,7 @@
 title: Account Verification (IAV)
 excerpt: Instant Account Verification Starter Kit
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
