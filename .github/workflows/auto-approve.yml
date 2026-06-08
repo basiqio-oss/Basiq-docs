@@ -22,7 +22,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
-        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98 # v3.5
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v3.5
 
       - name: Approve a PR if not already approved
         if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
