@@ -38,7 +38,7 @@ jobs:
     needs: branch-naming-rules
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
