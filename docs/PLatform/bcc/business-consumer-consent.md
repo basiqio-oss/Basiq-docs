@@ -12,7 +12,7 @@ next:
 ---
 # Overview
 
-Business Consumer Consent (BCC) within Australia's Consumer Data Right (CDR) expands data sharing options for business consumers. This document outlines integrating Basiq's consent UI into a service provider's platform, facilitating secure and compliant data sharing with business consumers. Before proceeding with integration steps, let's explore how to interact with the BCC. 
+Business Consumer Consent (BCC) within Australia's Consumer Data Right (CDR) expands data sharing options for business consumers. This document outlines integrating Basiq's consent UI into a service provider's platform, facilitating secure and compliant data sharing with business consumers. Before proceeding with integration steps, let's explore how to interact with the BCC.
 
 ## What is Business Consumer Consent?
 
@@ -22,7 +22,7 @@ To interact with the Business Consumer Consent UI, partners can configure variou
 
 ### Key Benefits:
 
- **Data Sharing:** Gain flexibility to share financial data with a broader range of service providers, enabling access to a wider array of financial services and applications.
+**Data Sharing:** Gain flexibility to share financial data with a broader range of service providers, enabling access to a wider array of financial services and applications.
 
 **Financial Management:** Streamline financial administration processes, including payroll, invoicing, payments, accounting, and tax preparation, with access to innovative tools and services.
 
@@ -42,16 +42,16 @@ Create a Business application to initiate the integration process. Ensure that t
 
 **Create Business User in Basiq**
 
-* Ensure the business user has a valid Australian Business Number (ABN) or Australian Company Number (ACN).
-* Use Basiq's API to [create a business user](https://api.basiq.io/reference/createuser) profile with the necessary attributes.
+- Ensure the business user has a valid Australian Business Number (ABN) or Australian Company Number (ACN).
+- Use Basiq's API to [create a business user](https://api.basiq.io/reference/createuser) profile with the necessary attributes.
 
 <HTMLBlock>{`
 <div style="position: relative; padding-bottom: calc(54.55861070911722% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/9Boto4N8SFoWrfTB93Hp?embed" title="Basiq - Create Business User" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
 `}</HTMLBlock>
 
-2. **Configure Consent Parameters**  
+2. **Configure Consent Parameters**
 
-This includes setting the Brand Name, purpose, scope, consent period, and data retrieval period. This step ensures consistency and allows partners to customize the displayed name to their customers. 
+This includes setting the Brand Name, purpose, scope, consent period, and data retrieval period. This step ensures consistency and allows partners to customize the displayed name to their customers.
 
 > 📘 Note:
 >
@@ -67,12 +67,12 @@ Implement a pre-consent screen within your application, informing the customer a
 
 **Provide Business Consumer Consent**
 
-* Integrate Basiq's enhanced consent UI, which is compliant with the latest CDR updates.
-* The UI should allow the business consumer to:
-  * Provide your Brand Name. 
-  * Declare service use for business purposes.
-  * Provide consent for data collection for up to 12 months.
-  * Connect to all relevant financial institutions (DHs) and select bank accounts via the Basiq interface.
+- Integrate Basiq's enhanced consent UI, which is compliant with the latest CDR updates.
+- The UI should allow the business consumer to:
+  - Provide your Brand Name.
+  - Declare service use for business purposes.
+  - Provide consent for data collection for up to 12 months.
+  - Connect to all relevant financial institutions (DHs) and select bank accounts via the Basiq interface.
 
 <HTMLBlock>{`
 <div style="position: relative; padding-bottom: calc(48.645833333333336% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/52qv95oOthdzSyeAeKlV?embed" title="Basiq - BCC" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;"></iframe></div>
@@ -88,10 +88,16 @@ Share the retrieved CDR data within your application, adhering to the specified 
 
 > 📘 Note
 >
-> it's important to note that the *"Brand Name"* value is now required for all applications, including those not using BCC. This ensures consistency and allows partners to configure the displayed name to their customers.
+> it's important to note that the _"Brand Name"_ value is now required for all applications, including those not using BCC. This ensures consistency and allows partners to configure the displayed name to their customers.
 
 ### Additional Steps:
 
-**Manage Consent and Authorization**: Use `action=manage` to handle consent and authorization journey, you can read more about managing consent [here](https://api.basiq.io/docs/consent-ui#manage-consent-actionmanage). 
+**Manage Consent and Authorization**: Use `action=manage` to handle consent and authorization journey, you can read more about managing consent [here](https://api.basiq.io/docs/consent-ui#manage-consent-actionmanage).
 
-**Enable CDR Data:** Reach out to [support@basiq.io](mailto:support@basiq.io) to enable the app for CDR data access.
+**Enable CDR Data:**&#x20;
+
+To activate your account for CDR, you will need to contact our sales team via [https://cuscal.com/contact-us](https://cuscal.com/contact-us) and select "I am a business interested in Basiq Data Solutions for my customers."
+
+They will guide you through the required commercial arrangements and onboarding steps. Response times are typically 1-5 business days, although this may vary.
+
+In the meantime, you can familiarise yourself with the platform by integrating using sandbox data or reviewing our documentation.
