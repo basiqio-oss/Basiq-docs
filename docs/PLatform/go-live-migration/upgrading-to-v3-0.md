@@ -34,7 +34,7 @@ With the release of Basiq API 3.0, we've aligned our platform with the CDR Open 
 
 > 📘 Upgrading to v3.0 does not automatically enable you for Open Banking data access
 >
-> Partners are able to upgrade to access v3.0 of the API without being enabled for Open Banking. If you would like to be enabled for Open Banking please reach out to [support@basiq.io](mailto:support@basiq.io) where the team can assist in registering your application.
+> Partners are able to upgrade to access v3.0 of the API without being enabled for Open Banking. If you would like to be enabled for Open Banking please reach out to [sales@basiq.io](mailto:sales@basiq.io) where the team can assist in registering your application.
 
 ## Migrating to API 3.0
 
