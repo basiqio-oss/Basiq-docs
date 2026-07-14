@@ -1,0 +1,115 @@
+name: Auto Review and Approve
+
+# Approves a PR automatically once all rule-based checks pass:
+#   1. PR title matches convention  (DX|DSO|Bump prefix)
+#   2. Branch name matches convention
+#   3. OpenAPI/JSON specs pass Redocly linting (hard failure, not just a warning)
+#
+# NOTE: Approval is posted by github-actions[bot]. If your branch protection
+# requires a CODEOWNER review, store a PAT from a team member as
+# secrets.APPROVE_PAT and replace `secrets.GITHUB_TOKEN` below with it.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions: read-all
+
+jobs:
+  # ── Rule 1: PR title ────────────────────────────────────────────────────────
+  validate-title:
+    name: Validate PR Title
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check title format
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          if [[ ! "$PR_TITLE" =~ ^(DX|DSO|Bump).+ ]]; then
+            echo "::error::PR title must start with DX, DSO, or Bump. Got: $PR_TITLE"
+            exit 1
+          fi
+          echo "PR title is valid: $PR_TITLE"
+
+  # ── Rule 2: Branch name ─────────────────────────────────────────────────────
+  validate-branch:
+    name: Validate Branch Name
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check branch naming convention
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          # Skip validation for main/master direct pushes
+          if [[ "$BRANCH" == "master" || "$BRANCH" == "main" ]]; then
+            echo "Base branch — skipping validation."
+            exit 0
+          fi
+          if [[ ! "$BRANCH" =~ ^(DX|DSO|Bump|dependabot/.+|feature/.+|hotfix/.+|release/).+ ]]; then
+            echo "::error::Branch '$BRANCH' does not match the naming convention."
+            echo "::error::Expected: DX-*, DSO-*, Bump-*, feature/*, hotfix/*, release/*, dependabot/*"
+            exit 1
+          fi
+          echo "Branch name is valid: $BRANCH"
+
+  # ── Rule 3: OpenAPI linting ─────────────────────────────────────────────────
+  lint-openapi:
+    name: Lint OpenAPI Specs
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+
+      - name: Install Redocly CLI
+        run: npm install -g @redocly/cli
+
+      - name: Lint OpenAPI files
+        run: |
+          failed=0
+          paths=(
+            "reference/affordability.json"
+            "reference/connect.json"
+            "reference/platform.json"
+            "reference/enrich.json"
+            "reference/identity.json"
+            "reference/reporting.json"
+            "reference/webhooks.json"
+          )
+          for path in "${paths[@]}"; do
+            if [ -f "$path" ]; then
+              echo "Linting $path..."
+              if ! npx @redocly/cli lint "$path"; then
+                echo "::error::Linting failed for $path"
+                failed=1
+              fi
+            else
+              echo "::warning::$path not found, skipping."
+            fi
+          done
+          exit $failed
+
+  # ── Approve when all rules pass ─────────────────────────────────────────────
+  auto-approve:
+    name: Auto-Approve PR
+    needs: [validate-title, validate-branch, lint-openapi]
+    if: success()
+    runs-on: ubuntu-24.04
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Approve PR
+        run: |
+          gh pr review "$PR_URL" \
+            --approve \
+            --body "**Automated review passed** — all rule-based checks succeeded:
+          - PR title format ✓
+          - Branch naming convention ✓
+          - OpenAPI/JSON linting ✓
+
+          _Auto-approved by [auto-review-approve workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})._"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.APPROVE_PAT }}
