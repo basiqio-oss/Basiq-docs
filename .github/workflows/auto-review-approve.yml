@@ -112,4 +112,4 @@ jobs:
           _Auto-approved by [auto-review-approve workflow](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})._"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.APPROVE_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
