@@ -35,48 +35,54 @@ jobs:
           key: lychee-${{ runner.os }}-${{ hashFiles('**/*.md', '**/*.mdx') }}
           restore-keys: lychee-${{ runner.os }}-
 
+      - name: Install lychee
+        run: |
+          LYCHEE_VERSION="0.24.2"
+          curl -fsSL "https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz --wildcards '*/lychee' --strip-components=1
+          sudo mv lychee /usr/local/bin/lychee
+          lychee --version
+
       - name: Check links
-        id: lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          # Scan all markdown and MDX files across the repo
-          args: >
-            --cache
-            --cache-file .lychee.cache
-            --max-cache-age 3d
-            --no-progress
-            --exclude-path node_modules
-            --exclude-path .git
-            --exclude 'localhost'
-            --exclude 'example\.com'
-            --exclude '127\.0\.0\.1'
-            --exclude 'your-domain\.com'
-            --timeout 30
-            --max-retries 3
-            --retry-wait-time 5
-            --accept 200,204,206,301,302,307,308,403,429
-            './**/*.md'
-            './**/*.mdx'
-          output: report.md
-          format: markdown
-          # Do NOT fail the workflow — report only
-          fail: false
+        id: check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          lychee \
+            --cache \
+            --cache-file .lychee.cache \
+            --max-cache-age 3d \
+            --no-progress \
+            --exclude-path node_modules \
+            --exclude-path .git \
+            --exclude 'localhost' \
+            --exclude 'example\.com' \
+            --exclude '127\.0\.0\.1' \
+            --exclude 'your-domain\.com' \
+            --timeout 30 \
+            --max-retries 3 \
+            --retry-wait-time 5 \
+            --accept 200,204,206,301,302,307,308,403,429 \
+            --format markdown \
+            --output report.md \
+            './**/*.md' './**/*.mdx'
+          EXIT=$?
+          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
 
       - name: Build job summary
         if: always()
         run: |
           echo "## Broken Link Check Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f report.md ]; then
+          if [ -f report.md ] && [ -s report.md ]; then
             cat report.md >> $GITHUB_STEP_SUMMARY
           else
-            echo "No report generated." >> $GITHUB_STEP_SUMMARY
+            echo "_No broken links found or report was not generated._" >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "**Exit code:** \`${{ steps.lychee.outputs.exit_code }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Exit code:** \`${{ steps.check.outputs.exit_code }}\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload full report as artifact
         if: always()
@@ -87,6 +93,6 @@ jobs:
           retention-days: 30
 
       - name: Annotate broken links in PR
-        if: steps.lychee.outputs.exit_code != '0' && github.event_name == 'pull_request'
+        if: steps.check.outputs.exit_code != '0' && github.event_name == 'pull_request'
         run: |
           echo "::warning::Broken or unreachable links were detected. Download the 'link-check-report' artifact or check the Job Summary for details."
