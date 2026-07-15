@@ -1,0 +1,98 @@
+name: Broken Link Check
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'docs/**'
+      - 'custom_pages/**'
+      - 'custom_blocks/**'
+      - 'recipes/**'
+      - 'reference/**'
+  pull_request:
+  schedule:
+    # Run every Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    name: Check for Broken Links
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Restore lychee cache to avoid hammering external sites on every run
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lychee.cache
+          key: lychee-${{ runner.os }}-${{ hashFiles('**/*.md', '**/*.mdx') }}
+          restore-keys: lychee-${{ runner.os }}-
+
+      - name: Install lychee
+        run: |
+          LYCHEE_VERSION="0.24.2"
+          curl -fsSL "https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz --wildcards '*/lychee' --strip-components=1
+          sudo mv lychee /usr/local/bin/lychee
+          lychee --version
+
+      - name: Check links
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          lychee \
+            --cache \
+            --cache-file .lychee.cache \
+            --max-cache-age 3d \
+            --no-progress \
+            --exclude-path node_modules \
+            --exclude-path .git \
+            --exclude 'localhost' \
+            --exclude 'example\.com' \
+            --exclude '127\.0\.0\.1' \
+            --exclude 'your-domain\.com' \
+            --timeout 30 \
+            --max-retries 3 \
+            --retry-wait-time 5 \
+            --accept 200,204,206,301,302,307,308,403,429 \
+            --format markdown \
+            --output report.md \
+            './**/*.md' './**/*.mdx'
+          EXIT=$?
+          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
+
+      - name: Build job summary
+        if: always()
+        run: |
+          echo "## Broken Link Check Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f report.md ] && [ -s report.md ]; then
+            cat report.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "_No broken links found or report was not generated._" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "**Exit code:** \`${{ steps.check.outputs.exit_code }}\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload full report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: report.md
+          retention-days: 30
+
+      - name: Annotate broken links in PR
+        if: steps.check.outputs.exit_code != '0' && github.event_name == 'pull_request'
+        run: |
+          echo "::warning::Broken or unreachable links were detected. Download the 'link-check-report' artifact or check the Job Summary for details."
