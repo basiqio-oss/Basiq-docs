@@ -10,12 +10,6 @@ on:
       - 'recipes/**'
       - 'reference/**'
   pull_request:
-    paths:
-      - 'docs/**'
-      - 'custom_pages/**'
-      - 'custom_blocks/**'
-      - 'recipes/**'
-      - 'reference/**'
   schedule:
     # Run every Monday at 08:00 UTC
     - cron: '0 8 * * 1'
