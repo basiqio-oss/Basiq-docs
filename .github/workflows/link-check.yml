@@ -55,10 +55,10 @@ jobs:
             --max-retries 3
             --retry-wait-time 5
             --accept 200,204,206,301,302,307,308,403,429
-            --output report.md
-            --format markdown
             './**/*.md'
             './**/*.mdx'
+          output: report.md
+          format: markdown
           # Do NOT fail the workflow — report only
           fail: false
         env:
