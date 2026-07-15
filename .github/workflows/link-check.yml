@@ -25,11 +25,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Restore lychee cache to avoid hammering external sites on every run
       - name: Restore lychee cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .lychee.cache
           key: lychee-${{ runner.os }}-${{ hashFiles('**/*.md', '**/*.mdx') }}
@@ -86,7 +86,7 @@ jobs:
 
       - name: Upload full report as artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: link-check-report
           path: report.md
