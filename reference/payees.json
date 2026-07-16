@@ -1,0 +1,1024 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Platform",
+    "description": "All included utility endpoints for Basiq partners",
+    "version": "3.0.0",
+    "license": {
+      "name": "Commercial",
+      "url": "https://basiq.io"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://au-api.basiq.io"
+    }
+  ],
+  "paths": {
+    "/users/{userId}/payees": {
+      "get": {
+        "tags": [
+          "Payees"
+        ],
+        "summary": "List Payees",
+        "operationId": "GetPayees",
+        "description": "Retrieves a paginated list of payees for a specific user. Supports filtering by payee type, connection ID, and creation date.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "The unique identifier of the user.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of payees to return per page. Valid values are 1-500. Default is 25.",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 25
+            },
+            "required": false,
+            "example": 25
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter expression to narrow down results. Supports the following filters:\n- `type.eq('value')` - Filter by payee type (domestic, biller, international, digitalWallet)\n- `connectionId.eq('value')` - Filter by connection ID\n- `created.bt('startDate','endDate')` - Filter by creation date range\n- `created.gt('date')` - Filter by creation date greater than\n- `created.gteq('date')` - Filter by creation date greater than or equal\n- `created.lt('date')` - Filter by creation date less than\n- `created.lteq('date')` - Filter by creation date less than or equal\n- `created.eq('date')` - Filter by creation date equal to",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "examples": {
+              "filterByType": {
+                "value": "type.eq('domestic')",
+                "summary": "Filter by domestic payee type"
+              },
+              "filterByConnectionId": {
+                "value": "connectionId.eq('conn-123')",
+                "summary": "Filter by connection ID"
+              },
+              "filterByDateRange": {
+                "value": "created.bt('2024-01-01','2024-12-31')",
+                "summary": "Filter by date range"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a list of payees.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayeesListResponse"
+                },
+                "example": {
+                  "type": "list",
+                  "count": 2,
+                  "size": 25,
+                  "data": [
+                    {
+                      "type": "payee",
+                      "id": "payee-001",
+                      "nickname": "John's Account",
+                      "description": "Monthly rent payment",
+                      "payeeType": "domestic",
+                      "connectionId": "conn-123",
+                      "createdDate": "2024-01-15T10:30:00Z",
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-123/payees/payee-001"
+                      }
+                    },
+                    {
+                      "type": "payee",
+                      "id": "payee-002",
+                      "nickname": "Electricity Bill",
+                      "description": "AGL Energy",
+                      "payeeType": "biller",
+                      "connectionId": "conn-123",
+                      "createdDate": "2024-02-20T14:45:00Z",
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-123/payees/payee-002"
+                      }
+                    }
+                  ],
+                  "links": {
+                    "self": "https://au-api.basiq.io/users/user-123/payees?limit=25",
+                    "next": "https://au-api.basiq.io/users/user-123/payees?limit=25&cursor=abc123"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenAccessError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    },
+    "/users/{userId}/payees/{payeeId}": {
+      "get": {
+        "tags": [
+          "Payees"
+        ],
+        "summary": "Get Payee Details",
+        "operationId": "GetPayeeDetails",
+        "description": "Retrieves detailed information for a specific payee. The response includes type-specific details based on the payee type (domestic, biller, international, or digitalWallet).",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "The unique identifier of the user.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+          },
+          {
+            "name": "payeeId",
+            "in": "path",
+            "description": "The unique identifier of the payee.",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "required": true,
+            "example": "p1q2r3s4-t5u6-7890-vwxy-z12345678901"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with payee details. The response structure varies based on the payee type.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayeeDetailsResponse"
+                },
+                "examples": {
+                  "domesticPayee": {
+                    "summary": "Domestic Payee",
+                    "value": {
+                      "type": "payee",
+                      "id": "payee-001",
+                      "nickname": "John's Account",
+                      "description": "Monthly rent payment",
+                      "payeeType": "domestic",
+                      "connectionId": "conn-123",
+                      "createdDate": "2024-01-15T10:30:00Z",
+                      "domestic": {
+                        "payeeAccountUType": "payId",
+                        "payId": {
+                          "name": "John Smith",
+                          "identifier": "john.smith@email.com",
+                          "type": "EMAIL"
+                        }
+                      },
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-123/payees/payee-001"
+                      }
+                    }
+                  },
+                  "billerPayee": {
+                    "summary": "Biller Payee",
+                    "value": {
+                      "type": "payee",
+                      "id": "payee-002",
+                      "nickname": "Electricity Bill",
+                      "description": "AGL Energy",
+                      "payeeType": "biller",
+                      "connectionId": "conn-123",
+                      "createdDate": "2024-02-20T14:45:00Z",
+                      "biller": {
+                        "billerCode": "12345",
+                        "crn": "987654321",
+                        "billerName": "AGL Energy"
+                      },
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-123/payees/payee-002"
+                      }
+                    }
+                  },
+                  "internationalPayee": {
+                    "summary": "International Payee",
+                    "value": {
+                      "type": "payee",
+                      "id": "payee-003",
+                      "nickname": "UK Transfer",
+                      "description": "Payment to UK account",
+                      "payeeType": "international",
+                      "connectionId": "conn-123",
+                      "createdDate": "2024-03-10T09:00:00Z",
+                      "international": {
+                        "beneficiaryDetails": {
+                          "name": "Jane Doe",
+                          "country": "GB",
+                          "message": "Invoice payment"
+                        },
+                        "bankDetails": {
+                          "country": "GB",
+                          "accountNumber": "12345678",
+                          "beneficiaryBankBIC": "BARCGB22",
+                          "routingNumber": "123456",
+                          "bankAddress": "1 Churchill Place, London"
+                        }
+                      },
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-123/payees/payee-003"
+                      }
+                    }
+                  },
+                  "digitalWalletPayee": {
+                    "summary": "Digital Wallet Payee",
+                    "value": {
+                      "type": "payee",
+                      "id": "payee-004",
+                      "nickname": "PayPal Friend",
+                      "description": "Friend's PayPal",
+                      "payeeType": "digitalWallet",
+                      "connectionId": "conn-123",
+                      "createdDate": "2024-04-05T16:20:00Z",
+                      "digitalWallet": {
+                        "name": "Friend Name",
+                        "identifier": "friend@email.com",
+                        "type": "EMAIL",
+                        "provider": "PayPal"
+                      },
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/user-123/payees/payee-004"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid payee ID format.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadRequestErrorSchema"
+                },
+                "example": {
+                  "type": "list",
+                  "correlationId": "abc123",
+                  "data": [
+                    {
+                      "type": "error",
+                      "title": "Parameter not valid.",
+                      "code": "parameter-not-valid",
+                      "detail": "Payee ID value is not valid.",
+                      "source": {
+                        "parameter": "payeeId"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenAccessError"
+          },
+          "404": {
+            "description": "Payee not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundErrorSchema"
+                },
+                "example": {
+                  "type": "list",
+                  "correlationId": "def456",
+                  "data": [
+                    {
+                      "type": "error",
+                      "title": "Requested resource is not found",
+                      "code": "resource-not-found",
+                      "detail": "Payee not found"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        },
+        "security": [
+          {
+            "services_token": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PayeesListResponse": {
+        "type": "object",
+        "required": [
+          "type",
+          "data",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Always 'list'.",
+            "example": "list"
+          },
+          "count": {
+            "type": "integer",
+            "description": "The total number of payees available.",
+            "example": 50
+          },
+          "size": {
+            "type": "integer",
+            "description": "The number of payees returned in this response.",
+            "example": 25
+          },
+          "data": {
+            "type": "array",
+            "description": "Array of payee objects.",
+            "items": {
+              "$ref": "#/components/schemas/PayeeSummary"
+            }
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "description": "A link to the current query."
+              },
+              "next": {
+                "type": "string",
+                "description": "A link to the next page of results, if available."
+              }
+            }
+          }
+        }
+      },
+      "PayeeSummary": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "payeeType",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Always 'payee'.",
+            "example": "payee"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the payee."
+          },
+          "nickname": {
+            "type": "string",
+            "description": "A user-defined nickname for the payee."
+          },
+          "description": {
+            "type": "string",
+            "description": "A description of the payee."
+          },
+          "payeeType": {
+            "type": "string",
+            "description": "The type of payee.",
+            "enum": [
+              "domestic",
+              "biller",
+              "international",
+              "digitalWallet"
+            ]
+          },
+          "connectionId": {
+            "type": "string",
+            "description": "The connection ID associated with this payee."
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the payee was created."
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "description": "A link to the payee details."
+              }
+            }
+          }
+        }
+      },
+      "PayeeDetailsResponse": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "payeeType",
+          "links"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Always 'payee'.",
+            "example": "payee"
+          },
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the payee."
+          },
+          "nickname": {
+            "type": "string",
+            "description": "A user-defined nickname for the payee."
+          },
+          "description": {
+            "type": "string",
+            "description": "A description of the payee."
+          },
+          "payeeType": {
+            "type": "string",
+            "description": "The type of payee.",
+            "enum": [
+              "domestic",
+              "biller",
+              "international",
+              "digitalWallet"
+            ]
+          },
+          "connectionId": {
+            "type": "string",
+            "description": "The connection ID associated with this payee."
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the payee was created."
+          },
+          "domestic": {
+            "$ref": "#/components/schemas/DomesticPayeeDetails"
+          },
+          "biller": {
+            "$ref": "#/components/schemas/BillerPayeeDetails"
+          },
+          "international": {
+            "$ref": "#/components/schemas/InternationalPayeeDetails"
+          },
+          "digitalWallet": {
+            "$ref": "#/components/schemas/DigitalWalletPayeeDetails"
+          },
+          "links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string",
+                "description": "A link to the payee details."
+              }
+            }
+          }
+        }
+      },
+      "DomesticPayeeDetails": {
+        "type": "object",
+        "description": "Details specific to domestic payees.",
+        "properties": {
+          "payeeAccountUType": {
+            "type": "string",
+            "description": "The type of domestic payee account.",
+            "enum": [
+              "account",
+              "payId"
+            ]
+          },
+          "account": {
+            "type": "object",
+            "description": "Bank account details for domestic payee.",
+            "properties": {
+              "bsb": {
+                "type": "string",
+                "description": "The BSB number of the account."
+              },
+              "accountNumber": {
+                "type": "string",
+                "description": "The account number."
+              },
+              "accountName": {
+                "type": "string",
+                "description": "The name of the account holder."
+              }
+            }
+          },
+          "payId": {
+            "type": "object",
+            "description": "PayID details for domestic payee.",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name associated with the PayID."
+              },
+              "identifier": {
+                "type": "string",
+                "description": "The PayID identifier (email, phone, ABN, etc.)."
+              },
+              "type": {
+                "type": "string",
+                "description": "The type of PayID identifier.",
+                "enum": [
+                  "EMAIL",
+                  "PHONE",
+                  "ABN",
+                  "ORG_ID"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "BillerPayeeDetails": {
+        "type": "object",
+        "description": "Details specific to biller payees.",
+        "properties": {
+          "billerCode": {
+            "type": "string",
+            "description": "The BPAY biller code."
+          },
+          "crn": {
+            "type": "string",
+            "description": "The Customer Reference Number for the biller."
+          },
+          "billerName": {
+            "type": "string",
+            "description": "The name of the biller."
+          }
+        }
+      },
+      "InternationalPayeeDetails": {
+        "type": "object",
+        "description": "Details specific to international payees.",
+        "properties": {
+          "beneficiaryDetails": {
+            "type": "object",
+            "description": "Details about the beneficiary.",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the beneficiary."
+              },
+              "country": {
+                "type": "string",
+                "description": "The country of the beneficiary (ISO 3166-1 alpha-2)."
+              },
+              "message": {
+                "type": "string",
+                "description": "An optional message for the beneficiary."
+              }
+            }
+          },
+          "bankDetails": {
+            "type": "object",
+            "description": "Details about the beneficiary's bank.",
+            "properties": {
+              "country": {
+                "type": "string",
+                "description": "The country of the bank (ISO 3166-1 alpha-2)."
+              },
+              "accountNumber": {
+                "type": "string",
+                "description": "The account number or IBAN."
+              },
+              "beneficiaryBankBIC": {
+                "type": "string",
+                "description": "The BIC/SWIFT code of the beneficiary's bank."
+              },
+              "routingNumber": {
+                "type": "string",
+                "description": "The routing number (if applicable)."
+              },
+              "bankAddress": {
+                "type": "string",
+                "description": "The address of the bank."
+              }
+            }
+          }
+        }
+      },
+      "DigitalWalletPayeeDetails": {
+        "type": "object",
+        "description": "Details specific to digital wallet payees.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name associated with the digital wallet."
+          },
+          "identifier": {
+            "type": "string",
+            "description": "The identifier for the digital wallet (email, phone, etc.)."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of identifier.",
+            "enum": [
+              "EMAIL",
+              "PHONE",
+              "CONTACT_NAME"
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "description": "The digital wallet provider.",
+            "enum": [
+              "PayPal",
+              "Venmo",
+              "GooglePay",
+              "ApplePay",
+              "Other"
+            ]
+          }
+        }
+      },
+      "BadRequestErrorSchema": {
+        "type": "object",
+        "required": [
+          "correlationId",
+          "data",
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Always \"list\".",
+            "example": "list"
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier for this particular occurrence of the problem."
+          },
+          "data": {
+            "type": "array",
+            "description": "Error data.",
+            "items": {
+              "type": "object",
+              "required": [
+                "code",
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the response, always \"error\"",
+                  "example": "error"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Title of the error"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "Application-specific error code.",
+                  "enum": [
+                    "parameter-not-supplied",
+                    "parameter-not-valid",
+                    "unsupported-accept",
+                    "invalid-content",
+                    "institution-not-supported",
+                    "invalid-credentials"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "description": "Human-readable explanation specific to this occurrence of the problem."
+                },
+                "source": {
+                  "type": "object",
+                  "properties": {
+                    "parameter": {
+                      "type": "string",
+                      "description": "String indicating which URI query parameter caused the error."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFoundErrorSchema": {
+        "type": "object",
+        "required": [
+          "correlationId",
+          "data",
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Always \"list\".",
+            "example": "list"
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier for this particular occurrence of the problem."
+          },
+          "data": {
+            "type": "array",
+            "description": "Error data.",
+            "items": {
+              "type": "object",
+              "required": [
+                "code",
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the response, always \"error\"",
+                  "example": "error"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Title of the error"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "Application-specific error code.",
+                  "enum": [
+                    "resource-not-found"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "description": "Human-readable explanation specific to this occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnauthorizedErrorSchema": {
+        "type": "object",
+        "required": [
+          "correlationId",
+          "data",
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Always \"list\".",
+            "example": "list"
+          },
+          "correlationId": {
+            "type": "string",
+            "description": "Unique identifier for this particular occurrence of the problem."
+          },
+          "data": {
+            "type": "array",
+            "description": "Error data.",
+            "items": {
+              "type": "object",
+              "required": [
+                "code",
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of the response, always \"error\"",
+                  "example": "error"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Title of the error"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "Application-specific error code.",
+                  "enum": [
+                    "unauthorized",
+                    "invalid-token"
+                  ]
+                },
+                "detail": {
+                  "type": "string",
+                  "description": "Human-readable explanation specific to this occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "BadRequestError": {
+        "description": "Returns error that server cannot or will not process the request due to something that is perceived to be a client error.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/BadRequestErrorSchema"
+            }
+          }
+        }
+      },
+      "UnauthorizedError": {
+        "description": "Authentication credentials are missing or invalid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UnauthorizedErrorSchema"
+            },
+            "example": {
+              "type": "list",
+              "correlationId": "xyz789",
+              "data": [
+                {
+                  "type": "error",
+                  "title": "Unauthorized",
+                  "code": "unauthorized",
+                  "detail": "Authentication credentials are missing or invalid."
+                }
+              ]
+            }
+          }
+        }
+      },
+      "ForbiddenAccessError": {
+        "description": "Error that access is forbidden and tied to the application logic, such as insufficient rights to a resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "correlationId",
+                "data",
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Always \"list\".",
+                  "example": "list"
+                },
+                "correlationId": {
+                  "type": "string",
+                  "description": "Unique identifier for this particular occurrence of the problem."
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Error data.",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "type"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Type of the response, always \"error\"",
+                        "example": "error"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "Title of the error"
+                      },
+                      "code": {
+                        "type": "string",
+                        "description": "Application-specific error code.",
+                        "enum": [
+                          "forbidden-access",
+                          "no-production-access",
+                          "access-denied"
+                        ]
+                      },
+                      "detail": {
+                        "type": "string",
+                        "description": "Human-readable explanation specific to this occurrence of the problem."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "InternalServerError": {
+        "description": "Returns error response code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "correlationId",
+                "data",
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Always \"list\".",
+                  "example": "list"
+                },
+                "correlationId": {
+                  "type": "string",
+                  "description": "Unique identifier for this particular occurrence of the problem."
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Error data.",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "code",
+                      "type"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Type of the response, always \"error\"",
+                        "example": "error"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "Title of the error"
+                      },
+                      "code": {
+                        "type": "string",
+                        "description": "Application-specific error code.",
+                        "enum": [
+                          "internal-server-error"
+                        ]
+                      },
+                      "detail": {
+                        "type": "string",
+                        "description": "Human-readable explanation specific to this occurrence of the problem."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "services_token": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "services_token": []
+    }
+  ],
+  "x-readme": {
+    "explorer-enabled": true,
+    "proxy-enabled": true,
+    "samples-enabled": true,
+    "samples-languages": [
+      "curl",
+      "node",
+      "ruby",
+      "javascript",
+      "python"
+    ]
+  }
+}

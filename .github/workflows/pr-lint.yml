@@ -1,0 +1,94 @@
+name: PR and Branch Linting
+
+on:
+  pull_request:
+    types: ['opened', 'edited']
+  workflow_dispatch: # Allow manual triggering of the workflow
+
+jobs:
+  pr-lint:
+    name: PR Title Linting
+    runs-on: ubuntu-24.04
+    steps:
+      # Validate PR title format
+      - name: Lint PR Title
+        uses: seferov/pr-lint-action@cbef81c153f36262fbcd92fe97d6c6b8736d891d # v2.0.0
+        with:
+          title-regex: '^(DX|DSO|Bump).+'
+          title-regex-flags: 'g'
+          error-message: 'Please ensure the PR title includes a Jira ID in the correct format.'
+
+  branch-naming-rules:
+    name: Branch Naming Validation
+    runs-on: ubuntu-24.04
+    needs: pr-lint
+    steps:
+      # Validate branch naming conventions
+      - name: Lint Branch Naming
+        uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '^(DX|DSO|Bump|dependabot/.+|feature/.+|hotfix/.+|release/.+).+'
+          ignore: master,main
+          min_length: 2
+          max_length: 100
+
+  lint:
+    name: YAML and JSON Linting
+    runs-on: ubuntu-latest
+    needs: branch-naming-rules
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7.0.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install Redocly CLI
+        run: npm install -g @redocly/cli
+
+      # Lint JSON and YAML files located under 'reference'
+      - name: Lint JSON and YAML Files
+        run: |
+          warnings=0
+          # List paths for JSON and YAML files
+          paths=("reference/affordability.json" "reference/connect.json" "reference/platform.json" "reference/enrich.json" "reference/identity.json" "reference/reporting.json" "reference/webhooks.json")
+          
+          # Run lint for each file and check for warnings or errors
+          for path in "${paths[@]}"; do
+            if ! npx @redocly/cli lint $path; then
+              echo "Linting failed for $path"
+              warnings=1
+            fi
+          done
+          # If warnings found, store it in an environment variable
+          echo "warnings=$warnings" >> $GITHUB_ENV
+      # Send Slack notification if warnings exist
+      - name: Send Slack Notification if Warnings Exist
+        if: env.warnings == '1'
+        uses: slackapi/slack-github-action@0d95c9a7becc1e6e297d76df9bc735c44f4cbcbc
+        with:
+          payload: |
+            {
+              "text": "Linting Warnings Detected in GitHub Actions :warning:",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Linting Notification",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Warnings detected during linting.*\n*Repository:* ${{ github.repository }}\n*Actor:* ${{ github.actor }}\n*Pull Request:* <${{ github.event.pull_request.html_url }}|PR Link>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URLS }}

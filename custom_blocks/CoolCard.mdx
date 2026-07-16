@@ -1,0 +1,102 @@
+---
+name: CoolCard
+---
+export const CoolCard = ({ header, href, icon, isBeta, text }) => {
+  const cardcss = {
+		alignItems: 'flex-start',
+    background: 'rgba(255,255,255,0.05)',
+    border: '1px solid var(--color-border-default)',
+    borderRadius: 'var(--border-radius-lg)',
+		color: 'var(--color-text-default)',
+    display: 'flex',
+    flexDirection: 'column',	
+		fontSize: '14px',
+    gap: '0.25em',
+		lineHeight: '1.4',
+    padding: '1.5em',
+		textAlign: 'left',
+    textDecoration: 'none',
+		transition: 'all var(--transition-timing) var(--transition-fast)',
+  }
+
+  const iconcss = {
+    fontSize: '1.5em',
+		marginBottom: '0.5em',
+    opacity: '0.65',
+		transition: 'all var(--transition-timing) var(--transition-fast)',
+  }
+
+  const headercss = {
+		alignItems: 'center',
+		display: 'flex',
+		fontSize: '1.1em',
+		fontWeight: 'var(--font-weight-bold)',
+  }
+  
+  const arrowcss = {
+    fontSize: '0.8em',
+    marginLeft: '0.5em',
+    opacity: 0,
+    transition: 'all var(--transition-timing) var(--transition-fast)',
+		transform: 'translateX(-5px)',
+	}
+
+  const textcss = {
+    color: 'var(--color-text-minimum)',
+		fontSize: '1.1em',
+  }
+
+	const badgecss = {
+    alignItems: 'center',
+		background: 'var(--yellow)',
+    borderRadius: '30px',
+    boxSizing: 'border-box',
+    color: 'var(--yellow10)',
+    display: 'inline-flex',
+    fontFamily: 'var(--font-family)',
+    fontSize: '0.6em',
+    fontWeight: 'var(--font-weight-bold)',
+    height: '1.5em',
+    lineHeight: '1.3',
+		marginLeft: '0.75em',
+    paddingLeft: '6px',
+    paddingRight: '6px',
+    userSelect: 'none',
+	}
+
+  const style = `
+	  .CoolCard:hover,
+    .CoolCard:active,
+    .CoolCard:focus {
+			background: rgba(255, 255, 255, 0.1) !important;
+
+		  i {
+			  opacity: 0.75 !important;
+			  transform: none !important;
+		  }
+		}
+	`
+
+  return (
+    <>
+			<style>{style}</style>
+	    <a className="CoolCard" href={href} style={cardcss}>
+  	    <i aria-hidden="true" className={icon} style={iconcss} />
+        <span style={headercss}>	
+          {header}
+					{isBeta && <span style={badgecss}>Beta</span>}
+					<i aria-hidden="true" className="fa-regular fa-arrow-right" style={arrowcss} />
+				</span>
+				<span style={textcss}>{text}</span>
+      </a>
+		</>
+  );
+};
+
+<CoolCard 
+  header="Project Setup" 
+	href="#"
+  icon="fa-duotone fa-solid fa-traffic-light"
+	isBeta
+	text="Learn how to write and publish docs."
+/>

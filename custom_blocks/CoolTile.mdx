@@ -1,0 +1,112 @@
+---
+name: CoolTile
+---
+export const CoolTile = ({ header, href, icon, isBeta, text }) => {
+  const cardcss = {
+    alignItems: 'flex-start',
+		border: 0,
+    borderRadius: 'var(--border-radius-lg)',
+		color: 'var(--color-text-default)',
+    display: 'flex',
+		flexDirection: 'row',
+		fontSize: '14px',
+    gap: '1em',
+    lineHeight: '1.4',
+    maxWidth: '260px',
+		padding: 0,
+		textAlign: 'left',
+    textDecoration: 'none',
+		transition: 'background var(--transition-slow var(--transition-timing)',
+  }
+  
+  const colcss = {
+    display: 'flex',
+		flexDirection: 'column',
+	}
+
+  const iconcss = {
+    fontSize: '1.5em',
+		marginTop: '0.15em',
+    minWidth: '1.5em',
+    opacity: '0.5',
+		textAlign: 'center',
+    transition: 'opacity var(--transition-slow var(--transition-timing)',
+		width: '1.5em',
+  }
+
+  const headercss = {
+		alignItems: 'center',
+		display: 'flex',
+		fontSize: '1.1em',
+		fontWeight: 'var(--font-weight-bold)',
+  }
+  
+  const arrowcss = {
+		fontSize: '0.75em',
+    marginLeft: '0.5em',
+    opacity: 0,
+		transform: 'translateX(-2.5px)',
+    transition: 'all var(--transition-slow) var(--transition-timing)',
+	}
+
+  const textcss = {
+    color: 'var(--color-text-minimum)',
+		fontSize: '1.1em',
+  }
+
+	const badgecss = {
+    alignItems: 'center',
+		background: 'var(--yellow)',
+    borderRadius: '30px',
+    boxSizing: 'border-box',
+    color: 'var(--yellow10)',
+    display: 'inline-flex',
+    fontFamily: 'var(--font-family)',
+    fontSize: '0.6em',
+    fontWeight: 'var(--font-weight-bold)',
+    height: '1.5em',
+    lineHeight: '1.3',
+		marginLeft: '0.75em',
+    paddingLeft: '6px',
+    paddingRight: '6px',
+    userSelect: 'none',
+	}
+
+  const style = `
+	  .CardTile:hover,
+    .CardTile:active,
+    .CardTile:focus {
+	    background: none !important;
+
+	    i {
+	      opacity: 0.75 !important;
+				transform: none !important;
+			}
+		}
+	`
+
+  return (
+    <>
+			<style>{style}</style>
+	    <a className="CardTile" href={href} style={cardcss}>
+        <i aria-hidden="true" className={icon} style={iconcss} />
+				<div style={colcss}>
+      	  <span style={headercss}>
+            {header}
+						{isBeta && <span style={badgecss}>Beta</span>}
+  	        <i aria-hidden="true" className="fa-regular fa-arrow-right" style={arrowcss} />
+					</span>
+          <span style={textcss}>{text}</span>
+				</div>
+      </a>
+		</>
+  );
+};
+
+<CoolTile 
+  header="Project Setup" 
+	href="#"
+  icon="fa-duotone fa-solid fa-traffic-light"
+	isBeta
+	text="Learn how to write and publish docs."
+/>

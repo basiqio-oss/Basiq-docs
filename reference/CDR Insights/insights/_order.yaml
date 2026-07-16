@@ -1,0 +1,10 @@
+- createinsight
+- listuserinsights
+- getinsightbyid
+- getinsighttypes
+- getinsighttype
+- getaccountinsights
+- getbalanceinsights
+- getidentityinsights
+- verifyincomeinsight
+- getexpenseratioinsights
