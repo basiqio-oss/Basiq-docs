@@ -14,13 +14,19 @@ on:
     # Run every Monday at 08:00 UTC
     - cron: '0 8 * * 1'
   workflow_dispatch:
+    inputs:
+      site_url:
+        description: 'Live site base URL to crawl (site-crawl job)'
+        required: false
+        default: 'https://api.basiq.io'
 
 permissions:
   contents: read
 
+# ── Job 1: check links in source files (fast, runs on every trigger) ─────────
 jobs:
-  link-check:
-    name: Check for Broken Links
+  check-files:
+    name: Check Links in Source Files
     runs-on: ubuntu-24.04
 
     steps:
@@ -96,3 +102,88 @@ jobs:
         if: steps.check.outputs.exit_code != '0' && github.event_name == 'pull_request'
         run: |
           echo "::warning::Broken or unreachable links were detected. Download the 'link-check-report' artifact or check the Job Summary for details."
+
+# ── Job 2: crawl the live published website (schedule + manual only) ──────────
+  check-site:
+    name: Crawl Live Site for Broken Links
+    runs-on: ubuntu-24.04
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lychee-site.cache
+          key: lychee-site-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: lychee-site-${{ runner.os }}-
+
+      - name: Install lychee
+        run: |
+          LYCHEE_VERSION="0.24.2"
+          curl -fsSL "https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz --wildcards '*/lychee' --strip-components=1
+          sudo mv lychee /usr/local/bin/lychee
+          lychee --version
+
+      - name: Crawl live site via sitemap
+        id: crawl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SITE_URL="${{ github.event.inputs.site_url || 'https://api.basiq.io' }}"
+          SITEMAP_URL="${SITE_URL%/}/sitemap.xml"
+
+          echo "Crawling: $SITE_URL"
+          echo "Sitemap:  $SITEMAP_URL"
+
+          # Try sitemap first; fall back to root URL if sitemap returns non-2xx
+          HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}" "$SITEMAP_URL")
+          if [[ "$HTTP_STATUS" == 2* ]]; then
+            echo "Using sitemap: $SITEMAP_URL"
+            INPUT_URL="$SITEMAP_URL"
+          else
+            echo "No sitemap found (HTTP $HTTP_STATUS), crawling root URL instead"
+            INPUT_URL="$SITE_URL"
+          fi
+
+          set +e
+          lychee \
+            --cache \
+            --cache-file .lychee-site.cache \
+            --max-cache-age 3d \
+            --no-progress \
+            --exclude 'localhost' \
+            --exclude '127\.0\.0\.1' \
+            --timeout 30 \
+            --max-retries 3 \
+            --retry-wait-time 5 \
+            --accept 200,204,206,301,302,307,308,403,429 \
+            --format markdown \
+            --output site-report.md \
+            "$INPUT_URL"
+          EXIT=$?
+          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
+
+      - name: Build job summary
+        if: always()
+        run: |
+          SITE_URL="${{ github.event.inputs.site_url || 'https://api.basiq.io' }}"
+          echo "## Live Site Broken Link Report" >> $GITHUB_STEP_SUMMARY
+          echo "_Crawled: \`${SITE_URL}\`_" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f site-report.md ] && [ -s site-report.md ]; then
+            cat site-report.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "_No broken links found or report was not generated._" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "**Exit code:** \`${{ steps.crawl.outputs.exit_code }}\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload site crawl report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-crawl-report
+          path: site-report.md
+          retention-days: 30
