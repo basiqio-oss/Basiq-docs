@@ -71,11 +71,11 @@ jobs:
             --retry-wait-time 5 \
             --accept 200,204,206,301,302,307,308,403,429 \
             --format markdown \
-            --output "$GITHUB_WORKSPACE/report.md" \
-            './**/*.md' './**/*.mdx'
+            './**/*.md' './**/*.mdx' \
+            > "$GITHUB_WORKSPACE/report.md"
           EXIT=$?
           echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
-          echo "Report written: $([ -f "$GITHUB_WORKSPACE/report.md" ] && wc -l < "$GITHUB_WORKSPACE/report.md" || echo 'FILE NOT FOUND') lines"
+          echo "Report size: $(wc -c < "$GITHUB_WORKSPACE/report.md" 2>/dev/null || echo 'FILE NOT FOUND') bytes"
 
       - name: Build job summary
         if: always()
@@ -113,7 +113,7 @@ jobs:
       - name: Restore lychee cache
         uses: actions/cache@v4
         with:
-          path: .lychee-site.cache
+          path: ${{ github.workspace }}/.lychee-site.cache
           key: lychee-site-${{ runner.os }}-${{ github.run_id }}
           restore-keys: lychee-site-${{ runner.os }}-
 
@@ -149,7 +149,7 @@ jobs:
           set +e
           lychee \
             --cache \
-            --cache-file .lychee-site.cache \
+            --cache-file "$GITHUB_WORKSPACE/.lychee-site.cache" \
             --max-cache-age 3d \
             --no-progress \
             --exclude 'localhost' \
@@ -159,10 +159,11 @@ jobs:
             --retry-wait-time 5 \
             --accept 200,204,206,301,302,307,308,403,429 \
             --format markdown \
-            --output site-report.md \
-            "$INPUT_URL"
+            "$INPUT_URL" \
+            > "$GITHUB_WORKSPACE/site-report.md"
           EXIT=$?
           echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
+          echo "Report size: $(wc -c < "$GITHUB_WORKSPACE/site-report.md" 2>/dev/null || echo 'FILE NOT FOUND') bytes"
 
       - name: Build job summary
         if: always()
@@ -171,8 +172,8 @@ jobs:
           echo "## Live Site Broken Link Report" >> $GITHUB_STEP_SUMMARY
           echo "_Crawled: \`${SITE_URL}\`_" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f site-report.md ] && [ -s site-report.md ]; then
-            cat site-report.md >> $GITHUB_STEP_SUMMARY
+          if [ -f "$GITHUB_WORKSPACE/site-report.md" ] && [ -s "$GITHUB_WORKSPACE/site-report.md" ]; then
+            cat "$GITHUB_WORKSPACE/site-report.md" >> $GITHUB_STEP_SUMMARY
           else
             echo "_No broken links found or report was not generated._" >> $GITHUB_STEP_SUMMARY
           fi
@@ -185,5 +186,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: site-crawl-report
-          path: site-report.md
+          path: ${{ github.workspace }}/site-report.md
           retention-days: 30
