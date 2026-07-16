@@ -54,6 +54,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          echo "## Broken Link Check Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           set +e
           lychee \
             --cache \
@@ -72,37 +74,12 @@ jobs:
             --accept 200,204,206,301,302,307,308,403,429 \
             --format markdown \
             './**/*.md' './**/*.mdx' \
-            > "$GITHUB_WORKSPACE/report.md"
-          EXIT=$?
-          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
-          echo "Report size: $(wc -c < "$GITHUB_WORKSPACE/report.md" 2>/dev/null || echo 'FILE NOT FOUND') bytes"
-
-      - name: Build job summary
-        if: always()
-        run: |
-          echo "## Broken Link Check Report" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f "$GITHUB_WORKSPACE/report.md" ] && [ -s "$GITHUB_WORKSPACE/report.md" ]; then
-            cat "$GITHUB_WORKSPACE/report.md" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "_No broken links found or report was not generated._" >> $GITHUB_STEP_SUMMARY
-          fi
+            | tee -a "$GITHUB_STEP_SUMMARY"
+          EXIT=${PIPESTATUS[0]}
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "**Exit code:** \`${{ steps.check.outputs.exit_code }}\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload full report as artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: link-check-report
-          path: ${{ github.workspace }}/report.md
-          retention-days: 30
-
-      - name: Annotate broken links in PR
-        if: steps.check.outputs.exit_code != '0' && github.event_name == 'pull_request'
-        run: |
-          echo "::warning::Broken or unreachable links were detected. Download the 'link-check-report' artifact or check the Job Summary for details."
+          echo "**Exit code:** \`$EXIT\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
+          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
 
 # ── Job 2: crawl the live published website (always runs) ─────────────────────
   check-site:
@@ -146,6 +123,9 @@ jobs:
             INPUT_URL="$SITE_URL"
           fi
 
+          echo "## Live Site Broken Link Report" >> $GITHUB_STEP_SUMMARY
+          echo "_Crawled: \`${INPUT_URL}\`_" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           set +e
           lychee \
             --cache \
@@ -160,31 +140,9 @@ jobs:
             --accept 200,204,206,301,302,307,308,403,429 \
             --format markdown \
             "$INPUT_URL" \
-            > "$GITHUB_WORKSPACE/site-report.md"
-          EXIT=$?
-          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
-          echo "Report size: $(wc -c < "$GITHUB_WORKSPACE/site-report.md" 2>/dev/null || echo 'FILE NOT FOUND') bytes"
-
-      - name: Build job summary
-        if: always()
-        run: |
-          SITE_URL="${{ github.event.inputs.site_url || 'https://api.basiq.io' }}"
-          echo "## Live Site Broken Link Report" >> $GITHUB_STEP_SUMMARY
-          echo "_Crawled: \`${SITE_URL}\`_" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f "$GITHUB_WORKSPACE/site-report.md" ] && [ -s "$GITHUB_WORKSPACE/site-report.md" ]; then
-            cat "$GITHUB_WORKSPACE/site-report.md" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "_No broken links found or report was not generated._" >> $GITHUB_STEP_SUMMARY
-          fi
+            | tee -a "$GITHUB_STEP_SUMMARY"
+          EXIT=${PIPESTATUS[0]}
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "**Exit code:** \`${{ steps.crawl.outputs.exit_code }}\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload site crawl report as artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-crawl-report
-          path: ${{ github.workspace }}/site-report.md
-          retention-days: 30
+          echo "**Exit code:** \`$EXIT\` (0 = all good, 2 = broken links found)" >> $GITHUB_STEP_SUMMARY
+          echo "exit_code=$EXIT" >> $GITHUB_OUTPUT
