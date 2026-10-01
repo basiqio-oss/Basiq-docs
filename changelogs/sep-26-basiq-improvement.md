@@ -14,3 +14,5 @@ Large transaction reports are now handled more reliably. If a PDF cannot be gene
 ## 🏦 New institution: Revolut
 
 Revolut is now available as a supported Australian financial institution in Basiq.
+
+If you have any questions about these updates, please reach out to Basiq Support.
