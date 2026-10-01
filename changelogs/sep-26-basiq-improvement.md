@@ -1,7 +1,7 @@
 ---
 title: Sep '26 - Basiq Product Updates
 author: amalik@cuscal.com.au
-hidden: true
+hidden: false
 published_at: '2026-09-30T07:22:35.213Z'
 type: improved
 ---
