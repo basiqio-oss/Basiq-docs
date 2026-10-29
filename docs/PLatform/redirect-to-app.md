@@ -87,6 +87,3 @@ The consumer is outside your app while they're in the bank's app, so they may no
 
 - Assume every bank behaves the same way
 - Leave the consumer on a blank or loading screen if no redirect arrives
-
-```
-```
