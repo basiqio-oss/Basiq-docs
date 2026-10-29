@@ -42,14 +42,16 @@ Colour fields now accept only hex values, such as #1A2B3C. Before this fix, an i
 
 ➕**&#x20;New: Planned bank outages on the Basiq status page**
 
-Planned full outages from the major banks (CBA, ANZ, NAB and Westpac) now show up on status.basiq.io as scheduled maintenance under **CDR Connectors**. This gives you time to warn your users and plan around downtime.
+Planned full outages from major Australian banks now appear on [status.basiq.io](https://status.basiq.io/) as scheduled maintenance under CDR Connectors. This gives you time to warn your users and plan around potential downtime.
+
+The outage monitoring automation now runs weekly across the **top 10 banks** and identifies planned full outages.
 
 - Each notice is titled "\[Bank] Scheduled Outage". It includes the start and end times in UTC and AEST/AEDT.
 - If a bank changes an outage's end time, the notice is updated and a schedule update is posted.
 - If a bank cancels an upcoming outage, the notice is closed with a cancellation message.
 - Subscribers get email alerts when maintenance starts and ends.
-- Only full outages are posted. Partial outages aren't included.
+- Only **full outages** are posted. Partial outages aren't included.
 
-To get these alerts, subscribe to **CDR Connectors** on status.basiq.io.
+To get these alerts, subscribe to **CDR Connectors** on [status.basiq.io](https://status.basiq.io/).
 
 If you have any questions about these updates, please reach out to Basiq Support.
