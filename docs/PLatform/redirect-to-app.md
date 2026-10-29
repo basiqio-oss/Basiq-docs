@@ -1,10 +1,11 @@
 ---
 title: Redirect to App
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
+````mdx
 ## Overview
 
 Redirect to App (R2A) is a Consumer Data Right (CDR) authentication method. It lets a consumer sign in with their bank's own mobile app instead of entering details on a web page.
@@ -39,7 +40,7 @@ Your app → Basiq Consent UI → Bank selected
         → Bank app opens (your app in background)
         → Consumer authenticates + approves
         → Redirect URL → Your app resumes
-```
+````
 
 The bank controls how sign-in and approval look and work, so the experience can differ between banks.
 
@@ -74,7 +75,7 @@ The consumer is outside your app while they're in the bank's app, so they may no
 | Bank app not installed, or R2A not available           | The bank uses its web sign-in instead (Redirect to Web with one-time password)                | No change needed. Your app should support both experiences                                                   |
 | The phone closes your app while it's in the background | The consumer returns through your registered redirect URL to a fresh app launch               | Save the journey state before handing off, so you can pick it up again                                       |
 
-**Key point:&#x20;**&#x64;on't assume a redirect will always arrive. Your app should be able to recover when the consumer comes back without one.
+> **Key point:** Don't assume a redirect will always arrive. Your app should be able to recover when the consumer comes back without one.
 
 ## Do's and don'ts
 
@@ -89,3 +90,6 @@ The consumer is outside your app while they're in the bank's app, so they may no
 
 - Assume every bank behaves the same way
 - Leave the consumer on a blank or loading screen if no redirect arrives
+
+```
+```
