@@ -7,7 +7,7 @@ type: added
 ---
 ## Basiq Dashboard
 
-**:new: New: Filter accounts by status**
+➕**&#x20;New: Filter accounts by status**
 
 The **Accounts** page in the Basiq Dashboard now has an **Account status** filter, so you can hide closed accounts and work with large account lists more easily.
 
@@ -34,13 +34,13 @@ The Customiser now checks your values as you enter them, so a setting can't acci
 
 The Wrapper section now has a dividing line above it, which makes the Customiser easier to scan.
 
-### Fixed: Colour fields accept only hex values
+### 🛠️ Fixed: Colour fields accept only hex values
 
 Colour fields now accept only hex values, such as #1A2B3C. Before this fix, an invalid value gave an unclear error message when you saved.
 
 ## Status page
 
-**:new: New: Planned bank outages on the Basiq status page**
+➕**&#x20;New: Planned bank outages on the Basiq status page**
 
 Planned full outages from the major banks (CBA, ANZ, NAB and Westpac) now show up on status.basiq.io as scheduled maintenance under **CDR Connectors**. This gives you time to warn your users and plan around downtime.
 
