@@ -21,7 +21,7 @@ Closed accounts aren't deleted. Their history is kept, and you can still view th
 
 ## Basiq Customise UI
 
-**:heart_decoration: Improved: Input checks in the Customiser**
+:heart_decoration:**&#x20;Improved: Input checks in the Customiser**
 
 The Customiser now checks your values as you enter them, so a setting can't accidentally break your layout.
 
@@ -51,3 +51,5 @@ Planned full outages from the major banks (CBA, ANZ, NAB and Westpac) now show u
 - Only full outages are posted. Partial outages aren't included.
 
 To get these alerts, subscribe to **CDR Connectors** on status.basiq.io.
+
+If you have any questions about these updates, please reach out to Basiq Support.
