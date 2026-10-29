@@ -2,6 +2,8 @@
 title: Oct'26 - Platform Improvements
 author: Ashman Malik
 hidden: false
+metadata:
+  robots: noindex
 published_at: '2026-10-29T03:32:54.261Z'
 type: added
 ---
@@ -47,8 +49,6 @@ Planned full outages from major Australian banks now appear on [status.basiq.io]
 The outage monitoring automation now runs weekly across the **top 10 banks** and identifies planned full outages.
 
 - Each notice is titled "\[Bank] Scheduled Outage". It includes the start and end times in UTC and AEST/AEDT.
-- If a bank changes an outage's end time, the notice is updated and a schedule update is posted.
-- If a bank cancels an upcoming outage, the notice is closed with a cancellation message.
 - Subscribers get email alerts when maintenance starts and ends.
 - Only **full outages** are posted. Partial outages aren't included.
 
