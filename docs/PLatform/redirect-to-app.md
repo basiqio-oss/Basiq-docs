@@ -43,4 +43,18 @@ Your app → Basiq Consent UI → Bank selected
 
 The bank controls how sign-in and approval look and work, so the experience can differ between banks.
 
+## Who does what
+
+|                    | Responsibility                                                                                                                      |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Bank (Data Holder) | Authenticates the consumer and records the approval                                                                                 |
+| Basiq              | Runs the consent journey, starts the CDR request with the bank, manages the connection, and returns the result to your redirect URL |
+| Your app           | Launches the Consent UI, receives the redirect, resumes the journey, and handles success, cancellation and failure                  |
+
+Neither Basiq nor your app ever collects the consumer's bank username, password, PIN or other credentials.
+
+## Setting up your redirect URL
+
+<br />
+
 <br />
