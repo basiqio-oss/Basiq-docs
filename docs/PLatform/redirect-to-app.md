@@ -33,3 +33,14 @@ Your app needs to:
 - handle cases where the consumer doesn't come back
 
 ## End-to-end flow
+
+```text Journey
+Your app → Basiq Consent UI → Bank selected
+        → Bank app opens (your app in background)
+        → Consumer authenticates + approves
+        → Redirect URL → Your app resumes
+```
+
+The bank controls how sign-in and approval look and work, so the experience can differ between banks.
+
+<br />
