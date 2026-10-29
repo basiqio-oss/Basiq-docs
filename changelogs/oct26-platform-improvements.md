@@ -11,7 +11,7 @@ type: added
 
 ➕**&#x20;New: Filter accounts by status**
 
-The **Accounts** page in the Basiq Dashboard now has an **Account status** filter, so you can hide closed accounts and work with large account lists more easily.
+The **Accounts** page in the [Basiq Dashboard](https://dashboard.basiq.io/) now has an **Account status** filter, so you can hide closed accounts and work with large account lists more easily.
 
 - **Available (open):** Shows only open accounts. This is the default.
 - **Unavailable (closed):** Shows only closed accounts.
