@@ -32,6 +32,4 @@ Your app needs to:
 - reopen in the right place when the redirect arrives
 - handle cases where the consumer doesn't come back
 
-<br />
-
-<br />
+## End-to-end flow
