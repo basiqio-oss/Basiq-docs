@@ -72,7 +72,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
   <p>The data available depends on the consumer's authorisation, the institution and the connection method.</p>
 
-  <p>For a full breakdown of available fields, refer to the <a href="https://api.basiq.io/docs/data-structure" target="_blank" rel="noopener noreferrer">Basiq data structure documentation</a>.</p>
+  <p>For a full breakdown of available fields, refer to the <a href="https://api.basiq.io/docs/consent-scopes" target="_blank" rel="noopener noreferrer">Basiq data structure documentation</a>.</p>
 </Accordion>
 
 <Accordion title="How do I test my integration with Basiq?" icon="far fa-circle-info">
