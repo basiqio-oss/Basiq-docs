@@ -584,7 +584,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>The events available depend on the API functionality and webhook configuration used by your integration.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for the current event definitions.</p>
+    <p>Refer to the <a href="https://api.basiq.io/reference/listeventtypes" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for the current event definitions.</p>
 
   {/* VALIDATE: Publish the approved list of events, including relevant consent and connection lifecycle events. */}
 </Accordion>
