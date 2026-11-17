@@ -634,7 +634,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>Contact your Basiq representative or Support team to discuss production access and any required steps.</p>
 
-    <p>For development and integration testing, refer to the <a href="https://api.basiq.io/docs/sandbox" target="_blank" rel="noopener noreferrer">Basiq sandbox documentation</a>.</p>
+    <p>For development and integration testing, refer to the <a href="https://api.basiq.io/docs/upgrading-to-v3-0" target="_blank" rel="noopener noreferrer">Basiq sandbox documentation</a>.</p>
 
   {/* VALIDATE: Confirm current production onboarding process, approval requirements and support contact details. */}
 </Accordion>
