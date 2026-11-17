@@ -382,18 +382,6 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>The availability and representation of pending and posted transactions depend on the information provided by the Data Holder.</p>
   </Accordion>
-
-  <Accordion title="Why are my account balances different from internet banking?" icon="far fa-circle-info">
-    <p>Account balances returned through Basiq are sourced from the financial institution.</p>
-    <p>Differences between the balance displayed in an application and internet banking may occur because of:</p>
-    <ul>
-      <li>Differences between available and current balances.</li>
-      <li>Pending transactions that have not yet been posted.</li>
-      <li>Timing differences between the latest data retrieval and the institution's online banking platform.</li>
-      <li>Differences in how the institution reports account balance information.</li>
-    </ul>
-    <p>For accurate interpretation, refer to the balance fields and their definitions in the <a href="https://api.basiq.io/docs/data-structure" target="_blank" rel="noopener noreferrer">Basiq data structure documentation</a>.</p>
-    {/* VALIDATE: Confirm available balance fields and the approved explanation of balance types in Basiq's data model. */}
 </Accordion>
 
 <Accordion title="What are Web and Open Banking transaction date/times?" icon="far fa-circle-info">
