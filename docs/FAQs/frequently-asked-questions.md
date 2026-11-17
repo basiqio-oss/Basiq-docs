@@ -251,7 +251,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
       <li>Providing clear communication to the end user.</li>
     </ul>
 
-    <p>For further information, refer to our <a href="https://api.basiq.io/docs/error-codes" target="_blank" rel="noopener noreferrer">error code documentation</a>.</p>
+    <p>For further information, refer to our <a href="https://api.basiq.io/docs/errors" target="_blank" rel="noopener noreferrer">error code documentation</a>.</p>
   </Accordion>
 
   <Accordion title="Does Basiq support business bank accounts?" icon="far fa-circle-info">
