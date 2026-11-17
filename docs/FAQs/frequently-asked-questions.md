@@ -219,7 +219,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
       <p>Institution availability, connection methods and supported data types can vary depending on the institution and account type.</p>
 
-      <p>For the latest supported institutions, refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> and the institution list available through the API.</p>
+      <p>For the latest supported institutions, refer to the <a href="https://dashboard.basiq.io/status" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> and the institution list available through the API.</p>
 
     {/* VALIDATE: Add the approved live institution directory link and clarify whether the list includes Open Banking and DDC connectors. */}
   </Accordion>
@@ -255,11 +255,11 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
   </Accordion>
 
   <Accordion title="Does Basiq support business bank accounts?" icon="far fa-circle-info">
-      <p>Basiq supports access to financial data where the relevant financial institution and account type are available through the supported connection methods.</p>
+    <p>Basiq supports access to financial data where the relevant financial institution and account type are available through the supported connection methods.</p>
 
-      <p>Business account access may depend on the institution's CDR support, account eligibility and the authority of the person completing the authorisation process.</p>
+    <p>Business account access may depend on the institution's CDR support, account eligibility and the authority of the person completing the authorisation process.</p>
 
-      <p>Not all business account types or institutions necessarily provide the same data coverage.</p>
+    <p>Not all business account types or institutions necessarily provide the same data coverage.</p>
   </Accordion>
 
   <Accordion title="Can consumers connect joint bank accounts?" icon="far fa-circle-info">
@@ -289,25 +289,25 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
   </Accordion>
 
   <Accordion title="Can users access data from closed bank accounts?" icon="far fa-circle-info">
-      <p>Access to historical information from a closed account depends on the financial institution and the data it makes available through the connection.</p>
+    <p>Access to historical information from a closed account depends on the financial institution and the data it makes available through the connection.</p>
 
-      <p>If the institution does not return the closed account or its historical transactions, Basiq cannot independently retrieve that information from the institution.</p>
+    <p>If the institution does not return the closed account or its historical transactions, Basiq cannot independently retrieve that information from the institution.</p>
   </Accordion>
 
   <Accordion title="Can consumers connect multiple bank accounts and institutions?" icon="far fa-circle-info">
-      <p>Yes. An application can support connections to multiple eligible accounts and financial institutions, subject to the institutions and account types supported.</p>
+    <p>Yes. An application can support connections to multiple eligible accounts and financial institutions, subject to the institutions and account types supported.</p>
 
-      <p>Each institution connection may require a separate authorisation journey.</p>
+    <p>Each institution connection may require a separate authorisation journey.</p>
 
-      <p>Your application should manage each connection and its associated consent status independently.</p>
+    <p>Your application should manage each connection and its associated consent status independently.</p>
   </Accordion>
 
   <Accordion title="Can users add another bank account after their initial connection?" icon="far fa-circle-info">
-      <p>Users can initiate an additional institution connection where the application supports the relevant connection flow.</p>
+    <p>Users can initiate an additional institution connection where the application supports the relevant connection flow.</p>
 
-      <p>The user may need to authenticate with the additional financial institution and provide the required consent before data can be accessed.</p>
+    <p>The user may need to authenticate with the additional financial institution and provide the required consent before data can be accessed.</p>
 
-      <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for connection implementation details.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for connection implementation details.</p>
   </Accordion>
 
   ## Transactions and Financial Data
@@ -325,11 +325,11 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
   </Accordion>
 
   <Accordion title="How can I refresh a user's financial data?" icon="far fa-circle-info">
-      <p>Applications can initiate data retrieval using the relevant Basiq API operations.</p>
+    <p>Applications can initiate data retrieval using the relevant Basiq API operations.</p>
 
-      <p>The returned data depends on the connection status, consent permissions, institution availability and applicable refresh behaviour.</p>
+    <p>The returned data depends on the connection status, consent permissions, institution availability and applicable refresh behaviour.</p>
 
-      <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for the relevant endpoints and implementation guidance.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for the relevant endpoints and implementation guidance.</p>
   </Accordion>
 
   <Accordion title="What is Smart Cache?" icon="far fa-circle-info">
@@ -356,13 +356,13 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
   </Accordion>
 
   <Accordion title="How far back can Basiq retrieve transaction history?" icon="far fa-circle-info">
-      <p>The available transaction history depends on the financial institution, account type, connection method and the historical data made available by the Data Holder.</p>
+    <p>The available transaction history depends on the financial institution, account type, connection method and the historical data made available by the Data Holder.</p>
 
-      <p>Different institutions may provide different transaction history periods. As a result, the amount of historical data available may vary between accounts.</p>
+    <p>Different institutions may provide different transaction history periods. As a result, the amount of historical data available may vary between accounts.</p>
 
-      <p>Applications should not assume that all institutions provide the same historical transaction coverage.</p>
+    <p>Applications should not assume that all institutions provide the same historical transaction coverage.</p>
 
-      <p>For information about the transaction fields returned by Basiq, refer to our <a href="https://api.basiq.io/docs/data-structure" target="_blank" rel="noopener noreferrer">data structure documentation</a>.</p>
+    <p>For information about the transaction fields returned by Basiq, refer to our <a href="https://api.basiq.io/docs/data-structure" target="_blank" rel="noopener noreferrer">data structure documentation</a>.</p>
   </Accordion>
 
   <Accordion title="Why are some transactions missing from my account?" icon="far fa-circle-info">
@@ -382,13 +382,13 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
   </Accordion>
 
   <Accordion title="What is the difference between pending and posted transactions?" icon="far fa-circle-info">
-      <p><strong>Pending transactions:</strong> Transactions that have been initiated or authorised but have not yet been fully processed by the financial institution.</p>
+    <p><strong>Pending transactions:</strong> Transactions that have been initiated or authorised but have not yet been fully processed by the financial institution.</p>
 
-      <p><strong>Posted transactions:</strong> Transactions that have been processed and recorded against the account by the financial institution.</p>
+    <p><strong>Posted transactions:</strong> Transactions that have been processed and recorded against the account by the financial institution.</p>
 
-      <p>Pending transactions may change, disappear or be replaced by posted transactions as the bank completes processing.</p>
+    <p>Pending transactions may change, disappear or be replaced by posted transactions as the bank completes processing.</p>
 
-      <p>The availability and representation of pending and posted transactions depend on the information provided by the Data Holder.</p>
+    <p>The availability and representation of pending and posted transactions depend on the information provided by the Data Holder.</p>
   </Accordion>
 
   <Accordion title="Why are my account balances different from internet banking?" icon="far fa-circle-info">
