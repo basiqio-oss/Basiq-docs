@@ -321,7 +321,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>The returned data depends on the connection status, consent permissions, institution availability and applicable refresh behaviour.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for the relevant endpoints and implementation guidance.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs/platform-connections#actions-on-a-connection" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for the relevant endpoints and implementation guidance.</p>
   </Accordion>
 
   <Accordion title="What is Smart Cache?" icon="far fa-circle-info">
