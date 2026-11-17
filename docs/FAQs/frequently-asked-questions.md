@@ -280,14 +280,6 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
     {/* VALIDATE: Confirm supported trust account scenarios and any known institution limitations. */}
   </Accordion>
 
-  <Accordion title="Can users connect Buy Now Pay Later (BNPL) accounts?" icon="far fa-circle-info">
-      <p>BNPL data availability depends on whether the relevant provider participates in the applicable data-sharing framework and whether the required data is supported.</p>
-
-      <p>Not all BNPL providers or account types are necessarily available through Basiq.</p>
-
-    {/* VALIDATE: Confirm supported BNPL providers and whether access is through CDR, DDC or another integration. */}
-  </Accordion>
-
   <Accordion title="Can users access data from closed bank accounts?" icon="far fa-circle-info">
     <p>Access to historical information from a closed account depends on the financial institution and the data it makes available through the connection.</p>
 
