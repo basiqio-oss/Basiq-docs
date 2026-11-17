@@ -299,7 +299,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>The user may need to authenticate with the additional financial institution and provide the required consent before data can be accessed.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for connection implementation details.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs/consent-parameters#connectionid-parameter" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for connection implementation details.</p>
   </Accordion>
 
   ## Transactions and Financial Data
