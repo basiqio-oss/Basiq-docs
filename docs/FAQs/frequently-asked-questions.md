@@ -620,13 +620,13 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 </Accordion>
 
 <Accordion title="How do I migrate from API v2 to API v3?" icon="far fa-circle-info">
-    <p>Basiq API v3 supports both Digital Data Capture (DDC) and Consumer Data Right (CDR) connection methods.</p>
+  <p>Basiq API v3 supports both Digital Data Capture (DDC) and Consumer Data Right (CDR) connection methods.</p>
 
-    <p>API v2 supports DDC only.</p>
+  <p>API v2 supports DDC only.</p>
 
-    <p>When migrating, review the relevant API changes, data structures, authentication requirements and connection workflows before updating your integration.</p>
+  <p>When migrating, review the relevant API changes, data structures, authentication requirements and connection workflows before updating your integration.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for the current API documentation.</p>
+  <p>Refer to the <a href="https://api.basiq.io/docs/migrating-users-from-web-to-openbanking-connection" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for the current API documentation.</p>
 </Accordion>
 
 <Accordion title="How do I move from DDC to Open Banking?" icon="far fa-circle-info">
