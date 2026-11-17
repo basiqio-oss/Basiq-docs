@@ -509,13 +509,13 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 </Accordion>
 
 <Accordion title="What should I do if my API request returns an error?" icon="far fa-circle-info">
-    <p>If your request returns an error, review the error code and accompanying message to understand the issue.</p>
+  <p>If your request returns an error, review the error code and accompanying message to understand the issue.</p>
 
-    <p>The <a href="https://api.basiq.io/docs/error-codes" target="_blank" rel="noopener noreferrer">error code documentation</a> provides explanations for each error code and guidance on how to handle them.</p>
+  <p>The <a href="https://api.basiq.io/docs/errors" target="_blank" rel="noopener noreferrer">error code documentation</a> provides explanations for each error code and guidance on how to handle them.</p>
 
-    <p>Common issues include authentication errors, incorrect request formats or temporary issues with the bank's API.</p>
+  <p>Common issues include authentication errors, incorrect request formats or temporary issues with the bank's API.</p>
 
-    <p>Ensure your implementation follows Basiq's guidelines for error handling and data retrieval to improve user experience and service reliability.</p>
+  <p>Ensure your implementation follows Basiq's guidelines for error handling and data retrieval to improve user experience and service reliability.</p>
 </Accordion>
 
 <Accordion title="What information should I provide when contacting Basiq Support?" icon="far fa-circle-info">
