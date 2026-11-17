@@ -469,7 +469,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
   <p>Applications should monitor the job status and wait for the relevant completion or failure response before assuming that data retrieval has finished.</p>
 
-  <p>For recommended implementation behaviour, refer to <a href="https://api.basiq.io/docs/handling-jobs" target="_blank" rel="noopener noreferrer">Handling Jobs</a>.</p>
+  <p>For recommended implementation behaviour, refer to <a href="https://api.basiq.io/reference/jobs" target="_blank" rel="noopener noreferrer">Handling Jobs</a>.</p>
 </Accordion>
 
 <Accordion title="Why do I have a 'missing bank data' error in my job output?" icon="far fa-circle-info">
