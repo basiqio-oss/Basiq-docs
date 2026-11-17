@@ -485,11 +485,11 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 </Accordion>
 
 <Accordion title="What does the job error 'Service is currently unavailable. Please try again later.' mean?" icon="far fa-circle-info">
-    <p>This error indicates that there was a problem retrieving your user's data from their bank. It does not necessarily indicate a problem with Basiq.</p>
+  <p>This error indicates that there was a problem retrieving your user's data from their bank. It does not necessarily indicate a problem with Basiq.</p>
 
-    <p>The service-unavailable error tells your application that the financial institution was unable to return data in response to a request.</p>
+  <p>The service-unavailable error tells your application that the financial institution was unable to return data in response to a request.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs/handling-jobs" target="_blank" rel="noopener noreferrer">handling jobs documentation</a> for recommended actions and user communications.</p>
+  <p>Refer to the <a href="https://api.basiq.io/reference/getjobs" target="_blank" rel="noopener noreferrer">handling jobs documentation</a> for recommended actions and user communications.</p>
 </Accordion>
 
 <Accordion title="How do I troubleshoot a failed connection?" icon="far fa-circle-info">
