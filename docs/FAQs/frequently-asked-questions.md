@@ -564,7 +564,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>Applications can use the relevant Basiq API functionality to retrieve institution information and present supported options to users.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for institution-related endpoints.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs/connecting-business-accounts-via-cdr" target="_blank" rel="noopener noreferrer">Basiq API documentation</a> for institution-related endpoints.</p>
 
   {/* VALIDATE: Add the exact institution configuration endpoint and any dashboard configuration instructions. */}
 </Accordion>
