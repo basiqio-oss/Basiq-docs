@@ -354,7 +354,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>Applications should not assume that all institutions provide the same historical transaction coverage.</p>
 
-    <p>For information about the transaction fields returned by Basiq, refer to our <a href="https://api.basiq.io/docs/data-structure" target="_blank" rel="noopener noreferrer">data structure documentation</a>.</p>
+    <p>For information about the transaction fields returned by Basiq, refer to our <a href="https://api.basiq.io/docs/basiq-customise-ui#customisable-fields" target="_blank" rel="noopener noreferrer">data structure documentation</a>.</p>
   </Accordion>
 
   <Accordion title="Why are some transactions missing from my account?" icon="far fa-circle-info">
