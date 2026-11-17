@@ -505,7 +505,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
     <li>Unsupported account types or institution limitations.</li>
   </ul>
 
-  <p>Refer to Basiq's <a href="https://api.basiq.io/docs/error-codes" target="_blank" rel="noopener noreferrer">error codes</a> and <a href="https://api.basiq.io/docs/handling-jobs" target="_blank" rel="noopener noreferrer">handling jobs documentation</a>.</p>
+  <p>Refer to Basiq's <a href="https://api.basiq.io/docs/error-codes" target="_blank" rel="noopener noreferrer">error codes</a> and <a href="https://api.basiq.io/reference/getjobs" target="_blank" rel="noopener noreferrer">handling jobs documentation</a>.</p>
 </Accordion>
 
 <Accordion title="What should I do if my API request returns an error?" icon="far fa-circle-info">
