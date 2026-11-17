@@ -76,11 +76,11 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 </Accordion>
 
 <Accordion title="How do I test my integration with Basiq?" icon="far fa-circle-info">
-    <p>Use the Basiq sandbox environment to test your integration without accessing real consumer financial data.</p>
+  <p>Use the Basiq sandbox environment to test your integration without accessing real consumer financial data.</p>
 
-    <p>The sandbox allows you to simulate user interactions, API calls and different response scenarios to validate your implementation.</p>
+  <p>The sandbox allows you to simulate user interactions, API calls and different response scenarios to validate your implementation.</p>
 
-    <p>For setup instructions, refer to the <a href="https://api.basiq.io/docs/sandbox" target="_blank" rel="noopener noreferrer">sandbox documentation</a>.</p>
+  <p>For setup instructions, refer to the <a href="https://api.basiq.io/reference/testing" target="_blank" rel="noopener noreferrer">sandbox documentation</a>.</p>
 </Accordion>
 
 ## Consent, Privacy and Security
