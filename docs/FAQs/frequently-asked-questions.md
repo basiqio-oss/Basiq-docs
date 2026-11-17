@@ -574,7 +574,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>Webhooks can help applications respond to events without continuously polling the API.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for supported events, configuration and implementation guidance.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs/webhooks" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for supported events, configuration and implementation guidance.</p>
 
   {/* VALIDATE: Add the current webhook setup guide, event catalogue, authentication requirements and retry behaviour. */}
 </Accordion>
