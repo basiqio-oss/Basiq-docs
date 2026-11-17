@@ -546,7 +546,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>The configuration required depends on the integration approach and the Basiq products enabled for your organisation.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for implementation guidance.</p>
+    <p>Refer to the <a href="https://api.basiq.io/docs/basiq-customise-ui" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for implementation guidance.</p>
 
   {/* VALIDATE: Add the exact Consent UI configuration guide and supported integration options. */}
 </Accordion>
