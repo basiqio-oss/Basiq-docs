@@ -620,13 +620,13 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 </Accordion>
 
 <Accordion title="How do I move from DDC to Open Banking?" icon="far fa-circle-info">
-    <p>Open Banking uses the Consumer Data Right framework to enable consumers to authorise financial institutions to share their data through secure APIs.</p>
+  <p>Open Banking uses the Consumer Data Right framework to enable consumers to authorise financial institutions to share their data through secure APIs.</p>
 
-    <p>Unlike DDC, Open Banking does not require consumers to provide their internet banking credentials to the ADR.</p>
+  <p>Unlike DDC, Open Banking does not require consumers to provide their internet banking credentials to the ADR.</p>
 
-    <p>Moving from DDC to Open Banking requires your application to support the relevant CDR consent and authorisation workflows.</p>
+  <p>Moving from DDC to Open Banking requires your application to support the relevant CDR consent and authorisation workflows.</p>
 
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for implementation guidance.</p>
+  <p>Refer to the <a href="https://api.basiq.io/docs/migrating-users-from-web-to-openbanking-connection" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for implementation guidance.</p>
 </Accordion>
 
 <Accordion title="How do I get production access?" icon="far fa-circle-info">
