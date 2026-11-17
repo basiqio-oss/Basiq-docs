@@ -190,13 +190,13 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 </Accordion>
 
 <Accordion title="Does Basiq store consumers' bank login credentials?" icon="far fa-circle-info">
-    <p>The answer depends on the connection method.</p>
+  <p>The answer depends on the connection method.</p>
 
-    <p><strong>Open Banking (CDR):</strong> Consumers authenticate directly with their financial institution through its authorisation experience. Basiq does not require consumers to provide their internet banking credentials to Basiq for this CDR authentication process.</p>
+  <p><strong>Open Banking (CDR):</strong> Consumers authenticate directly with their financial institution through its authorisation experience. Basiq does not require consumers to provide their internet banking credentials to Basiq for this CDR authentication process.</p>
 
-    <p><strong>Digital Data Capture (DDC):</strong> This connection method uses the credentials and authentication process associated with the bank's internet banking service.</p>
+  <p><strong>Digital Data Capture (DDC):</strong> This connection method uses the credentials and authentication process associated with the bank's internet banking service.</p>
 
-    <p>For more information, refer to the <a href="https://api.basiq.io/docs/" target="_blank" rel="noopener noreferrer">Basiq API documentation</a>.</p>
+  <p>For more information, refer to the <a href="https://docs.basiq.io/en/articles/5298389-securely-connecting-your-data-with-basiq" target="_blank" rel="noopener noreferrer">Basiq API documentation</a>.</p>
 </Accordion>
 
 <Accordion title="What happens to consumer data when consent is withdrawn?" icon="far fa-circle-info">
