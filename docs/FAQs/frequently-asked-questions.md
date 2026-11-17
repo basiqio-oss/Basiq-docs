@@ -415,7 +415,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
 ## Connections and Troubleshooting
 
-<Accordion title="Why does a connection become invalid or require reauthentication?" icon="far fa-circle-info">
+<Accordion title="Why does a connection become invalid or require re-authentication?" icon="far fa-circle-info">
   <p>A connection may become invalid when the financial institution requires the user to authenticate again or when the existing authorisation can no longer be used.</p>
 
   <p>Possible reasons include:</p>
