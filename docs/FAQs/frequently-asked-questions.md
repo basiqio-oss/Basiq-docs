@@ -599,16 +599,6 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
   {/* VALIDATE: Insert the official Basiq status page URL and explain whether connector-level availability is exposed. */}
 </Accordion>
 
-<Accordion title="How do I monitor API and connection performance?" icon="far fa-circle-info">
-    <p>Applications should monitor API responses, job completion statuses, error codes and relevant connection events.</p>
-
-    <p>This information can help identify integration issues, institution-side disruptions and changes in connection performance.</p>
-
-    <p>Refer to the <a href="https://api.basiq.io/docs" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for available API and event information.</p>
-
-  {/* VALIDATE: Confirm which metrics, dashboards, logs and reporting features are available to customers. */}
-</Accordion>
-
 <Accordion title="What reporting and consumer affordability products does Basiq offer?" icon="far fa-circle-info">
     <p>Basiq offers financial data capabilities that can support use cases such as consumer affordability assessment and financial insights.</p>
 
