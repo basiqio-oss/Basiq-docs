@@ -344,7 +344,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
     <p>Review the latest connection and job status to determine whether the data retrieval request completed successfully.</p>
 
-    <p>For more information, refer to our <a href="https://api.basiq.io/docs/handling-jobs" target="_blank" rel="noopener noreferrer">job handling documentation</a>.</p>
+    <p>For more information, refer to our <a href="https://api.basiq.io/reference/getjobs" target="_blank" rel="noopener noreferrer">job handling documentation</a>.</p>
   </Accordion>
 
   <Accordion title="How far back can Basiq retrieve transaction history?" icon="far fa-circle-info">
