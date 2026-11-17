@@ -481,7 +481,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
     <li>The bank's technical infrastructure is experiencing downtime or disruptions.</li>
   </ul>
 
-  <p>Further details are available in the <a href="https://api.basiq.io/docs/error-codes#incomplete-job" target="_blank" rel="noopener noreferrer">error code documentation</a>.</p>
+  <p>Further details are available in the <a href="https://api.basiq.io/docs/errors#consent-ui-and-bank-errors" target="_blank" rel="noopener noreferrer">error code documentation</a>.</p>
 </Accordion>
 
 <Accordion title="What does the job error 'Service is currently unavailable. Please try again later.' mean?" icon="far fa-circle-info">
