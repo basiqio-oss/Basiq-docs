@@ -616,7 +616,7 @@ Explore the frequently asked questions below for guidance on the Basiq platform.
 
   <p>When migrating, review the relevant API changes, data structures, authentication requirements and connection workflows before updating your integration.</p>
 
-  <p>Refer to the <a href="https://api.basiq.io/docs/migrating-users-from-web-to-openbanking-connection" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for the current API documentation.</p>
+  <p>Refer to the <a href="https://api.basiq.io/docs/upgrading-to-v3-0" target="_blank" rel="noopener noreferrer">Basiq Developer Hub</a> for the current API documentation.</p>
 </Accordion>
 
 <Accordion title="How do I move from DDC to Open Banking?" icon="far fa-circle-info">
