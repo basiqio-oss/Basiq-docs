@@ -7,7 +7,7 @@ type: added
 ---
 We’ve added **Account Identity Verification** to the Insights API. Check a supplied BSB and account number against accounts shared under a customer’s consent and retrieve the consenting customer’s identity.
 
-Use the existing **POST /insights** endpoint with the new **ACCOUNT_IDENTITY_VERIFICATION** insight type—no new endpoint to integrate.
+Use the existing **POST /insights** endpoint with the new **ACCOUNT_IDENTITY_VERIFICATION** insight type no new endpoint to integrate.
 
 <Cards>
   <Card title="Verify an Account" href="https://api.basiq.io/reference/createinsight" icon="fa-shield-check">
