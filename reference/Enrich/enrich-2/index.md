@@ -1,6 +1,5 @@
 ---
 title: Enrich
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
