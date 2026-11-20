@@ -19,7 +19,7 @@ Use the existing **POST /insights** endpoint with the new **ACCOUNT_IDENTITY_VER
   </Card>
 
   <Card title="API Reference" href="https://api.basiq.io/reference/createinsight" icon="fa-code">
-    Explore the [request format, response details and integration requirements](https://api.basiq.io/reference/createinsight).
+    Explore the request format, response details and integration requirements from [here](https://api.basiq.io/reference/createinsight).
   </Card>
 </Cards>
 
