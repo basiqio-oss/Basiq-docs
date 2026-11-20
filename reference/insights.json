@@ -22,7 +22,7 @@
           "Insights"
         ],
         "summary": "Create an Insight",
-        "description": "Creates a new insight for one or more users. Supported insight types are EXPENSE_RATIO_VERIFICATION, BALANCE_VERIFICATION, ACCOUNT_VERIFICATION, IDENTITY_VERIFICATION, and INCOME_VERIFICATION. Multi-user requests (1–10 users) are currently supported only for EXPENSE_RATIO_VERIFICATION.A single insight object is created referencing all users. The self link in the response uses the first userId from the users array.",
+        "description": "Creates a new insight for one or more users. Supported insight types are EXPENSE_RATIO_VERIFICATION, BALANCE_VERIFICATION, ACCOUNT_VERIFICATION, IDENTITY_VERIFICATION, INCOME_VERIFICATION, and ACCOUNT_IDENTITY_VERIFICATION. Multi-user requests (1–10 users) are currently supported only for EXPENSE_RATIO_VERIFICATION. A single insight object is created referencing all users. The self link in the response uses the first userId from the users array. ACCOUNT_IDENTITY_VERIFICATION accepts exactly one user and a required accountNumber containing BSB plus account number, and requires account.identity.verification in the policy linked to that user's consent. It checks all shared accounts and returns the consenting customer's identity regardless of match outcome; it does not return source account details. For match=true, only the matched connection's identity is returned; for match=false, all identities available under the consent are returned. Partners should limit this check to one bank per consent. Optional identity attributes are omitted when unavailable. This insight is available only through this typed endpoint; there is no legacy account-identity creation endpoint.",
         "operationId": "createInsight",
         "requestBody": {
           "required": true,
@@ -114,6 +114,18 @@
                       }
                     }
                   }
+                },
+                "account_identity_verification": {
+                  "summary": "Account Identity Verification – single user",
+                  "value": {
+                    "users": [
+                      "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                    ],
+                    "type": "ACCOUNT_IDENTITY_VERIFICATION",
+                    "data": {
+                      "accountNumber": "06200012345678"
+                    }
+                  }
                 }
               }
             }
@@ -121,7 +133,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successfully created insight",
+            "description": "Successfully created insight. Account Identity Verification returns VERIFIED with match=true, NOT_VERIFIED with match=false, or NOT_VERIFIED_MASKED with match=false. These are successful insight outcomes, not HTTP errors. An unmasked match takes precedence over any masked accounts.",
             "content": {
               "application/json": {
                 "schema": {
@@ -203,13 +215,217 @@
                         "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/xyz789-uvw012-abc345"
                       }
                     }
+                  },
+                  "account_identity_verified_organisation": {
+                    "summary": "Account identity – VERIFIED, organisation (draft wire format)",
+                    "description": "Illustrative envelope using the organisation fields in the requirements. Confirm field names and insightType before publishing. Organisation payloads were not covered by the retrieved test report.",
+                    "value": {
+                      "type": "insight",
+                      "id": "b2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2026-11-20T00:00:00Z",
+                      "users": [
+                        "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                      ],
+                      "insightType": "account-identity",
+                      "data": [
+                        {
+                          "accountMatch": {
+                            "accountNumber": {
+                              "input": "06200012345678"
+                            },
+                            "match": true,
+                            "status": "VERIFIED"
+                          },
+                          "identities": [
+                            {
+                              "type": "organisation",
+                              "identity": {
+                                "businessName": "Crackermilk",
+                                "legalName": "Crackermilk Pty Ltd",
+                                "shortName": "Crackermilk",
+                                "abn": "12345678901",
+                                "acn": "123456789"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/b2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
+                  },
+                  "account_identity_verified_person": {
+                    "summary": "Account identity – VERIFIED, person (draft wire format)",
+                    "value": {
+                      "type": "insight",
+                      "id": "c2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2026-11-20T00:00:00Z",
+                      "users": [
+                        "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                      ],
+                      "insightType": "account-identity",
+                      "data": [
+                        {
+                          "accountMatch": {
+                            "accountNumber": {
+                              "input": "06200012345678"
+                            },
+                            "match": true,
+                            "status": "VERIFIED"
+                          },
+                          "identities": [
+                            {
+                              "type": "person",
+                              "identity": {
+                                "firstName": "Jane",
+                                "middleNames": [
+                                  "Anne"
+                                ],
+                                "lastName": "Citizen"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/c2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
+                  },
+                  "account_identity_not_verified": {
+                    "summary": "Account identity – NOT_VERIFIED (draft wire format)",
+                    "description": "No unmasked account matches, and none of the shared accounts are masked. Identity information is still returned.",
+                    "value": {
+                      "type": "insight",
+                      "id": "d2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2026-11-20T00:00:00Z",
+                      "users": [
+                        "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                      ],
+                      "insightType": "account-identity",
+                      "data": [
+                        {
+                          "accountMatch": {
+                            "accountNumber": {
+                              "input": "06200099999999"
+                            },
+                            "match": false,
+                            "status": "NOT_VERIFIED"
+                          },
+                          "identities": [
+                            {
+                              "type": "person",
+                              "identity": {
+                                "firstName": "Jane",
+                                "middleNames": [
+                                  "Anne"
+                                ],
+                                "lastName": "Citizen"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/d2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
+                  },
+                  "account_identity_not_verified_masked": {
+                    "summary": "Account identity – NOT_VERIFIED_MASKED (draft wire format)",
+                    "description": "No unmasked match is found and at least one shared account is masked. This is a successful insight outcome, not a masked-account error.",
+                    "value": {
+                      "type": "insight",
+                      "id": "e2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2026-11-20T00:00:00Z",
+                      "users": [
+                        "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                      ],
+                      "insightType": "account-identity",
+                      "data": [
+                        {
+                          "accountMatch": {
+                            "accountNumber": {
+                              "input": "06200012345678"
+                            },
+                            "match": false,
+                            "status": "NOT_VERIFIED_MASKED"
+                          },
+                          "identities": [
+                            {
+                              "type": "organisation",
+                              "identity": {
+                                "businessName": "Crackermilk",
+                                "legalName": "Crackermilk Pty Ltd",
+                                "shortName": "Crackermilk",
+                                "abn": "12345678901",
+                                "acn": "123456789"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/f2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
+                  },
+                  "account_identity_multiple_identities_no_match": {
+                    "summary": "Account identity – no match, multiple identities (draft wire format)",
+                    "description": "When match=false, all available identities under the consent are returned. A successful match returns only the identity linked to the matched connection.",
+                    "value": {
+                      "type": "insight",
+                      "id": "f2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2026-11-20T00:00:00Z",
+                      "users": [
+                        "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                      ],
+                      "insightType": "account-identity",
+                      "data": [
+                        {
+                          "accountMatch": {
+                            "accountNumber": {
+                              "input": "06200099999999"
+                            },
+                            "match": false,
+                            "status": "NOT_VERIFIED"
+                          },
+                          "identities": [
+                            {
+                              "type": "person",
+                              "identity": {
+                                "firstName": "Jane",
+                                "middleNames": [
+                                  "Anne"
+                                ],
+                                "lastName": "Citizen"
+                              }
+                            },
+                            {
+                              "type": "organisation",
+                              "identity": {
+                                "businessName": "Crackermilk",
+                                "legalName": "Crackermilk Pty Ltd",
+                                "shortName": "Crackermilk",
+                                "abn": "12345678901",
+                                "acn": "123456789"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/f2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Bad Request - Invalid request parameters",
+            "description": "Bad Request - Invalid request parameters. ACCOUNT_IDENTITY_VERIFICATION requires a non-empty accountNumber and exactly one user; invalid requests use existing validation errors. Confirm exact HTTP status and payload for each new validation case before publishing.",
             "content": {
               "application/json": {
                 "schema": {
@@ -313,7 +529,7 @@
             }
           },
           "403": {
-            "description": "Forbidden - Insufficient authorization scopes",
+            "description": "Forbidden - Insufficient authorization scopes. For ACCOUNT_IDENTITY_VERIFICATION, the policy linked to the user's consent must also include account.identity.verification; otherwise the API returns forbidden-access. The existing insufficientScopes example below is not the new consent-policy failure example.",
             "content": {
               "application/json": {
                 "schema": {
@@ -406,7 +622,7 @@
         ],
         "summary": "List Insight Types",
         "operationId": "getInsightTypes",
-        "description": "Returns the list of supported CDR Insight types and the Insight-specific input schema (`data`) each type expects. ",
+        "description": "Returns the list of supported CDR Insight types and the Insight-specific input schema (`data`) each type expects. Includes ACCOUNT_IDENTITY_VERIFICATION, which supports a single user and requires accountNumber containing BSB plus account number.",
         "parameters": [],
         "responses": {
           "200": {
@@ -421,7 +637,7 @@
                     "summary": "All supported Insight types",
                     "value": {
                       "type": "list",
-                      "count": 5,
+                      "count": 6,
                       "data": [
                         {
                           "type": "insightType",
@@ -482,6 +698,16 @@
                           "dataSchema": {
                             "expense": "string"
                           }
+                        },
+                        {
+                          "type": "insightType",
+                          "id": "ACCOUNT_IDENTITY_VERIFICATION",
+                          "supportMultipleUsers": false,
+                          "name": "Account Identity Verification",
+                          "description": "Verifies whether the provided account number matches one of the user's shared accounts and returns the identity attributes of the account holder.",
+                          "dataSchema": {
+                            "accountNumber": "string"
+                          }
                         }
                       ]
                     }
@@ -539,7 +765,8 @@
                 "BALANCE_VERIFICATION",
                 "IDENTITY_VERIFICATION",
                 "INCOME_VERIFICATION",
-                "EXPENSE_RATIO_VERIFICATION"
+                "EXPENSE_RATIO_VERIFICATION",
+                "ACCOUNT_IDENTITY_VERIFICATION"
               ]
             },
             "examples": {
@@ -562,6 +789,10 @@
               "expenseRatioVerification": {
                 "summary": "Expense Ratio Verification",
                 "value": "EXPENSE_RATIO_VERIFICATION"
+              },
+              "accountIdentityVerification": {
+                "summary": "Account Identity Verification",
+                "value": "ACCOUNT_IDENTITY_VERIFICATION"
               }
             }
           }
@@ -649,6 +880,19 @@
                         "expense": "string"
                       }
                     }
+                  },
+                  "accountIdentityVerification": {
+                    "summary": "Account Identity Verification",
+                    "value": {
+                      "type": "insightType",
+                      "id": "ACCOUNT_IDENTITY_VERIFICATION",
+                      "supportMultipleUsers": false,
+                      "name": "Account Identity Verification",
+                      "description": "Verifies whether the provided account number matches one of the user's shared accounts and returns the identity attributes of the account holder.",
+                      "dataSchema": {
+                        "accountNumber": "string"
+                      }
+                    }
                   }
                 }
               }
@@ -716,7 +960,7 @@
           "Insights"
         ],
         "summary": "List all Insights",
-        "description": "Returns a paginated list of previously generated insights for the specified user. Supports filtering by creation date and insight type. Maximum 20 insights per page.",
+        "description": "Returns a paginated list of previously generated insights for the specified user. Supports filtering by creation date and insight type. Maximum 20 insights per page. Includes stored Account Identity Verification results. The proposed account-identity response/filter value must be confirmed against the implementation before publication.",
         "operationId": "listUserInsights",
         "parameters": [
           {
@@ -734,7 +978,7 @@
             "name": "filter",
             "in": "query",
             "required": false,
-            "description": "Filter parameter supporting multiple filter fields separated by commas. Supported fields: 'created' (date in YYYY-MM-DD format) and 'insightType' (account, balance, identity, income, expense-ratio). Operators: gteq (>=), lteq (<=), gt (>), lt (<), eq (=), bt (between two dates). Examples: 'created.gteq('2025-06-16')', 'created.bt('2025-08-25','2025-09-02')', 'insightType.eq('account')', 'created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')'",
+            "description": "Filter parameter supporting multiple filter fields separated by commas. Supported fields: 'created' (date in YYYY-MM-DD format) and 'insightType' (account, balance, identity, income, expense-ratio; proposed new value account-identity pending confirmation). Operators: gteq (>=), lteq (<=), gt (>), lt (<), eq (=), bt (between two dates). Examples: 'created.gteq('2025-06-16')', 'created.bt('2025-08-25','2025-09-02')', 'insightType.eq('account')', 'created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')'",
             "schema": {
               "type": "string"
             },
@@ -762,6 +1006,10 @@
               "combined": {
                 "summary": "Combined date and type filter",
                 "value": "created.bt('2025-06-01','2025-08-30'),insightType.eq('balance')"
+              },
+              "insightTypeAccountIdentity": {
+                "summary": "Account identity filter – proposed value, confirm before use",
+                "value": "insightType.eq('account-identity')"
               }
             }
           }
@@ -808,6 +1056,53 @@
                       ],
                       "links": {
                         "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights"
+                      }
+                    }
+                  },
+                  "accountIdentityInsight": {
+                    "summary": "Stored account identity insight (draft wire format)",
+                    "value": {
+                      "type": "list",
+                      "count": 1,
+                      "data": [
+                        {
+                          "type": "insight",
+                          "id": "c2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                          "created": "2026-11-20T00:00:00Z",
+                          "users": [
+                            "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                          ],
+                          "insightType": "account-identity",
+                          "data": [
+                            {
+                              "accountMatch": {
+                                "accountNumber": {
+                                  "input": "06200012345678"
+                                },
+                                "match": true,
+                                "status": "VERIFIED"
+                              },
+                              "identities": [
+                                {
+                                  "type": "person",
+                                  "identity": {
+                                    "firstName": "Jane",
+                                    "middleNames": [
+                                      "Anne"
+                                    ],
+                                    "lastName": "Citizen"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "links": {
+                            "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/c2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                          }
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/c2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
                       }
                     }
                   }
@@ -921,7 +1216,7 @@
           "Insights"
         ],
         "summary": "Retrieve an Insight",
-        "description": "Returns detailed information for a specific insight by ID",
+        "description": "Returns detailed information for a specific insight by ID. Includes the stored result for ACCOUNT_IDENTITY_VERIFICATION; accountMatch and identities follow the same result structure returned when creating the insight.",
         "operationId": "getInsightById",
         "parameters": [
           {
@@ -1004,7 +1299,7 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/user-id/insights/abc123-def456"
+                        "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights/54878d1a-295b-44c3-8f1e-402e68f912fe"
                       }
                     }
                   },
@@ -1046,7 +1341,7 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/user-id/insights/xyz789-uvw012"
+                        "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights/54878d1a-295b-44c3-8f1e-402e68f912fe"
                       }
                     }
                   },
@@ -1073,6 +1368,44 @@
                       ],
                       "links": {
                         "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                      }
+                    }
+                  },
+                  "accountIdentityInsight": {
+                    "summary": "Account identity insight (draft wire format)",
+                    "value": {
+                      "type": "insight",
+                      "id": "c2fdfa02-e2a7-461f-ab59-94e0b751f9dc",
+                      "created": "2026-11-20T00:00:00Z",
+                      "users": [
+                        "a9242681-8c49-434c-9eeb-e011fba2a0cc"
+                      ],
+                      "insightType": "account-identity",
+                      "data": [
+                        {
+                          "accountMatch": {
+                            "accountNumber": {
+                              "input": "06200012345678"
+                            },
+                            "match": true,
+                            "status": "VERIFIED"
+                          },
+                          "identities": [
+                            {
+                              "type": "person",
+                              "identity": {
+                                "firstName": "Jane",
+                                "middleNames": [
+                                  "Anne"
+                                ],
+                                "lastName": "Citizen"
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "links": {
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/c2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
                       }
                     }
                   }
@@ -1244,7 +1577,7 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                        "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights/54878d1a-295b-44c3-8f1e-402e68f912fe"
                       }
                     }
                   },
@@ -1282,23 +1615,10 @@
                             "match": false,
                             "confidence": 0
                           }
-                        },
-                        {
-                          "accountId": "88c781ff-104d-4834-bb36-e9428f508017",
-                          "accountNumber": {
-                            "input": "032096658830",
-                            "match": false,
-                            "confidence": 0
-                          },
-                          "accountType": {
-                            "input": "savings",
-                            "match": false,
-                            "confidence": 0
-                          }
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/ed17a3ce-cf15-4ff2-a9e3-26b50602bd61"
+                        "self": "https://au-api.basiq.io/users/0a84e628-dad7-40f4-bbc0-abeb3ddd90ea/insights/54878d1a-295b-44c3-8f1e-402e68f912fe"
                       }
                     }
                   }
@@ -1771,7 +2091,7 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
                       }
                     }
                   },
@@ -1793,7 +2113,7 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/ed17a3ce-cf15-4ff2-a9e3-26b50602bd61"
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/ed17a3ce-cf15-4ff2-a9e3-26b50602bd61"
                       }
                     }
                   },
@@ -1815,7 +2135,7 @@
                         }
                       ],
                       "links": {
-                        "self": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/xyz789-uvw012-abc345"
+                        "self": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/xyz789-uvw012-abc345"
                       }
                     }
                   }
@@ -1945,6 +2265,17 @@
     },
     "schemas": {
       "PostInsightsRequest": {
+        "description": "Typed Insights request. Existing types retain their previous schema; Account Identity Verification has a separate branch to bind its type, data and single-user constraint without overlapping the existing Account Verification input.",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ExistingPostInsightsRequest"
+          },
+          {
+            "$ref": "#/components/schemas/AccountIdentityInsightRequest"
+          }
+        ]
+      },
+      "ExistingPostInsightsRequest": {
         "type": "object",
         "required": [
           "users",
@@ -2126,13 +2457,14 @@
               "BALANCE_VERIFICATION",
               "IDENTITY_VERIFICATION",
               "INCOME_VERIFICATION",
-              "EXPENSE_RATIO_VERIFICATION"
+              "EXPENSE_RATIO_VERIFICATION",
+              "ACCOUNT_IDENTITY_VERIFICATION"
             ],
-            "description": "Unique identifier for the Insight type. Maps to the `insightType` values used by existing Insight endpoints: `account`, `balance`, `identity`, `income`, `expense-ratio`."
+            "description": "Unique identifier for the Insight type. Existing mappings to response insightType are account, balance, identity, income and expense-ratio. The proposed mapping of ACCOUNT_IDENTITY_VERIFICATION to account-identity requires implementation confirmation."
           },
           "supportMultipleUsers": {
             "type": "boolean",
-            "description": "Whether this Insight type supports multiple users in a single request."
+            "description": "Whether this Insight type supports multiple users in a single request. False for ACCOUNT_IDENTITY_VERIFICATION."
           },
           "name": {
             "type": "string",
@@ -2146,7 +2478,7 @@
           },
           "dataSchema": {
             "type": "object",
-            "description": "Describes only the Insight-specific input data accepted by existing Insight endpoints for this type. Does not include transport-level fields such as `users` or `type`.",
+            "description": "Describes only the Insight-specific input data accepted for this type. Does not include transport-level fields such as users or type. ACCOUNT_IDENTITY_VERIFICATION exposes accountNumber only.",
             "additionalProperties": true
           }
         }
@@ -2170,7 +2502,7 @@
           "count": {
             "type": "integer",
             "description": "Total number of Insight types returned.",
-            "example": 5
+            "example": 6
           },
           "data": {
             "type": "array",
@@ -2182,6 +2514,17 @@
         }
       },
       "PostInsightsResponse": {
+        "description": "Response to typed insight creation. The Account Identity Verification response branch is draft pending wire-format confirmation.",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ExistingPostInsightsResponse"
+          },
+          {
+            "$ref": "#/components/schemas/AccountIdentityInsightResponse"
+          }
+        ]
+      },
+      "ExistingPostInsightsResponse": {
         "type": "object",
         "required": [
           "type",
@@ -2265,7 +2608,7 @@
                 "type": "string",
                 "format": "uri",
                 "description": "Self link pointing to /users/{firstUserId}/insights/{insightId}",
-                "example": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                "example": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/ed17a3ce-cf15-4ff2-a9e3-26b50602bd61"
               }
             }
           }
@@ -2324,6 +2667,17 @@
         }
       },
       "Insight": {
+        "description": "Stored insight returned by detail and list operations, including the new Account Identity Verification result.",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ExistingInsight"
+          },
+          {
+            "$ref": "#/components/schemas/AccountIdentityInsightResponse"
+          }
+        ]
+      },
+      "ExistingInsight": {
         "type": "object",
         "required": [
           "type",
@@ -2399,7 +2753,7 @@
               "self": {
                 "type": "string",
                 "format": "uri",
-                "description": "Link to this specific insight"
+                "description": "Self-referencing link to this specific insight"
               }
             },
             "required": [
@@ -2464,7 +2818,7 @@
                 "type": "string",
                 "format": "uri",
                 "description": "Self-referencing link to this insight",
-                "example": "https://au-api.basiq.io/users/60a0c24e-07c3-41a2-acdf-be8f1b7dd9f3/insights/a2fdfa02-e2a7-461f-ab59-94e0b751f9dc"
+                "example": "https://au-api.basiq.io/users/a9242681-8c49-434c-9eeb-e011fba2a0cc/insights/ed17a3ce-cf15-4ff2-a9e3-26b50602bd61"
               }
             }
           }
@@ -3233,6 +3587,320 @@
             "type": "string",
             "description": "The expense value to calculate the ratio against income (ME040 Average Monthly Credit)",
             "example": "2500"
+          }
+        }
+      },
+      "AccountIdentityInsightRequest": {
+        "type": "object",
+        "required": [
+          "users",
+          "type",
+          "data"
+        ],
+        "description": "Account Identity Verification request. Requires the account.identity.verification permission in the policy linked to the user's consent. Existing users need to revoke and re-consent under an eligible policy; existing consents are not migrated.",
+        "properties": {
+          "users": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "description": "Exactly one user is supported for this insight.",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ACCOUNT_IDENTITY_VERIFICATION"
+            ]
+          },
+          "data": {
+            "$ref": "#/components/schemas/AccountIdentityVerificationData"
+          }
+        }
+      },
+      "AccountIdentityVerificationData": {
+        "type": "object",
+        "required": [
+          "accountNumber"
+        ],
+        "description": "Input data only. Provide one combined BSB plus account number. Do not supply a separate bsb or institutionId field. The accountNumber is matched in full against the user's shared accounts.",
+        "properties": {
+          "accountNumber": {
+            "type": "string",
+            "minLength": 1,
+            "description": "BSB and account number combined as a single string, retaining leading zeros. A missing, empty or null value is invalid. No specific length or formatting validation is asserted in this draft.",
+            "example": "06200012345678"
+          }
+        }
+      },
+      "AccountIdentityInsightResponse": {
+        "type": "object",
+        "required": [
+          "type",
+          "id",
+          "created",
+          "users",
+          "insightType",
+          "data",
+          "links"
+        ],
+        "description": "Draft Account Identity Verification response, following the existing typed insight envelope. Confirm the exact insightType literal, result placement and response field names against the deployed API before publishing.",
+        "x-review-required": "account-identity is a proposed response value; field names and placement follow the implementation ticket, not an inspected wire response.",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "insight"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for this insight."
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          },
+          "users": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The single user from the request."
+          },
+          "insightType": {
+            "type": "string",
+            "enum": [
+              "account-identity"
+            ],
+            "description": "PROPOSED VALUE ONLY: confirm the exact response and filter literal before publishing.",
+            "x-review-required": true
+          },
+          "data": {
+            "type": "array",
+            "description": "Insight-specific result. Account details are not returned; accountMatch.accountNumber.input echoes only the partner's submitted value.",
+            "items": {
+              "$ref": "#/components/schemas/AccountIdentityInsightDataItem"
+            }
+          },
+          "links": {
+            "type": "object",
+            "required": [
+              "self"
+            ],
+            "properties": {
+              "self": {
+                "type": "string",
+                "format": "uri",
+                "description": "Link to /users/{userId}/insights/{insightId}."
+              }
+            }
+          }
+        }
+      },
+      "AccountIdentityInsightDataItem": {
+        "type": "object",
+        "required": [
+          "accountMatch",
+          "identities"
+        ],
+        "description": "Account match result plus the identity of the customer who authorised consent, not every joint account holder. Identity attributes are returned regardless of match outcome. Optional attributes are omitted when unavailable.",
+        "properties": {
+          "accountMatch": {
+            "$ref": "#/components/schemas/AccountIdentityMatch"
+          },
+          "identities": {
+            "type": "array",
+            "description": "For match=true, only the identity associated with the matched account's connection. For match=false, all identities available under the user's consent. No minimum array size is asserted until the no-identity-data behaviour is confirmed.",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/AccountIdentityPersonEntry"
+                },
+                {
+                  "$ref": "#/components/schemas/AccountIdentityOrganisationEntry"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "person": "#/components/schemas/AccountIdentityPersonEntry",
+                  "organisation": "#/components/schemas/AccountIdentityOrganisationEntry"
+                }
+              }
+            }
+          }
+        }
+      },
+      "AccountIdentityMatch": {
+        "type": "object",
+        "required": [
+          "accountNumber",
+          "match",
+          "status"
+        ],
+        "description": "Evaluate in order: any full unmasked match produces VERIFIED; otherwise any masked shared account produces NOT_VERIFIED_MASKED; otherwise NOT_VERIFIED. A masked account does not prevent a different unmasked account from producing VERIFIED.",
+        "properties": {
+          "accountNumber": {
+            "type": "object",
+            "required": [
+              "input"
+            ],
+            "properties": {
+              "input": {
+                "type": "string",
+                "description": "Echo of the submitted combined BSB and account number; not the source account number.",
+                "example": "06200012345678"
+              }
+            }
+          },
+          "match": {
+            "type": "boolean",
+            "description": "True only for a full match on an unmasked shared account."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "VERIFIED",
+              "NOT_VERIFIED",
+              "NOT_VERIFIED_MASKED"
+            ],
+            "description": "Verification outcome, not an HTTP status or error code."
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "match": {
+                "type": "boolean",
+                "enum": [
+                  true
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "VERIFIED"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "match": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "NOT_VERIFIED",
+                  "NOT_VERIFIED_MASKED"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "AccountIdentityPersonEntry": {
+        "type": "object",
+        "required": [
+          "type",
+          "identity"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "person"
+            ]
+          },
+          "identity": {
+            "$ref": "#/components/schemas/AccountIdentityPerson"
+          }
+        }
+      },
+      "AccountIdentityOrganisationEntry": {
+        "type": "object",
+        "required": [
+          "type",
+          "identity"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "organisation"
+            ]
+          },
+          "identity": {
+            "$ref": "#/components/schemas/AccountIdentityOrganisation"
+          }
+        }
+      },
+      "AccountIdentityPerson": {
+        "type": "object",
+        "description": "Person attributes returned by the Data Holder. Field names follow the implementation ticket examples and require final confirmation. Optional attributes are omitted when unavailable.",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "description": "First given name. May be omitted for single-name individuals.",
+            "example": "Jane"
+          },
+          "middleNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Middle names; may be absent or empty.",
+            "example": [
+              "Anne"
+            ]
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Family name; the single name is supplied here for single-name individuals.",
+            "example": "Citizen"
+          }
+        }
+      },
+      "AccountIdentityOrganisation": {
+        "type": "object",
+        "description": "Organisation attributes specified in the requirements. Optional attributes are omitted when unavailable. Confirm against an organisation API payload before publication; the retrieved test report did not cover this scenario.",
+        "properties": {
+          "businessName": {
+            "type": "string",
+            "description": "Name of the organisation.",
+            "example": "Crackermilk"
+          },
+          "legalName": {
+            "type": "string",
+            "description": "Registered legal name, where available.",
+            "example": "Crackermilk Pty Ltd"
+          },
+          "shortName": {
+            "type": "string",
+            "description": "Trading or abbreviated name.",
+            "example": "Crackermilk"
+          },
+          "abn": {
+            "type": "string",
+            "description": "Australian Business Number, where available.",
+            "example": "12345678901"
+          },
+          "acn": {
+            "type": "string",
+            "description": "Australian Company Number, where applicable.",
+            "example": "123456789"
           }
         }
       }
