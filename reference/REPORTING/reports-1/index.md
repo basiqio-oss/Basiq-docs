@@ -1,6 +1,5 @@
 ---
 title: Reports
-excerpt: ''
 deprecated: false
 hidden: false
 metadata:
