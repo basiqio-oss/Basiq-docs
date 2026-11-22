@@ -10,6 +10,6 @@ metadata:
 next:
   description: ''
 ---
-> ❗️ For Business Affordability Report
+> ❗️ For Business Affordability Report and Bank Statements (STATEMENT_01)
 >
 > Do not include the `ToDate` parameter. If omitted, the report will automatically include data up to the current date.
