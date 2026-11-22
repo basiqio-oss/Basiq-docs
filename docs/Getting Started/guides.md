@@ -29,6 +29,13 @@ metadata:
   style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
 >
   <CoolTile
+    header="Account Identity Verification"
+    href="https://api.basiq.io/reference/createinsight"
+    icon="far fa-address-card"
+    text="Check a submitted BSB and account number against a user's shared accounts and retrieve identity information for the customer who authorised consent."
+  />
+
+  <CoolTile
     header="Create Insight"
     href="https://api.basiq.io/reference/createinsight"
     icon="fa-solid fa-plus-circle"
