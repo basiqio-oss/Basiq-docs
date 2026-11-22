@@ -20,7 +20,7 @@ It provides a single integration point to access banking and financial data, and
 
 Basiq APIs are grouped into core product areas. Each maps directly to an OpenAPI specification.
 
-<Grid columns={2} style={{ gap: '24px', paddingBlock: '1.5em' }}>
+<Grid columns={3} style={{ gap: '24px', paddingBlock: '1.5em' }}>
   <CoolCard header="Connect" href="https://api.basiq.io/reference/posttoken" icon="far fa-link" text="Customer-consented accounts, transactions, connections, consent, jobs, and users." />
 
   <CoolCard header="Enrich" href="https://api.basiq.io/reference/enrich" icon="far fa-chart-line" text="Merchant enrichment, categorisation, and transaction classification." />
