@@ -29,7 +29,7 @@ metadata:
   style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}
 >
   <CoolTile
-    header="Account Identity Verification"
+    header={<span>Account Identity Verification <span style={{ display: 'inline-block', marginLeft: '0.4em', padding: '0.15em 0.55em', border: '1px solid currentColor', borderRadius: '999px', fontSize: '0.65em', fontWeight: 700, lineHeight: 1.4, verticalAlign: 'middle', whiteSpace: 'nowrap' }}>New</span></span>}
     href="https://api.basiq.io/reference/createinsight"
     icon="far fa-address-card"
     text="Check a submitted BSB and account number against a user's shared accounts and retrieve identity information for the customer who authorised consent."
