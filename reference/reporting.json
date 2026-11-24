@@ -1382,7 +1382,7 @@
                                   "features": {
                                     "type": "object"
                                   },
-                                  "termDeposit": {
+                                  "termDeposits": {
                                     "type": "object"
                                   },
                                   "loan": {
@@ -12509,7 +12509,7 @@
                         "features": {
                           "type": "object"
                         },
-                        "termDeposit": {
+                        "termDeposits": {
                           "type": "object"
                         },
                         "loan": {
