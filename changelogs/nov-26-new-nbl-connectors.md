@@ -25,6 +25,4 @@ Partners can now select and test the following institutions through Basiq:
 
 Partners can find these institutions in the institution selection flow and try connecting their accounts through the existing Basiq integration.
 
-We're continuing the onboarding process across our active partners to enable access to these new connectors.
-
 For questions or assistance with testing, please contact Basiq Support.
