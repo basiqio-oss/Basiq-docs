@@ -9872,7 +9872,7 @@
                                   "x-readme-ref-name": "lendingRateAccountMetadata"
                                 }
                               },
-                              "termDeposit": {
+                              "termDeposits": {
                                 "type": "array",
                                 "items": {
                                   "required": [
@@ -10090,7 +10090,7 @@
                                 "items": {
                                   "type": "object",
                                   "properties": {
-                                    "addressType": {
+                                    "addressUType": {
                                       "type": "string",
                                       "description": "The type of address object present.",
                                       "enum": [
@@ -10123,7 +10123,7 @@
                                           "type": "string",
                                           "description": "Third line of the standard address object."
                                         },
-                                        "postcode": {
+                                        "postCode": {
                                           "type": "string",
                                           "description": "Mandatory for Australian addresses."
                                         },
@@ -11340,7 +11340,7 @@
                             "x-readme-ref-name": "lendingRateAccountMetadata"
                           }
                         },
-                        "termDeposit": {
+                        "termDeposits": {
                           "type": "array",
                           "items": {
                             "required": [
@@ -11558,7 +11558,7 @@
                           "items": {
                             "type": "object",
                             "properties": {
-                              "addressType": {
+                              "addressUType": {
                                 "type": "string",
                                 "description": "The type of address object present.",
                                 "enum": [
@@ -11591,7 +11591,7 @@
                                     "type": "string",
                                     "description": "Third line of the standard address object."
                                   },
-                                  "postcode": {
+                                  "postCode": {
                                     "type": "string",
                                     "description": "Mandatory for Australian addresses."
                                   },
