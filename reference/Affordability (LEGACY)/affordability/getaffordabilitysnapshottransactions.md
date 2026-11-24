@@ -1,12 +1,7 @@
 ---
-title: List affordability summary transactions
-excerpt: >-
-  Use this endpoint to retrieve a paginated list of transactions associated with
-  an affordability summary.
 api:
   file: affordability.json
   operationId: getAffordabilitySnapshotTransactions
-deprecated: true
 hidden: false
 metadata:
   title: ''
@@ -15,6 +10,8 @@ metadata:
 next:
   description: ''
 ---
-> 📘 Legacy Version
->
-> Please Use [Reporting (Insights)](https://api.basiq.io/reference/createreport)
+Retrieve a paginated list of transactions associated with an affordability summary using this legacy endpoint.
+
+## Legacy endpoint
+
+Use Reporting (Insights) for new report generation. See [Create a report](https://api.basiq.io/reference/createreport) for the report creation endpoint and its requirements.
