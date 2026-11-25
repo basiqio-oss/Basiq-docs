@@ -156,15 +156,15 @@ Apply these practices to manage authentication, consent, connection refreshes, a
 
     <ol>
       <li>
-        <strong>Navigate to User Connections:</strong> Access the user's profile and locate the connections list.
+        <strong>Navigate to user connections:</strong> Open the user's profile and locate the connections list.
       </li>
 
       <li>
-        <strong>Identify the Connection:</strong> Find the connection with the unique Connection ID.
+        <strong>Identify the connection:</strong> Find the connection by its unique connection ID.
       </li>
 
       <li>
-        <strong>Initiate the Purge:</strong> Click on the "Purge" button next to the relevant connection.
+        <strong>Initiate the purge:</strong> Select the "Purge" button next to the connection.
       </li>
 
       <li>
@@ -248,21 +248,19 @@ Apply these practices to manage authentication, consent, connection refreshes, a
   </Column>
 
   <Column>
-    <Tab title="Data Storage Best Practices">
-      <div className="interactive-card">
-        <div className="card-content">
-          <div className="card-icon" aria-hidden="true">
-            <i className="fa fa-database" />
-          </div>
-
-          <h2 className="card-title">Secure data storage</h2>
-
-          <p className="card-description">
-            Store only the user information you need. Encrypt it and restrict access to authorized users.
-          </p>
+    <div className="interactive-card">
+      <div className="card-content">
+        <div className="card-icon" aria-hidden="true">
+          <i className="fa fa-database" />
         </div>
+
+        <h2 className="card-title">Secure data storage</h2>
+
+        <p className="card-description">
+          Store only the user information you need. Encrypt it and restrict access to authorized users.
+        </p>
       </div>
-    </Tab>
+    </div>
   </Column>
 </Columns>
 
@@ -345,7 +343,7 @@ Apply these practices to manage authentication, consent, connection refreshes, a
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
-      onClick={() => Intercom('showNewMessage', 'issues on FAQs:')}
+      onClick={() => Intercom('showNewMessage', 'Issue with Basiq best practices:')}
       style={{
         padding: '12px 30px',
         backgroundColor: '#1E1E1E',
