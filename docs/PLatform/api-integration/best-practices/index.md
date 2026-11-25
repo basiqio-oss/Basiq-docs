@@ -9,47 +9,50 @@ metadata:
 next:
   description: ''
 ---
-When integrating with the Basiq API, there are some best practices that play a crucial role in any applications success. These practices cover areas such as security considerations, UX, scalability etc. and have been tried and tested to ensure that you have all the necessary tools and guidelines for success.
+Apply these practices to manage authentication, consent, connection refreshes, and user data in your Basiq API integration.
 
 <Tabs>
   <Tab title="Authentication">
     <div className="doc-section">
+      <h2>Cache your authentication token</h2>
       <p className="doc-highlight">
-        🔑 The token you receive will expire after one hour (3600 seconds).
-        <strong>Cache this token for global use</strong>: avoid re-authenticating separately for each user or connection, as this will cause scaling issues in your application.
+        The token you receive expires after one hour (3600 seconds).
+        <strong>Cache this token for global use.</strong> Reuse it across users and connections. Authenticating separately for each user or connection causes scaling issues.
       </p>
     </div>
   </Tab>
 
   <Tab title="Configuring Your Application">
     <div className="doc-section">
+      <h2>Configure your consent policy</h2>
       <p className="doc-highlight">
-        📜 <strong>Consider your consent policy carefully:</strong> Any changes to your consent policy (e.g., adding new data scopes) will only apply to new user consents. Existing users will either be restricted to the original policy or need to re-consent.
+        <strong>Review your consent policy before making changes.</strong> Changes apply only to new user consents. This includes adding data scopes (permissions to access specific types of data). Existing users either keep their original consent policy or need to consent again.
       </p>
 
       <p>
-        🎯 <strong>Be specific and show value:</strong> Clearly outline <em>why</em> you are requesting user consent. The <strong>purpose</strong> defined in your consent policy will be displayed to users, so ensure it communicates the value your application provides.
+        <strong>Explain why you request consent.</strong> Your consent policy shows users the <strong>purpose</strong> you define. Describe how your application uses their data and the value they receive.
       </p>
     </div>
   </Tab>
 
   <Tab title="Refreshing Connections">
     <div className="doc-section">
+      <h2>Manage connection refreshes</h2>
       <ul className="doc-list">
         <li>
-          ⚠️ <strong>Minimize ad hoc refreshes:</strong> Excessive requests can overload bank websites, causing account lockouts or action from the bank.
+          <strong>Minimize ad hoc (on-demand) refreshes:</strong> Excessive requests can overload bank websites, causing account lockouts or action from the bank.
         </li>
 
         <li>
-          🕒 <strong>Use job steps to monitor progress:</strong> Creating a new connection with the same credentials while one is already in progress will pause the new connection for 6 minutes to prevent account lockout issues.
+          <strong>Use job steps to monitor progress.</strong> If you create another connection with the same credentials while one is in progress, Basiq pauses the new connection for 6 minutes. This pause helps prevent account lockouts.
         </li>
 
         <li>
-          🚫 <strong>Avoid bulk refreshes:</strong> Large-scale refreshes (e.g., via cron jobs) can overload bank websites. Instead, rely on the smart cache or confirm a connection has not recently been refreshed before initiating a new request.
+          <strong>Avoid bulk refreshes.</strong> Large-scale refreshes can overload bank websites. This includes refreshes from cron jobs (scheduled tasks). Use Smart Cache (a background data refresh mechanism) instead. Before requesting a refresh yourself, check when the connection last refreshed.
         </li>
 
         <li>
-          🔍 <strong>Check the last refresh time:</strong> Use the `connection.lastUsed` attribute or the user’s jobs to determine the last refresh time and result. Ensure the connection is active before refreshing, as refreshing inactive connections will fail.
+          <strong>Check the last refresh time:</strong> Use <code>connection.lastUsed</code> (the connection's last refresh time) or the user's job records. Check job records for the refresh result. Ensure the connection is active before refreshing; attempts to refresh inactive connections fail.
         </li>
       </ul>
     </div>
@@ -100,32 +103,32 @@ When integrating with the Basiq API, there are some best practices that play a c
 
 <Columns layout="auto" className="documentation-columns">
   <Column>
-    <h3>🚀 Use the Smart Cache</h3>
+    <h2>Use Smart Cache</h2>
 
     <p>
-      For ongoing daily refreshed data, request the Basiq team to enable the
-      <strong>smart cache feature</strong>. This background refresh mechanism is far more efficient than initiating daily Refresh Connection requests.
+      Ask the Basiq team to enable <strong>Smart Cache</strong> for daily data refreshes.
+      This feature refreshes data in the background, so you can avoid initiating daily Refresh Connection requests.
     </p>
 
     <p>
-      <strong>Note:</strong> OpenBanking connections are limited to
-      <span className="highlight">20 refreshes per day</span>.
+      <strong>Note:</strong> Open Banking (bank data sharing with user consent) allows up to
+      <span className="highlight">20 refreshes per connection per day</span>.
     </p>
   </Column>
 
   <Column>
-    <h3>🛠️ Handling Jobs for Ongoing Data Access</h3>
-    <h4>Handling jobs correctly is essential for good UX</h4>
+    <h2>Handle jobs for ongoing data access</h2>
+    <h3>Respond to job statuses and errors</h3>
 
     <p>
-      Providing users with a simple, intuitive experience requires proper handling of job statuses and error messages. These help you troubleshoot issues and communicate them effectively to users (e.g., new login credentials needed).
+      Check job statuses and error messages to identify failures. Tell users what action to take, such as updating their login credentials.
     </p>
 
     <p>
       Use the <code>/job</code> endpoint to monitor the status of recent jobs and address failures promptly.
     </p>
 
-    <h4>Check jobs regularly</h4>
+    <h3>Check jobs regularly</h3>
 
     <p>
       A typical cadence includes daily checks and checks during user login. This allows for timely resolution of errors. For instance:
@@ -137,21 +140,21 @@ When integrating with the Basiq API, there are some best practices that play a c
     </ul>
 
     <p>
-      For more details, refer to our resources on <a href="doc:handling-jobs">handling jobs effectively</a>.
+      For more details, read <a href="/docs/handling-jobs">Handling jobs</a>.
     </p>
   </Column>
 
   <Column>
-    <h3>🧹 Purging Connection Data</h3>
+    <h2>Purge connection data</h2>
 
     <p>
-      In addition to using our <a href="https://api.basiq.io/reference/purgeconnectiondata">API</a>,
-      connection data can be purged directly from the Dashboard. This feature allows you to manage user connections without direct API calls.
+      Purge (permanently delete) connection data from the Dashboard or through the <a href="https://api.basiq.io/reference/purgeconnectiondata">Purge Connection Data API</a>.
+      Use the Dashboard to purge data without making API calls.
     </p>
 
-    <h4>Steps to Purge Data from the Dashboard:</h4>
+    <h3>Purge data from the Dashboard</h3>
 
-    <ul>
+    <ol>
       <li>
         <strong>Navigate to User Connections:</strong> Access the user's profile and locate the connections list.
       </li>
@@ -165,10 +168,10 @@ When integrating with the Basiq API, there are some best practices that play a c
       </li>
 
       <li>
-        <strong>Confirm the Purge:</strong> Approve the action to remove associated data.
-        <span className="highlight">The Connection ID remains intact</span>, allowing future refreshes.
+        <strong>Confirm the purge:</strong> Approve the action to permanently delete the connection's data.
+        <span className="highlight">The connection ID stays the same.</span> You can refresh the connection again later.
       </li>
-    </ul>
+    </ol>
   </Column>
 </Columns>
 
@@ -215,11 +218,11 @@ When integrating with the Basiq API, there are some best practices that play a c
   <Column>
     <div className="interactive-card">
       <div className="card-content">
-        <div className="card-icon">
+        <div className="card-icon" aria-hidden="true">
           <i className="fa fa-plug" />
         </div>
 
-        <h3 className="card-title">Connectors Endpoint</h3>
+        <h2 className="card-title">Connectors endpoint</h2>
 
         <p className="card-description">
           Fetch the current status and stage of all connectors to dynamically resolve connection issues.
@@ -231,14 +234,14 @@ When integrating with the Basiq API, there are some best practices that play a c
   <Column>
     <div className="interactive-card">
       <div className="card-content">
-        <div className="card-icon">
+        <div className="card-icon" aria-hidden="true">
           <i className="fa fa-exclamation-triangle" />
         </div>
 
-        <h3 className="card-title">Error Logging</h3>
+        <h2 className="card-title">Error logging</h2>
 
         <p className="card-description">
-          Log key details like <code>userId</code>, <code>connectionId</code>, and <code>jobId</code>. This allows support teams to investigate issues effectively and provide better assistance.
+          Log <code>userId</code>, <code>connectionId</code>, and <code>jobId</code> so support teams can investigate the affected user, connection, and job.
         </p>
       </div>
     </div>
@@ -248,14 +251,14 @@ When integrating with the Basiq API, there are some best practices that play a c
     <Tab title="Data Storage Best Practices">
       <div className="interactive-card">
         <div className="card-content">
-          <div className="card-icon">
+          <div className="card-icon" aria-hidden="true">
             <i className="fa fa-database" />
           </div>
 
-          <h3 className="card-title">Secure Data Storage</h3>
+          <h2 className="card-title">Secure data storage</h2>
 
           <p className="card-description">
-            You should implement a secure data storage system to store necessary user information, with encryption and restricted access for authorized users only.
+            Store only the user information you need. Encrypt it and restrict access to authorized users.
           </p>
         </div>
       </div>
@@ -337,7 +340,8 @@ When integrating with the Basiq API, there are some best practices that play a c
     color: "#ffffff", // Light text for contrast
   }}
 >
-  <strong style={{ color: "#ffffff" }}>📢 Attention!</strong> If you have any issues, please reach out to our amazing support team.
+  <h2 style={{ color: "#ffffff" }}>Contact support</h2>
+  <p>Contact the support team if you encounter issues.</p>
 
   <div style={{ display: 'flex', alignItems: 'center' }}>
     <button
@@ -353,7 +357,8 @@ When integrating with the Basiq API, there are some best practices that play a c
         textTransform: 'uppercase',
         cursor: 'pointer',
         transition: 'background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
-        outline: 'none',
+        outline: 'auto',
+        outlineOffset: '4px',
         display: 'flex',
         justifyContent: 'center',
         height: '45px',
