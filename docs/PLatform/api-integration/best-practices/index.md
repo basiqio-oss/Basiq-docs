@@ -15,9 +15,12 @@ Apply these practices to manage authentication, consent, connection refreshes, a
   <Tab title="Authentication">
     <div className="doc-section">
       <h2>Cache your authentication token</h2>
-    <p className="doc-highlight">
-    The token you receive expires after one hour (3600 seconds).<br /><strong>Cache this token for global use.</strong> Reuse it across users and connections. Authenticating separately for each user or connection causes scaling issues.<br />  </p>
-     </div>
+      <p className="doc-highlight">
+        The token you receive expires after one hour (3600 seconds).
+        <br />
+        <strong>Cache and reuse this token globally.</strong> Reuse it across users and connections. Avoid generating a separate token for each user or connection, as this creates unnecessary authentication requests and can lead to scaling issues.
+      </p>
+    </div>
   </Tab>
 
   <Tab title="Configuring Your Application">
