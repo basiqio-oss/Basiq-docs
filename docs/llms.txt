@@ -1,0 +1,73 @@
+# Basiq Developer Hub
+
+> Published guides. See the [root index](https://api.basiq.io/llms.txt).
+
+HTML links are used where the published Markdown endpoint fails.
+
+## Developer hub: Getting Started
+- [Welcome to Basiq](https://api.basiq.io/docs/guides.md)
+- [Integration Overview](https://api.basiq.io/docs/integration-overview.md)
+  - [Activate your Account](https://api.basiq.io/docs/activate-your-account.md)
+  - [Application Setup](https://api.basiq.io/docs/application-management.md)
+  - [Navigating the Dashboard](https://api.basiq.io/docs/navigating-the-dashboard.md)
+  - [Create Permission Sets](https://api.basiq.io/docs/permission-sets.md)
+  - [Consent UI Customisation](https://api.basiq.io/docs/consent-ui-customisation.md)
+- [Quickstart](https://api.basiq.io/docs/getting-started.md)
+  - [Quickstart: API](https://api.basiq.io/docs/quickstart-api.md)
+  - [Quickstart: Basiq dashboard](https://api.basiq.io/docs/quickstart-basiq-dashboard.md)
+
+## Developer hub: PLatform
+- [Access Methods](https://api.basiq.io/docs/access-method.md)
+- [Dashboard](https://api.basiq.io/docs/dash-configuration.md)
+  - [Application Management](https://api.basiq.io/docs/application-setup.md)
+  - [User Management](https://api.basiq.io/docs/user-management.md)
+  - [Customise UI](https://api.basiq.io/docs/basiq-customise-ui.md)
+  - [Connections](https://api.basiq.io/docs/platform-connections.md)
+- API Integration
+  - [API key management](https://api.basiq.io/docs/api-key-management.md)
+  - [API Rate Limiting](https://api.basiq.io/docs/api-rate-limiting.md)
+  - [Basiq best practices](https://api.basiq.io/docs/best-practices.md)
+    - [Pending transactions](https://api.basiq.io/docs/pending-transactions.md)
+- [Consent Management](https://api.basiq.io/docs/consent.md)
+  - [Overview](https://api.basiq.io/docs/overview.md)
+  - [Consent Actions](https://api.basiq.io/docs/consent-actions.md)
+  - [Consent Events](https://api.basiq.io/docs/consent-events.md)
+  - [Consent Parameters](https://api.basiq.io/docs/consent-parameters.md)
+  - [Consent Scopes](https://api.basiq.io/docs/consent-scopes.md)
+- [CDR Compliance](https://api.basiq.io/docs/cdr-compliance.md)
+  - [CDR Receipts](https://api.basiq.io/docs/cdr-receipts.md)
+  - [Trusted Advisor](https://api.basiq.io/docs/trusted-advisor.md)
+- Business Consumer Consent
+  - [Business Consumer Consent](https://api.basiq.io/docs/business-consumer-consent.md)
+  - [Connecting Business accounts via CDR](https://api.basiq.io/docs/connecting-business-accounts-via-cdr)
+- [Webhooks](https://api.basiq.io/docs/webhooks.md)
+  - [Delivery Schedule and Retries](https://api.basiq.io/docs/delivery-schedule-and-retries.md)
+  - [Webhooks Security](https://api.basiq.io/docs/webhooks-security.md)
+- [Errors](https://api.basiq.io/docs/errors.md)
+  - [Codes](https://api.basiq.io/docs/codes.md)
+- [Security](https://api.basiq.io/docs/security.md)
+- Go Live & Migration
+  - [Go live checklist](https://api.basiq.io/docs/go-live-checklist.md)
+  - [Migration checklist](https://api.basiq.io/docs/upgrading-to-v3-0.md)
+  - Migration Guides
+    - [Web to OpenBanking](https://api.basiq.io/docs/migrating-users-from-web-to-openbanking-connection.md)
+    - [Institutions EP to Connectors EP](https://api.basiq.io/docs/migration-guide-from-institutions-ep-to-connectors-ep.md)
+
+## Developer hub: Data
+- [Account Verification](https://api.basiq.io/docs/account-verification.md)
+- [Connections](https://api.basiq.io/docs/data-connections.md)
+- [Data governance](https://api.basiq.io/docs/data-governance.md)
+- [Energy Data](https://api.basiq.io/docs/energy.md)
+- [Enrich](https://api.basiq.io/docs/enrichment.md)
+- [Identity](https://api.basiq.io/docs/identity.md)
+- Reports
+  - [Consumer Affordability Report](https://api.basiq.io/docs/consumer-affordability.md)
+  - [Business Affordability Report ](https://api.basiq.io/docs/business-affordability.md)
+- [Statements](https://api.basiq.io/docs/bank-statements.md)
+
+## Developer hub: AI Tools
+- [Agent Integration Overview](https://api.basiq.io/docs/agent-integration-overview.md)
+- [MCP Server](https://api.basiq.io/docs/mcp-server.md)
+
+## Developer hub: FAQs
+- [Frequently asked questions](https://api.basiq.io/docs/frequently-asked-questions.md)
