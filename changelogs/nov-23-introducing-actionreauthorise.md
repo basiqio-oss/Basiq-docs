@@ -19,6 +19,6 @@ Open banking connections with an expiryDate less than 7 days away are now conven
 
 Once you see a renew button and click on it, you will be redirected to the data holder to extend the duration of your connections for the currently shared account. You may wish to extend sharing for the currently shared account or stop sharing it.
 
-We believe these updates will enhance your interaction with the Basiq platform, providing a more efficient and user-friendly reauthorisation process. You can continue reading in our documentation [here](https://api.basiq.io/docs/consent-ui#reauthorise-consent-actionreauthorise).  
+We believe these updates will enhance your interaction with the Basiq platform, providing a more efficient and user-friendly reauthorisation process. You can continue reading in our documentation [here](https://api.basiq.io/docs/consent-actions#reauthorise-consent-actionreauthorise).
 
 Thank you for your continued support!
