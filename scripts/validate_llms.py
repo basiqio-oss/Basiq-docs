@@ -74,7 +74,7 @@ def page_url(url):
     return BASE + parsed.path.removesuffix(".md")
 
 
-def validate(sitemap_urls, indexes):
+def validate(sitemap_urls, indexes, published=False):
     errors = []
     expected = {section: set() for section in SECTIONS}
     excluded = []
@@ -83,7 +83,7 @@ def validate(sitemap_urls, indexes):
         if page and page == url:
             expected[urlsplit(url).path.split("/")[1]].add(url)
         elif url == f"{BASE}/changelog":
-            excluded.append((url, "section landing page, not a changelog entry"))
+            excluded.append((url, "separately indexed landing page, not a changelog entry"))
         elif any(url.startswith(f"{BASE}/{section}/") for section in SECTIONS):
             errors.append(f"Unsupported documentation sitemap URL: {url}")
         else:
@@ -100,14 +100,37 @@ def validate(sitemap_urls, indexes):
     for url in INDEXES.values():
         if root_counts[url] != 1:
             errors.append(f"Root index must link exactly once to {url} (found {root_counts[url]})")
-    for url in root_links:
-        if url not in INDEXES.values():
-            errors.append(f"Unexpected root index link: {url}")
-
     indexed = {section: set() for section in SECTIONS}
     links_to_check = {}
-    seen = Counter()
+    root_pages = Counter()
+    root_changelog_links = set()
+    landing = f"{BASE}/changelog"
+    for link in root_links:
+        if link in INDEXES.values():
+            continue
+        if link == landing:
+            root_pages[landing] += 1
+            links_to_check[landing] = link
+            continue
+        page = page_url(link)
+        if not page or not page.startswith(f"{BASE}/changelog/"):
+            errors.append(f"Unexpected or non-canonical root index link: {link}")
+            continue
+        root_pages[page] += 1
+        root_changelog_links.add(link)
+        indexed["changelog"].add(page)
+        links_to_check[page] = link
+    for page, count in sorted(root_pages.items()):
+        if count > 1:
+            errors.append(f"Duplicate root page entry ({count}): {page}")
+    if landing in sitemap_urls and root_pages[landing] != 1:
+        errors.append(f"Root index must link exactly once to the sitemap landing page: {landing}")
+    elif landing not in sitemap_urls and root_pages[landing]:
+        errors.append(f"Stale root landing page (not in sitemap): {landing}")
+
+    changelog_links = set()
     for section in SECTIONS:
+        seen = Counter()
         for link in LINK.findall(indexes[section]):
             if link == f"{BASE}/llms.txt":
                 continue
@@ -120,12 +143,25 @@ def validate(sitemap_urls, indexes):
                 errors.append(f"Wrong section in {section}/llms.txt: {link}")
                 continue
             seen[page] += 1
-            indexed[section].add(page)
-            links_to_check[page] = link
+            if section == "changelog":
+                changelog_links.add(link)
+                if published:
+                    indexed[section].add(page)
+            else:
+                indexed[section].add(page)
+                links_to_check[page] = link
+        for page, count in sorted(seen.items()):
+            if count > 1:
+                errors.append(f"Duplicate page entry in {section}/llms.txt ({count}): {page}")
 
-    for page, count in sorted(seen.items()):
-        if count > 1:
-            errors.append(f"Duplicate page entry ({count}): {page}")
+    if not published:
+        for link in sorted(root_changelog_links - changelog_links):
+            errors.append(f"Root changelog link missing from changelog/llms.txt: {link}")
+        for link in sorted(changelog_links - root_changelog_links):
+            errors.append(f"Changelog link missing from root llms.txt: {link}")
+    else:
+        for page in sorted(expected["changelog"] - set(root_pages)):
+            errors.append(f"Changelog page missing from root llms.txt: {page}")
     for section in SECTIONS:
         for page in sorted(expected[section] - indexed[section]):
             errors.append(f"Missing {section} page: {page}")
@@ -161,19 +197,28 @@ def check_link(item):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sitemap-file", type=Path, help="Use a saved sitemap instead of fetching the live sitemap")
+    parser.add_argument("--published", action="store_true", help="Validate the indexes currently served by ReadMe")
     parser.add_argument("--check-live", action="store_true", help="Fetch every indexed page and validate its response")
     args = parser.parse_args()
     try:
         data = args.sitemap_file.read_bytes() if args.sitemap_file else fetch(SITEMAP)[0]
         sitemap_urls = parse_sitemap(data)
-        indexes = {"root": (ROOT / "llms.txt").read_text(encoding="utf-8")}
-        indexes.update({section: (ROOT / section / "llms.txt").read_text(encoding="utf-8") for section in SECTIONS})
+        if args.published:
+            indexes = {}
+            for name, url in {"root": f"{BASE}/llms.txt", **INDEXES}.items():
+                content, content_type, final_url = fetch(url)
+                if final_url != url or content_type not in ("text/plain", "text/markdown", "text/x-markdown"):
+                    raise ValueError(f"Invalid index response {url}: {content_type}, final URL {final_url}")
+                indexes[name] = content.decode("utf-8")
+        else:
+            indexes = {"root": (ROOT / "llms.txt").read_text(encoding="utf-8")}
+            indexes.update({section: (ROOT / section / "llms.txt").read_text(encoding="utf-8") for section in SECTIONS})
     except (OSError, ValueError, ET.ParseError, URLError, TimeoutError) as error:
         print(f"Unable to load sitemap or indexes: {error}", file=sys.stderr)
         return 1
 
-    expected, indexed, links, excluded, errors = validate(sitemap_urls, indexes)
-    print("# llms.txt sitemap coverage\n")
+    expected, indexed, links, excluded, errors = validate(sitemap_urls, indexes, published=args.published)
+    print(f"# {'Published' if args.published else 'Repository'} llms.txt sitemap coverage\n")
     print("| Section | Sitemap pages | Indexed pages | Missing | Coverage |")
     print("| --- | ---: | ---: | ---: | ---: |")
     for section in SECTIONS:
@@ -182,6 +227,11 @@ def main():
         coverage = f"{100 * covered / total:.1f}%" if total else "n/a"
         print(f"| {section} | {total} | {len(indexed[section])} | {total - covered} | {coverage} |")
     print(f"\nNested indexes: {', '.join(INDEXES.values())}")
+    if args.published:
+        print("ReadMe generates the changelog index; coverage includes both it and the root index.")
+        print("All changelog entries must also be in the root index for durable coverage.")
+    else:
+        print("The root and changelog/llms.txt must contain the same changelog links.")
     print(f"\nSitemap entries excluded: {len(excluded)}")
     for url, reason in excluded:
         print(f"- {url}: {reason}")
@@ -190,12 +240,25 @@ def main():
         print(f"\nChecking {len(links)} indexed page responses...")
         with ThreadPoolExecutor(max_workers=3) as executor:
             errors.extend(error for error in executor.map(check_link, sorted(links.items())) if error)
-            fallbacks = [(page, page + ".md") for page, link in sorted(links.items()) if link == page]
+            fallbacks = [
+                (page, page + ".md")
+                for page, link in sorted(links.items())
+                if link == page and page != f"{BASE}/changelog"
+            ]
             markdown_results = list(executor.map(check_link, fallbacks))
+            generated_results = []
+            if args.published:
+                generated_links = set(LINK.findall(indexes["changelog"]))
+                generated_items = sorted((page_url(link), link) for link in generated_links if page_url(link))
+                generated_results = [error for error in executor.map(check_link, generated_items) if error]
         if fallbacks:
             print("\n## HTML fallback pages")
             for (page, _), result in zip(fallbacks, markdown_results):
                 print(f"- {page}: {result or 'Markdown now works; consider switching the index link'}")
+        if generated_results:
+            print("\n## ReadMe-generated changelog link warnings")
+            for error in generated_results:
+                print(f"- {error}")
     if errors:
         print(f"\n## Issues ({len(errors)})")
         for error in errors:

@@ -2,7 +2,7 @@ name: Broken Link Check
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master, v3.0]
     paths:
       - 'docs/**'
       - 'custom_pages/**'
@@ -45,11 +45,11 @@ jobs:
           set -o pipefail
           python3 scripts/validate_llms.py | tee -a "$GITHUB_STEP_SUMMARY"
 
-      - name: Check published page responses
+      - name: Check published indexes and page responses
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: |
           set -o pipefail
-          python3 scripts/validate_llms.py --check-live | tee -a "$GITHUB_STEP_SUMMARY"
+          python3 scripts/validate_llms.py --published --check-live | tee -a "$GITHUB_STEP_SUMMARY"
 
   check-files:
     name: Check Links in Source Files
