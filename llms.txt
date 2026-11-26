@@ -1,0 +1,9 @@
+# Basiq Developer Documentation
+
+> Guides, API reference documentation, and release history for the Basiq platform.
+
+## Documentation indexes
+
+- [Developer Hub](https://api.basiq.io/docs/llms.txt): Guides for integration, platform capabilities, data, and AI tools.
+- [API Reference](https://api.basiq.io/reference/llms.txt): API concepts and endpoint documentation, including legacy APIs.
+- [Changelog](https://api.basiq.io/changelog/llms.txt): Published product and API release history.
