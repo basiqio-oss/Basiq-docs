@@ -1,0 +1,124 @@
+# Basiq API Reference
+
+> Published API documentation. See the [root index](https://api.basiq.io/llms.txt).
+
+## API: BASIQ API
+- [Introduction to Basiq](https://api.basiq.io/reference/introduction.md)
+- [Developer Hub](https://api.basiq.io/reference/developer-hub.md)
+- [Testing](https://api.basiq.io/reference/testing.md)
+
+## API: Connect
+- Authentication
+  - [Generate an auth token](https://api.basiq.io/reference/posttoken.md)
+- Users
+  - [Create a user](https://api.basiq.io/reference/createuser.md)
+  - [Retrieve a user](https://api.basiq.io/reference/getuser.md)
+  - [Update a user](https://api.basiq.io/reference/updateuser.md)
+  - [Delete a user](https://api.basiq.io/reference/deleteuser.md)
+- Consents
+  - [Retrieve consents](https://api.basiq.io/reference/getconsents.md)
+  - [Delete a consent](https://api.basiq.io/reference/deleteconsent.md)
+- Connections
+  - [List all connections](https://api.basiq.io/reference/getconnections.md)
+  - [Refresh all connections](https://api.basiq.io/reference/refreshconnections.md)
+  - [Retrieve a connection](https://api.basiq.io/reference/getconnection.md)
+  - [Delete a connection](https://api.basiq.io/reference/deleteconnection.md)
+  - [Refresh a connection](https://api.basiq.io/reference/refreshconnection.md)
+  - [Purge connection data](https://api.basiq.io/reference/purgeconnectiondata.md)
+- Jobs
+  - [Get user jobs](https://api.basiq.io/reference/getuserjobs.md)
+  - [Retrieve a job](https://api.basiq.io/reference/getjobs.md)
+  - [Create MFA response](https://api.basiq.io/reference/postjobmfa.md)
+- Accounts
+  - [List all accounts](https://api.basiq.io/reference/getaccounts.md)
+  - [Retrieve an account](https://api.basiq.io/reference/getaccount.md)
+- Transactions
+  - [List all transactions](https://api.basiq.io/reference/gettransactions.md)
+  - [Retrieve a transaction](https://api.basiq.io/reference/gettransaction.md)
+
+## API: Enrich
+- Enrich
+  - [Enrich](https://api.basiq.io/reference/enrich.md)
+  - [Search Merchants](https://api.basiq.io/reference/merchantsearch.md)
+  - [Retrieve a merchant](https://api.basiq.io/reference/getmerchantbyid.md)
+
+## API: CDR Insights
+- Insights
+  - [Create an Insight](https://api.basiq.io/reference/createinsight.md)
+  - [List all Insights](https://api.basiq.io/reference/listuserinsights.md)
+  - [Retrieve an Insight](https://api.basiq.io/reference/getinsightbyid.md)
+  - [List Insight Types](https://api.basiq.io/reference/getinsighttypes.md)
+  - [Retrieve Insight Type](https://api.basiq.io/reference/getinsighttype.md)
+  - [Account Insights](https://api.basiq.io/reference/getaccountinsights.md)
+  - [Account Balance Insights](https://api.basiq.io/reference/getbalanceinsights.md)
+  - [Identity Insights](https://api.basiq.io/reference/getidentityinsights.md)
+  - [Income Insights](https://api.basiq.io/reference/verifyincomeinsight.md)
+  - [Expense Ratio Insights](https://api.basiq.io/reference/getexpenseratioinsights.md)
+
+## API: REPORTING
+- Reports
+  - [Create a report](https://api.basiq.io/reference/createreport.md)
+  - [List all reports](https://api.basiq.io/reference/listallreports.md)
+  - [Retrieve a report](https://api.basiq.io/reference/retrievereport.md)
+  - [Delete a report](https://api.basiq.io/reference/deletereport.md)
+  - [Retrieve Report transactions](https://api.basiq.io/reference/retrievereporttransactions.md)
+  - [List report types](https://api.basiq.io/reference/listreporttypes.md)
+  - [Retrieve a report type](https://api.basiq.io/reference/retrievespecificreporttype.md)
+
+## API: Identity
+- Identities
+  - [Retrieve identities](https://api.basiq.io/reference/getuseridentities.md)
+  - [Retrieve an identity](https://api.basiq.io/reference/getuseridentity.md)
+
+## API: Platform
+- AuthLinks
+  - [Create an auth_link](https://api.basiq.io/reference/postauthlink.md)
+  - [Retrieve an auth_link](https://api.basiq.io/reference/getauthlink.md)
+  - [Delete an auth_link](https://api.basiq.io/reference/deleteauthlink.md)
+- Events
+  - [List all events](https://api.basiq.io/reference/getevents.md)
+  - [Retrieve an event](https://api.basiq.io/reference/gettypebyid.md)
+  - [List event types](https://api.basiq.io/reference/listeventtypes.md)
+  - [Retrieve an event type](https://api.basiq.io/reference/geteventtypebyid.md)
+- Statements
+  - [Create a statement](https://api.basiq.io/reference/createstatement.md)
+- Payees
+  - [List Payees](https://api.basiq.io/reference/getpayees.md)
+  - [Get Payee Details](https://api.basiq.io/reference/getpayeedetails.md)
+- Connectors
+  - [Retrieve connectors](https://api.basiq.io/reference/getconnectors.md)
+  - [Retrieve a connector](https://api.basiq.io/reference/getconnector.md)
+- Analytics
+  - [User Analytics](https://api.basiq.io/reference/getuseranalytics.md)
+  - [Connection Analytics](https://api.basiq.io/reference/getconnectionanalytics.md)
+
+## API: Webhooks
+- Webhooks
+  - [Create a webhook](https://api.basiq.io/reference/addwebhook.md)
+  - [List all webhooks](https://api.basiq.io/reference/listappwebhooks.md)
+  - [Update a webhook](https://api.basiq.io/reference/updatewebhook.md)
+  - [Delete a webhook](https://api.basiq.io/reference/deletewebhook.md)
+  - [Retrieve a webhook](https://api.basiq.io/reference/getwebhook.md)
+  - [List all messages](https://api.basiq.io/reference/listmessages.md)
+  - [Retrieve a message](https://api.basiq.io/reference/getwebhookmessage.md)
+  - [Post a test message](https://api.basiq.io/reference/testmessage.md)
+  - [Get webhook delivery statistics](https://api.basiq.io/reference/getwebhookstats.md)
+
+## API: Affordability (LEGACY)
+- Affordability
+  - [List affordability summaries](https://api.basiq.io/reference/getaffordabilitylist.md)
+  - [Create an affordability summaries](https://api.basiq.io/reference/postaffordability.md)
+  - [Retrieve an affordability summary](https://api.basiq.io/reference/getaffordability.md)
+  - [List affordability summary transactions](https://api.basiq.io/reference/getaffordabilitysnapshottransactions.md)
+- Expenses
+  - [Create an expense summary](https://api.basiq.io/reference/postexpenses.md)
+  - [Retrieve an expense summary](https://api.basiq.io/reference/getexpenses.md)
+- Income
+  - [Create an income summary](https://api.basiq.io/reference/postincome.md)
+  - [Retrieve an income summary](https://api.basiq.io/reference/getincome.md)
+
+## API: AI Tools
+- [Overview](https://api.basiq.io/reference/ai-tools-overview.md)
+- [MCP Server](https://api.basiq.io/reference/mcp-server.md)
+- [LLM Resources](https://api.basiq.io/reference/llm-resources.md)
+- [OpenAPI](https://api.basiq.io/reference/openapi.md)

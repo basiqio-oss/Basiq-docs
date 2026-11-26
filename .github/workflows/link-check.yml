@@ -9,6 +9,11 @@ on:
       - 'custom_blocks/**'
       - 'recipes/**'
       - 'reference/**'
+      - 'changelog/**'
+      - 'llms.txt'
+      - 'scripts/validate_llms.py'
+      - 'tests/test_validate_llms.py'
+      - '.github/workflows/link-check.yml'
   pull_request:
   schedule:
     # Run every Monday at 08:00 UTC
@@ -25,6 +30,27 @@ permissions:
 
 # ── Job 1: check links in source files (fast, runs on every trigger) ─────────
 jobs:
+  check-llms:
+    name: Validate LLM Index Coverage
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Test validator
+        run: python3 -m unittest discover -s tests -p 'test_validate_llms.py'
+
+      - name: Compare indexes with published sitemap
+        run: |
+          set -o pipefail
+          python3 scripts/validate_llms.py | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Check published page responses
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          set -o pipefail
+          python3 scripts/validate_llms.py --check-live | tee -a "$GITHUB_STEP_SUMMARY"
+
   check-files:
     name: Check Links in Source Files
     runs-on: ubuntu-24.04
