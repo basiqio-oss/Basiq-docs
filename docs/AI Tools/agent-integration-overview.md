@@ -38,6 +38,8 @@ AI systems use this root index to quickly discover relevant documentation pages.
 - API Reference: [https://api.basiq.io/reference/llms.txt](https://api.basiq.io/reference/llms.txt)
 - Changelog: [https://api.basiq.io/changelog/llms.txt](https://api.basiq.io/changelog/llms.txt)
 
+The changelog section index lists only recent entries. The root index lists every published changelog entry, so AI tools can find the full release history there.
+
 ## Recommended AI Setup
 
 For best results with AI coding tools:
