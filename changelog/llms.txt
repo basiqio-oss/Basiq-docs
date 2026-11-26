@@ -2,6 +2,8 @@
 
 > Published release history. See the [root index](https://api.basiq.io/llms.txt).
 
+ReadMe serves a generated changelog index instead of this file. Keep these links
+in sync with the root index, which provides the full published history.
 Entries are listed alphabetically by title. HTML links are used where the published Markdown endpoint fails.
 
 ## Releases
