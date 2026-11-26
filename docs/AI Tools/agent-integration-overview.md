@@ -32,7 +32,11 @@ Basiq provides a lightweight, machine-readable index of its documentation for AI
 
 - [https://api.basiq.io/llms.txt](https://api.basiq.io/llms.txt)
 
-This file is used by AI systems to quickly discover relevant API documentation pages.
+AI systems use this root index to quickly discover relevant documentation pages. It links to an index for each documentation section:
+
+- Developer Hub: [https://api.basiq.io/docs/llms.txt](https://api.basiq.io/docs/llms.txt)
+- API Reference: [https://api.basiq.io/reference/llms.txt](https://api.basiq.io/reference/llms.txt)
+- Changelog: [https://api.basiq.io/changelog/llms.txt](https://api.basiq.io/changelog/llms.txt)
 
 ## Recommended AI Setup
 

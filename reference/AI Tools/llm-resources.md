@@ -36,18 +36,21 @@ These resources help AI systems understand the Basiq API without requiring manua
 
 [https://api.basiq.io/llms.txt](https://api.basiq.io/llms.txt)
 
-This file provides a structured index of all Basiq API documentation, including:
+This root index links to one index for each documentation section:
 
-* Authentication
-* Connect API endpoints
-* Webhooks
-* Guides and quickstarts
+| Index | URL | Contents |
+| --- | --- | --- |
+| Developer Hub | [https://api.basiq.io/docs/llms.txt](https://api.basiq.io/docs/llms.txt) | Guides for integration, platform capabilities, data, and AI tools |
+| API Reference | [https://api.basiq.io/reference/llms.txt](https://api.basiq.io/reference/llms.txt) | API concepts and endpoint documentation, including legacy APIs |
+| Changelog | [https://api.basiq.io/changelog/llms.txt](https://api.basiq.io/changelog/llms.txt) | Published product and API release history |
 
-It is designed for AI tools, retrieval systems, and documentation indexing.
+Each section index lists every published page in that section, grouped the same way as the documentation navigation. Where available, links point to the Markdown version of each page (the page URL with a `.md` suffix).
+
+These indexes are designed for AI tools, retrieval systems, and documentation indexing.
 
 ## How to use
 
-AI tools can use this file to:
+AI tools can start from the root index and follow the section index that matches their task. They can use these files to:
 
 * Discover relevant API documentation pages
 * Improve integration accuracy
