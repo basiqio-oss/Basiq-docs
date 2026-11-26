@@ -44,13 +44,15 @@ This root index links to one index for each documentation section:
 | API Reference | [https://api.basiq.io/reference/llms.txt](https://api.basiq.io/reference/llms.txt) | API concepts and endpoint documentation, including legacy APIs |
 | Changelog | [https://api.basiq.io/changelog/llms.txt](https://api.basiq.io/changelog/llms.txt) | Published product and API release history |
 
-Each section index lists every published page in that section, grouped the same way as the documentation navigation. Where available, links point to the Markdown version of each page (the page URL with a `.md` suffix).
+The root index also links to the [changelog feed](https://api.basiq.io/changelog) and lists every published changelog entry under **Changelog entries**.
+
+The Developer Hub and API Reference indexes list every published page in their section, grouped the same way as the documentation navigation. The changelog section index lists only recent entries, so use the root index for the full release history. Where available, links point to the Markdown version of each page (the page URL with a `.md` suffix).
 
 These indexes are designed for AI tools, retrieval systems, and documentation indexing.
 
 ## How to use
 
-AI tools can start from the root index and follow the section index that matches their task. They can use these files to:
+AI tools can start from the root index and follow the section index that matches their task. For the complete release history, use the changelog entries in the root index. AI tools can use these files to:
 
 * Discover relevant API documentation pages
 * Improve integration accuracy
