@@ -56,7 +56,7 @@ Basiq provides event notifications to keep you updated on changes to user consen
 
 ### 1. Configure Consent UI
 
-Head to the [Basiq dashboard](dashboard.basiq.io) and customize the Consent UI. Add your brand’s header image and configure the redirection URL.
+Head to the [Basiq dashboard](https://dashboard.basiq.io) and customize the Consent UI. Add your brand’s header image and configure the redirection URL.
 
 - **Brand Name:** Adding Brand name is mandatory.
 - **Header Image:** This will be shown to users on the Consent UI.
